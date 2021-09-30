@@ -1,3 +1,5 @@
 # scrubyrails
 
-Namasthe Sarvebhyah!
+Namaste sarvebhyah
+hi
+Namasthe!
