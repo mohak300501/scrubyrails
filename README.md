@@ -1,3 +1,3 @@
 # scrubyrails
 
-Namaste
+Namaste sarvebhyah
