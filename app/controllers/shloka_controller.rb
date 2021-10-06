@@ -1,0 +1,2 @@
+class ShlokaController < ApplicationController
+end
