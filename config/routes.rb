@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root 'welcome#home'
   get "shloka/rshloka"
   get "events/revents"
+  get "firstresource/resource"
 end
