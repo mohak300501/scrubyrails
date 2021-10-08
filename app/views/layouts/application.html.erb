@@ -14,9 +14,11 @@
     <div class="header">
       आ नो भद्राः क्रतवो यन्तु विश्वतः।
     </div>
-    <div>
-      <%= link_to "Events", revents_events_path %>
-      <%= link_to "Shloka", rshloka_shloka_path %>
+    <div class="navbar">
+      <%= link_to "Home", "../" %>
+      <%= link_to "Events", "../events/revents" %>
+      <%= link_to "Shloka", "../shloka/rshloka" %>
+      <%= link_to "Resources", "../resource/firstresource" %>
     </div>
       <%= yield %>
   </body>
