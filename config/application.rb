@@ -13,6 +13,7 @@ module Scrubyrails
 
     # Configuration for the application, engines, and railties goes here.
     #
+    Rails.application.config.session_store :cookie_store, key: '_app_session', expire_after: nil
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
