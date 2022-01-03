@@ -13,9 +13,6 @@ module Scrubyrails
 
     # Configuration for the application, engines, and railties goes here.
     #
-    config.middleware.use ActionDispatch::Cookies
-    config.middleware.use ActionDispatch::Session::CookieStore
-    config.middleware.insert_after(ActionDispatch::Cookies, ActionDispatch::Session::CookieStore)
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
