@@ -16,7 +16,7 @@
     </div>
     <% if session[:user] == "sc" %>
       Logged in as Sanskrit Club.<br/>
-      <%= ENV["ADMIN_ACCESS"] %>
+      <%= ENV["ADMIN_ACCESS"]+"hello" %>
       <%= link_to "Logout", "../logging/logout" %>
     <% else %>
       <div>
