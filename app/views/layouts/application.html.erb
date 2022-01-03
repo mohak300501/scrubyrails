@@ -14,6 +14,13 @@
     <div class="header">
       आ नो भद्राः क्रतवो यन्तु विश्वतः।
     </div>
+    <% if session[:user] == "namaskar" %>
+      Logged in as Sanskrit Club.
+    <% else %>
+      <div>
+        <%= link_to "Login", "../login" %>
+      </div>
+    <% end %>
     <div class="navbar">
       <%= link_to "Home", "../" %>
       <%= link_to "Events", "../events/revents" %>
