@@ -15,7 +15,8 @@
       आ नो भद्राः क्रतवो यन्तु विश्वतः।
     </div>
     <% if session[:user] == "sc" %>
-      Logged in as Sanskrit Club.
+      Logged in as Sanskrit Club.<br/>
+      <%= link_to "Logout", "../logging/logout" %>
     <% else %>
       <div>
         <%= link_to "Login", "../logging/login" %>

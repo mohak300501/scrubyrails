@@ -5,4 +5,8 @@ class LoggingController < ApplicationController
             redirect_to shloka_ashlokar_path
         end
     end
+    def logout
+        session.delete(:user)
+        redirect_to root_url
+    end
 end
