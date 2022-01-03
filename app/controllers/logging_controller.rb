@@ -1,7 +1,6 @@
 class LoggingController < ApplicationController
     def login
-        @test = params[:password]
-        if params[:password] == "namaskar"
+        if params[:password] == ENV["ADMIN_ACCESS"]
             session[:user] ||= "sc"
             redirect_to shloka_ashlokar_path
         end
