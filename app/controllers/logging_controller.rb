@@ -1,7 +1,7 @@
 class LoggingController < ApplicationController
     def login
-        if Member.find_by(params[:email])
-            if Member.find_by(params[:email]).password == params[:password]
+        if Member.find_by(email: params[:email])
+            if Member.find_by(email: params[:email]).password == params[:password]
                 session[:user] = "sc"
                 redirect_to shloka_ashlokar_path
             else
