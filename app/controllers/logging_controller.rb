@@ -17,7 +17,7 @@ class LoggingController < ApplicationController
         end
     end
     def logout
-        session.delete(:user)
+        session.delete(:admin)
         redirect_to root_url
     end
 end
