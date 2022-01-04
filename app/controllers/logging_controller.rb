@@ -7,11 +7,11 @@ class LoggingController < ApplicationController
                 session[:user] = "sc"
                 redirect_to shloka_ashlokar_path
             else
-                flash.now[:notice] = "Password does not match"
+                flash[:notice] = "Password does not match"
                 redirect_to logging_login_path
             end
         else
-            flash.now[:notice] = "Email not found"
+            flash[:notice] = "Email not found"
             redirect_to logging_login_path
         end
     end
