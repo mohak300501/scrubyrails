@@ -8,11 +8,11 @@ class LoggingController < ApplicationController
                 redirect_to shloka_ashlokar_path
             else
                 flash.now[:notice] = "Password does not match"
-                render login
+                render "login"
             end
         else
             flash.now[:notice] = "Email not found"
-            render login
+            render "login"
         end
     end
     def logout
