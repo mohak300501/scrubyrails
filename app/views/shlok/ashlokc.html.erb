@@ -1,12 +1,12 @@
 <div><b>नमस्ते</b></div>
-<%= link_to "Back", "../shloka/ashlokar" %>
+<%= link_to "Back", "../shlok/ashlokr" %>
 <h1>नूतनः श्लोकः योजयतु</h1>
-<%= form_tag shloka_ashlokacp_path do %>
+<%= form_tag shlok_ashlokcp_path do %>
     <div>
         <%= label_tag :title %><br/>
         <%= text_field_tag :title, nil, :required => true %><br/>
-        <%= label_tag :shloka %><br/>
-        <%= text_field_tag :shloka, nil, :required => true %><br/>
+        <%= label_tag :shlok %><br/>
+        <%= text_field_tag :shlok, nil, :required => true %><br/>
         <%= label_tag :translation %><br/>
         <%= text_field_tag :translation, nil, :required => true %>
     </div>
