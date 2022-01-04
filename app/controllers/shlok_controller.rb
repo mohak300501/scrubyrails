@@ -17,6 +17,7 @@ class ShlokaController < ApplicationController
 
     def ashlokcp
         shlok = Shlok.new(:title => params[:title], :shlok => params[:shlok], :translation => [:translation])
+        shlok.save
         flash[:notice] = "नूतनः श्लोकः योजितः जातः!"
         redirect_to shlok_ashlokr_path
     end
