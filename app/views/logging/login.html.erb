@@ -9,9 +9,9 @@
     <div>
         <%= submit_tag "Log In", :class => "button" %>
     </div>
-    <% if @mssg.nil? %>
+    <% flash.each do |type, msg| %>
         <div>
-            <%= @mssg %>
+            <%= msg %>
         </div>
     <% end %>
 <% end %>
