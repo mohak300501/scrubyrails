@@ -5412,3 +5412,153 @@ Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 3
 NameError (uninitialized constant LoggingController::Members):
   
 app/controllers/logging_controller.rb:3:in `login'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1409038475602093665)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(1409038475602093665)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/logging/login" for 103.37.201.183 at 2022-01-04 15:03:45 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoggingController#login as HTML
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 3782)
+
+
+  
+NameError (uninitialized constant LoggingController::Member):
+  
+app/controllers/logging_controller.rb:3:in `login'
+Started POST "/" for 135.125.246.110 at 2022-01-04 15:06:08 +0000
+Cannot render console from 135.125.246.110! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/.env" for 135.125.246.110 at 2022-01-04 15:06:09 +0000
+Cannot render console from 135.125.246.110! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started GET "/logging/login" for 103.37.201.183 at 2022-01-04 15:12:04 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoggingController#login as HTML
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.9ms | Allocations: 2644)
+
+
+  
+TypeError (no implicit conversion of Integer into Hash):
+  
+app/controllers/logging_controller.rb:3:in `login'
+Started GET "/logging/login" for 103.37.201.183 at 2022-01-04 15:17:13 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoggingController#login as HTML
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.8ms | Allocations: 3387)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedTable: ERROR:  relation "members" does not exist
+LINE 1: SELECT "members".* FROM "members" ORDER BY "members"."id" AS...
+                                ^
+):
+  
+app/controllers/logging_controller.rb:3:in `login'
+Started GET "/logging/login" for 103.37.201.183 at 2022-01-04 15:19:07 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoggingController#login as HTML
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."mem_id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/logging_controller.rb:3:in `login'
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1347)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 8201)
+Completed 200 OK in 35ms (Views: 17.0ms | ActiveRecord: 3.7ms | Allocations: 16021)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1409038475602093665)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1409038475602093665)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/logging/login" for 103.37.201.183 at 2022-01-04 15:19:26 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoggingController#login as HTML
+  [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."mem_id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/logging_controller.rb:3:in `login'
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1347)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 8200)
+Completed 200 OK in 40ms (Views: 17.2ms | ActiveRecord: 4.6ms | Allocations: 16020)
+
+
+Started GET "/logging/login" for 103.37.201.183 at 2022-01-04 15:19:28 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#login as HTML
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."mem_id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/logging_controller.rb:3:in `login'
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 0.6ms | Allocations: 241)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 3219)
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.2ms | Allocations: 4367)
+
+
+Started POST "/logging/login" for 103.37.201.183 at 2022-01-04 15:19:34 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#login as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."mem_id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/logging_controller.rb:3:in `login'
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 0.5ms | Allocations: 280)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 3403)
+Completed 200 OK in 10ms (Views: 7.1ms | ActiveRecord: 0.2ms | Allocations: 4680)
+
+
+Started POST "/logging/login" for 103.37.201.183 at 2022-01-04 15:19:36 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#login as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."mem_id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/logging_controller.rb:3:in `login'
+Redirected to http://13.127.46.121/shloka/ashlokar
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms | Allocations: 863)
+
+
+Started GET "/shloka/ashlokar" for 103.37.201.183 at 2022-01-04 15:19:36 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokaController#ashlokar as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shloka/ashlokar.html.erb within layouts/application
+  Rendered shloka/ashlokar.html.erb within layouts/application (Duration: 0.2ms | Allocations: 109)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 3340)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 4461)
+
+
+Started GET "/logging/logout" for 103.37.201.183 at 2022-01-04 15:19:39 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#logout as HTML
+Redirected to http://13.127.46.121/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 322)
+
+
+Started GET "/" for 103.37.201.183 at 2022-01-04 15:19:39 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.4ms | Allocations: 165)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 3405)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 4605)
+
+

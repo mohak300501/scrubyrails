@@ -1,6 +1,6 @@
 class LoggingController < ApplicationController
     def login
-        if params[:password] == Members.first(:select => "password")
+        if params[:password] == Member.first.password
             session[:user] = "sc"
             redirect_to shloka_ashlokar_path
         end
