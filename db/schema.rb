@@ -21,4 +21,10 @@ ActiveRecord::Schema.define(version: 0) do
     t.string "password", limit: 10, null: false
   end
 
+  create_table "shloks", primary_key: "sid", id: :serial, force: :cascade do |t|
+    t.string "title", limit: 100
+    t.string "shlok", limit: 1000
+    t.string "translation", limit: 5000
+  end
+
 end
