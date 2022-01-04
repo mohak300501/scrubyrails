@@ -1,5 +1,5 @@
 class LoggingController < ApplicationController
-    def loging
+    def login
         if Member.find_by(email: params[:email])
             if Member.find_by(email: params[:email]).password == params[:password]
                 session[:user] = "sc"
