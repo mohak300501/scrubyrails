@@ -13,17 +13,23 @@
  *= require_tree .
  *= require_self
  */
- body{
+ body {
     text-align: center;
  }
- .header{
+ .header {
     margin: auto;
     font-size: 2rem;
     background-color: rgba(255, 166, 0, 0.6);
     border-radius: 1.5rem;
     padding: 1.5rem;
 }
-
-.navbar{
+.navbar {
    font-size: 1.2rem;
+}
+.button {
+   margin: auto;
+    font-size: 1rem;
+    background-color: rgba(255, 166, 0, 0.6);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
 }

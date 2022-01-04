@@ -4,12 +4,14 @@
         <%= label_tag :email %><br/>
         <%= text_field_tag :email, nil, :required => true %><br/>
         <%= label_tag :password %><br/>
-        <%= password_field_tag :password, nil, :required => true %>
+        <%= password_field_tag :password, nil, :required => true %><br/>
     </div>
     <div>
         <%= submit_tag "Log In" %>
     </div>
-    <div>
-        <%= @mssg %>
-    </div>
+    <% if @mssg %>
+        <div>
+            <%= @mssg %>
+        </div>
+    <% end %>
 <% end %>
