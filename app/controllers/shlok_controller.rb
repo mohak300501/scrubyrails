@@ -1,4 +1,4 @@
-class ShlokaController < ApplicationController
+class ShlokController < ApplicationController
     def ashlokr
         if session[:admin]
             render "ashlokr"
