@@ -5135,3 +5135,280 @@ Processing by LoggingController#login as HTML
 Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 3678)
 
 
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE DATABASE "scrubyrails_development" ENCODING = 'unicode'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE "myapp_test" ENCODING = 'unicode'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE "scrubyrails_development" ENCODING = 'unicode'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE "myapp_test" ENCODING = 'unicode'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE "scrubyrails_development" ENCODING = 'unicode'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE "myapp_test" ENCODING = 'unicode'[0m
+  [1m[35m (235.3ms)[0m  [1m[35mCREATE DATABASE "scrubyrails" ENCODING = 'unicode'[0m
+Started GET "/config/getuser?index=0" for 209.141.53.74 at 2022-01-04 13:04:44 +0000
+Cannot render console from 209.141.53.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/config/getuser"):
+  
+Started POST "/" for 135.125.246.110 at 2022-01-04 13:05:38 +0000
+Cannot render console from 135.125.246.110! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/.env" for 135.125.246.110 at 2022-01-04 13:05:38 +0000
+Cannot render console from 135.125.246.110! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started GET "/.env" for 2.57.122.80 at 2022-01-04 14:03:07 +0000
+Cannot render console from 2.57.122.80! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started POST "/" for 2.57.122.80 at 2022-01-04 14:03:08 +0000
+Cannot render console from 2.57.122.80! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/logging/login" for 103.37.201.183 at 2022-01-04 14:07:39 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActiveRecord::ConnectionNotEstablished (fe_sendauth: no password supplied
+):
+  
+activerecord (6.1.4.4) lib/active_record/connection_adapters/postgresql_adapter.rb:83:in `rescue in new_client'
+activerecord (6.1.4.4) lib/active_record/connection_adapters/postgresql_adapter.rb:77:in `new_client'
+activerecord (6.1.4.4) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+activerecord (6.1.4.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:882:in `public_send'
+activerecord (6.1.4.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:882:in `new_connection'
+activerecord (6.1.4.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:926:in `checkout_new_connection'
+activerecord (6.1.4.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:905:in `try_to_checkout_new_connection'
+activerecord (6.1.4.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:866:in `acquire_connection'
+activerecord (6.1.4.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:588:in `checkout'
+activerecord (6.1.4.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:428:in `connection'
+activerecord (6.1.4.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:1128:in `retrieve_connection'
+activerecord (6.1.4.4) lib/active_record/connection_handling.rb:327:in `retrieve_connection'
+activerecord (6.1.4.4) lib/active_record/connection_handling.rb:283:in `connection'
+activerecord (6.1.4.4) lib/active_record/migration.rb:611:in `connection'
+activerecord (6.1.4.4) lib/active_record/migration.rb:606:in `build_watcher'
+activerecord (6.1.4.4) lib/active_record/migration.rb:588:in `block in call'
+activerecord (6.1.4.4) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.4.4) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/host_authorization.rb:119:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:268:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.4) lib/rails/engine.rb:539:in `call'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/rack/thread_handler_extension.rb:97:in `process_request'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/request_handler/thread_handler.rb:149:in `accept_and_process_next_request'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/request_handler/thread_handler.rb:110:in `main_loop'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/request_handler.rb:415:in `block (3 levels) in start_threads'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/utils.rb:113:in `block in create_thread_and_abort_on_exception'
+Started GET "/logging/login" for 103.37.201.183 at 2022-01-04 14:15:26 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#login as HTML
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 3787)
+
+
+  
+NameError (uninitialized constant LoggingController::Admin):
+  
+app/controllers/logging_controller.rb:3:in `login'
+Started GET "/.env" for 185.254.196.218 at 2022-01-04 14:16:07 +0000
+Cannot render console from 185.254.196.218! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started POST "/" for 185.254.196.218 at 2022-01-04 14:16:08 +0000
+Cannot render console from 185.254.196.218! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/logging/login" for 103.37.201.183 at 2022-01-04 14:18:41 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#login as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2431)
+
+
+  
+NameError (uninitialized constant LoggingController::Admin):
+  
+app/controllers/logging_controller.rb:3:in `login'
+Started GET "/logging/login" for 103.37.201.183 at 2022-01-04 14:18:50 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#login as HTML
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 3787)
+
+
+  
+NameError (uninitialized constant LoggingController::Admin):
+  
+app/controllers/logging_controller.rb:3:in `login'
+Started GET "/logging/login" for 103.37.201.183 at 2022-01-04 14:21:47 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#login as HTML
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 3778)
+
+
+  
+NameError (uninitialized constant LoggingController::Members):
+  
+app/controllers/logging_controller.rb:3:in `login'
+Started GET "/" for 59.98.172.202 at 2022-01-04 14:26:24 +0000
+Cannot render console from 59.98.172.202! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.7ms | Allocations: 217)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 7105)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.0ms | Allocations: 8638)
+
+
+Started GET "/" for 186.33.66.58 at 2022-01-04 14:26:58 +0000
+Cannot render console from 186.33.66.58! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 3039)
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.0ms | Allocations: 3460)
+
+
+Started GET "/" for 64.62.197.2 at 2022-01-04 14:28:00 +0000
+Cannot render console from 64.62.197.2! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 3039)
+Completed 200 OK in 9ms (Views: 8.1ms | Allocations: 3416)
+
+
+  [1m[35m (10.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1409038475602093665)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-01-04 14:36:20.622702"], ["updated_at", "2022-01-04 14:36:20.622702"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(1409038475602093665)[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/logging/login" for 103.37.201.183 at 2022-01-04 14:37:17 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoggingController#login as HTML
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 3775)
+
+
+  
+NameError (uninitialized constant LoggingController::Members):
+  
+app/controllers/logging_controller.rb:3:in `login'
+Started GET "/wp-config.inc" for 128.199.197.12 at 2022-01-04 14:37:30 +0000
+Cannot render console from 128.199.197.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/wp-config.inc"):
+  
+Started GET "/wp-config.old" for 128.199.197.12 at 2022-01-04 14:37:31 +0000
+Cannot render console from 128.199.197.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/wp-config.old"):
+  
+Started GET "/wp-config.php.bak" for 128.199.197.12 at 2022-01-04 14:37:31 +0000
+Cannot render console from 128.199.197.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/wp-config.php.bak"):
+  
+Started GET "/wp-config.php.dist" for 128.199.197.12 at 2022-01-04 14:37:31 +0000
+Cannot render console from 128.199.197.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/wp-config.php.dist"):
+  
+Started GET "/wp-config.php.inc" for 128.199.197.12 at 2022-01-04 14:37:31 +0000
+Cannot render console from 128.199.197.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/wp-config.php.inc"):
+  
+Started GET "/wp-config.php.old" for 128.199.197.12 at 2022-01-04 14:37:32 +0000
+Cannot render console from 128.199.197.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/wp-config.php.old"):
+  
+Started GET "/wp-config.php~" for 128.199.197.12 at 2022-01-04 14:37:32 +0000
+Cannot render console from 128.199.197.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/wp-config.php~"):
+  
+Started GET "/wp-config.php.txt" for 128.199.197.12 at 2022-01-04 14:37:32 +0000
+Cannot render console from 128.199.197.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/wp-config.php.txt"):
+  
+Started GET "/wp-config.txt" for 128.199.197.12 at 2022-01-04 14:37:32 +0000
+Cannot render console from 128.199.197.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/wp-config.txt"):
+  
+Started GET "/.env" for 128.199.197.12 at 2022-01-04 14:37:33 +0000
+Cannot render console from 128.199.197.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started GET "/phpinfo.php" for 128.199.197.12 at 2022-01-04 14:37:33 +0000
+Cannot render console from 128.199.197.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/phpinfo.php"):
+  
+Started GET "/info.php" for 128.199.197.12 at 2022-01-04 14:37:33 +0000
+Cannot render console from 128.199.197.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/info.php"):
+  
+Started GET "/_profiler/phpinfo" for 128.199.197.12 at 2022-01-04 14:37:33 +0000
+Cannot render console from 128.199.197.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/_profiler/phpinfo"):
+  
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1409038475602093665)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1409038475602093665)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/logging/login" for 103.37.201.183 at 2022-01-04 14:47:49 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoggingController#login as HTML
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 3775)
+
+
+  
+NameError (uninitialized constant LoggingController::Members):
+  
+app/controllers/logging_controller.rb:3:in `login'
