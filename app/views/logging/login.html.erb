@@ -9,7 +9,7 @@
     <div>
         <%= submit_tag "Log In", :class => "button" %>
     </div>
-    <% if @mssg %>
+    <% if @mssg.nil? %>
         <div>
             <%= @mssg %>
         </div>
