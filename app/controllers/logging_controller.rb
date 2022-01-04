@@ -1,6 +1,6 @@
 class LoggingController < ApplicationController
     def login
-        if params[:password] == ENV["ADMIN_ACCESS"]
+        if params[:password] == Rails.application.credentials.admin[:ADMIN_ACCESS]
             session[:user] = "sc"
             redirect_to shloka_ashlokar_path
         end
