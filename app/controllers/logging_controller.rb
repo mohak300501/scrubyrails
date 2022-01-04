@@ -1,6 +1,6 @@
 class LoggingController < ApplicationController
     def login
-        @mssg = null
+        @mssg = nil
         if Member.find_by(email: params[:email])
             if Member.find_by(email: params[:email]).password == params[:password]
                 session[:user] = "sc"
