@@ -1,8 +1,14 @@
 class LoggingController < ApplicationController
     def login
-        if params[:password] == Member.first.password
-            session[:user] = "sc"
-            redirect_to shloka_ashlokar_path
+        if Member.find_by(params[:email])
+            if Member.find_by(params[:email]).password == params[:password]
+                session[:user] = "sc"
+                redirect_to shloka_ashlokar_path
+            else
+                @mssg = "Password does not match"
+            end
+        else
+            @mssg = "Email not found"
         end
     end
     def logout
