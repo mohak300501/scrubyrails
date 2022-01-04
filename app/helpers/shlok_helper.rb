@@ -1,2 +1,2 @@
-module ShlokaHelper
+module ShlokHelper
 end
