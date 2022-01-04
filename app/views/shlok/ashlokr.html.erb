@@ -5,3 +5,11 @@
         <%= msg %>
     </div>
 <% end %>
+<br/><br/>
+<% for i in @shloks do %>
+    <div class="shlok">
+        <%= i.title %><br/>
+        <%= i.shlok %><br/>
+        <%= i.translation %>
+    </div>
+<% end %>

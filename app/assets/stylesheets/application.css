@@ -36,3 +36,7 @@
     box-shadow: -3px 3px 10px black;
     cursor: pointer;
 }
+.shlok {
+   border: 1px solid black;
+   margin: 1em auto;
+}

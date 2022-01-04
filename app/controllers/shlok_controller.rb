@@ -1,6 +1,7 @@
 class ShlokController < ApplicationController
     def ashlokr
         if session[:admin]
+            @shloks = Shlok.all
             render "ashlokr"
         else
             redirect_to root_url
