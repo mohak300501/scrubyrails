@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'welcome#home'
   get "logging/login"
   get "logging/logout"
-  post "logging/login"
+  post "logging/loging"
   get "shloka/rshloka"
   get "shloka/ashlokar"
   get "events/revents"
