@@ -1,6 +1,6 @@
 require "test_helper"
 
-class ShlokaControllerTest < ActionDispatch::IntegrationTest
+class ShlokControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

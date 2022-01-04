@@ -6,7 +6,7 @@ class LoggingController < ApplicationController
         if @admin
             if @admin.password == params[:password]
                 session[:admin] = @admin.name
-                redirect_to shloka_ashlokar_path
+                redirect_to shlok_ashlokr_path
             else
                 flash[:notice] = "Password does not match"
                 redirect_to logging_login_path
