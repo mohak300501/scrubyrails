@@ -1,10 +1,11 @@
 class LoggingController < ApplicationController
     def login
     end
-    def loging
-        unless Member.find_by(email: params[:email]).nil?
-            if Member.find_by(email: params[:email]).password == params[:password]
-                session[:user] = "sc"
+    def loginp
+        @admin = Member.find_by(email: params[:email])
+        if @admin
+            if @admin.password == params[:password]
+                session[:admin] = @admin.name
                 redirect_to shloka_ashlokar_path
             else
                 flash[:notice] = "Password does not match"

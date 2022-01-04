@@ -1,1 +1,7 @@
-<div><b>Namaste</b></div>
+<div><b>नमस्ते</b></div>
+<%= link_to "Create New Shloka", "../shloka/ashlokac" %>
+<% flash.each do |type, msg| %>
+    <div>
+        <%= msg %>
+    </div>
+<% end %>
