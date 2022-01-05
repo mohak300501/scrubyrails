@@ -30,7 +30,7 @@ class ShlokController < ApplicationController
 
     def ashloku
         if session[:admin]
-            @shlok = Shlok.find(:id)
+            @shlok = Shlok.find_by(sid: :id)
             render "ashloku"
         else
             redirect_to root_url
