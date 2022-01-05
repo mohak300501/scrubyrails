@@ -1,7 +1,7 @@
 <div><b>नमस्ते</b></div>
 <%= link_to "Back", "../shlok/ashlokr" %>
 <h1>श्लोक-परिवर्तनं करोतु</h1>
-<%= form_tag shlok_path(@id) do %>
+<%= form_tag shlok_ashloku_path(@id) do %>
     <div>
         <%= label_tag :title %><br/>
         <%= text_field_tag :title, @shlok.title, :required => true %><br/>
