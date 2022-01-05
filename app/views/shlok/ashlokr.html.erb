@@ -18,10 +18,10 @@
             <%= i.translation.html_safe %><br/>
         </div>
         <% path = "../shlok/" + i.sid.to_s %>
-        <%= link_to path %>
+        <%= link_to path do %>
             <div class="button">परिवर्तयतु</div>
         <% end %>
-        <%= link_to path + "/del" %>
+        <%= link_to path + "/del" do %>
             <div class="button">विनश्यतु</div>
         <% end %>
     </div>
