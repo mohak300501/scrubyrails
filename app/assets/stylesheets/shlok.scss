@@ -21,7 +21,7 @@
         background-color: rgba(0, 0, 0, 0.95);
         height: 100%;
         left: 0;
-        opacity: 0.75;
+        opacity: 0.65;
         position: absolute;
         top: 0;
         width: 100%;
@@ -30,12 +30,15 @@
         margin: 1rem auto;
         font-size: 1.1rem;
         background-color: #000;
-        color: #f2f2f2;
         background-image: url(https://dl.dropbox.com/s/gz96744xfcfy54o/bg.jpeg?dl=0);
         background-position: bottom;
         background-size: cover;
         background-attachment: fixed;
         position: relative;
+
+        p {
+            color: #f2f2f2;
+        }
     }
     .translation {
         margin: 1rem auto;
@@ -46,11 +49,16 @@
     .updel {
         display: flex;
         margin: auto;
+        justify-content: center;
 
         a {
             text-decoration: none;
+            color: black;
         }
-        a+a {
+        a:visited {
+            color: black;
+        }
+        a + a {
             margin-left: 1rem;
         }
     }
