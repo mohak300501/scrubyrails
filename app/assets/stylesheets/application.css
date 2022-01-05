@@ -36,4 +36,5 @@
     border: none;
     box-shadow: -3px 3px 10px rgb(100, 100, 100);
     cursor: pointer;
+    width: fit-content;
 }

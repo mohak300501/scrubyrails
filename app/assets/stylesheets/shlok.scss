@@ -16,9 +16,8 @@
         font-weight: bold;
         font-size: 1.2rem;
     }
-    .shlok ::before {
+    .shlok:before {
         content: '';
-        display: block;
         background-color: rgba(0, 0, 0, 0.95);
         height: 100%;
         left: 0;
@@ -26,7 +25,6 @@
         position: absolute;
         top: 0;
         width: 100%;
-        z-index: 1;
     }
     .shlok {
         margin: 1rem auto;

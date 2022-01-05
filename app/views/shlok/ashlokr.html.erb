@@ -1,28 +1,37 @@
 <div><b>नमस्ते</b></div>
+
 <%= link_to "नूतनः श्लोकः योजयतु", "../shlok/ashlokc" %>
+
 <% flash.each do |type, msg| %>
     <div>
         <%= msg %>
     </div>
 <% end %>
+
 <br/><br/>
+
 <% for i in @shloks do %>
     <div class="shloks">
         <div class="title">
             <%= i.title %><br/>
         </div>
+
         <div class="shlok">
             <%= i.shlok.html_safe %><br/>
         </div>
+
         <div class="translation">
             <%= i.translation.html_safe %><br/>
         </div>
+
         <% path = "../shlok/" + i.sid.to_s %>
-        <%= link_to path do %>
-            <div class="button">परिवर्तयतु</div>
-        <% end %>
-        <%= link_to path + "/del" do %>
-            <div class="button">विनश्यतु</div>
-        <% end %>
+        <div style="display: flex;">
+            <%= link_to path do %>
+                <div class="button">परिवर्तयतु</div>
+            <% end %>
+            <%= link_to path + "/del" do %>
+                <div class="button">विनश्यतु</div>
+            <% end %>
+        </div>
     </div>
 <% end %>
