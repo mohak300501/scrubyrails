@@ -11,8 +11,8 @@
         <%= i.title %><br/>
         <%= i.shlok %><br/>
         <%= i.translation %><br/>
-        <%= i.sid %>
-        <%= link_to "Update" %>
-        <%= link_to "Delete" %>
+        <% path = "../shlok/" + i.sid %>
+        <%= link_to "Update", path %>
+        <%= link_to "Delete", path %>
     </div>
 <% end %>

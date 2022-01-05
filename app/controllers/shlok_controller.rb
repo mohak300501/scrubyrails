@@ -48,5 +48,6 @@ class ShlokController < ApplicationController
     def ashlokdp
         shlok = Shlok.find(params[:id])
         shlok.destroy
+        redirect_to shlok_ashlokr_path
     end
 end
