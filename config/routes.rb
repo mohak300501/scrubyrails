@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get "shlok/ashlokc"
   post "shlok/ashlokcp"
   get "shlok/:id", to:"shlok#ashloku"
-  put "shlok/:id", to: "shlok#ashlokup"
+  post "shlok/:id", to: "shlok#ashlokup"
   delete "shlok/:id", to:"shlok#ashlokdp"
 
   get "events/revents"
