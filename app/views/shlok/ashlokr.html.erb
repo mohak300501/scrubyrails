@@ -9,8 +9,8 @@
 <% for i in @shloks do %>
     <div class="shlok">
         <%= i.title %><br/>
-        <%= i.shlok %><br/>
-        <%= i.translation %><br/>
+        <%= i.shlok.html_safe %><br/>
+        <%= i.translation.html_safe %><br/>
         <% path = "../shlok/" + i.sid.to_s %>
         <%= link_to "Update", path %>
         <%= link_to "Delete", path + "/del" %>
