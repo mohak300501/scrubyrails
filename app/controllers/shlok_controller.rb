@@ -30,8 +30,7 @@ class ShlokController < ApplicationController
 
     def ashloku
         if session[:admin]
-            @id = :id
-            session[:test] = :id
+            @id = params[:id]
             @shlok = Shlok.find_by(sid: @id)
             render "ashloku"
         else
