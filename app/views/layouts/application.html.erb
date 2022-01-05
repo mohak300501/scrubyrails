@@ -18,7 +18,7 @@
         </div>
 
         <% if session[:admin] || session[:user] %>
-            <div style="display: flex; flex: 1;">
+            <div class="logger">
                 <div><%= link_to "Logout", "../logging/logout" %></div>
                 <div>Logged in as <%= session[:admin] ? session[:admin] : session[:user] %>.</div>
                 <div>

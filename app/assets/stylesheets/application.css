@@ -38,3 +38,8 @@
     cursor: pointer;
     width: fit-content;
 }
+.logger {
+    display: grid;
+    grid-template-columns: 1fr repeat(1, auto) 1fr;
+    justify-items: center;
+}
