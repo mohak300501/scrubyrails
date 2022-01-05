@@ -6,7 +6,7 @@
     box-shadow: -3px 3px 10px rgb(100, 100, 100);
     margin: 1rem auto;
     width: 90%;
-    padding: 1rem;
+    padding: 1rem 0;
     border-radius: 0.5rem;
     
     .title {
@@ -28,8 +28,9 @@
     }
     .shlok {
         margin: 1rem auto;
+        font-size: 1.1rem;
         background-color: #000;
-        color: #bfbfbf;
+        color: #f2f2f2;
         background-image: url(https://dl.dropbox.com/s/gz96744xfcfy54o/bg.jpeg?dl=0);
         background-position: bottom;
         background-size: cover;
@@ -38,7 +39,19 @@
     }
     .translation {
         margin: 1rem auto;
+        font-size: 1.1rem;
         width: 90%;
         text-align: left;
+    }
+    .updel {
+        display: flex;
+        margin: auto;
+
+        a {
+            text-decoration: none;
+        }
+        a+a {
+            margin-left: 1rem;
+        }
     }
  }
