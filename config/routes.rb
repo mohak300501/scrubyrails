@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   post "logging/loginp"
   get "logging/logout"
 
-  get "shloks", to:"shlok#rshlok"
+  get "shlok/rshlok"
   get "shlok/ashlokr"
   get "shlok/ashlokc"
   post "shlok/ashlokcp"
@@ -14,6 +14,6 @@ Rails.application.routes.draw do
   put "shlok/:id", to: "shlok#ashlokup"
   delete "shlok/:id", to:"shlok#ashlokdp"
 
-  get "events", to:"events/revents"
+  get "events/revents"
   get "resource/firstresource"
 end
