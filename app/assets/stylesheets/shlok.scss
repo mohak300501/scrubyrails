@@ -37,6 +37,12 @@
         background-size: cover;
         background-attachment: fixed;
         position: relative;
+
+        p {
+            color: #f2f2f2;
+            position: relative;
+            z-index: 2;
+        }
     }
     .translation {
         margin: 1rem auto;
