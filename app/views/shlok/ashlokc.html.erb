@@ -3,11 +3,11 @@
 <h1>नूतनः श्लोकः योजयतु</h1>
 <%= form_tag do %>
     <div>
-        <%= label_tag :title "शीर्षकं" %><br/>
+        <%= label_tag "शीर्षकं" %><br/>
         <%= text_field_tag :title, nil, :required => true, class: "textfield" %><br/>
-        <%= label_tag :shlok "श्लोकः" %><br/>
+        <%= label_tag "श्लोकः" %><br/>
         <%= text_area_tag :shlok, nil, :required => true, class: "textarea-1" %><br/>
-        <%= label_tag :translation "अनुवादः" %><br/>
+        <%= label_tag "अनुवादः" %><br/>
         <%= text_area_tag :translation, nil, :required => true, class: "textarea-2" %>
     </div>
     <div>
