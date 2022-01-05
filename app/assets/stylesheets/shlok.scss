@@ -1,3 +1,29 @@
 // Place all the styles related to the Shlok controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.shloks {
+    box-shadow: -3px 3px 10px brgb(100, 100, 100);
+    margin: 1em auto;
+    width: 90%;
+    .title {
+        margin: 1em auto;
+        width: 90%;
+        text-align: left;
+        font-weight: bold;
+    }
+    .shlok {
+        margin: 1em auto;
+        width: 90%;
+        text-align: left;
+    }
+    .translation {
+        background-color: #000;
+        color: #bfbfbf;
+        background-image: url(https://dl.dropbox.com/s/gz96744xfcfy54o/bg.jpeg?dl=0);
+        background-position: bottom;
+        background-size: cover;
+        background-attachment: fixed;
+        position: relative;
+    }
+ }

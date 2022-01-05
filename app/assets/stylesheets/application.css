@@ -15,6 +15,7 @@
  */
  body {
     text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
  }
  .header {
     margin: auto;
@@ -33,10 +34,6 @@
     border-radius: 0.5rem;
     padding: 0.5rem;
     border: none;
-    box-shadow: -3px 3px 10px black;
+    box-shadow: -3px 3px 10px brgb(100, 100, 100);
     cursor: pointer;
-}
-.shlok {
-   border: 1px solid black;
-   margin: 1em auto;
 }

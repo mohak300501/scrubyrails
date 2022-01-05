@@ -7,10 +7,16 @@
 <% end %>
 <br/><br/>
 <% for i in @shloks do %>
-    <div class="shlok">
-        <%= i.title %><br/>
-        <%= i.shlok.html_safe %><br/>
-        <%= i.translation.html_safe %><br/>
+    <div class="shloks">
+        <div class="title">
+            <%= i.title %><br/>
+        </div>
+        <div class="shlok">
+            <%= i.shlok.html_safe %><br/>
+        </div>
+        <div class="translations">
+            <%= i.translation.html_safe %><br/>
+        </div>
         <% path = "../shlok/" + i.sid.to_s %>
         <%= link_to "Update", path %>
         <%= link_to "Delete", path + "/del" %>
