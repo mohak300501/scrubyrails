@@ -1,33 +1,62 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Scrubyrails</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+    <head>
+        <title>Sanskrit Club | IIT Roorkee</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1"/>
+        <meta name="description" content="The official dynamic website of the Sanskrit Club - IIT Roorkee"/>
+        <meta name="keywords" content="iit roorkee iitr sanskrit club"/>
+        <%= csrf_meta_tags %>
+        <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+        <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
 
-  <body>
-    <div class="header">
-      आ नो भद्राः क्रतवो यन्तु विश्वतः।
-    </div>
-    <% if session[:admin] %>
-      Logged in as <%= session[:admin] %>.<br/>
-      <%= link_to "Logout", "../logging/logout" %>
-    <% else %>
-      <div>
-        <%= link_to "Login", "../logging/login" %>
-      </div>
-    <% end %>
-    <div class="navbar">
-      <%= link_to "Home", "../" %>
-      <%= link_to "Events", "../events/revents" %>
-      <%= link_to "Shlok", "../shlok/rshlok" %>
-      <%= link_to "Resources", "../resource/firstresource" %>
-    </div>
-      <%= yield %>
-  </body>
+    <body>
+        <div class="header">
+            आ नो भद्राः क्रतवो यन्तु विश्वतः।
+        </div>
+
+        <% if session[:admin] || session[:user] %>
+            <div style="display: flex; flex: 1;">
+                <div><%= link_to "Logout", "../logging/logout" %></div>
+                <div>Logged in as <%= session[:admin] ? session[:admin] : session[:user] %>.</div>
+                <div>
+                    <% if session[:user] %>
+                        <%= link_to "Profile", "../" %>
+                    <% end %>
+                </div>
+            </div>
+        <% else %>
+            <div>
+                <%= link_to "Login as member", "../logging/login" %>
+                <%= link_to "Login as user", "../logging/login" %>
+            </div>
+        <% end %>
+
+        <% if session[:admin] %>
+            <div class="navbar">
+                <%= link_to "Home", "../" %>
+                <%= link_to "Events", "../events/revents" %>
+                <%= link_to "Shlok", "../shlok/ashlokr" %>
+                <%= link_to "Resources", "../resource/firstresource" %>
+            </div>
+        <% else %>
+            <div class="navbar">
+                <%= link_to "Home", "../" %>
+                <%= link_to "Events", "../events/revents" %>
+                <%= link_to "Shlok", "../shlok/rshlok" %>
+                <%= link_to "Resources", "../resource/firstresource" %>
+            </div>
+        <% end %>
+
+        <%= yield %>
+
+        <div class="footer">
+            <%= link_to "About", "../" %>
+            <%= link_to "How to Use", "../events/revents" %>
+            <%= link_to "Terms", "../shlok/rshlok" %>
+            <%= link_to "Feedback", "../resource/firstresource" %>
+        </div>
+    </body>
 </html>
