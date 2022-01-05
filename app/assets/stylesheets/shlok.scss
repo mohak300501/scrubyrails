@@ -10,11 +10,11 @@
     border-radius: 0.5rem;
     
     .title {
-        margin: 1rem auto;
+        margin: 1rem auto 0.5rem;
         width: 90%;
         text-align: left;
         font-weight: bold;
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
     .shlok:before {
         content: '';
@@ -28,7 +28,8 @@
     }
     .shlok {
         margin: 1rem auto;
-        font-size: 1.1rem;
+        padding: 1rem;
+        font-size: 1.2rem;
         background-color: #000;
         background-image: url(https://dl.dropbox.com/s/gz96744xfcfy54o/bg.jpeg?dl=0);
         background-position: bottom;
@@ -38,7 +39,7 @@
     }
     .translation {
         margin: 1rem auto;
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         width: 90%;
         text-align: left;
     }
