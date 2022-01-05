@@ -6,12 +6,27 @@
     box-shadow: -3px 3px 10px rgb(100, 100, 100);
     margin: 1rem auto;
     width: 90%;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    
     .title {
-        margin: 1em auto;
+        margin: 1rem auto;
         width: 90%;
         text-align: left;
         font-weight: bold;
         font-size: 1.2rem;
+    }
+    .shlok ::before {
+        content: '';
+        display: block;
+        background-color: rgba(0, 0, 0, 0.95);
+        height: 100%;
+        left: 0;
+        opacity: 0.75;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1;
     }
     .shlok {
         margin: 1rem auto;
