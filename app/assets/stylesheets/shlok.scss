@@ -3,21 +3,18 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .shloks {
-    box-shadow: -3px 3px 10px brgb(100, 100, 100);
-    margin: 1em auto;
+    box-shadow: -3px 3px 10px rgb(100, 100, 100);
+    margin: 1rem auto;
     width: 90%;
     .title {
         margin: 1em auto;
         width: 90%;
         text-align: left;
         font-weight: bold;
+        font-size: 1.2rem;
     }
     .shlok {
-        margin: 1em auto;
-        width: 90%;
-        text-align: left;
-    }
-    .translation {
+        margin: 1rem auto;
         background-color: #000;
         color: #bfbfbf;
         background-image: url(https://dl.dropbox.com/s/gz96744xfcfy54o/bg.jpeg?dl=0);
@@ -25,5 +22,10 @@
         background-size: cover;
         background-attachment: fixed;
         position: relative;
+    }
+    .translation {
+        margin: 1rem auto;
+        width: 90%;
+        text-align: left;
     }
  }
