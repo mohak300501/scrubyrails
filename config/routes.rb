@@ -10,9 +10,9 @@ Rails.application.routes.draw do
   get "shlok/ashlokr"
   get "shlok/ashlokc"
   post "shlok/ashlokcp"
-  get "shlokupdate/:id", to:"shlok#ashloku"
-  put "shlokupdate/:id", to: "shlok#ashlokup"
-  delete "shlokdelete/:id", to:"shlok#ashlokdp"
+  get "shlok/:id", to:"shlok#ashloku"
+  put "shlok/:id", to: "shlok#ashlokup"
+  delete "shlok/:id", to:"shlok#ashlokdp"
 
   get "events", to:"events/revents"
   get "resource/firstresource"
