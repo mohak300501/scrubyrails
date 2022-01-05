@@ -1,4 +1,9 @@
 class ShlokController < ApplicationController
+    def rshlok
+        @shloks = Shlok.all
+        render "rshlok"
+    end
+
     def ashlokr
         if session[:admin]
             @shloks = Shlok.all
@@ -24,11 +29,23 @@ class ShlokController < ApplicationController
     end
 
     def ashloku
-    end
-
-    def ashlokd
-        unless session[:admin]
+        if session[:admin]
+            @shlok = Shlok.find(:id)
+            render "ashloku"
+        else
             redirect_to root_url
         end
+    end
+
+    def ashlokup
+        shlok = Shlok.find(:id)
+        shlok.update(:title => params[:title], :shlok => params[:shlok], :translation => params[:translation])
+        flash[:notice] = "श्लोकः परिवर्तितः जातः!"
+        redirect_to shlok_ashlokr_path
+    end
+
+    def ashlokdp
+        shlok = Shlok.find(:id)
+        shlok.destroy
     end
 end

@@ -1,6 +1,9 @@
 <div style="text-align:center;">
-विभूषितानङ्गरिपूत्तमाङ्गा<br>
-सद्यः कृतानेकजनार्तिभङ्गा |<br>
-मनोहरोत्तुङ्गचलत्तरङ्गा<br>
-गङ्गा ममाङ्गान्यमलीकरोतु ||<br>
+<% for i in @shloks do %>
+    <div class="shlok">
+        <%= i.title %><br/>
+        <%= i.shlok %><br/>
+        <%= i.translation %>
+    </div>
+<% end %>
 </div>
