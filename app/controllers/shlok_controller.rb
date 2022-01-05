@@ -39,14 +39,14 @@ class ShlokController < ApplicationController
     end
 
     def ashlokup
-        shlok = Shlok.find(:id)
+        shlok = Shlok.find(params[:id])
         shlok.update(:title => params[:title], :shlok => params[:shlok], :translation => params[:translation])
         flash[:notice] = "श्लोकः परिवर्तितः जातः!"
         redirect_to shlok_ashlokr_path
     end
 
     def ashlokdp
-        shlok = Shlok.find(:id)
+        shlok = Shlok.find(params[:id])
         shlok.destroy
     end
 end
