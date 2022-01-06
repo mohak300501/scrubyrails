@@ -1,15 +1,17 @@
 <div><b>नमस्ते</b></div>
 
-<%= link_to "Back", "../shlok/ashlokr" %>
+<%= link_to "Back", "../shlok/mshlokr" %>
 
 <h1>नूतनः श्लोकः योजयतु</h1>
 
-<%= form_tag "../shlok/ashlokcp" do %>
+<%= form_tag "../shlok/mshlokcp" do %>
     <div>
         <%= label_tag "शीर्षकं" %><br/>
         <%= text_field_tag :title, nil, :required => true, class: "textfield" %><br/><br/>
         <%= label_tag "श्लोकः" %><br/>
         <%= text_area_tag :shlok, nil, :required => true, class: "textarea-1" %><br/><br/>
+        <%= label_tag "श्रव्यसञ्चिका" %><br/>
+        <%= file_field_tag :audio, nil, :required => true %><br/><br/>
         <%= label_tag "अनुवादः" %><br/>
         <%= text_area_tag :translation, nil, :required => true, class: "textarea-2" %><br/>
     </div>

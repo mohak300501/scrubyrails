@@ -17,10 +17,10 @@
             आ नो भद्राः क्रतवो यन्तु विश्वतः।
         </div>
 
-        <% if session[:admin] || session[:user] %>
+        <% if session[:member] || session[:user] %>
             <div class="logger">
                 <div><%= link_to "Logout", "../logging/logout" %></div>
-                <div>Logged in as <%= session[:admin] ? session[:admin] : session[:user] %>.</div>
+                <div>Logged in as <%= session[:member] ? session[:member] : session[:user] %>.</div>
                 <div>
                     <% if session[:user] %>
                         <%= link_to "Profile", "../" %>
@@ -34,18 +34,18 @@
             </div>
         <% end %>
 
-        <% if session[:admin] %>
+        <% if session[:member] %>
             <div class="navbar">
                 <%= link_to "Home", "../" %>
-                <%= link_to "Events", "../events/revents" %>
-                <%= link_to "Shlok", "../shlok/ashlokr" %>
+                <%= link_to "Events", "../events/uevents" %>
+                <%= link_to "Shlok", "../shlok/mshlokr" %>
                 <%= link_to "Resources", "../resource/firstresource" %>
             </div>
         <% else %>
             <div class="navbar">
                 <%= link_to "Home", "../" %>
-                <%= link_to "Events", "../events/revents" %>
-                <%= link_to "Shlok", "../shlok/rshlok" %>
+                <%= link_to "Events", "../events/uevents" %>
+                <%= link_to "Shlok", "../shlok/ushlok" %>
                 <%= link_to "Resources", "../resource/firstresource" %>
             </div>
         <% end %>
@@ -54,8 +54,8 @@
 
         <div class="footer">
             <%= link_to "About", "../" %>
-            <%= link_to "How to Use", "../events/revents" %>
-            <%= link_to "Terms", "../shlok/rshlok" %>
+            <%= link_to "How to Use", "../events/uevents" %>
+            <%= link_to "Terms", "../shlok/ushlok" %>
             <%= link_to "Feedback", "../resource/firstresource" %>
         </div>
     </body>

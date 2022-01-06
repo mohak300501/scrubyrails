@@ -2,11 +2,11 @@ class LoggingController < ApplicationController
     def login
     end
     def loginp
-        @admin = Member.find_by(email: params[:email])
-        if @admin
-            if @admin.password == params[:password]
-                session[:admin] = @admin.name
-                redirect_to shlok_ashlokr_path
+        @member = Member.find_by(email: params[:email])
+        if @member
+            if @member.password == params[:password]
+                session[:member] = @member.name
+                redirect_to shlok_mshlokr_path
             else
                 flash[:notice] = "Password does not match"
                 redirect_to logging_login_path
@@ -17,7 +17,7 @@ class LoggingController < ApplicationController
         end
     end
     def logout
-        session.delete(:admin)
+        session.delete(:member)
         redirect_to root_url
     end
 end

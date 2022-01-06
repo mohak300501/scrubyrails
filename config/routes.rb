@@ -6,14 +6,14 @@ Rails.application.routes.draw do
   post "logging/loginp"
   get "logging/logout"
 
-  get "shlok/rshlok"
-  get "shlok/ashlokr"
-  get "shlok/ashlokc"
-  post "shlok/ashlokcp"
-  get "shlok/:id", to:"shlok#ashloku"
-  post "shlok/:id", to: "shlok#ashlokup"
-  get "shlok/:id/del", to:"shlok#ashlokdp"
+  get "shlok/ushlok"
+  get "shlok/mshlokr"
+  get "shlok/mshlokc"
+  post "shlok/mshlokcp"
+  get "shlok/:id", to:"shlok#mshloku"
+  post "shlok/:id", to: "shlok#mshlokup"
+  get "shlok/:id/del", to:"shlok#mshlokdp"
 
-  get "events/revents"
+  get "events/uevents"
   get "resource/firstresource"
 end

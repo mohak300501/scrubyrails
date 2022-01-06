@@ -1,53 +1,53 @@
 class ShlokController < ApplicationController
-    def rshlok
+    def ushlok
         @shloks = Shlok.all
-        render "rshlok"
+        render "ushlok"
     end
 
-    def ashlokr
-        if session[:admin]
+    def mshlokr
+        if session[:member]
             @shloks = Shlok.all
-            render "ashlokr"
+            render "mshlokr"
         else
             redirect_to root_url
         end
     end
 
-    def ashlokc
-        if session[:admin]
-            render "ashlokc"
+    def mshlokc
+        if session[:member]
+            render "mshlokc"
         else
             redirect_to root_url
         end
     end
 
-    def ashlokcp
-        shlok = Shlok.new(:title => params[:title], :shlok => params[:shlok], :translation => params[:translation])
+    def mshlokcp
+        shlok = Shlok.new(:title => params[:title], :shlok => params[:shlok], :translation => params[:translation], :updated_by => session[:member])
         shlok.save
         flash[:notice] = "नूतनः श्लोकः योजितः जातः!"
-        redirect_to shlok_ashlokr_path
+        redirect_to shlok_mshlokr_path
     end
 
-    def ashloku
-        if session[:admin]
+    def mshloku
+        if session[:member]
             @id = params[:id]
             @shlok = Shlok.find_by(sid: @id)
-            render "ashloku"
+            render "mshloku"
         else
             redirect_to root_url
         end
     end
 
-    def ashlokup
+    def mshlokup
         shlok = Shlok.find(params[:id])
         shlok.update(:title => params[:title], :shlok => params[:shlok], :translation => params[:translation])
         flash[:notice] = "श्लोकः परिवर्तितः जातः!"
-        redirect_to shlok_ashlokr_path
+        redirect_to shlok_mshlokr_path
     end
 
-    def ashlokdp
+    def mshlokdp
         shlok = Shlok.find(params[:id])
         shlok.destroy
-        redirect_to shlok_ashlokr_path
+        redirect_to shlok_mshlokr_path
     end
 end
