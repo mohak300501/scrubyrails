@@ -28,4 +28,10 @@ ActiveRecord::Schema.define(version: 0) do
     t.string "updated_by", limit: 15
   end
 
+  create_table "users", primary_key: "uid", id: :serial, force: :cascade do |t|
+    t.string "name", limit: 50
+    t.string "email", limit: 50
+    t.string "password", limit: 10
+  end
+
 end

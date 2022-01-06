@@ -14335,3 +14335,106 @@ Processing by ShlokController#mshlokr as HTML
 Completed 200 OK in 18ms (Views: 14.2ms | ActiveRecord: 2.6ms | Allocations: 5033)
 
 
+Started GET "/.env" for 185.254.196.218 at 2022-01-06 05:52:23 +0000
+Cannot render console from 185.254.196.218! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started POST "/" for 185.254.196.218 at 2022-01-06 05:52:24 +0000
+Cannot render console from 185.254.196.218! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/" for 130.211.54.158 at 2022-01-06 05:53:29 +0000
+Cannot render console from 130.211.54.158! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as */*
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.5ms | Allocations: 195)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 3477)
+Completed 200 OK in 10ms (Views: 8.2ms | Allocations: 4679)
+
+
+Started GET "/shlok/ashlokr" for 43.224.3.182 at 2022-01-06 06:37:52 +0000
+Cannot render console from 43.224.3.182! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ShlokController#mshloku as HTML
+  Parameters: {"id"=>"ashlokr"}
+Redirected to http://13.127.46.121/
+Completed 302 Found in 7ms (ActiveRecord: 0.0ms | Allocations: 1768)
+
+
+Started GET "/" for 43.224.3.182 at 2022-01-06 06:37:52 +0000
+Cannot render console from 43.224.3.182! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 1.0ms | Allocations: 410)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | Allocations: 7715)
+Completed 200 OK in 25ms (Views: 23.5ms | ActiveRecord: 0.0ms | Allocations: 10123)
+
+
+Started GET "/.env" for 143.110.227.92 at 2022-01-06 06:53:28 +0000
+Cannot render console from 143.110.227.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started POST "/" for 143.110.227.92 at 2022-01-06 06:53:28 +0000
+Cannot render console from 143.110.227.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/config/getuser?index=0" for 209.141.53.74 at 2022-01-06 06:55:20 +0000
+Cannot render console from 209.141.53.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/config/getuser"):
+  
+Started GET "/.env" for 159.223.152.187 at 2022-01-06 06:57:15 +0000
+Cannot render console from 159.223.152.187! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started POST "/" for 159.223.152.187 at 2022-01-06 06:57:16 +0000
+Cannot render console from 159.223.152.187! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started POST "/" for 135.125.217.54 at 2022-01-06 07:07:40 +0000
+Cannot render console from 135.125.217.54! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/.env" for 135.125.217.54 at 2022-01-06 07:07:41 +0000
+Cannot render console from 135.125.217.54! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started GET "/" for 185.131.241.242 at 2022-01-06 07:15:41 +0000
+Cannot render console from 185.131.241.242! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 45)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 3247)
+Completed 200 OK in 13ms (Views: 11.3ms | Allocations: 3674)
+
+
+Started GET "/" for 136.144.41.117 at 2022-01-06 07:24:42 +0000
+Cannot render console from 136.144.41.117! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 3093)
+Completed 200 OK in 8ms (Views: 7.8ms | Allocations: 3470)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1409038475602093665)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1409038475602093665)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
