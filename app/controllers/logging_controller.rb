@@ -17,24 +17,25 @@ class LoggingController < ApplicationController
         end
     end
 
+    moru = session[:moru] == "member" ? true : false
     def loginp
-        @moru = session[:moru] == "member" ? Member.find_by(email: params[:email]) : User.find_by(email: params[:email])
+        @moru = moru ? Member.find_by(email: params[:email]) : User.find_by(email: params[:email])
         if @moru
             if @moru.password == params[:password]
-                session[session[:moru] == "member" ? :member : :user ] = @moru.name
+                session[moru ? :member : :user ] = @moru.name
                 redirect_to root_url
             else
                 flash[:notice] = "Password does not match"
-                redirect_to logging_login_path
+                redirect_to moru ? member_login_path : user_login_path
             end
         else
             flash[:notice] = "Email not found"
-            redirect_to logging_login_path
+            redirect_to moru ? member_login_path : user_login_path
         end
     end
 
     def logout
-        session.delete(session[:moru] == "member" ? :member : :user)
+        session.delete(moru ? :member : :user)
         redirect_to root_url
     end
 end

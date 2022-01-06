@@ -4,14 +4,14 @@ Rails.application.routes.draw do
 
     get "logging/mlogin", as:"member_login"
     get "logging/ulogin", as:"user_login"
-    post "logging/loginp"
-    get "logging/logout"
+    post "logging/loginp", as:"login_post"
+    get "logging/logout", as:"logout"
 
     get "shlok/ushlok", as:"shloks"
     get "shlok/mshlokr", as:"all_shloks"
     get "shlok/mshlokc", as:"new_shlok"
-    post "shlok/mshlokcp"
-    get "shlok/:id", to:"shlok#mshloku", as:"update_shlok"
+    post "shlok/mshlokcp", as:"shlok_post"
+    get "shlok/:id", to:"shlok#mshloku"
     post "shlok/:id", to: "shlok#mshlokup"
     get "shlok/:id/del", to:"shlok#mshlokdp"
 

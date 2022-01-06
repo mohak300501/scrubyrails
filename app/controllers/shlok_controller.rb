@@ -25,7 +25,7 @@ class ShlokController < ApplicationController
         shlok = Shlok.new(:title => params[:title], :shlok => params[:shlok], :translation => params[:translation], :updated_by => session[:member])
         shlok.save
         flash[:notice] = "नूतनः श्लोकः योजितः जातः!"
-        redirect_to shlok_mshlokr_path
+        redirect_to all_shloks_path
     end
 
     def mshloku
@@ -42,12 +42,12 @@ class ShlokController < ApplicationController
         shlok = Shlok.find(params[:id])
         shlok.update(:title => params[:title], :shlok => params[:shlok], :translation => params[:translation], :updated_by => session[:member])
         flash[:notice] = "श्लोकः परिवर्तितः जातः!"
-        redirect_to shlok_mshlokr_path
+        redirect_to all_shloks_path
     end
 
     def mshlokdp
         shlok = Shlok.find(params[:id])
         shlok.destroy
-        redirect_to shlok_mshlokr_path
+        redirect_to all_shloks_path
     end
 end

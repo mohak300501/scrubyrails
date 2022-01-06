@@ -19,44 +19,44 @@
 
         <% if session[:member] || session[:user] %>
             <div class="logger">
-                <div><%= link_to "Logout", "../logging/logout" %></div>
+                <div><%= link_to "Logout", logout_path %></div>
                 <div>Logged in as <%= session[:member] ? session[:member] : session[:user] %>.</div>
                 <div>
                     <% if session[:user] %>
-                        <%= link_to "Profile", "../" %>
+                        <%= link_to "Profile", root_url %>
                     <% end %>
                 </div>
             </div>
         <% else %>
             <div>
-                <%= link_to "Login as member", "../logging/mlogin" %>
-                <%= link_to "Login as user", "../logging/ulogin" %>
+                <%= link_to "Login as member", member_login_path %>
+                <%= link_to "Login as user", user_login_path %>
             </div>
         <% end %>
 
         <% if session[:member] %>
             <div class="navbar">
-                <%= link_to "Home", "../" %>
-                <%= link_to "Events", "../events/uevents" %>
-                <%= link_to "Shlok", "../shlok/mshlokr" %>
-                <%= link_to "Resources", "../resource/firstresource" %>
+                <%= link_to "Home", root_url %>
+                <%= link_to "Events", events_path %>
+                <%= link_to "Shlok", all_shloks_path %>
+                <%= link_to "Resources", resources_path %>
             </div>
         <% else %>
             <div class="navbar">
-                <%= link_to "Home", "../" %>
-                <%= link_to "Events", "../events/uevents" %>
-                <%= link_to "Shlok", "../shlok/ushlok" %>
-                <%= link_to "Resources", "../resource/firstresource" %>
+                <%= link_to "Home", root_url %>
+                <%= link_to "Events", events_path %>
+                <%= link_to "Shlok", shloks_path %>
+                <%= link_to "Resources", resources_path %>
             </div>
         <% end %>
 
         <%= yield %>
 
         <div class="footer">
-            <%= link_to "About", "../" %>
-            <%= link_to "How to Use", "../events/uevents" %>
-            <%= link_to "Terms", "../shlok/ushlok" %>
-            <%= link_to "Feedback", "../resource/firstresource" %>
+            <%= link_to "About", root_url %>
+            <%= link_to "How to Use", events_path %>
+            <%= link_to "Terms", shloks_path %>
+            <%= link_to "Feedback", resources_path %>
         </div>
     </body>
 </html>
