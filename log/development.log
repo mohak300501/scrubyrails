@@ -13970,3 +13970,368 @@ ActionController::RoutingError (No route matches [POST] "/"):
   [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1409038475602093665)[0m
   [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/shlok/ashlokr" for 103.37.201.183 at 2022-01-06 05:30:30 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ShlokController#mshloku as HTML
+  Parameters: {"id"=>"ashlokr"}
+Redirected to http://13.127.46.121/
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms | Allocations: 1768)
+
+
+Started GET "/" for 103.37.201.183 at 2022-01-06 05:30:30 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 1.3ms | Allocations: 410)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.1ms | Allocations: 7715)
+Completed 200 OK in 16ms (Views: 14.4ms | ActiveRecord: 0.0ms | Allocations: 10123)
+
+
+Started GET "/logging/login" for 103.37.201.183 at 2022-01-06 05:30:34 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 1.5ms | Allocations: 770)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 4011)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 5207)
+
+
+Started POST "/logging/loginp" for 103.37.201.183 at 2022-01-06 05:30:39 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#loginp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"mohak_k@ph.iitr.ac.in", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mMember Load (0.8ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 LIMIT $2[0m  [["email", "mohak_k@ph.iitr.ac.in"], ["LIMIT", 1]]
+  ↳ app/controllers/logging_controller.rb:5:in `loginp'
+Redirected to http://13.127.46.121/shlok/mshlokr
+Completed 302 Found in 32ms (ActiveRecord: 12.4ms | Allocations: 6063)
+
+
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-06 05:30:39 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokr as HTML
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 3295)
+
+
+  
+ActionView::MissingTemplate (Missing template shlok/mshlokr, application/mshlokr with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/home/ubuntu/scrubyrails/app/views"
+  * "/usr/local/lib/ruby/gems/3.0.0/gems/actiontext-6.1.4.4/app/views"
+  * "/usr/local/lib/ruby/gems/3.0.0/gems/actionmailbox-6.1.4.4/app/views"
+):
+  
+app/controllers/shlok_controller.rb:10:in `mshlokr'
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-06 05:32:24 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.2ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 15.3ms | Allocations: 5150)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.8ms | Allocations: 12417)
+Completed 200 OK in 40ms (Views: 23.0ms | ActiveRecord: 7.2ms | Allocations: 17992)
+
+
+Started GET "/shlok/mshlokc" for 103.37.201.183 at 2022-01-06 05:33:26 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokc as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokc.html.erb within layouts/application
+  Rendered shlok/mshlokc.html.erb within layouts/application (Duration: 8.2ms | Allocations: 3769)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 3815)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 4460)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 3, expected 1..2)):
+    11:         <%= label_tag "श्लोकः" %><br/>
+    12:         <%= text_area_tag :shlok, nil, :required => true, class: "textarea-1" %><br/><br/>
+    13:         <%= label_tag "श्रव्यसञ्चिका" %><br/>
+    14:         <%= file_field_tag :audio, nil, :required => true %><br/><br/>
+    15:         <%= label_tag "अनुवादः" %><br/>
+    16:         <%= text_area_tag :translation, nil, :required => true, class: "textarea-2" %><br/>
+    17:     </div>
+  
+app/views/shlok/mshlokc.html.erb:14
+app/views/shlok/mshlokc.html.erb:7
+app/controllers/shlok_controller.rb:18:in `mshlokc'
+Started GET "/shlok/mshlokc" for 103.37.201.183 at 2022-01-06 05:37:43 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ShlokController#mshlokc as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokc.html.erb within layouts/application
+  Rendered shlok/mshlokc.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1301)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 8521)
+Completed 200 OK in 25ms (Views: 18.9ms | ActiveRecord: 0.0ms | Allocations: 12163)
+
+
+Started POST "/shlok/mshlokcp" for 103.37.201.183 at 2022-01-06 05:38:24 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokcp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "title"=>"a", "shlok"=>"b", "audio"=>"audio.wav", "translation"=>"c", "commit"=>"अग्रेस्थापनं करोतु"}
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shlok_controller.rb:26:in `mshlokcp'
+  [1m[36mShlok Create (3.2ms)[0m  [1m[32mINSERT INTO "shloks" ("title", "shlok", "translation", "updated_by") VALUES ($1, $2, $3, $4) RETURNING "sid"[0m  [["title", "a"], ["shlok", "b"], ["translation", "c"], ["updated_by", "Mohak"]]
+  ↳ app/controllers/shlok_controller.rb:26:in `mshlokcp'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shlok_controller.rb:26:in `mshlokcp'
+Redirected to http://13.127.46.121/shlok/mshlokr
+Completed 302 Found in 24ms (ActiveRecord: 10.3ms | Allocations: 8443)
+
+
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-06 05:38:24 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.1ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1642)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 4794)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 1.1ms | Allocations: 5477)
+
+
+Started GET "/shlok/3" for 103.37.201.183 at 2022-01-06 05:43:05 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshloku as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mShlok Load (0.8ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."sid" = $1 LIMIT $2[0m  [["sid", 3], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:34:in `mshloku'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshloku.html.erb within layouts/application
+  Rendered shlok/mshloku.html.erb within layouts/application (Duration: 2.1ms | Allocations: 766)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 3872)
+Completed 200 OK in 20ms (Views: 8.6ms | ActiveRecord: 1.9ms | Allocations: 7907)
+
+
+Started POST "/shlok/3" for 103.37.201.183 at 2022-01-06 05:43:20 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "title"=>"VERSE FROM A SOUND", "shlok"=>"राज्याभिषेके मदविह्वलायाः<br/>\r\nहस्ताच्च्युतोS हेमघटस्तरुण्याः |<br/>\r\nसोपानमासाद्य करोति शब्दम्<br/>\r\nठं ठं ठठं ठं ठठठं ठठं ठः ||", "translation"=>"Composed by one of the legendary poets in the history of Sanskrit, this verse is an example of the games of the learned. The revered Kalidasa constructed this beautiful poem out of a meaningless string of sounds, in the competition of Samasya Pooranam (समस्या-पूरणम्), organised by the great King Bhoj.<br/>\r\nSuch competitions were commonly organised by advocates of literature and scholarship, and Raja Bhoj is one of the most reknowned in this respect.<br/>\r\nIn the particular context of this subhashitam, Raja Bhoj gives a seemingly non-sensical line 'tham tham thatham tham thathatham thatham thah' as a challenge for the assembly of intellectuals gathered in his court, and this subhashitam is the clever solution of Kalidasa to it.<br/><br/>\r\n\r\nराज्याभिषेके In the grand coronation ceremony of the king,<br/>\r\nहेम-घटः च्युतः the golden pot fell away<br/>\r\nमदविह्वलायाः तरुण्याः हस्तात् from the hands of an excited young girl (so excited about the coronation ceremony that she was not in her senses),<br/>\r\nसोपानम् आसाद्य करोति शब्दम् and upon reaching the stairs produced the sound -<br/>\r\nठं ठं ठठं ठं ठठठं ठठं ठः \"tham tham thatham tham thathatham thatham thah\"!!<br/><br/>\r\n\r\nKalidasa thus imagines capturing the sound made by the pot at each step. But both Kalidasa and Raja Bhoj show how rhythm and harmony can be found even in the events we would otherwise perceive as noise; for we see, the 'meaningless' string of sounds actually follows the melodiuos meter of indravajrā (इन्द्रवज्रा)!!<br/>\r\nSuch were the pastimes of the scholars!", "commit"=>"अग्रेस्थापनं करोतु", "id"=>"3"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 2ms (ActiveRecord: 0.0ms | Allocations: 677)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (6.1.4.4) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (6.1.4.4) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (6.1.4.4) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:115:in `block in run_callbacks'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.4.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.4.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.4.4) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.4.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/host_authorization.rb:119:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.4) lib/rails/engine.rb:539:in `call'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/rack/thread_handler_extension.rb:97:in `process_request'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/request_handler/thread_handler.rb:157:in `accept_and_process_next_request'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/request_handler/thread_handler.rb:110:in `main_loop'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/request_handler.rb:415:in `block (3 levels) in start_threads'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/utils.rb:113:in `block in create_thread_and_abort_on_exception'
+Started POST "/shlok/3" for 103.37.201.183 at 2022-01-06 05:43:43 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ShlokController#mshlokup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "title"=>"VERSE FROM A SOUND", "shlok"=>"राज्याभिषेके मदविह्वलायाः<br/>\r\nहस्ताच्च्युतोS हेमघटस्तरुण्याः |<br/>\r\nसोपानमासाद्य करोति शब्दम्<br/>\r\nठं ठं ठठं ठं ठठठं ठठं ठः ||", "translation"=>"Composed by one of the legendary poets in the history of Sanskrit, this verse is an example of the games of the learned. The revered Kalidasa constructed this beautiful poem out of a meaningless string of sounds, in the competition of Samasya Pooranam (समस्या-पूरणम्), organised by the great King Bhoj.<br/>\r\nSuch competitions were commonly organised by advocates of literature and scholarship, and Raja Bhoj is one of the most reknowned in this respect.<br/>\r\nIn the particular context of this subhashitam, Raja Bhoj gives a seemingly non-sensical line 'tham tham thatham tham thathatham thatham thah' as a challenge for the assembly of intellectuals gathered in his court, and this subhashitam is the clever solution of Kalidasa to it.<br/><br/>\r\n\r\nराज्याभिषेके In the grand coronation ceremony of the king,<br/>\r\nहेम-घटः च्युतः the golden pot fell away<br/>\r\nमदविह्वलायाः तरुण्याः हस्तात् from the hands of an excited young girl (so excited about the coronation ceremony that she was not in her senses),<br/>\r\nसोपानम् आसाद्य करोति शब्दम् and upon reaching the stairs produced the sound -<br/>\r\nठं ठं ठठं ठं ठठठं ठठं ठः \"tham tham thatham tham thathatham thatham thah\"!!<br/><br/>\r\n\r\nKalidasa thus imagines capturing the sound made by the pot at each step. But both Kalidasa and Raja Bhoj show how rhythm and harmony can be found even in the events we would otherwise perceive as noise; for we see, the 'meaningless' string of sounds actually follows the melodiuos meter of indravajrā (इन्द्रवज्रा)!!<br/>\r\nSuch were the pastimes of the scholars!", "commit"=>"अग्रेस्थापनं करोतु", "id"=>"3"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 5ms (ActiveRecord: 0.0ms | Allocations: 1054)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (6.1.4.4) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (6.1.4.4) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (6.1.4.4) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:115:in `block in run_callbacks'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.4.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.4.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.4.4) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.4.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/host_authorization.rb:119:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.4) lib/rails/engine.rb:539:in `call'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/rack/thread_handler_extension.rb:97:in `process_request'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/request_handler/thread_handler.rb:157:in `accept_and_process_next_request'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/request_handler/thread_handler.rb:110:in `main_loop'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/request_handler.rb:415:in `block (3 levels) in start_threads'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/utils.rb:113:in `block in create_thread_and_abort_on_exception'
+Started GET "/shlok/3" for 103.37.201.183 at 2022-01-06 05:43:46 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshloku as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mShlok Load (0.9ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."sid" = $1 LIMIT $2[0m  [["sid", 3], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:34:in `mshloku'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshloku.html.erb within layouts/application
+  Rendered shlok/mshloku.html.erb within layouts/application (Duration: 2.1ms | Allocations: 942)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 8108)
+Completed 200 OK in 39ms (Views: 15.7ms | ActiveRecord: 7.8ms | Allocations: 18571)
+
+
+Started POST "/shlok/3" for 103.37.201.183 at 2022-01-06 05:43:48 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "title"=>"VERSE FROM A SOUND", "shlok"=>"राज्याभिषेके मदविह्वलायाः<br/>\r\nहस्ताच्च्युतोS हेमघटस्तरुण्याः |<br/>\r\nसोपानमासाद्य करोति शब्दम्<br/>\r\nठं ठं ठठं ठं ठठठं ठठं ठः ||", "translation"=>"Composed by one of the legendary poets in the history of Sanskrit, this verse is an example of the games of the learned. The revered Kalidasa constructed this beautiful poem out of a meaningless string of sounds, in the competition of Samasya Pooranam (समस्या-पूरणम्), organised by the great King Bhoj.<br/>\r\nSuch competitions were commonly organised by advocates of literature and scholarship, and Raja Bhoj is one of the most reknowned in this respect.<br/>\r\nIn the particular context of this subhashitam, Raja Bhoj gives a seemingly non-sensical line 'tham tham thatham tham thathatham thatham thah' as a challenge for the assembly of intellectuals gathered in his court, and this subhashitam is the clever solution of Kalidasa to it.<br/><br/>\r\n\r\nराज्याभिषेके In the grand coronation ceremony of the king,<br/>\r\nहेम-घटः च्युतः the golden pot fell away<br/>\r\nमदविह्वलायाः तरुण्याः हस्तात् from the hands of an excited young girl (so excited about the coronation ceremony that she was not in her senses),<br/>\r\nसोपानम् आसाद्य करोति शब्दम् and upon reaching the stairs produced the sound -<br/>\r\nठं ठं ठठं ठं ठठठं ठठं ठः \"tham tham thatham tham thathatham thatham thah\"!!<br/><br/>\r\n\r\nKalidasa thus imagines capturing the sound made by the pot at each step. But both Kalidasa and Raja Bhoj show how rhythm and harmony can be found even in the events we would otherwise perceive as noise; for we see, the 'meaningless' string of sounds actually follows the melodiuos meter of indravajrā (इन्द्रवज्रा)!!<br/>\r\nSuch were the pastimes of the scholars!", "commit"=>"अग्रेस्थापनं करोतु", "id"=>"3"}
+  [1m[36mShlok Load (0.8ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."sid" = $1 LIMIT $2[0m  [["sid", 3], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:42:in `mshlokup'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shlok_controller.rb:43:in `mshlokup'
+  [1m[36mShlok Update (1.2ms)[0m  [1m[33mUPDATE "shloks" SET "shlok" = $1, "updated_by" = $2 WHERE "shloks"."sid" = $3[0m  [["shlok", "राज्याभिषेके मदविह्वलायाः<br/>\r\nहस्ताच्च्युतोS हेमघटस्तरुण्याः |<br/>\r\nसोपानमासाद्य करोति शब्दम्<br/>\r\nठं ठं ठठं ठं ठठठं ठठं ठः ||"], ["updated_by", "Mohak"], ["sid", 3]]
+  ↳ app/controllers/shlok_controller.rb:43:in `mshlokup'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shlok_controller.rb:43:in `mshlokup'
+Redirected to http://13.127.46.121/shlok/mshlokr
+Completed 302 Found in 22ms (ActiveRecord: 4.9ms | Allocations: 3971)
+
+
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-06 05:43:49 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (2.6ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 9.2ms | Allocations: 1420)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 4464)
+Completed 200 OK in 18ms (Views: 14.2ms | ActiveRecord: 2.6ms | Allocations: 5033)
+
+
