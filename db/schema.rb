@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.string "title", limit: 100
     t.string "shlok", limit: 1000
     t.string "translation", limit: 5000
+    t.string "updated_by", limit: 15
   end
 
 end

