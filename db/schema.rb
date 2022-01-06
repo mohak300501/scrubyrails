@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 2022_01_06_120414) do
     t.string "shlok", limit: 1000
     t.string "translation", limit: 5000
     t.string "updated_by", limit: 15
+    t.string "audio"
   end
 
   create_table "users", primary_key: "uid", id: :serial, force: :cascade do |t|
