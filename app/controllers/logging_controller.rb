@@ -1,12 +1,29 @@
 class LoggingController < ApplicationController
-    def login
+    def mlogin
+        if session[:member]
+            redirect_to root_url
+        else
+            session[:moru] = "member"
+            render "login"
+        end
     end
+
+    def ulogin
+        if session[:user]
+            redirect_to root_url
+        else
+            session[:moru] = "user"
+            render "login"
+        end
+    end
+
     def loginp
-        @member = Member.find_by(email: params[:email])
-        if @member
-            if @member.password == params[:password]
-                session[:member] = @member.name
-                redirect_to shlok_mshlokr_path
+        @moru = session[:moru] == "member" ? Member.find_by(email: params[:email]) : User.find_by(email: params[:email])
+        if @moru
+            if @moru.password == params[:password]
+                session[session[:moru] == "member" ? :member : :user ] = @moru.name
+                session.delete(:moru)
+                redirect_to root_url
             else
                 flash[:notice] = "Password does not match"
                 redirect_to logging_login_path
@@ -16,8 +33,9 @@ class LoggingController < ApplicationController
             redirect_to logging_login_path
         end
     end
+
     def logout
-        session.delete(:member)
+        session.delete(session[:moru] == "member" ? :member : :user)
         redirect_to root_url
     end
 end
