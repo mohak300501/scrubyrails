@@ -1,9 +1,15 @@
-<div style="text-align:center;">
 <% for i in @shloks do %>
-    <div class="shlok">
-        <%= i.title %><br/>
-        <%= i.shlok %><br/>
-        <%= i.translation %>
+    <div class="shloks">
+        <div class="title">
+            <%= i.title %><br/>
+        </div>
+
+        <div class="shlok">
+            <p><%= i.shlok.html_safe %></p>
+        </div>
+
+        <div class="translation">
+            <%= i.translation.html_safe %><br/>
+        </div>
     </div>
 <% end %>
-</div>

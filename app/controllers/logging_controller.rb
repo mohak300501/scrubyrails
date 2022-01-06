@@ -17,8 +17,8 @@ class LoggingController < ApplicationController
         end
     end
 
-    moru = session[:moru] == "member" ? true : false
     def loginp
+        moru = session[:moru] == "member" ? true : false
         @moru = moru ? Member.find_by(email: params[:email]) : User.find_by(email: params[:email])
         if @moru
             if @moru.password == params[:password]
@@ -35,6 +35,7 @@ class LoggingController < ApplicationController
     end
 
     def logout
+        moru = session[:moru] == "member" ? true : false
         session.delete(moru ? :member : :user)
         redirect_to root_url
     end
