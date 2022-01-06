@@ -11,7 +11,7 @@
         <%= label_tag "श्लोकः" %><br/>
         <%= text_area_tag :shlok, nil, :required => true, class: "textarea-1" %><br/><br/>
         <%= label_tag "श्रव्यसञ्चिका" %><br/>
-        <%= file_field_tag :audio, nil, :required => true %><br/><br/>
+        <%= file_field_tag :audio, :required => true %><br/><br/>
         <%= label_tag "अनुवादः" %><br/>
         <%= text_area_tag :translation, nil, :required => true, class: "textarea-2" %><br/>
     </div>

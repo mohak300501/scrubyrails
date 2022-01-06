@@ -40,7 +40,7 @@ class ShlokController < ApplicationController
 
     def mshlokup
         shlok = Shlok.find(params[:id])
-        shlok.update(:title => params[:title], :shlok => params[:shlok], :translation => params[:translation])
+        shlok.update(:title => params[:title], :shlok => params[:shlok], :translation => params[:translation], :updated_by => session[:member])
         flash[:notice] = "श्लोकः परिवर्तितः जातः!"
         redirect_to shlok_mshlokr_path
     end
