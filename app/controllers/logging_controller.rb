@@ -22,7 +22,6 @@ class LoggingController < ApplicationController
         if @moru
             if @moru.password == params[:password]
                 session[session[:moru] == "member" ? :member : :user ] = @moru.name
-                session.delete(:moru)
                 redirect_to root_url
             else
                 flash[:notice] = "Password does not match"
