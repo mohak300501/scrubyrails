@@ -2,7 +2,7 @@
 
 <h1>नूतनः श्लोकः योजयतु</h1>
 
-<%= form_tag shlok_post_path do %>
+<%= form_tag shlok_post_path, multipart: true do %>
     <div>
         <%= label_tag "शीर्षकं" %><br/>
         <%= text_field_tag :title, nil, :required => true, class: "textfield" %><br/><br/>
