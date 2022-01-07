@@ -20,10 +20,10 @@
         <% if session[:member] || session[:user] %>
             <div class="logger">
                 <div><%= link_to "Logout", logout_path %></div>
-                <div>Logged in as <%= session[:member] ? session[:member] : session[:user] %>.</div>
+                <div>Logged in as <%= session[:member] ? session[:member][:name] : session[:user][:name] %>.</div>
                 <div>
                     <% if session[:user] %>
-                        <%= link_to "Profile", root_url %>
+                        <%= link_to "Profile", profile_path %>
                     <% end %>
                 </div>
             </div>
