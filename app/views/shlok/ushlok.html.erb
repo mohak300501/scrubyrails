@@ -8,8 +8,12 @@
             <p><%= i.shlok.html_safe %></p>
         </div>
 
+        <div>
+            <audio src="<%= rails_blob_url(i.audio) %>" controls/>
+        </div>
+
         <div class="translation">
-            <%= i.translation.html_safe %><br/>
+            <%= i.translation.html_safe %>
         </div>
     </div>
 <% end %>
