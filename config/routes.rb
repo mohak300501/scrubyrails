@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
     # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
     root 'welcome#home'
-    get "welcome/profile", as:"profile"
+
+    get "user/profile", as:"profile"
 
     get "logging/mlogin", as:"member_login"
     get "logging/ulogin", as:"user_login"
