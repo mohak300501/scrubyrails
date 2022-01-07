@@ -17,7 +17,7 @@ class UserController < ApplicationController
     end
 
     def newp
-        if User.find_by(params[:email])
+        if User.find_by(email: params[:email])
             flash[:notice] = "Email already registered."
             redirect_to new_path
         else
