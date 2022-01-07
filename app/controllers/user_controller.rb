@@ -13,6 +13,7 @@ class UserController < ApplicationController
             redirect_to root_url
         else
             render "new"
+        end
     end
 
     def newp
