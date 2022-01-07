@@ -15726,3 +15726,1648 @@ Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.0ms | Allocations: 438
   [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(1409038475602093665)[0m
   [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/logging/mlogin" for 103.37.201.183 at 2022-01-06 12:08:54 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#mlogin as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 1.1ms | Allocations: 417)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 3753)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 4500)
+
+
+Started POST "/logging/loginp" for 103.37.201.183 at 2022-01-06 12:08:58 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#loginp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"mohak_k@ph.iitr.ac.in", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mMember Load (1.1ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 LIMIT $2[0m  [["email", "mohak_k@ph.iitr.ac.in"], ["LIMIT", 1]]
+  ↳ app/controllers/logging_controller.rb:22:in `loginp'
+Redirected to http://13.127.46.121/
+Completed 302 Found in 22ms (ActiveRecord: 11.9ms | Allocations: 5484)
+
+
+Started GET "/" for 103.37.201.183 at 2022-01-06 12:08:58 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 65)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 3499)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 4267)
+
+
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-06 12:09:01 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.3ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 17.3ms | Allocations: 4845)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.2ms | Allocations: 8213)
+Completed 200 OK in 28ms (Views: 17.3ms | ActiveRecord: 6.7ms | Allocations: 10031)
+
+
+Started GET "/shlok/mshlokc" for 103.37.201.183 at 2022-01-06 12:09:05 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokc as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokc.html.erb within layouts/application
+  Rendered shlok/mshlokc.html.erb within layouts/application (Duration: 1.5ms | Allocations: 874)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 3979)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 4562)
+
+
+Started POST "/shlok/mshlokcp" for 103.37.201.183 at 2022-01-06 12:13:09 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokcp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "title"=>"शीर्षकं", "shlok"=>"श्लोकः", "audio"=>"audio.wav", "translation"=>"अनुवादः", "commit"=>"अग्रेस्थापनं करोतु"}
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shlok_controller.rb:26:in `mshlokcp'
+  [1m[36mShlok Create (1.4ms)[0m  [1m[32mINSERT INTO "shloks" ("title", "shlok", "translation", "updated_by") VALUES ($1, $2, $3, $4) RETURNING "sid"[0m  [["title", "शीर्षकं"], ["shlok", "श्लोकः"], ["translation", "अनुवादः"], ["updated_by", "Mohak"]]
+  ↳ app/controllers/shlok_controller.rb:26:in `mshlokcp'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shlok_controller.rb:26:in `mshlokcp'
+Redirected to http://13.127.46.121/shlok/mshlokr
+Completed 302 Found in 11ms (ActiveRecord: 3.8ms | Allocations: 3078)
+
+
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-06 12:13:09 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (2.8ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 49.9ms | Allocations: 1101)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 128.6ms | Allocations: 4228)
+Completed 200 OK in 140ms (Views: 136.4ms | ActiveRecord: 2.8ms | Allocations: 4655)
+
+
+Started GET "/.env" for 109.237.103.123 at 2022-01-06 12:16:30 +0000
+Cannot render console from 109.237.103.123! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started GET "/shlok/6" for 103.37.201.183 at 2022-01-06 12:21:14 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshloku as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mShlok Load (0.8ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."sid" = $1 LIMIT $2[0m  [["sid", 6], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:34:in `mshloku'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshloku.html.erb within layouts/application
+  Rendered shlok/mshloku.html.erb within layouts/application (Duration: 1.6ms | Allocations: 728)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 3971)
+Completed 200 OK in 29ms (Views: 8.4ms | ActiveRecord: 12.4ms | Allocations: 8782)
+
+
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-06 12:21:17 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.0ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1104)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 4220)
+Completed 200 OK in 11ms (Views: 8.9ms | ActiveRecord: 1.0ms | Allocations: 4640)
+
+
+Started GET "/shlok/mshlokc" for 103.37.201.183 at 2022-01-06 12:21:47 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokc as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokc.html.erb within layouts/application
+  Rendered shlok/mshlokc.html.erb within layouts/application (Duration: 5.8ms | Allocations: 552)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 3657)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.0ms | Allocations: 4064)
+
+
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-06 12:21:51 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.0ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1094)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 4210)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 1.0ms | Allocations: 4629)
+
+
+Started GET "/shlok/mshlokc" for 103.37.201.183 at 2022-01-06 12:23:24 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokc as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokc.html.erb within layouts/application
+  Rendered shlok/mshlokc.html.erb within layouts/application (Duration: 0.8ms | Allocations: 552)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 3657)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.0ms | Allocations: 4064)
+
+
+Started GET "/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php" for 45.146.165.37 at 2022-01-06 12:25:20 +0000
+Cannot render console from 45.146.165.37! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php"):
+  
+Started GET "/solr/admin/info/system?wt=json" for 45.146.165.37 at 2022-01-06 12:43:51 +0000
+Cannot render console from 45.146.165.37! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/solr/admin/info/system"):
+  
+Started GET "/config/getuser?index=0" for 209.141.53.74 at 2022-01-06 12:49:33 +0000
+Cannot render console from 209.141.53.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/config/getuser"):
+  
+Started GET "/index.php?s=/Index/\think\app/invokefunction&function=call_user_func_array&vars[0]=md5&vars[1][]=HelloThinkPHP21" for 45.146.165.37 at 2022-01-06 13:05:27 +0000
+Cannot render console from 45.146.165.37! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/index.php"):
+  
+Started POST "/" for 135.125.217.54 at 2022-01-06 13:07:10 +0000
+Cannot render console from 135.125.217.54! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/.env" for 135.125.217.54 at 2022-01-06 13:07:11 +0000
+Cannot render console from 135.125.217.54! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-06 13:32:45 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.4ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 22.2ms | Allocations: 4359)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 36.5ms | Allocations: 7491)
+Completed 200 OK in 38ms (Views: 37.4ms | ActiveRecord: 13.7ms | Allocations: 7908)
+
+
+Started GET "/shlok/6" for 103.37.201.183 at 2022-01-06 13:32:50 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshloku as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mShlok Load (0.8ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."sid" = $1 LIMIT $2[0m  [["sid", 6], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:34:in `mshloku'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshloku.html.erb within layouts/application
+  Rendered shlok/mshloku.html.erb within layouts/application (Duration: 2.0ms | Allocations: 448)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3553)
+Completed 200 OK in 14ms (Views: 7.9ms | ActiveRecord: 1.5ms | Allocations: 4811)
+
+
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-06 13:32:53 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.0ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1096)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.8ms | Allocations: 4228)
+Completed 200 OK in 21ms (Views: 17.5ms | ActiveRecord: 1.0ms | Allocations: 4649)
+
+
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-06 13:47:46 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.3ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  [1m[36mActiveStorage::Attachment Load (1.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:24
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 38.2ms | Allocations: 15065)
+  Rendered layout layouts/application.html.erb (Duration: 38.3ms | Allocations: 15126)
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 12.5ms | Allocations: 20639)
+
+
+  
+ActionView::Template::Error (nil is not a valid asset source):
+    21:         </div>
+    22: 
+    23:         <div>
+    24:             <%= audio_tag i.audio.url %>
+    25:         </div>
+    26: 
+    27:         <div class="translation">
+  
+app/views/shlok/mshlokr.html.erb:24
+app/views/shlok/mshlokr.html.erb:13
+app/controllers/shlok_controller.rb:10:in `mshlokr'
+Started GET "/shlok/mshlokc" for 103.37.201.183 at 2022-01-06 13:48:20 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokc as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokc.html.erb within layouts/application
+  Rendered shlok/mshlokc.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1015)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.3ms | Allocations: 8225)
+Completed 200 OK in 28ms (Views: 27.1ms | ActiveRecord: 0.0ms | Allocations: 8871)
+
+
+Started POST "/shlok/mshlokcp" for 103.37.201.183 at 2022-01-06 13:48:37 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokcp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "title"=>"a", "shlok"=>"b", "audio"=>"audio.wav", "translation"=>"c", "commit"=>"अग्रेस्थापनं करोतु"}
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 7025)
+
+
+  
+ActiveSupport::MessageVerifier::InvalidSignature (ActiveSupport::MessageVerifier::InvalidSignature):
+  
+app/controllers/shlok_controller.rb:25:in `mshlokcp'
+Started GET "/" for 139.59.77.211 at 2022-01-06 13:58:04 +0000
+Cannot render console from 139.59.77.211! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as */*
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 195)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 3612)
+Completed 200 OK in 9ms (Views: 7.9ms | Allocations: 4820)
+
+
+Started GET "/?XDEBUG_SESSION_START=phpstorm" for 45.146.165.37 at 2022-01-06 14:02:21 +0000
+Cannot render console from 45.146.165.37! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Parameters: {"XDEBUG_SESSION_START"=>"phpstorm"}
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 3203)
+Completed 200 OK in 8ms (Views: 7.5ms | Allocations: 3730)
+
+
+Started POST "/shlok/mshlokcp" for 103.37.201.183 at 2022-01-06 14:18:37 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ShlokController#mshlokcp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "title"=>"a", "shlok"=>"b", "audio"=>"audio.wav", "translation"=>"c", "commit"=>"अग्रेस्थापनं करोतु"}
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 8.4ms | Allocations: 13987)
+
+
+  
+ActiveSupport::MessageVerifier::InvalidSignature (ActiveSupport::MessageVerifier::InvalidSignature):
+  
+app/controllers/shlok_controller.rb:25:in `mshlokcp'
+Started GET "/shlok/mshlokc" for 103.37.201.183 at 2022-01-06 14:18:39 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokc as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokc.html.erb within layouts/application
+  Rendered shlok/mshlokc.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1104)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 8347)
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 0.0ms | Allocations: 10855)
+
+
+Started POST "/shlok/mshlokcp" for 103.37.201.183 at 2022-01-06 14:18:41 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokcp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "title"=>"a", "shlok"=>"b", "audio"=>"audio.wav", "translation"=>"c", "commit"=>"अग्रेस्थापनं करोतु"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 805)
+
+
+  
+ActiveSupport::MessageVerifier::InvalidSignature (ActiveSupport::MessageVerifier::InvalidSignature):
+  
+app/controllers/shlok_controller.rb:25:in `mshlokcp'
+Started GET "/shlok/mshlokc" for 103.37.201.183 at 2022-01-06 14:18:49 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokc as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokc.html.erb within layouts/application
+  Rendered shlok/mshlokc.html.erb within layouts/application (Duration: 1.1ms | Allocations: 552)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 3673)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms | Allocations: 4094)
+
+
+Started GET "/shlok/mshlokc" for 103.37.201.183 at 2022-01-06 14:18:54 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokc as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokc.html.erb within layouts/application
+  Rendered shlok/mshlokc.html.erb within layouts/application (Duration: 0.7ms | Allocations: 552)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 3657)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 4061)
+
+
+Started POST "/shlok/mshlokcp" for 103.37.201.183 at 2022-01-06 14:19:09 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokcp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "title"=>"a", "shlok"=>"b", "audio"=>"audio.wav", "translation"=>"c", "commit"=>"अग्रेस्थापनं करोतु"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 737)
+
+
+  
+ActiveSupport::MessageVerifier::InvalidSignature (ActiveSupport::MessageVerifier::InvalidSignature):
+  
+app/controllers/shlok_controller.rb:25:in `mshlokcp'
+Started GET "/console/" for 45.146.165.37 at 2022-01-06 14:57:51 +0000
+Cannot render console from 45.146.165.37! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/console"):
+  
+Started GET "/" for 136.144.41.117 at 2022-01-06 15:02:17 +0000
+Cannot render console from 136.144.41.117! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.5ms | Allocations: 195)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 3617)
+Completed 200 OK in 18ms (Views: 11.8ms | Allocations: 4768)
+
+
+Started GET "/" for 139.162.215.70 at 2022-01-06 15:03:25 +0000
+Cannot render console from 139.162.215.70! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as */*
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 3198)
+Completed 200 OK in 10ms (Views: 8.5ms | Allocations: 3776)
+
+
+Started POST "/Autodiscover/Autodiscover.xml" for 45.146.165.37 at 2022-01-06 15:04:14 +0000
+Cannot render console from 45.146.165.37! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/Autodiscover/Autodiscover.xml"):
+  
+Started POST "/" for 135.125.217.54 at 2022-01-06 15:06:10 +0000
+Cannot render console from 135.125.217.54! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/.env" for 135.125.217.54 at 2022-01-06 15:06:11 +0000
+Cannot render console from 135.125.217.54! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started GET "/.env" for 143.198.55.184 at 2022-01-06 16:09:00 +0000
+Cannot render console from 143.198.55.184! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started POST "/" for 143.198.55.184 at 2022-01-06 16:09:01 +0000
+Cannot render console from 143.198.55.184! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/.env" for 125.162.110.16 at 2022-01-06 16:40:39 +0000
+Cannot render console from 125.162.110.16! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started POST "/" for 125.162.110.16 at 2022-01-06 16:40:40 +0000
+Cannot render console from 125.162.110.16! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/.env" for 35.84.37.72 at 2022-01-06 16:45:40 +0000
+Cannot render console from 35.84.37.72! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started POST "/" for 35.84.37.72 at 2022-01-06 16:45:41 +0000
+Cannot render console from 35.84.37.72! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/" for 94.102.56.151 at 2022-01-06 17:04:04 +0000
+Cannot render console from 94.102.56.151! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 3219)
+Completed 200 OK in 7ms (Views: 6.8ms | Allocations: 3597)
+
+
+Started POST "/" for 135.125.217.54 at 2022-01-06 17:06:00 +0000
+Cannot render console from 135.125.217.54! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/.env" for 135.125.217.54 at 2022-01-06 17:06:01 +0000
+Cannot render console from 135.125.217.54! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started CONNECT "/" for 35.197.66.26 at 2022-01-06 17:29:21 +0000
+Cannot render console from 35.197.66.26! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [CONNECT] "/"):
+  
+Started GET "/.env" for 185.254.196.218 at 2022-01-06 18:04:32 +0000
+Cannot render console from 185.254.196.218! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started POST "/" for 185.254.196.218 at 2022-01-06 18:04:33 +0000
+Cannot render console from 185.254.196.218! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/" for 192.241.206.70 at 2022-01-06 18:28:34 +0000
+Cannot render console from 192.241.206.70! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as */*
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 3214)
+Completed 200 OK in 6ms (Views: 5.7ms | Allocations: 3601)
+
+
+Started GET "/.env" for 143.110.227.92 at 2022-01-06 18:29:33 +0000
+Cannot render console from 143.110.227.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started POST "/" for 143.110.227.92 at 2022-01-06 18:29:34 +0000
+Cannot render console from 143.110.227.92! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started POST "/" for 135.125.217.54 at 2022-01-06 19:06:08 +0000
+Cannot render console from 135.125.217.54! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/.env" for 135.125.217.54 at 2022-01-06 19:06:08 +0000
+Cannot render console from 135.125.217.54! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started GET "/?pp=env" for 34.82.56.33 at 2022-01-06 19:16:21 +0000
+Cannot render console from 34.82.56.33! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as */*
+  Parameters: {"pp"=>"env"}
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 3214)
+Completed 200 OK in 11ms (Views: 10.3ms | Allocations: 3601)
+
+
+Started GET "/?pp=env" for 114.142.169.10 at 2022-01-06 19:21:51 +0000
+Cannot render console from 114.142.169.10! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Parameters: {"pp"=>"env"}
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 1.3ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 3198)
+Completed 200 OK in 12ms (Views: 11.4ms | Allocations: 3575)
+
+
+Started GET "/config/getuser?index=0" for 209.141.53.74 at 2022-01-06 19:36:01 +0000
+Cannot render console from 209.141.53.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/config/getuser"):
+  
+Started GET "/" for 106.75.184.237 at 2022-01-06 19:49:44 +0000
+Cannot render console from 106.75.184.237! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as */*
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 3219)
+Completed 200 OK in 15ms (Views: 14.5ms | Allocations: 3607)
+
+
+Started GET "/system_api.php" for 143.110.247.167 at 2022-01-06 20:02:21 +0000
+Cannot render console from 143.110.247.167! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/system_api.php"):
+  
+Started GET "/c/version.js" for 143.110.247.167 at 2022-01-06 20:02:21 +0000
+Cannot render console from 143.110.247.167! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/c/version.js"):
+  
+Started GET "/streaming/clients_live.php" for 143.110.247.167 at 2022-01-06 20:02:22 +0000
+Cannot render console from 143.110.247.167! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/streaming/clients_live.php"):
+  
+Started GET "/stalker_portal/c/version.js" for 143.110.247.167 at 2022-01-06 20:02:22 +0000
+Cannot render console from 143.110.247.167! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/stalker_portal/c/version.js"):
+  
+Started GET "/stream/live.php" for 143.110.247.167 at 2022-01-06 20:02:22 +0000
+Cannot render console from 143.110.247.167! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/stream/live.php"):
+  
+Started GET "/flu/403.html" for 143.110.247.167 at 2022-01-06 20:02:22 +0000
+Cannot render console from 143.110.247.167! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/flu/403.html"):
+  
+Started GET "/" for 143.110.247.167 at 2022-01-06 20:02:22 +0000
+Cannot render console from 143.110.247.167! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as */*
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 3214)
+Completed 200 OK in 6ms (Views: 5.9ms | Allocations: 3601)
+
+
+Started GET "/.env" for 44.200.160.162 at 2022-01-06 20:22:21 +0000
+Cannot render console from 44.200.160.162! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started GET "/" for 78.31.79.134 at 2022-01-06 20:31:55 +0000
+Cannot render console from 78.31.79.134! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 3203)
+Completed 200 OK in 7ms (Views: 5.7ms | Allocations: 3580)
+
+
+Started GET "/" for 209.17.96.218 at 2022-01-06 20:41:03 +0000
+Cannot render console from 209.17.96.218! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 3203)
+Completed 200 OK in 6ms (Views: 5.8ms | Allocations: 3580)
+
+
+Started GET "/.env" for 35.84.37.72 at 2022-01-06 20:44:08 +0000
+Cannot render console from 35.84.37.72! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started POST "/" for 35.84.37.72 at 2022-01-06 20:44:09 +0000
+Cannot render console from 35.84.37.72! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started POST "/" for 135.125.217.54 at 2022-01-06 21:06:04 +0000
+Cannot render console from 135.125.217.54! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/.env" for 135.125.217.54 at 2022-01-06 21:06:04 +0000
+Cannot render console from 135.125.217.54! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started GET "/" for 198.98.56.151 at 2022-01-06 21:08:37 +0000
+Cannot render console from 198.98.56.151! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 3219)
+Completed 200 OK in 7ms (Views: 6.6ms | Allocations: 3598)
+
+
+Started GET "/" for 198.98.49.124 at 2022-01-06 22:20:44 +0000
+Cannot render console from 198.98.49.124! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 3203)
+Completed 200 OK in 8ms (Views: 7.0ms | Allocations: 3580)
+
+
+Started POST "/" for 135.125.217.54 at 2022-01-06 23:04:59 +0000
+Cannot render console from 135.125.217.54! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/.env" for 135.125.217.54 at 2022-01-06 23:05:00 +0000
+Cannot render console from 135.125.217.54! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started GET "/" for 45.95.169.230 at 2022-01-06 23:12:24 +0000
+Cannot render console from 45.95.169.230! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 3198)
+Completed 200 OK in 8ms (Views: 7.6ms | Allocations: 3575)
+
+
+Started GET "/" for 45.95.169.230 at 2022-01-06 23:12:25 +0000
+Cannot render console from 45.95.169.230! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3192)
+Completed 200 OK in 10ms (Views: 7.3ms | Allocations: 3624)
+
+
+Started GET "/wp-includes/wlwmanifest.xml" for 45.95.169.230 at 2022-01-06 23:12:25 +0000
+Cannot render console from 45.95.169.230! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/wp-includes/wlwmanifest.xml"):
+  
+Started GET "/xmlrpc.php?rsd" for 45.95.169.230 at 2022-01-06 23:12:25 +0000
+Cannot render console from 45.95.169.230! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/xmlrpc.php"):
+  
+Started GET "/" for 45.95.169.230 at 2022-01-06 23:12:26 +0000
+Cannot render console from 45.95.169.230! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 3208)
+Completed 200 OK in 6ms (Views: 5.3ms | Allocations: 3633)
+
+
+Started GET "/blog/wp-includes/wlwmanifest.xml" for 45.95.169.230 at 2022-01-06 23:12:26 +0000
+Cannot render console from 45.95.169.230! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/blog/wp-includes/wlwmanifest.xml"):
+  
+Started GET "/web/wp-includes/wlwmanifest.xml" for 45.95.169.230 at 2022-01-06 23:12:26 +0000
+Cannot render console from 45.95.169.230! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/web/wp-includes/wlwmanifest.xml"):
+  
+Started GET "/wordpress/wp-includes/wlwmanifest.xml" for 45.95.169.230 at 2022-01-06 23:12:26 +0000
+Cannot render console from 45.95.169.230! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/wordpress/wp-includes/wlwmanifest.xml"):
+  
+Started GET "/website/wp-includes/wlwmanifest.xml" for 45.95.169.230 at 2022-01-06 23:12:26 +0000
+Cannot render console from 45.95.169.230! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/website/wp-includes/wlwmanifest.xml"):
+  
+Started GET "/wp/wp-includes/wlwmanifest.xml" for 45.95.169.230 at 2022-01-06 23:12:27 +0000
+Cannot render console from 45.95.169.230! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/wp/wp-includes/wlwmanifest.xml"):
+  
+Started GET "/news/wp-includes/wlwmanifest.xml" for 45.95.169.230 at 2022-01-06 23:12:27 +0000
+Cannot render console from 45.95.169.230! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/news/wp-includes/wlwmanifest.xml"):
+  
+Started GET "/2020/wp-includes/wlwmanifest.xml" for 45.95.169.230 at 2022-01-06 23:12:27 +0000
+Cannot render console from 45.95.169.230! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/2020/wp-includes/wlwmanifest.xml"):
+  
+Started GET "/2019/wp-includes/wlwmanifest.xml" for 45.95.169.230 at 2022-01-06 23:12:28 +0000
+Cannot render console from 45.95.169.230! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/2019/wp-includes/wlwmanifest.xml"):
+  
+Started GET "/shop/wp-includes/wlwmanifest.xml" for 45.95.169.230 at 2022-01-06 23:12:28 +0000
+Cannot render console from 45.95.169.230! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/shop/wp-includes/wlwmanifest.xml"):
+  
+Started GET "/wp1/wp-includes/wlwmanifest.xml" for 45.95.169.230 at 2022-01-06 23:12:28 +0000
+Cannot render console from 45.95.169.230! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/wp1/wp-includes/wlwmanifest.xml"):
+  
+Started GET "/test/wp-includes/wlwmanifest.xml" for 45.95.169.230 at 2022-01-06 23:12:28 +0000
+Cannot render console from 45.95.169.230! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/test/wp-includes/wlwmanifest.xml"):
+  
+Started GET "/wp2/wp-includes/wlwmanifest.xml" for 45.95.169.230 at 2022-01-06 23:12:29 +0000
+Cannot render console from 45.95.169.230! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/wp2/wp-includes/wlwmanifest.xml"):
+  
+Started GET "/site/wp-includes/wlwmanifest.xml" for 45.95.169.230 at 2022-01-06 23:12:29 +0000
+Cannot render console from 45.95.169.230! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/site/wp-includes/wlwmanifest.xml"):
+  
+Started GET "/cms/wp-includes/wlwmanifest.xml" for 45.95.169.230 at 2022-01-06 23:12:30 +0000
+Cannot render console from 45.95.169.230! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/cms/wp-includes/wlwmanifest.xml"):
+  
+Started GET "/sito/wp-includes/wlwmanifest.xml" for 45.95.169.230 at 2022-01-06 23:12:30 +0000
+Cannot render console from 45.95.169.230! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/sito/wp-includes/wlwmanifest.xml"):
+  
+Started GET "/.env" for 147.182.195.163 at 2022-01-06 23:30:04 +0000
+Cannot render console from 147.182.195.163! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started POST "/" for 147.182.195.163 at 2022-01-06 23:30:04 +0000
+Cannot render console from 147.182.195.163! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/.env" for 185.254.196.218 at 2022-01-06 23:50:53 +0000
+Cannot render console from 185.254.196.218! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started POST "/" for 185.254.196.218 at 2022-01-06 23:50:54 +0000
+Cannot render console from 185.254.196.218! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/.env" for 40.86.6.103 at 2022-01-07 00:05:20 +0000
+Cannot render console from 40.86.6.103! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started POST "/" for 40.86.6.103 at 2022-01-07 00:05:21 +0000
+Cannot render console from 40.86.6.103! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/.env" for 45.95.169.230 at 2022-01-07 00:43:05 +0000
+Cannot render console from 45.95.169.230! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started POST "/" for 45.95.169.230 at 2022-01-07 00:43:10 +0000
+Cannot render console from 45.95.169.230! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started POST "/" for 135.125.217.54 at 2022-01-07 01:05:14 +0000
+Cannot render console from 135.125.217.54! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/.env" for 135.125.217.54 at 2022-01-07 01:05:15 +0000
+Cannot render console from 135.125.217.54! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started GET "/" for 23.251.102.74 at 2022-01-07 01:15:23 +0000
+Cannot render console from 23.251.102.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as */*
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 3214)
+Completed 200 OK in 7ms (Views: 5.9ms | Allocations: 3601)
+
+
+Started GET "/" for 162.221.192.26 at 2022-01-07 01:47:23 +0000
+Cannot render console from 162.221.192.26! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as */*
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 3198)
+Completed 200 OK in 6ms (Views: 5.3ms | Allocations: 3584)
+
+
+Started GET "/" for 138.99.207.6 at 2022-01-07 02:11:28 +0000
+Cannot render console from 138.99.207.6! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 3203)
+Completed 200 OK in 10ms (Views: 9.1ms | Allocations: 3580)
+
+
+Started GET "/.env" for 185.254.196.217 at 2022-01-07 02:29:22 +0000
+Cannot render console from 185.254.196.217! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started POST "/" for 185.254.196.217 at 2022-01-07 02:29:23 +0000
+Cannot render console from 185.254.196.217! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/.env" for 159.223.130.156 at 2022-01-07 02:35:59 +0000
+Cannot render console from 159.223.130.156! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started POST "/" for 159.223.130.156 at 2022-01-07 02:35:59 +0000
+Cannot render console from 159.223.130.156! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/shlok/ashlokr" for 152.57.185.104 at 2022-01-07 02:48:12 +0000
+Cannot render console from 152.57.185.104! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshloku as HTML
+  Parameters: {"id"=>"ashlokr"}
+Redirected to http://13.127.46.121/
+Completed 302 Found in 1ms (Allocations: 233)
+
+
+Started GET "/" for 152.57.185.104 at 2022-01-07 02:48:12 +0000
+Cannot render console from 152.57.185.104! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 3214)
+Completed 200 OK in 6ms (Views: 5.6ms | Allocations: 3592)
+
+
+Started GET "/logging/mlogin" for 152.57.185.104 at 2022-01-07 02:48:14 +0000
+Cannot render console from 152.57.185.104! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#mlogin as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 1.5ms | Allocations: 698)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 4001)
+Completed 200 OK in 11ms (Views: 10.3ms | Allocations: 5150)
+
+
+Started POST "/logging/loginp" for 152.57.185.104 at 2022-01-07 02:48:27 +0000
+Cannot render console from 152.57.185.104! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#loginp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"mohak_k@ph.iitr.ac.in", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 LIMIT $2[0m  [["email", "mohak_k@ph.iitr.ac.in"], ["LIMIT", 1]]
+  ↳ app/controllers/logging_controller.rb:22:in `loginp'
+Redirected to http://13.127.46.121/
+Completed 302 Found in 33ms (ActiveRecord: 17.4ms | Allocations: 8234)
+
+
+Started GET "/" for 152.57.185.104 at 2022-01-07 02:48:27 +0000
+Cannot render console from 152.57.185.104! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 49)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 3328)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms | Allocations: 3838)
+
+
+Started GET "/shlok/mshlokr" for 152.57.185.104 at 2022-01-07 02:48:29 +0000
+Cannot render console from 152.57.185.104! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.5ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  [1m[36mActiveStorage::Attachment Load (1.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:24
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 20.2ms | Allocations: 8328)
+  Rendered layout layouts/application.html.erb (Duration: 20.3ms | Allocations: 8367)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 5.4ms | Allocations: 8955)
+
+
+  
+ActionView::Template::Error (nil is not a valid asset source):
+    21:         </div>
+    22: 
+    23:         <div>
+    24:             <%= audio_tag i.audio.url %>
+    25:         </div>
+    26: 
+    27:         <div class="translation">
+  
+app/views/shlok/mshlokr.html.erb:24
+app/views/shlok/mshlokr.html.erb:13
+app/controllers/shlok_controller.rb:10:in `mshlokr'
+Started GET "/shlok/mshlokr" for 152.57.185.104 at 2022-01-07 02:48:39 +0000
+Cannot render console from 152.57.185.104! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.3ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  [1m[36mActiveStorage::Attachment Load (6.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:24
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 18.6ms | Allocations: 3315)
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 3350)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 7.8ms | Allocations: 3791)
+
+
+  
+ActionView::Template::Error (nil is not a valid asset source):
+    21:         </div>
+    22: 
+    23:         <div>
+    24:             <%= audio_tag i.audio.url %>
+    25:         </div>
+    26: 
+    27:         <div class="translation">
+  
+app/views/shlok/mshlokr.html.erb:24
+app/views/shlok/mshlokr.html.erb:13
+app/controllers/shlok_controller.rb:10:in `mshlokr'
+Started GET "/" for 152.57.185.104 at 2022-01-07 02:48:50 +0000
+Cannot render console from 152.57.185.104! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 45)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 3327)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 3766)
+
+
+Started GET "/" for 152.57.185.104 at 2022-01-07 02:48:52 +0000
+Cannot render console from 152.57.185.104! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 3181)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 3611)
+
+
+Started GET "/shlok/mshlokr" for 152.57.185.104 at 2022-01-07 02:48:54 +0000
+Cannot render console from 152.57.185.104! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (0.9ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:24
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 6.4ms | Allocations: 3275)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 3310)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.8ms | Allocations: 3684)
+
+
+  
+ActionView::Template::Error (nil is not a valid asset source):
+    21:         </div>
+    22: 
+    23:         <div>
+    24:             <%= audio_tag i.audio.url %>
+    25:         </div>
+    26: 
+    27:         <div class="translation">
+  
+app/views/shlok/mshlokr.html.erb:24
+app/views/shlok/mshlokr.html.erb:13
+app/controllers/shlok_controller.rb:10:in `mshlokr'
+Started GET "/" for 109.122.81.135 at 2022-01-07 02:51:09 +0000
+Cannot render console from 109.122.81.135! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 3221)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 3605)
+
+
+Started GET "/shlok/mshlokr" for 152.57.185.104 at 2022-01-07 02:54:16 +0000
+Cannot render console from 152.57.185.104! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.3ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:24
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 39.2ms | Allocations: 16673)
+  Rendered layout layouts/application.html.erb (Duration: 39.4ms | Allocations: 16734)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 12.0ms | Allocations: 22245)
+
+
+  
+ActionView::Template::Error (The asset "" is not present in the asset pipeline.
+):
+    21:         </div>
+    22: 
+    23:         <div>
+    24:             <%= audio_tag i.audio %>
+    25:         </div>
+    26: 
+    27:         <div class="translation">
+  
+app/views/shlok/mshlokr.html.erb:24
+app/views/shlok/mshlokr.html.erb:13
+app/controllers/shlok_controller.rb:10:in `mshlokr'
+Started GET "/shlok/mshlokc" for 103.37.201.183 at 2022-01-07 02:55:15 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokc as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokc.html.erb within layouts/application
+  Rendered shlok/mshlokc.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1015)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 8129)
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.0ms | Allocations: 8775)
+
+
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-07 02:55:25 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (0.9ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:24
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 9.6ms | Allocations: 6310)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 6346)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.9ms | Allocations: 6826)
+
+
+  
+ActionView::Template::Error (The asset "" is not present in the asset pipeline.
+):
+    21:         </div>
+    22: 
+    23:         <div>
+    24:             <%= audio_tag i.audio %>
+    25:         </div>
+    26: 
+    27:         <div class="translation">
+  
+app/views/shlok/mshlokr.html.erb:24
+app/views/shlok/mshlokr.html.erb:13
+app/controllers/shlok_controller.rb:10:in `mshlokr'
+Started POST "/" for 135.125.217.54 at 2022-01-07 03:05:30 +0000
+Cannot render console from 135.125.217.54! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/.env" for 135.125.217.54 at 2022-01-07 03:05:31 +0000
+Cannot render console from 135.125.217.54! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-07 03:07:24 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.4ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:24
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 33.3ms | Allocations: 16892)
+  Rendered layout layouts/application.html.erb (Duration: 33.5ms | Allocations: 16953)
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 11.8ms | Allocations: 22466)
+
+
+  
+ActionView::Template::Error (The asset "" is not present in the asset pipeline.
+):
+    21:         </div>
+    22: 
+    23:         <div>
+    24:             <%= audio_tag i.audio %>
+    25:         </div>
+    26: 
+    27:         <div class="translation">
+  
+app/views/shlok/mshlokr.html.erb:24
+app/views/shlok/mshlokr.html.erb:13
+app/controllers/shlok_controller.rb:10:in `mshlokr'
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-07 03:07:38 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (0.9ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:24
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 13.0ms | Allocations: 6497)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 6532)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 1.9ms | Allocations: 6993)
+
+
+  
+ActionView::Template::Error (The asset "" is not present in the asset pipeline.
+):
+    21:         </div>
+    22: 
+    23:         <div>
+    24:             <%= audio_tag i.audio %>
+    25:         </div>
+    26: 
+    27:         <div class="translation">
+  
+app/views/shlok/mshlokr.html.erb:24
+app/views/shlok/mshlokr.html.erb:13
+app/controllers/shlok_controller.rb:10:in `mshlokr'
+Started GET "/shlok/mshlokc" for 103.37.201.183 at 2022-01-07 03:07:45 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokc as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokc.html.erb within layouts/application
+  Rendered shlok/mshlokc.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1003)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 3696)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 4266)
+
+
+Started GET "/shlok/mshlokc" for 103.37.201.183 at 2022-01-07 03:07:53 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokc as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokc.html.erb within layouts/application
+  Rendered shlok/mshlokc.html.erb within layouts/application (Duration: 0.8ms | Allocations: 603)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 2433)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 2941)
+
+
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-07 03:08:08 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.1ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:24
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 10.0ms | Allocations: 6485)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 6520)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 2.2ms | Allocations: 6906)
+
+
+  
+ActionView::Template::Error (The asset "" is not present in the asset pipeline.
+):
+    21:         </div>
+    22: 
+    23:         <div>
+    24:             <%= audio_tag i.audio %>
+    25:         </div>
+    26: 
+    27:         <div class="translation">
+  
+app/views/shlok/mshlokr.html.erb:24
+app/views/shlok/mshlokr.html.erb:13
+app/controllers/shlok_controller.rb:10:in `mshlokr'
+Started GET "/shlok/mshlokc" for 103.37.201.183 at 2022-01-07 03:10:20 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokc as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokc.html.erb within layouts/application
+  Rendered shlok/mshlokc.html.erb within layouts/application (Duration: 0.8ms | Allocations: 552)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 2340)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms | Allocations: 2744)
+
+
+Started POST "/shlok/mshlokcp" for 103.37.201.183 at 2022-01-07 03:14:18 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokcp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "title"=>"a", "shlok"=>"b", "audio"=>"audio.wav", "translation"=>"c", "commit"=>"अग्रेस्थापनं करोतु"}
+Completed 500 Internal Server Error in 30ms (Allocations: 8545)
+
+
+  
+ActiveSupport::MessageVerifier::InvalidSignature (ActiveSupport::MessageVerifier::InvalidSignature):
+  
+app/controllers/shlok_controller.rb:25:in `mshlokcp'
+Started GET "/shlok/mshlokr" for 152.57.185.104 at 2022-01-07 03:23:25 +0000
+Cannot render console from 152.57.185.104! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.0ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  [1m[36mActiveStorage::Attachment Load (1.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:24
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 26.1ms | Allocations: 10142)
+  Rendered layout layouts/application.html.erb (Duration: 26.2ms | Allocations: 10177)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 12.9ms | Allocations: 10623)
+
+
+  
+ActionView::Template::Error (The asset "" is not present in the asset pipeline.
+):
+    21:         </div>
+    22: 
+    23:         <div>
+    24:             <%= audio_tag i.audio %>
+    25:         </div>
+    26: 
+    27:         <div class="translation">
+  
+app/views/shlok/mshlokr.html.erb:24
+app/views/shlok/mshlokr.html.erb:13
+app/controllers/shlok_controller.rb:10:in `mshlokr'
+Started POST "/shlok/mshlokcp" for 103.37.201.183 at 2022-01-07 03:27:28 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ShlokController#mshlokcp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "title"=>"a", "shlok"=>"b", "audio"=>"audio.wav", "translation"=>"c", "commit"=>"अग्रेस्थापनं करोतु"}
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 6.3ms | Allocations: 13987)
+
+
+  
+ActiveSupport::MessageVerifier::InvalidSignature (ActiveSupport::MessageVerifier::InvalidSignature):
+  
+app/controllers/shlok_controller.rb:25:in `mshlokcp'
+Started GET "/shlok/mshlokc" for 103.37.201.183 at 2022-01-07 03:27:32 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokc as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokc.html.erb within layouts/application
+  Rendered shlok/mshlokc.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1108)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.2ms | Allocations: 8350)
+Completed 200 OK in 29ms (Views: 28.4ms | ActiveRecord: 0.0ms | Allocations: 10718)
+
+
+Started POST "/shlok/mshlokcp" for 103.37.201.183 at 2022-01-07 03:27:47 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokcp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "title"=>"a", "shlok"=>"b", "audio"=>#<ActionDispatch::Http::UploadedFile:0x000055a611611c70 @tempfile=#<Tempfile:/tmp/RackMultipart20220107-30268-n8qx52.wav>, @original_filename="audio.wav", @content_type="audio/wav", @headers="Content-Disposition: form-data; name=\"audio\"; filename=\"audio.wav\"\r\nContent-Type: audio/wav\r\n">, "translation"=>"c", "commit"=>"अग्रेस्थापनं करोतु"}
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mShlok Create (1.6ms)[0m  [1m[32mINSERT INTO "shloks" ("title", "shlok", "translation", "updated_by") VALUES ($1, $2, $3, $4) RETURNING "sid"[0m  [["title", "a"], ["shlok", "b"], ["translation", "c"], ["updated_by", "Mohak"]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mActiveStorage::Blob Load (1.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 8], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 8], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mActiveStorage::Blob Create (1.4ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "fumrymn6rgaqj12susshh183hgrc"], ["filename", "audio.wav"], ["content_type", "audio/x-wav"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 190445], ["checksum", "yvh0EweLPqd6k1uCGmJVPA=="], ["created_at", "2022-01-07 03:27:47.922601"]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mActiveStorage::Attachment Create (1.4ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "audio"], ["record_type", "Shlok"], ["record_id", 8], ["blob_id", 1], ["created_at", "2022-01-07 03:27:47.926323"]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+[36m  Disk Storage (1.3ms) [0m[32mUploaded file to key: fumrymn6rgaqj12susshh183hgrc (checksum: yvh0EweLPqd6k1uCGmJVPA==)[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mActiveStorage::Blob Update (1.1ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 1]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+Redirected to http://13.127.46.121/shlok/mshlokr
+Completed 302 Found in 77ms (ActiveRecord: 22.5ms | Allocations: 31263)
+
+
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-07 03:27:48 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.2ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 8], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:24
+  [1m[36mActiveStorage::Blob Load (1.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:24
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 15.5ms | Allocations: 7875)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 7911)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 3.5ms | Allocations: 8552)
+
+
+  
+ActionView::Template::Error (The asset "" is not present in the asset pipeline.
+):
+    21:         </div>
+    22: 
+    23:         <div>
+    24:             <%= audio_tag i.audio %>
+    25:         </div>
+    26: 
+    27:         <div class="translation">
+  
+app/views/shlok/mshlokr.html.erb:24
+app/views/shlok/mshlokr.html.erb:13
+app/controllers/shlok_controller.rb:10:in `mshlokr'
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-07 03:46:04 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.4ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 8], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:24
+  [1m[36mActiveStorage::Blob Load (1.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:24
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 68.1ms | Allocations: 32707)
+  Rendered layout layouts/application.html.erb (Duration: 68.3ms | Allocations: 32768)
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 21.0ms | Allocations: 38289)
+
+
+  
+ActionView::Template::Error (The asset "" is not present in the asset pipeline.
+):
+    21:         </div>
+    22: 
+    23:         <div>
+    24:             <%= audio_tag i.audio %>
+    25:         </div>
+    26: 
+    27:         <div class="translation">
+  
+app/views/shlok/mshlokr.html.erb:24
+app/views/shlok/mshlokr.html.erb:13
+app/controllers/shlok_controller.rb:10:in `mshlokr'
+Started GET "/shlok/mshlokc" for 103.37.201.183 at 2022-01-07 03:46:08 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokc as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokc.html.erb within layouts/application
+  Rendered shlok/mshlokc.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1022)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 8136)
+Completed 200 OK in 15ms (Views: 14.8ms | ActiveRecord: 0.0ms | Allocations: 8791)
+
+
+Started POST "/shlok/mshlokcp" for 103.37.201.183 at 2022-01-07 03:46:17 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokcp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "title"=>"a", "shlok"=>"b", "audio"=>#<ActionDispatch::Http::UploadedFile:0x000055a6e47c8950 @tempfile=#<Tempfile:/tmp/RackMultipart20220107-31180-j3q2g0.wav>, @original_filename="audio.wav", @content_type="audio/wav", @headers="Content-Disposition: form-data; name=\"audio\"; filename=\"audio.wav\"\r\nContent-Type: audio/wav\r\n">, "translation"=>"c", "commit"=>"अग्रेस्थापनं करोतु"}
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mShlok Create (1.2ms)[0m  [1m[32mINSERT INTO "shloks" ("title", "shlok", "translation", "updated_by") VALUES ($1, $2, $3, $4) RETURNING "sid"[0m  [["title", "a"], ["shlok", "b"], ["translation", "c"], ["updated_by", "Mohak"]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mActiveStorage::Blob Load (1.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 9], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 9], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mActiveStorage::Blob Create (1.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "4dd1f1by29o5cj015wvb71e9eqvj"], ["filename", "audio.wav"], ["content_type", "audio/x-wav"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 190445], ["checksum", "yvh0EweLPqd6k1uCGmJVPA=="], ["created_at", "2022-01-07 03:46:17.367828"]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mActiveStorage::Attachment Create (1.3ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "audio"], ["record_type", "Shlok"], ["record_id", 9], ["blob_id", 2], ["created_at", "2022-01-07 03:46:17.371623"]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+[36m  Disk Storage (1.4ms) [0m[32mUploaded file to key: 4dd1f1by29o5cj015wvb71e9eqvj (checksum: yvh0EweLPqd6k1uCGmJVPA==)[0m
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mActiveStorage::Blob Update (1.5ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 2]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+Redirected to http://13.127.46.121/shlok/mshlokr
+Completed 302 Found in 45ms (ActiveRecord: 14.0ms | Allocations: 16382)
+
+
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-07 03:46:17 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (0.9ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 8], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:24
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:24
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 12.6ms | Allocations: 6998)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 7034)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 2.9ms | Allocations: 7489)
+
+
+  
+ActionView::Template::Error (The asset "" is not present in the asset pipeline.
+):
+    21:         </div>
+    22: 
+    23:         <div>
+    24:             <%= audio_tag i.audio %>
+    25:         </div>
+    26: 
+    27:         <div class="translation">
+  
+app/views/shlok/mshlokr.html.erb:24
+app/views/shlok/mshlokr.html.erb:13
+app/controllers/shlok_controller.rb:10:in `mshlokr'
+Started GET "/shlok/mshlokc" for 103.37.201.183 at 2022-01-07 03:46:53 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokc as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokc.html.erb within layouts/application
+  Rendered shlok/mshlokc.html.erb within layouts/application (Duration: 0.8ms | Allocations: 582)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 3788)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 4205)
+
+
+Started GET "/shlok/mshlokc" for 103.37.201.183 at 2022-01-07 03:46:55 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokc as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokc.html.erb within layouts/application
+  Rendered shlok/mshlokc.html.erb within layouts/application (Duration: 0.7ms | Allocations: 555)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 3660)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 4072)
+
+
+Started POST "/shlok/mshlokcp" for 103.37.201.183 at 2022-01-07 03:47:19 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokcp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "title"=>"a", "shlok"=>"b", "audio"=>#<ActionDispatch::Http::UploadedFile:0x00007f3cdd0fa3b8 @tempfile=#<Tempfile:/tmp/RackMultipart20220107-31180-w041j5.jpg>, @original_filename="CBRTI letter.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"audio\"; filename=\"CBRTI letter.jpg\"\r\nContent-Type: image/jpeg\r\n">, "translation"=>"c", "commit"=>"अग्रेस्थापनं करोतु"}
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mShlok Create (1.0ms)[0m  [1m[32mINSERT INTO "shloks" ("title", "shlok", "translation", "updated_by") VALUES ($1, $2, $3, $4) RETURNING "sid"[0m  [["title", "a"], ["shlok", "b"], ["translation", "c"], ["updated_by", "Mohak"]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 10], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mActiveStorage::Attachment Load (3.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 10], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mActiveStorage::Blob Create (1.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "tomuf27ewl4rzv78qr11xn3wtxb0"], ["filename", "CBRTI letter.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 539697], ["checksum", "5VsNtv3MD5s/+g2h56KEqg=="], ["created_at", "2022-01-07 03:47:19.712769"]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mActiveStorage::Attachment Create (1.3ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "audio"], ["record_type", "Shlok"], ["record_id", 10], ["blob_id", 3], ["created_at", "2022-01-07 03:47:19.716488"]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+[36m  Disk Storage (2.6ms) [0m[32mUploaded file to key: tomuf27ewl4rzv78qr11xn3wtxb0 (checksum: 5VsNtv3MD5s/+g2h56KEqg==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 7dbba842-246e-4816-9ff4-1025fbee12f4) to Async(default) with arguments: #<GlobalID:0x00007f3cdd2f60b8 @uri=#<URI::GID gid://scrubyrails/ActiveStorage::Blob/3>>
+Redirected to http://13.127.46.121/shlok/mshlokr
+Completed 302 Found in 43ms (ActiveRecord: 10.7ms | Allocations: 11195)
+
+
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7dbba842-246e-4816-9ff4-1025fbee12f4] Performing ActiveStorage::AnalyzeJob (Job ID: 7dbba842-246e-4816-9ff4-1025fbee12f4) from Async(default) enqueued at 2022-01-07T03:47:19Z with arguments: #<GlobalID:0x00007f3cdd3ac390 @uri=#<URI::GID gid://scrubyrails/ActiveStorage::Blob/3>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7dbba842-246e-4816-9ff4-1025fbee12f4] [36m  Disk Storage (0.8ms) [0m[34mDownloaded file from key: tomuf27ewl4rzv78qr11xn3wtxb0[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7dbba842-246e-4816-9ff4-1025fbee12f4] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7dbba842-246e-4816-9ff4-1025fbee12f4]   [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7dbba842-246e-4816-9ff4-1025fbee12f4]   [1m[36mActiveStorage::Blob Update (0.5ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 3]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7dbba842-246e-4816-9ff4-1025fbee12f4]   [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7dbba842-246e-4816-9ff4-1025fbee12f4] Performed ActiveStorage::AnalyzeJob (Job ID: 7dbba842-246e-4816-9ff4-1025fbee12f4) from Async(default) in 58.54ms
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-07 03:47:19 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.4ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  [1m[36mActiveStorage::Attachment Load (1.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 8], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:24
+  [1m[36mActiveStorage::Blob Load (1.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:24
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 15.4ms | Allocations: 7256)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 7292)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 4.2ms | Allocations: 7768)
+
+
+  
+ActionView::Template::Error (The asset "" is not present in the asset pipeline.
+):
+    21:         </div>
+    22: 
+    23:         <div>
+    24:             <%= audio_tag i.audio %>
+    25:         </div>
+    26: 
+    27:         <div class="translation">
+  
+app/views/shlok/mshlokr.html.erb:24
+app/views/shlok/mshlokr.html.erb:13
+app/controllers/shlok_controller.rb:10:in `mshlokr'
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-07 03:52:57 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.3ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 21.1ms | Allocations: 5950)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 36.0ms | Allocations: 13280)
+Completed 200 OK in 49ms (Views: 32.4ms | ActiveRecord: 7.2ms | Allocations: 18864)
+
+
+Started GET "/shlok/mshlokc" for 103.37.201.183 at 2022-01-07 03:53:14 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokc as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokc.html.erb within layouts/application
+  Rendered shlok/mshlokc.html.erb within layouts/application (Duration: 1.8ms | Allocations: 994)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 4224)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 4894)
+
+
+Started GET "/shlok/mshlokr" for 152.57.185.104 at 2022-01-07 03:53:25 +0000
+Cannot render console from 152.57.185.104! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.1ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1360)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 4476)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 1.1ms | Allocations: 4896)
+
+
+Started POST "/shlok/mshlokcp" for 103.37.201.183 at 2022-01-07 03:53:41 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokcp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "title"=>"d", "shlok"=>"e", "audio"=>#<ActionDispatch::Http::UploadedFile:0x00007fa1f045e770 @tempfile=#<Tempfile:/tmp/RackMultipart20220107-31718-yilat8.wav>, @original_filename="audio.wav", @content_type="audio/wav", @headers="Content-Disposition: form-data; name=\"audio\"; filename=\"audio.wav\"\r\nContent-Type: audio/wav\r\n">, "translation"=>"f", "commit"=>"अग्रेस्थापनं करोतु"}
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mShlok Create (1.1ms)[0m  [1m[32mINSERT INTO "shloks" ("title", "shlok", "translation", "updated_by") VALUES ($1, $2, $3, $4) RETURNING "sid"[0m  [["title", "d"], ["shlok", "e"], ["translation", "f"], ["updated_by", "Mohak"]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mActiveStorage::Blob Load (1.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 11], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 11], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mActiveStorage::Blob Create (1.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "818yen3zkx19en21guxgo07y0j2k"], ["filename", "audio.wav"], ["content_type", "audio/x-wav"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 190445], ["checksum", "yvh0EweLPqd6k1uCGmJVPA=="], ["created_at", "2022-01-07 03:53:41.865507"]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mActiveStorage::Attachment Create (1.3ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "audio"], ["record_type", "Shlok"], ["record_id", 11], ["blob_id", 4], ["created_at", "2022-01-07 03:53:41.869552"]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+[36m  Disk Storage (1.1ms) [0m[32mUploaded file to key: 818yen3zkx19en21guxgo07y0j2k (checksum: yvh0EweLPqd6k1uCGmJVPA==)[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mActiveStorage::Blob Update (1.2ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 4]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+Redirected to http://13.127.46.121/shlok/mshlokr
+Completed 302 Found in 97ms (ActiveRecord: 23.9ms | Allocations: 36003)
+
+
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-07 03:53:42 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.9ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1325)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 4584)
+Completed 200 OK in 11ms (Views: 8.1ms | ActiveRecord: 1.9ms | Allocations: 5083)
+
+
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-07 04:21:55 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.4ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 22.7ms | Allocations: 4629)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 28.6ms | Allocations: 7745)
+Completed 200 OK in 31ms (Views: 29.3ms | ActiveRecord: 14.4ms | Allocations: 8159)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1409038475602093665)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1409038475602093665)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
