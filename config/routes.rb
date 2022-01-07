@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     get "user/profile", as:"profile"
     get "user/new", as:"new"
     post "user/newp", as:"newp"
-    get "user/all", as:"all_users"
+    get "user/usersr", as:"all_users"
 
     get "logging/mlogin", as:"member_login"
     get "logging/ulogin", as:"user_login"

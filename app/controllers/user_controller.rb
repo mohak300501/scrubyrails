@@ -33,9 +33,10 @@ class UserController < ApplicationController
         end
     end
 
-    def all
+    def usersr
         if session[:member]
             @users = User.all
+            render "users"
         else
             redirect_to root_url
         end
