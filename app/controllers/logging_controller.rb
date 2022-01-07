@@ -22,7 +22,8 @@ class LoggingController < ApplicationController
         @moru = moru ? Member.find_by(email: params[:email]) : User.find_by(email: params[:email])
         if @moru
             if @moru.password == params[:password]
-                session[moru ? :member : :user ] = {name: @moru.name, email: @moru.email}
+                session[moru ? :member : :user ] = @moru.name
+                session[:email] = @moru.email
                 redirect_to root_url
             else
                 flash[:notice] = "Password does not match"
