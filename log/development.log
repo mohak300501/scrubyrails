@@ -17371,3 +17371,1732 @@ Completed 200 OK in 31ms (Views: 29.3ms | ActiveRecord: 14.4ms | Allocations: 81
   [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1409038475602093665)[0m
   [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/shlok/4/del" for 103.37.201.183 at 2022-01-07 04:28:34 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ShlokController#mshlokdp as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mShlok Load (0.8ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."sid" = $1 LIMIT $2[0m  [["sid", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:51:in `mshlokdp'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mShlok Destroy (0.8ms)[0m  [1m[31mDELETE FROM "shloks" WHERE "shloks"."sid" = $1[0m  [["sid", 4]]
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+Redirected to http://13.127.46.121/shlok/mshlokr
+Completed 302 Found in 42ms (ActiveRecord: 13.8ms | Allocations: 16644)
+
+
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-07 04:28:34 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.0ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2115)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.1ms | Allocations: 9424)
+Completed 200 OK in 21ms (Views: 18.8ms | ActiveRecord: 1.0ms | Allocations: 11762)
+
+
+Started GET "/shlok/3/del" for 103.37.201.183 at 2022-01-07 04:28:40 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokdp as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mShlok Load (0.8ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."sid" = $1 LIMIT $2[0m  [["sid", 3], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:51:in `mshlokdp'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mShlok Destroy (2.4ms)[0m  [1m[31mDELETE FROM "shloks" WHERE "shloks"."sid" = $1[0m  [["sid", 3]]
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+Redirected to http://13.127.46.121/shlok/mshlokr
+Completed 302 Found in 24ms (ActiveRecord: 6.9ms | Allocations: 4255)
+
+
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-07 04:28:40 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (3.0ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 17.3ms | Allocations: 1213)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 31.8ms | Allocations: 4458)
+Completed 200 OK in 33ms (Views: 29.4ms | ActiveRecord: 3.0ms | Allocations: 4927)
+
+
+Started GET "/shlok/6/del" for 103.37.201.183 at 2022-01-07 04:28:56 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokdp as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mShlok Load (0.7ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."sid" = $1 LIMIT $2[0m  [["sid", 6], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:51:in `mshlokdp'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mShlok Destroy (0.8ms)[0m  [1m[31mDELETE FROM "shloks" WHERE "shloks"."sid" = $1[0m  [["sid", 6]]
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+Redirected to http://13.127.46.121/shlok/mshlokr
+Completed 302 Found in 16ms (ActiveRecord: 5.7ms | Allocations: 3944)
+
+
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-07 04:28:57 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (0.9ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1138)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 4270)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.9ms | Allocations: 4697)
+
+
+Started GET "/shlok/7/del" for 103.37.201.183 at 2022-01-07 04:28:59 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokdp as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mShlok Load (0.7ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."sid" = $1 LIMIT $2[0m  [["sid", 7], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:51:in `mshlokdp'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mActiveStorage::Attachment Load (1.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mShlok Destroy (0.9ms)[0m  [1m[31mDELETE FROM "shloks" WHERE "shloks"."sid" = $1[0m  [["sid", 7]]
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+Redirected to http://13.127.46.121/shlok/mshlokr
+Completed 302 Found in 16ms (ActiveRecord: 5.3ms | Allocations: 3941)
+
+
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-07 04:28:59 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.4ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1089)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 4205)
+Completed 200 OK in 13ms (Views: 10.4ms | ActiveRecord: 1.4ms | Allocations: 4632)
+
+
+Started GET "/shlok/10/del" for 103.37.201.183 at 2022-01-07 04:30:30 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokdp as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mShlok Load (1.0ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."sid" = $1 LIMIT $2[0m  [["sid", 10], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:51:in `mshlokdp'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 10], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mActiveStorage::Attachment Destroy (1.2ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mShlok Destroy (0.8ms)[0m  [1m[31mDELETE FROM "shloks" WHERE "shloks"."sid" = $1[0m  [["sid", 10]]
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: e067e7a6-465c-4169-af22-03b22469adab) to Async(default) with arguments: #<GlobalID:0x00007fc1544679c8 @uri=#<URI::GID gid://scrubyrails/ActiveStorage::Blob/3>>
+Redirected to http://13.127.46.121/shlok/mshlokr
+Completed 302 Found in 60ms (ActiveRecord: 15.6ms | Allocations: 23703)
+
+
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [e067e7a6-465c-4169-af22-03b22469adab] Performing ActiveStorage::PurgeJob (Job ID: e067e7a6-465c-4169-af22-03b22469adab) from Async(default) enqueued at 2022-01-07T04:30:30Z with arguments: #<GlobalID:0x00007fc154590cf0 @uri=#<URI::GID gid://scrubyrails/ActiveStorage::Blob/3>>
+[ActiveJob] [ActiveStorage::PurgeJob] [e067e7a6-465c-4169-af22-03b22469adab]   [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [e067e7a6-465c-4169-af22-03b22469adab]   [1m[36mActiveStorage::Attachment Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 3], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [e067e7a6-465c-4169-af22-03b22469adab]   [1m[36mActiveStorage::VariantRecord Load (0.6ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = $1[0m  [["blob_id", 3]]
+[ActiveJob] [ActiveStorage::PurgeJob] [e067e7a6-465c-4169-af22-03b22469adab]   [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [e067e7a6-465c-4169-af22-03b22469adab]   [1m[36mActiveStorage::Blob Destroy (0.9ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 3]]
+[ActiveJob] [ActiveStorage::PurgeJob] [e067e7a6-465c-4169-af22-03b22469adab]   [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [e067e7a6-465c-4169-af22-03b22469adab] [36m  Disk Storage (0.2ms) [0m[31mDeleted file from key: tomuf27ewl4rzv78qr11xn3wtxb0[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [e067e7a6-465c-4169-af22-03b22469adab] [36m  Disk Storage (0.1ms) [0m[31mDeleted files by key prefix: variants/tomuf27ewl4rzv78qr11xn3wtxb0/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [e067e7a6-465c-4169-af22-03b22469adab] Performed ActiveStorage::PurgeJob (Job ID: e067e7a6-465c-4169-af22-03b22469adab) from Async(default) in 43.33ms
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-07 04:30:30 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.3ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1189)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 4450)
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 1.3ms | Allocations: 4980)
+
+
+Started GET "/shlok/8/del" for 103.37.201.183 at 2022-01-07 04:30:32 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokdp as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mShlok Load (1.0ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."sid" = $1 LIMIT $2[0m  [["sid", 8], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:51:in `mshlokdp'
+  [1m[36mTRANSACTION (9.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 8], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mActiveStorage::Attachment Destroy (1.0ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mShlok Destroy (5.6ms)[0m  [1m[31mDELETE FROM "shloks" WHERE "shloks"."sid" = $1[0m  [["sid", 8]]
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: c9803ac5-6cc7-43a2-b0ed-04f3b3b904d9) to Async(default) with arguments: #<GlobalID:0x00005601d976cbf0 @uri=#<URI::GID gid://scrubyrails/ActiveStorage::Blob/1>>
+Redirected to http://13.127.46.121/shlok/mshlokr
+Completed 302 Found in 48ms (ActiveRecord: 21.4ms | Allocations: 6000)
+
+
+  [1m[36mActiveStorage::Blob Load (1.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [c9803ac5-6cc7-43a2-b0ed-04f3b3b904d9] Performing ActiveStorage::PurgeJob (Job ID: c9803ac5-6cc7-43a2-b0ed-04f3b3b904d9) from Async(default) enqueued at 2022-01-07T04:30:32Z with arguments: #<GlobalID:0x00005601d96f5e38 @uri=#<URI::GID gid://scrubyrails/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::PurgeJob] [c9803ac5-6cc7-43a2-b0ed-04f3b3b904d9]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [c9803ac5-6cc7-43a2-b0ed-04f3b3b904d9]   [1m[36mActiveStorage::Attachment Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [c9803ac5-6cc7-43a2-b0ed-04f3b3b904d9]   [1m[36mActiveStorage::VariantRecord Load (0.9ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = $1[0m  [["blob_id", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [c9803ac5-6cc7-43a2-b0ed-04f3b3b904d9]   [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [c9803ac5-6cc7-43a2-b0ed-04f3b3b904d9]   [1m[36mActiveStorage::Blob Destroy (0.8ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [c9803ac5-6cc7-43a2-b0ed-04f3b3b904d9]   [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [c9803ac5-6cc7-43a2-b0ed-04f3b3b904d9] [36m  Disk Storage (0.1ms) [0m[31mDeleted file from key: fumrymn6rgaqj12susshh183hgrc[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [c9803ac5-6cc7-43a2-b0ed-04f3b3b904d9] Performed ActiveStorage::PurgeJob (Job ID: c9803ac5-6cc7-43a2-b0ed-04f3b3b904d9) from Async(default) in 21.79ms
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-07 04:30:32 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.4ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 13.0ms | Allocations: 990)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.3ms | Allocations: 4106)
+Completed 200 OK in 25ms (Views: 23.4ms | ActiveRecord: 1.4ms | Allocations: 4531)
+
+
+Started GET "/shlok/9/del" for 103.37.201.183 at 2022-01-07 04:30:37 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokdp as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mShlok Load (0.9ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."sid" = $1 LIMIT $2[0m  [["sid", 9], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:51:in `mshlokdp'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mActiveStorage::Attachment Load (7.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 9], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mActiveStorage::Attachment Destroy (9.5ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mShlok Destroy (1.3ms)[0m  [1m[31mDELETE FROM "shloks" WHERE "shloks"."sid" = $1[0m  [["sid", 9]]
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mActiveStorage::Blob Load (4.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 354c30dd-d87e-42d9-944a-c437b332f9bc) to Async(default) with arguments: #<GlobalID:0x00005601d8b61248 @uri=#<URI::GID gid://scrubyrails/ActiveStorage::Blob/2>>
+Redirected to http://13.127.46.121/shlok/mshlokr
+Completed 302 Found in 95ms (ActiveRecord: 28.6ms | Allocations: 5929)
+
+
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [354c30dd-d87e-42d9-944a-c437b332f9bc] Performing ActiveStorage::PurgeJob (Job ID: 354c30dd-d87e-42d9-944a-c437b332f9bc) from Async(default) enqueued at 2022-01-07T04:30:37Z with arguments: #<GlobalID:0x00005601d735ec68 @uri=#<URI::GID gid://scrubyrails/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::PurgeJob] [354c30dd-d87e-42d9-944a-c437b332f9bc]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [354c30dd-d87e-42d9-944a-c437b332f9bc]   [1m[36mActiveStorage::Attachment Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [354c30dd-d87e-42d9-944a-c437b332f9bc]   [1m[36mActiveStorage::VariantRecord Load (0.2ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = $1[0m  [["blob_id", 2]]
+[ActiveJob] [ActiveStorage::PurgeJob] [354c30dd-d87e-42d9-944a-c437b332f9bc]   [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [354c30dd-d87e-42d9-944a-c437b332f9bc]   [1m[36mActiveStorage::Blob Destroy (0.6ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 2]]
+[ActiveJob] [ActiveStorage::PurgeJob] [354c30dd-d87e-42d9-944a-c437b332f9bc]   [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [354c30dd-d87e-42d9-944a-c437b332f9bc] [36m  Disk Storage (0.1ms) [0m[31mDeleted file from key: 4dd1f1by29o5cj015wvb71e9eqvj[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [354c30dd-d87e-42d9-944a-c437b332f9bc] Performed ActiveStorage::PurgeJob (Job ID: 354c30dd-d87e-42d9-944a-c437b332f9bc) from Async(default) in 12.46ms
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-07 04:30:38 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.0ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 3.9ms | Allocations: 942)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 4074)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 1.0ms | Allocations: 4501)
+
+
+Started GET "/shlok/mshlokc" for 103.37.201.183 at 2022-01-07 04:30:47 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokc as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokc.html.erb within layouts/application
+  Rendered shlok/mshlokc.html.erb within layouts/application (Duration: 1.8ms | Allocations: 957)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 4078)
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.0ms | Allocations: 4642)
+
+
+Started POST "/shlok/mshlokcp" for 103.37.201.183 at 2022-01-07 04:31:04 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokcp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "title"=>"a", "shlok"=>"b", "audio"=>#<ActionDispatch::Http::UploadedFile:0x00005601d966dd58 @tempfile=#<Tempfile:/tmp/RackMultipart20220107-665-rgv3r2.wav>, @original_filename="audio.wav", @content_type="audio/wav", @headers="Content-Disposition: form-data; name=\"audio\"; filename=\"audio.wav\"\r\nContent-Type: audio/wav\r\n">, "translation"=>"c", "commit"=>"अग्रेस्थापनं करोतु"}
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mShlok Create (1.0ms)[0m  [1m[32mINSERT INTO "shloks" ("title", "shlok", "translation", "updated_by") VALUES ($1, $2, $3, $4) RETURNING "sid"[0m  [["title", "a"], ["shlok", "b"], ["translation", "c"], ["updated_by", "Mohak"]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mActiveStorage::Blob Load (1.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 12], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 12], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mActiveStorage::Blob Create (1.4ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "ac9a9zrc5oocwiz8hlnejcv9cknc"], ["filename", "audio.wav"], ["content_type", "audio/x-wav"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 190445], ["checksum", "yvh0EweLPqd6k1uCGmJVPA=="], ["created_at", "2022-01-07 04:31:04.696507"]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mActiveStorage::Attachment Create (1.7ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "audio"], ["record_type", "Shlok"], ["record_id", 12], ["blob_id", 5], ["created_at", "2022-01-07 04:31:04.701667"]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+[36m  Disk Storage (1.4ms) [0m[32mUploaded file to key: ac9a9zrc5oocwiz8hlnejcv9cknc (checksum: yvh0EweLPqd6k1uCGmJVPA==)[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mActiveStorage::Blob Update (1.0ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 5]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+Redirected to http://13.127.46.121/shlok/mshlokr
+Completed 302 Found in 46ms (ActiveRecord: 13.4ms | Allocations: 16013)
+
+
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-07 04:31:04 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (0.9ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1022)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 4265)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.9ms | Allocations: 4763)
+
+
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-07 04:31:43 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.5ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  [1m[36mActiveStorage::Attachment Load (1.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 11], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:24
+  [1m[36mActiveStorage::Blob Load (1.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:24
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 72.6ms | Allocations: 32215)
+  Rendered layout layouts/application.html.erb (Duration: 72.8ms | Allocations: 32276)
+Completed 500 Internal Server Error in 86ms (ActiveRecord: 25.0ms | Allocations: 37789)
+
+
+  
+ActionView::Template::Error (The asset "" is not present in the asset pipeline.
+):
+    21:         </div>
+    22: 
+    23:         <div>
+    24:             <%= audio_tag i.audio %>
+    25:         </div>
+    26: 
+    27:         <div class="translation">
+  
+app/views/shlok/mshlokr.html.erb:24
+app/views/shlok/mshlokr.html.erb:13
+app/controllers/shlok_controller.rb:10:in `mshlokr'
+Started GET "/" for 217.119.126.9 at 2022-01-07 04:33:25 +0000
+Cannot render console from 217.119.126.9! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.5ms | Allocations: 198)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 7473)
+Completed 200 OK in 20ms (Views: 17.6ms | ActiveRecord: 0.0ms | Allocations: 8667)
+
+
+Started GET "/" for 107.175.44.135 at 2022-01-07 04:45:36 +0000
+Cannot render console from 107.175.44.135! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as */*
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 3198)
+Completed 200 OK in 7ms (Views: 5.5ms | Allocations: 3777)
+
+
+Started GET "/shlok/mshlokc" for 103.37.201.183 at 2022-01-07 04:52:47 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokc as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokc.html.erb within layouts/application
+  Rendered shlok/mshlokc.html.erb within layouts/application (Duration: 1.7ms | Allocations: 966)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 4121)
+Completed 200 OK in 11ms (Views: 10.3ms | Allocations: 4670)
+
+
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-07 04:53:05 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.1ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 11], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:24
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:24
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 39.6ms | Allocations: 10834)
+  Rendered layout layouts/application.html.erb (Duration: 39.7ms | Allocations: 10870)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 20.8ms | Allocations: 11349)
+
+
+  
+ActionView::Template::Error (The asset "" is not present in the asset pipeline.
+):
+    21:         </div>
+    22: 
+    23:         <div>
+    24:             <%= audio_tag i.audio %>
+    25:         </div>
+    26: 
+    27:         <div class="translation">
+  
+app/views/shlok/mshlokr.html.erb:24
+app/views/shlok/mshlokr.html.erb:13
+app/controllers/shlok_controller.rb:10:in `mshlokr'
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-07 04:53:44 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.7ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  [1m[36mActiveStorage::Attachment Load (1.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 11], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:24
+  [1m[36mActiveStorage::Blob Load (1.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:24
+  [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 12], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:24
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:24
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 85.9ms | Allocations: 30947)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 102.9ms | Allocations: 38197)
+Completed 200 OK in 120ms (Views: 81.1ms | ActiveRecord: 27.6ms | Allocations: 43772)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4521eb69e7ba961c1fba718f8059b1aebee87fe3/audio.wav" for 103.37.201.183 at 2022-01-07 04:53:45 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4521eb69e7ba961c1fba718f8059b1aebee87fe3", "filename"=>"audio"}
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[36m  Disk Storage (2.6ms) [0m[34mGenerated URL for file at key: 818yen3zkx19en21guxgo07y0j2k (http://13.127.46.121/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPREU0ZVdWdU0zcHJlREU1Wlc0eU1XZDFlR2R2TURkNU1Hb3lhd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYnk1M1lYWWlPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkYxWkdsdkxuZGhkZ1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRUdGMVpHbHZMM2d0ZDJGMkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDEtMDdUMDQ6NTg6NDUuMDI0WiIsInB1ciI6ImJsb2Jfa2V5In19--75e3377e56fa0aaaa3045c5350a3995158b0c306/audio.wav)[0m
+Redirected to http://13.127.46.121/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPREU0ZVdWdU0zcHJlREU1Wlc0eU1XZDFlR2R2TURkNU1Hb3lhd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYnk1M1lYWWlPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkYxWkdsdkxuZGhkZ1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRUdGMVpHbHZMM2d0ZDJGMkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDEtMDdUMDQ6NTg6NDUuMDI0WiIsInB1ciI6ImJsb2Jfa2V5In19--75e3377e56fa0aaaa3045c5350a3995158b0c306/audio.wav
+Completed 302 Found in 10ms (ActiveRecord: 1.0ms | Allocations: 3646)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--bc98152be094b4de764459c20aa1ccf789baaf42/audio.wav" for 103.37.201.183 at 2022-01-07 04:53:45 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--bc98152be094b4de764459c20aa1ccf789baaf42", "filename"=>"audio"}
+  [1m[36mActiveStorage::Blob Load (14.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: ac9a9zrc5oocwiz8hlnejcv9cknc (http://13.127.46.121/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZV001WVRsNmNtTTFiMjlqZDJsNk9HaHNibVZxWTNZNVkydHVZd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYnk1M1lYWWlPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkYxWkdsdkxuZGhkZ1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRUdGMVpHbHZMM2d0ZDJGMkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDEtMDdUMDQ6NTg6NDUuMDUyWiIsInB1ciI6ImJsb2Jfa2V5In19--3969e2d8333afb523e1593d5e6f6dc11ed9c5359/audio.wav)[0m
+Redirected to http://13.127.46.121/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZV001WVRsNmNtTTFiMjlqZDJsNk9HaHNibVZxWTNZNVkydHVZd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYnk1M1lYWWlPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkYxWkdsdkxuZGhkZ1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRUdGMVpHbHZMM2d0ZDJGMkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDEtMDdUMDQ6NTg6NDUuMDUyWiIsInB1ciI6ImJsb2Jfa2V5In19--3969e2d8333afb523e1593d5e6f6dc11ed9c5359/audio.wav
+Completed 302 Found in 18ms (ActiveRecord: 14.3ms | Allocations: 1633)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPREU0ZVdWdU0zcHJlREU1Wlc0eU1XZDFlR2R2TURkNU1Hb3lhd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYnk1M1lYWWlPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkYxWkdsdkxuZGhkZ1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRUdGMVpHbHZMM2d0ZDJGMkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDEtMDdUMDQ6NTg6NDUuMDI0WiIsInB1ciI6ImJsb2Jfa2V5In19--75e3377e56fa0aaaa3045c5350a3995158b0c306/audio.wav" for 103.37.201.183 at 2022-01-07 04:53:45 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::DiskController#show as */*
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"audio"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 491)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZV001WVRsNmNtTTFiMjlqZDJsNk9HaHNibVZxWTNZNVkydHVZd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYnk1M1lYWWlPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkYxWkdsdkxuZGhkZ1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRUdGMVpHbHZMM2d0ZDJGMkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDEtMDdUMDQ6NTg6NDUuMDUyWiIsInB1ciI6ImJsb2Jfa2V5In19--3969e2d8333afb523e1593d5e6f6dc11ed9c5359/audio.wav" for 103.37.201.183 at 2022-01-07 04:53:45 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::DiskController#show as */*
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"audio"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 314)
+
+
+Started GET "/shlok/11/del" for 103.37.201.183 at 2022-01-07 04:53:56 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokdp as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mShlok Load (1.2ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."sid" = $1 LIMIT $2[0m  [["sid", 11], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:51:in `mshlokdp'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mActiveStorage::Attachment Load (1.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 11], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mActiveStorage::Attachment Destroy (1.2ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mShlok Destroy (1.0ms)[0m  [1m[31mDELETE FROM "shloks" WHERE "shloks"."sid" = $1[0m  [["sid", 11]]
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mActiveStorage::Blob Load (1.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: fbd70104-dab0-40dc-836d-7e8ad36b2f4c) to Async(default) with arguments: #<GlobalID:0x000055a77b753168 @uri=#<URI::GID gid://scrubyrails/ActiveStorage::Blob/4>>
+Redirected to http://13.127.46.121/shlok/mshlokr
+Completed 302 Found in 26ms (ActiveRecord: 9.6ms | Allocations: 7292)
+
+
+  [1m[36mActiveStorage::Blob Load (1.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [fbd70104-dab0-40dc-836d-7e8ad36b2f4c] Performing ActiveStorage::PurgeJob (Job ID: fbd70104-dab0-40dc-836d-7e8ad36b2f4c) from Async(default) enqueued at 2022-01-07T04:53:56Z with arguments: #<GlobalID:0x000055a77b89e428 @uri=#<URI::GID gid://scrubyrails/ActiveStorage::Blob/4>>
+[ActiveJob] [ActiveStorage::PurgeJob] [fbd70104-dab0-40dc-836d-7e8ad36b2f4c]   [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [fbd70104-dab0-40dc-836d-7e8ad36b2f4c]   [1m[36mActiveStorage::Attachment Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 4], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [fbd70104-dab0-40dc-836d-7e8ad36b2f4c]   [1m[36mActiveStorage::VariantRecord Load (0.3ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = $1[0m  [["blob_id", 4]]
+[ActiveJob] [ActiveStorage::PurgeJob] [fbd70104-dab0-40dc-836d-7e8ad36b2f4c]   [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [fbd70104-dab0-40dc-836d-7e8ad36b2f4c]   [1m[36mActiveStorage::Blob Destroy (0.8ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 4]]
+[ActiveJob] [ActiveStorage::PurgeJob] [fbd70104-dab0-40dc-836d-7e8ad36b2f4c]   [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [fbd70104-dab0-40dc-836d-7e8ad36b2f4c] [36m  Disk Storage (0.1ms) [0m[31mDeleted file from key: 818yen3zkx19en21guxgo07y0j2k[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [fbd70104-dab0-40dc-836d-7e8ad36b2f4c] Performed ActiveStorage::PurgeJob (Job ID: fbd70104-dab0-40dc-836d-7e8ad36b2f4c) from Async(default) in 48.12ms
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-07 04:53:56 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.1ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 12], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:24
+  [1m[36mActiveStorage::Blob Load (1.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:24
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 11.1ms | Allocations: 3256)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.0ms | Allocations: 6581)
+Completed 200 OK in 20ms (Views: 14.9ms | ActiveRecord: 3.9ms | Allocations: 7112)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZV001WVRsNmNtTTFiMjlqZDJsNk9HaHNibVZxWTNZNVkydHVZd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYnk1M1lYWWlPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkYxWkdsdkxuZGhkZ1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRUdGMVpHbHZMM2d0ZDJGMkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDEtMDdUMDQ6NTg6NDUuMDUyWiIsInB1ciI6ImJsb2Jfa2V5In19--3969e2d8333afb523e1593d5e6f6dc11ed9c5359/audio.wav" for 103.37.201.183 at 2022-01-07 04:53:57 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::DiskController#show as */*
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"audio"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 344)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhPREU0ZVdWdU0zcHJlREU1Wlc0eU1XZDFlR2R2TURkNU1Hb3lhd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYnk1M1lYWWlPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkYxWkdsdkxuZGhkZ1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRUdGMVpHbHZMM2d0ZDJGMkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDEtMDdUMDQ6NTg6NDUuMDI0WiIsInB1ciI6ImJsb2Jfa2V5In19--75e3377e56fa0aaaa3045c5350a3995158b0c306/audio.wav" for 103.37.201.183 at 2022-01-07 04:53:57 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::DiskController#show as */*
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"audio"}
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms | Allocations: 651)
+
+
+Started GET "/shlok/12/del" for 103.37.201.183 at 2022-01-07 04:53:59 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokdp as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mShlok Load (0.8ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."sid" = $1 LIMIT $2[0m  [["sid", 12], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:51:in `mshlokdp'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mActiveStorage::Attachment Load (1.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 12], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mActiveStorage::Attachment Destroy (1.2ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 5]]
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mShlok Destroy (1.1ms)[0m  [1m[31mDELETE FROM "shloks" WHERE "shloks"."sid" = $1[0m  [["sid", 12]]
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 3abef7e9-5fd3-4da1-8d76-93dc6bbdc887) to Async(default) with arguments: #<GlobalID:0x00007fd7b4b1ca90 @uri=#<URI::GID gid://scrubyrails/ActiveStorage::Blob/5>>
+Redirected to http://13.127.46.121/shlok/mshlokr
+Completed 302 Found in 22ms (ActiveRecord: 8.1ms | Allocations: 6210)
+
+
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [3abef7e9-5fd3-4da1-8d76-93dc6bbdc887] Performing ActiveStorage::PurgeJob (Job ID: 3abef7e9-5fd3-4da1-8d76-93dc6bbdc887) from Async(default) enqueued at 2022-01-07T04:53:59Z with arguments: #<GlobalID:0x00007fd7a00f78f8 @uri=#<URI::GID gid://scrubyrails/ActiveStorage::Blob/5>>
+[ActiveJob] [ActiveStorage::PurgeJob] [3abef7e9-5fd3-4da1-8d76-93dc6bbdc887]   [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [3abef7e9-5fd3-4da1-8d76-93dc6bbdc887]   [1m[36mActiveStorage::Attachment Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 5], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [3abef7e9-5fd3-4da1-8d76-93dc6bbdc887]   [1m[36mActiveStorage::VariantRecord Load (0.4ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = $1[0m  [["blob_id", 5]]
+[ActiveJob] [ActiveStorage::PurgeJob] [3abef7e9-5fd3-4da1-8d76-93dc6bbdc887]   [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [3abef7e9-5fd3-4da1-8d76-93dc6bbdc887]   [1m[36mActiveStorage::Blob Destroy (1.0ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 5]]
+[ActiveJob] [ActiveStorage::PurgeJob] [3abef7e9-5fd3-4da1-8d76-93dc6bbdc887]   [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [3abef7e9-5fd3-4da1-8d76-93dc6bbdc887] [36m  Disk Storage (0.1ms) [0m[31mDeleted file from key: ac9a9zrc5oocwiz8hlnejcv9cknc[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [3abef7e9-5fd3-4da1-8d76-93dc6bbdc887] Performed ActiveStorage::PurgeJob (Job ID: 3abef7e9-5fd3-4da1-8d76-93dc6bbdc887) from Async(default) in 15.4ms
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-07 04:53:59 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.6ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 3.9ms | Allocations: 886)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 4063)
+Completed 200 OK in 10ms (Views: 7.4ms | ActiveRecord: 1.6ms | Allocations: 4487)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZV001WVRsNmNtTTFiMjlqZDJsNk9HaHNibVZxWTNZNVkydHVZd1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYnk1M1lYWWlPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkYxWkdsdkxuZGhkZ1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRUdGMVpHbHZMM2d0ZDJGMkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDEtMDdUMDQ6NTg6NDUuMDUyWiIsInB1ciI6ImJsb2Jfa2V5In19--3969e2d8333afb523e1593d5e6f6dc11ed9c5359/audio.wav" for 103.37.201.183 at 2022-01-07 04:53:59 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::DiskController#show as */*
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"audio"}
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms | Allocations: 636)
+
+
+Started GET "/shlok/mshlokc" for 103.37.201.183 at 2022-01-07 04:54:01 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokc as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokc.html.erb within layouts/application
+  Rendered shlok/mshlokc.html.erb within layouts/application (Duration: 1.7ms | Allocations: 957)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 4062)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 4623)
+
+
+Started POST "/shlok/mshlokcp" for 103.37.201.183 at 2022-01-07 04:54:28 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokcp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "title"=>"image", "shlok"=>"image", "audio"=>#<ActionDispatch::Http::UploadedFile:0x00007fd7b4decdb0 @tempfile=#<Tempfile:/tmp/RackMultipart20220107-2131-c4evf5.jpeg>, @original_filename="iitr175yrlogo.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"audio\"; filename=\"iitr175yrlogo.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "translation"=>"image", "commit"=>"अग्रेस्थापनं करोतु"}
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mShlok Create (1.1ms)[0m  [1m[32mINSERT INTO "shloks" ("title", "shlok", "translation", "updated_by") VALUES ($1, $2, $3, $4) RETURNING "sid"[0m  [["title", "image"], ["shlok", "image"], ["translation", "image"], ["updated_by", "Mohak"]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mActiveStorage::Blob Load (1.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mActiveStorage::Blob Create (1.5ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "kn6jgdklg7x0fd35lxbewd6vveae"], ["filename", "iitr175yrlogo.jpeg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 18684], ["checksum", "rFfl+6brDZ8nCvjBnNx7vA=="], ["created_at", "2022-01-07 04:54:28.677666"]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mActiveStorage::Attachment Create (1.2ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "audio"], ["record_type", "Shlok"], ["record_id", 13], ["blob_id", 6], ["created_at", "2022-01-07 04:54:28.681716"]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+[36m  Disk Storage (0.7ms) [0m[32mUploaded file to key: kn6jgdklg7x0fd35lxbewd6vveae (checksum: rFfl+6brDZ8nCvjBnNx7vA==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 4c09422e-b83a-4ede-a2bb-4ce381bd93fa) to Async(default) with arguments: #<GlobalID:0x00007fd7b4f7a600 @uri=#<URI::GID gid://scrubyrails/ActiveStorage::Blob/6>>
+Redirected to http://13.127.46.121/shlok/mshlokr
+Completed 302 Found in 32ms (ActiveRecord: 8.4ms | Allocations: 13746)
+
+
+  [1m[36mActiveStorage::Blob Load (1.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4c09422e-b83a-4ede-a2bb-4ce381bd93fa] Performing ActiveStorage::AnalyzeJob (Job ID: 4c09422e-b83a-4ede-a2bb-4ce381bd93fa) from Async(default) enqueued at 2022-01-07T04:54:28Z with arguments: #<GlobalID:0x00007fd7a018d3d0 @uri=#<URI::GID gid://scrubyrails/ActiveStorage::Blob/6>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4c09422e-b83a-4ede-a2bb-4ce381bd93fa] [36m  Disk Storage (0.2ms) [0m[34mDownloaded file from key: kn6jgdklg7x0fd35lxbewd6vveae[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4c09422e-b83a-4ede-a2bb-4ce381bd93fa] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4c09422e-b83a-4ede-a2bb-4ce381bd93fa]   [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4c09422e-b83a-4ede-a2bb-4ce381bd93fa]   [1m[36mActiveStorage::Blob Update (0.5ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 6]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4c09422e-b83a-4ede-a2bb-4ce381bd93fa]   [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4c09422e-b83a-4ede-a2bb-4ce381bd93fa] Performed ActiveStorage::AnalyzeJob (Job ID: 4c09422e-b83a-4ede-a2bb-4ce381bd93fa) from Async(default) in 14.87ms
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-07 04:54:28 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (0.9ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:24
+  [1m[36mActiveStorage::Blob Load (2.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:24
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 11.9ms | Allocations: 3179)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 6479)
+Completed 200 OK in 19ms (Views: 14.6ms | ActiveRecord: 4.0ms | Allocations: 6977)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e7cd5a1168df6512f6921d01412ab8cc50a44912/iitr175yrlogo.jpeg" for 103.37.201.183 at 2022-01-07 04:54:29 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::Blobs::RedirectController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e7cd5a1168df6512f6921d01412ab8cc50a44912", "filename"=>"iitr175yrlogo"}
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: kn6jgdklg7x0fd35lxbewd6vveae (http://13.127.46.121/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhMjQyYW1ka2EyeG5OM2d3Wm1Rek5XeDRZbVYzWkRaMmRtVmhaUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1scGRISXhOelY1Y214dloyOHVhbkJsWnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmFXbDBjakUzTlhseWJHOW5ieTVxY0dWbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDIyLTAxLTA3VDA0OjU5OjI5LjA5NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--fa357f1ece5b452765cfe9805a945dbd8513f8c1/iitr175yrlogo.jpeg)[0m
+Redirected to http://13.127.46.121/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhMjQyYW1ka2EyeG5OM2d3Wm1Rek5XeDRZbVYzWkRaMmRtVmhaUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1scGRISXhOelY1Y214dloyOHVhbkJsWnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmFXbDBjakUzTlhseWJHOW5ieTVxY0dWbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDIyLTAxLTA3VDA0OjU5OjI5LjA5NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--fa357f1ece5b452765cfe9805a945dbd8513f8c1/iitr175yrlogo.jpeg
+Completed 302 Found in 5ms (ActiveRecord: 0.8ms | Allocations: 1657)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhMjQyYW1ka2EyeG5OM2d3Wm1Rek5XeDRZbVYzWkRaMmRtVmhaUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVDJsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SW1scGRISXhOelY1Y214dloyOHVhbkJsWnlJN0lHWnBiR1Z1WVcxbEtqMVZWRVl0T0NjbmFXbDBjakUzTlhseWJHOW5ieTVxY0dWbkJqc0dWRG9SWTI5dWRHVnVkRjkwZVhCbFNTSVBhVzFoWjJVdmFuQmxad1k3QmxRNkVYTmxjblpwWTJWZmJtRnRaVG9LYkc5allXdz0iLCJleHAiOiIyMDIyLTAxLTA3VDA0OjU5OjI5LjA5NFoiLCJwdXIiOiJibG9iX2tleSJ9fQ==--fa357f1ece5b452765cfe9805a945dbd8513f8c1/iitr175yrlogo.jpeg" for 103.37.201.183 at 2022-01-07 04:54:29 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"iitr175yrlogo"}
+Completed 200 OK in 1ms (ActiveRecord: 0.0ms | Allocations: 330)
+
+
+Started POST "/" for 135.125.217.54 at 2022-01-07 05:05:06 +0000
+Cannot render console from 135.125.217.54! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/.env" for 135.125.217.54 at 2022-01-07 05:05:07 +0000
+Cannot render console from 135.125.217.54! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started GET "/.env" for 159.223.161.190 at 2022-01-07 05:05:32 +0000
+Cannot render console from 159.223.161.190! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started POST "/" for 159.223.161.190 at 2022-01-07 05:05:32 +0000
+Cannot render console from 159.223.161.190! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/" for 43.131.22.48 at 2022-01-07 05:06:00 +0000
+Cannot render console from 43.131.22.48! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.8ms | Allocations: 195)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 3612)
+Completed 200 OK in 15ms (Views: 14.3ms | Allocations: 4761)
+
+
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-07 05:10:42 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.8ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 18.8ms | Allocations: 5206)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 32.1ms | Allocations: 12536)
+Completed 200 OK in 48ms (Views: 27.8ms | ActiveRecord: 8.7ms | Allocations: 18112)
+
+
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-07 05:10:43 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokr as */*
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (0.9ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 3.0ms | Allocations: 954)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 4071)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.9ms | Allocations: 4733)
+
+
+Started GET "/shlok/13/del" for 103.37.201.183 at 2022-01-07 05:10:48 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokdp as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mShlok Load (0.8ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."sid" = $1 LIMIT $2[0m  [["sid", 13], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:51:in `mshlokdp'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mActiveStorage::Attachment Destroy (1.1ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 6]]
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mShlok Destroy (0.8ms)[0m  [1m[31mDELETE FROM "shloks" WHERE "shloks"."sid" = $1[0m  [["sid", 13]]
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:52:in `mshlokdp'
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 9c9c33dc-3ee6-4f8f-ae22-57bc6df9e983) to Async(default) with arguments: #<GlobalID:0x000055c817f06858 @uri=#<URI::GID gid://scrubyrails/ActiveStorage::Blob/6>>
+Redirected to http://13.127.46.121/shlok/mshlokr
+Completed 302 Found in 88ms (ActiveRecord: 32.5ms | Allocations: 27673)
+
+
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [9c9c33dc-3ee6-4f8f-ae22-57bc6df9e983] Performing ActiveStorage::PurgeJob (Job ID: 9c9c33dc-3ee6-4f8f-ae22-57bc6df9e983) from Async(default) enqueued at 2022-01-07T05:10:48Z with arguments: #<GlobalID:0x000055c818a57388 @uri=#<URI::GID gid://scrubyrails/ActiveStorage::Blob/6>>
+[ActiveJob] [ActiveStorage::PurgeJob] [9c9c33dc-3ee6-4f8f-ae22-57bc6df9e983]   [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [9c9c33dc-3ee6-4f8f-ae22-57bc6df9e983]   [1m[36mActiveStorage::Attachment Exists? (5.7ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 6], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [9c9c33dc-3ee6-4f8f-ae22-57bc6df9e983]   [1m[36mActiveStorage::VariantRecord Load (0.4ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = $1[0m  [["blob_id", 6]]
+[ActiveJob] [ActiveStorage::PurgeJob] [9c9c33dc-3ee6-4f8f-ae22-57bc6df9e983]   [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [9c9c33dc-3ee6-4f8f-ae22-57bc6df9e983]   [1m[36mActiveStorage::Blob Destroy (2.8ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 6]]
+[ActiveJob] [ActiveStorage::PurgeJob] [9c9c33dc-3ee6-4f8f-ae22-57bc6df9e983]   [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [9c9c33dc-3ee6-4f8f-ae22-57bc6df9e983] [36m  Disk Storage (0.1ms) [0m[31mDeleted file from key: kn6jgdklg7x0fd35lxbewd6vveae[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [9c9c33dc-3ee6-4f8f-ae22-57bc6df9e983] [36m  Disk Storage (0.0ms) [0m[31mDeleted files by key prefix: variants/kn6jgdklg7x0fd35lxbewd6vveae/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [9c9c33dc-3ee6-4f8f-ae22-57bc6df9e983] Performed ActiveStorage::PurgeJob (Job ID: 9c9c33dc-3ee6-4f8f-ae22-57bc6df9e983) from Async(default) in 38.35ms
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-07 05:10:48 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (2.0ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 8.5ms | Allocations: 1029)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | Allocations: 4292)
+Completed 200 OK in 19ms (Views: 16.1ms | ActiveRecord: 2.0ms | Allocations: 4822)
+
+
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-07 05:10:49 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokr as */*
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.2ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 3.6ms | Allocations: 887)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 4004)
+Completed 200 OK in 11ms (Views: 8.9ms | ActiveRecord: 1.2ms | Allocations: 4427)
+
+
+Started GET "/shlok/mshlokc" for 103.37.201.183 at 2022-01-07 05:10:50 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokc as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokc.html.erb within layouts/application
+  Rendered shlok/mshlokc.html.erb within layouts/application (Duration: 1.9ms | Allocations: 962)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 4067)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.0ms | Allocations: 4628)
+
+
+Started POST "/shlok/mshlokcp" for 103.37.201.183 at 2022-01-07 05:11:40 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokcp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "title"=>"test", "shlok"=>"test", "audio"=>#<ActionDispatch::Http::UploadedFile:0x00007fc73447fee8 @tempfile=#<Tempfile:/tmp/RackMultipart20220107-2932-wx4tw.wav>, @original_filename="audio.wav", @content_type="audio/wav", @headers="Content-Disposition: form-data; name=\"audio\"; filename=\"audio.wav\"\r\nContent-Type: audio/wav\r\n">, "translation"=>"test", "commit"=>"अग्रेस्थापनं करोतु"}
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mShlok Create (1.5ms)[0m  [1m[32mINSERT INTO "shloks" ("title", "shlok", "translation", "updated_by") VALUES ($1, $2, $3, $4) RETURNING "sid"[0m  [["title", "test"], ["shlok", "test"], ["translation", "test"], ["updated_by", "Mohak"]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mActiveStorage::Blob Load (1.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 14], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 14], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mActiveStorage::Blob Create (1.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "bgg3yddwlcroertdpsyjc44d32qh"], ["filename", "audio.wav"], ["content_type", "audio/x-wav"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 190445], ["checksum", "yvh0EweLPqd6k1uCGmJVPA=="], ["created_at", "2022-01-07 05:11:40.427795"]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mActiveStorage::Attachment Create (1.3ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "audio"], ["record_type", "Shlok"], ["record_id", 14], ["blob_id", 7], ["created_at", "2022-01-07 05:11:40.432059"]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+[36m  Disk Storage (1.9ms) [0m[32mUploaded file to key: bgg3yddwlcroertdpsyjc44d32qh (checksum: yvh0EweLPqd6k1uCGmJVPA==)[0m
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mActiveStorage::Blob Update (4.7ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 7]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+Redirected to http://13.127.46.121/shlok/mshlokr
+Completed 302 Found in 57ms (ActiveRecord: 19.6ms | Allocations: 16014)
+
+
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-07 05:11:40 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.2ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 5.5ms | Allocations: 980)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 4223)
+Completed 200 OK in 12ms (Views: 9.6ms | ActiveRecord: 1.2ms | Allocations: 4721)
+
+
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-07 05:11:41 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokr as */*
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.2ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 3.7ms | Allocations: 947)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 4063)
+Completed 200 OK in 11ms (Views: 8.9ms | ActiveRecord: 1.2ms | Allocations: 4488)
+
+
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-07 05:15:45 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.4ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  [1m[36mActiveStorage::Attachment Load (2.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 14], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:24
+  [1m[36mActiveStorage::Blob Load (3.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:24
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 97.0ms | Allocations: 28362)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 118.0ms | Allocations: 35624)
+Completed 200 OK in 135ms (Views: 91.0ms | ActiveRecord: 32.4ms | Allocations: 41206)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d913eaa3eac38effefa3c0db433be27388fb64d6/audio.wav" for 103.37.201.183 at 2022-01-07 05:15:45 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d913eaa3eac38effefa3c0db433be27388fb64d6", "filename"=>"audio"}
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[36m  Disk Storage (2.4ms) [0m[34mGenerated URL for file at key: bgg3yddwlcroertdpsyjc44d32qh (http://13.127.46.121/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbWRuTTNsa1pIZHNZM0p2WlhKMFpIQnplV3BqTkRSa016SnhhQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYnk1M1lYWWlPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkYxWkdsdkxuZGhkZ1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRUdGMVpHbHZMM2d0ZDJGMkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDEtMDdUMDU6MjA6NDUuODA1WiIsInB1ciI6ImJsb2Jfa2V5In19--1d332dbca8c3a4652e6651ab9512584e53b6e579/audio.wav)[0m
+Redirected to http://13.127.46.121/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbWRuTTNsa1pIZHNZM0p2WlhKMFpIQnplV3BqTkRSa016SnhhQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYnk1M1lYWWlPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkYxWkdsdkxuZGhkZ1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRUdGMVpHbHZMM2d0ZDJGMkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDEtMDdUMDU6MjA6NDUuODA1WiIsInB1ciI6ImJsb2Jfa2V5In19--1d332dbca8c3a4652e6651ab9512584e53b6e579/audio.wav
+Completed 302 Found in 8ms (ActiveRecord: 0.9ms | Allocations: 3623)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbWRuTTNsa1pIZHNZM0p2WlhKMFpIQnplV3BqTkRSa016SnhhQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYnk1M1lYWWlPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkYxWkdsdkxuZGhkZ1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRUdGMVpHbHZMM2d0ZDJGMkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDEtMDdUMDU6MjA6NDUuODA1WiIsInB1ciI6ImJsb2Jfa2V5In19--1d332dbca8c3a4652e6651ab9512584e53b6e579/audio.wav" for 103.37.201.183 at 2022-01-07 05:15:45 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::DiskController#show as */*
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"audio"}
+Completed 206 Partial Content in 1ms (ActiveRecord: 0.0ms | Allocations: 519)
+
+
+Started GET "/logging/logout" for 103.37.201.183 at 2022-01-07 05:17:40 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#logout as HTML
+Redirected to http://13.127.46.121/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 388)
+
+
+Started GET "/" for 103.37.201.183 at 2022-01-07 05:17:40 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 198)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 3643)
+Completed 200 OK in 14ms (Views: 11.2ms | ActiveRecord: 0.0ms | Allocations: 4871)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbWRuTTNsa1pIZHNZM0p2WlhKMFpIQnplV3BqTkRSa016SnhhQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYnk1M1lYWWlPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkYxWkdsdkxuZGhkZ1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRUdGMVpHbHZMM2d0ZDJGMkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDEtMDdUMDU6MjA6NDUuODA1WiIsInB1ciI6ImJsb2Jfa2V5In19--1d332dbca8c3a4652e6651ab9512584e53b6e579/audio.wav" for 103.37.201.183 at 2022-01-07 05:17:40 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::DiskController#show as */*
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"audio"}
+Completed 206 Partial Content in 1ms (ActiveRecord: 0.0ms | Allocations: 395)
+
+
+Started GET "/shlok/ushlok" for 103.37.201.183 at 2022-01-07 05:17:41 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ushlok as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ushlok.html.erb within layouts/application
+  [1m[36mShlok Load (1.2ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/ushlok.html.erb:1
+  Rendered shlok/ushlok.html.erb within layouts/application (Duration: 8.2ms | Allocations: 1123)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 4323)
+Completed 200 OK in 25ms (Views: 14.4ms | ActiveRecord: 1.2ms | Allocations: 4904)
+
+
+Started GET "/" for 45.137.23.232 at 2022-01-07 05:22:04 +0000
+Cannot render console from 45.137.23.232! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as */*
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 3203)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms | Allocations: 3745)
+
+
+Started GET "/" for 34.140.248.32 at 2022-01-07 05:31:59 +0000
+Cannot render console from 34.140.248.32! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as */*
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 3214)
+Completed 200 OK in 15ms (Views: 14.5ms | Allocations: 3600)
+
+
+Started GET "/" for 103.37.201.183 at 2022-01-07 06:01:51 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.8ms | Allocations: 421)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 104.9ms | Allocations: 22891)
+Completed 200 OK in 115ms (Views: 107.5ms | ActiveRecord: 0.0ms | Allocations: 26587)
+
+
+Started GET "/" for 103.37.201.183 at 2022-01-07 06:01:52 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 3193)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms | Allocations: 3688)
+
+
+Started GET "/shlok/ushlok" for 103.37.201.183 at 2022-01-07 06:01:54 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ushlok as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ushlok.html.erb within layouts/application
+  [1m[36mShlok Load (1.1ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/ushlok.html.erb:1
+  [1m[36mActiveStorage::Attachment Load (1.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 14], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/ushlok.html.erb:12
+  [1m[36mActiveStorage::Blob Load (1.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/shlok/ushlok.html.erb:12
+  Rendered shlok/ushlok.html.erb within layouts/application (Duration: 97.8ms | Allocations: 27846)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 108.6ms | Allocations: 31162)
+Completed 200 OK in 114ms (Views: 81.0ms | ActiveRecord: 29.2ms | Allocations: 34265)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d913eaa3eac38effefa3c0db433be27388fb64d6/audio.wav" for 103.37.201.183 at 2022-01-07 06:01:55 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d913eaa3eac38effefa3c0db433be27388fb64d6", "filename"=>"audio"}
+  [1m[36mActiveStorage::Blob Load (1.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[36m  Disk Storage (2.3ms) [0m[34mGenerated URL for file at key: bgg3yddwlcroertdpsyjc44d32qh (http://13.127.46.121/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbWRuTTNsa1pIZHNZM0p2WlhKMFpIQnplV3BqTkRSa016SnhhQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYnk1M1lYWWlPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkYxWkdsdkxuZGhkZ1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRUdGMVpHbHZMM2d0ZDJGMkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDEtMDdUMDY6MDY6NTUuMTM2WiIsInB1ciI6ImJsb2Jfa2V5In19--76a8ee1771a6e7197d4cee0ffeda2a7caeaefecf/audio.wav)[0m
+Redirected to http://13.127.46.121/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbWRuTTNsa1pIZHNZM0p2WlhKMFpIQnplV3BqTkRSa016SnhhQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYnk1M1lYWWlPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkYxWkdsdkxuZGhkZ1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRUdGMVpHbHZMM2d0ZDJGMkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDEtMDdUMDY6MDY6NTUuMTM2WiIsInB1ciI6ImJsb2Jfa2V5In19--76a8ee1771a6e7197d4cee0ffeda2a7caeaefecf/audio.wav
+Completed 302 Found in 8ms (ActiveRecord: 1.5ms | Allocations: 3621)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbWRuTTNsa1pIZHNZM0p2WlhKMFpIQnplV3BqTkRSa016SnhhQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYnk1M1lYWWlPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkYxWkdsdkxuZGhkZ1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRUdGMVpHbHZMM2d0ZDJGMkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDEtMDdUMDY6MDY6NTUuMTM2WiIsInB1ciI6ImJsb2Jfa2V5In19--76a8ee1771a6e7197d4cee0ffeda2a7caeaefecf/audio.wav" for 103.37.201.183 at 2022-01-07 06:01:55 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::DiskController#show as */*
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"audio"}
+Completed 206 Partial Content in 1ms (ActiveRecord: 0.0ms | Allocations: 517)
+
+
+Started GET "/logging/ulogin" for 103.37.201.183 at 2022-01-07 06:02:08 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#ulogin as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 1.4ms | Allocations: 767)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 4114)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.0ms | Allocations: 5276)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d913eaa3eac38effefa3c0db433be27388fb64d6/audio.wav" for 103.37.201.183 at 2022-01-07 06:02:09 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d913eaa3eac38effefa3c0db433be27388fb64d6", "filename"=>"audio"}
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[36m  Disk Storage (0.5ms) [0m[34mGenerated URL for file at key: bgg3yddwlcroertdpsyjc44d32qh (http://13.127.46.121/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbWRuTTNsa1pIZHNZM0p2WlhKMFpIQnplV3BqTkRSa016SnhhQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYnk1M1lYWWlPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkYxWkdsdkxuZGhkZ1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRUdGMVpHbHZMM2d0ZDJGMkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDEtMDdUMDY6MDc6MDkuMTQyWiIsInB1ciI6ImJsb2Jfa2V5In19--36a1c3c9ce05c6bfffea375e2fd522ed76d9d452/audio.wav)[0m
+Redirected to http://13.127.46.121/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbWRuTTNsa1pIZHNZM0p2WlhKMFpIQnplV3BqTkRSa016SnhhQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYnk1M1lYWWlPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkYxWkdsdkxuZGhkZ1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRUdGMVpHbHZMM2d0ZDJGMkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDEtMDdUMDY6MDc6MDkuMTQyWiIsInB1ciI6ImJsb2Jfa2V5In19--36a1c3c9ce05c6bfffea375e2fd522ed76d9d452/audio.wav
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms | Allocations: 1806)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbWRuTTNsa1pIZHNZM0p2WlhKMFpIQnplV3BqTkRSa016SnhhQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYnk1M1lYWWlPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkYxWkdsdkxuZGhkZ1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRUdGMVpHbHZMM2d0ZDJGMkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDEtMDdUMDY6MDc6MDkuMTQyWiIsInB1ciI6ImJsb2Jfa2V5In19--36a1c3c9ce05c6bfffea375e2fd522ed76d9d452/audio.wav" for 103.37.201.183 at 2022-01-07 06:02:09 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::DiskController#show as */*
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"audio"}
+Completed 206 Partial Content in 1ms (ActiveRecord: 0.0ms | Allocations: 346)
+
+
+Started POST "/logging/loginp" for 103.37.201.183 at 2022-01-07 06:02:20 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#loginp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"user1@gmail.com", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user1@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/logging_controller.rb:22:in `loginp'
+Redirected to http://13.127.46.121/
+Completed 302 Found in 25ms (ActiveRecord: 4.8ms | Allocations: 4125)
+
+
+Started GET "/" for 103.37.201.183 at 2022-01-07 06:02:20 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 49)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 3375)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 3893)
+
+
+Started GET "/" for 103.37.201.183 at 2022-01-07 06:02:30 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 3216)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms | Allocations: 3656)
+
+
+Started GET "/" for 103.37.201.183 at 2022-01-07 06:06:48 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.8ms | Allocations: 422)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 8827)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.0ms | Allocations: 12476)
+
+
+  
+ActionView::Template::Error (no implicit conversion of Symbol into Integer):
+    20:         <% if session[:member] || session[:user] %>
+    21:             <div class="logger">
+    22:                 <div><%= link_to "Logout", logout_path %></div>
+    23:                 <div>Logged in as <%= session[:member] ? session[:member][:name] : session[:user][:name] %>.</div>
+    24:                 <div>
+    25:                     <% if session[:user] %>
+    26:                         <%= link_to "Profile", profile_path %>
+  
+app/views/layouts/application.html.erb:23
+Started GET "/logging/ulogin" for 103.37.201.183 at 2022-01-07 06:07:12 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#ulogin as HTML
+Redirected to http://13.127.46.121/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 428)
+
+
+Started GET "/shlok/ushlok" for 103.37.201.183 at 2022-01-07 06:07:14 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ushlok as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ushlok.html.erb within layouts/application
+  [1m[36mShlok Load (1.4ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/ushlok.html.erb:1
+  [1m[36mActiveStorage::Attachment Load (1.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 14], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/ushlok.html.erb:12
+  [1m[36mActiveStorage::Blob Load (1.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/shlok/ushlok.html.erb:12
+  Rendered shlok/ushlok.html.erb within layouts/application (Duration: 74.7ms | Allocations: 27835)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 80.4ms | Allocations: 31727)
+Completed 500 Internal Server Error in 86ms (ActiveRecord: 21.2ms | Allocations: 34786)
+
+
+  
+ActionView::Template::Error (no implicit conversion of Symbol into Integer):
+    20:         <% if session[:member] || session[:user] %>
+    21:             <div class="logger">
+    22:                 <div><%= link_to "Logout", logout_path %></div>
+    23:                 <div>Logged in as <%= session[:member] ? session[:member][:name] : session[:user][:name] %>.</div>
+    24:                 <div>
+    25:                     <% if session[:user] %>
+    26:                         <%= link_to "Profile", profile_path %>
+  
+app/views/layouts/application.html.erb:23
+app/controllers/shlok_controller.rb:4:in `ushlok'
+Started GET "/.env" for 185.254.196.218 at 2022-01-07 06:10:22 +0000
+Cannot render console from 185.254.196.218! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started POST "/" for 185.254.196.218 at 2022-01-07 06:10:23 +0000
+Cannot render console from 185.254.196.218! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/shlok/ushlok" for 103.37.201.183 at 2022-01-07 06:15:07 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ShlokController#ushlok as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ushlok.html.erb within layouts/application
+  [1m[36mShlok Load (1.4ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/ushlok.html.erb:1
+  [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 14], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/ushlok.html.erb:12
+  [1m[36mActiveStorage::Blob Load (1.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/shlok/ushlok.html.erb:12
+  Rendered shlok/ushlok.html.erb within layouts/application (Duration: 64.5ms | Allocations: 27976)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 76.9ms | Allocations: 36219)
+Completed 500 Internal Server Error in 92ms (ActiveRecord: 21.6ms | Allocations: 41750)
+
+
+  
+ActionView::Template::Error (no implicit conversion of Symbol into Integer):
+    20:         <% if session[:member] || session[:user] %>
+    21:             <div class="logger">
+    22:                 <div><%= link_to "Logout", logout_path %></div>
+    23:                 <div>Logged in as <%= session[:member] ? session[:member][:name] : session[:user][:name] %>.</div>
+    24:                 <div>
+    25:                     <% if session[:user] %>
+    26:                         <%= link_to "Profile", profile_path %>
+  
+app/views/layouts/application.html.erb:23
+app/controllers/shlok_controller.rb:4:in `ushlok'
+Started GET "/logging/login" for 103.37.201.183 at 2022-01-07 06:15:14 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/logging/login"):
+  
+Started GET "/user_login" for 103.37.201.183 at 2022-01-07 06:15:28 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/user_login"):
+  
+Started GET "/logging/ulogin" for 103.37.201.183 at 2022-01-07 06:15:53 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#ulogin as HTML
+Redirected to http://13.127.46.121/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 415)
+
+
+Started GET "/" for 103.37.201.183 at 2022-01-07 06:15:53 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.4ms | Allocations: 195)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 4213)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 5397)
+
+
+  
+ActionView::Template::Error (no implicit conversion of Symbol into Integer):
+    20:         <% if session[:member] || session[:user] %>
+    21:             <div class="logger">
+    22:                 <div><%= link_to "Logout", logout_path %></div>
+    23:                 <div>Logged in as <%= session[:member] ? session[:member][:name] : session[:user][:name] %>.</div>
+    24:                 <div>
+    25:                     <% if session[:user] %>
+    26:                         <%= link_to "Profile", profile_path %>
+  
+app/views/layouts/application.html.erb:23
+Started GET "/" for 103.37.201.183 at 2022-01-07 06:17:06 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 3237)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.0ms | Allocations: 3687)
+
+
+Started GET "/logging/ulogin" for 103.37.201.183 at 2022-01-07 06:17:09 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#ulogin as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 6.7ms | Allocations: 752)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.9ms | Allocations: 4094)
+Completed 200 OK in 23ms (Views: 22.3ms | ActiveRecord: 0.0ms | Allocations: 5227)
+
+
+Started POST "/logging/loginp" for 103.37.201.183 at 2022-01-07 06:17:20 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#loginp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"user1@gmail.com", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user1@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/logging_controller.rb:22:in `loginp'
+Redirected to http://13.127.46.121/
+Completed 302 Found in 20ms (ActiveRecord: 7.0ms | Allocations: 4240)
+
+
+Started GET "/" for 103.37.201.183 at 2022-01-07 06:17:21 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 49)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 3932)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 4406)
+
+
+  
+ActionView::Template::Error (no implicit conversion of Symbol into Integer):
+    20:         <% if session[:member] || session[:user] %>
+    21:             <div class="logger">
+    22:                 <div><%= link_to "Logout", logout_path %></div>
+    23:                 <div>Logged in as <%= session[:member] ? session[:member][:name] : session[:user][:name] %>.</div>
+    24:                 <div>
+    25:                     <% if session[:user] %>
+    26:                         <%= link_to "Profile", profile_path %>
+  
+app/views/layouts/application.html.erb:23
+Started GET "/" for 103.37.201.183 at 2022-01-07 06:24:06 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.8ms | Allocations: 422)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 8827)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms | Allocations: 12476)
+
+
+  
+ActionView::Template::Error (no implicit conversion of Symbol into Integer):
+    20:         <% if session[:member] || session[:user] %>
+    21:             <div class="logger">
+    22:                 <div><%= link_to "Logout", logout_path %></div>
+    23:                 <div>Logged in as <%= session[:member] ? session[:member][:name] : session[:user][:name] %>.</div>
+    24:                 <div>
+    25:                     <% if session[:user] %>
+    26:                         <%= link_to "Profile", profile_path %>
+  
+app/views/layouts/application.html.erb:23
+Started GET "/" for 103.37.201.183 at 2022-01-07 06:24:17 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 45)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 3393)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.0ms | Allocations: 3880)
+
+
+Started GET "/logging/ulogin" for 103.37.201.183 at 2022-01-07 06:24:19 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#ulogin as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 1.6ms | Allocations: 768)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 4110)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 5268)
+
+
+Started POST "/logging/loginp" for 103.37.201.183 at 2022-01-07 06:24:27 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#loginp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"user1@gmail.com", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user1@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/logging_controller.rb:22:in `loginp'
+Redirected to http://13.127.46.121/
+Completed 302 Found in 25ms (ActiveRecord: 9.4ms | Allocations: 6019)
+
+
+Started GET "/" for 103.37.201.183 at 2022-01-07 06:24:27 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 49)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 3947)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 4422)
+
+
+  
+ActionView::Template::Error (no implicit conversion of Symbol into Integer):
+    20:         <% if session[:member] || session[:user] %>
+    21:             <div class="logger">
+    22:                 <div><%= link_to "Logout", logout_path %></div>
+    23:                 <div>Logged in as <%= session[:member] ? session[:member][:name] : session[:user][:name] %>.</div>
+    24:                 <div>
+    25:                     <% if session[:user] %>
+    26:                         <%= link_to "Profile", profile_path %>
+  
+app/views/layouts/application.html.erb:23
+Started GET "/" for 103.37.201.183 at 2022-01-07 06:25:54 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.7ms | Allocations: 422)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 9925)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.0ms | Allocations: 13574)
+
+
+  
+ActionView::Template::Error (undefined method `name' for [{"name"=>"user1", "email"=>"user1@gmail.com"}]:Array):
+    20:         <% if session[:member] || session[:user] %>
+    21:             <div class="logger">
+    22:                 <div><%= link_to "Logout", logout_path %></div>
+    23:                 <div>Logged in as <%= session[:member] ? session[:member].name : session[:user].name %>.</div>
+    24:                 <div>
+    25:                     <% if session[:user] %>
+    26:                         <%= link_to "Profile", profile_path %>
+  
+app/views/layouts/application.html.erb:23
+Started GET "/" for 103.37.201.183 at 2022-01-07 06:35:18 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 1.1ms | Allocations: 422)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 21.4ms | Allocations: 8836)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.0ms | Allocations: 12485)
+
+
+  
+ActionView::Template::Error (no implicit conversion of String into Integer):
+    20:         <% if session[:member] || session[:user] %>
+    21:             <div class="logger">
+    22:                 <div><%= link_to "Logout", logout_path %></div>
+    23:                 <div>Logged in as <%= session[:member] ? session[:member]["name"] : session[:user]["name"] %>.</div>
+    24:                 <div>
+    25:                     <% if session[:user] %>
+    26:                         <%= link_to "Profile", profile_path %>
+  
+app/views/layouts/application.html.erb:23:in `[]'
+app/views/layouts/application.html.erb:23
+Started GET "/config/getuser?index=0" for 209.141.53.74 at 2022-01-07 06:37:25 +0000
+Cannot render console from 209.141.53.74! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/config/getuser"):
+  
+Started GET "/" for 103.37.201.183 at 2022-01-07 06:49:31 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 1.3ms | Allocations: 422)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.8ms | Allocations: 8827)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.0ms | Allocations: 12476)
+
+
+  
+ActionView::Template::Error (no implicit conversion of Symbol into Integer):
+    20:         <% if session[:member] || session[:user] %>
+    21:             <div class="logger">
+    22:                 <div><%= link_to "Logout", logout_path %></div>
+    23:                 <div>Logged in as <%= session[:member] ? session[:member][:name] : session[:user][:name] %>.</div>
+    24:                 <div>
+    25:                     <% if session[:user] %>
+    26:                         <%= link_to "Profile", profile_path %>
+  
+app/views/layouts/application.html.erb:23
+Started GET "/" for 103.37.201.183 at 2022-01-07 06:50:01 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 45)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3393)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 3880)
+
+
+Started GET "/logging/ulogin" for 103.37.201.183 at 2022-01-07 06:50:05 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#ulogin as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 2.0ms | Allocations: 768)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 4110)
+Completed 200 OK in 16ms (Views: 14.9ms | ActiveRecord: 0.0ms | Allocations: 5269)
+
+
+Started POST "/logging/loginp" for 103.37.201.183 at 2022-01-07 06:50:15 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#loginp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"user1@gmail.com", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user1@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/logging_controller.rb:22:in `loginp'
+Redirected to http://13.127.46.121/
+Completed 302 Found in 22ms (ActiveRecord: 7.1ms | Allocations: 6018)
+
+
+Started GET "/" for 103.37.201.183 at 2022-01-07 06:50:16 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 49)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | Allocations: 3357)
+Completed 200 OK in 19ms (Views: 18.5ms | ActiveRecord: 0.0ms | Allocations: 3871)
+
+
+Started GET "/welcome/profile" for 103.37.201.183 at 2022-01-07 06:50:19 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#profile as HTML
+  [1m[36mUser Load (6.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/welcome_controller.rb:10:in `profile'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/profile.html.erb within layouts/application
+  Rendered welcome/profile.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1614)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 1649)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 6.2ms | Allocations: 3042)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <% link_to "प्रतिगछतु", root_url %><br/>
+    2: <div>
+    3:     Name: <%= @user.name %><br/>
+    4:     Email: <%= @user.email %><br/>
+    5:     Courses registered in: Subhashitam Samskritam
+    6: </div>
+  
+app/views/welcome/profile.html.erb:3
+app/controllers/welcome_controller.rb:11:in `profile'
+Started GET "/" for 103.37.201.183 at 2022-01-07 06:53:49 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 3217)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 3651)
+
+
+Started GET "/logging/logout" for 103.37.201.183 at 2022-01-07 06:56:35 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#logout as HTML
+Redirected to http://13.127.46.121/
+Completed 302 Found in 2ms (Allocations: 279)
+
+
+Started GET "/" for 103.37.201.183 at 2022-01-07 06:56:35 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 3208)
+Completed 200 OK in 7ms (Views: 6.6ms | Allocations: 3643)
+
+
+Started GET "/logging/mlogin" for 103.37.201.183 at 2022-01-07 06:56:37 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#mlogin as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 0.6ms | Allocations: 318)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 3434)
+Completed 200 OK in 7ms (Views: 6.3ms | Allocations: 3835)
+
+
+Started POST "/logging/loginp" for 103.37.201.183 at 2022-01-07 06:56:43 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#loginp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"mohak_k@ph.iitr.ac.in", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mMember Load (1.4ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 LIMIT $2[0m  [["email", "mohak_k@ph.iitr.ac.in"], ["LIMIT", 1]]
+  ↳ app/controllers/logging_controller.rb:22:in `loginp'
+Redirected to http://13.127.46.121/
+Completed 302 Found in 40ms (ActiveRecord: 17.1ms | Allocations: 9226)
+
+
+Started GET "/" for 103.37.201.183 at 2022-01-07 06:56:44 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 49)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 3326)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms | Allocations: 3839)
+
+
+Started GET "/shlok/mshlokr" for 103.37.201.183 at 2022-01-07 06:56:46 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#mshlokr as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (5.2ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  [1m[36mActiveStorage::Attachment Load (2.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 14], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:24
+  [1m[36mActiveStorage::Blob Load (1.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:24
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 92.7ms | Allocations: 26927)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 98.8ms | Allocations: 30220)
+Completed 200 OK in 106ms (Views: 72.2ms | ActiveRecord: 29.2ms | Allocations: 32666)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d913eaa3eac38effefa3c0db433be27388fb64d6/audio.wav" for 103.37.201.183 at 2022-01-07 06:56:46 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d913eaa3eac38effefa3c0db433be27388fb64d6", "filename"=>"audio"}
+  [1m[36mActiveStorage::Blob Load (2.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[36m  Disk Storage (2.6ms) [0m[34mGenerated URL for file at key: bgg3yddwlcroertdpsyjc44d32qh (http://13.127.46.121/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbWRuTTNsa1pIZHNZM0p2WlhKMFpIQnplV3BqTkRSa016SnhhQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYnk1M1lYWWlPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkYxWkdsdkxuZGhkZ1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRUdGMVpHbHZMM2d0ZDJGMkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDEtMDdUMDc6MDE6NDYuNjYwWiIsInB1ciI6ImJsb2Jfa2V5In19--1ee30bb735a69744fdea615f107bc24be841d568/audio.wav)[0m
+Redirected to http://13.127.46.121/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbWRuTTNsa1pIZHNZM0p2WlhKMFpIQnplV3BqTkRSa016SnhhQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYnk1M1lYWWlPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkYxWkdsdkxuZGhkZ1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRUdGMVpHbHZMM2d0ZDJGMkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDEtMDdUMDc6MDE6NDYuNjYwWiIsInB1ciI6ImJsb2Jfa2V5In19--1ee30bb735a69744fdea615f107bc24be841d568/audio.wav
+Completed 302 Found in 10ms (ActiveRecord: 2.3ms | Allocations: 3555)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbWRuTTNsa1pIZHNZM0p2WlhKMFpIQnplV3BqTkRSa016SnhhQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYnk1M1lYWWlPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkYxWkdsdkxuZGhkZ1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRUdGMVpHbHZMM2d0ZDJGMkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDEtMDdUMDc6MDE6NDYuNjYwWiIsInB1ciI6ImJsb2Jfa2V5In19--1ee30bb735a69744fdea615f107bc24be841d568/audio.wav" for 103.37.201.183 at 2022-01-07 06:56:46 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::DiskController#show as */*
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"audio"}
+Completed 206 Partial Content in 1ms (ActiveRecord: 0.0ms | Allocations: 512)
+
+
+Started GET "/logging/logout" for 103.37.201.183 at 2022-01-07 06:58:27 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#logout as HTML
+Redirected to http://13.127.46.121/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 290)
+
+
+Started GET "/" for 103.37.201.183 at 2022-01-07 06:58:27 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 49)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 3333)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms | Allocations: 3811)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbWRuTTNsa1pIZHNZM0p2WlhKMFpIQnplV3BqTkRSa016SnhhQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYnk1M1lYWWlPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkYxWkdsdkxuZGhkZ1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRUdGMVpHbHZMM2d0ZDJGMkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDEtMDdUMDc6MDE6NDYuNjYwWiIsInB1ciI6ImJsb2Jfa2V5In19--1ee30bb735a69744fdea615f107bc24be841d568/audio.wav" for 103.37.201.183 at 2022-01-07 06:58:28 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::DiskController#show as */*
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"audio"}
+Completed 206 Partial Content in 1ms (ActiveRecord: 0.0ms | Allocations: 329)
+
+
+Started POST "/" for 135.125.217.54 at 2022-01-07 07:05:22 +0000
+Cannot render console from 135.125.217.54! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/.env" for 135.125.217.54 at 2022-01-07 07:05:22 +0000
+Cannot render console from 135.125.217.54! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started GET "/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php" for 45.146.165.37 at 2022-01-07 07:17:14 +0000
+Cannot render console from 45.146.165.37! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php"):
+  
+Started GET "/" for 103.37.201.183 at 2022-01-07 07:34:10 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.8ms | Allocations: 422)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 7920)
+Completed 200 OK in 23ms (Views: 16.0ms | ActiveRecord: 0.0ms | Allocations: 11621)
+
+
+Started GET "/logging/logout" for 103.37.201.183 at 2022-01-07 07:34:17 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#logout as HTML
+Redirected to http://13.127.46.121/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 418)
+
+
+Started GET "/" for 103.37.201.183 at 2022-01-07 07:34:17 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 49)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 3341)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms | Allocations: 3824)
+
+
+Started GET "/logging/ulogin" for 103.37.201.183 at 2022-01-07 07:34:19 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#ulogin as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 2.5ms | Allocations: 767)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 4109)
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.0ms | Allocations: 5182)
+
+
+Started POST "/logging/loginp" for 103.37.201.183 at 2022-01-07 07:34:29 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#loginp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"user1@gmail.co", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user1@gmail.co"], ["LIMIT", 1]]
+  ↳ app/controllers/logging_controller.rb:22:in `loginp'
+Redirected to http://13.127.46.121/logging/ulogin
+Completed 302 Found in 11ms (ActiveRecord: 4.5ms | Allocations: 3616)
+
+
+Started GET "/logging/ulogin" for 103.37.201.183 at 2022-01-07 07:34:30 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#ulogin as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 1.5ms | Allocations: 337)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 3576)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 4068)
+
+
+Started POST "/logging/loginp" for 103.37.201.183 at 2022-01-07 07:34:37 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#loginp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"user1@gmail.com", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user1@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/logging_controller.rb:22:in `loginp'
+Redirected to http://13.127.46.121/logging/ulogin
+Completed 302 Found in 29ms (ActiveRecord: 6.9ms | Allocations: 3363)
+
+
+Started GET "/logging/ulogin" for 103.37.201.183 at 2022-01-07 07:34:37 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#ulogin as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 0.6ms | Allocations: 298)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 3430)
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 3842)
+
+
+Started POST "/logging/loginp" for 103.37.201.183 at 2022-01-07 07:34:45 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#loginp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"user1@gmail.com", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user1@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/logging_controller.rb:22:in `loginp'
+Redirected to http://13.127.46.121/
+Completed 302 Found in 5ms (ActiveRecord: 1.0ms | Allocations: 967)
+
+
+Started GET "/" for 103.37.201.183 at 2022-01-07 07:34:45 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 45)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 3220)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 3656)
+
+
+Started GET "/welcome/profile" for 103.37.201.183 at 2022-01-07 07:34:49 +0000
+Cannot render console from 103.37.201.183! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#profile as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user1@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/welcome_controller.rb:10:in `profile'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/profile.html.erb within layouts/application
+  Rendered welcome/profile.html.erb within layouts/application (Duration: 0.7ms | Allocations: 213)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3351)
+Completed 200 OK in 11ms (Views: 7.1ms | ActiveRecord: 0.9ms | Allocations: 4585)
+
+
+Started GET "/.env" for 159.223.152.187 at 2022-01-07 07:53:21 +0000
+Cannot render console from 159.223.152.187! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started POST "/" for 159.223.152.187 at 2022-01-07 07:53:22 +0000
+Cannot render console from 159.223.152.187! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
