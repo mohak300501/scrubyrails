@@ -7,4 +7,36 @@ class UserController < ApplicationController
             redirect_to root_url
         end
     end
+
+    def new
+        if session[:user]
+            redirect_to root_url
+        else
+            render "new"
+    end
+
+    def newp
+        if User.find_by(params[:email])
+            flash[:notice] = "Email already registered."
+            redirect_to new_path
+        else
+            if params[:password] == params[:repass]
+                user = User.new(:name => params[:name], :email => params[:email], :password => params[:password])
+                user.save
+                flash[:notice] = "Registered successfully! Login to continue."
+                redirect_to user_login_path
+            else
+                flash[:notice] = "Passwords do not match."
+                redirect_to new_path
+            end
+        end
+    end
+
+    def all
+        if session[:member]
+            @users = User.all
+        else
+            redirect_to root_url
+        end
+    end
 end

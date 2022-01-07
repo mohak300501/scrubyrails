@@ -3,6 +3,9 @@ Rails.application.routes.draw do
     root 'welcome#home'
 
     get "user/profile", as:"profile"
+    get "user/new", as:"new"
+    post "user/newp", as:"newp"
+    get "user/all", as:"all_users"
 
     get "logging/mlogin", as:"member_login"
     get "logging/ulogin", as:"user_login"

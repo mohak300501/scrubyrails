@@ -26,11 +26,11 @@ class LoggingController < ApplicationController
                 session[:email] = @moru.email
                 redirect_to root_url
             else
-                flash[:notice] = "Password does not match"
+                flash[:notice] = "Incorrect password!"
                 redirect_to moru ? member_login_path : user_login_path
             end
         else
-            flash[:notice] = "Email not found"
+            flash[:notice] = "Email not found."
             redirect_to moru ? member_login_path : user_login_path
         end
     end
