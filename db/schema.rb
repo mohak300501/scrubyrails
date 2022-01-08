@@ -53,13 +53,16 @@ ActiveRecord::Schema.define(version: 2022_01_06_120414) do
     t.string "title", limit: 100
     t.string "shlok", limit: 1000
     t.string "translation", limit: 5000
-    t.string "updated_by", limit: 15
+    t.string "updated_by", limit: 50
   end
 
   create_table "users", primary_key: "uid", id: :serial, force: :cascade do |t|
     t.string "name", limit: 50
     t.string "email", limit: 50
     t.string "password", limit: 10
+  end
+
+  create_table "visit_count", primary_key: "vid", id: :integer, default: nil, force: :cascade do |t|
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
