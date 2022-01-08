@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
-    def application
+    before_filter :visit_c
+    def visit_c
         session[:visit] ||= 0
         session[:visit] += 1
         if session[:visit] == 1
@@ -8,6 +9,5 @@ class ApplicationController < ActionController::Base
             visits.update(:vid => vc)
             @visit_count = Visit.first.vid
         end
-        render "application"
     end
 end
