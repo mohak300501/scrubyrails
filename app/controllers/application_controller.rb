@@ -5,9 +5,9 @@ class ApplicationController < ActionController::Base
         session[:visit] += 1
         if session[:visit] == 1
             visits = Visit.first
-            vc = visits.vid
+            vc = visits.vid + 1
             visits.update(:vid => vc)
-            session[:vc] = Visit.first.vid
+            session[:vc] = vc
         end
     end
 end
