@@ -54,10 +54,8 @@
 
         <%= yield %>
 
-        
-        Total views on this website are <%= session[:vc] %>
-
         <div class="footer">
+            Total views on this website: <%= session[:vc] %>.<br/>
             <%= link_to "About", root_url %>
             <%= link_to "How to Use", events_path %>
             <%= link_to "Terms", shloks_path %>
