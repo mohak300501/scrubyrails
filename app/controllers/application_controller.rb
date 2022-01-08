@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    before_filter :visit_c
+    before_action :visit_c
     def visit_c
         session[:visit] ||= 0
         session[:visit] += 1
