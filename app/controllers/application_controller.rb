@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
         if session[:visit] == 1
             vc += 1
             visits.update(:vid => vc)
-        session[:vc] = vc
         end
+        session[:vc] = vc
     end
 end
