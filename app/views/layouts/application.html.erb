@@ -42,6 +42,7 @@
                 <%= link_to "Events", events_path %>
                 <%= link_to "Shlok", all_shloks_path %>
                 <%= link_to "Resources", resources_path %>
+                <%= link_to "Courses", courses_path %>
             </div>
         <% else %>
             <div class="navbar">
@@ -49,6 +50,7 @@
                 <%= link_to "Events", events_path %>
                 <%= link_to "Shlok", shloks_path %>
                 <%= link_to "Resources", resources_path %>
+                <%= link_to "Courses", courses_path %>
             </div>
         <% end %>
 
@@ -59,7 +61,7 @@
             <%= link_to "About", root_url %>
             <%= link_to "How to Use", events_path %>
             <%= link_to "Terms", shloks_path %>
-            <%= link_to "Feedback", resources_path %>
+            <%= link_to "Feedback", feedback_path %>
         </div>
     </body>
 </html>

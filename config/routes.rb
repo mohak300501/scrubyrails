@@ -5,12 +5,17 @@ Rails.application.routes.draw do
     get "user/profile", as:"profile"
     get "user/new", as:"new"
     post "user/newp", as:"newp"
-    get "user/usersr", as:"all_users"
+    get "user/muserr", as:"all_users"
 
     get "logging/mlogin", as:"member_login"
     get "logging/ulogin", as:"user_login"
     post "logging/loginp", as:"login_post"
     get "logging/logout", as:"logout"
+
+    get "course/ucourse", as:"courses"
+
+    get "feedback/ufeedback", as:"feedback"
+    post "feedback/ufeedbackp", as:"feedback_post"
 
     get "shlok/ushlok", as:"shloks"
     get "shlok/mshlokr", as:"all_shloks"
@@ -20,6 +25,6 @@ Rails.application.routes.draw do
     post "shlok/:id", to: "shlok#mshlokup"
     get "shlok/:id/del", to:"shlok#mshlokdp"
 
-    get "events/uevents", as:"events"
-    get "resource/firstresource", as:"resources"
+    get "event/uevent", as:"events"
+    get "resource/uresource", as:"resources"
 end

@@ -33,7 +33,7 @@ class UserController < ApplicationController
         end
     end
 
-    def usersr
+    def muserr
         if session[:member]
             @users = User.all
             render "users"
