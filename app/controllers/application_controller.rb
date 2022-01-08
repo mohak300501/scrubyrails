@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
         session[:visit] += 1
         if session[:visit] == 1
             visits = Visit.first
-            visits.update(:vid += 1)
+            visits.update(:vid => visits.vid)
             @visit_count = Visit.first.vid
         end
     end
