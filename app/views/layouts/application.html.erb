@@ -55,7 +55,7 @@
         <%= yield %>
 
         
-        Total views on this website are @visit_count
+        Total views on this website are <%= session[:vc] %>
 
         <div class="footer">
             <%= link_to "About", root_url %>
