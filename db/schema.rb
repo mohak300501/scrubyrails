@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 2022_01_06_120414) do
     t.string "password", limit: 10
   end
 
-  create_table "visit_count", primary_key: "vid", id: :integer, default: nil, force: :cascade do |t|
+  create_table "visits", primary_key: "vid", id: :integer, default: nil, force: :cascade do |t|
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

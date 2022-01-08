@@ -22890,3 +22890,353 @@ ActionController::RoutingError (No route matches [POST] "/"):
   [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1409038475602093665)[0m
   [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/console/" for 45.146.165.37 at 2022-01-08 05:28:43 +0000
+Cannot render console from 45.146.165.37! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/console"):
+  
+Started GET "/.env" for 194.49.68.118 at 2022-01-08 05:36:44 +0000
+Cannot render console from 194.49.68.118! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started POST "/" for 194.49.68.118 at 2022-01-08 05:36:45 +0000
+Cannot render console from 194.49.68.118! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/.env" for 18.179.11.80 at 2022-01-08 05:46:07 +0000
+Cannot render console from 18.179.11.80! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started POST "/" for 18.179.11.80 at 2022-01-08 05:46:07 +0000
+Cannot render console from 18.179.11.80! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/logging/ulogin" for 152.57.45.87 at 2022-01-08 06:12:30 +0000
+Cannot render console from 152.57.45.87! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#ulogin as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 1.0ms | Allocations: 442)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 3816)
+Completed 200 OK in 13ms (Views: 12.7ms | Allocations: 4552)
+
+
+Started GET "/user/new" for 152.57.45.87 at 2022-01-08 06:12:34 +0000
+Cannot render console from 152.57.45.87! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 916)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 4322)
+Completed 200 OK in 10ms (Views: 9.6ms | Allocations: 5208)
+
+
+Started POST "/user/newp" for 152.57.45.87 at 2022-01-08 06:12:54 +0000
+Cannot render console from 152.57.45.87! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UserController#newp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"Mohak", "email"=>"Mohak_k@ph.iitr.ac.in ", "password"=>"[FILTERED]", "repass"=>"abc", "commit"=>"Log In"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "Mohak_k@ph.iitr.ac.in "], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:20:in `newp'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/user_controller.rb:26:in `newp'
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password") VALUES ($1, $2, $3) RETURNING "uid"[0m  [["name", "Mohak"], ["email", "Mohak_k@ph.iitr.ac.in "], ["password", "abc"]]
+  ↳ app/controllers/user_controller.rb:26:in `newp'
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/user_controller.rb:26:in `newp'
+Redirected to http://13.127.46.121/logging/ulogin
+Completed 302 Found in 45ms (ActiveRecord: 18.7ms | Allocations: 9101)
+
+
+Started GET "/logging/ulogin" for 152.57.45.87 at 2022-01-08 06:12:55 +0000
+Cannot render console from 152.57.45.87! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#ulogin as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 0.7ms | Allocations: 355)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 3651)
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 4142)
+
+
+Started GET "/user/new" for 152.57.45.87 at 2022-01-08 06:13:00 +0000
+Cannot render console from 152.57.45.87! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 444)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 3618)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 4019)
+
+
+Started POST "/user/newp" for 152.57.45.87 at 2022-01-08 06:13:15 +0000
+Cannot render console from 152.57.45.87! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UserController#newp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"Mok", "email"=>"Mohak_k@ph.iitr.ac.in ", "password"=>"[FILTERED]", "repass"=>"abc", "commit"=>"Log In"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "Mohak_k@ph.iitr.ac.in "], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:20:in `newp'
+Redirected to http://13.127.46.121/user/new
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms | Allocations: 1001)
+
+
+Started GET "/user/new" for 152.57.45.87 at 2022-01-08 06:13:15 +0000
+Cannot render console from 152.57.45.87! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 446)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 3620)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 4027)
+
+
+Started GET "/logging/ulogin" for 152.57.45.87 at 2022-01-08 06:13:24 +0000
+Cannot render console from 152.57.45.87! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#ulogin as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 0.8ms | Allocations: 315)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 3489)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms | Allocations: 3893)
+
+
+Started GET "/user/new" for 152.57.45.87 at 2022-01-08 06:13:25 +0000
+Cannot render console from 152.57.45.87! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 444)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 3618)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 4019)
+
+
+Started GET "/logging/ulogin" for 152.57.45.87 at 2022-01-08 06:13:26 +0000
+Cannot render console from 152.57.45.87! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#ulogin as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 1.1ms | Allocations: 315)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 3489)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms | Allocations: 3893)
+
+
+Started GET "/user/new" for 152.57.45.87 at 2022-01-08 06:13:27 +0000
+Cannot render console from 152.57.45.87! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 444)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 3618)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms | Allocations: 4020)
+
+
+Started GET "/logging/ulogin" for 152.57.45.87 at 2022-01-08 06:13:28 +0000
+Cannot render console from 152.57.45.87! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#ulogin as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 0.7ms | Allocations: 315)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 3489)
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 3893)
+
+
+Started GET "/user/new" for 152.57.45.87 at 2022-01-08 06:13:29 +0000
+Cannot render console from 152.57.45.87! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 444)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.0ms | Allocations: 3618)
+Completed 200 OK in 25ms (Views: 24.7ms | ActiveRecord: 0.0ms | Allocations: 4019)
+
+
+Started GET "/logging/ulogin" for 152.57.45.87 at 2022-01-08 06:13:29 +0000
+Cannot render console from 152.57.45.87! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#ulogin as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 0.7ms | Allocations: 315)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 3489)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms | Allocations: 3893)
+
+
+Started GET "/user/new" for 152.57.45.87 at 2022-01-08 06:13:32 +0000
+Cannot render console from 152.57.45.87! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 444)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 3618)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.0ms | Allocations: 4020)
+
+
+Started GET "/logging/ulogin" for 152.57.45.87 at 2022-01-08 06:13:46 +0000
+Cannot render console from 152.57.45.87! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#ulogin as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 0.6ms | Allocations: 315)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 3489)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.0ms | Allocations: 3893)
+
+
+Started GET "/user/new" for 152.57.45.87 at 2022-01-08 06:13:48 +0000
+Cannot render console from 152.57.45.87! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UserController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering user/new.html.erb within layouts/application
+  Rendered user/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 444)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 3630)
+Completed 200 OK in 17ms (Views: 16.9ms | ActiveRecord: 0.0ms | Allocations: 4032)
+
+
+Started GET "/logging/ulogin" for 152.57.45.87 at 2022-01-08 06:13:50 +0000
+Cannot render console from 152.57.45.87! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by LoggingController#ulogin as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 0.6ms | Allocations: 315)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 3506)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 3910)
+
+
+Started GET "/" for 152.57.45.87 at 2022-01-08 06:14:24 +0000
+Cannot render console from 152.57.45.87! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 65)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 3511)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 4278)
+
+
+Started GET "/shlok/ushlok" for 152.57.45.87 at 2022-01-08 06:14:46 +0000
+Cannot render console from 152.57.45.87! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ShlokController#ushlok as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ushlok.html.erb within layouts/application
+  [1m[36mShlok Load (1.1ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/ushlok.html.erb:1
+  [1m[36mActiveStorage::Attachment Load (1.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 14], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/ushlok.html.erb:12
+  [1m[36mActiveStorage::Blob Load (1.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/shlok/ushlok.html.erb:12
+  [1m[36mActiveStorage::Attachment Load (1.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 15], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/ushlok.html.erb:12
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/shlok/ushlok.html.erb:12
+  Rendered shlok/ushlok.html.erb within layouts/application (Duration: 48.9ms | Allocations: 21209)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 54.2ms | Allocations: 24563)
+Completed 200 OK in 58ms (Views: 48.3ms | ActiveRecord: 7.1ms | Allocations: 26216)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d913eaa3eac38effefa3c0db433be27388fb64d6/audio.wav" for 152.57.45.87 at 2022-01-08 06:14:46 +0000
+Cannot render console from 152.57.45.87! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d913eaa3eac38effefa3c0db433be27388fb64d6", "filename"=>"audio"}
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[36m  Disk Storage (1.0ms) [0m[34mGenerated URL for file at key: bgg3yddwlcroertdpsyjc44d32qh (http://13.127.46.121/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbWRuTTNsa1pIZHNZM0p2WlhKMFpIQnplV3BqTkRSa016SnhhQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYnk1M1lYWWlPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkYxWkdsdkxuZGhkZ1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRUdGMVpHbHZMM2d0ZDJGMkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDEtMDhUMDY6MTk6NDYuNzA5WiIsInB1ciI6ImJsb2Jfa2V5In19--f5ec93cca6b014b311081c4846fb20e8d8590ccf/audio.wav)[0m
+Redirected to http://13.127.46.121/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbWRuTTNsa1pIZHNZM0p2WlhKMFpIQnplV3BqTkRSa016SnhhQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYnk1M1lYWWlPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkYxWkdsdkxuZGhkZ1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRUdGMVpHbHZMM2d0ZDJGMkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDEtMDhUMDY6MTk6NDYuNzA5WiIsInB1ciI6ImJsb2Jfa2V5In19--f5ec93cca6b014b311081c4846fb20e8d8590ccf/audio.wav
+Completed 302 Found in 6ms (ActiveRecord: 0.9ms | Allocations: 2355)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbWRuTTNsa1pIZHNZM0p2WlhKMFpIQnplV3BqTkRSa016SnhhQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYnk1M1lYWWlPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkYxWkdsdkxuZGhkZ1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRUdGMVpHbHZMM2d0ZDJGMkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDEtMDhUMDY6MTk6NDYuNzA5WiIsInB1ciI6ImJsb2Jfa2V5In19--f5ec93cca6b014b311081c4846fb20e8d8590ccf/audio.wav" for 152.57.45.87 at 2022-01-08 06:14:46 +0000
+Cannot render console from 152.57.45.87! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::DiskController#show as */*
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"audio"}
+Completed 206 Partial Content in 2ms (ActiveRecord: 0.0ms | Allocations: 490)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--91614c3d158ae371b658c28e20fe3e70b8b83a04/audio.wav" for 152.57.45.87 at 2022-01-08 06:14:46 +0000
+Cannot render console from 152.57.45.87! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ActiveStorage::Blobs::RedirectController#show as */*
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--91614c3d158ae371b658c28e20fe3e70b8b83a04", "filename"=>"audio"}
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[36m  Disk Storage (2.7ms) [0m[34mGenerated URL for file at key: kbhuj2ddj291vwuywwww233qx4k6 (http://13.127.46.121/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhMkpvZFdveVpHUnFNamt4ZG5kMWVYZDNkM2N5TXpOeGVEUnJOZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYnk1M1lYWWlPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkYxWkdsdkxuZGhkZ1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRUdGMVpHbHZMM2d0ZDJGMkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDEtMDhUMDY6MTk6NDYuOTU5WiIsInB1ciI6ImJsb2Jfa2V5In19--367b1b4a8eb3fc93f5bceb1fd117cc772a65642a/audio.wav)[0m
+Redirected to http://13.127.46.121/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhMkpvZFdveVpHUnFNamt4ZG5kMWVYZDNkM2N5TXpOeGVEUnJOZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYnk1M1lYWWlPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkYxWkdsdkxuZGhkZ1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRUdGMVpHbHZMM2d0ZDJGMkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDEtMDhUMDY6MTk6NDYuOTU5WiIsInB1ciI6ImJsb2Jfa2V5In19--367b1b4a8eb3fc93f5bceb1fd117cc772a65642a/audio.wav
+Completed 302 Found in 40ms (ActiveRecord: 7.1ms | Allocations: 17976)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhMkpvZFdveVpHUnFNamt4ZG5kMWVYZDNkM2N5TXpOeGVEUnJOZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYnk1M1lYWWlPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkYxWkdsdkxuZGhkZ1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRUdGMVpHbHZMM2d0ZDJGMkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDEtMDhUMDY6MTk6NDYuOTU5WiIsInB1ciI6ImJsb2Jfa2V5In19--367b1b4a8eb3fc93f5bceb1fd117cc772a65642a/audio.wav" for 152.57.45.87 at 2022-01-08 06:14:47 +0000
+Cannot render console from 152.57.45.87! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::DiskController#show as */*
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"audio"}
+Completed 206 Partial Content in 2ms (ActiveRecord: 0.0ms | Allocations: 329)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbWRuTTNsa1pIZHNZM0p2WlhKMFpIQnplV3BqTkRSa016SnhhQVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpUVdGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkV1JwYnk1M1lYWWlPeUJtYVd4bGJtRnRaU285VlZSR0xUZ25KMkYxWkdsdkxuZGhkZ1k3QmxRNkVXTnZiblJsYm5SZmRIbHdaVWtpRUdGMVpHbHZMM2d0ZDJGMkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjItMDEtMDhUMDY6MTk6NDYuNzA5WiIsInB1ciI6ImJsb2Jfa2V5In19--f5ec93cca6b014b311081c4846fb20e8d8590ccf/audio.wav" for 152.57.45.87 at 2022-01-08 06:14:57 +0000
+Cannot render console from 152.57.45.87! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::DiskController#show as */*
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"audio"}
+Completed 206 Partial Content in 1ms (ActiveRecord: 0.0ms | Allocations: 329)
+
+
+Started GET "/.env" for 165.232.142.210 at 2022-01-08 06:26:05 +0000
+Cannot render console from 165.232.142.210! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/.env"):
+  
+Started POST "/" for 165.232.142.210 at 2022-01-08 06:27:12 +0000
+Cannot render console from 165.232.142.210! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [POST] "/"):
+  
+Started GET "/" for 65.49.20.66 at 2022-01-08 06:35:07 +0000
+Cannot render console from 65.49.20.66! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 2.1ms | Allocations: 199)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 7954)
+Completed 200 OK in 20ms (Views: 16.8ms | Allocations: 10593)
+
+
+Started GET "/" for 128.14.141.34 at 2022-01-08 06:45:03 +0000
+Cannot render console from 128.14.141.34! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as */*
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 3256)
+Completed 200 OK in 8ms (Views: 6.9ms | Allocations: 3826)
+
+
+Started GET "/" for 167.71.46.19 at 2022-01-08 06:48:51 +0000
+Cannot render console from 167.71.46.19! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by WelcomeController#home as */*
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 43)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 3256)
+Completed 200 OK in 7ms (Views: 6.3ms | Allocations: 3642)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1409038475602093665)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1409038475602093665)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
