@@ -6,7 +6,7 @@ The dynamic official website of Sanskrit Club IIT Roorkee
 - User page post: upagep
 - User page update: upageu
 - User page delete: upaged
-- User all objects: objects
+- User all objects: objects<br/>
 
 - Member page create: mpagec
 - Member page create post: mpagecp
