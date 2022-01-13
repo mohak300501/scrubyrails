@@ -2,7 +2,7 @@
 
 <h1>श्लोक-परिवर्तनं करोतु</h1>
 
-<%= form_tag '../shlok/' + @shlok.sid.to_s do %>
+<%= form_tag '../shlok/' + @shlok.id.to_s do %>
     <div>
         <%= label_tag "शीर्षकं" %><br/>
         <%= text_field_tag :title, @shlok.title, :required => true, class: "textfield" %><br/>
