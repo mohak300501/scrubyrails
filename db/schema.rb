@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_06_120414) do
+ActiveRecord::Schema.define(version: 2022_01_13_133345) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,26 +43,48 @@ ActiveRecord::Schema.define(version: 2022_01_06_120414) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "members", primary_key: "mem_id", id: :serial, force: :cascade do |t|
-    t.string "name", limit: 25, null: false
-    t.string "email", limit: 60, null: false
-    t.string "password", limit: 10, null: false
+  create_table "admin", primary_key: "aid", id: :serial, force: :cascade do |t|
+    t.string "name", limit: 25
+    t.string "email", limit: 60
+    t.string "password", limit: 20
   end
 
-  create_table "shloks", primary_key: "sid", id: :serial, force: :cascade do |t|
-    t.string "title", limit: 100
-    t.string "shlok", limit: 1000
-    t.string "translation", limit: 5000
-    t.string "updated_by", limit: 50
+  create_table "courses", force: :cascade do |t|
+    t.serial "cid", null: false
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "users", primary_key: "uid", id: :serial, force: :cascade do |t|
-    t.string "name", limit: 50
-    t.string "email", limit: 50
-    t.string "password", limit: 10
+  create_table "members", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "password"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "visits", primary_key: "vid", id: :integer, default: nil, force: :cascade do |t|
+  create_table "shloks", force: :cascade do |t|
+    t.string "title"
+    t.string "shlok"
+    t.string "translation"
+    t.string "updated_by"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "password"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "visits", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
