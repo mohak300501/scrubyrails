@@ -4,10 +4,10 @@ class ApplicationController < ActionController::Base
         session[:visit] ||= 0
         session[:visit] += 1
         visits = Visit.first
-        vc = visits.vid
+        vc = visits.id
         if session[:visit] == 1
             vc += 1
-            visits.update(:vid => vc)
+            visits.update(:id => vc)
         end
         session[:vc] = vc
     end
