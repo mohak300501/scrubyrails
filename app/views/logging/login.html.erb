@@ -17,4 +17,6 @@
     </div>
 <% end %>
 <br/>
-New user? <%= link_to "Register", new_path %> instead.
+<% if session[:moru] == "user" %>
+    New user? <%= link_to "Register", new_path %> instead.
+<% end %>
