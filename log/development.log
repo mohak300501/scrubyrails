@@ -39188,3 +39188,203 @@ Processing by WelcomeController#home as HTML
 Completed 200 OK in 130ms (Views: 116.1ms | ActiveRecord: 2.3ms | Allocations: 13829)
 
 
+Started GET "/" for 127.0.0.1 at 2022-01-22 22:12:55 +0530
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#home as HTML
+  [1m[36mVisit Load (3.2ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 4.3ms | Allocations: 435)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 164.9ms | Allocations: 10177)
+Completed 200 OK in 246ms (Views: 182.6ms | ActiveRecord: 19.9ms | Allocations: 18531)
+
+
+Started GET "/logging/mlogin" for 127.0.0.1 at 2022-01-22 22:12:57 +0530
+Processing by LoggingController#mlogin as HTML
+  [1m[36mVisit Load (1.6ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 2.0ms | Allocations: 832)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 70.5ms | Allocations: 5121)
+Completed 200 OK in 87ms (Views: 80.3ms | ActiveRecord: 1.6ms | Allocations: 7488)
+
+
+Started POST "/logging/loginp" for 127.0.0.1 at 2022-01-22 22:12:58 +0530
+Processing by LoggingController#loginp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"sanskritclub@iitr.ac.in", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mVisit Load (0.8ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mMember Load (2.3ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 LIMIT $2[0m  [["email", "sanskritclub@iitr.ac.in"], ["LIMIT", 1]]
+  ↳ app/controllers/logging_controller.rb:22:in `loginp'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 33ms (ActiveRecord: 8.0ms | Allocations: 6409)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 22:12:58 +0530
+Processing by WelcomeController#home as HTML
+  [1m[36mVisit Load (1.5ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 53)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 53.3ms | Allocations: 4304)
+Completed 200 OK in 61ms (Views: 54.8ms | ActiveRecord: 1.5ms | Allocations: 5727)
+
+
+Started GET "/welcome/mhomer" for 127.0.0.1 at 2022-01-22 22:13:00 +0530
+Processing by WelcomeController#mhomer as HTML
+  [1m[36mVisit Load (2.2ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/mhomer.html.erb within layouts/application
+  Rendered welcome/mhomer.html.erb within layouts/application (Duration: 1.5ms | Allocations: 185)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 71.7ms | Allocations: 4265)
+Completed 200 OK in 90ms (Views: 77.3ms | ActiveRecord: 2.2ms | Allocations: 5843)
+
+
+Started GET "/welcome/mhomer" for 127.0.0.1 at 2022-01-22 22:13:01 +0530
+Processing by WelcomeController#mhomer as HTML
+  [1m[36mVisit Load (1.9ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/mhomer.html.erb within layouts/application
+  Rendered welcome/mhomer.html.erb within layouts/application (Duration: 0.1ms | Allocations: 45)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 64.5ms | Allocations: 4123)
+Completed 200 OK in 73ms (Views: 66.1ms | ActiveRecord: 1.9ms | Allocations: 5412)
+
+
+Started GET "/welcome/mhomer" for 127.0.0.1 at 2022-01-22 22:13:02 +0530
+Processing by WelcomeController#mhomer as HTML
+  [1m[36mVisit Load (1.6ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/mhomer.html.erb within layouts/application
+  Rendered welcome/mhomer.html.erb within layouts/application (Duration: 0.2ms | Allocations: 45)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 48.9ms | Allocations: 4125)
+Completed 200 OK in 58ms (Views: 50.2ms | ActiveRecord: 1.6ms | Allocations: 5436)
+
+
+Started GET "/event/uevent" for 127.0.0.1 at 2022-01-22 22:13:08 +0530
+Processing by EventController#uevent as HTML
+  [1m[36mVisit Load (1.3ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering event/uevent.html.erb within layouts/application
+  Rendered event/uevent.html.erb within layouts/application (Duration: 1.2ms | Allocations: 148)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 63.7ms | Allocations: 4518)
+Completed 200 OK in 79ms (Views: 70.5ms | ActiveRecord: 1.3ms | Allocations: 6834)
+
+
+Started GET "/shlok/mshlokr" for 127.0.0.1 at 2022-01-22 22:13:09 +0530
+Processing by ShlokController#mshlokr as HTML
+  [1m[36mVisit Load (1.4ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.6ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1397)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 70.6ms | Allocations: 15902)
+Completed 200 OK in 94ms (Views: 79.3ms | ActiveRecord: 3.0ms | Allocations: 19562)
+
+
+Started GET "/resource/uresource" for 127.0.0.1 at 2022-01-22 22:13:10 +0530
+Processing by ResourceController#uresource as HTML
+  [1m[36mVisit Load (1.0ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering resource/uresource.html.erb within layouts/application
+  Rendered resource/uresource.html.erb within layouts/application (Duration: 1.1ms | Allocations: 155)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 51.5ms | Allocations: 4518)
+Completed 200 OK in 67ms (Views: 59.0ms | ActiveRecord: 1.0ms | Allocations: 6818)
+
+
+Started GET "/course/ucourse" for 127.0.0.1 at 2022-01-22 22:13:11 +0530
+Processing by CourseController#ucourse as HTML
+  [1m[36mVisit Load (1.3ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering course/ucourse.html.erb within layouts/application
+  Rendered course/ucourse.html.erb within layouts/application (Duration: 1.1ms | Allocations: 171)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 63.8ms | Allocations: 4535)
+Completed 200 OK in 81ms (Views: 73.7ms | ActiveRecord: 1.3ms | Allocations: 6883)
+
+
+Started GET "/welcome/mhomer" for 127.0.0.1 at 2022-01-22 22:13:12 +0530
+Processing by WelcomeController#mhomer as HTML
+  [1m[36mVisit Load (1.1ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/mhomer.html.erb within layouts/application
+  Rendered welcome/mhomer.html.erb within layouts/application (Duration: 0.3ms | Allocations: 47)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 67.9ms | Allocations: 6099)
+Completed 200 OK in 76ms (Views: 70.0ms | ActiveRecord: 1.1ms | Allocations: 8065)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 22:14:06 +0530
+Processing by WelcomeController#home as HTML
+  [1m[36mVisit Load (1.6ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 2.0ms | Allocations: 208)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 101.2ms | Allocations: 13737)
+Completed 200 OK in 133ms (Views: 121.3ms | ActiveRecord: 1.6ms | Allocations: 15939)
+
+
+Started GET "/welcome/mhomer" for 127.0.0.1 at 2022-01-22 22:14:10 +0530
+Processing by WelcomeController#mhomer as HTML
+  [1m[36mVisit Load (1.2ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/mhomer.html.erb within layouts/application
+  Rendered welcome/mhomer.html.erb within layouts/application (Duration: 1.1ms | Allocations: 165)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 52.4ms | Allocations: 4243)
+Completed 200 OK in 62ms (Views: 56.0ms | ActiveRecord: 1.2ms | Allocations: 5957)
+
+
+Started GET "/logging/logout" for 127.0.0.1 at 2022-01-22 22:14:16 +0530
+Processing by LoggingController#logout as HTML
+  [1m[36mVisit Load (2.2ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 11ms (ActiveRecord: 2.2ms | Allocations: 1239)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-22 22:14:16 +0530
+Processing by WelcomeController#home as HTML
+  [1m[36mVisit Load (1.5ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 47)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 55.6ms | Allocations: 4150)
+Completed 200 OK in 64ms (Views: 57.5ms | ActiveRecord: 1.5ms | Allocations: 5474)
+
+
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1409038475602093665)[0m
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateAnnouncements (20220123154117)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (53.3ms)[0m  [1m[35mCREATE TABLE "announcements" ("id" bigserial primary key, "news" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220123154117"]]
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(1409038475602093665)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
