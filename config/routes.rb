@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     get "user/muserr", as:"all_users"
     
     get "welcome/mhomer", as:"home"
+    get "welcome/mhomec", as:"new_home"
 
     get "logging/mlogin", as:"member_login"
     get "logging/ulogin", as:"user_login"
