@@ -39250,3 +39250,126 @@ Processing by WelcomeController#home as HTML
 Completed 200 OK in 90ms (Views: 83.5ms | ActiveRecord: 1.2ms | Allocations: 5466)
 
 
+Started GET "/" for 127.0.0.1 at 2022-01-29 12:38:02 +0530
+  [1m[35m (4.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#home as HTML
+  [1m[36mVisit Load (4.4ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:10:in `visit_count'
+  [1m[36mVisit Update (3.4ms)[0m  [1m[33mUPDATE "visits" SET "id" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["id", 6], ["updated_at", "2022-01-29 07:08:02.489177"], ["id", 5]]
+  ↳ app/controllers/application_controller.rb:10:in `visit_count'
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:10:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 2.8ms | Allocations: 695)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 627.8ms | Allocations: 36694)
+Completed 200 OK in 731ms (Views: 643.6ms | ActiveRecord: 31.6ms | Allocations: 58598)
+
+
+Started GET "/game/ugame" for 127.0.0.1 at 2022-01-29 12:38:07 +0530
+Processing by GameController#ugame as HTML
+  [1m[36mVisit Load (1.6ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 1.6ms | Allocations: 5022)
+
+
+  
+ActionView::MissingTemplate (Missing template game/ushlok, application/ushlok with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "C:/Users/91998/OneDrive/Documents/GitHub/scrubyrails/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/actiontext-6.1.4.4/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/actionmailbox-6.1.4.4/app/views"
+):
+  
+app/controllers/game_controller.rb:3:in `ugame'
+Started GET "/" for 127.0.0.1 at 2022-01-29 12:38:20 +0530
+Processing by WelcomeController#home as HTML
+  [1m[36mVisit Load (1.7ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 49)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 65.7ms | Allocations: 4373)
+Completed 200 OK in 77ms (Views: 67.8ms | ActiveRecord: 1.7ms | Allocations: 6061)
+
+
+Started GET "/shlok/ushlok" for 127.0.0.1 at 2022-01-29 12:38:22 +0530
+Processing by ShlokController#ushlok as HTML
+  [1m[36mVisit Load (1.2ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ushlok.html.erb within layouts/application
+  [1m[36mShlok Load (2.7ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/ushlok.html.erb:1
+  Rendered shlok/ushlok.html.erb within layouts/application (Duration: 6.6ms | Allocations: 1107)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 76.5ms | Allocations: 5538)
+Completed 200 OK in 131ms (Views: 88.3ms | ActiveRecord: 3.9ms | Allocations: 9306)
+
+
+Started GET "/event/uevent" for 127.0.0.1 at 2022-01-29 12:38:26 +0530
+Processing by EventController#uevent as HTML
+  [1m[36mVisit Load (1.5ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering event/uevent.html.erb within layouts/application
+  Rendered event/uevent.html.erb within layouts/application (Duration: 1.0ms | Allocations: 146)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 62.1ms | Allocations: 4558)
+Completed 200 OK in 77ms (Views: 68.0ms | ActiveRecord: 1.5ms | Allocations: 6749)
+
+
+Started GET "/resource/uresource" for 127.0.0.1 at 2022-01-29 12:38:28 +0530
+Processing by ResourceController#uresource as HTML
+  [1m[36mVisit Load (1.6ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering resource/uresource.html.erb within layouts/application
+  Rendered resource/uresource.html.erb within layouts/application (Duration: 0.8ms | Allocations: 151)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 63.1ms | Allocations: 4585)
+Completed 200 OK in 79ms (Views: 70.1ms | ActiveRecord: 1.6ms | Allocations: 7157)
+
+
+Started GET "/course/ucourse" for 127.0.0.1 at 2022-01-29 12:38:29 +0530
+Processing by CourseController#ucourse as HTML
+  [1m[36mVisit Load (0.9ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering course/ucourse.html.erb within layouts/application
+  Rendered course/ucourse.html.erb within layouts/application (Duration: 1.2ms | Allocations: 171)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 64.2ms | Allocations: 4619)
+Completed 200 OK in 79ms (Views: 71.7ms | ActiveRecord: 0.9ms | Allocations: 6802)
+
+
+Started GET "/resource/uresource" for 127.0.0.1 at 2022-01-29 12:38:32 +0530
+Processing by ResourceController#uresource as HTML
+  [1m[36mVisit Load (2.3ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering resource/uresource.html.erb within layouts/application
+  Rendered resource/uresource.html.erb within layouts/application (Duration: 0.2ms | Allocations: 40)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 76.0ms | Allocations: 5405)
+Completed 200 OK in 88ms (Views: 78.3ms | ActiveRecord: 2.3ms | Allocations: 8649)
+
+
+Started GET "/game/ugame" for 127.0.0.1 at 2022-01-29 12:38:33 +0530
+Processing by GameController#ugame as HTML
+  [1m[36mVisit Load (2.0ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 2.0ms | Allocations: 2609)
+
+
+  
+ActionView::MissingTemplate (Missing template game/ushlok, application/ushlok with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "C:/Users/91998/OneDrive/Documents/GitHub/scrubyrails/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/actiontext-6.1.4.4/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/actionmailbox-6.1.4.4/app/views"
+):
+  
+app/controllers/game_controller.rb:3:in `ugame'

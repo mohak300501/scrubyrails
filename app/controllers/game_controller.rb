@@ -1,6 +1,6 @@
 class GameController < ApplicationController
     def ugame
-        render "ushlok"
+        render "ugame"
     end
 
     def mgamer
