@@ -33,5 +33,7 @@ Rails.application.routes.draw do
     get "shlok/:id/del", to:"shlok#mshlokdp"
 
     get "event/uevent", as:"events"
+    get "event/meventr", as:"all_events"
+    get "event/meventc", as:"new_event"
     get "resource/uresource", as:"resources"
 end
