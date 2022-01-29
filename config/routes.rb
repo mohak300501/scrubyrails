@@ -9,6 +9,12 @@ Rails.application.routes.draw do
     
     get "welcome/mhomer", as:"home"
     get "welcome/mhomec", as:"new_home"
+    get "welcome/mhomeu", as:"home"
+
+    get "game/ugame", as:"games"
+    get "game/mgamer", as:"all_games"
+    get "game/mgamec", as:"new_game"
+    get "game/mgameu", as:"all_games"
 
     get "logging/mlogin", as:"member_login"
     get "logging/ulogin", as:"user_login"

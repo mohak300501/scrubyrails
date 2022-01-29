@@ -18,4 +18,11 @@ class WelcomeController < ApplicationController
             redirect_to root_url
         end
     end
+    def mhomeu
+        if session[:member]
+            render "mshlokc"
+        else
+            redirect_to root_url
+        end
+    end
 end
