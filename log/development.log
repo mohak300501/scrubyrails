@@ -38888,3 +38888,488 @@ Completed 200 OK in 150ms (Views: 134.0ms | ActiveRecord: 3.1ms | Allocations: 1
 >>>>>>> 574f53b070e45a86c92017e357c1e39daf6d32f2
 
 
+Started GET "/" for 127.0.0.1 at 2022-01-22 20:49:35 +0530
+  
+ActiveRecord::ConnectionNotEstablished (connection to server at "localhost" (::1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+):
+  
+activerecord (6.1.4.4) lib/active_record/connection_adapters/postgresql_adapter.rb:83:in `rescue in new_client'
+activerecord (6.1.4.4) lib/active_record/connection_adapters/postgresql_adapter.rb:77:in `new_client'
+activerecord (6.1.4.4) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+activerecord (6.1.4.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:882:in `public_send'
+activerecord (6.1.4.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:882:in `new_connection'
+activerecord (6.1.4.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:926:in `checkout_new_connection'
+activerecord (6.1.4.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:905:in `try_to_checkout_new_connection'
+activerecord (6.1.4.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:866:in `acquire_connection'
+activerecord (6.1.4.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:588:in `checkout'
+activerecord (6.1.4.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:428:in `connection'
+activerecord (6.1.4.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:1128:in `retrieve_connection'
+activerecord (6.1.4.4) lib/active_record/connection_handling.rb:327:in `retrieve_connection'
+activerecord (6.1.4.4) lib/active_record/connection_handling.rb:283:in `connection'
+activerecord (6.1.4.4) lib/active_record/migration.rb:611:in `connection'
+activerecord (6.1.4.4) lib/active_record/migration.rb:606:in `build_watcher'
+activerecord (6.1.4.4) lib/active_record/migration.rb:588:in `block in call'
+activerecord (6.1.4.4) lib/active_record/migration.rb:587:in `synchronize'
+activerecord (6.1.4.4) lib/active_record/migration.rb:587:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/host_authorization.rb:119:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (6.1.4.4) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[35m (1975.3ms)[0m  [1m[35mCREATE DATABASE "scrubyrails_development" ENCODING = 'unicode'[0m
+  [1m[35m (36.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (17.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1409038475602093665)[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateActiveStorageTables (20220106120414)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (21.5ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "service_name" character varying NOT NULL, "byte_size" bigint NOT NULL, "checksum" character varying NOT NULL, "created_at" timestamp NOT NULL)[0m
+  [1m[35m (12.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (39.8ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (9.6ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (11.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (22.7ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" bigserial primary key, "blob_id" bigint NOT NULL, "variation_digest" character varying NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (4.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220106120414"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCourses (20220113122842)
+  [1m[36mTRANSACTION (12.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (32.1ms)[0m  [1m[35mCREATE TABLE "courses" ("id" bigserial primary key, "name" character varying, "description" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220113122842"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUsers (20220113132933)
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (29.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "password" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220113132933"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateMembers (20220113133007)
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (26.2ms)[0m  [1m[35mCREATE TABLE "members" ("id" bigserial primary key, "name" character varying, "email" character varying, "password" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220113133007"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateShloks (20220113133257)
+  [1m[36mTRANSACTION (4.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (26.0ms)[0m  [1m[35mCREATE TABLE "shloks" ("id" bigserial primary key, "title" character varying, "shlok" character varying, "translation" character varying, "updated_by" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220113133257"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateVisits (20220113133345)
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.2ms)[0m  [1m[35mCREATE TABLE "visits" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220113133345"]]
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-01-24 19:01:10.522489"], ["updated_at", "2022-01-24 19:01:10.522489"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1409038475602093665)[0m
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mVisit Create (2.3ms)[0m  [1m[32mINSERT INTO "visits" ("id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["id", 0], ["created_at", "2022-01-24 19:01:31.899251"], ["updated_at", "2022-01-24 19:01:31.899251"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (2.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "user1"], ["email", "user1@gmail.com"], ["password", "user1pass"], ["created_at", "2022-01-24 19:01:31.929432"], ["updated_at", "2022-01-24 19:01:31.929432"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMember Create (1.6ms)[0m  [1m[32mINSERT INTO "members" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Sanskrit Club"], ["email", "sanskritclub@iitr.ac.in"], ["password", "namaskar"], ["created_at", "2022-01-24 19:01:31.958848"], ["updated_at", "2022-01-24 19:01:31.958848"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2022-01-25 00:31:46 +0530
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#home as HTML
+  [1m[36mVisit Load (1.2ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:10:in `visit_count'
+  [1m[36mVisit Update (1.2ms)[0m  [1m[33mUPDATE "visits" SET "id" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["id", 1], ["updated_at", "2022-01-24 19:01:46.919387"], ["id", 0]]
+  ↳ app/controllers/application_controller.rb:10:in `visit_count'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:10:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 3.4ms | Allocations: 428)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Usage Error: Couldn't find the node_modules state file - running an install might help (findPackageLocation)
+
+$ yarn run [--inspect] [--inspect-brk] <scriptName> ...
+
+  Rendered layout layouts/application.html.erb (Duration: 5693.7ms | Allocations: 125769)
+Completed 500 Internal Server Error in 5789ms (ActiveRecord: 15.5ms | Allocations: 137681)
+
+
+  
+ActionView::Template::Error (Webpacker can't find application.js in E:/scrubyrails/public/packs/manifest.json. Possible causes:
+1. You want to set webpacker.yml value of compile to true for your environment
+   unless you are using the `webpack -w` or the webpack-dev-server.
+2. webpack has not yet re-run to reflect updates.
+3. You have misconfigured Webpacker's config/webpacker.yml file.
+4. Your webpack configuration is not creating a manifest.
+Your manifest contains:
+{
+}
+):
+     9:         <%= csp_meta_tag %>
+    10: 
+    11:         <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    12:         <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    13:     </head>
+    14: 
+    15:     <body>
+  
+app/views/layouts/application.html.erb:12
+Started GET "/" for 127.0.0.1 at 2022-01-25 00:34:31 +0530
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#home as HTML
+  [1m[36mVisit Load (1.2ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:10:in `visit_count'
+  [1m[36mVisit Update (1.3ms)[0m  [1m[33mUPDATE "visits" SET "id" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["id", 2], ["updated_at", "2022-01-24 19:04:31.632194"], ["id", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `visit_count'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:10:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 7.8ms | Allocations: 428)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 163.3ms | Allocations: 10110)
+Completed 200 OK in 272ms (Views: 188.2ms | ActiveRecord: 21.0ms | Allocations: 21613)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-25 00:38:27 +0530
+  [1m[35m (5.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#home as HTML
+  [1m[36mVisit Load (4.5ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 5.8ms | Allocations: 635)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 201.2ms | Allocations: 18698)
+Completed 200 OK in 296ms (Views: 217.9ms | ActiveRecord: 27.4ms | Allocations: 28205)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-25 11:44:33 +0530
+  [1m[35m (6.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#home as HTML
+  [1m[36mVisit Load (7.0ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:10:in `visit_count'
+  [1m[36mVisit Update (5.6ms)[0m  [1m[33mUPDATE "visits" SET "id" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["id", 5], ["updated_at", "2022-01-25 06:14:35.477743"], ["id", 4]]
+  ↳ app/controllers/application_controller.rb:10:in `visit_count'
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:10:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 39.3ms | Allocations: 2989)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 340.6ms | Allocations: 18102)
+Completed 200 OK in 907ms (Views: 471.1ms | ActiveRecord: 46.6ms | Allocations: 48899)
+
+
+Started GET "/logging/mlogin" for 127.0.0.1 at 2022-01-25 11:44:43 +0530
+Processing by LoggingController#mlogin as HTML
+  [1m[36mVisit Load (1.7ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1633)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 83.3ms | Allocations: 14187)
+Completed 200 OK in 106ms (Views: 96.9ms | ActiveRecord: 1.7ms | Allocations: 19333)
+
+
+Started POST "/logging/loginp" for 127.0.0.1 at 2022-01-25 11:44:45 +0530
+Processing by LoggingController#loginp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"sanskritclub@iitr.ac.in", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mVisit Load (3.5ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mMember Load (2.2ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 LIMIT $2[0m  [["email", "sanskritclub@iitr.ac.in"], ["LIMIT", 1]]
+  ↳ app/controllers/logging_controller.rb:22:in `loginp'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 49ms (ActiveRecord: 11.6ms | Allocations: 6020)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-25 11:44:45 +0530
+Processing by WelcomeController#home as HTML
+  [1m[36mVisit Load (0.9ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 55)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 76.4ms | Allocations: 4306)
+Completed 200 OK in 84ms (Views: 78.3ms | ActiveRecord: 0.9ms | Allocations: 5748)
+
+
+Started GET "/welcome/mhomer" for 127.0.0.1 at 2022-01-25 11:44:46 +0530
+Processing by WelcomeController#mhomer as HTML
+  [1m[36mVisit Load (2.0ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/mhomer.html.erb within layouts/application
+  Rendered welcome/mhomer.html.erb within layouts/application (Duration: 4.0ms | Allocations: 186)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 129.4ms | Allocations: 4357)
+Completed 200 OK in 144ms (Views: 134.8ms | ActiveRecord: 2.0ms | Allocations: 5839)
+
+
+Started GET "/welcome/mhomer" for 127.0.0.1 at 2022-01-25 11:44:54 +0530
+Processing by WelcomeController#mhomer as HTML
+  [1m[36mVisit Load (1.4ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/mhomer.html.erb within layouts/application
+  Rendered welcome/mhomer.html.erb within layouts/application (Duration: 0.5ms | Allocations: 47)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 86.1ms | Allocations: 4127)
+Completed 200 OK in 96ms (Views: 88.5ms | ActiveRecord: 1.4ms | Allocations: 5459)
+
+
+Started GET "/user/muserr" for 127.0.0.1 at 2022-01-25 11:44:56 +0530
+Processing by UserController#muserr as HTML
+  [1m[36mVisit Load (1.5ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering user/users.html.erb within layouts/application
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/user/users.html.erb:1
+  Rendered user/users.html.erb within layouts/application (Duration: 17.5ms | Allocations: 4221)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 107.0ms | Allocations: 10747)
+Completed 200 OK in 141ms (Views: 113.6ms | ActiveRecord: 8.7ms | Allocations: 13321)
+
+
+Started GET "/welcome/mhomer" for 127.0.0.1 at 2022-01-25 11:44:58 +0530
+Processing by WelcomeController#mhomer as HTML
+  [1m[36mVisit Load (14.4ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/mhomer.html.erb within layouts/application
+  Rendered welcome/mhomer.html.erb within layouts/application (Duration: 0.3ms | Allocations: 49)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 178.1ms | Allocations: 4240)
+Completed 200 OK in 211ms (Views: 187.3ms | ActiveRecord: 14.4ms | Allocations: 5728)
+
+
+Started GET "/logging/logout" for 127.0.0.1 at 2022-01-25 11:45:01 +0530
+Processing by LoggingController#logout as HTML
+  [1m[36mVisit Load (1.2ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 8ms (ActiveRecord: 1.2ms | Allocations: 1182)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-25 11:45:01 +0530
+Processing by WelcomeController#home as HTML
+  [1m[36mVisit Load (1.2ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 50)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 89.3ms | Allocations: 4151)
+Completed 200 OK in 99ms (Views: 91.5ms | ActiveRecord: 1.2ms | Allocations: 5494)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-25 11:45:02 +0530
+Processing by WelcomeController#home as HTML
+  [1m[36mVisit Load (2.2ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 49)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 77.7ms | Allocations: 17596)
+Completed 200 OK in 97ms (Views: 82.3ms | ActiveRecord: 2.2ms | Allocations: 19064)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-25 11:45:03 +0530
+Processing by WelcomeController#home as HTML
+  [1m[36mVisit Load (1.2ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.4ms | Allocations: 49)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 73.3ms | Allocations: 4150)
+Completed 200 OK in 83ms (Views: 76.2ms | ActiveRecord: 1.2ms | Allocations: 5506)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-25 11:45:04 +0530
+Processing by WelcomeController#home as HTML
+  [1m[36mVisit Load (1.2ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 49)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 81.2ms | Allocations: 4134)
+Completed 200 OK in 90ms (Views: 83.5ms | ActiveRecord: 1.2ms | Allocations: 5466)
+
+
+Started GET "/" for 127.0.0.1 at 2022-01-29 12:38:02 +0530
+  [1m[35m (4.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#home as HTML
+  [1m[36mVisit Load (4.4ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:10:in `visit_count'
+  [1m[36mVisit Update (3.4ms)[0m  [1m[33mUPDATE "visits" SET "id" = $1, "updated_at" = $2 WHERE "visits"."id" = $3[0m  [["id", 6], ["updated_at", "2022-01-29 07:08:02.489177"], ["id", 5]]
+  ↳ app/controllers/application_controller.rb:10:in `visit_count'
+  [1m[36mTRANSACTION (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:10:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 2.8ms | Allocations: 695)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 627.8ms | Allocations: 36694)
+Completed 200 OK in 731ms (Views: 643.6ms | ActiveRecord: 31.6ms | Allocations: 58598)
+
+
+Started GET "/game/ugame" for 127.0.0.1 at 2022-01-29 12:38:07 +0530
+Processing by GameController#ugame as HTML
+  [1m[36mVisit Load (1.6ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 1.6ms | Allocations: 5022)
+
+
+  
+ActionView::MissingTemplate (Missing template game/ushlok, application/ushlok with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "C:/Users/91998/OneDrive/Documents/GitHub/scrubyrails/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/actiontext-6.1.4.4/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/actionmailbox-6.1.4.4/app/views"
+):
+  
+app/controllers/game_controller.rb:3:in `ugame'
+Started GET "/" for 127.0.0.1 at 2022-01-29 12:38:20 +0530
+Processing by WelcomeController#home as HTML
+  [1m[36mVisit Load (1.7ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 49)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 65.7ms | Allocations: 4373)
+Completed 200 OK in 77ms (Views: 67.8ms | ActiveRecord: 1.7ms | Allocations: 6061)
+
+
+Started GET "/shlok/ushlok" for 127.0.0.1 at 2022-01-29 12:38:22 +0530
+Processing by ShlokController#ushlok as HTML
+  [1m[36mVisit Load (1.2ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ushlok.html.erb within layouts/application
+  [1m[36mShlok Load (2.7ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/ushlok.html.erb:1
+  Rendered shlok/ushlok.html.erb within layouts/application (Duration: 6.6ms | Allocations: 1107)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 76.5ms | Allocations: 5538)
+Completed 200 OK in 131ms (Views: 88.3ms | ActiveRecord: 3.9ms | Allocations: 9306)
+
+
+Started GET "/event/uevent" for 127.0.0.1 at 2022-01-29 12:38:26 +0530
+Processing by EventController#uevent as HTML
+  [1m[36mVisit Load (1.5ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering event/uevent.html.erb within layouts/application
+  Rendered event/uevent.html.erb within layouts/application (Duration: 1.0ms | Allocations: 146)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 62.1ms | Allocations: 4558)
+Completed 200 OK in 77ms (Views: 68.0ms | ActiveRecord: 1.5ms | Allocations: 6749)
+
+
+Started GET "/resource/uresource" for 127.0.0.1 at 2022-01-29 12:38:28 +0530
+Processing by ResourceController#uresource as HTML
+  [1m[36mVisit Load (1.6ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering resource/uresource.html.erb within layouts/application
+  Rendered resource/uresource.html.erb within layouts/application (Duration: 0.8ms | Allocations: 151)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 63.1ms | Allocations: 4585)
+Completed 200 OK in 79ms (Views: 70.1ms | ActiveRecord: 1.6ms | Allocations: 7157)
+
+
+Started GET "/course/ucourse" for 127.0.0.1 at 2022-01-29 12:38:29 +0530
+Processing by CourseController#ucourse as HTML
+  [1m[36mVisit Load (0.9ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering course/ucourse.html.erb within layouts/application
+  Rendered course/ucourse.html.erb within layouts/application (Duration: 1.2ms | Allocations: 171)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 64.2ms | Allocations: 4619)
+Completed 200 OK in 79ms (Views: 71.7ms | ActiveRecord: 0.9ms | Allocations: 6802)
+
+
+Started GET "/resource/uresource" for 127.0.0.1 at 2022-01-29 12:38:32 +0530
+Processing by ResourceController#uresource as HTML
+  [1m[36mVisit Load (2.3ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering resource/uresource.html.erb within layouts/application
+  Rendered resource/uresource.html.erb within layouts/application (Duration: 0.2ms | Allocations: 40)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 76.0ms | Allocations: 5405)
+Completed 200 OK in 88ms (Views: 78.3ms | ActiveRecord: 2.3ms | Allocations: 8649)
+
+
+Started GET "/game/ugame" for 127.0.0.1 at 2022-01-29 12:38:33 +0530
+Processing by GameController#ugame as HTML
+  [1m[36mVisit Load (2.0ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 2.0ms | Allocations: 2609)
+
+
+  
+ActionView::MissingTemplate (Missing template game/ushlok, application/ushlok with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "C:/Users/91998/OneDrive/Documents/GitHub/scrubyrails/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/actiontext-6.1.4.4/app/views"
+  * "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/actionmailbox-6.1.4.4/app/views"
+):
+  
+app/controllers/game_controller.rb:3:in `ugame'

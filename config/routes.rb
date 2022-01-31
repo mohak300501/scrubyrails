@@ -7,7 +7,12 @@ Rails.application.routes.draw do
     post "user/newp", as:"newp"
     get "user/muserr", as:"all_users"
     
-    get "welcome/mhomer", as:"all_homes"
+    get "welcome/mhomer", as:"home"
+    get "welcome/mhomec", as:"new_home"
+
+    get "game/ugame", as:"games"
+    get "game/mgamer", as:"all_games"
+    get "game/mgamec", as:"new_game"
 
     get "logging/mlogin", as:"member_login"
     get "logging/ulogin", as:"user_login"
@@ -31,5 +36,7 @@ Rails.application.routes.draw do
     get "shlok/:id/del", to:"shlok#mshlokdp"
 
     get "event/uevent", as:"events"
+    get "event/meventr", as:"all_events"
+    get "event/meventc", as:"new_event"
     get "resource/uresource", as:"resources"
 end
