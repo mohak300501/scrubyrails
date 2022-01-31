@@ -1,23 +1,14 @@
-<div class="courses">
-    <div class="title">
-        <h2>Saṃsādhanī : Praveśikā</h2>
+
+<%= link_to "add new course", new_course_path %>
+<% for i in @courses do %>
+    <div class="courses">
+        <div class="title">
+            <%= i.name %><br/>
+        </div>
+
+        <div class="description">
+            <p><%= i.description.html_safe %></p>
+        </div>
 
     </div>
-    <div class="img">
-        <img src="https://dl.dropbox.com/s/wptso1sew3btmfd/Samsaadhani.jpg?dl=0" alt="new course" />
-
-    </div>
-
-
-    <div class="description">
-      <header class="align-center">
-        <h4>Introduction to Saṃsādhanī - A toolkit for Sanskrit Computational Linguistics</h4><br>
-      </header>
-          <li>A course organized as a collaboration between Sanskrit Club of IIT Roorkee and Team Samsaadhanii, University of Hyderabad.</li>
-          <li>This course focuses on the use of Saṃsādhanī - an online computational toolkit for Sanskrit to understand any Sanskrit text.</li>
-          <li>This course is designed for learners having intermediate knowledge of Vibhakti, Sandhi, and Kaaraka, gained through the completion of the Subhashitam Samskritam course or otherwise.</li>
-    </div>
-
-
-
-</div>
+<% end %>

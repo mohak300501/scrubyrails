@@ -15,6 +15,9 @@ Rails.application.routes.draw do
     get "logging/logout", as:"logout"
 
     get "course/ucourse", as:"courses"
+    get "course/mcourser", as:"all_courses"
+    get "course/mcoursec", as:"new_course"
+    post "course/mcoursecp", as:"course_post"
 
     get "feedback/ufeedback", as:"feedback"
     post "feedback/ufeedbackp", as:"feedback_post"
