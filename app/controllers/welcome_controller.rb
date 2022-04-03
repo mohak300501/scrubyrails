@@ -20,7 +20,7 @@ class WelcomeController < ApplicationController
     end
     def mhomeu
         if session[:member]
-            render "mshlokc"
+            render "mhomeu"
         else
             redirect_to root_url
         end
