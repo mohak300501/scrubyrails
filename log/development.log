@@ -40012,3 +40012,86 @@ Processing by WelcomeController#home as HTML
 Completed 200 OK in 134ms (Views: 124.2ms | ActiveRecord: 2.2ms | Allocations: 11008)
 
 
+Started GET "/" for 127.0.0.1 at 2022-04-03 22:34:55 +0530
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#home as HTML
+  [1m[36mVisit Load (4.5ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 3.9ms | Allocations: 434)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 134.8ms | Allocations: 11042)
+Completed 200 OK in 209ms (Views: 149.9ms | ActiveRecord: 17.8ms | Allocations: 19740)
+
+
+Started GET "/logging/mlogin" for 127.0.0.1 at 2022-04-03 22:34:58 +0530
+Processing by LoggingController#mlogin as HTML
+  [1m[36mVisit Load (1.5ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1371)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 90.3ms | Allocations: 13303)
+Completed 200 OK in 110ms (Views: 101.2ms | ActiveRecord: 1.5ms | Allocations: 17482)
+
+
+Started POST "/logging/loginp" for 127.0.0.1 at 2022-04-03 22:34:59 +0530
+Processing by LoggingController#loginp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"sanskritclub@iitr.ac.in", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mVisit Load (2.6ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mMember Load (2.9ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 LIMIT $2[0m  [["email", "sanskritclub@iitr.ac.in"], ["LIMIT", 1]]
+  ↳ app/controllers/logging_controller.rb:22:in `loginp'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 62ms (ActiveRecord: 18.1ms | Allocations: 6408)
+
+
+Started GET "/" for 127.0.0.1 at 2022-04-03 22:34:59 +0530
+Processing by WelcomeController#home as HTML
+  [1m[36mVisit Load (1.4ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 53)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 76.0ms | Allocations: 12502)
+Completed 200 OK in 88ms (Views: 78.7ms | ActiveRecord: 1.4ms | Allocations: 13965)
+
+
+Started GET "/welcome/mhomer" for 127.0.0.1 at 2022-04-03 22:35:01 +0530
+Processing by WelcomeController#mhomer as HTML
+  [1m[36mVisit Load (1.5ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/mhomer.html.erb within layouts/application
+  Rendered welcome/mhomer.html.erb within layouts/application (Duration: 2.1ms | Allocations: 450)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 104.2ms | Allocations: 10813)
+Completed 200 OK in 127ms (Views: 115.1ms | ActiveRecord: 1.5ms | Allocations: 13248)
+
+
+Started GET "/game/mgamer" for 127.0.0.1 at 2022-04-03 22:35:06 +0530
+Processing by GameController#mgamer as HTML
+  [1m[36mVisit Load (4.4ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgamer.html.erb within layouts/application
+  Rendered game/mgamer.html.erb within layouts/application (Duration: 28.3ms | Allocations: 5150)
+  Rendered layout layouts/application.html.erb (Duration: 31.3ms | Allocations: 5492)
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 4.4ms | Allocations: 10309)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `path' for #<ActionView::Base:0x00000000008f70>):
+    2: <p>welcome to mgamer</p>
+    3: </div>
+    4: <div class="updel">
+    5: <%= link_to path do %>
+    6:     <div class="button">परिवर्तयतु</div>
+    7: <% end %>
+    8: <%= link_to path + "/del" do %>
+  
+app/views/game/mgamer.html.erb:5
+app/controllers/game_controller.rb:8:in `mgamer'
