@@ -1,12 +1,25 @@
 <div>
 <p>welcome to mgamer</p>
 </div>
-<% path = "../game/" + i.id.to_s %>
-<div class="updel">
-<%= link_to path do %>
-    <div class="button">परिवर्तयतु</div>
+<%= link_to "नूतनः gameH योजयतु", new_game_path %>
+<% for i in @games do %>
+    <div class="shloks">
+        <div class="title">
+            <%= i.name %><br/>
+        </div>
+
+        <div class="shlok">
+            <p><%= i.info %></p>
+        </div>
+
+        <% path = "../game/" + i.id.to_s %>
+        <div class="updel">
+            <%= link_to path do %>
+                <div class="button">परिवर्तयतु</div>
+            <% end %>
+            <%= link_to path + "/del" do %>
+                <div class="button">विनश्यतु</div>
+            <% end %>
+        </div>
+    </div>
 <% end %>
-<%= link_to path + "/del" do %>
-    <div class="button">विनश्यतु</div>
-<% end %>
-</div>

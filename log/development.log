@@ -40095,3 +40095,1179 @@ ActionView::Template::Error (undefined local variable or method `path' for #<Act
   
 app/views/game/mgamer.html.erb:5
 app/controllers/game_controller.rb:8:in `mgamer'
+Started GET "/" for 127.0.0.1 at 2022-04-03 22:39:45 +0530
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#home as HTML
+  [1m[36mVisit Load (2.5ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 3.0ms | Allocations: 433)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 142.0ms | Allocations: 10659)
+Completed 200 OK in 213ms (Views: 160.7ms | ActiveRecord: 11.1ms | Allocations: 19359)
+
+
+Started GET "/game/mgamer" for 127.0.0.1 at 2022-04-03 22:39:49 +0530
+Processing by GameController#mgamer as HTML
+  [1m[36mVisit Load (1.8ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgamer.html.erb within layouts/application
+  Rendered game/mgamer.html.erb within layouts/application (Duration: 7.2ms | Allocations: 4952)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 5034)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 1.8ms | Allocations: 7367)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `i' for #<ActionView::Base:0x00000000008a48>
+Did you mean?  @@id):
+    1: <div>
+    2: <p>welcome to mgamer</p>
+    3: </div>
+    4: <% path = "../game/" + i.id.to_s %>
+    5: <div class="updel">
+    6: <%= link_to path do %>
+    7:     <div class="button">परिवर्तयतु</div>
+  
+app/views/game/mgamer.html.erb:4
+app/controllers/game_controller.rb:8:in `mgamer'
+Started GET "/game/mgamer" for 127.0.0.1 at 2022-04-03 22:44:10 +0530
+Processing by GameController#mgamer as HTML
+  [1m[36mVisit Load (1.9ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgamer.html.erb within layouts/application
+  Rendered game/mgamer.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1867)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 1940)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 1.9ms | Allocations: 4290)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    1: <div>
+    2: <p>welcome to mgamer</p>
+    3: </div>
+    4: <% for i in @shloks do %>
+    5:     <div class="shloks">
+    6:         <div class="title">
+    7:             <%= i.title %><br/>
+  
+app/views/game/mgamer.html.erb:4
+app/controllers/game_controller.rb:8:in `mgamer'
+Started GET "/game/mgamer" for 127.0.0.1 at 2022-04-03 22:54:58 +0530
+Processing by GameController#mgamer as HTML
+  [1m[36mVisit Load (1.8ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgamer.html.erb within layouts/application
+  [1m[36mShlok Load (2.6ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/game/mgamer.html.erb:4
+  Rendered game/mgamer.html.erb within layouts/application (Duration: 6.2ms | Allocations: 2721)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 2794)
+Completed 500 Internal Server Error in 113ms (ActiveRecord: 23.9ms | Allocations: 12947)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    30:         </div>
+    31:     </div>
+    32: <% end %>
+    33: <% path = "../game/" + i.id.to_s %>
+    34: <div class="updel">
+    35: <%= link_to path do %>
+    36:     <div class="button">परिवर्तयतु</div>
+  
+app/views/game/mgamer.html.erb:33
+app/controllers/game_controller.rb:9:in `mgamer'
+Started GET "/game/mgamer" for 127.0.0.1 at 2022-04-03 22:55:29 +0530
+Processing by GameController#mgamer as HTML
+  [1m[36mVisit Load (1.6ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgamer.html.erb within layouts/application
+  [1m[36mShlok Load (2.1ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/game/mgamer.html.erb:4
+  Rendered game/mgamer.html.erb within layouts/application (Duration: 13.0ms | Allocations: 2682)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 2754)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 3.6ms | Allocations: 4993)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    30:         </div>
+    31:     </div>
+    32: <% end %>
+    33: # <% path = "../game/" + i.id.to_s %>
+    34: # <div class="updel">
+    35: # <%= link_to path do %>
+    36: #     <div class="button">परिवर्तयतु</div>
+  
+app/views/game/mgamer.html.erb:33
+app/controllers/game_controller.rb:9:in `mgamer'
+Started GET "/game/mgamer" for 127.0.0.1 at 2022-04-03 22:55:50 +0530
+Processing by GameController#mgamer as HTML
+  [1m[36mVisit Load (1.1ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgamer.html.erb within layouts/application
+  [1m[36mShlok Load (1.7ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/game/mgamer.html.erb:4
+  Rendered game/mgamer.html.erb within layouts/application (Duration: 10.6ms | Allocations: 3427)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 3500)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 2.7ms | Allocations: 5764)
+
+
+  
+ActionView::Template::Error (undefined method `+' for nil:NilClass):
+    35: # <%= link_to path do %>
+    36: #     <div class="button">परिवर्तयतु</div>
+    37: # <% end %>
+    38: # <%= link_to path + "/del" do %>
+    39: #     <div class="button">विनश्यतु</div>
+    40: # <% end %>
+    41: # </div>
+  
+app/views/game/mgamer.html.erb:38
+app/controllers/game_controller.rb:9:in `mgamer'
+Started GET "/game/mgamer" for 127.0.0.1 at 2022-04-03 22:55:52 +0530
+Processing by GameController#mgamer as HTML
+  [1m[36mVisit Load (1.5ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgamer.html.erb within layouts/application
+  [1m[36mShlok Load (2.0ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/game/mgamer.html.erb:4
+  Rendered game/mgamer.html.erb within layouts/application (Duration: 8.7ms | Allocations: 2138)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 2204)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 3.5ms | Allocations: 3580)
+
+
+  
+ActionView::Template::Error (undefined method `+' for nil:NilClass):
+    35: # <%= link_to path do %>
+    36: #     <div class="button">परिवर्तयतु</div>
+    37: # <% end %>
+    38: # <%= link_to path + "/del" do %>
+    39: #     <div class="button">विनश्यतु</div>
+    40: # <% end %>
+    41: # </div>
+  
+app/views/game/mgamer.html.erb:38
+app/controllers/game_controller.rb:9:in `mgamer'
+Started GET "/game/mgamer" for 127.0.0.1 at 2022-04-03 22:55:59 +0530
+Processing by GameController#mgamer as HTML
+  [1m[36mVisit Load (2.3ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgamer.html.erb within layouts/application
+  [1m[36mShlok Load (2.8ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/game/mgamer.html.erb:4
+  Rendered game/mgamer.html.erb within layouts/application (Duration: 11.7ms | Allocations: 1158)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 139.3ms | Allocations: 6444)
+Completed 200 OK in 182ms (Views: 165.8ms | ActiveRecord: 5.1ms | Allocations: 8617)
+
+
+Started GET "/logging/logout" for 127.0.0.1 at 2022-04-03 23:03:27 +0530
+  [1m[35m (6.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LoggingController#logout as HTML
+  [1m[36mVisit Load (3.9ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 58ms (ActiveRecord: 23.4ms | Allocations: 14114)
+
+
+Started GET "/" for 127.0.0.1 at 2022-04-03 23:03:28 +0530
+Processing by WelcomeController#home as HTML
+  [1m[36mVisit Load (1.3ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 3.4ms | Allocations: 427)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 145.8ms | Allocations: 10602)
+Completed 200 OK in 185ms (Views: 166.0ms | ActiveRecord: 1.3ms | Allocations: 14392)
+
+
+Started GET "/game/ugame" for 127.0.0.1 at 2022-04-03 23:03:52 +0530
+Processing by GameController#ugame as HTML
+  [1m[36mVisit Load (2.2ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/ugame.html.erb within layouts/application
+  Rendered game/ugame.html.erb within layouts/application (Duration: 1.6ms | Allocations: 473)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 92.7ms | Allocations: 8807)
+Completed 200 OK in 122ms (Views: 109.9ms | ActiveRecord: 2.2ms | Allocations: 13285)
+
+
+Started GET "/logging/mlogin" for 127.0.0.1 at 2022-04-03 23:03:55 +0530
+Processing by LoggingController#mlogin as HTML
+  [1m[36mVisit Load (3.0ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 4.2ms | Allocations: 830)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 83.7ms | Allocations: 5596)
+Completed 200 OK in 113ms (Views: 100.1ms | ActiveRecord: 3.0ms | Allocations: 7856)
+
+
+Started POST "/logging/loginp" for 127.0.0.1 at 2022-04-03 23:03:58 +0530
+Processing by LoggingController#loginp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"sanskritclub@iitr.ac.in", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mVisit Load (1.9ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mMember Load (2.8ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 LIMIT $2[0m  [["email", "sanskritclub@iitr.ac.in"], ["LIMIT", 1]]
+  ↳ app/controllers/logging_controller.rb:22:in `loginp'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 55ms (ActiveRecord: 17.0ms | Allocations: 6357)
+
+
+Started GET "/" for 127.0.0.1 at 2022-04-03 23:03:58 +0530
+Processing by WelcomeController#home as HTML
+  [1m[36mVisit Load (3.2ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.5ms | Allocations: 53)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 94.2ms | Allocations: 5923)
+Completed 200 OK in 110ms (Views: 96.9ms | ActiveRecord: 3.2ms | Allocations: 8155)
+
+
+Started GET "/game/mgamer" for 127.0.0.1 at 2022-04-03 23:04:37 +0530
+Processing by GameController#mgamer as HTML
+  [1m[36mVisit Load (2.3ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgamer.html.erb within layouts/application
+  [1m[36mShlok Load (4.8ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/game/mgamer.html.erb:4
+  Rendered game/mgamer.html.erb within layouts/application (Duration: 15.0ms | Allocations: 3920)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 103.5ms | Allocations: 19700)
+Completed 200 OK in 281ms (Views: 113.4ms | ActiveRecord: 7.1ms | Allocations: 37133)
+
+
+Started GET "/logging/logout" for 127.0.0.1 at 2022-04-03 23:07:05 +0530
+Processing by LoggingController#logout as HTML
+  [1m[36mVisit Load (3.1ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 15ms (ActiveRecord: 3.1ms | Allocations: 1312)
+
+
+Started GET "/" for 127.0.0.1 at 2022-04-03 23:07:05 +0530
+Processing by WelcomeController#home as HTML
+  [1m[36mVisit Load (2.6ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.4ms | Allocations: 49)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 95.4ms | Allocations: 10062)
+Completed 200 OK in 111ms (Views: 99.0ms | ActiveRecord: 2.6ms | Allocations: 11645)
+
+
+Started GET "/" for 127.0.0.1 at 2022-04-03 23:14:08 +0530
+Processing by WelcomeController#home as HTML
+  [1m[36mVisit Load (1.8ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 1.8ms | Allocations: 209)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 65.5ms | Allocations: 5494)
+Completed 200 OK in 166ms (Views: 76.6ms | ActiveRecord: 20.7ms | Allocations: 14803)
+
+
+Started GET "/game/ugame" for 127.0.0.1 at 2022-04-03 23:14:11 +0530
+Processing by GameController#ugame as HTML
+  [1m[36mVisit Load (2.8ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/ugame.html.erb within layouts/application
+  Rendered game/ugame.html.erb within layouts/application (Duration: 2.8ms | Allocations: 148)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 97.1ms | Allocations: 4607)
+Completed 200 OK in 137ms (Views: 123.3ms | ActiveRecord: 2.8ms | Allocations: 6822)
+
+
+Started GET "/logging/mlogin" for 127.0.0.1 at 2022-04-03 23:14:15 +0530
+Processing by LoggingController#mlogin as HTML
+  [1m[36mVisit Load (3.3ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 7.4ms | Allocations: 745)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 116.3ms | Allocations: 24618)
+Completed 200 OK in 151ms (Views: 138.0ms | ActiveRecord: 3.3ms | Allocations: 27061)
+
+
+Started POST "/logging/loginp" for 127.0.0.1 at 2022-04-03 23:14:16 +0530
+Processing by LoggingController#loginp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"sanskritclub@iitr.ac.in", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mVisit Load (2.7ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mMember Load (2.3ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 LIMIT $2[0m  [["email", "sanskritclub@iitr.ac.in"], ["LIMIT", 1]]
+  ↳ app/controllers/logging_controller.rb:22:in `loginp'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 43ms (ActiveRecord: 5.1ms | Allocations: 5219)
+
+
+Started GET "/" for 127.0.0.1 at 2022-04-03 23:14:17 +0530
+Processing by WelcomeController#home as HTML
+  [1m[36mVisit Load (1.8ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.3ms | Allocations: 53)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 76.2ms | Allocations: 4398)
+Completed 200 OK in 89ms (Views: 78.8ms | ActiveRecord: 1.8ms | Allocations: 5834)
+
+
+Started GET "/game/mgamer" for 127.0.0.1 at 2022-04-03 23:14:18 +0530
+Processing by GameController#mgamer as HTML
+  [1m[36mVisit Load (2.8ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgamer.html.erb within layouts/application
+  [1m[36mGame Load (5.7ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/game/mgamer.html.erb:4
+  Rendered game/mgamer.html.erb within layouts/application (Duration: 13.5ms | Allocations: 1632)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 114.3ms | Allocations: 20397)
+Completed 200 OK in 152ms (Views: 118.4ms | ActiveRecord: 8.5ms | Allocations: 22395)
+
+
+Started GET "/game/mgamer" for 127.0.0.1 at 2022-04-03 23:16:03 +0530
+Processing by GameController#mgamer as HTML
+  [1m[36mVisit Load (1.2ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgamer.html.erb within layouts/application
+  [1m[36mGame Load (2.5ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/game/mgamer.html.erb:5
+  Rendered game/mgamer.html.erb within layouts/application (Duration: 9.0ms | Allocations: 1235)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 86.2ms | Allocations: 6460)
+Completed 200 OK in 110ms (Views: 99.4ms | ActiveRecord: 3.7ms | Allocations: 8716)
+
+
+Started GET "/game/mgamec" for 127.0.0.1 at 2022-04-03 23:16:06 +0530
+Processing by GameController#mgamec as HTML
+  [1m[36mVisit Load (1.4ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgamec.html.erb within layouts/application
+  Rendered game/mgamec.html.erb within layouts/application (Duration: 1.2ms | Allocations: 173)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 64.0ms | Allocations: 19115)
+Completed 200 OK in 76ms (Views: 69.3ms | ActiveRecord: 1.4ms | Allocations: 20745)
+
+
+Started GET "/game/mgamer" for 127.0.0.1 at 2022-04-03 23:17:43 +0530
+Processing by GameController#mgamer as HTML
+  [1m[36mVisit Load (2.2ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgamer.html.erb within layouts/application
+  [1m[36mGame Load (3.0ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/game/mgamer.html.erb:5
+  Rendered game/mgamer.html.erb within layouts/application (Duration: 8.4ms | Allocations: 747)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 111.8ms | Allocations: 5000)
+Completed 200 OK in 131ms (Views: 114.6ms | ActiveRecord: 5.1ms | Allocations: 6810)
+
+
+Started GET "/game/mgamec" for 127.0.0.1 at 2022-04-03 23:17:48 +0530
+Processing by GameController#mgamec as HTML
+  [1m[36mVisit Load (3.1ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgamec.html.erb within layouts/application
+  Rendered game/mgamec.html.erb within layouts/application (Duration: 2.3ms | Allocations: 74)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 101.2ms | Allocations: 9707)
+Completed 200 OK in 121ms (Views: 105.7ms | ActiveRecord: 3.1ms | Allocations: 11796)
+
+
+Started GET "/game/mgamer" for 127.0.0.1 at 2022-04-03 23:17:49 +0530
+Processing by GameController#mgamer as HTML
+  [1m[36mVisit Load (3.9ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgamer.html.erb within layouts/application
+  [1m[36mGame Load (2.9ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/game/mgamer.html.erb:5
+  Rendered game/mgamer.html.erb within layouts/application (Duration: 9.3ms | Allocations: 733)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 100.5ms | Allocations: 5515)
+Completed 200 OK in 119ms (Views: 101.2ms | ActiveRecord: 6.7ms | Allocations: 6818)
+
+
+Started GET "/game/mgamec" for 127.0.0.1 at 2022-04-03 23:18:04 +0530
+Processing by GameController#mgamec as HTML
+  [1m[36mVisit Load (3.8ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgamec.html.erb within layouts/application
+  Rendered game/mgamec.html.erb within layouts/application (Duration: 0.7ms | Allocations: 74)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 93.0ms | Allocations: 12734)
+Completed 200 OK in 111ms (Views: 96.6ms | ActiveRecord: 3.8ms | Allocations: 15254)
+
+
+Started GET "/shlok/mshlokr" for 127.0.0.1 at 2022-04-03 23:18:19 +0530
+Processing by ShlokController#mshlokr as HTML
+  [1m[36mVisit Load (2.1ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (3.8ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:13
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 11.1ms | Allocations: 1378)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 108.6ms | Allocations: 20071)
+Completed 200 OK in 148ms (Views: 122.2ms | ActiveRecord: 5.9ms | Allocations: 23189)
+
+
+Started GET "/shlok/mshlokc" for 127.0.0.1 at 2022-04-03 23:18:22 +0530
+Processing by ShlokController#mshlokc as HTML
+  [1m[36mVisit Load (2.7ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokc.html.erb within layouts/application
+  Rendered shlok/mshlokc.html.erb within layouts/application (Duration: 7.4ms | Allocations: 907)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 90.7ms | Allocations: 5045)
+Completed 200 OK in 113ms (Views: 99.9ms | ActiveRecord: 2.7ms | Allocations: 6671)
+
+
+Started GET "/shlok/mshlokc" for 127.0.0.1 at 2022-04-03 23:23:42 +0530
+Processing by ShlokController#mshlokc as HTML
+  [1m[36mVisit Load (3.5ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokc.html.erb within layouts/application
+  Rendered shlok/mshlokc.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1258)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 82.0ms | Allocations: 18920)
+Completed 200 OK in 216ms (Views: 100.8ms | ActiveRecord: 27.6ms | Allocations: 29921)
+
+
+Started GET "/game/mgamer" for 127.0.0.1 at 2022-04-03 23:23:45 +0530
+Processing by GameController#mgamer as HTML
+  [1m[36mVisit Load (3.1ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgamer.html.erb within layouts/application
+  [1m[36mGame Load (3.9ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/game/mgamer.html.erb:5
+  Rendered game/mgamer.html.erb within layouts/application (Duration: 9.4ms | Allocations: 1330)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 83.3ms | Allocations: 5736)
+Completed 200 OK in 114ms (Views: 96.0ms | ActiveRecord: 7.0ms | Allocations: 8412)
+
+
+Started GET "/game/mgamec" for 127.0.0.1 at 2022-04-03 23:23:47 +0530
+Processing by GameController#mgamec as HTML
+  [1m[36mVisit Load (3.1ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgamec.html.erb within layouts/application
+  Rendered game/mgamec.html.erb within layouts/application (Duration: 4.7ms | Allocations: 618)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 96.2ms | Allocations: 4757)
+Completed 200 OK in 119ms (Views: 105.0ms | ActiveRecord: 3.1ms | Allocations: 6385)
+
+
+Started POST "/game/mgamecp" for 127.0.0.1 at 2022-04-03 23:24:04 +0530
+  
+AbstractController::ActionNotFound (The action 'mgamecp' could not be found for GameController
+Did you mean?  mgamec
+               mgamer
+               mgameu
+               ugame):
+  
+actionpack (6.1.4.4) lib/abstract_controller/base.rb:160:in `process'
+actionview (6.1.4.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/host_authorization.rb:119:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (6.1.4.4) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/game/mgamecp" for 127.0.0.1 at 2022-04-03 23:28:43 +0530
+Processing by GameController#mgamecp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"Card", "info"=>"card", "commit"=>"अग्रेस्थापनं करोतु"}
+  [1m[36mVisit Load (1.3ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/game_controller.rb:33:in `mgamecp'
+  [1m[36mGame Create (9.1ms)[0m  [1m[32mINSERT INTO "games" ("name", "info", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Card"], ["info", "card"], ["created_at", "2022-04-03 17:58:43.765047"], ["updated_at", "2022-04-03 17:58:43.765047"]]
+  ↳ app/controllers/game_controller.rb:33:in `mgamecp'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/game_controller.rb:33:in `mgamecp'
+Redirected to http://127.0.0.1:3000/game/mgamer
+Completed 302 Found in 150ms (ActiveRecord: 66.6ms | Allocations: 10112)
+
+
+Started GET "/game/mgamer" for 127.0.0.1 at 2022-04-03 23:28:43 +0530
+Processing by GameController#mgamer as HTML
+  [1m[36mVisit Load (1.3ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgamer.html.erb within layouts/application
+  [1m[36mGame Load (1.9ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/game/mgamer.html.erb:5
+  Rendered game/mgamer.html.erb within layouts/application (Duration: 14.8ms | Allocations: 3936)
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 4008)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 3.1ms | Allocations: 5666)
+
+
+  
+ActionView::Template::Error (undefined method `title' for #<Game id: 1, name: "Card", info: "card", created_at: "2022-04-03 17:58:43.765047000 +0000", updated_at: "2022-04-03 17:58:43.765047000 +0000">):
+     5: <% for i in @games do %>
+     6:     <div class="shloks">
+     7:         <div class="title">
+     8:             <%= i.title %><br/>
+     9:         </div>
+    10: 
+    11:         <div class="shlok">
+  
+app/views/game/mgamer.html.erb:8
+app/views/game/mgamer.html.erb:5
+app/controllers/game_controller.rb:9:in `mgamer'
+Started GET "/game/mgamer" for 127.0.0.1 at 2022-04-03 23:29:27 +0530
+Processing by GameController#mgamer as HTML
+  [1m[36mVisit Load (1.4ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgamer.html.erb within layouts/application
+  [1m[36mGame Load (3.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/game/mgamer.html.erb:5
+  Rendered game/mgamer.html.erb within layouts/application (Duration: 11.6ms | Allocations: 1288)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 112.3ms | Allocations: 20443)
+Completed 200 OK in 145ms (Views: 134.0ms | ActiveRecord: 4.6ms | Allocations: 22739)
+
+
+Started GET "/game/mgamer" for 127.0.0.1 at 2022-04-03 23:29:43 +0530
+Processing by GameController#mgamer as HTML
+  [1m[36mVisit Load (1.5ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgamer.html.erb within layouts/application
+  [1m[36mGame Load (1.8ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/game/mgamer.html.erb:5
+  Rendered game/mgamer.html.erb within layouts/application (Duration: 7.0ms | Allocations: 1281)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 96.8ms | Allocations: 23265)
+Completed 200 OK in 127ms (Views: 115.7ms | ActiveRecord: 3.4ms | Allocations: 25790)
+
+
+Started GET "/game/1/del" for 127.0.0.1 at 2022-04-03 23:29:45 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/game/1/del"):
+  
+Started GET "/game/1/del" for 127.0.0.1 at 2022-04-03 23:30:22 +0530
+  
+AbstractController::ActionNotFound (The action 'mgamedp' could not be found for GameController
+Did you mean?  mgamecp
+               mgamer
+               mgamec
+               mgameu):
+  
+actionpack (6.1.4.4) lib/abstract_controller/base.rb:160:in `process'
+actionview (6.1.4.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/host_authorization.rb:119:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (6.1.4.4) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/game/1/del" for 127.0.0.1 at 2022-04-03 23:30:55 +0530
+Processing by GameController#mgamedp as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVisit Load (1.4ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mGame Load (1.6ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:39:in `mgamedp'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/game_controller.rb:40:in `mgamedp'
+  [1m[36mGame Destroy (3.8ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/game_controller.rb:40:in `mgamedp'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/game_controller.rb:40:in `mgamedp'
+Redirected to http://127.0.0.1:3000/game/mgamer
+Completed 302 Found in 61ms (ActiveRecord: 26.9ms | Allocations: 9781)
+
+
+Started GET "/game/mgamer" for 127.0.0.1 at 2022-04-03 23:30:56 +0530
+Processing by GameController#mgamer as HTML
+  [1m[36mVisit Load (1.3ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgamer.html.erb within layouts/application
+  [1m[36mGame Load (2.0ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/game/mgamer.html.erb:5
+  Rendered game/mgamer.html.erb within layouts/application (Duration: 5.6ms | Allocations: 919)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 91.6ms | Allocations: 5335)
+Completed 200 OK in 104ms (Views: 94.0ms | ActiveRecord: 3.3ms | Allocations: 6962)
+
+
+Started GET "/game/mgamec" for 127.0.0.1 at 2022-04-03 23:30:58 +0530
+Processing by GameController#mgamec as HTML
+  [1m[36mVisit Load (1.7ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgamec.html.erb within layouts/application
+  Rendered game/mgamec.html.erb within layouts/application (Duration: 5.9ms | Allocations: 637)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 94.1ms | Allocations: 4752)
+Completed 200 OK in 107ms (Views: 99.3ms | ActiveRecord: 1.7ms | Allocations: 6404)
+
+
+Started POST "/game/mgamecp" for 127.0.0.1 at 2022-04-03 23:31:01 +0530
+Processing by GameController#mgamecp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"fsdf", "info"=>"fa", "commit"=>"अग्रेस्थापनं करोतु"}
+  [1m[36mVisit Load (1.7ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/game_controller.rb:33:in `mgamecp'
+  [1m[36mGame Create (2.5ms)[0m  [1m[32mINSERT INTO "games" ("name", "info", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "fsdf"], ["info", "fa"], ["created_at", "2022-04-03 18:01:01.633650"], ["updated_at", "2022-04-03 18:01:01.633650"]]
+  ↳ app/controllers/game_controller.rb:33:in `mgamecp'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/game_controller.rb:33:in `mgamecp'
+Redirected to http://127.0.0.1:3000/game/mgamer
+Completed 302 Found in 34ms (ActiveRecord: 9.7ms | Allocations: 3844)
+
+
+Started GET "/game/mgamer" for 127.0.0.1 at 2022-04-03 23:31:01 +0530
+Processing by GameController#mgamer as HTML
+  [1m[36mVisit Load (1.6ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgamer.html.erb within layouts/application
+  [1m[36mGame Load (2.9ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/game/mgamer.html.erb:5
+  Rendered game/mgamer.html.erb within layouts/application (Duration: 7.2ms | Allocations: 811)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 98.2ms | Allocations: 4961)
+Completed 200 OK in 110ms (Views: 98.0ms | ActiveRecord: 4.5ms | Allocations: 6269)
+
+
+Started GET "/game/2/del" for 127.0.0.1 at 2022-04-03 23:31:02 +0530
+Processing by GameController#mgamedp as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mVisit Load (3.0ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mGame Load (2.7ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:39:in `mgamedp'
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/game_controller.rb:40:in `mgamedp'
+  [1m[36mGame Destroy (2.5ms)[0m  [1m[31mDELETE FROM "games" WHERE "games"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/game_controller.rb:40:in `mgamedp'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/game_controller.rb:40:in `mgamedp'
+Redirected to http://127.0.0.1:3000/game/mgamer
+Completed 302 Found in 39ms (ActiveRecord: 13.3ms | Allocations: 3797)
+
+
+Started GET "/game/mgamer" for 127.0.0.1 at 2022-04-03 23:31:02 +0530
+Processing by GameController#mgamer as HTML
+  [1m[36mVisit Load (2.2ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgamer.html.erb within layouts/application
+  [1m[36mGame Load (3.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/game/mgamer.html.erb:5
+  Rendered game/mgamer.html.erb within layouts/application (Duration: 8.6ms | Allocations: 733)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 99.9ms | Allocations: 4861)
+Completed 200 OK in 113ms (Views: 99.7ms | ActiveRecord: 5.4ms | Allocations: 6178)
+
+
+Started GET "/game/mgamec" for 127.0.0.1 at 2022-04-03 23:31:54 +0530
+Processing by GameController#mgamec as HTML
+  [1m[36mVisit Load (2.9ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgamec.html.erb within layouts/application
+  Rendered game/mgamec.html.erb within layouts/application (Duration: 1.6ms | Allocations: 337)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 68.3ms | Allocations: 4476)
+Completed 200 OK in 83ms (Views: 71.0ms | ActiveRecord: 2.9ms | Allocations: 5883)
+
+
+Started POST "/game/mgamecp" for 127.0.0.1 at 2022-04-03 23:31:57 +0530
+Processing by GameController#mgamecp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"afsd", "info"=>"sdfsd", "commit"=>"अग्रेस्थापनं करोतु"}
+  [1m[36mVisit Load (0.8ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/game_controller.rb:33:in `mgamecp'
+  [1m[36mGame Create (2.3ms)[0m  [1m[32mINSERT INTO "games" ("name", "info", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "afsd"], ["info", "sdfsd"], ["created_at", "2022-04-03 18:01:57.454631"], ["updated_at", "2022-04-03 18:01:57.454631"]]
+  ↳ app/controllers/game_controller.rb:33:in `mgamecp'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/game_controller.rb:33:in `mgamecp'
+Redirected to http://127.0.0.1:3000/game/mgamer
+Completed 302 Found in 22ms (ActiveRecord: 5.5ms | Allocations: 3278)
+
+
+Started GET "/game/mgamer" for 127.0.0.1 at 2022-04-03 23:31:57 +0530
+Processing by GameController#mgamer as HTML
+  [1m[36mVisit Load (0.8ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgamer.html.erb within layouts/application
+  [1m[36mGame Load (1.5ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/game/mgamer.html.erb:5
+  Rendered game/mgamer.html.erb within layouts/application (Duration: 4.0ms | Allocations: 803)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 52.7ms | Allocations: 19744)
+Completed 200 OK in 61ms (Views: 53.3ms | ActiveRecord: 2.3ms | Allocations: 21051)
+
+
+Started GET "/game/mgamec" for 127.0.0.1 at 2022-04-03 23:32:21 +0530
+Processing by GameController#mgamec as HTML
+  [1m[36mVisit Load (2.0ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgamec.html.erb within layouts/application
+  Rendered game/mgamec.html.erb within layouts/application (Duration: 1.1ms | Allocations: 337)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 66.0ms | Allocations: 4477)
+Completed 200 OK in 78ms (Views: 68.8ms | ActiveRecord: 2.0ms | Allocations: 5888)
+
+
+Started POST "/game/mgamecp" for 127.0.0.1 at 2022-04-03 23:34:32 +0530
+Processing by GameController#mgamecp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"sdfsf", "info"=>"sdfsdfsa", "commit"=>"अग्रेस्थापनं करोतु"}
+  [1m[36mVisit Load (0.7ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/game_controller.rb:33:in `mgamecp'
+  [1m[36mGame Create (1.6ms)[0m  [1m[32mINSERT INTO "games" ("name", "info", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "sdfsf"], ["info", "sdfsdfsa"], ["created_at", "2022-04-03 18:04:32.862191"], ["updated_at", "2022-04-03 18:04:32.862191"]]
+  ↳ app/controllers/game_controller.rb:33:in `mgamecp'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/game_controller.rb:33:in `mgamecp'
+Redirected to http://127.0.0.1:3000/game/mgamer
+Completed 302 Found in 21ms (ActiveRecord: 5.6ms | Allocations: 3278)
+
+
+Started GET "/game/mgamer" for 127.0.0.1 at 2022-04-03 23:34:32 +0530
+Processing by GameController#mgamer as HTML
+  [1m[36mVisit Load (1.3ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgamer.html.erb within layouts/application
+  [1m[36mGame Load (1.4ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/game/mgamer.html.erb:5
+  Rendered game/mgamer.html.erb within layouts/application (Duration: 4.4ms | Allocations: 868)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 72.6ms | Allocations: 5017)
+Completed 200 OK in 82ms (Views: 73.3ms | ActiveRecord: 2.7ms | Allocations: 6324)
+
+
+Started GET "/game/mgamer" for 127.0.0.1 at 2022-04-03 23:39:22 +0530
+Processing by GameController#mgamer as HTML
+  [1m[36mVisit Load (0.7ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgamer.html.erb within layouts/application
+  [1m[36mGame Load (0.9ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/game/mgamer.html.erb:5
+  Rendered game/mgamer.html.erb within layouts/application (Duration: 12.6ms | Allocations: 3746)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 68.9ms | Allocations: 8140)
+Completed 200 OK in 89ms (Views: 64.7ms | ActiveRecord: 12.8ms | Allocations: 12950)
+
+
+Started GET "/game/3" for 127.0.0.1 at 2022-04-03 23:39:26 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/game/3"):
+  
+Started GET "/game/3" for 127.0.0.1 at 2022-04-03 23:41:24 +0530
+Processing by GameController#mgameu as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mVisit Load (1.3ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgameu.html.erb within layouts/application
+  Rendered game/mgameu.html.erb within layouts/application (Duration: 0.9ms | Allocations: 150)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 59.1ms | Allocations: 4602)
+Completed 200 OK in 82ms (Views: 64.0ms | ActiveRecord: 7.5ms | Allocations: 9230)
+
+
+Started GET "/game/3" for 127.0.0.1 at 2022-04-03 23:44:11 +0530
+Processing by GameController#mgameu as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mVisit Load (2.2ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgameu.html.erb within layouts/application
+  Rendered game/mgameu.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1714)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 1786)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 2.2ms | Allocations: 5351)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    2: <p>welcome to mgameu</p>
+    3: </div>
+    4: 
+    5: <%= form_tag '../game/' + @game.id.to_s do %>
+    6:     <div>
+    7:         <%= label_tag "शीर्षकं" %><br/>
+    8:         <%= text_field_tag :name, @game.name, :required => true, class: "textfield" %><br/>
+  
+app/views/game/mgameu.html.erb:5
+app/controllers/game_controller.rb:25:in `mgameu'
+Started GET "/game/mgamec" for 127.0.0.1 at 2022-04-03 23:44:44 +0530
+Processing by GameController#mgamec as HTML
+  [1m[36mVisit Load (2.1ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgamec.html.erb within layouts/application
+  Rendered game/mgamec.html.erb within layouts/application (Duration: 21.0ms | Allocations: 660)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 81.1ms | Allocations: 8255)
+Completed 200 OK in 98ms (Views: 86.4ms | ActiveRecord: 2.1ms | Allocations: 9880)
+
+
+Started GET "/game/mgamer" for 127.0.0.1 at 2022-04-03 23:44:47 +0530
+Processing by GameController#mgamer as HTML
+  [1m[36mVisit Load (1.7ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgamer.html.erb within layouts/application
+  [1m[36mGame Load (1.2ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/game/mgamer.html.erb:5
+  Rendered game/mgamer.html.erb within layouts/application (Duration: 14.7ms | Allocations: 4061)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 73.1ms | Allocations: 8313)
+Completed 200 OK in 133ms (Views: 72.3ms | ActiveRecord: 7.4ms | Allocations: 12650)
+
+
+Started GET "/game/3" for 127.0.0.1 at 2022-04-03 23:44:50 +0530
+Processing by GameController#mgameu as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mVisit Load (2.6ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgameu.html.erb within layouts/application
+  Rendered game/mgameu.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1439)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 1505)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 2.6ms | Allocations: 3256)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    2: <p>welcome to mgameu</p>
+    3: </div>
+    4: 
+    5: <%= form_tag '../game/' + @game.id.to_s do %>
+    6:     <div>
+    7:         <%= label_tag "शीर्षकं" %><br/>
+    8:         <%= text_field_tag :name, @game.name, :required => true, class: "textfield" %><br/>
+  
+app/views/game/mgameu.html.erb:5
+app/controllers/game_controller.rb:25:in `mgameu'
+Started GET "/game/mgamer" for 127.0.0.1 at 2022-04-03 23:47:29 +0530
+Processing by GameController#mgamer as HTML
+  [1m[36mVisit Load (1.8ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgamer.html.erb within layouts/application
+  [1m[36mGame Load (2.5ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/game/mgamer.html.erb:5
+  Rendered game/mgamer.html.erb within layouts/application (Duration: 6.6ms | Allocations: 871)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 67.9ms | Allocations: 5127)
+Completed 200 OK in 80ms (Views: 68.5ms | ActiveRecord: 4.3ms | Allocations: 6477)
+
+
+Started GET "/game/mgamer" for 127.0.0.1 at 2022-04-03 23:53:10 +0530
+Processing by GameController#mgamer as HTML
+  [1m[36mVisit Load (1.0ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgamer.html.erb within layouts/application
+  [1m[36mGame Load (0.9ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/game/mgamer.html.erb:5
+  Rendered game/mgamer.html.erb within layouts/application (Duration: 10.5ms | Allocations: 3746)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 76.1ms | Allocations: 8140)
+Completed 200 OK in 96ms (Views: 73.3ms | ActiveRecord: 11.8ms | Allocations: 12949)
+
+
+Started GET "/game/3" for 127.0.0.1 at 2022-04-03 23:53:12 +0530
+Processing by GameController#mgameu as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mVisit Load (1.8ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mGame Load (1.3ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:26:in `mgameu'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgameu.html.erb within layouts/application
+  Rendered game/mgameu.html.erb within layouts/application (Duration: 1.1ms | Allocations: 376)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 66.5ms | Allocations: 4627)
+Completed 200 OK in 82ms (Views: 68.4ms | ActiveRecord: 3.1ms | Allocations: 7351)
+
+
+Started GET "/game/3" for 127.0.0.1 at 2022-04-03 23:53:24 +0530
+Processing by GameController#mgameu as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mVisit Load (2.1ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mGame Load (1.8ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:26:in `mgameu'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgameu.html.erb within layouts/application
+  Rendered game/mgameu.html.erb within layouts/application (Duration: 2.7ms | Allocations: 345)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 91.2ms | Allocations: 5141)
+Completed 200 OK in 110ms (Views: 94.6ms | ActiveRecord: 3.9ms | Allocations: 7040)
+
+
+Started POST "/game/3" for 127.0.0.1 at 2022-04-03 23:53:39 +0530
+Processing by GameController#mgameup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"afsd", "info"=>"sdfsd gdhg\r\n", "commit"=>"अग्रेस्थापनं करोतु", "id"=>"3"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 5ms (ActiveRecord: 0.0ms | Allocations: 684)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (6.1.4.4) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (6.1.4.4) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (6.1.4.4) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:427:in `block in make_lambda'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `block in invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `each'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:512:in `invoke_before'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:115:in `block in run_callbacks'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.4.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.4.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.4.4) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.4.4) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.4.4) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.4.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.4.4) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.4.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.4) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.4) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.4) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.4) lib/action_dispatch/middleware/host_authorization.rb:119:in `call'
+rack-mini-profiler (2.3.3) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.3) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.2) lib/rack/proxy.rb:67:in `call'
+railties (6.1.4.4) lib/rails/engine.rb:539:in `call'
+puma (5.5.2) lib/puma/configuration.rb:249:in `call'
+puma (5.5.2) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.5.2) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.5.2) lib/puma/request.rb:76:in `handle_request'
+puma (5.5.2) lib/puma/server.rb:447:in `process_client'
+puma (5.5.2) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/game/3" for 127.0.0.1 at 2022-04-03 23:53:46 +0530
+Processing by GameController#mgameu as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mVisit Load (3.3ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mGame Load (3.8ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:26:in `mgameu'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgameu.html.erb within layouts/application
+  Rendered game/mgameu.html.erb within layouts/application (Duration: 1.9ms | Allocations: 346)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 105.6ms | Allocations: 26285)
+Completed 200 OK in 138ms (Views: 113.1ms | ActiveRecord: 7.1ms | Allocations: 31564)
+
+
+Started POST "/game/3" for 127.0.0.1 at 2022-04-03 23:53:51 +0530
+Processing by GameController#mgameup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"afsd", "info"=>"sdfsd gdhg hfff\r\n", "commit"=>"अग्रेस्थापनं करोतु", "id"=>"3"}
+  [1m[36mVisit Load (2.0ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mGame Load (2.4ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/game_controller.rb:47:in `mgameup'
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/game_controller.rb:48:in `mgameup'
+  [1m[36mGame Update (6.2ms)[0m  [1m[33mUPDATE "games" SET "info" = $1, "updated_at" = $2 WHERE "games"."id" = $3[0m  [["info", "sdfsd gdhg hfff\r\n"], ["updated_at", "2022-04-03 18:23:51.113017"], ["id", 3]]
+  ↳ app/controllers/game_controller.rb:48:in `mgameup'
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/game_controller.rb:48:in `mgameup'
+Redirected to http://127.0.0.1:3000/game/mgamer
+Completed 302 Found in 49ms (ActiveRecord: 16.1ms | Allocations: 4237)
+
+
+Started GET "/game/mgamer" for 127.0.0.1 at 2022-04-03 23:53:51 +0530
+Processing by GameController#mgamer as HTML
+  [1m[36mVisit Load (2.0ms)[0m  [1m[34mSELECT "visits".* FROM "visits" ORDER BY "visits"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgamer.html.erb within layouts/application
+  [1m[36mGame Load (3.6ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/game/mgamer.html.erb:5
+  Rendered game/mgamer.html.erb within layouts/application (Duration: 9.9ms | Allocations: 868)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 93.1ms | Allocations: 5017)
+Completed 200 OK in 108ms (Views: 93.0ms | ActiveRecord: 5.5ms | Allocations: 6325)
+
+

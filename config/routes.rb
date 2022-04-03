@@ -13,6 +13,10 @@ Rails.application.routes.draw do
     get "game/ugame", as:"games"
     get "game/mgamer", as:"all_games"
     get "game/mgamec", as:"new_game"
+    post "game/mgamecp", as:"game_post"
+    get "game/:id", to:"game#mgameu"
+    post "game/:id", to: "game#mgameup"
+    get "game/:id/del", to:"game#mgamedp"
 
     get "logging/mlogin", as:"member_login"
     get "logging/ulogin", as:"user_login"
