@@ -42,3 +42,5 @@ yarn-debug.log*
 # Ignore .env file
 /.env
 
+# Ignore yarn files
+.yarn/install-state.gz
