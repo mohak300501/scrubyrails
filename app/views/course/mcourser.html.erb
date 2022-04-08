@@ -13,5 +13,15 @@
         <div class="description">
             <p><%= i.description.html_safe %></p>
         </div>
+
+        <% path = "../course/" + i.id.to_s %>
+        <div class="updel">
+            <%= link_to path do %>
+                <div class="button">परिवर्तयतु</div>
+            <% end %>
+            <%= link_to path + "/del" do %>
+                <div class="button">विनश्यतु</div>
+            <% end %>
+        </div>
     </div>
 <% end %>

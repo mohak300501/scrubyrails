@@ -1,3 +1,39 @@
 // Place all the styles related to the course controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.courses {
+    box-shadow: -3px 3px 10px rgb(100, 100, 100);
+    margin: 1rem auto;
+    width: 90%;
+    padding: 1rem 0;
+    border-radius: 0.5rem;
+    .title {
+        margin: 1rem auto 0.5rem;
+        width: 90%;
+        text-align: left;
+        font-weight: bold;
+        font-size: 1.3rem;
+    }
+    .description {
+        margin: 1rem auto;
+        font-size: 1.2rem;
+        width: 90%;
+        text-align: left;
+    }
+    .updel {
+        display: flex;
+        margin: auto;
+        justify-content: center;
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        a:visited {
+            color: black;
+        }
+        a + a {
+            margin-left: 1rem;
+        }
+    }
+}
