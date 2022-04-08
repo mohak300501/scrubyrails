@@ -22,7 +22,7 @@ class CourseController < ApplicationController
     end
 
     def mcoursecp
-        course = Course.new(:name => params[:name], :description => params[:description] )
+        course = Course.new(:name => params[:name], :description => params[:description], :image => params[:image])
                             
         course.save
         flash[:notice] = "course will be displayed"
