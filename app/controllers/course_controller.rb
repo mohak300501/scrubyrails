@@ -26,9 +26,8 @@ class CourseController < ApplicationController
         course.save
 
         ActiveRecord::Base.connection.execute('create table ' + params[:name] +
-            '(id serial primary key, pid int, email varchar(50),
-            constraint fk_user_id foreign key(pid) references users(id),
-            constraint fk_user_email foreign key(email) references users(email));')
+            '(id serial primary key, pid int, regid varchar(10), email varchar(50),
+            constraint fk_user_id foreign key(pid) references users(id);')
 
         flash[:notice] = "course will be displayed"
         redirect_to all_courses_path
