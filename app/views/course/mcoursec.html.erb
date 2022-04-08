@@ -6,6 +6,8 @@
     <div>
         <%= label_tag "शीर्षकं" %><br/>
         <%= text_field_tag :name, nil, :required => true, class: "textfield" %><br/><br/>
+        <%= label_tag "image" %><br/>
+        <%= file_field_tag :image, :required => true %><br/><br/>
         <%= label_tag "description" %><br/>
         <%= text_area_tag :description, nil, :required => true, class: "textarea-1" %><br/><br/>
     </div>

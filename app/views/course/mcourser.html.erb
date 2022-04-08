@@ -6,9 +6,12 @@
             <%= i.name %><br/>
         </div>
 
+        <div>
+            <img src="<%= rails_blob_url(i.image) %>" />
+        </div>
+
         <div class="description">
             <p><%= i.description.html_safe %></p>
         </div>
-
     </div>
 <% end %>
