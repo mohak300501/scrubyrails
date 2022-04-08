@@ -27,6 +27,9 @@ Rails.application.routes.draw do
     get "course/mcourser", as:"all_courses"
     get "course/mcoursec", as:"new_course"
     post "course/mcoursecp", as:"course_post"
+    get "course/:id", to:"course#mcourseu"
+    post "course/:id", to: "course#mcourseup"
+    get "course/:id/del", to:"course#mcoursedp"
 
     get "feedback/ufeedback", as:"feedback"
     post "feedback/ufeedbackp", as:"feedback_post"
