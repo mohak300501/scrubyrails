@@ -56,8 +56,10 @@ class CourseController < ApplicationController
                 query = "insert into " + table + "(pid, regid, email) values(" + pid + ", '" + screg + "', '" + session[:email] + "');"
                 ActiveRecord::Base.connection.execute(query)
                 flash[:notice] = "Registered succesfully!"
+                redirect_to courses_path
             else
                 flash[:notice] = "You are already registered"
+                redirect_to courses_path
             end
         else
             flash[:notice] = "Please login as a user first!"
