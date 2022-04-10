@@ -35,10 +35,28 @@ class CourseController < ApplicationController
 
     def mcoursedp
         course = Course.find(params[:id])
-        hello = course.name
         ActiveRecord::Base.connection.execute('drop table if exists ' + course.name + ';')
         course.destroy
-        flash[:notice] = "hi" + hello
         redirect_to all_courses_path
+    end
+
+    def ucourse_reg
+        if session[:user]
+            table = params[:id]
+            pcount = ActiveRecord::Base.connection.execute('select count(*) from ' + table + ';')
+            screg = ""
+            if pcount == 0
+                screg = "SC00001"
+            else
+                last = ActiveRecord::Base.connection.execute('select last(regid) from ' + table + ';')
+                screg = last[0..2] + (last[2..-1].to_i + 1).to_s
+            end
+            pid = User.find(session[:email]).id
+            ActiveRecord::Base.connection.execute('insert into ' + params[:id] + '(pid, regid, email) values('
+                + pid + ', ' + screg + ', ' + session[:email] + ');')
+        else
+            flash[:notice] = "Please login as a user first!"
+            redirect_to courses_path
+        end
     end
 end
