@@ -53,8 +53,8 @@ class CourseController < ApplicationController
                     screg = last[0..2] + (last[2..-1].to_i + 1).to_s
                 end
                 pid = User.find(session[:email]).id
-                ActiveRecord::Base.connection.execute('insert into ' + table + '(pid, regid, email) values('
-                    + pid + ', "' + screg + '", "' + session[:email] + '");')
+                query = 'insert into ' + table + '(pid, regid, email) values(' + pid + ', "' + screg + '", "' + session[:email] + '");'
+                ActiveRecord::Base.connection.execute(query)
                 flash[:notice] = "Registered succesfully!"
             else
                 flash[:notice] = "You are already registered"
