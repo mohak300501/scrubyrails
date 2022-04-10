@@ -35,8 +35,8 @@ class CourseController < ApplicationController
 
     def mcoursedp
         course = Course.find(params[:id])
+        ActiveRecord::Base.connection.execute('drop table if exists ' + course[:name] + ';')
         course.destroy
-        ActiveRecord::Base.connection.execute('drop table if exists ' + params[:name] + ';')
         redirect_to all_courses_path
     end
 end
