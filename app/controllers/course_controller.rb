@@ -29,13 +29,14 @@ class CourseController < ApplicationController
             '(id serial primary key, pid int, regid varchar(10), email varchar(50),
             constraint fk_user_id foreign key(pid) references users(id));')
 
-        flash[:notice] = "course will be displayed"
+        flash[:notice] = "New course created!"
         redirect_to all_courses_path
     end
 
     def mcoursedp
         course = Course.find(params[:id])
         course.destroy
+        ActiveRecord::Base.connection.execute('drop table if exists ' + params[:name] + ';')
         redirect_to all_courses_path
     end
 end
