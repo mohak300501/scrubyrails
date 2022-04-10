@@ -43,8 +43,8 @@ class CourseController < ApplicationController
     def ucourse_reg
         if session[:user]
             table = params[:id]
-            if ActiveRecord::Base.connection.execute("select count(*) from " + table + " where email='" + session[:email] + "';") == 0
-                pcount = ActiveRecord::Base.connection.execute("select count(*) from " + table + ";")
+            if ActiveRecord::Base.connection.execute("select count(*) from " + table + " where email='" + session[:email] + "';") == "0"
+                pcount = ActiveRecord::Base.connection.execute("select count(*) from " + table + ";").to_i
                 screg = ""
                 if pcount == 0
                     screg = "SC00001"
