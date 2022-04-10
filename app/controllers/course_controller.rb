@@ -42,18 +42,23 @@ class CourseController < ApplicationController
 
     def ucourse_reg
         if session[:user]
-            table = params[:id]
-            pcount = ActiveRecord::Base.connection.execute('select count(*) from ' + table + ';')
-            screg = ""
-            if pcount == 0
-                screg = "SC00001"
+            if ActiveRecord::Base.connection.execute('select count(*) from ' + table + 'where email=' + session[:email] + ';') == 0
+                table = params[:id]
+                pcount = ActiveRecord::Base.connection.execute('select count(*) from ' + table + ';')
+                screg = ""
+                if pcount == 0
+                    screg = "SC00001"
+                else
+                    last = ActiveRecord::Base.connection.execute('select last(regid) from ' + table + ';')
+                    screg = last[0..2] + (last[2..-1].to_i + 1).to_s
+                end
+                pid = User.find(session[:email]).id
+                ActiveRecord::Base.connection.execute('insert into ' + table + '(pid, regid, email) values('
+                    + pid + ', "' + screg + '", "' + session[:email] + '");')
+                flash[:notice] = "Registered succesfully!"
             else
-                last = ActiveRecord::Base.connection.execute('select last(regid) from ' + table + ';')
-                screg = last[0..2] + (last[2..-1].to_i + 1).to_s
+                flash[:notice] = "You are already registered"
             end
-            pid = User.find(session[:email]).id
-            ActiveRecord::Base.connection.execute('insert into ' + params[:id] + '(pid, regid, email) values('
-                + pid + ', ' + screg + ', ' + session[:email] + ');')
         else
             flash[:notice] = "Please login as a user first!"
             redirect_to courses_path
