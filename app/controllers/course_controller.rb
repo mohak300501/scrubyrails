@@ -44,7 +44,7 @@ class CourseController < ApplicationController
         if session[:user]
             table = params[:id]
             user_exists = ActiveRecord::Base.connection.execute("select count(*) from " + table + " where email='" + session[:email] + "';")
-            flash[:user] = user_exists.class
+            flash[:user] = user_exists
             if user_exists == "0"
                 pcount = ActiveRecord::Base.connection.execute("select count(*) from " + table + ";").to_i
                 screg = ""
@@ -60,7 +60,7 @@ class CourseController < ApplicationController
                 flash[:alert] = "Registered succesfully!"
                 redirect_to courses_path
             else
-                flash[:alert] = "You are already registered"
+                flash[:alert] = "You are already registered."
                 redirect_to courses_path
             end
         else
