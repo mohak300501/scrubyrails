@@ -44,7 +44,7 @@ class CourseController < ApplicationController
         table = params[:name]
         @course = Course.find_by(name: table)
         @user_exists = 0
-        if session[:email]
+        if session[:user]
             @user_exists = ActiveRecord::Base.connection.execute("select count(*) from " + table + " where email='" + session[:email] + "';")[0]["count"]
         end
         render "ucourse1"
@@ -59,7 +59,7 @@ class CourseController < ApplicationController
                 screg = "SC00001"
             else
                 last = ActiveRecord::Base.connection.execute("select regid from " + table + " order by regid desc limit 1;")[0]["regid"]
-                screg = last[0..2] + (last[2..-1].to_i + 1).to_s
+                screg = last[0..2] + (last[2..-1].to_i + 1).to_s.rjust(5, "0")
             end
             pid = User.find_by(email: session[:email]).id
             query = "insert into " + table + "(pid, regid, email) values(" + pid.to_s + ", '" + screg + "', '" + session[:email] + "');"
