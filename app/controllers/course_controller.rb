@@ -41,10 +41,14 @@ class CourseController < ApplicationController
     end
 
     def ucourse1
-        table = params[:name]
-        @course = Course.find_by(name: table)
-        @user_exists = ActiveRecord::Base.connection.execute("select count(*) from " + table + " where email='" + session[:email] + "';")[0]["count"]
-        render "ucourse1"
+        if session[:user]
+            table = params[:name]
+            @course = Course.find_by(name: table)
+            @user_exists = ActiveRecord::Base.connection.execute("select count(*) from " + table + " where email='" + session[:email] + "';")[0]["count"]
+            render "ucourse1"
+        else
+            redirect_to courses_path
+        end
     end
 
     def ucourse_reg
