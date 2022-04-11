@@ -1,5 +1,12 @@
 
-<%= link_to "add new course", new_course_path %>
+<%= link_to "add new course", new_course_path %><br/>
+
+<% flash.each do |type, msg| %>
+    <div>
+        <%= msg %>
+    </div>
+<% end %>
+
 <% for i in @courses do %>
     <div class="courses">
         <div class="title">

@@ -1,3 +1,8 @@
+<% flash.each do |type, msg| %>
+    <div>
+        <%= msg %>
+    </div>
+<% end %>
 
 <% for i in @courses do %>
     <div class="courses">
