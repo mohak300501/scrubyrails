@@ -44,9 +44,9 @@ class CourseController < ApplicationController
         if session[:user]
             table = params[:id]
             user_exists = ActiveRecord::Base.connection.execute("select count(*) from " + table + " where email='" + session[:email] + "';")[0]["count"]
-            flash[:user] = user_exists.instance_of? String
+            flash[:user] = user_exists.instance_of? Fixnum
             if user_exists == 0
-                pcount = ActiveRecord::Base.connection.execute("select count(*) from " + table + ";")[0]["count"].to_i
+                pcount = ActiveRecord::Base.connection.execute("select count(*) from " + table + ";")[0]["count"]
                 screg = ""
                 if pcount == 0
                     screg = "SC00001"
@@ -55,7 +55,7 @@ class CourseController < ApplicationController
                     screg = last[0..2] + (last[2..-1].to_i + 1).to_s
                 end
                 pid = User.find_by(email: session[:email]).id
-                query = "insert into " + table + "(pid, regid, email) values(" + pid + ", '" + screg + "', '" + session[:email] + "');"
+                query = "insert into " + table + "(pid, regid, email) values(" + pid.to_s + ", '" + screg + "', '" + session[:email] + "');"
                 ActiveRecord::Base.connection.execute(query)
                 flash[:alert] = "Registered succesfully!"
                 redirect_to courses_path
