@@ -44,7 +44,7 @@ class CourseController < ApplicationController
         if session[:user]
             table = params[:id]
             user_exists = ActiveRecord::Base.connection.execute("select count(*) from " + table + " where email='" + session[:email] + "';")
-            flash[:user] = user_exists.class + " " + user_exists
+            flash[:user] = user_exists.class
             if user_exists == "0"
                 pcount = ActiveRecord::Base.connection.execute("select count(*) from " + table + ";").to_i
                 screg = ""
