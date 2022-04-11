@@ -38,6 +38,7 @@ class LoggingController < ApplicationController
     def logout
         moru = session[:moru] == "member" ? true : false
         session.delete(moru ? :member : :user)
+        session.delete(:email)
         redirect_to root_url
     end
 end
