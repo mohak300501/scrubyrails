@@ -20,7 +20,7 @@
         <p><%= i.description.html_safe %></p>
     </div>
 
-    <% if @user_exists && @user_exists != 0 %>
+    <% if @user_exists != 0 %>
         <div><b>You are registered in this course <%= @user_exists %>.</b></div>
     <% else %>
         <div class="updel">
