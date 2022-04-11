@@ -1,0 +1,18 @@
+<div><b>नमस्ते</b></div>
+
+<h1>Please fill the following details</h1>
+
+<%= form_tag form_post_path, multipart: true do %>
+    <div>
+        <%= label_tag "Name" %><br/>
+        <%= text_field_tag :name, nil, :required => true, class: "textfield" %><br/><br/>
+        <%= label_tag "image" %><br/>
+        <%= file_field_tag :image, :required => true %><br/><br/>
+        <%= label_tag "description" %><br/>
+        <%= text_area_tag :description, nil, :required => true, class: "textarea-1" %><br/><br/>
+    </div>
+    <div>
+        <%= submit_tag "submit", :class => "button" %><br/>
+        <%= link_to "cancel", all_courses_path %>
+    </div>
+<% end %>
