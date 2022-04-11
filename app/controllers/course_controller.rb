@@ -42,6 +42,7 @@ class CourseController < ApplicationController
 
     def ucourse1
         table = params[:name]
+        @course = Course.find_by(name: table)
         @user_exists = ActiveRecord::Base.connection.execute("select count(*) from " + table + " where email='" + session[:email] + "';")[0]["count"]
         render "ucourse1"
     end

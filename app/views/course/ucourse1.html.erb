@@ -4,28 +4,27 @@
     </div>
 <% end %>
 
-<% for i in @courses do %>
-    <div class="courses">
-        <div class="title">
-            <%= i.name %><br/>
-        </div>
-
-        <div>
-            <img src="<%= rails_blob_url(i.image) %>" />
-        </div>
-
-        <div class="description">
-            <p><%= i.description.html_safe %></p>
-        </div>
-
-        <% if @user_exists %>
-            <div><b>You are registered in this course.</b></div>
-        <% else %>
-            <div class="updel">
-                <%= link_to "../../course/" + i.name + "/reg" do %>
-                    <div class="button">Register</div>
-                <% end %>
-            </div>
-        <% end %>
+<% i = @course %>
+<div class="courses">
+    <div class="title">
+        <%= i.name %><br/>
     </div>
-<% end %>
+
+    <div>
+        <img src="<%= rails_blob_url(i.image) %>" />
+    </div>
+
+    <div class="description">
+        <p><%= i.description.html_safe %></p>
+    </div>
+
+    <% if @user_exists %>
+        <div><b>You are registered in this course.</b></div>
+    <% else %>
+        <div class="updel">
+            <%= link_to "../../course/" + i.name + "/reg" do %>
+                <div class="button">Register</div>
+            <% end %>
+        </div>
+    <% end %>
+</div>
