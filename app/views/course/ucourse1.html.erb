@@ -1,3 +1,5 @@
+<% link_to courses_path do %>Back<% end %>
+
 <% flash.each do |type, msg| %>
     <div>
         <%= msg %>
@@ -18,7 +20,7 @@
         <p><%= i.description.html_safe %></p>
     </div>
 
-    <% if @user_exists %>
+    <% if @user_exists != 0 %>
         <div><b>You are registered in this course.</b></div>
     <% else %>
         <div class="updel">
