@@ -54,7 +54,7 @@ class CourseController < ApplicationController
                     last = ActiveRecord::Base.connection.execute("select last(regid) from " + table + ";")[0]["last"]
                     screg = last[0..2] + (last[2..-1].to_i + 1).to_s
                 end
-                pid = User.find(session[:email]).id
+                pid = User.find_by(email: session[:email]).id
                 query = "insert into " + table + "(pid, regid, email) values(" + pid + ", '" + screg + "', '" + session[:email] + "');"
                 ActiveRecord::Base.connection.execute(query)
                 flash[:alert] = "Registered succesfully!"
