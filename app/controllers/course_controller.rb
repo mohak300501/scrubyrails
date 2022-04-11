@@ -71,4 +71,12 @@ class CourseController < ApplicationController
             redirect_to course_path
         end
     end
+
+    def uform
+        if session[:user]
+        else
+            flash[:alert] = "Please login as user first!"
+            redirect_to course_path
+        end
+    end
 end

@@ -33,6 +33,8 @@ Rails.application.routes.draw do
     get "course/:name/uview", to:"course#ucourse1", as: "course"
     get "course/:name/mview", to:"course#mcourse1"
     get "course/:name/reg", to:"course#ucourse_reg"
+    get "course/uform", as:"form"
+    post "course/uformp", as:"form_post"
 
     get "feedback/ufeedback", as:"feedback"
     post "feedback/ufeedbackp", as:"feedback_post"
