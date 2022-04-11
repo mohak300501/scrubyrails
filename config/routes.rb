@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     get "game/mgamec", as:"new_game"
     post "game/mgamecp", as:"game_post"
     get "game/:id", to:"game#mgameu"
-    post "game/:id", to: "game#mgameup"
+    post "game/:id", to:"game#mgameup"
     get "game/:id/del", to:"game#mgamedp"
 
     get "logging/mlogin", as:"member_login"
@@ -28,9 +28,11 @@ Rails.application.routes.draw do
     get "course/mcoursec", as:"new_course"
     post "course/mcoursecp", as:"course_post"
     get "course/:id", to:"course#mcourseu"
-    post "course/:id", to: "course#mcourseup"
+    post "course/:id", to:"course#mcourseup"
     get "course/:id/del", to:"course#mcoursedp"
-    get "course/:id/reg", to: "course#ucourse_reg"
+    get "course/:name/uview", to:"course#ucourse1"
+    get "course/:name/mview", to:"course#mcourse1"
+    get "course/:name/reg", to:"course#ucourse_reg"
 
     get "feedback/ufeedback", as:"feedback"
     post "feedback/ufeedbackp", as:"feedback_post"
@@ -40,7 +42,7 @@ Rails.application.routes.draw do
     get "shlok/mshlokc", as:"new_shlok"
     post "shlok/mshlokcp", as:"shlok_post"
     get "shlok/:id", to:"shlok#mshloku"
-    post "shlok/:id", to: "shlok#mshlokup"
+    post "shlok/:id", to:"shlok#mshlokup"
     get "shlok/:id/del", to:"shlok#mshlokdp"
 
     get "event/uevent", as:"events"

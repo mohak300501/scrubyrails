@@ -40,29 +40,28 @@ class CourseController < ApplicationController
         redirect_to all_courses_path
     end
 
+    def ucourse1
+        table = params[:name]
+        @user_exists = ActiveRecord::Base.connection.execute("select count(*) from " + table + " where email='" + session[:email] + "';")[0]["count"]
+        render "ucourse1"
+    end
+
     def ucourse_reg
         if session[:user]
-            table = params[:id]
-            user_exists = ActiveRecord::Base.connection.execute("select count(*) from " + table + " where email='" + session[:email] + "';")[0]["count"]
-            flash[:user] = user_exists.instance_of? Fixnum
-            if user_exists == 0
-                pcount = ActiveRecord::Base.connection.execute("select count(*) from " + table + ";")[0]["count"]
-                screg = ""
-                if pcount == 0
-                    screg = "SC00001"
-                else
-                    last = ActiveRecord::Base.connection.execute("select last(regid) from " + table + ";")[0]["last"]
-                    screg = last[0..2] + (last[2..-1].to_i + 1).to_s
-                end
-                pid = User.find_by(email: session[:email]).id
-                query = "insert into " + table + "(pid, regid, email) values(" + pid.to_s + ", '" + screg + "', '" + session[:email] + "');"
-                ActiveRecord::Base.connection.execute(query)
-                flash[:alert] = "Registered succesfully!"
-                redirect_to courses_path
+            table = params[:name]
+            pcount = ActiveRecord::Base.connection.execute("select count(*) from " + table + ";")[0]["count"]
+            screg = ""
+            if pcount == 0
+                screg = "SC00001"
             else
-                flash[:alert] = "You are already registered."
-                redirect_to courses_path
+                last = ActiveRecord::Base.connection.execute("select regid from " + table + " order by regid desc limit 1;")[0]["regid"]
+                screg = last[0..2] + (last[2..-1].to_i + 1).to_s
             end
+            pid = User.find_by(email: session[:email]).id
+            query = "insert into " + table + "(pid, regid, email) values(" + pid.to_s + ", '" + screg + "', '" + session[:email] + "');"
+            ActiveRecord::Base.connection.execute(query)
+            flash[:alert] = "Registered succesfully!"
+            redirect_to courses_path
         else
             flash[:alert] = "Please login as a user first!"
             redirect_to courses_path
