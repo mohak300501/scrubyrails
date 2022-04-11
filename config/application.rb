@@ -10,7 +10,7 @@ module Scrubyrails
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
-
+    config.serve_static_assets = true
     # Configuration for the application, engines, and railties goes here.
     #
     Rails.application.config.session_store :cookie_store, key: '_app_session', expire_after: nil

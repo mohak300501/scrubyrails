@@ -48,5 +48,10 @@ Rails.application.routes.draw do
     get "event/uevent", as:"events"
     get "event/meventr", as:"all_events"
     get "event/meventc", as:"new_event"
+    post "event/meventcp", as:"event_post"
+    get "event/:id", to:"event#meventu"
+    post "event/:id", to:"event#meventup"
+    get "event/:id/del", to:"event#meventdp"
+    
     get "resource/uresource", as:"resources"
 end
