@@ -1,1 +1,16 @@
-<div style="text-align: center;">WORKSHOP ON ANCIENT INDIAN MATHS TRADITIONS</div>
+<% for i in @events do %>
+    <div class="events">
+        <div class="title">
+            <%= i.name %><br/>
+        </div>
+
+        <div class="event">
+            <p><%= i.info.html_safe %></p>
+        </div>
+
+        <div>
+            <img src="<%= rails_blob_url(i.image) %>" />
+        </div>
+
+    </div>
+<% end %>
