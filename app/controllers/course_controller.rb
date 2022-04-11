@@ -44,14 +44,14 @@ class CourseController < ApplicationController
         if session[:user]
             table = params[:id]
             user_exists = ActiveRecord::Base.connection.execute("select count(*) from " + table + " where email='" + session[:email] + "';")
-            flash[:user] = user_exists
+            flash[:user] = user_exists[0]["count"]
             if user_exists == "0"
-                pcount = ActiveRecord::Base.connection.execute("select count(*) from " + table + ";").to_i
+                pcount = ActiveRecord::Base.connection.execute("select count(*) from " + table + ";")[0]["count"].to_i
                 screg = ""
                 if pcount == 0
                     screg = "SC00001"
                 else
-                    last = ActiveRecord::Base.connection.execute("select last(regid) from " + table + ";")
+                    last = ActiveRecord::Base.connection.execute("select last(regid) from " + table + ";")[0]["last"]
                     screg = last[0..2] + (last[2..-1].to_i + 1).to_s
                 end
                 pid = User.find(session[:email]).id
