@@ -47,7 +47,6 @@ class UserController < ApplicationController
     end
 
     def uform
-        course = Course.find_by(name: params[:cname])
         if session[:user]
             @user = User.find_by(email: session[:email])
             render "uform"
