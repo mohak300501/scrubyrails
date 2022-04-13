@@ -48,8 +48,12 @@ class ShlokController < ApplicationController
     end
 
     def mshlokdp
-        shlok = Shlok.find(params[:id])
-        shlok.destroy
-        redirect_to all_shloks_path
+        if session[:member]
+            shlok = Shlok.find(params[:id])
+            shlok.destroy
+            redirect_to all_shloks_path
+        else
+            redirect_to root_url
+        end
     end
 end

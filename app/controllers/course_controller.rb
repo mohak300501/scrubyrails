@@ -34,10 +34,14 @@ class CourseController < ApplicationController
     end
 
     def mcoursedp
-        course = Course.find(params[:id])
-        ActiveRecord::Base.connection.execute("drop table if exists " + course.name + ";")
-        course.destroy
-        redirect_to all_courses_path
+        if session[:member]
+            course = Course.find(params[:id])
+            ActiveRecord::Base.connection.execute("drop table if exists " + course.name + ";")
+            course.destroy
+            redirect_to all_courses_path
+        else
+            redirect_to root_url
+        end
     end
 
     def ucourse1
@@ -49,5 +53,31 @@ class CourseController < ApplicationController
             @user_regd = ActiveRecord::Base.connection.execute("select count(*) from " + table + " where email='" + session[:email] + "';")[0]["count"]
         end
         render "ucourse1"
+    end
+
+    def ureg
+        if session[:user]
+            email = session[:email]
+            user = User.find_by(email: email)
+            if user.profile
+                table = params[:cname]
+                pcount = ActiveRecord::Base.connection.execute("select count(*) from " + table + ";")[0]["count"]
+                screg = ""
+                if pcount == 0
+                    screg = "SC00001"
+                else
+                    last = ActiveRecord::Base.connection.execute("select regid from " + table + " order by regid desc limit 1;")[0]["regid"]
+                    screg = last[0..2] + (last[2..-1].to_i + 1).to_s.rjust(4, "0")
+                end
+                pid = user.id
+                query = "insert into " + table + "(pid, regid, email) values(" + pid.to_s + ", '" + screg + "', '" + email + "');"
+                ActiveRecord::Base.connection.execute(query)
+            else
+                flash[:notice] = "Please update your profile to register for a course."
+                redirect_to profile_path
+        else
+            flash[:notice] = "Please log in as user to register for a course."
+            redirect_to user_login_path
+        end
     end
 end

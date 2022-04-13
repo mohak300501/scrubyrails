@@ -33,7 +33,7 @@
         <div><b>You are registered in this course.</b></div>
     <% else %>
         <div class="updel">
-            <%= link_to form_path do %>
+            <%= link_to "../../course" + i.name + "/reg" do %>
                 <div class="button">Register</div>
             <% end %>
         </div>

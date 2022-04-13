@@ -47,7 +47,7 @@ class UserController < ApplicationController
     end
 
     def uform
-        course = Course.find_by(name: params[:name])
+        course = Course.find_by(name: params[:cname])
         if session[:user]
             @user = User.find_by(email: session[:email])
             render "uform"
@@ -58,29 +58,11 @@ class UserController < ApplicationController
     end
 
     def uformp
-        if session[:user]
-            table = params[:name]
-            email = session[:email]
-            pcount = ActiveRecord::Base.connection.execute("select count(*) from " + table + ";")[0]["count"]
-            screg = ""
-            if pcount == 0
-                screg = "SC00001"
-            else
-                last = ActiveRecord::Base.connection.execute("select regid from " + table + " order by regid desc limit 1;")[0]["regid"]
-                screg = last[0..2] + (last[2..-1].to_i + 1).to_s.rjust(4, "0")
-            end
-            user = User.find_by(email: email)
-            pid = user.id
-            query = "insert into " + table + "(pid, regid, email) values(" + pid.to_s + ", '" + screg + "', '" + email + "');"
-            ActiveRecord::Base.connection.execute(query)
-            user.update(:name => params[:name], :email => params[:email], :profile => true, :country => params[:country],
-                        :state => params[:state], :pin => params[:pin], :gender => params[:gender],
-                        :age => params[:age], :mobile => params[:mobile], :sanslevel => params[:sanslevel], :acadqual => params[:acadqual])
-            flash[:alert] = "Registered succesfully!"
-            redirect_to course_path
-        else
-            flash[:alert] = "Please login as a user first!"
-            redirect_to course_path
-        end
+        user = User.find_by(email: session[:email])
+        user.update(:name => params[:name], :email => params[:email], :profile => true, :country => params[:country],
+                    :state => params[:state], :pin => params[:pin], :gender => params[:gender], :age => params[:age],
+                    :mobile => params[:mobile], :sanslevel => params[:sanslevel], :acadqual => params[:acadqual])
+        flash[:alert] = "Profile updated!"
+        redirect_to profile_path
     end
 end
