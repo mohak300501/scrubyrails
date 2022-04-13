@@ -17,7 +17,7 @@
         Age: <%= @user.age %><br/>
         Mobile no.: <%= @user.mobile %><br/>
     <% else %>
-        Complete your profile now if you wish to enroll in a course.
+        <b>Complete your profile now if you wish to enroll in a course.</b>
         <%= link_to form_path do %>
             <div class="button">Update Profile</div>
         <% end %>
