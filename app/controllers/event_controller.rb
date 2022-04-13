@@ -46,8 +46,12 @@ class EventController < ApplicationController
     end
 
     def meventdp
-        event = Event.find(params[:id])
-        event.destroy
-        redirect_to all_events_path
+        if session[:member]
+            event = Event.find(params[:id])
+            event.destroy
+            redirect_to all_events_path
+        else
+            redirect_to root_url
+        end
     end
 end
