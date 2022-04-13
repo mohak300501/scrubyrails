@@ -34,7 +34,7 @@ Rails.application.routes.draw do
     get "course/:id/del", to:"course#mcoursedp"
     get "course/:cname/uview", to:"course#ucourse1"
     get "course/:cname/mview", to:"course#mcourse1"
-    get "course/:name/reg", to:"course#ureg"
+    get "course/:cname/reg", to:"course#ureg"
     # post "course/:name/reg", to:"course#uformp"
 
     get "feedback/ufeedback", as:"feedback"
