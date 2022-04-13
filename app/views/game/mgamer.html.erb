@@ -3,12 +3,12 @@
 </div>
 <%= link_to "नूतनः gameH योजयतु", new_game_path %>
 <% for i in @games do %>
-    <div class="shloks">
+    <div class="conts">
         <div class="title">
             <%= i.name %><br/>
         </div>
 
-        <div class="translation">
+        <div class="info">
             <p><%= i.info.html_safe %></p>
         </div>
 

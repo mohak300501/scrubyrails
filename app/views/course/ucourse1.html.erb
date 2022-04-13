@@ -7,7 +7,7 @@
 <% end %>
 
 <% i = @course %>
-<div class="courses">
+<div class="conts">
     <div class="title">
         <%= i.name %><br/>
     </div>
@@ -16,7 +16,7 @@
         <img src="<%= rails_blob_url(i.image) %>" />
     </div>
 
-    <div class="description">
+    <div class="info">
         <p><%= i.description.html_safe %><br/>
             Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum <br/>
             Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum <br/>

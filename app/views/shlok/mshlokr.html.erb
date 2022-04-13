@@ -11,12 +11,12 @@
 <br/><br/>
 
 <% for i in @shloks do %>
-    <div class="shloks">
+    <div class="conts">
         <div class="title">
             <%= i.title %><br/>
         </div>
 
-        <div class="shlok">
+        <div class="cont">
             <p><%= i.shlok.html_safe %></p>
         </div>
 
@@ -24,7 +24,7 @@
             <audio src="<%= rails_blob_url(i.audio) %>" controls/>
         </div>
 
-        <div class="translation">
+        <div class="info">
             <%= i.translation.html_safe %><br/>
         </div>
 
