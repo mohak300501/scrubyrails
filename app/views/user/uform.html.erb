@@ -1,0 +1,32 @@
+<div><b>नमस्ते</b></div>
+
+<h1>Please fill the following details</h1>
+
+<%= form_tag form_post_path, multipart: true do %>
+    <div>
+        <%= label_tag "Name" %><br/>
+        <%= text_field_tag :name, nil, :required => true, class: "textfield", placeholder: @user.name %><br/><br/>
+        <%= label_tag "Email" %><br/>
+        <%= text_field_tag :email, nil, :required => true, class: "textfield", placeholder: @user.email %><br/><br/>
+        <%= label_tag "Country" %><br/>
+        <%= text_field_tag :country, nil, :required => true, class: "textfield", placeholder: @user.country if @user.country %><br/><br/>
+        <%= label_tag "State" %><br/>
+        <%= text_field_tag :state, nil, :required => true, class: "textfield", placeholder: @user.state if @user.state %><br/><br/>
+        <%= label_tag "PIN" %><br/>
+        <%= text_field_tag :pin, nil, :required => true, class: "textfield", placeholder: @user.pin if @user.pin %><br/><br/>
+        <%= label_tag "Gender" %><br/>
+        <%= text_field_tag :gender, nil, :required => true, class: "textfield", placeholder: @user.gender if @user.gender %><br/><br/>
+        <%= label_tag "Age" %><br/>
+        <%= text_field_tag :age, nil, :required => true, class: "textfield", placeholder: @user.age if @user.age %><br/><br/>
+        <%= label_tag "Mobile no." %><br/>
+        <%= text_field_tag :mobile, nil, :required => true, class: "textfield", placeholder: @user.mobile if @user.mobile %><br/><br/>
+        <%= label_tag "Sanskrit Proficiency Level" %><br/>
+        <%= text_field_tag :sanslevel, nil, :required => true, class: "textfield", placeholder: @user.mobile if @user.sanslevel %><br/><br/>
+        <%= label_tag "Academic Qualification" %><br/>
+        <%= text_field_tag :acadqual, nil, :required => true, class: "textfield", placeholder: @user.mobile if @user.acadqual %><br/><br/>
+    </div>
+    <div>
+        <%= submit_tag "submit", :class => "button" %><br/>
+        <%= link_to "cancel", all_courses_path %>
+    </div>
+<% end %>
