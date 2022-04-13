@@ -47,7 +47,7 @@ class UserController < ApplicationController
         if session[:user]
             @user = User.find_by(email: session[:email])
             @profile = false
-            if User.column_names.include? 'profile' && @user.profile
+            if User.column_names.include? 'profile'
                 @profile = true
             end
             render "uform"
