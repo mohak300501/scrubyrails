@@ -41,8 +41,8 @@ class CourseController < ApplicationController
     end
 
     def ucourse1
-        # table = params[:name]
-        # @course = Course.find_by(name: table)
+        table = params[:name]
+        @course = Course.find_by(name: table)
         # @user_exists = 0
         # if session[:user]
         #     @user = User.find_by(email: session[:email])
