@@ -43,40 +43,11 @@ class CourseController < ApplicationController
     def ucourse1
         table = params[:name]
         @course = Course.find_by(name: table)
+        @user = User
         @user_exists = 0
         if session[:user]
             @user_exists = ActiveRecord::Base.connection.execute("select count(*) from " + table + " where email='" + session[:email] + "';")[0]["count"]
         end
         render "ucourse1"
-    end
-
-    def ucourse_reg
-        if session[:user]
-            table = params[:name]
-            pcount = ActiveRecord::Base.connection.execute("select count(*) from " + table + ";")[0]["count"]
-            screg = ""
-            if pcount == 0
-                screg = "SC00001"
-            else
-                last = ActiveRecord::Base.connection.execute("select regid from " + table + " order by regid desc limit 1;")[0]["regid"]
-                screg = last[0..2] + (last[2..-1].to_i + 1).to_s.rjust(4, "0")
-            end
-            pid = User.find_by(email: session[:email]).id
-            query = "insert into " + table + "(pid, regid, email) values(" + pid.to_s + ", '" + screg + "', '" + session[:email] + "');"
-            ActiveRecord::Base.connection.execute(query)
-            flash[:alert] = "Registered succesfully!"
-            redirect_to course_path
-        else
-            flash[:alert] = "Please login as a user first!"
-            redirect_to course_path
-        end
-    end
-
-    def uform
-        if session[:user]
-        else
-            flash[:alert] = "Please login as user first!"
-            redirect_to course_path
-        end
     end
 end

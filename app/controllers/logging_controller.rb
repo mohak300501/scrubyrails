@@ -24,6 +24,7 @@ class LoggingController < ApplicationController
             if @moru.password == params[:password]
                 session[moru ? :member : :user ] = @moru.name
                 session[:email] = @moru.email
+                flash[:notice] = "Logged "
                 redirect_to root_url
             else
                 flash[:notice] = "Incorrect password!"

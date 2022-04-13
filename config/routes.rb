@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     get "user/new", as:"new"
     post "user/newp", as:"newp"
     get "user/muserr", as:"all_users"
+    get "user/uform", as:"form"
+    post "user/uformp", as:"form_post"
     
     get "welcome/mhomer", as:"home"
     get "welcome/mhomec", as:"new_home"
@@ -30,11 +32,10 @@ Rails.application.routes.draw do
     get "course/:id", to:"course#mcourseu"
     post "course/:id", to:"course#mcourseup"
     get "course/:id/del", to:"course#mcoursedp"
-    get "course/:name/uview", to:"course#ucourse1", as: "course"
+    get "course/:name/uview", to:"course#ucourse1"
     get "course/:name/mview", to:"course#mcourse1"
-    get "course/:name/reg", to:"course#ucourse_reg"
-    get "course/uform", as:"form"
-    post "course/uformp", as:"form_post"
+    # get "course/:name/reg", to:"course#uform"
+    # post "course/:name/reg", to:"course#uformp"
 
     get "feedback/ufeedback", as:"feedback"
     post "feedback/ufeedbackp", as:"feedback_post"

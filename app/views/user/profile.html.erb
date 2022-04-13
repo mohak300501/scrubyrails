@@ -1,6 +1,26 @@
-<% link_to "प्रतिगछतु", root_url %><br/>
+<%= link_to "प्रतिगछतु", root_url %><br/>
+
+<% flash.each do |type, msg| %>
+    <div>
+        <%= msg %>
+    </div>
+<% end %>
+
 <div class="user">
     Name: <%= @user.name %><br/>
     Email: <%= @user.email %><br/>
-    Courses registered in: Subhashitam Samskritam
+    <% if @user.profile %>
+        Country: <%= @user.country %><br/>
+        State: <%= @user.state %><br/>
+        PIN: <%= @user.pin %><br/>
+        Gender: <%= @user.gender %><br/>
+        Age: <%= @user.age %><br/>
+        Mobile no.: <%= @user.mobile %><br/>
+    <% else %>
+        Complete your profile now if you wish to enroll in a course.
+        <%= link_to form_path do %>
+            <div class="button">Update Profile</div>
+        <% end %>
+    <% end %>
+    Courses registered in: 
 </div>
