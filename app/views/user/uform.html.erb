@@ -1,5 +1,3 @@
-<div><b>नमस्ते</b></div>
-
 <h1>Please fill the following details</h1>
 
 <%= form_tag form_post_path, multipart: true do %>
@@ -26,7 +24,7 @@
         <%= text_field_tag :acadqual, nil, :required => true, class: "textfield", placeholder: @profile? @user.mobile : ''  %><br/><br/>
     </div>
     <div>
-        <%= submit_tag "submit", :class => "button" %><br/>
-        <%= link_to "cancel", all_courses_path %>
+        <%= submit_tag "Submit", :class => "button" %><br/>
+        <%= link_to "Cancel", all_courses_path %>
     </div>
 <% end %>

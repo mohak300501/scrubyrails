@@ -2,6 +2,10 @@ class UserController < ApplicationController
     def profile
         if session[:user]
             @user = User.find_by(email: session[:email])
+            @profile = false
+            if User.column_names.include? 'profile'
+                @profile = true
+            end
             render "profile"
         else
             redirect_to root_url
