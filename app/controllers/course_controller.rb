@@ -63,7 +63,9 @@ class CourseController < ApplicationController
             if user.profile
                 table = params[:cname]
                 # course = Course.find_by(name: table).name
-                if user.courses.include? table # another way of saying the same thing
+                # if user.courses.include? table # another way of saying the same thing
+                user_regd = ActiveRecord::Base.connection.execute("select count(*) from " + table + " where email='" + email + "';")[0]["count"]
+                if user_regd > 0
                     redirect_to "../../course/" + table + "/uview"
                 else
                     screg = ""
