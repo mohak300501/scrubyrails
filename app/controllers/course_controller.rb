@@ -82,7 +82,7 @@ class CourseController < ApplicationController
                 if user.courses.nil?
                     user.courses = table
                 else
-                    user.courses = user.courses + "," + table
+                    user.courses += "," + table
                 end
                 user.update(:courses => user.courses)
             else
