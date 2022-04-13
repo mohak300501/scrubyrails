@@ -47,6 +47,7 @@ class CourseController < ApplicationController
         if session[:user]
             @user = User.find_by(email: session[:email])
             @user_exists = ActiveRecord::Base.connection.execute("select count(*) from " + table + " where email='" + session[:email] + "';")[0]["count"]
+        else
         end
         render "ucourse1"
     end
