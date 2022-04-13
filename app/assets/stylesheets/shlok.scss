@@ -1,3 +1,92 @@
 // Place all the styles related to the Shlok controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+// .shloks {
+//     box-shadow: -3px 3px 10px rgb(100, 100, 100);
+//     margin: 1rem auto;
+//     width: 90%;
+//     padding: 1rem 0;
+//     border-radius: 0.5rem;
+    
+//     .title {
+//         margin: 1rem auto 0.5rem;
+//         width: 90%;
+//         text-align: left;
+//         font-weight: bold;
+//         font-size: 1.3rem;
+//     }
+//     .shlok:before {
+//         content: '';
+//         background-color: rgba(0, 0, 0, 0.95);
+//         height: 100%;
+//         left: 0;
+//         opacity: 0.65;
+//         position: absolute;
+//         top: 0;
+//         width: 100%;
+//         z-index: 1;
+//     }
+//     .shlok {
+//         margin: 1rem auto;
+//         padding: 1rem;
+//         font-size: 1.3rem;
+//         background-color: #000;
+//         background-image: url(https://dl.dropbox.com/s/gz96744xfcfy54o/bg.jpeg?dl=0);
+//         background-position: bottom;
+//         background-size: cover;
+//         background-attachment: fixed;
+//         position: relative;
+
+//         p {
+//             color: #f2f2f2;
+//             position: relative;
+//             z-index: 2;
+//         }
+//     }
+//     .translation {
+//         margin: 1rem auto;
+//         font-size: 1.2rem;
+//         width: 90%;
+//         text-align: left;
+//     }
+//     .updel {
+//         display: flex;
+//         margin: auto;
+//         justify-content: center;
+
+//         a {
+//             text-decoration: none;
+//             color: black;
+//         }
+//         a:visited {
+//             color: black;
+//         }
+//         a + a {
+//             margin-left: 1rem;
+//         }
+//     }
+// }
+
+// .textfield {
+//     width: 60%;
+//     text-align: center;
+//     padding: 1rem;
+//     font-size: 1.2rem;
+// }
+// .textarea-1 {
+//     height: 6rem;
+//     width: 60%;
+//     text-align: center;
+//     padding: 1rem;
+//     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+//     font-size: 1.2rem;
+// }
+// .textarea-2 {
+//     height: 10rem;
+//     width: 60%;
+//     text-align: left;
+//     padding: 1rem;
+//     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+//     font-size: 1.2rem;
+// }

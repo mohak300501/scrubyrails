@@ -67,14 +67,14 @@
     padding: 1rem 0;
     border-radius: 0.5rem;
 }
-.conts > .title {
+.title {
     margin: 1rem auto 0.5rem;
     width: 90%;
     text-align: left;
     font-weight: bold;
     font-size: 1.3rem;
 }
-.conts > .cont:before {
+.cont:before {
     content: '';
     background-color: rgba(0, 0, 0, 0.95);
     height: 100%;
@@ -85,7 +85,7 @@
     width: 100%;
     z-index: 1;
 }
-.conts > .cont {
+.cont {
     margin: 1rem auto;
     padding: 1rem;
     font-size: 1.3rem;
@@ -96,30 +96,30 @@
     background-attachment: fixed;
     position: relative;
 }
-.conts > .cont > p {
+.cont > p {
     color: #f2f2f2;
     position: relative;
     z-index: 2;
 }
-.conts > .translation {
+.info {
     margin: 1rem auto;
     font-size: 1.2rem;
     width: 90%;
     text-align: left;
 }
-.conts > .updel {
+.updel {
     display: flex;
     margin: auto;
     justify-content: center;
 }
-.conts .updel > a {
+.updel > a {
     text-decoration: none;
     color: black;
 }
-.conts > .updel > a:visited {
+.updel > a:visited {
     color: black;
 }
-.conts > .updel > a + a {
+.updel > a + a {
     margin-left: 1rem;
 }
 
