@@ -75,6 +75,7 @@ class CourseController < ApplicationController
             else
                 flash[:notice] = "Please update your profile to register for a course."
                 redirect_to profile_path
+            end
         else
             flash[:notice] = "Please log in as user to register for a course."
             redirect_to user_login_path
