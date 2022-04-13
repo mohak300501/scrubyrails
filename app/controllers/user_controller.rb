@@ -46,6 +46,10 @@ class UserController < ApplicationController
         course = Course.find_by(name: params[:name])
         if session[:user]
             @user = User.find_by(email: session[:email])
+            @profile = false
+            if User.column_names.include? 'profile' && @user.profile
+                @profile = true
+            end
             render "uform"
         else
             flash[:alert] = "Please login as user first!"
