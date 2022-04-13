@@ -77,7 +77,7 @@ class UserController < ApplicationController
             pid = user.id
             query = "insert into " + table + "(pid, regid, email) values(" + pid.to_s + ", '" + screg + "', '" + email + "');"
             ActiveRecord::Base.connection.execute(query)
-            user.update(:name => params[:name], :email => params[:email], :country => params[:country],
+            user.update(:name => params[:name], :email => params[:email], :profile => true, :country => params[:country],
                         :state => params[:state], :pin => params[:pin], :gender => params[:gender],
                         :age => params[:age], :mobile => params[:mobile], :sanslevel => params[:sanslevel], :acadqual => params[:acadqual])
             flash[:alert] = "Registered succesfully!"
