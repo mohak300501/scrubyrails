@@ -1,5 +1,16 @@
 <% for i in @users do %>
     Name: <%= i.name %><br/>
     Email: <%= i.email %><br/>
-    Courses registered: <br/><br/>
+    <% if i.profile %>
+        Country: <%= i.country %><br/>
+        State: <%= i.state %><br/>
+        PIN: <%= i.pin %><br/>
+        Gender: <%= i.gender %><br/>
+        Age: <%= i.age %><br/>
+        Mobile no.: <%= i.mobile %><br/>
+        Sanskrit Proficiency Level: <%= i.sanslevel %><br/>
+        Academic Qualification: <%= i.acadqual %><br/>
+        Regid: <%= i.regid if !i.regid.nil? %>
+        Courses registered in: <%= i.courses if !i.courses.nil? %><br/>
+    <% end %>
 <% end %>

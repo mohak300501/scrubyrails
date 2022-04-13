@@ -62,17 +62,29 @@ class CourseController < ApplicationController
             user = User.find_by(email: email)
             if user.profile
                 table = params[:cname]
-                pcount = ActiveRecord::Base.connection.execute("select count(*) from " + table + ";")[0]["count"]
+                # course = Course.find_by(name: table).name
                 screg = ""
-                if pcount == 0
-                    screg = "SC00001"
+                if user.regid.nil?
+                    pcount = ActiveRecord::Base.connection.execute("select count(*) from " + table + ";")[0]["count"]
+                    if pcount == 0
+                        screg = "SC00001"
+                    else
+                        last = ActiveRecord::Base.connection.execute("select regid from " + table + " order by regid desc limit 1;")[0]["regid"]
+                        screg = last[0..2] + (last[2..-1].to_i + 1).to_s.rjust(4, "0")
+                    end
+                    user.update(:regid => screg)
                 else
-                    last = ActiveRecord::Base.connection.execute("select regid from " + table + " order by regid desc limit 1;")[0]["regid"]
-                    screg = last[0..2] + (last[2..-1].to_i + 1).to_s.rjust(4, "0")
+                    screg = user.regid
                 end
                 pid = user.id
                 query = "insert into " + table + "(pid, regid, email) values(" + pid.to_s + ", '" + screg + "', '" + email + "');"
                 ActiveRecord::Base.connection.execute(query)
+                if user.courses.nil?
+                    user.courses = table
+                else
+                    user.courses += "," + table
+                end
+                user.update(:courses => user.courses)
             else
                 flash[:notice] = "Please update your profile to register for a course."
                 redirect_to profile_path

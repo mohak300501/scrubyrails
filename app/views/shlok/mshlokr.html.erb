@@ -33,7 +33,7 @@
             <%= link_to path do %>
                 <div class="button">परिवर्तयतु</div>
             <% end %>
-            <%= link_to path + "/del" do %>
+            <%= link_to path + "/del", :confirm => "Are you sure you want to delete this shlok?" do %>
                 <div class="button">विनश्यतु</div>
             <% end %>
         </div>

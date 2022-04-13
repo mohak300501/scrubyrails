@@ -18,11 +18,12 @@
         Mobile no.: <%= @user.mobile %><br/>
         Sanskrit Proficiency Level: <%= @user.sanslevel %><br/>
         Academic Qualification: <%= @user.acadqual %><br/>
+        Regid: <%= @user.regid if !@user.regid.nil? %><br/>
+        Courses registered in: <%= @user.courses if !@user.courses.nil? %><br/>
     <% else %>
-        <b>Complete your profile now if you wish to enroll in a course.</b>
-        <%= link_to form_path do %>
-            <div class="button">Update Profile</div>
-        <% end %>
+        <b>Complete your profile now if you wish to enroll in a course.</b><br/>
     <% end %>
-    Courses registered in: 
+    <%= link_to form_path do %>
+        <div class="button">Update Profile</div>
+    <% end %>
 </div>
