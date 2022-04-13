@@ -11,7 +11,7 @@
 <br/><br/>
 
 <% for i in @shloks do %>
-    <div class="conts">
+    <%= content_tag :div, class: "conts" do %>
         <div class="title">
             <%= i.title %><br/>
         </div>
@@ -37,5 +37,5 @@
                 <div class="button">विनश्यतु</div>
             <% end %>
         </div>
-    </div>
+    <% end %>
 <% end %>
