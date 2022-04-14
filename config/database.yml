@@ -81,7 +81,7 @@ test:
 #
 production:
   <<: *default
-  database: scrubyrails
-  username: ubuntu
-  password: namaskar
+  database: <%= Rails.application.credentials.database[:DATABASE] %>
+  username: <%= Rails.application.credentials.database[:DATABASE_USERNAME] %>
+  password: <%= Rails.application.credentials.database[:DATABASE_PASSWORD] %>
 
