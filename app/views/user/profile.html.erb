@@ -18,8 +18,8 @@
         Mobile no.: <%= @user.mobile %><br/>
         Sanskrit Proficiency Level: <%= @user.sanslevel %><br/>
         Academic Qualification: <%= @user.acadqual %><br/>
-        <%= Regid: @user.regid if !@user.regid.nil? %><br/>
-        <%= Courses registered in: @user.courses if !@user.courses.nil? %><br/>
+        Regid: <%= @user.regid if !@user.regid.nil? %><br/>
+        Courses registered in: <%= @user.courses if !@user.courses.nil? %><br/>
     <% else %>
         <b>Complete your profile now if you wish to enroll in a course.</b><br/>
     <% end %>
