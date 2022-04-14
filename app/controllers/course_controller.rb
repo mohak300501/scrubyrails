@@ -90,6 +90,7 @@ class CourseController < ApplicationController
                         user.courses += "," + table
                     end
                     user.update(:courses => user.courses)
+                    CourseMailer.with(course: table, user_email: email).ureg_mail.deliver_later
                     redirect_to "/../../course/" + table + "/uview"
                 end
             else
