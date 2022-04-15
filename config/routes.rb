@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     get "user/profile", as:"profile"
     get "user/new", as:"new"
     post "user/newp", as:"newp"
+    post "user/otpp", as:"otpp"
     get "user/muserr", as:"all_users"
     get "user/uform", as:"form"
     post "user/uformp", as:"form_post"
