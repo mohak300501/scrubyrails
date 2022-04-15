@@ -1,0 +1,2 @@
+class OtpMailer < ApplicationMailer
+end
