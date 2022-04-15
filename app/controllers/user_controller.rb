@@ -23,7 +23,7 @@ class UserController < ApplicationController
             redirect_to new_path
         else
             if params[:password] == params[:repass]
-                session[:new_user] = {:name => params[:name], :email => params[:email], :password => params[:password]}
+                session[:new_user] = {"name" => params[:name], "email" => params[:email], "password" => params[:password]}
                 otp = SecureRandom.random_number(999999)
                 session[:otp] = otp
                 OtpMailer.with(otp: otp, email: params[:email]).otp_mail.deliver_later
@@ -39,9 +39,10 @@ class UserController < ApplicationController
     def otpp
         if params[:otp].to_i == session[:otp]
             nu = session[:new_user]
-            user = User.new(:name => nu[:name], :email => nu[:email], :password => nu[:password])
+            user = User.new(:name => nu["name"], :email => nu["email"], :password => nu["password"])
             user.save
             session.delete(:otp)
+            session.delete(:new_user)
             flash[:notice] = "Registered successfully! Login to continue."
             redirect_to user_login_path
         else
