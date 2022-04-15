@@ -1,4 +1,4 @@
-<h1>Register as new user</h1>
+<h1>Sign up as new user</h1>
 <%= form_tag newp_path do %>
     <div>
         <%= label_tag :name %><br/>
@@ -11,8 +11,15 @@
         <%= password_field_tag :repass, nil, :required => true %>
     </div>
     <div>
-        <%= submit_tag "Log In", :class => "button" %>
+        <%= submit_tag "Submit", :class => "button" %>
     </div>
+<% end %>
+<% if session[:otp] %>
+    <%= form_tag otpp_path do %>
+        <%= label_tag :otp %><br/>
+        <%= text_field_tag :otp, nil, :required => true %><br/>
+        <%= submit_tag "Submit", :class => "button" %>
+    <% end %>
 <% end %>
 <br/>
 <% flash.each do |type, msg| %>

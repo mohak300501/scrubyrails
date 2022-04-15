@@ -1,4 +1,6 @@
 class UserController < ApplicationController
+    require 'securerandom'
+    otp = SecureRandom.random_number(999999)
     def profile
         if session[:user]
             @user = User.find_by(email: session[:email])
@@ -22,14 +24,27 @@ class UserController < ApplicationController
             redirect_to new_path
         else
             if params[:password] == params[:repass]
-                user = User.new(:name => params[:name], :email => params[:email], :password => params[:password])
-                user.save
-                flash[:notice] = "Registered successfully! Login to continue."
-                redirect_to user_login_path
+                session[:new_user] = {:name => params[:name], :email => params[:email], :password => params[:password]}
+                session[:otp] = otp
+                # OtpMailer.with(otp: otp, email: params[:email]).otp_mail.deliver_later
+                flash[:alert] = "The OTP has been sent to the above email address. Please enter it the OTP field."
             else
                 flash[:notice] = "Passwords do not match."
                 redirect_to new_path
             end
+        end
+    end
+
+    def otpp
+        if params[:otp] == session[:otp]
+            nu = session[:new_user]
+            user = User.new(:name => nu[:name], :email => nu[:email], :password => nu[:password])
+            user.save
+            session.delete(:otp)
+            flash[:notice] = "Registered successfully! Login to continue."
+            redirect_to user_login_path
+        else
+            flash[:alert] = "OTP does not match. Please re-enter carefully."
         end
     end
 
@@ -57,6 +72,7 @@ class UserController < ApplicationController
         user.update(:name => params[:name], :email => params[:email], :profile => true, :country => params[:country],
                     :state => params[:state], :pin => params[:pin], :gender => params[:gender], :age => params[:age],
                     :mobile => params[:mobile], :sanslevel => params[:sanslevel], :acadqual => params[:acadqual])
+        session[:email] = params[:email]
         flash[:alert] = "Profile updated!"
         redirect_to profile_path
     end
