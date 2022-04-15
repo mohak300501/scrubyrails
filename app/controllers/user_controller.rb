@@ -28,6 +28,7 @@ class UserController < ApplicationController
                 session[:otp] = otp
                 OtpMailer.with(otp: otp, email: params[:email]).otp_mail.deliver_later
                 flash[:alert] = "The OTP has been sent to the above email address. Please enter it the OTP field."
+                redirect_to new_path
             else
                 flash[:notice] = "Passwords do not match."
                 redirect_to new_path
@@ -36,7 +37,7 @@ class UserController < ApplicationController
     end
 
     def otpp
-        if params[:otp] == session[:otp]
+        if params[:otp].to_i == session[:otp]
             nu = session[:new_user]
             user = User.new(:name => nu[:name], :email => nu[:email], :password => nu[:password])
             user.save
@@ -45,6 +46,7 @@ class UserController < ApplicationController
             redirect_to user_login_path
         else
             flash[:alert] = "OTP does not match. Please re-enter carefully."
+            redirect_to new_path
         end
     end
 
