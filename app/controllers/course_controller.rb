@@ -25,7 +25,7 @@ class CourseController < ApplicationController
         course = Course.new(:name => params[:name], :description => params[:description], :image => params[:image])
         course.save
 
-        ActiveRecord::Base.connection.execute("create table " + params[:name] +
+        ActiveRecord::Base.connection.execute("create table " + params[:cname] +
             "(id serial primary key, pid int, regid varchar(10), email varchar(50),
             constraint fk_user_id foreign key(pid) references users(id));")
 

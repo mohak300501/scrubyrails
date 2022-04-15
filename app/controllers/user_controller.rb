@@ -26,7 +26,7 @@ class UserController < ApplicationController
             if params[:password] == params[:repass]
                 session[:new_user] = {:name => params[:name], :email => params[:email], :password => params[:password]}
                 session[:otp] = otp
-                # OtpMailer.with(otp: otp, email: params[:email]).otp_mail.deliver_later
+                OtpMailer.with(otp: otp, email: params[:email]).otp_mail.deliver_later
                 flash[:alert] = "The OTP has been sent to the above email address. Please enter it the OTP field."
             else
                 flash[:notice] = "Passwords do not match."
