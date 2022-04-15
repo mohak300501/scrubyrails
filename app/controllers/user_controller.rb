@@ -1,6 +1,5 @@
 class UserController < ApplicationController
     require 'securerandom'
-    otp = SecureRandom.random_number(999999)
     def profile
         if session[:user]
             @user = User.find_by(email: session[:email])
@@ -25,6 +24,7 @@ class UserController < ApplicationController
         else
             if params[:password] == params[:repass]
                 session[:new_user] = {:name => params[:name], :email => params[:email], :password => params[:password]}
+                otp = SecureRandom.random_number(999999)
                 session[:otp] = otp
                 OtpMailer.with(otp: otp, email: params[:email]).otp_mail.deliver_later
                 flash[:alert] = "The OTP has been sent to the above email address. Please enter it the OTP field."
