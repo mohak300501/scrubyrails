@@ -16,35 +16,7 @@
         font-weight: bold;
         font-size: 1.3rem;
     }
-    .shlok:before {
-        content: '';
-        background-color: rgba(0, 0, 0, 0.95);
-        height: 100%;
-        left: 0;
-        opacity: 0.65;
-        position: absolute;
-        top: 0;
-        width: 100%;
-        z-index: 1;
-    }
-    .shlok {
-        margin: 1rem auto;
-        padding: 1rem;
-        font-size: 1.3rem;
-        background-color: #000;
-        background-image: url(https://dl.dropbox.com/s/gz96744xfcfy54o/bg.jpeg?dl=0);
-        background-position: bottom;
-        background-size: cover;
-        background-attachment: fixed;
-        position: relative;
-
-        p {
-            color: #f2f2f2;
-            position: relative;
-            z-index: 2;
-        }
-    }
-    .translation {
+    .info {
         margin: 1rem auto;
         font-size: 1.2rem;
         width: 90%;
