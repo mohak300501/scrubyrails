@@ -20,6 +20,7 @@
         Academic Qualification: <%= @user.acadqual %><br/>
         Regid: <%= @user.regid if !@user.regid.nil? %><br/>
         Courses registered in: <%= @user.courses if !@user.courses.nil? %><br/>
+        <b>Your profile is complete. You may enroll for a course.</b>
     <% else %>
         <b>Complete your profile now if you wish to enroll in a course.</b><br/>
     <% end %>

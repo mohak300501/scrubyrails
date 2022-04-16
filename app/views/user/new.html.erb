@@ -5,7 +5,7 @@
             <%= label_tag :name %><br/>
             <%= text_field_tag :name, nil, :required => true %><br/>
             <%= label_tag :email %><br/>
-            <%= text_field_tag :email, nil, :required => true %><br/>
+            <%= email_field_tag :email, nil, :required => true %><br/>
             <%= label_tag :password %><br/>
             <%= password_field_tag :password, nil, :required => true %><br/>
             <%= label_tag "Re-enter Password" %><br/>
@@ -29,4 +29,4 @@
     </div>
 <% end %>
 <br/>
-Already registered? Proceed to <%= link_to "Login", user_login_path %>.
+Already signed up? Proceed to <%= link_to "Login", user_login_path %>.
