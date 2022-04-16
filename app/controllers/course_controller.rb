@@ -22,7 +22,7 @@ class CourseController < ApplicationController
     end
 
     def mcoursecp
-        course = Course.new(:name => params[:name], :description => params[:description], :image => params[:image])
+        course = Course.new(:name => params[:name], :cname => params[:cname] :description => params[:description], :image => params[:image])
         course.save
 
         ActiveRecord::Base.connection.execute("create table " + params[:cname] +
