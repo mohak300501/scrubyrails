@@ -33,7 +33,7 @@
         <div><b>You are registered in this course.</b></div>
     <% else %>
         <div class="updel">
-            <%= link_to "../../course/" + i.name + "/reg", :confirm => "Are you sure you want to register for this course?" do %>
+            <%= link_to "../../course/" + i.cname + "/reg", :confirm => "Are you sure you want to register for this course?" do %>
                 <div class="button">Register</div>
             <% end %>
         </div>
