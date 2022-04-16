@@ -44,7 +44,7 @@ class CourseController < ApplicationController
 
     def mcourseup
         course = Course.find(params[:id])
-        ActiveRecord::Base.connection.execute("rename " + course.cname + " to " + params[:cname] + ";")
+        ActiveRecord::Base.connection.execute("alter table " + course.cname + " rename to " + params[:cname] + ";")
         course.update(:name => params[:name], :cname => params[:cname], :description => params[:description])
         flash[:notice] = "CourseH परिवर्तितः जातः!"
         redirect_to all_courses_path
