@@ -16,23 +16,6 @@
         <td><%= @user[dets[i]] if !@user[dets[i]].nil? %></td>
     </tr>
     <% end %>
-    <!--<b>Name:</b> <%= @user.name %><br/>
-    <b>Email:</b> <%= @user.email %><br/>
-    <% if @user.profile %>
-        <b>Country:</b> <%= @user.country %><br/>
-        <b>State:</b> <%= @user.state %><br/>
-        <b>PIN:</b> <%= @user.pin %><br/>
-        <b>Gender:</b> <%= @user.gender %><br/>
-        <b>Age:</b> <%= @user.age %><br/>
-        <b>Mobile no.:</b> <%= @user.mobile %><br/>
-        <b>Sanskrit Proficiency Level:</b> <%= @user.sanslevel %><br/>
-        <b>Academic Qualification:</b> <%= @user.acadqual %><br/>
-        <b>Regid:</b> <%= @user.regid if !@user.regid.nil? %><br/>
-        <b>Courses registered in:</b> <%= @user.courses if !@user.courses.nil? %><br/>
-        <b>Your profile is complete. You may enroll for a course.</b>
-    <% else %>
-        <b>Complete your profile now if you wish to enroll in a course.</b><br/>
-    <% end %>-->
 </table>
 <% if @user.profile %>
     <b>Your profile is complete. You may enroll for a course.</b>
