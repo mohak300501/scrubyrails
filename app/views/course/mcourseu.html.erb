@@ -2,7 +2,7 @@
 
 <h1>Course-परिवर्तनं करोतु</h1>
 
-<%= form_tag '../shlok/' + @course.id.to_s do %>
+<%= form_tag '../course/' + @course.id.to_s do %>
     <div>
         <%= label_tag "शीर्षकं" %><br/>
         <%= text_field_tag :name, @course.title, :required => true, class: "textfield" %><br/>
