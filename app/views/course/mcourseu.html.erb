@@ -5,7 +5,7 @@
 <%= form_tag '../course/' + @course.id.to_s do %>
     <div>
         <%= label_tag "शीर्षकं" %><br/>
-        <%= text_field_tag :name, @course.title, :required => true, class: "textfield" %><br/>
+        <%= text_field_tag :name, @course.name, :required => true, class: "textfield" %><br/>
         <%= label_tag "course code" %><br/>
         <%= text_area_tag :cname, @course.cname, :required => true, class: "textarea-1" %><br/>
         <%= label_tag "description" %><br/>
