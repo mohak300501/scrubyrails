@@ -6,20 +6,20 @@
     </div>
 <% end %>
 
-<div class="conts">
-    Name: <%= @user.name %><br/>
-    Email: <%= @user.email %><br/>
+<div class="profile">
+    <b>Name:</b> <%= @user.name %><br/>
+    <b>Email:</b> <%= @user.email %><br/>
     <% if @user.profile %>
-        Country: <%= @user.country %><br/>
-        State: <%= @user.state %><br/>
-        PIN: <%= @user.pin %><br/>
-        Gender: <%= @user.gender %><br/>
-        Age: <%= @user.age %><br/>
-        Mobile no.: <%= @user.mobile %><br/>
-        Sanskrit Proficiency Level: <%= @user.sanslevel %><br/>
-        Academic Qualification: <%= @user.acadqual %><br/>
-        Regid: <%= @user.regid if !@user.regid.nil? %><br/>
-        Courses registered in: <%= @user.courses if !@user.courses.nil? %><br/>
+        <b>Country:</b> <%= @user.country %><br/>
+        <b>State:</b> <%= @user.state %><br/>
+        <b>PIN:</b> <%= @user.pin %><br/>
+        <b>Gender:</b> <%= @user.gender %><br/>
+        <b>Age:</b> <%= @user.age %><br/>
+        <b>Mobile no.:</b> <%= @user.mobile %><br/>
+        <b>Sanskrit Proficiency Level:</b> <%= @user.sanslevel %><br/>
+        <b>Academic Qualification:</b> <%= @user.acadqual %><br/>
+        <b>Regid:</b> <%= @user.regid if !@user.regid.nil? %><br/>
+        <b>Courses registered in:</b> <%= @user.courses if !@user.courses.nil? %><br/>
         <b>Your profile is complete. You may enroll for a course.</b>
     <% else %>
         <b>Complete your profile now if you wish to enroll in a course.</b><br/>
