@@ -13,7 +13,7 @@
     <% for i in 0..11 %>
     <tr>
         <td><b><%= parts[i] %>:</b></td>
-        <td><%= @user.dets[i].to_sym if !@user.dets[i].to_sym.nil? %></td>
+        <td><% det = dets[i].to_sym %><%= @user.det if !@user.det.nil? %></td>
     </tr>
     <% end %>
     <!--<b>Name:</b> <%= @user.name %><br/>
