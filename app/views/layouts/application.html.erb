@@ -8,11 +8,11 @@
         <%= csrf_meta_tags %>
         <%= csp_meta_tag %>
 
-        <%= stylesheet_link_tag :all, media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
         <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     </head>
 
-    <body>
+    <body id="<%= params[:controller].parameterize %>_controller">
         <div class="header">
             आ नो भद्राः क्रतवो यन्तु विश्वतः।
         </div>
