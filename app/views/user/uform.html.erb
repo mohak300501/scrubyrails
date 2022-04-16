@@ -18,9 +18,13 @@
         <%= text_field_tag :pin, nil, :required => true, class: "textfield", value: @user.profile ? @user.pin : ''  %><br/><br/>
 
         <%= label_tag "Gender" %><br/>
-        <%= radio_button_tag :gender, "Male", @user.profile ? (@user.gender == "Male" ? true : false) : false %><br/><br/>
-        <%= radio_button_tag :gender, "Female", @user.profile ? (@user.gender == "Female" ? true : false) : false %><br/><br/>
-        <%= radio_button_tag :gender, "Other", @user.profile ? (@user.gender == "Other" ? true : false) : true %><br/><br/>
+        <% gender = ["Male", "Female", "Other"] %>
+        <% for i in gender %>
+            <% checked = true if (i == gender[-1]) else false %>
+                <%= radio_button_tag :gender, i, @user.profile ? (@user.gender == i ? true : false) : checked %>
+                <%= label_tag i %><br/>
+            <% end %>
+        <% end %>
 
         <%= label_tag "Age" %><br/>
         <%= text_field_tag :age, nil, :required => true, class: "textfield", value: @user.profile ? @user.age : ''  %><br/><br/>
@@ -29,18 +33,20 @@
         <%= text_field_tag :mobile, nil, :required => true, class: "textfield", value: @user.profile ? @user.mobile : ''  %><br/><br/>
 
         <%= label_tag "Sanskrit Proficiency Level" %><br/>
-        <% sanslevel = ["Spoken Sanskrit Class", "Subhashitam Sanskritam Course IITR", "Other course"] %>
+        <% sanslevel = ["Spoken Sanskrit Class", "Subhashitam Sanskritam Course IITR", "Other course", "No prior experience"] %>
         <% for i in sanslevel %>
-            <%= radio_button_tag :sanslevel, i, @user.profile ? (@user.sanslevel == i ? true : false) : false %><br/><br/>
+            <% checked = true if (i == sanslevel[-1]) else false %>
+                <%= radio_button_tag :sanslevel, i, @user.profile ? (@user.sanslevel == i ? true : false) : checked %><br/>
+            <% end %>
         <% end %>
-        <%= radio_button_tag :sanslevel, "No prior experience", @user.profile ? (@user.sanslevel == "No prior experience" ? true : false) : true %><br/><br/>
 
         <%= label_tag "Academic Qualification" %><br/>
-        <% acadqual = ["10th pass", "12th pass", "Bachelor's", "Master's", "PhD"] %>
+        <% acadqual = ["10th pass", "12th pass", "Bachelor's", "Master's", "PhD", "Other"] %>
         <% for i in acadqual %>
-            <%= radio_button_tag :acadqual, i, @user.profile ? (@user.acadqual == i ? true : false) : false %><br/><br/>
+            <% checked = true if (i == acadqual[-1]) else false %>
+                <%= radio_button_tag :acadqual, i, @user.profile ? (@user.acadqual == i ? true : false) : checked %><br/>
+            <% end %>
         <% end %>
-        <%= radio_button_tag :acadqual, "Other", @user.profile ? (@user.acadqual == "Other" ? true : false) : true %><br/><br/>
     </div>
     <div>
         <%= submit_tag "Submit", :class => "button" %><br/>
