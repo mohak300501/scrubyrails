@@ -23,7 +23,9 @@
         text-align: left;
     }
     .poster {
-        width: 90%;
+        img {
+            width: 90%;
+        }
     }
     .updel {
         display: flex;
