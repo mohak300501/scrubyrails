@@ -9,11 +9,8 @@
 .profile {
     box-shadow: -3px 3px 10px rgb(100, 100, 100);
     margin: 1rem auto;
-    width: 90%;
+    width: max-content;
     padding: 1rem;
     border-radius: 0.5rem;
     text-align: left;
-}
-table {
-    width: fit-content;
 }
