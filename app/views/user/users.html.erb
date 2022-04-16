@@ -1,16 +1,13 @@
 <% for i in @users do %>
-    Name: <%= i.name %><br/>
-    Email: <%= i.email %><br/>
-    <% if i.profile %>
-        Country: <%= i.country %><br/>
-        State: <%= i.state %><br/>
-        PIN: <%= i.pin %><br/>
-        Gender: <%= i.gender %><br/>
-        Age: <%= i.age %><br/>
-        Mobile no.: <%= i.mobile %><br/>
-        Sanskrit Proficiency Level: <%= i.sanslevel %><br/>
-        Academic Qualification: <%= i.acadqual %><br/>
-        Regid: <%= i.regid if !i.regid.nil? %>
-        Courses registered in: <%= i.courses if !i.courses.nil? %><br/>
-    <% end %>
+    <% parts = ["Name", "Email", "Country", "State", "PIN", "Gender", "Age", "Mobile no.", "Sanskrit Proficiency Level",
+            "Academic Qualification", "Regid", "Courses registered in"] %>
+    <% dets = ["name", "email", "country", "state", "pin", "gender", "age", "mobile", "sanslevel", "acadqual", "regid", "courses"] %>
+    <table class="profile">
+        <% for j in 0..11 %>
+        <tr>
+            <td><b><%= parts[j] %>:</b></td>
+            <td><%= i[dets[j]] if !i[dets[j]].nil? %></td>
+        </tr>
+        <% end %>
+    </table>
 <% end %>
