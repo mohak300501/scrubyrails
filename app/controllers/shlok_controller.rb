@@ -31,8 +31,7 @@ class ShlokController < ApplicationController
 
     def mshloku
         if session[:member]
-            @id = params[:id]
-            @shlok = Shlok.find_by(id: @id)
+            @shlok = Shlok.find(params[:id])
             render "mshloku"
         else
             redirect_to root_url

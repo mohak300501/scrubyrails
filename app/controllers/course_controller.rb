@@ -22,7 +22,7 @@ class CourseController < ApplicationController
     end
 
     def mcoursecp
-        course = Course.new(:name => params[:name], :cname => params[:cname] :description => params[:description], :image => params[:image])
+        course = Course.new(:name => params[:name], :cname => params[:cname], :description => params[:description], :image => params[:image])
         course.save
 
         ActiveRecord::Base.connection.execute("create table " + params[:cname] +
@@ -33,10 +33,27 @@ class CourseController < ApplicationController
         redirect_to all_courses_path
     end
 
+    def mcourseu
+        if session[:member]
+            @course = Course.find(params[:id])
+            render "mcourseu"
+        else
+            redirect_to root_url
+        end
+    end
+
+    def mcourseup
+        course = Course.find(params[:id])
+        ActiveRecord::Base.connection.execute("rename " + course.cname + " to " + params[:cname] + ";")
+        course.update(:name => params[:name], :cname => params[:cname], :description => params[:description])
+        flash[:notice] = "CourseH परिवर्तितः जातः!"
+        redirect_to all_courses_path
+    end
+
     def mcoursedp
         if session[:member]
             course = Course.find(params[:id])
-            ActiveRecord::Base.connection.execute("drop table if exists " + course.name + ";")
+            ActiveRecord::Base.connection.execute("drop table if exists " + course.cname + ";")
             course.destroy
             redirect_to all_courses_path
         else
@@ -87,7 +104,7 @@ class CourseController < ApplicationController
                     if user.courses.nil?
                         user.courses = table
                     else
-                        user.courses += "," + table
+                        user.courses += ", " + table
                     end
                     user.update(:courses => user.courses)
                     CourseMailer.with(course: table, user_email: email).ureg_mail.deliver_later
