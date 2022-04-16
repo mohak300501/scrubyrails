@@ -16,12 +16,12 @@
             <%= i.name %><br/>
         </div>
 
-        <div class="event">
-            <p><%= i.info.html_safe %></p>
+        <div class="poster">
+            <img src="<%= rails_blob_url(i.image) %>" />
         </div>
 
-        <div>
-            <img src="<%= rails_blob_url(i.image) %>" />
+        <div class="info">
+            <p><%= i.info.html_safe %></p>
         </div>
 
         <% path = "../event/" + i.id.to_s %>
