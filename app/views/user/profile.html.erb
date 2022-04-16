@@ -15,6 +15,7 @@
         <td><b><%= parts[i] %>:</b></td>
         <td><%= @user.dets[i].to_sym if !@user.dets[i].to_sym.nil? %></td>
     </tr>
+    <% end %>
     <!--<b>Name:</b> <%= @user.name %><br/>
     <b>Email:</b> <%= @user.email %><br/>
     <% if @user.profile %>
