@@ -55,8 +55,8 @@ class UserController < ApplicationController
         if session[:member]
             if request.post?
                 @user = User.where(nil)
-                @user = @user.filter_by_country(params[:country]) if params[:country].present?
-                @user = @user.filter_by_state(params[:state]) if params[:country].present?
+                @user = @user.find_by(country: params[:country]) if params[:country].present?
+                @user = @user.filter_by_state(params[:state]) if params[:state].present?
                 @user = @user.filter_by_pin(params[:pin]) if params[:pin].present?
                 @user = @user.filter_by_gender(params[:gender]) if params[:gender].present?
                 @user = @user.filter_by_age(params[:age]) if params[:age].present?
@@ -66,6 +66,16 @@ class UserController < ApplicationController
                 @users = User.all
             end
             render "users"
+        else
+            redirect_to root_url
+        end
+    end
+
+    def muserdp
+        if session[:member]
+            user = User.find(params[:id])
+            user.destroy
+            redirect_to all_users_path
         else
             redirect_to root_url
         end

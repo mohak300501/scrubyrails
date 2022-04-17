@@ -31,6 +31,7 @@
                 <% for j in 1..12 %>
                     <td><%= i[dets[j]] if !i[dets[j]].nil? %></td>
                 <% end %>
+                <td><%= link_to "/../user/" + i.id.to_s + "/del" %></td>
             </tr>
         <% end %>
     <% end %>
