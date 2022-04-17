@@ -81,7 +81,6 @@ class CourseController < ApplicationController
             user = User.find_by(email: email)
             if user.profile
                 table = params[:cname]
-                # course = Course.find_by(name: table).name
                 # if user.courses.include? table # another way of saying the same thing
                 user_regd = ActiveRecord::Base.connection.execute("select count(*) from " + table + " where email='" + email + "';")[0]["count"]
                 if user_regd > 0
@@ -109,7 +108,8 @@ class CourseController < ApplicationController
                         user.courses += ", " + table
                     end
                     user.update(:courses => user.courses)
-                    CourseMailer.with(course: table, user_email: email).ureg_mail.deliver_later
+                    course = Course.find_by(cname: table).name
+                    CourseMailer.with(course: course, user_email: email).ureg_mail.deliver_later
                     redirect_to "/../../course/" + table + "/uview"
                 end
             else
