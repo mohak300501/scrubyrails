@@ -54,13 +54,13 @@ class UserController < ApplicationController
     def muserr
         if session[:member]
             @user = User.where(nil)
-            @user = @user.filter_by_country(params[:country]) if params[:country].present?
-            @user = @user.filter_by_state(params[:state]) if params[:country].present?
-            @user = @user.filter_by_pin(params[:pin]) if params[:pin].present?
-            @user = @user.filter_by_gender(params[:gender]) if params[:gender].present?
-            @user = @user.filter_by_age(params[:age]) if params[:age].present?
-            @user = @user.filter_by_sanslevel(params[:sanslevel]) if params[:sanslevel].present?
-            @user = @user.filter_by_acadqual(params[:acadqual]) if params[:acadqual].present?
+            # @user = @user.filter_by_country(params[:country]) if params[:country].present?
+            # @user = @user.filter_by_state(params[:state]) if params[:country].present?
+            # @user = @user.filter_by_pin(params[:pin]) if params[:pin].present?
+            # @user = @user.filter_by_gender(params[:gender]) if params[:gender].present?
+            # @user = @user.filter_by_age(params[:age]) if params[:age].present?
+            # @user = @user.filter_by_sanslevel(params[:sanslevel]) if params[:sanslevel].present?
+            # @user = @user.filter_by_acadqual(params[:acadqual]) if params[:acadqual].present?
             render "users"
         else
             redirect_to root_url
