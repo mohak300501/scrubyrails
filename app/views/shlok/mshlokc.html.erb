@@ -5,13 +5,13 @@
 <%= form_tag shlok_post_path, multipart: true do %>
     <div>
         <%= label_tag "शीर्षकं" %><br/>
-        <%= text_field_tag :title, nil, :required => true, class: "textfield" %><br/><br/>
+        <%= text_field_tag :title, nil, :required => true, class: "mtextfield" %><br/><br/>
         <%= label_tag "श्लोकः" %><br/>
-        <%= text_area_tag :shlok, nil, :required => true, class: "textarea-1" %><br/><br/>
+        <%= text_area_tag :shlok, nil, :required => true, class: "mtextarea-1" %><br/><br/>
         <%= label_tag "श्रव्यसञ्चिका" %><br/>
         <%= file_field_tag :audio, :required => true %><br/><br/>
         <%= label_tag "अनुवादः" %><br/>
-        <%= text_area_tag :translation, nil, :required => true, class: "textarea-2" %><br/>
+        <%= text_area_tag :translation, nil, :required => true, class: "mtextarea-2" %><br/>
     </div>
     <div>
         <%= submit_tag "अग्रेस्थापनं करोतु", :class => "button" %><br/>

@@ -5,9 +5,9 @@
 <%= form_tag '../game/' + @game.id.to_s do %>
     <div>
         <%= label_tag "शीर्षकं" %><br/>
-        <%= text_field_tag :name, @game.name, :required => true, class: "textfield" %><br/>
+        <%= text_field_tag :name, @game.name, :required => true, class: "mtextfield" %><br/>
         <%= label_tag "gameH" %><br/>
-        <%= text_area_tag :info, @game.info, :required => true, class: "textarea-1" %><br/>
+        <%= text_area_tag :info, @game.info, :required => true, class: "mtextarea-1" %><br/>
         
     </div>
     <div>

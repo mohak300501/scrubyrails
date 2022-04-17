@@ -5,14 +5,14 @@
 <%= form_tag event_post_path, multipart: true do %>
     <div>
         <%= label_tag "शीर्षकं" %><br/>
-        <%= text_field_tag :name, nil, :required => true, class: "textfield" %><br/><br/>
+        <%= text_field_tag :name, nil, :required => true, class: "mtextfield" %><br/><br/>
         <%= label_tag "घटना" %><br/>
-        <%= text_area_tag :info, nil, :required => true, class: "textarea-1" %><br/><br/>
+        <%= text_area_tag :info, nil, :required => true, class: "mtextarea-1" %><br/><br/>
         <%= label_tag "विज्ञापनम्" %><br/>
         <%= file_field_tag :image, :required => true %><br/><br/>
         <!--
         <%= label_tag "अनुवादः" %><br/>
-        <%= text_area_tag :translation, nil, :required => true, class: "textarea-2" %><br/>
+        <%= text_area_tag :translation, nil, :required => true, class: "mtextarea-2" %><br/>
         -->
     </div>
     <div>
