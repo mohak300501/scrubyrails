@@ -61,7 +61,7 @@ class UserController < ApplicationController
                 @users = @users.filter_by_age(params[:age]) if params[:age].present?
                 @users = @users.filter_by_sanslevel(params[:sanslevel]) if params[:sanslevel].present?
                 @users = @users.filter_by_acadqual(params[:acadqual]) if params[:acadqual].present?
-                @users = @users.find_by(country: params[:country])
+                @users = @users.where(country: params[:country])
             else
                 @users = User.all
             end
