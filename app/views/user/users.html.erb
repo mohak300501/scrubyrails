@@ -21,18 +21,12 @@
         <% end %>
         <th>Delete</th>
     </tr>
-    <% if @users.nil? %>
+    <% for i in @users do %>
         <tr>
-            <td colspan="13">No such user.</td>
+            <% for j in 0..11 %>
+                <td><%= i[dets[j]] if !i[dets[j]].nil? %></td>
+            <% end %>
+            <td><%= link_to "Delete", "/../user/" + i.id.to_s + "/del" %></td>
         </tr>
-    <% else %>
-        <% for i in @users do %>
-            <tr>
-                <% for j in 0..11 %>
-                    <td><%= i[dets[j]] if !i[dets[j]].nil? %></td>
-                <% end %>
-                <td><%= link_to "Delete", "/../user/" + i.id.to_s + "/del" %></td>
-            </tr>
-        <% end %>
     <% end %>
 </table>

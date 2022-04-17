@@ -55,13 +55,13 @@ class UserController < ApplicationController
         if session[:member]
             if request.post?
                 @users = User.where(nil)
-                @users = @users.filter_by_state(params[:state]) if params[:state].present?
-                @users = @users.filter_by_pin(params[:pin]) if params[:pin].present?
-                @users = @users.filter_by_gender(params[:gender]) if params[:gender].present?
-                @users = @users.filter_by_age(params[:age]) if params[:age].present?
-                @users = @users.filter_by_sanslevel(params[:sanslevel]) if params[:sanslevel].present?
-                @users = @users.filter_by_acadqual(params[:acadqual]) if params[:acadqual].present?
-                @users = @users.where(country: params[:country])
+                @users = @users.where(country: params[:country]) if params[:country].present?
+                @users = @users.where(state: params[:state]) if params[:state].present?
+                @users = @users.where(pin: params[:pin]) if params[:pin].present?
+                @users = @users.where(gender: params[:gender]) if params[:gender].present?
+                @users = @users.where(age: params[:age]) if params[:age].present?
+                @users = @users.where(sanslevel: params[:sanslevel]) if params[:sanslevel].present?
+                @users = @users.where(acadqual: params[:acadqual]) if params[:acadqual].present?
             else
                 @users = User.all
             end
