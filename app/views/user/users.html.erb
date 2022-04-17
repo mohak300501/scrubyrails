@@ -15,12 +15,12 @@
 <% end %>
 
 <table class="profile">
-    <th>
+    <tr>
         <% for j in parts %>
-            <td><%= j %></td>
+            <th><%= j %></th>
         <% end %>
-        <td>Delete</td>
-    </th>
+        <th>Delete</th>
+    </tr>
     <% if @users.nil? %>
         <tr>
             <td colspan="12">No such user.</td>
