@@ -13,11 +13,8 @@
     padding: 1rem;
     border-radius: 0.5rem;
     // text-align: left;
-    table, th, td {
-        border: 1px solid black;
-        border-collapse: collapse;
-    }
-    th {
-        font-weight: bold;
-    }
+}
+.profile, .profile th, .profile td {
+    border: 1px solid black;
+    border-collapse: collapse;
 }
