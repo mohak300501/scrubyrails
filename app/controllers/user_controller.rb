@@ -55,13 +55,13 @@ class UserController < ApplicationController
         if session[:member]
             if request.post?
                 @users = User.where(nil)
-                @users = @users.filter_by_country(params[:country]) if params[:country].present?
                 @users = @users.filter_by_state(params[:state]) if params[:state].present?
                 @users = @users.filter_by_pin(params[:pin]) if params[:pin].present?
                 @users = @users.filter_by_gender(params[:gender]) if params[:gender].present?
                 @users = @users.filter_by_age(params[:age]) if params[:age].present?
                 @users = @users.filter_by_sanslevel(params[:sanslevel]) if params[:sanslevel].present?
                 @users = @users.filter_by_acadqual(params[:acadqual]) if params[:acadqual].present?
+                @users = @users.find_by(country: params[:country])
             else
                 @users = User.all
             end
