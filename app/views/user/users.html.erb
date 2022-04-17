@@ -28,7 +28,7 @@
     <% else %>
         <% for i in @users do %>
             <tr>
-                <% for j in 1..12 %>
+                <% for j in 0..11 %>
                     <td><%= i[dets[j]] if !i[dets[j]].nil? %></td>
                 <% end %>
                 <td><%= link_to "Delete", "/../user/" + i.id.to_s + "/del" %></td>
