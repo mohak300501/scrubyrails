@@ -1,22 +1,22 @@
 <h2>Please fill the following details</h2>
 
 <%= form_tag form_post_path, multipart: true, class: "uform" do %>
-    <%= label_tag "Name", class: "label" %><br/>
+    <%= label_tag "Name", nil, class: "label" %><br/>
     <%= text_field_tag :name, nil, :required => true, class: "utextfield", value: @user.name %><br/><br/>
 
-    <%= label_tag "Email", class: "label" %><br/>
+    <%= label_tag "Email", nil, class: "label" %><br/>
     <%= email_field_tag :email, nil, :required => true, class: "utextfield", value: @user.email %><br/><br/>
 
-    <%= label_tag "Country", class: "label" %><br/>
+    <%= label_tag "Country", nil, class: "label" %><br/>
     <%= text_field_tag :country, nil, :required => true, class: "utextfield", value: @user.profile ? @user.country : ''  %><br/><br/>
 
-    <%= label_tag "State", class: "label" %><br/>
+    <%= label_tag "State", nil, class: "label" %><br/>
     <%= text_field_tag :state, nil, :required => true, class: "utextfield", value: @user.profile ? @user.state : ''  %><br/><br/>
 
-    <%= label_tag "PIN", class: "label" %><br/>
+    <%= label_tag "PIN", nil, class: "label" %><br/>
     <%= text_field_tag :pin, nil, :required => true, class: "utextfield", value: @user.profile ? @user.pin : ''  %><br/><br/>
 
-    <%= label_tag "Gender", class: "label" %><br/>
+    <%= label_tag "Gender", nil, class: "label" %><br/>
     <% gender = ["Male", "Female", "Other"] %>
     <div class="radio">
         <% for i in gender %>
@@ -26,29 +26,29 @@
         <% end %><br/><br/>
     </div>
 
-    <%= label_tag "Age", class: "label" %><br/>
+    <%= label_tag "Age", nil, class: "label" %><br/>
     <%= text_field_tag :age, nil, :required => true, class: "utextfield", value: @user.profile ? @user.age : ''  %><br/><br/>
 
-    <%= label_tag "Mobile no.", class: "label" %><br/>
+    <%= label_tag "Mobile no.", nil, class: "label" %><br/>
     <%= text_field_tag :mobile, nil, :required => true, class: "utextfield", value: @user.profile ? @user.mobile : ''  %><br/><br/>
 
-    <%= label_tag "Sanskrit Proficiency Level", class: "label" %><br/>
+    <%= label_tag "Sanskrit Proficiency Level", nil, class: "label" %><br/>
     <% sanslevel = ["Spoken Sanskrit Class", "Subhashitam Sanskritam Course IITR", "Other course", "No prior experience"] %>
     <div class="radio">
         <% for i in sanslevel %>
             <% checked = (i == sanslevel[-1])? true : false %>
             <%= radio_button_tag :sanslevel, i, @user.profile ? (@user.sanslevel == i ? true : false) : checked %>
-            <%= label_tag i %>
+            <%= label_tag i %><br/>
         <% end %><br/><br/>
     </div>
 
-    <%= label_tag "Academic Qualification", class: "label" %><br/>
+    <%= label_tag "Academic Qualification", nil, class: "label" %><br/>
     <% acadqual = ["10th pass", "12th pass", "Bachelor's", "Master's", "PhD", "Other"] %>
     <div class="radio">
         <% for i in acadqual %>
             <% checked = (i == acadqual[-1])? true : false %>
             <%= radio_button_tag :acadqual, i, @user.profile ? (@user.acadqual == i ? true : false) : checked %>
-            <%= label_tag i %>
+            <%= label_tag i %><br/>
         <% end %><br/><br/>
     </div>
     <%= submit_tag "Submit", :class => "button" %><br/>
