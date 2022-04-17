@@ -34,12 +34,15 @@
     display: flex;
     align-items: center;
 }
+.bhadra .noble {
+    font-size: 1rem;
+}
 .header img{
-    width: 3.5rem;
+    width: 3rem;
 }
 @media screen and (min-width:540px) {
     .header img{
-        width: 10rem;
+        width: 8rem;
     }
 }
 .footer {
