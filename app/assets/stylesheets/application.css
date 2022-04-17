@@ -34,6 +34,14 @@
     display: flex;
     align-items: center;
 }
+.header img{
+    width: 3.5rem;
+}
+@media screen and (min-width:540px) {
+    .header img{
+        width: 10rem;
+    }
+}
 .footer {
     margin: 1rem auto 0;
     font-size: 1.2rem;
