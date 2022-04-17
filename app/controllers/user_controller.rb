@@ -62,6 +62,7 @@ class UserController < ApplicationController
                 @users = @users.where(age: params[:age]) if params[:age].present?
                 @users = @users.where(sanslevel: params[:sanslevel]) if params[:sanslevel].present?
                 @users = @users.where(acadqual: params[:acadqual]) if params[:acadqual].present?
+                @count = @users.count
             else
                 @users = User.all
             end
