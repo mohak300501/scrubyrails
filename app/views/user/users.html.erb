@@ -14,7 +14,7 @@
     <%= submit_tag "अग्रेस्थापनं करोतु", :class => "button" %><br/>
 <% end %>
 
-<table class="profile">
+<table class="users">
     <tr>
         <% for j in parts %>
             <th><%= j %></th>
@@ -36,3 +36,4 @@
         <% end %>
     <% end %>
 </table>
+<%= @count %> users.
