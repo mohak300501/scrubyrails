@@ -2,19 +2,19 @@
 
 <%= form_tag form_post_path, multipart: true, class: "uform" do %>
     <%= label_tag "Name", nil, class: "label" %><br/>
-    <%= text_field_tag :name, nil, :required => true, class: "utextfield", value: @user.name %>
+    <%= text_field_tag :name, nil, :required => true, class: "utextfield", value: @user.name %><br/><br/><br/>
 
     <%= label_tag "Email", nil, class: "label" %><br/>
-    <%= email_field_tag :email, nil, :required => true, class: "utextfield", value: @user.email %>
+    <%= email_field_tag :email, nil, :required => true, class: "utextfield", value: @user.email %><br/><br/><br/>
 
     <%= label_tag "Country", nil, class: "label" %><br/>
-    <%= text_field_tag :country, nil, :required => true, class: "utextfield", value: @user.profile ? @user.country : ''  %>
+    <%= text_field_tag :country, nil, :required => true, class: "utextfield", value: @user.profile ? @user.country : '' %><br/><br/><br/>
 
     <%= label_tag "State", nil, class: "label" %><br/>
-    <%= text_field_tag :state, nil, :required => true, class: "utextfield", value: @user.profile ? @user.state : ''  %>
+    <%= text_field_tag :state, nil, :required => true, class: "utextfield", value: @user.profile ? @user.state : '' %><br/><br/><br/>
 
     <%= label_tag "PIN", nil, class: "label" %><br/>
-    <%= text_field_tag :pin, nil, :required => true, class: "utextfield", value: @user.profile ? @user.pin : ''  %>
+    <%= text_field_tag :pin, nil, :required => true, class: "utextfield", value: @user.profile ? @user.pin : '' %><br/><br/><br/>
 
     <%= label_tag "Gender", nil, class: "label" %><br/>
     <% gender = ["Male", "Female", "Other"] %>
@@ -23,14 +23,14 @@
             <% checked = (i == gender[-1])? true :false %>
             <%= radio_button_tag :gender, i, @user.profile ? (@user.gender == i ? true : false) : checked %>
             <%= label_tag i %><br/>
-        <% end %>
+        <% end %><br/><br/><br/>
     </div>
 
     <%= label_tag "Age", nil, class: "label" %><br/>
-    <%= text_field_tag :age, nil, :required => true, class: "utextfield", value: @user.profile ? @user.age : ''  %>
+    <%= text_field_tag :age, nil, :required => true, class: "utextfield", value: @user.profile ? @user.age : '' %><br/><br/><br/>
 
     <%= label_tag "Mobile no.", nil, class: "label" %><br/>
-    <%= text_field_tag :mobile, nil, :required => true, class: "utextfield", value: @user.profile ? @user.mobile : ''  %>
+    <%= text_field_tag :mobile, nil, :required => true, class: "utextfield", value: @user.profile ? @user.mobile : '' %><br/><br/><br/>
 
     <%= label_tag "Sanskrit Proficiency Level", nil, class: "label" %><br/>
     <% sanslevel = ["Spoken Sanskrit Class", "Subhashitam Sanskritam Course IITR", "Other course", "No prior experience"] %>
@@ -39,7 +39,7 @@
             <% checked = (i == sanslevel[-1])? true : false %>
             <%= radio_button_tag :sanslevel, i, @user.profile ? (@user.sanslevel == i ? true : false) : checked %>
             <%= label_tag i %><br/>
-        <% end %>
+        <% end %><br/><br/><br/>
     </div>
 
     <%= label_tag "Academic Qualification", nil, class: "label" %><br/>
@@ -51,6 +51,7 @@
             <%= label_tag i %><br/>
         <% end %><br/>
     </div>
+    
     <%= submit_tag "Submit", :class => "button" %><br/>
     <%= link_to "Cancel", profile_path %>
 <% end %>
