@@ -56,10 +56,10 @@ class UserController < ApplicationController
             @user = User.where(nil)
             if params[:country].present?
                 @user = @user.filter_by_country(params[:country])
-                @country = User.where(nil)
             end
             if params[:state] != ''
                 @user = @user.filter_by_state(params[:state])
+                @country = User.where(nil)
             end
             if params[:pin] != ''
                 @user = @user.filter_by_pin(params[:pin])
