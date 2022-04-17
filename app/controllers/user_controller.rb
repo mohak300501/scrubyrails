@@ -54,27 +54,13 @@ class UserController < ApplicationController
     def muserr
         if session[:member]
             @user = User.where(nil)
-            if params[:country].present?
-                @user = @user.filter_by_country(params[:country])
-            end
-            if params[:state] != ''
-                @user = @user.filter_by_state(params[:state])
-                @country = User.where(nil)
-            end
-            if params[:pin] != ''
-                @user = @user.filter_by_pin(params[:pin])
-            end
-            if params[:gender] != ''
-                @user = @user.filter_by_gender(params[:gender])
-            end
-            if params[:age] != ''
-                @user = @user.filter_by_age(params[:age])
-            end
-            if params[:sanslevel] != ''
-                @user = @user.filter_by_sanslevel(params[:sanslevel])
-            end
-            if params[:acadqual] != ''
-                @user = @user.filter_by_acadqual(params[:acadqual])
+            @user = @user.filter_by_country(params[:country]) if params[:country].present?
+            @user = @user.filter_by_state(params[:state]) if params[:country].present?
+            @user = @user.filter_by_pin(params[:pin]) if params[:pin].present?
+            @user = @user.filter_by_gender(params[:gender]) if params[:gender].present?
+            @user = @user.filter_by_age(params[:age]) if params[:age].present?
+            @user = @user.filter_by_sanslevel(params[:sanslevel]) if params[:sanslevel].present?
+            @user = @user.filter_by_acadqual(params[:acadqual]) if params[:acadqual].present?
             end
             render "users"
         else
