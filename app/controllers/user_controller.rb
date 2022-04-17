@@ -53,7 +53,7 @@ class UserController < ApplicationController
 
     def muserr
         if session[:member]
-            @user = User.where(nil)
+            @user = User.where(nil).all
             # @user = @user.filter_by_country(params[:country]) if params[:country].present?
             # @user = @user.filter_by_state(params[:state]) if params[:country].present?
             # @user = @user.filter_by_pin(params[:pin]) if params[:pin].present?
