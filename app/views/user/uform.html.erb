@@ -1,6 +1,6 @@
 <h2>Please fill the following details</h2>
 
-<%= form_tag form_post_path, multipart: true, class:"uform" do %>
+<%= form_tag form_post_path, multipart: true, class: "uform" do %>
     <%= label_tag "Name", class: "label" %><br/>
     <%= text_field_tag :name, nil, :required => true, class: "utextfield", value: @user.name %><br/><br/>
 
@@ -29,10 +29,10 @@
     <%= label_tag "Age", class: "label" %><br/>
     <%= text_field_tag :age, nil, :required => true, class: "utextfield", value: @user.profile ? @user.age : ''  %><br/><br/>
 
-    <%= label_tag "Mobile , class: "label"no." %><br/>
+    <%= label_tag "Mobile no.", class: "label" %><br/>
     <%= text_field_tag :mobile, nil, :required => true, class: "utextfield", value: @user.profile ? @user.mobile : ''  %><br/><br/>
 
-    <%= label_tag "Sanskrit , class: "label"Proficiency Level" %><br/>
+    <%= label_tag "Sanskrit Proficiency Level", class: "label" %><br/>
     <% sanslevel = ["Spoken Sanskrit Class", "Subhashitam Sanskritam Course IITR", "Other course", "No prior experience"] %>
     <div class="radio">
         <% for i in sanslevel %>
@@ -42,7 +42,7 @@
         <% end %><br/><br/>
     </div>
 
-    <%= label_tag "Academic , class: "label"Qualification" %><br/>
+    <%= label_tag "Academic Qualification", class: "label" %><br/>
     <% acadqual = ["10th pass", "12th pass", "Bachelor's", "Master's", "PhD", "Other"] %>
     <div class="radio">
         <% for i in acadqual %>
