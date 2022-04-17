@@ -20,11 +20,17 @@
         <% end %>
         <td>Delete</td>
     </th>
-    <% for i in @users do %>
-        <% for j in 1..12 %>
-            <tr>
-                <td><%= i[dets[j]] if !i[dets[j]].nil? %></td>
-            </tr>
+    <% if @users.length == 0 %>
+        <tr>
+            <td>No such user.</td>
+        </tr>
+    <% else %>
+        <% for i in @users do %>
+            <% for j in 1..12 %>
+                <tr>
+                    <td><%= i[dets[j]] if !i[dets[j]].nil? %></td>
+                </tr>
+            <% end %>
         <% end %>
     <% end %>
 </table>
