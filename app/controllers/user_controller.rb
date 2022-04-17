@@ -62,10 +62,11 @@ class UserController < ApplicationController
                 @user = @user.filter_by_age(params[:age]) if params[:age].present?
                 @user = @user.filter_by_sanslevel(params[:sanslevel]) if params[:sanslevel].present?
                 @user = @user.filter_by_acadqual(params[:acadqual]) if params[:acadqual].present?
+                render "users"
             else
                 @users = User.all
+                render "users"
             end
-            render "users"
         else
             redirect_to root_url
         end
