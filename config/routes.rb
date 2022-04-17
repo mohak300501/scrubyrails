@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     post "user/newp", as:"newp"
     post "user/otpp", as:"otpp"
     get "user/muserr", as:"all_users"
+    post "user/muserr", as:"user_sort"
     get "user/uform", as:"form"
     post "user/uformp", as:"form_post"
     

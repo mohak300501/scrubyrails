@@ -12,5 +12,8 @@
     width: max-content;
     padding: 1rem;
     border-radius: 0.5rem;
-    text-align: left;
+    // text-align: left;
+    th {
+        font-weight: bold;
+    }
 }

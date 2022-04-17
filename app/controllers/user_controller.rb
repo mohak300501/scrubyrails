@@ -53,7 +53,28 @@ class UserController < ApplicationController
 
     def muserr
         if session[:member]
-            @users = User.all
+            @user = User.where(nil)
+            if params[:country] != ''
+                @user = @user.filter_by_country(params[:country])
+            end
+            if params[:state] != ''
+                @user = @user.filter_by_state(params[:state])
+            end
+            if params[:pin] != ''
+                @user = @user.filter_by_pin(params[:pin])
+            end
+            if params[:gender] != ''
+                @user = @user.filter_by_gender(params[:gender])
+            end
+            if params[:age] != ''
+                @user = @user.filter_by_age(params[:age])
+            end
+            if params[:sanslevel] != ''
+                @user = @user.filter_by_sanslevel(params[:sanslevel])
+            end
+            if params[:acadqual] != ''
+                @user = @user.filter_by_acadqual(params[:acadqual])
+            end
             render "users"
         else
             redirect_to root_url
