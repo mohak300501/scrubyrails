@@ -75,7 +75,6 @@ class UserController < ApplicationController
             if params[:acadqual] != ''
                 @user = @user.filter_by_acadqual(params[:acadqual])
             end
-            @user = @user.all
             render "users"
         else
             redirect_to root_url
