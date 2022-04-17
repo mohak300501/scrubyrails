@@ -54,20 +54,18 @@ class UserController < ApplicationController
     def muserr
         if session[:member]
             if request.post?
-                # @user = User
-                # @user = @user.filter_by_state(params[:state]) if params[:state].present?
-                # @user = @user.filter_by_pin(params[:pin]) if params[:pin].present?
-                # @user = @user.filter_by_gender(params[:gender]) if params[:gender].present?
-                # @user = @user.filter_by_age(params[:age]) if params[:age].present?
-                # @user = @user.filter_by_sanslevel(params[:sanslevel]) if params[:sanslevel].present?
-                # @user = @user.filter_by_acadqual(params[:acadqual]) if params[:acadqual].present?
-                @user = User.find_by(country: params[:country])
-                @abra = params[:country]
-                render "users"
+                @users = User.where(nil)
+                @users = @users.filter_by_country(params[:country]) if params[:country].present?
+                @users = @users.filter_by_state(params[:state]) if params[:state].present?
+                @users = @users.filter_by_pin(params[:pin]) if params[:pin].present?
+                @users = @users.filter_by_gender(params[:gender]) if params[:gender].present?
+                @users = @users.filter_by_age(params[:age]) if params[:age].present?
+                @users = @users.filter_by_sanslevel(params[:sanslevel]) if params[:sanslevel].present?
+                @users = @users.filter_by_acadqual(params[:acadqual]) if params[:acadqual].present?
             else
                 @users = User.all
-                render "users"
             end
+            render "users"
         else
             redirect_to root_url
         end
