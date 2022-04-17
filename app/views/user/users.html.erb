@@ -27,11 +27,11 @@
         </tr>
     <% else %>
         <% for i in @users do %>
-            <% for j in 1..12 %>
-                <tr>
+            <tr>
+                <% for j in 1..12 %>
                     <td><%= i[dets[j]] if !i[dets[j]].nil? %></td>
-                </tr>
-            <% end %>
+                <% end %>
+            </tr>
         <% end %>
     <% end %>
 </table>
