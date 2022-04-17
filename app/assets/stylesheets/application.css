@@ -24,6 +24,16 @@
     border-radius: 1.5rem;
     padding: 1.5rem;
 }
+.logo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bhadra {
+    display: flex;
+    align-items: center;
+}
 .footer {
     margin: 1rem auto 0;
     font-size: 1.2rem;
