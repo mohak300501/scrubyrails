@@ -55,6 +55,7 @@ class UserController < ApplicationController
         if session[:member]
             @user = User.where(nil)
             @user = @user.filter_by_country(params[:country]) if params[:country].present?
+            @user = User.filter_by_country(params[:country]) if params[:country].present?
             @user = @user.filter_by_state(params[:state]) if params[:country].present?
             @user = @user.filter_by_pin(params[:pin]) if params[:pin].present?
             @user = @user.filter_by_gender(params[:gender]) if params[:gender].present?
