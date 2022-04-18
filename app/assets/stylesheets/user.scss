@@ -2,13 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .users {
+    white-space: nowrap;
+}
+.over {
     box-shadow: -3px 3px 10px rgb(100, 100, 100);
     margin: 1rem auto;
     padding: 1rem;
     border-radius: 0.5rem;
     width: 90%;
-}
-.over {
     overflow-x: auto;
 }
 .users, .users th, .users td {
@@ -16,11 +17,6 @@
     border-collapse: collapse;
 }
 .profile {
-    box-shadow: -3px 3px 10px rgb(100, 100, 100);
-    margin: 1rem auto;
-    width: 90%;
-    padding: 1rem;
-    border-radius: 0.5rem;
     text-align: left;
     white-space: nowrap;
     @media screen and (min-width:540px) {
