@@ -22,18 +22,17 @@
     text-align: left;
 }
 .uform {
+    font-size: 1.1rem;
     .utextfield {
-        font-size: 1.1rem;
         width: 25%;
         border: 0;
         border-bottom: 1px solid black;
         box-shadow: 0 2.5px 1px rgba(255,166,0,0.6);
     }
-    .label {
-        font-weight: bold;
-    }
+    // .label {
+    //     font-weight: bold;
+    // }
     .radio {
-        font-size: 1.1rem;
         text-align: left;
         width: 25%;
         margin: auto;
