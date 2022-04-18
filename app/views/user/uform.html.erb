@@ -15,13 +15,13 @@
             <option value="<%= value %>" selected="<%= @user.profile ? (@user.gender == i ? true : false) : selected %>"><%= i %></option>
         <% end %>
     </select>
-    <div class="radio">
+    <!--<div class="radio">
         <% for i in gender %>
             <% checked = (i == gender[-1])? true :false %>
             <%= radio_button_tag :gender, i, @user.profile ? (@user.gender == i ? true : false) : checked %>
             <%= label_tag i %><br/>
         <% end %><br/><br/><br/>
-    </div>
+    </div>-->
 
     <%= text_field_tag :age, nil, :required => true, class: "utextfield", value: @user.profile ? @user.age : '' %><br/><br/><br/>
 
