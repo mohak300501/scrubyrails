@@ -11,14 +11,16 @@
 <% parts = ["Name", "Email", "Country", "State", "PIN", "Gender", "Age", "Mobile no.", "Sanskrit Proficiency Level",
             "Academic Qualification", "Regid", "Courses registered in"] %>
 <% dets = ["name", "email", "country", "state", "pin", "gender", "age", "mobile", "sanslevel", "acadqual", "regid", "courses"] %>
-<table class="profile">
-    <% for i in 0..11 %>
-    <tr>
-        <td><b><%= parts[i] %>: </b></td>
-        <td><%= @user[dets[i]] if !@user[dets[i]].nil? %></td>
-    </tr>
-    <% end %>
-</table>
+<div class="over">
+    <table class="profile">
+        <% for i in 0..11 %>
+        <tr>
+            <td><b><%= parts[i] %>: </b></td>
+            <td><%= @user[dets[i]] if !@user[dets[i]].nil? %></td>
+        </tr>
+        <% end %>
+    </table>
+</div>
 <% if @user.profile %>
     <b>Your profile is complete. You may enroll for a course.</b>
 <% else %>

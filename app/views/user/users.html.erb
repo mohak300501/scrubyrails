@@ -14,26 +14,28 @@
     <%= submit_tag "अग्रेस्थापनं करोतु", :class => "button" %><br/>
 <% end %>
 
-<table class="users">
-    <tr>
-        <% for j in parts %>
-            <th><%= j %></th>
-        <% end %>
-        <th>Delete</th>
-    </tr>
-    <% if @count == 0 %>
+<div class="over">
+    <table class="users">
         <tr>
-            <td colspan="13">No user found.</td>
+            <% for j in parts %>
+                <th><%= j %></th>
+            <% end %>
+            <th>Delete</th>
         </tr>
-    <% else %>
-        <% for i in @users do %>
+        <% if @count == 0 %>
             <tr>
-                <% for j in 0..11 %>
-                    <td><%= i[dets[j]] if !i[dets[j]].nil? %></td>
-                <% end %>
-                <td><%= link_to "Delete", "/../user/" + i.id.to_s + "/del" %></td>
+                <td colspan="13">No user found.</td>
             </tr>
+        <% else %>
+            <% for i in @users do %>
+                <tr>
+                    <% for j in 0..11 %>
+                        <td><%= i[dets[j]] if !i[dets[j]].nil? %></td>
+                    <% end %>
+                    <td><%= link_to "Delete", "/../user/" + i.id.to_s + "/del" %></td>
+                </tr>
+            <% end %>
         <% end %>
-    <% end %>
-</table>
+    </table>
+</div>
 <%= @count %> users.

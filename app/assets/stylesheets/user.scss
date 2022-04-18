@@ -7,6 +7,8 @@
     padding: 1rem;
     border-radius: 0.5rem;
     width: 90%;
+}
+.over {
     overflow-x: auto;
 }
 .users, .users th, .users td {
@@ -20,7 +22,6 @@
     padding: 1rem;
     border-radius: 0.5rem;
     text-align: left;
-    overflow-x: auto;
     white-space: nowrap;
     @media screen and (min-width:540px) {
         width: max-content;
