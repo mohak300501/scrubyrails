@@ -16,10 +16,11 @@
 .profile {
     box-shadow: -3px 3px 10px rgb(100, 100, 100);
     margin: 1rem auto;
-    width: max-content;
+    width: 90%;
     padding: 1rem;
     border-radius: 0.5rem;
     text-align: left;
+    overflow-x: auto;
 }
 .uform {
     .utextfield, select {
@@ -29,11 +30,6 @@
         border-bottom: 1px solid black;
         box-shadow: 0 2.5px 1px rgba(255,166,0,0.6);
     }
-    @media screen and (min-width:540px) {
-        .utextfield, select {
-            width: 25%;
-        }
-    }
     // .label {
     //     font-weight: bold;
     // }
@@ -42,4 +38,13 @@
     //     width: 25%;
     //     margin: auto;
     // }
+}
+@media screen and (min-width:540px) {
+
+    .utextfield, select {
+        width: 25%;
+    }
+    .profile {
+        width: max-content;
+    }
 }
