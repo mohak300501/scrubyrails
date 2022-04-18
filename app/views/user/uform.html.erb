@@ -10,12 +10,8 @@
     <% gender = ["-- Choose gender --", "Male", "Female", "Other"] %>
     <select name="gender">
         <% for i in gender %>
-            <% value = i %>
-            <% selected = false %>
-            <% if i == gender[0] %>
-                <% selected = true %>
-                <% value = "" %>
-            <% end %>
+            <% value = (i == gender[0]) ? "" : i %>
+            <% selected = (i == gender[0]) ? true : false %>
             <option value="<%= value %>" selected="<%= @user.profile ? (@user.gender == i ? true : false) : selected %>"><%= i %></option>
         <% end %>
     </select>
