@@ -1,7 +1,9 @@
-<%= link_to "प्रतिगछतु", root_url %><br/>
+<%= link_to root_url do %>
+    <div class="Button">Back</div>
+<% end %><br/>
 
 <% flash.each do |type, msg| %>
-    <div>
+    <div class="flash">
         <%= msg %>
     </div>
 <% end %>
