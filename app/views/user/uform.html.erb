@@ -11,8 +11,12 @@
     <select name="gender">
         <% for i in gender %>
             <% value = (i == gender[0]) ? "" : i %>
-            <% selected = (i == gender[0]) ? true : false %>
-            <option value="<%= value %>" selected=<%= @user.profile ? (@user.gender == i ? true : false) : selected %>><%= i %></option>
+            <% selected = @user.profile ? (@user.gender == i ? true : false) : ((i == gender[0]) ? true : false) %>
+            <% if selected %>
+                <option value="<%= value %>" selected><%= i %></option>
+            <% else %>
+                <option value="<%= value %>"><%= i %></option>
+            <% end %>
         <% end %>
     </select><br/><br/>
     <!--<div class="radio">
