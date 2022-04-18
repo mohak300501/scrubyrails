@@ -23,7 +23,7 @@
 }
 .uform {
     font-size: 1.1rem;
-    .utextfield {
+    .utextfield, select {
         width: 25%;
         border: 0;
         border-bottom: 1px solid black;
@@ -32,9 +32,9 @@
     // .label {
     //     font-weight: bold;
     // }
-    .radio {
-        text-align: left;
-        width: 25%;
-        margin: auto;
-    }
+    // .radio {
+    //     text-align: left;
+    //     width: 25%;
+    //     margin: auto;
+    // }
 }
