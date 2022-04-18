@@ -11,21 +11,21 @@
     <select name="gender">
         <% for i in gender %>
             <% value = i %>
-            <% checked = false %>
+            <% selected = false %>
             <% if i == gender[0] %>
-                <% checked = true %>
+                <% selected = true %>
                 <% value = "" %>
             <% end %>
-            <option value="<%= value %>" checked="<%= @user.profile ? (@user.gender == i ? true : false) : checked %>"><%= i %></option>
+            <option value="<%= value %>" selected="<%= @user.profile ? (@user.gender == i ? true : false) : selected %>"><%= i %></option>
         <% end %>
     </select>
-    # <div class="radio">
-    #     <% for i in gender %>
-    #         <% checked = (i == gender[-1])? true :false %>
-    #         <%= radio_button_tag :gender, i, @user.profile ? (@user.gender == i ? true : false) : checked %>
-    #         <%= label_tag i %><br/>
-    #     <% end %><br/><br/><br/>
-    # </div>
+    <div class="radio">
+        <% for i in gender %>
+            <% checked = (i == gender[-1])? true :false %>
+            <%= radio_button_tag :gender, i, @user.profile ? (@user.gender == i ? true : false) : checked %>
+            <%= label_tag i %><br/>
+        <% end %><br/><br/><br/>
+    </div>
 
     <%= text_field_tag :age, nil, :required => true, class: "utextfield", value: @user.profile ? @user.age : '' %><br/><br/><br/>
 
