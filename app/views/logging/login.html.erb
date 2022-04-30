@@ -1,12 +1,8 @@
 <h1>Log In</h1>
 <%= form_tag login_post_path do %>
-    <div>
-        <%= email_field_tag :email, nil, :required => true, class: "utextfield", placeholder: "Your email" %><br/>
-        <%= password_field_tag :password, nil, :required => true, class: "utextfield", placeholder: "Your password" %>
-    </div>
-    <div>
-        <%= submit_tag "Log In", :class => "button" %>
-    </div>
+    <%= email_field_tag :email, nil, :required => true, class: "utextfield", placeholder: "Your email" %><br/><br/>
+    <%= password_field_tag :password, nil, :required => true, class: "utextfield", placeholder: "Your password" %><br/><br/>
+    <%= submit_tag "Log In", :class => "button" %>
 <% end %>
 <br/>
 <% flash.each do |type, msg| %>

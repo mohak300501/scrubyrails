@@ -1,6 +1,6 @@
-<%= link_to courses_path, class: "anone" do %>
-    <div class="button">Back</div>
-<% end %>
+<div class="button">
+    <%= link_to "Back", courses_path, class: "anone" do %>
+</div>
 
 <% flash.each do |type, msg| %>
     <div class="flash">

@@ -1,6 +1,6 @@
-<%= link_to root_url, class: "anone" do %>
-    <div class="button">Back</div>
-<% end %>
+<div class="button">
+    <%= link_to "Back", root_url, class: "anone" do %>
+</div>
 
 <% flash.each do |type, msg| %>
     <div class="flash">
