@@ -89,13 +89,6 @@
     margin: auto;
     justify-content: center;
 }
-.updel a {
-    text-decoration: none;
-    color: black;
-}
-.updel a:visited {
-    color: black;
-}
 .updel a + a {
     margin-left: 1rem;
 }
