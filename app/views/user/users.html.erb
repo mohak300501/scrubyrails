@@ -4,13 +4,14 @@
 
 <br/><br/>
 <%= form_tag user_sort_path do %>
-    <%= text_field_tag :country, nil, class: "textfield", placeholder: "Search by country" %><br/><br/>
-    <%= text_field_tag :state, nil, class: "textfield", placeholder: "Search by state" %><br/><br/>
-    <%= text_field_tag :pin, nil, class: "textfield", placeholder: "Search by PIN" %><br/><br/>
-    <%= text_field_tag :gender, nil, class: "textfield", placeholder: "Search by gender" %><br/><br/>
-    <%= text_field_tag :age, nil, class: "textfield", placeholder: "Search by age" %><br/><br/>
-    <%= text_field_tag :sanslevel, nil, class: "textfield", placeholder: "Search by Sanskrit Proficiency Level" %><br/><br/>
-    <%= text_field_tag :acadqual, nil, class: "textfield", placeholder: "Search by Academic Qualification" %><br/><br/>
+    <%= text_field_tag :regid, nil, class: "utextfield", placeholder: "Search by regid" %><br/><br/>
+    <%= text_field_tag :country, nil, class: "utextfield", placeholder: "Search by country" %><br/><br/>
+    <%= text_field_tag :state, nil, class: "utextfield", placeholder: "Search by state" %><br/><br/>
+    <%= text_field_tag :pin, nil, class: "utextfield", placeholder: "Search by PIN" %><br/><br/>
+    <%= text_field_tag :gender, nil, class: "utextfield", placeholder: "Search by gender" %><br/><br/>
+    <%= text_field_tag :age, nil, class: "utextfield", placeholder: "Search by age" %><br/><br/>
+    <%= text_field_tag :sanslevel, nil, class: "utextfield", placeholder: "Search by Sanskrit Proficiency Level" %><br/><br/>
+    <%= text_field_tag :acadqual, nil, class: "utextfield", placeholder: "Search by Academic Qualification" %><br/><br/>
     <%= submit_tag "अग्रेस्थापनं करोतु", :class => "button" %><br/>
 <% end %>
 

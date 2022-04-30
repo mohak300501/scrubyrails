@@ -104,6 +104,18 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1.2rem;
 }
+.utextfield, select {
+    font-size: 1.1rem;
+    width: 80%;
+    border: 0;
+    border-bottom: 1px solid black;
+    box-shadow: 0 2.5px 1px rgba(255,166,0,0.6);
+}
+@media screen and (min-width:540px) {
+    .utextfield, select {
+        width: 25%;
+    }
+}
 .flash {
     margin-top: 1rem;
     font-size: 1.1;

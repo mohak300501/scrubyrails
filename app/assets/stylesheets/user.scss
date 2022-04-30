@@ -11,6 +11,8 @@
     border-radius: 0.5rem;
     width: 90%;
     overflow-x: auto;
+    display: flex;
+    justify-content: center;
 }
 .overp {
     @media screen and (min-width:540px) {
@@ -20,30 +22,20 @@
 .users, .users th, .users td {
     border: 1px solid black;
     border-collapse: collapse;
+    padding: 0 0.4rem;
 }
 .profile {
     text-align: left;
     white-space: nowrap;
 }
-.uform {
-    .utextfield, select {
-        font-size: 1.1rem;
-        width: 80%;
-        border: 0;
-        border-bottom: 1px solid black;
-        box-shadow: 0 2.5px 1px rgba(255,166,0,0.6);
-    }
-    @media screen and (min-width:540px) {
-        .utextfield, select {
-            width: 25%;
-        }
-    }
-    // .label {
-    //     font-weight: bold;
-    // }
-    // .radio {
-    //     text-align: left;
-    //     width: 25%;
-    //     margin: auto;
-    // }
-}
+// .uform {
+    
+//     // .label {
+//     //     font-weight: bold;
+//     // }
+//     // .radio {
+//     //     text-align: left;
+//     //     width: 25%;
+//     //     margin: auto;
+//     // }
+// }

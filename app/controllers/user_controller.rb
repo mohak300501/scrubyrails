@@ -53,19 +53,16 @@ class UserController < ApplicationController
 
     def muserr
         if session[:member]
-            if request.post?
-                @users = User.where(nil)
-                @users = @users.where(country: params[:country]) if params[:country].present?
-                @users = @users.where(state: params[:state]) if params[:state].present?
-                @users = @users.where(pin: params[:pin]) if params[:pin].present?
-                @users = @users.where(gender: params[:gender]) if params[:gender].present?
-                @users = @users.where(age: params[:age]) if params[:age].present?
-                @users = @users.where(sanslevel: params[:sanslevel]) if params[:sanslevel].present?
-                @users = @users.where(acadqual: params[:acadqual]) if params[:acadqual].present?
-                @count = @users.count
-            else
-                @users = User.all
-            end
+            @users = User.where(nil)
+            @users = @users.where(regid: params[:regid]) if params[:regid].present?
+            @users = @users.where(country: params[:country]) if params[:country].present?
+            @users = @users.where(state: params[:state]) if params[:state].present?
+            @users = @users.where(pin: params[:pin]) if params[:pin].present?
+            @users = @users.where(gender: params[:gender]) if params[:gender].present?
+            @users = @users.where(age: params[:age]) if params[:age].present?
+            @users = @users.where(sanslevel: params[:sanslevel]) if params[:sanslevel].present?
+            @users = @users.where(acadqual: params[:acadqual]) if params[:acadqual].present?
+            @count = @users.count
             render "users"
         else
             redirect_to root_url

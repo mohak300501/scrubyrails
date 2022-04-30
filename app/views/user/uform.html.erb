@@ -1,6 +1,6 @@
 <h2>Please fill the following details</h2>
 
-<%= form_tag form_post_path, multipart: true, class: "uform" do %>
+<%= form_tag form_post_path, multipart: true do %>
     <%= text_field_tag :name, nil, :required => true, class: "utextfield", value: @user.name, placeholder: "Your name" %><br/><br/>
     <%= email_field_tag :email, nil, :required => true, class: "utextfield", value: @user.email, placeholder: "Your email" %><br/><br/>
 
