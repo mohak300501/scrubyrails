@@ -94,5 +94,7 @@
     </select><br/><br/>
     
     <%= submit_tag "Submit", :class => "button" %><br/>
-    <%= link_to "Cancel", profile_path %>
+    <%= link_to profile_path, class: "anone" do %>
+        <div class="button">Cancel</div>
+    <% end %>
 <% end %>

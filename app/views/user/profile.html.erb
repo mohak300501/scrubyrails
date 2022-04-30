@@ -1,4 +1,4 @@
-<%= link_to root_url do %>
+<%= link_to root_url, class: "anone" do %>
     <div class="button">Back</div>
 <% end %>
 
@@ -26,6 +26,6 @@
 <% else %>
     <b>Complete your profile now if you wish to enroll in a course.</b><br/>
 <% end %>
-<%= link_to form_path do %>
+<%= link_to form_path, class: "anone" do %>
     <div class="button">Update Profile</div>
 <% end %>

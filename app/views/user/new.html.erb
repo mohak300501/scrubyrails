@@ -2,14 +2,10 @@
 <% if !session[:otp] %>
     <%= form_tag newp_path do %>
         <div>
-            <%= label_tag :name %><br/>
-            <%= text_field_tag :name, nil, :required => true %><br/>
-            <%= label_tag :email %><br/>
-            <%= email_field_tag :email, nil, :required => true %><br/>
-            <%= label_tag :password %><br/>
-            <%= password_field_tag :password, nil, :required => true %><br/>
-            <%= label_tag "Re-enter Password" %><br/>
-            <%= password_field_tag :repass, nil, :required => true %>
+            <%= text_field_tag :name, nil, :required => true, placeholder: "Your name" %><br/>
+            <%= email_field_tag :email, nil, :required => true, placeholder: "Your email" %><br/>
+            <%= password_field_tag :password, nil, :required => true, placeholder: "Set password" %><br/>
+            <%= password_field_tag :repass, nil, :required, placeholder: "Re-enter password" => true %>
         </div>
         <div>
             <%= submit_tag "Submit", :class => "button" %>
@@ -17,8 +13,7 @@
     <% end %>
 <% else %>
     <%= form_tag otpp_path do %>
-        <%= label_tag :otp %><br/>
-        <%= text_field_tag :otp, nil, :required => true %><br/>
+        <%= text_field_tag :otp, nil, :required => true, placeholder: "Enter OTP" %><br/>
         <%= submit_tag "Submit", :class => "button" %>
     <% end %>
 <% end %>

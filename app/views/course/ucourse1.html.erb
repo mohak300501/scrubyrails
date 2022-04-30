@@ -1,4 +1,6 @@
-<%= link_to "Back", courses_path %>
+<%= link_to courses_path, class: "anone" do %>
+    <div class="button">Back</div>
+<% end %>
 
 <% flash.each do |type, msg| %>
     <div class="flash">
@@ -32,10 +34,9 @@
     <% if @user_regd > 0 %>
         <div><b>You are registered in this course.</b></div>
     <% else %>
-        <div class="updel">
-            <%= link_to "../../course/" + i.cname + "/reg", :confirm => "Are you sure you want to register for this course?" do %>
-                <div class="button">Register</div>
-            <% end %>
-        </div>
+        <%= link_to "../../course/" + i.cname + "/reg", class: "anone",
+            :confirm => "Are you sure you want to register for this course?" do %>
+            <div class="button">Register</div>
+        <% end %>
     <% end %>
 </div>

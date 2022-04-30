@@ -22,20 +22,4 @@
         width: 90%;
         text-align: left;
     }
-    .updel {
-        display: flex;
-        margin: auto;
-        justify-content: center;
-
-        a {
-            text-decoration: none;
-            color: black;
-        }
-        a:visited {
-            color: black;
-        }
-        a + a {
-            margin-left: 1rem;
-        }
-    }
 }

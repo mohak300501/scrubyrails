@@ -12,10 +12,8 @@
             <p><%= i.description.html_safe %></p>
         </div>
 
-        <div class="updel">
-            <%= link_to "../course/" + i.cname + "/uview" do %>
-                <div class="button">Read more</div>
-            <% end %>
-        </div>
+        <%= link_to "../course/" + i.cname + "/uview", class: "anone" do %>
+            <div class="button">Read more</div>
+        <% end %>
     </div>
 <% end %>

@@ -23,10 +23,10 @@
 
         <% path = "../course/" + i.id.to_s %>
         <div class="updel">
-            <%= link_to path do %>
+            <%= link_to path, class: "anone" do %>
                 <div class="button">परिवर्तयतु</div>
             <% end %>
-            <%= link_to path + "/del" do %>
+            <%= link_to path + "/del", class: "anone" do %>
                 <div class="button">विनश्यतु</div>
             <% end %>
         </div>
