@@ -30,7 +30,7 @@
     </select><br/><br/>
 
     <%= text_field_tag :state, nil, :required => true, class: "utextfield", value: @user.profile ? @user.state : '', placeholder: "Your state" %><br/><br/>
-    <%= text_field_tag :pin, nil, :required => true, class: "utextfield", value: @user.profile ? @user.pin : '', placeholder: "Your PIN code" %><br/><br/>
+    <%= number_field_tag :pin, nil, :required => true, class: "utextfield", value: @user.profile ? @user.pin : '', placeholder: "Your PIN code" %><br/><br/>
     
     <% gender = ["Male", "Female", "Other"] %>
     <select name="gender" required>
@@ -56,7 +56,7 @@
         <% end %><br/><br/><br/>
     </div>-->
 
-    <%= text_field_tag :age, nil, :required => true, class: "utextfield", value: @user.profile ? @user.age : '' %><br/><br/>
+    <%= number_field_tag :age, nil, :required => true, class: "utextfield", value: @user.profile ? @user.age : '' %><br/><br/>
     <%= text_field_tag :mobile, nil, :required => true, class: "utextfield", value: @user.profile ? @user.mobile : '' %><br/><br/>
 
     <% sanslevel = ["Spoken Sanskrit Class", "Subhashitam Sanskritam Course IITR", "Other course", "No prior experience"] %>
