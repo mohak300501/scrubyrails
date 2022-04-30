@@ -1,5 +1,5 @@
 <div class="button">
-    <%= link_to "Back", root_url, class: "anone" do %>
+    <%= link_to "Back", root_url, class: "anone" %>
 </div>
 
 <% flash.each do |type, msg| %>
@@ -26,6 +26,6 @@
 <% else %>
     <b>Complete your profile now if you wish to enroll in a course.</b><br/>
 <% end %>
-<%= link_to form_path, class: "anone" do %>
-    <div class="button">Update Profile</div>
-<% end %>
+<div class="button">
+    <%= link_to "Update Profile", form_path, class: "anone" %>
+</div>
