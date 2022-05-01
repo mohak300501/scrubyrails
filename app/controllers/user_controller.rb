@@ -56,7 +56,7 @@ class UserController < ApplicationController
             @users = User.where(nil)
             keys = ["regid", "country", "state", "pin", "gender", "age", "sanslevel", "acadqual"]
             for i in keys
-                @users = @users.filter_by_(i, "%"+params[i]+"%") if params[i].present?
+                @users = @users.filter_by_(i, params[i]) if params[i].present?
                 # @users = @users.filter_by_(regid, params[:regid]) if params[:regid].present?
                 # @users = @users.filter_by_(country, params[:country]) if params[:country].present?
                 # @users = @users.filter_by_(state, params[:state]) if params[:state].present?
