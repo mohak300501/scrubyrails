@@ -9,8 +9,7 @@
     <%= text_area_tag :cname, @course.cname, :required => true, class: "mtextarea-1" %><br/><br/>
     <%= label_tag "description" %><br/>
     <%= text_area_tag :description, @course.description, :required => true, class: "mtextarea-2" %><br/><br/>
-    <!--<%= label_tag "current image" %><br/>
-    <img src="<%= rails_blob_url(@course.image) %>" /><br/><br/>-->
+    
     <%= label_tag "change image" %><br/>
     <%= file_field_tag :image %><br/><br/>
 
