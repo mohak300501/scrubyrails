@@ -48,6 +48,7 @@ class CourseController < ApplicationController
             ActiveRecord::Base.connection.execute("alter table " + course.cname + " rename to " + params[:cname] + ";")
         end
         course.update(:name => params[:name], :cname => params[:cname], :description => params[:description])
+        course.update(:image => params[:image]) if params[:image].present?
         flash[:notice] = "CourseH परिवर्तितः जातः!"
         redirect_to all_courses_path
     end
