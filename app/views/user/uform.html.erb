@@ -56,10 +56,10 @@
         <% end %><br/><br/><br/>
     </div>-->
 
-    <%= number_field_tag :age, nil, :required => true, class: "utextfield", value: @user.profile ? @user.age : '' %><br/><br/>
-    <%= text_field_tag :mobile, nil, :required => true, class: "utextfield", value: @user.profile ? @user.mobile : '' %><br/><br/>
+    <%= number_field_tag :age, nil, :required => true, class: "utextfield", value: @user.profile ? @user.age : '', placeholder: "Your age" %><br/><br/>
+    <%= text_field_tag :mobile, nil, :required => true, class: "utextfield", value: @user.profile ? @user.mobile : '', placeholder: "Your mobile number" %><br/><br/>
 
-    <% sanslevel = ["Spoken Sanskrit Class", "Subhashitam Sanskritam Course IITR", "Other course", "No prior experience"] %>
+    <% sanslevel = ["Spoken Sanskrit Class", "Subhashitam Sanskritam Course IITR", "Kovida or equivalent", "Other course", "No prior experience"] %>
     <select name="sanslevel" required>
         <% if @user.profile %>
             <option value="" disabled>-- Sanskrit proficiency level --</option>
