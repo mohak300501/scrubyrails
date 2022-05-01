@@ -49,8 +49,8 @@ class CourseController < ApplicationController
         end
         course.update(:name => params[:name], :cname => params[:cname], :description => params[:description])
         if params[:image].present?
-            # course.image.destroy if 
-            course.update(:image => params[:image])
+            course.image.purge
+            course.attach(params[:image])
         end
         flash[:notice] = "CourseH परिवर्तितः जातः!"
         redirect_to all_courses_path
