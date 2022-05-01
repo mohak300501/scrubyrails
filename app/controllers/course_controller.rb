@@ -49,7 +49,7 @@ class CourseController < ApplicationController
         end
         course.update(:name => params[:name], :cname => params[:cname], :description => params[:description])
         if params[:image].present?
-            course.image = nil
+            course.image.destroy
             course.update(:image => params[:image])
         end
         flash[:notice] = "CourseH परिवर्तितः जातः!"
