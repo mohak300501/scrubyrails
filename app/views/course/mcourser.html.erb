@@ -1,19 +1,15 @@
 
 <%= link_to "add new course", new_course_path %><br/>
 
-<% flash.each do |type, msg| %>
-    <div class="flash">
-        <%= msg %>
-    </div>
-<% end %>
-
 <% for i in @courses do %>
     <div class="courses">
         <div class="title">
             <%= i.name %><br/>
         </div>
 
-        
+        <div>
+            <img src="<%= rails_blob_url(i.image) %>" />
+        </div>
 
         <div class="info">
             <p><%= i.description.html_safe %></p>

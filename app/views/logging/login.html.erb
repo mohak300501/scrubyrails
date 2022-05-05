@@ -5,12 +5,7 @@
     <%= submit_tag "Log In", :class => "button" %>
 <% end %>
 <br/>
-<% flash.each do |type, msg| %>
-    <div class="flash">
-        <%= msg %>
-    </div>
-<% end %>
-<br/>
+
 <% if session[:moru] == "user" %>
     New user? <%= link_to "Sign up", new_path %> instead.
 <% end %>

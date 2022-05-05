@@ -2,14 +2,6 @@
 
 <%= link_to "नूतनः श्लोकः योजयतु", new_shlok_path %>
 
-<% flash.each do |type, msg| %>
-    <div class="flash">
-        <%= msg %>
-    </div>
-<% end %>
-
-<br/><br/>
-
 <% for i in @shloks do %>
     <%= content_tag :div, class: "shloks" do %>
         <div class="title">

@@ -61,6 +61,12 @@
             </div>
         <% end %>
 
+        <% flash.each do |type, msg| %>
+            <div class="flash">
+                <%= msg %>
+            </div>
+        <% end %>
+        
         <%= yield %>
 
         <div class="footer">

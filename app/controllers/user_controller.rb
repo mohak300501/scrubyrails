@@ -27,7 +27,7 @@ class UserController < ApplicationController
                 otp = SecureRandom.random_number(999999)
                 session[:otp] = otp
                 OtpMailer.with(otp: otp, email: params[:email]).otp_mail.deliver_later
-                flash[:alert] = "The OTP has been sent to the above email address. Please enter it the OTP field."
+                flash[:alert] = "The OTP has been sent to the above email address. Please enter it in the OTP field."
                 redirect_to new_path
             else
                 flash[:notice] = "Passwords do not match."

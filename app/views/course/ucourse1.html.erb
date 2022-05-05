@@ -2,12 +2,6 @@
     <%= link_to "Back", courses_path, class: "anone" %>
 </div>
 
-<% flash.each do |type, msg| %>
-    <div class="flash">
-        <%= msg %>
-    </div>
-<% end %>
-
 <% i = @course %>
 <div class="courses">
     <div class="title">

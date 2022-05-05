@@ -2,14 +2,6 @@
 
 <%= link_to "नूतना घटना योजयतु", new_event_path %>
 
-<% flash.each do |type, msg| %>
-    <div class="flash">
-        <%= msg %>
-    </div>
-<% end %>
-
-<br/><br/>
-
 <% for i in @events do %>
     <div class="events">
         <div class="title">
