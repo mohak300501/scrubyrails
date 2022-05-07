@@ -13,7 +13,7 @@
             "Seychelles", "Singapore", "Solomon Islands", "South Africa", "South Korea", "Spain", "Sri Lanka", "Sweden",
             "Switzerland", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Tunisia", "Turkey", "Uganda", "Ukraine",
             "United Arab Emirates", "United Kingdom", "United States", "Uzbekistan", "Venezuela", "Vietnam", "Virgin Islands"] %>
-    <select name="country" required>
+    <!--<select name="country" required>
         <% if @user.profile %>
             <option value="" disabled>-- Choose country --</option>
         <% else %>
@@ -27,7 +27,9 @@
                 <option value="<%= i %>"><%= i %></option>
             <% end %>
         <% end %>
-    </select><br/><br/>
+    </select>-->
+    <%= f.select :country, country, :include_blank => "-- Choose country --" %>
+    <br/><br/>
 
     <%= f.text_field :state, :required => true, class: "utextfield", placeholder: "Your state" %><br/><br/>
     <%= f.number_field :pin, :required => true, class: "utextfield", placeholder: "Your PIN code" %><br/><br/>
