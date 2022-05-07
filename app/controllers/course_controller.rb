@@ -37,13 +37,14 @@ class CourseController < ApplicationController
         if session[:member]
             @course = Course.find(params[:id])
             if request.patch?
-                if !(@course.cname == params[:cname])
-                    ActiveRecord::Base.connection.execute("alter table " + @course.cname + " rename to " + params[:cname] + ";")
+                pp = params[:course]
+                if !(@course.cname == pp[:cname])
+                    ActiveRecord::Base.connection.execute("alter table " + @course.cname + " rename to " + pp[:cname] + ";")
                 end
-                @course.update(:name => params[:name], :cname => params[:cname], :description => params[:description])
-                if params[:image].present?
+                @course.update(:name => pp[:name], :cname => pp[:cname], :description => pp[:description])
+                if pp[:image].present?
                     @course.image.purge
-                    @course.image.attach(params[:image])
+                    @course.image.attach(pp[:image])
                 end
                 flash[:notice] = "CourseH परिवर्तितः जातः!"
                 redirect_to all_courses_path
