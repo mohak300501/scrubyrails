@@ -28,7 +28,7 @@
             <% end %>
         <% end %>
     </select> -->
-    <%= f.select :country, country, {selected: "", prompt: "-- Choose county --", disabled: ""}, required => true %>
+    <%= f.select :country, country, {selected: "", prompt: "-- Choose county --", disabled: ""}, :required => true %>
     <br/><br/>
 
     <%= f.text_field :state, :required => true, class: "utextfield", placeholder: "Your state" %><br/><br/>
