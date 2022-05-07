@@ -92,11 +92,12 @@ class UserController < ApplicationController
     end
 
     def uformp
-        user = User.find_by(email: session[:email])
-        user.update(:name => params[:name], :email => params[:email], :profile => true, :country => params[:country],
-                    :state => params[:state], :pin => params[:pin], :gender => params[:gender], :age => params[:age],
-                    :mobile => params[:mobile], :sanslevel => params[:sanslevel], :acadqual => params[:acadqual])
-        session[:email] = params[:email]
+        user = @user
+        pp = params[:user]
+        user.update(:name => pp[:name], :email => pp[:email], :profile => true, :country => pp[:country],
+                    :state => pp[:state], :pin => pp[:pin], :gender => pp[:gender], :age => pp[:age],
+                    :mobile => pp[:mobile], :sanslevel => pp[:sanslevel], :acadqual => pp[:acadqual])
+        session[:email] = pp[:email] if session[:email] != pp[:email]
         flash[:alert] = "Profile updated!"
         redirect_to profile_path
     end
