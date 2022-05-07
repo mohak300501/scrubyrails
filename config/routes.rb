@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     post "user/muserr", as:"user_sort"
     get "user/:id/del", to:"user#muserdp"
     get "user/uform", as:"form"
-    post "user/uformp", as:"form_post"
+    patch "user/uformp", as:"form_post"
     
     get "welcome/mhomer", as:"home"
     get "welcome/mhomec", as:"new_home"
