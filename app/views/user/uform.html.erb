@@ -28,7 +28,7 @@
             <% end %>
         <% end %>
     </select> -->
-    <%= f.select :country, country, :include_blank => "-- Choose county --" %>
+    <%= f.select :country, country, :include_blank => "-- Choose county --", :disabled => "" %>
     <br/><br/>
 
     <%= f.text_field :state, :required => true, class: "utextfield", placeholder: "Your state" %><br/><br/>
