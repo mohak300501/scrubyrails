@@ -1,5 +1,11 @@
 class UserController < ApplicationController
     require 'securerandom'
+    before_filter :set_user_variable
+
+    def set_user_variable
+        @user ||= User.find(session[:user_id]) if session[:user_id].present?
+    end
+
     def profile
         if session[:user]
             @user = User.find_by(email: session[:email])
@@ -77,7 +83,7 @@ class UserController < ApplicationController
 
     def uform
         if session[:user]
-            @form_post = User.find_by(email: session[:email])
+            @user = User.find_by(email: session[:email])
             render "uform"
         else
             flash[:alert] = "Please login as user first!"

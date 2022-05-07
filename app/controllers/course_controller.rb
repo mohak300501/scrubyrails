@@ -35,7 +35,7 @@ class CourseController < ApplicationController
 
     def mcourseu
         if session[:member]
-            @mcourseu = Course.find(params[:id])
+            @course = Course.find(params[:id])
             render "mcourseu"
         else
             redirect_to root_url

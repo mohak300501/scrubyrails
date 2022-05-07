@@ -1,6 +1,6 @@
 <h2>Please fill the following details</h2>
 
-<%= form_for @form_post, multipart: true do |f| %>
+<%= form_for @user, url: form_post_path, multipart: true do |f| %>
     <%= f.text_field :name, class: "utextfield", placeholder: "Your name" %><br/><br/>
     <%= f.email_field :email, class: "utextfield", placeholder: "Your email" %><br/><br/>
 
