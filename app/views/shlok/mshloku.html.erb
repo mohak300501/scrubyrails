@@ -1,22 +1,20 @@
-<div><b>नमस्ते</b></div>
-
 <h1>श्लोक-परिवर्तनं करोतु</h1>
 
 <%= form_for @shlok, url: shlok_update_path do |f| %>
-    <div>
-        <%= f.label "शीर्षकं" %><br/>
-        <%= f.text_field :title, :required => true, class: "mtextfield" %><br/>
-        <%= f.label "श्लोकः" %><br/>
-        <%= f.text_area :shlok, :required => true, class: "mtextarea-1" %><br/>
-        <%= f.label "अनुवादः" %><br/>
-        <%= f.text_area :translation, :required => true, class: "mtextarea-2" %>
-        <%= f.label "current audio" %><br/>
-        <audio src="<%= rails_blob_url(@shlok.audio) %>" /><br/><br/>
-        <%= f.label "change audio" %><br/>
-        <%= f.file_field :audio %><br/><br/>
+    <%= f.label "शीर्षकं" %><br/>
+    <%= f.text_field :title, :required => true, class: "mtextfield" %><br/>
+    <%= f.label "श्लोकः" %><br/>
+    <%= f.text_area :shlok, :required => true, class: "mtextarea-1" %><br/>
+    <%= f.label "अनुवादः" %><br/>
+    <%= f.text_area :translation, :required => true, class: "mtextarea-2" %>
+    <%= f.label "current audio" %><br/>
+    <audio src="<%= rails_blob_url(@shlok.audio) %>" /><br/><br/>
+    <%= f.label "change audio" %><br/>
+    <%= f.file_field :audio %><br/><br/>
+
+    <%= submit_tag "अग्रेस्थापनं करोतु", :class => "button" %><br/>
+    <div class="button">
+        <%= link_to "प्रतिगच्छतु", all_shloks_path, class: "anone" %>
     </div>
-    <div>
-        <%= submit_tag "अग्रेस्थापनं करोतु", :class => "button" %><br/>
-        <%= link_to "प्रतिगच्छतु", all_shloks_path %>
-    </div>
+
 <% end %>

@@ -1,6 +1,6 @@
-<div><b>नमस्ते</b></div>
-
-<%= link_to "नूतनः श्लोकः योजयतु", new_shlok_path %>
+<div class="button">
+    <%= link_to "नूतनः श्लोकः योजयतु", new_shlok_path, class: "anone" %>
+</div>
 
 <% for i in @shloks do %>
     <%= content_tag :div, class: "shloks" do %>

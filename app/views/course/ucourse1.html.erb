@@ -1,9 +1,9 @@
-<div class="button">
-    <%= link_to "Back", courses_path, class: "anone" %>
-</div>
-
 <% i = @course %>
 <div class="courses">
+    <div class="button">
+        <%= link_to "Back", courses_path, class: "anone" %>
+    </div>
+
     <div class="title">
         <%= i.name %><br/>
     </div>
@@ -13,16 +13,11 @@
     </div>
 
     <div class="info">
-        <p><%= i.description.html_safe %><br/>
-            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum <br/>
-            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum <br/>
-            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum <br/>
-            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum <br/>
-            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum <br/>
-            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum <br/>
-            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum <br/>
-            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum <br/>
-        </p>
+        <%= i.description.html_safe %>
+    </div>
+
+    <div class="info">
+        <%= i.more.html_safe %>
     </div>
 
     <% if @user_regd > 0 %>

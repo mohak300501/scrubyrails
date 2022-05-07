@@ -1,20 +1,19 @@
-<div><b>नमस्ते</b></div>
-
-<h1>नूतनः श्लोकः योजयतु</h1>
+<h1>नूतनः courseH योजयतु</h1>
 
 <%= form_tag course_post_path, multipart: true do %>
-    <div>
-        <%= label_tag "शीर्षकं" %><br/>
-        <%= text_field_tag :name, nil, :required => true, class: "mtextfield" %><br/><br/>
-        <%= label_tag "course code" %><br/>
-        <%= text_field_tag :cname, nil, :required => true, class: "mtextfield" %><br/><br/>
-        <%= label_tag "image" %><br/>
-        <%= file_field_tag :image, :required => true %><br/><br/>
-        <%= label_tag "description" %><br/>
-        <%= text_area_tag :description, nil, :required => true, class: "mtextarea-1" %><br/><br/>
-    </div>
-    <div>
-        <%= submit_tag "submit", :class => "button" %><br/>
-        <%= link_to "cancel", all_courses_path %>
+    <%= label_tag "शीर्षकं" %><br/>
+    <%= text_field_tag :name, nil, :required => true, class: "mtextfield" %><br/><br/>
+    <%= label_tag "course code" %><br/>
+    <%= text_field_tag :cname, nil, :required => true, class: "mtextfield" %><br/><br/>
+    <%= label_tag "image" %><br/>
+    <%= file_field_tag :image, :required => true %><br/><br/>
+    <%= label_tag "description" %><br/>
+    <%= text_area_tag :description, nil, :required => true, class: "mtextarea-1" %><br/><br/>
+    <%= label_tag "more info" %><br/>
+    <%= text_area_tag :more, nil, :required => true, class: "mtextarea-2" %><br/><br/>
+
+    <%= submit_tag "submit", :class => "button" %><br/>
+    <div class="button">
+        <%= link_to "cancel", all_courses_path, class: "anone" %>
     </div>
 <% end %>
