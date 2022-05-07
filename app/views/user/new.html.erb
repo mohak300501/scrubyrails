@@ -14,10 +14,4 @@
     <% end %>
 <% end %>
 <br/>
-<% flash.each do |type, msg| %>
-    <div class="flash">
-        <%= msg %>
-    </div>
-<% end %>
-<br/>
 Already signed up? Proceed to <%= link_to "Login", user_login_path %>.

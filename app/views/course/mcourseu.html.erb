@@ -2,18 +2,18 @@
 
 <h1>Course-परिवर्तनं करोतु</h1>
 
-<%= form_tag '../course/' + @course.id.to_s + '/up', multipart: true do %>
-    <%= label_tag "शीर्षकं" %><br/>
-    <%= text_field_tag :name, @course.name, :required => true, class: "mtextfield" %><br/><br/>
-    <%= label_tag "course code" %><br/>
-    <%= text_area_tag :cname, @course.cname, :required => true, class: "mtextarea-1" %><br/><br/>
-    <%= label_tag "description" %><br/>
-    <%= text_area_tag :description, @course.description, :required => true, class: "mtextarea-2" %><br/><br/>
-    <%= label_tag "current image" %><br/>
+<%= form_for @course, multipart: true do |f| %>
+    <%= f.label "शीर्षकं" %><br/>
+    <%= f.text_field :name, :required => true, class: "mtextfield" %><br/><br/>
+    <%= f.label "course code" %><br/>
+    <%= f.text_area :cname, :required => true, class: "mtextarea-1" %><br/><br/>
+    <%= f.label "description" %><br/>
+    <%= f.text_area :description, :required => true, class: "mtextarea-2" %><br/><br/>
+    <%= f.label "current image" %><br/>
     <img src="<%= rails_blob_url(@course.image) %>", class="img-50" /><br/><br/>
-    <%= label_tag "change image" %><br/>
-    <%= file_field_tag :image %><br/><br/>
+    <%= f.label "change image" %><br/>
+    <%= f.file_field :image %><br/><br/>
 
-    <%= submit_tag "अग्रेस्थापनं करोतु", :class => "button" %><br/>
-    <%= link_to "प्रतिगच्छतु", all_courses_path %>
+    <%= f.submit "अग्रेस्थापनं करोतु", :class => "button" %><br/>
 <% end %>
+<%= link_to "प्रतिगच्छतु", all_courses_path %>

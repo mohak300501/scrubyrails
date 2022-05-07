@@ -33,7 +33,7 @@ Rails.application.routes.draw do
     get "course/mcoursec", as:"new_course"
     post "course/mcoursecp", as:"course_post"
     get "course/:id", to:"course#mcourseu"
-    post "course/:id/up", to:"course#mcourseup"
+    patch "course/:id", to:"course#mcourseup"
     get "course/:id/del", to:"course#mcoursedp"
     get "course/:cname/uview", to:"course#ucourse1"
     get "course/:cname/mview", to:"course#mcourse1"
