@@ -36,28 +36,26 @@ class CourseController < ApplicationController
     def mcourseu
         if session[:member]
             @course = Course.find(params[:id])
-            if request.patch?
-                pp = params[:course]
-                if !(@course.cname == pp[:cname])
-                    ActiveRecord::Base.connection.execute("alter table " + @course.cname + " rename to " + pp[:cname] + ";")
-                end
-                @course.update(:name => pp[:name], :cname => pp[:cname], :description => pp[:description])
-                if pp[:image].present?
-                    @course.image.purge
-                    @course.image.attach(pp[:image])
-                end
-                flash[:notice] = "CourseH परिवर्तितः जातः!"
-                redirect_to all_courses_path
-            end
+            render "mcourseu"
         else
             redirect_to root_url
         end
     end
 
-    # def mcourseup
-    #     course = Course.find(params[:id])
-        
-    # end
+    def mcourseup
+        course = Course.find(params[:id])
+        pp = params[:course]
+        if !(course.cname == pp[:cname])
+            ActiveRecord::Base.connection.execute("alter table " + course.cname + " rename to " + pp[:cname] + ";")
+        end
+        course.update(:name => pp[:name], :cname => pp[:cname], :description => pp[:description])
+        if pp[:image].present?
+            course.image.purge
+            course.image.attach(pp[:image])
+        end
+        flash[:notice] = "CourseH परिवर्तितः जातः!"
+        redirect_to all_courses_path
+    end
 
     def mcoursedp
         if session[:member]
