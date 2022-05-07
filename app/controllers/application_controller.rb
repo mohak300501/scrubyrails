@@ -3,11 +3,11 @@ class ApplicationController < ActionController::Base
     def visit_count
         session[:visit] ||= 0
         session[:visit] += 1
-        visits = Visit.first
-        vc = visits.id
+        var = Bgvar.first
+        vc = var.visits
         if session[:visit] == 1
             vc += 1
-            visits.update(:id => vc)
+            var.update(:visits => vc)
         end
         session[:vc] = vc
     end

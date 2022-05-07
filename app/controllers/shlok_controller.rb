@@ -40,8 +40,13 @@ class ShlokController < ApplicationController
 
     def mshlokup
         shlok = Shlok.find(params[:id])
-        shlok.update(:title => params[:title], :shlok => params[:shlok], :translation => params[:translation],
+        pp = params[:shlok]
+        shlok.update(:title => pp[:title], :shlok => pp[:shlok], :translation => pp[:translation],
                         :updated_by => session[:email])
+        if pp[:audio].present?
+            shlok.audio.purge
+            shlok.audio.attach(pp[:audio])
+        end
         flash[:notice] = "श्लोकः परिवर्तितः जातः!"
         redirect_to all_shloks_path
     end

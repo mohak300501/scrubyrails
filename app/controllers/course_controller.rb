@@ -91,21 +91,17 @@ class CourseController < ApplicationController
                 if user_regd > 0
                     redirect_to "/../../course/" + table + "/uview"
                 else
-                    screg = ""
+                    user_regid = ""
                     if user.regid.nil?
-                        pcount = ActiveRecord::Base.connection.execute("select count(*) from " + table + ";")[0]["count"]
-                        if pcount == 0
-                            screg = "SC00001"
-                        else
-                            last = ActiveRecord::Base.connection.execute("select regid from " + table + " order by regid desc limit 1;")[0]["regid"]
-                            screg = last[0..2] + (last[2..-1].to_i + 1).to_s.rjust(4, "0")
-                        end
-                        user.update(:regid => screg)
+                        last_regid = Bgvar.first.regid
+                        user_regid = last_regid[0..2] + (last_regid[2..-1].to_i + 1).to_s.rjust(4, "0")
+                        last_regid = user_regid
+                        user.update(:regid => user_regid)
                     else
-                        screg = user.regid
+                        user_regid = user.regid
                     end
                     pid = user.id
-                    query = "insert into " + table + "(pid, regid, email) values(" + pid.to_s + ", '" + screg + "', '" + email + "');"
+                    query = "insert into " + table + "(pid, regid, email) values(" + pid.to_s + ", '" + user_regid + "', '" + email + "');"
                     ActiveRecord::Base.connection.execute(query)
                     if user.courses.nil?
                         user.courses = table

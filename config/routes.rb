@@ -33,7 +33,7 @@ Rails.application.routes.draw do
     get "course/mcoursec", as:"new_course"
     post "course/mcoursecp", as:"course_post"
     get "course/:id", to:"course#mcourseu"
-    patch "course/:id", to:"course#mcourseup", as:"course"
+    patch "course/:id", to:"course#mcourseup", as:"course_update"
     get "course/:id/del", to:"course#mcoursedp"
     get "course/:cname/uview", to:"course#ucourse1"
     get "course/:cname/mview", to:"course#mcourse1"
@@ -48,7 +48,7 @@ Rails.application.routes.draw do
     get "shlok/mshlokc", as:"new_shlok"
     post "shlok/mshlokcp", as:"shlok_post"
     get "shlok/:id", to:"shlok#mshloku"
-    post "shlok/:id", to:"shlok#mshlokup"
+    patch "shlok/:id", to:"shlok#mshlokup", as:"shlok_update"
     get "shlok/:id/del", to:"shlok#mshlokdp"
 
     get "event/uevent", as:"events"

@@ -2,7 +2,7 @@
 
 <h1>Course-परिवर्तनं करोतु</h1>
 
-<%= form_for @mcourseu, multipart: true do |f| %>
+<%= form_for @mcourseu, url: course_update_path, multipart: true do |f| %>
     <%= f.label "शीर्षकं" %><br/>
     <%= f.text_field :name, :required => true, class: "mtextfield" %><br/><br/>
     <%= f.label "course code" %><br/>
