@@ -36,7 +36,7 @@ class CourseController < ApplicationController
     def mcourseu
         if session[:member]
             @course = Course.find(params[:id])
-            if request.put?
+            if request.patch?
                 if !(@course.cname == params[:cname])
                     ActiveRecord::Base.connection.execute("alter table " + @course.cname + " rename to " + params[:cname] + ";")
                 end
