@@ -1,8 +1,8 @@
 <h2>Please fill the following details</h2>
 
-<%= form_tag form_post_path, multipart: true do %>
-    <%= text_field_tag :name, nil, :required => true, class: "utextfield", value: @user.name, placeholder: "Your name" %><br/><br/>
-    <%= email_field_tag :email, nil, :required => true, class: "utextfield", value: @user.email, placeholder: "Your email" %><br/><br/>
+<%= form_for @form_post, multipart: true do |f| %>
+    <%= f.text_field :name, class: "utextfield", placeholder: "Your name" %><br/><br/>
+    <%= f.email_field :email, class: "utextfield", placeholder: "Your email" %><br/><br/>
 
     <% country = ["Argentina", "Australia", "Austria", "Bahrain", "Bangladesh", "Belgium", "Botswana", "Brazil", "Bulgaria",
             "Cambodia", "Canada", "Chile", "China", "Colombia", "Costa Rica", "Denmark", "Egypt", "Fiji", "Finland", "France",
@@ -29,8 +29,8 @@
         <% end %>
     </select><br/><br/>
 
-    <%= text_field_tag :state, nil, :required => true, class: "utextfield", value: @user.profile ? @user.state : '', placeholder: "Your state" %><br/><br/>
-    <%= number_field_tag :pin, nil, :required => true, class: "utextfield", value: @user.profile ? @user.pin : '', placeholder: "Your PIN code" %><br/><br/>
+    <%= f.text_field :state, :required => true, class: "utextfield", placeholder: "Your state" %><br/><br/>
+    <%= f.number_field :pin, :required => true, class: "utextfield", placeholder: "Your PIN code" %><br/><br/>
     
     <% gender = ["Male", "Female", "Other"] %>
     <select name="gender" required>
@@ -56,8 +56,8 @@
         <% end %><br/><br/><br/>
     </div>-->
 
-    <%= number_field_tag :age, nil, :required => true, class: "utextfield", value: @user.profile ? @user.age : '', placeholder: "Your age" %><br/><br/>
-    <%= text_field_tag :mobile, nil, :required => true, class: "utextfield", value: @user.profile ? @user.mobile : '', placeholder: "Your mobile number" %><br/><br/>
+    <%= f.number_field :age, :required => true, class: "utextfield", placeholder: "Your age" %><br/><br/>
+    <%= f.text_field :mobile, :required => true, class: "utextfield", placeholder: "Your mobile number" %><br/><br/>
 
     <% sanslevel = ["Spoken Sanskrit Class", "Subhashitam Sanskritam Course IITR", "Kovida or equivalent", "Other course", "No prior experience"] %>
     <select name="sanslevel" required>
@@ -93,7 +93,7 @@
         <% end %>
     </select><br/><br/>
     
-    <%= submit_tag "Submit", :class => "button" %><br/>
+    <%= f.submit "Submit", :class => "button" %><br/>
     <div class="button">
         <%= link_to "Back", profile_path, class: "anone" %>
     </div>

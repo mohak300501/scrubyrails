@@ -77,7 +77,7 @@ class UserController < ApplicationController
 
     def uform
         if session[:user]
-            @user = User.find_by(email: session[:email])
+            @form_post = User.find_by(email: session[:email])
             render "uform"
         else
             flash[:alert] = "Please login as user first!"
