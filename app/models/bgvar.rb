@@ -1,0 +1,2 @@
+class Bgvar < ApplicationRecord
+end
