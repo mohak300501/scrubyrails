@@ -4,7 +4,7 @@
     <%= f.text_field :name, class: "utextfield", placeholder: "Your name" %><br/><br/>
     <%= f.email_field :email, class: "utextfield", placeholder: "Your email" %><br/><br/>
 
-    <% country = ["Argentina", "Australia", "Austria", "Bahrain", "Bangladesh", "Belgium", "Botswana", "Brazil", "Bulgaria",
+    <% country = [["-- Choose county --", ""],"Argentina", "Australia", "Austria", "Bahrain", "Bangladesh", "Belgium", "Botswana", "Brazil", "Bulgaria",
             "Cambodia", "Canada", "Chile", "China", "Colombia", "Costa Rica", "Denmark", "Egypt", "Fiji", "Finland", "France",
             "Germany", "Guyana", "Hong Kong", "Hungary", "India", "Indonesia", "Iraq", "Ireland", "Israel", "Italy", "Japan",
             "Jordan", "Kazakhstan", "Kenya", "Kuwait", "Lithuania", "Luzemborg", "Madagaskar", "Malaysia", "Mali", "Mauritius",
@@ -28,7 +28,7 @@
             <% end %>
         <% end %>
     </select> -->
-    <%= f.select :country, country, {prompt: "-- Choose county --", disabled: ""}, :required => true %>
+    <%= f.select :country, country, :disabled => "", :required => true %>
     <br/><br/>
 
     <%= f.text_field :state, :required => true, class: "utextfield", placeholder: "Your state" %><br/><br/>
