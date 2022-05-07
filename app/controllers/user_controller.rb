@@ -92,7 +92,7 @@ class UserController < ApplicationController
     end
 
     def uformp
-        user = @user
+        user = User.find_by(email: session[:email])
         pp = params[:user]
         user.update(:name => pp[:name], :email => pp[:email], :profile => true, :country => pp[:country],
                     :state => pp[:state], :pin => pp[:pin], :gender => pp[:gender], :age => pp[:age],
