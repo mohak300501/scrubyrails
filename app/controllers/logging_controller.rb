@@ -26,6 +26,8 @@ class LoggingController < ApplicationController
         if moru
             if params[:email] == Rails.application.credentials.member[:MEMBER_EMAIL] and ifmoru
                 flash[:notice] = Rails.application.credentials.member[:MEMBER_MESSAGE].split("/").join(" ")
+                session.delete(:member)
+                session.delete(:email)
                 redirect_to member_login_path
             else
                 flash[:notice] = "Email already registered."
@@ -50,17 +52,21 @@ class LoggingController < ApplicationController
         if params[:otp].to_i == session[:otp]
             nmoru = session[:new_moru]
             ifmoru = session[:moru] == "member" ? true : false
-            if ifmoru
-                user = User.new(:name => nmoru["name"], :email => nmoru["email"], :password => nmoru["password"])
-                user.save
-            else
-                member = Member.new(:name => nmoru["name"], :email => nmoru["email"], :password => nmoru["password"])
-                member.save
-            end
             session.delete(:otp)
             session.delete(:new_moru)
-            flash[:notice] = "Registered successfully! Login to continue."
-            redirect_to ifmoru ? member_login_path : user_login_path
+            if ifmoru
+                member = Member.new(:name => nmoru["name"], :email => nmoru["email"], :password => nmoru["password"])
+                member.save
+                flash[:notice] = "Registered successfully! Login to continue."
+                session.delete(:member)
+                session.delete(:email)
+                redirect_to member_login_path
+            else
+                user = User.new(:name => nmoru["name"], :email => nmoru["email"], :password => nmoru["password"])
+                user.save
+                flash[:notice] = "Registered successfully! Login to continue."
+                redirect_to user_login_path
+            end 
         else
             flash[:alert] = "OTP does not match. Please re-enter carefully."
             redirect_to ifmoru ? new_member_path : new_user_path
