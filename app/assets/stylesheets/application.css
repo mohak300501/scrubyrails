@@ -130,6 +130,9 @@
     .utextfield, select {
         width: 25%;
     }
+    .img-50 {
+        width: 50%;
+    }
 }
 .flash {
     margin-top: 1rem;
@@ -138,5 +141,8 @@
     color: rgb(150, 0, 0);
 }
 .img-50 {
-    width: 50%;
+    width: 60%;
+}
+.img-100 {
+    width: 100%;
 }
