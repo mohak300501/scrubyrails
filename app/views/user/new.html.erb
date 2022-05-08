@@ -1,4 +1,4 @@
-<h1>Sign up as new user</h1>
+<h1>Sign up as new <%=  %></h1>
 <% if !session[:otp] %>
     <%= form_tag newp_path do %>
         <%= text_field_tag :name, nil, :required => true, class: "utextfield", placeholder: "Your name" %><br/><br/>

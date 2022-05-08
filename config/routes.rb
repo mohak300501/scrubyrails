@@ -3,9 +3,6 @@ Rails.application.routes.draw do
     root 'welcome#home'
 
     get "user/profile", as:"profile"
-    get "user/new", as:"new"
-    post "user/newp", as:"newp"
-    post "user/otpp", as:"otpp"
     get "user/muserr", as:"all_users"
     post "user/muserr", as:"user_sort"
     get "user/:id/del", to:"user#muserdp"
@@ -14,6 +11,7 @@ Rails.application.routes.draw do
     
     get "welcome/mhomer", as:"home"
     get "welcome/mhomec", as:"new_home"
+    get "welcome/memarea", as:"member_area"
 
     get "game/ugame", as:"games"
     get "game/mgamer", as:"all_games"
@@ -23,6 +21,10 @@ Rails.application.routes.draw do
     post "game/:id", to:"game#mgameup"
     get "game/:id/del", to:"game#mgamedp"
 
+    get "logging/mnew", as:"new_member"
+    get "logging/unew", as:"new_user"
+    post "logging/newp", as:"newp"
+    post "logging/otpp", as:"otpp"
     get "logging/mlogin", as:"member_login"
     get "logging/ulogin", as:"user_login"
     post "logging/loginp", as:"login_post"

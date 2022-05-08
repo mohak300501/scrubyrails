@@ -28,4 +28,12 @@ class WelcomeController < ApplicationController
             redirect_to root_url
         end
     end
+
+    def memarea
+        if session[:member]
+            render "memarea"
+        else
+            redirect_to root_url
+        end
+    end
 end

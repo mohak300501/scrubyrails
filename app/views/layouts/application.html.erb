@@ -28,7 +28,7 @@
                 <div>Logged in as <%= session[:member] ? session[:member] : session[:user] %>.</div>
                 <div>
                     <% if session[:member] %>
-                        <%= link_to "All Users", all_users_path %>
+                        <%= link_to "Member Area", member_area_path %>
                     <% else %>
                         <%= link_to "Profile", profile_path %>
                     <% end %>
@@ -70,11 +70,13 @@
         <%= yield %>
 
         <div class="footer">
-            Total views on this website: <%= session[:vc] %><br/><br/>
+            Total views on this website: <%= session[:vc] %><br/>
             <%= link_to "About", root_url %>
             <%= link_to "How to Use", events_path %>
             <%= link_to "Terms", shloks_path %>
-            <%= link_to "Feedback", feedback_path %>
+            <%= link_to "Feedback", feedback_path %><br/>
+            &copy; <%= Time.new.year %>. All rights reserved.
+            DESIGN: <a href="https://github.com/mohak300501/scrubyrails" target="_blank">Sanskrit Club IITR</a>.
         </div>
     </body>
 </html>
