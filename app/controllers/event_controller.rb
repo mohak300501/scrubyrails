@@ -40,7 +40,12 @@ class EventController < ApplicationController
 
     def meventup
         event = Event.find(params[:id])
+        pp = params[:event]
         event.update(:name => params[:name], :info => params[:info])
+        if pp[:image].present?
+            event.image.purge
+            event.image.attach(pp[:image])
+        end
         flash[:notice] = "घटना परिवर्तितः जातः!"
         redirect_to all_events_path
     end
