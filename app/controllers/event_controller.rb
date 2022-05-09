@@ -41,7 +41,7 @@ class EventController < ApplicationController
     def meventup
         event = Event.find(params[:id])
         pp = params[:event]
-        event.update(:name => params[:name], :info => params[:info])
+        event.update(:name => pp[:name], :info => pp[:info])
         if pp[:image].present?
             event.image.purge
             event.image.attach(pp[:image])
