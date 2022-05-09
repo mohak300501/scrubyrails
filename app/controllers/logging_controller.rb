@@ -96,7 +96,7 @@ class LoggingController < ApplicationController
         moru = ifmoru ? Member.find_by(email: params[:email]) : User.find_by(email: params[:email])
         if moru
             if moru.password == params[:password]
-                session[moru ? :member : :user ] = moru.name
+                session[ifmoru ? :member : :user ] = moru.name
                 session[:email] = moru.email
                 flash[:notice] = "Logged in!"
                 redirect_to root_url
