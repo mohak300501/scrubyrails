@@ -10,7 +10,7 @@
     <%= f.label "more info" %><br/>
     <%= f.text_area :more, :required => true, class: "mtextarea-2" %><br/><br/>
     <%= f.label "current image" %><br/>
-    <img src="<%= rails_blob_url(@course.image) %>", class="img-50" /><br/><br/>
+    <img src="<%= rails_blob_url(@course.image) %>" class="img-50" /><br/><br/>
     <%= f.label "change image" %><br/>
     <%= f.file_field :image %><br/><br/>
 
