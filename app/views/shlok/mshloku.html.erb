@@ -2,13 +2,13 @@
 
 <%= form_for @shlok, url: shlok_update_path do |f| %>
     <%= f.label "शीर्षकं" %><br/>
-    <%= f.text_field :title, :required => true, class: "mtextfield" %><br/>
+    <%= f.text_field :title, :required => true, class: "mtextfield" %><br/><br/>
     <%= f.label "श्लोकः" %><br/>
-    <%= f.text_area :shlok, :required => true, class: "mtextarea-1" %><br/>
+    <%= f.text_area :shlok, :required => true, class: "mtextarea-1" %><br/><br/>
     <%= f.label "अनुवादः" %><br/>
-    <%= f.text_area :translation, :required => true, class: "mtextarea-2" %>
+    <%= f.text_area :translation, :required => true, class: "mtextarea-2" %><br/><br/>
     <%= f.label "current audio" %><br/>
-    <audio src="<%= rails_blob_url(@shlok.audio) %>" /><br/><br/>
+    <audio src="<%= rails_blob_url(@shlok.audio) %>" controls/><br/><br/>
     <%= f.label "change audio" %><br/>
     <%= f.file_field :audio %><br/><br/>
 
