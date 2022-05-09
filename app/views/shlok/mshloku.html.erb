@@ -8,7 +8,7 @@
     <%= f.label "अनुवादः" %><br/>
     <%= f.text_area :translation, :required => true, class: "mtextarea-2" %><br/><br/>
     <%= f.label "current audio" %><br/>
-    <audio src="<%= rails_blob_url(@shlok.audio) %>" controls/><br/><br/>
+    <audio src="<%= rails_blob_url(@shlok.audio) %>" controls/></audio><br/><br/>
     <%= f.label "change audio" %><br/>
     <%= f.file_field :audio %><br/><br/>
 
