@@ -62,7 +62,7 @@ class CourseController < ApplicationController
         if session[:member]
             course = Course.find(params[:id])
             course_parts = ActiveRecord::Base.connection.execute("select pid from " + course.cname + ";")
-            for i in course_parts.rows
+            for i in course_parts
                 user = User.find(i[0])
                 user.update(:courses => user.courses.split(", ") - [course.cname])
             end
