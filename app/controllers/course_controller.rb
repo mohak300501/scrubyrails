@@ -64,7 +64,7 @@ class CourseController < ApplicationController
             course_parts = ActiveRecord::Base.connection.exec_query("select pid from " + course.cname + ";")
             for i in course_parts.rows
                 user = User.find(i[0])
-                user.update(:courses => user.courses.split(", ") - [course.cname])
+                user.update(:courses => (user.courses.split(", ") - [course.cname]).join(", "))
             end
             ActiveRecord::Base.connection.execute("drop table if exists " + course.cname + ";")
             course.destroy
