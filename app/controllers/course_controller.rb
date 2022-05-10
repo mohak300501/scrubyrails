@@ -61,6 +61,11 @@ class CourseController < ApplicationController
     def mcoursedp
         if session[:member]
             course = Course.find(params[:id])
+            course_parts = ActiveRecord::Base.connection.execute("select pid from " + course.cname + ";")
+            for i in course_parts.rows
+                user = User.find(i[0])
+                user.update(:courses => user.courses.split(", ") - [course.cname])
+            end
             ActiveRecord::Base.connection.execute("drop table if exists " + course.cname + ";")
             course.destroy
             redirect_to all_courses_path
