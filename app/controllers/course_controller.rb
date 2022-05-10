@@ -65,7 +65,7 @@ class CourseController < ApplicationController
             for i in course_parts.rows
                 user = User.find(i[0])
                 user_courses = user.courses.split(", ") - [course.cname]
-                user_courses = user_courses.join(", ") if user_courses.length > 1
+                # user_courses = user_courses.join(", ") if user_courses.length > 1
                 user.update(:courses => (user_courses).join(", "))
             end
             ActiveRecord::Base.connection.execute("drop table if exists " + course.cname + ";")
