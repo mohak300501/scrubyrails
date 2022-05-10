@@ -75,7 +75,7 @@ class UserController < ApplicationController
             user = User.find(params[:id])
             courses = user.courses.split(", ")
             for i in courses
-                ActiveRecord::Base.connection.execute("delete from table " + i + " where pid=" + user.id.to_i + ";")
+                ActiveRecord::Base.connection.execute("delete from table " + i + " where pid=" + user.id.to_s + ";")
             end
             user.destroy
             redirect_to all_users_path
