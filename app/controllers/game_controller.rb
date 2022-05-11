@@ -1,5 +1,6 @@
 class GameController < ApplicationController
     def ugame
+        @games = Game.all
         render "ugame"
     end
 
