@@ -100,9 +100,9 @@ class CourseController < ApplicationController
                 else
                     user_regid = ""
                     if user.regid.nil?
-                        last_regid = Bgvar.first.regid
-                        user_regid = last_regid[0..2] + (last_regid[2..-1].to_i + 1).to_s.rjust(4, "0")
-                        last_regid = user_regid
+                        var = Bgvar.first
+                        user_regid = var.regid[0..2] + (var.regid[2..-1].to_i + 1).to_s.rjust(4, "0")
+                        var.update(:regid => user_regid)
                         user.update(:regid => user_regid)
                     else
                         user_regid = user.regid

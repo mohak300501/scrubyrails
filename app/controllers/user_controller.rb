@@ -73,9 +73,11 @@ class UserController < ApplicationController
     def muserdp
         if session[:member]
             user = User.find(params[:id])
-            courses = user.courses.split(", ")
-            for i in courses
-                ActiveRecord::Base.connection.execute("delete from " + i + " where pid=" + user.id.to_s + ";")
+            if user.courses?
+                courses = user.courses.split(", ")
+                for i in courses
+                    ActiveRecord::Base.connection.execute("delete from " + i + " where pid=" + user.id.to_s + ";")
+                end
             end
             user.destroy
             redirect_to all_users_path
