@@ -46268,3 +46268,1774 @@ Completed 206 Partial Content in 3ms (ActiveRecord: 0.0ms | Allocations: 802)
 Completed 206 Partial Content in 3ms (ActiveRecord: 0.0ms | Allocations: 663)
 
 
+  [1m[35m (99.1ms)[0m  [1m[35mCREATE DATABASE "scrubyrails_development" ENCODING = 'unicode'[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE DATABASE "scrubyrails_development" ENCODING = 'unicode'[0m
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1409038475602093665)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateActiveStorageTables (20220106120414)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.0ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "service_name" character varying NOT NULL, "byte_size" bigint NOT NULL, "checksum" character varying NOT NULL, "created_at" timestamp NOT NULL)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" bigserial primary key, "blob_id" bigint NOT NULL, "variation_digest" character varying NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220106120414"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCourses (20220113122842)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "courses" ("id" bigserial primary key, "name" character varying, "description" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220113122842"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUsers (20220113132933)
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "password" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220113132933"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateMembers (20220113133007)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE TABLE "members" ("id" bigserial primary key, "name" character varying, "email" character varying, "password" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220113133007"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateShloks (20220113133257)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "shloks" ("id" bigserial primary key, "title" character varying, "shlok" character varying, "translation" character varying, "updated_by" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220113133257"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateVisits (20220113133345)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "visits" ("id" bigserial primary key, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220113133345"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateAnnouncements (20220123154117)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "announcements" ("id" bigserial primary key, "news" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220123154117"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateGames (20220202170310)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "games" ("id" bigserial primary key, "name" character varying, "info" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220202170310"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEvents (20220411173059)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE TABLE "events" ("id" bigserial primary key, "name" character varying, "info" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220411173059"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnsToUser (20220413185958)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "profile" boolean[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "country" character varying[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ADD "state" character varying[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "pin" int[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "users" ADD "gender" character varying[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "users" ADD "age" int[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" ADD "mobile" int[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ADD "sanslevel" character varying[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" ADD "acadqual" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220413185958"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeMobileToBeStringInUsers (20220413201024)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.2ms)[0m  [1m[35mALTER TABLE "users" ALTER COLUMN "mobile" TYPE character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220413201024"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddRegidToUsers (20220413210031)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ADD "regid" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220413210031"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddCoursesToUsers (20220413212744)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" ADD "courses" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220413212744"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnToCourse (20220416174449)
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "courses" ADD "cname" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220416174449"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RenameVisitToBgvar (20220507140315)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "visits" RENAME TO "bgvars"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER INDEX "visits_pkey" RENAME TO "bgvars_pkey"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "public"."visits_id_seq" RENAME TO "bgvars_id_seq"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220507140315"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to ChangeBgvars (20220507144908)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "bgvars" RENAME COLUMN "id" TO "visits"[0m
+  [1m[35m (3.0ms)[0m  [1m[35mALTER TABLE "bgvars" ADD "regid" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220507144908"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddColumnMoreToCourse (20220507153838)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "courses" ADD "more" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220507153838"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-05-12 06:39:50.375199"], ["updated_at", "2022-05-12 06:39:50.375199"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(1409038475602093665)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBgvar Create (1.2ms)[0m  [1m[32mINSERT INTO "bgvars" ("visits", "created_at", "updated_at", "regid") VALUES ($1, $2, $3, $4) RETURNING "visits"[0m  [["visits", 0], ["created_at", "2022-05-12 06:40:01.166123"], ["updated_at", "2022-05-12 06:40:01.166123"], ["regid", "SC00000"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "user1"], ["email", "user1@gmail.com"], ["password", "user1pass"], ["created_at", "2022-05-12 06:40:01.198299"], ["updated_at", "2022-05-12 06:40:01.198299"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mMember Create (1.2ms)[0m  [1m[32mINSERT INTO "members" ("name", "email", "password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Sanskrit Club"], ["email", "sanskritclub@iitr.ac.in"], ["password", "namaskar"], ["created_at", "2022-05-12 06:40:01.220757"], ["updated_at", "2022-05-12 06:40:01.220757"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2022-05-12 12:10:11 +0530
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#home as HTML
+  [1m[36mBgvar Load (1.3ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:10:in `visit_count'
+  [1m[36mBgvar Update (3.8ms)[0m  [1m[33mUPDATE "bgvars" SET "visits" = $1, "updated_at" = $2 WHERE "bgvars"."visits" = $3[0m  [["visits", 1], ["updated_at", "2022-05-12 06:40:11.780732"], ["visits", 0]]
+  ↳ app/controllers/application_controller.rb:10:in `visit_count'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:10:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mAnnouncement Load (2.0ms)[0m  [1m[34mSELECT "announcements".* FROM "announcements"[0m
+  ↳ app/views/welcome/home.html.erb:27
+  Rendered welcome/home.html.erb within layouts/application (Duration: 13.4ms | Allocations: 1459)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+/var/lib/gems/3.0.0/gems/webpacker-5.4.3/lib/webpacker/runner.rb:13:in ``': No such file or directory - yarn (Errno::ENOENT)
+	from /var/lib/gems/3.0.0/gems/webpacker-5.4.3/lib/webpacker/runner.rb:13:in `initialize'
+	from /var/lib/gems/3.0.0/gems/webpacker-5.4.3/lib/webpacker/runner.rb:6:in `new'
+	from /var/lib/gems/3.0.0/gems/webpacker-5.4.3/lib/webpacker/runner.rb:6:in `run'
+	from ./bin/webpack:17:in `block in <main>'
+	from ./bin/webpack:16:in `chdir'
+	from ./bin/webpack:16:in `<main>'
+
+  Rendered layout layouts/application.html.erb (Duration: 1041.9ms | Allocations: 48782)
+Completed 500 Internal Server Error in 1135ms (ActiveRecord: 20.6ms | Allocations: 62075)
+
+
+  
+ActionView::Template::Error (Webpacker can't find application.js in /media/mohak/My Drive/Sanskrit Club Website/scrubyrails/public/packs/manifest.json. Possible causes:
+1. You want to set webpacker.yml value of compile to true for your environment
+   unless you are using the `webpack -w` or the webpack-dev-server.
+2. webpack has not yet re-run to reflect updates.
+3. You have misconfigured Webpacker's config/webpacker.yml file.
+4. Your webpack configuration is not creating a manifest.
+Your manifest contains:
+{
+}
+):
+     9:         <%= csp_meta_tag %>
+    10: 
+    11:         <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    12:         <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    13:     </head>
+    14: 
+    15:     <body>
+  
+app/views/layouts/application.html.erb:12
+Started GET "/" for 127.0.0.1 at 2022-05-12 12:13:35 +0530
+Processing by WelcomeController#home as HTML
+  [1m[36mBgvar Load (5.9ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:10:in `visit_count'
+  [1m[36mBgvar Update (3.4ms)[0m  [1m[33mUPDATE "bgvars" SET "visits" = $1, "updated_at" = $2 WHERE "bgvars"."visits" = $3[0m  [["visits", 2], ["updated_at", "2022-05-12 06:43:35.439936"], ["visits", 1]]
+  ↳ app/controllers/application_controller.rb:10:in `visit_count'
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:10:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mAnnouncement Load (3.4ms)[0m  [1m[34mSELECT "announcements".* FROM "announcements"[0m
+  ↳ app/views/welcome/home.html.erb:27
+  Rendered welcome/home.html.erb within layouts/application (Duration: 8.0ms | Allocations: 701)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 32.3ms | Allocations: 5176)
+Completed 200 OK in 74ms (Views: 30.5ms | ActiveRecord: 18.4ms | Allocations: 8892)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-12 12:13:58 +0530
+Processing by WelcomeController#home as HTML
+  [1m[36mBgvar Load (2.2ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mAnnouncement Load (3.7ms)[0m  [1m[34mSELECT "announcements".* FROM "announcements"[0m
+  ↳ app/views/welcome/home.html.erb:27
+  Rendered welcome/home.html.erb within layouts/application (Duration: 8.5ms | Allocations: 714)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 46.0ms | Allocations: 5043)
+Completed 200 OK in 61ms (Views: 44.2ms | ActiveRecord: 5.8ms | Allocations: 6631)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-12 12:14:00 +0530
+Processing by WelcomeController#home as HTML
+  [1m[36mBgvar Load (3.0ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mAnnouncement Load (3.7ms)[0m  [1m[34mSELECT "announcements".* FROM "announcements"[0m
+  ↳ app/views/welcome/home.html.erb:27
+  Rendered welcome/home.html.erb within layouts/application (Duration: 8.1ms | Allocations: 699)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 49.3ms | Allocations: 4871)
+Completed 200 OK in 69ms (Views: 49.6ms | ActiveRecord: 6.7ms | Allocations: 6173)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-12 12:14:17 +0530
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#home as HTML
+  [1m[36mBgvar Load (1.9ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mAnnouncement Load (2.9ms)[0m  [1m[34mSELECT "announcements".* FROM "announcements"[0m
+  ↳ app/views/welcome/home.html.erb:27
+  Rendered welcome/home.html.erb within layouts/application (Duration: 9.1ms | Allocations: 1354)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 76.0ms | Allocations: 11912)
+Completed 200 OK in 133ms (Views: 79.4ms | ActiveRecord: 20.0ms | Allocations: 21042)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-12 12:14:21 +0530
+Processing by WelcomeController#home as HTML
+  [1m[36mBgvar Load (2.5ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mAnnouncement Load (2.9ms)[0m  [1m[34mSELECT "announcements".* FROM "announcements"[0m
+  ↳ app/views/welcome/home.html.erb:27
+  Rendered welcome/home.html.erb within layouts/application (Duration: 6.8ms | Allocations: 714)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 41.5ms | Allocations: 5042)
+Completed 200 OK in 55ms (Views: 40.4ms | ActiveRecord: 5.3ms | Allocations: 6605)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-12 12:14:45 +0530
+Processing by WelcomeController#home as HTML
+  [1m[36mBgvar Load (3.4ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:10:in `visit_count'
+  [1m[36mBgvar Update (5.9ms)[0m  [1m[33mUPDATE "bgvars" SET "visits" = $1, "updated_at" = $2 WHERE "bgvars"."visits" = $3[0m  [["visits", 3], ["updated_at", "2022-05-12 06:44:45.249311"], ["visits", 2]]
+  ↳ app/controllers/application_controller.rb:10:in `visit_count'
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:10:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mAnnouncement Load (2.3ms)[0m  [1m[34mSELECT "announcements".* FROM "announcements"[0m
+  ↳ app/views/welcome/home.html.erb:27
+  Rendered welcome/home.html.erb within layouts/application (Duration: 8.1ms | Allocations: 765)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 49.0ms | Allocations: 5076)
+Completed 200 OK in 123ms (Views: 49.1ms | ActiveRecord: 17.1ms | Allocations: 14490)
+
+
+Started GET "/logging/mlogin" for 127.0.0.1 at 2022-05-12 12:15:09 +0530
+Processing by LoggingController#mlogin as HTML
+  [1m[36mBgvar Load (1.7ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 3.6ms | Allocations: 646)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 29.7ms | Allocations: 5021)
+Completed 200 OK in 50ms (Views: 41.4ms | ActiveRecord: 1.7ms | Allocations: 7184)
+
+
+Started GET "/logging/mlogin" for 127.0.0.1 at 2022-05-12 12:16:58 +0530
+Processing by LoggingController#mlogin as HTML
+  [1m[36mBgvar Load (3.1ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 5.9ms | Allocations: 577)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 83.4ms | Allocations: 5758)
+Completed 200 OK in 113ms (Views: 99.8ms | ActiveRecord: 3.1ms | Allocations: 8088)
+
+
+Started GET "/game/ugame" for 127.0.0.1 at 2022-05-12 12:17:00 +0530
+Processing by GameController#ugame as HTML
+  [1m[36mBgvar Load (3.5ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/ugame.html.erb within layouts/application
+  [1m[36mGame Load (4.0ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/game/ugame.html.erb:1
+  Rendered game/ugame.html.erb within layouts/application (Duration: 11.9ms | Allocations: 1067)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 47.6ms | Allocations: 5477)
+Completed 200 OK in 80ms (Views: 49.4ms | ActiveRecord: 7.4ms | Allocations: 7986)
+
+
+Started GET "/logging/mlogin" for 127.0.0.1 at 2022-05-12 12:17:11 +0530
+Processing by LoggingController#mlogin as HTML
+  [1m[36mBgvar Load (2.9ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 2.2ms | Allocations: 266)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 48.3ms | Allocations: 4399)
+Completed 200 OK in 69ms (Views: 53.9ms | ActiveRecord: 2.9ms | Allocations: 5782)
+
+
+Started POST "/logging/loginp" for 127.0.0.1 at 2022-05-12 12:17:22 +0530
+Processing by LoggingController#loginp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"sanskritclub@iitr.ac.in", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mBgvar Load (1.5ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mMember Load (2.7ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 LIMIT $2[0m  [["email", "sanskritclub@iitr.ac.in"], ["LIMIT", 1]]
+  ↳ app/controllers/logging_controller.rb:96:in `loginp'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 48ms (ActiveRecord: 17.0ms | Allocations: 5727)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-12 12:17:22 +0530
+Processing by WelcomeController#home as HTML
+  [1m[36mBgvar Load (1.5ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mAnnouncement Load (1.9ms)[0m  [1m[34mSELECT "announcements".* FROM "announcements"[0m
+  ↳ app/views/welcome/home.html.erb:27
+  Rendered welcome/home.html.erb within layouts/application (Duration: 8.0ms | Allocations: 1042)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 32.7ms | Allocations: 5515)
+Completed 200 OK in 47ms (Views: 35.3ms | ActiveRecord: 3.4ms | Allocations: 7556)
+
+
+Started GET "/game/mgamer" for 127.0.0.1 at 2022-05-12 12:17:31 +0530
+Processing by GameController#mgamer as HTML
+  [1m[36mBgvar Load (2.3ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgamer.html.erb within layouts/application
+  [1m[36mGame Load (1.5ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/game/mgamer.html.erb:5
+  Rendered game/mgamer.html.erb within layouts/application (Duration: 103.8ms | Allocations: 1014)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 144.4ms | Allocations: 5170)
+Completed 200 OK in 163ms (Views: 150.8ms | ActiveRecord: 3.8ms | Allocations: 6688)
+
+
+Started GET "/game/mgamec" for 127.0.0.1 at 2022-05-12 12:17:37 +0530
+Processing by GameController#mgamec as HTML
+  [1m[36mBgvar Load (2.2ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgamec.html.erb within layouts/application
+  Rendered game/mgamec.html.erb within layouts/application (Duration: 4.7ms | Allocations: 614)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 47.3ms | Allocations: 4744)
+Completed 200 OK in 64ms (Views: 53.7ms | ActiveRecord: 2.2ms | Allocations: 6127)
+
+
+Started POST "/game/mgamecp" for 127.0.0.1 at 2022-05-12 12:17:52 +0530
+Processing by GameController#mgamecp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"abracadabra", "info"=>"hulalahulala", "commit"=>"अग्रेस्थापनं करोतु"}
+  [1m[36mBgvar Load (2.8ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/game_controller.rb:36:in `mgamecp'
+  [1m[36mGame Create (4.0ms)[0m  [1m[32mINSERT INTO "games" ("name", "info", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "abracadabra"], ["info", "hulalahulala"], ["created_at", "2022-05-12 06:47:52.657191"], ["updated_at", "2022-05-12 06:47:52.657191"]]
+  ↳ app/controllers/game_controller.rb:36:in `mgamecp'
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/game_controller.rb:36:in `mgamecp'
+Redirected to http://127.0.0.1:3000/game/mgamer
+Completed 302 Found in 61ms (ActiveRecord: 25.9ms | Allocations: 6119)
+
+
+Started GET "/game/mgamer" for 127.0.0.1 at 2022-05-12 12:17:52 +0530
+Processing by GameController#mgamer as HTML
+  [1m[36mBgvar Load (1.2ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgamer.html.erb within layouts/application
+  [1m[36mGame Load (1.9ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/game/mgamer.html.erb:5
+  Rendered game/mgamer.html.erb within layouts/application (Duration: 7.1ms | Allocations: 814)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 31.3ms | Allocations: 4957)
+Completed 200 OK in 42ms (Views: 31.3ms | ActiveRecord: 3.1ms | Allocations: 6232)
+
+
+Started GET "/logging/logout" for 127.0.0.1 at 2022-05-12 12:17:56 +0530
+Processing by LoggingController#logout as HTML
+  [1m[36mBgvar Load (3.3ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 16ms (ActiveRecord: 3.3ms | Allocations: 1120)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-12 12:17:56 +0530
+Processing by WelcomeController#home as HTML
+  [1m[36mBgvar Load (2.1ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mAnnouncement Load (2.1ms)[0m  [1m[34mSELECT "announcements".* FROM "announcements"[0m
+  ↳ app/views/welcome/home.html.erb:27
+  Rendered welcome/home.html.erb within layouts/application (Duration: 8.2ms | Allocations: 699)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 39.1ms | Allocations: 4877)
+Completed 200 OK in 53ms (Views: 39.1ms | ActiveRecord: 4.3ms | Allocations: 6177)
+
+
+Started GET "/game/ugame" for 127.0.0.1 at 2022-05-12 12:17:58 +0530
+Processing by GameController#ugame as HTML
+  [1m[36mBgvar Load (2.6ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/ugame.html.erb within layouts/application
+  [1m[36mGame Load (2.6ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/game/ugame.html.erb:1
+  Rendered game/ugame.html.erb within layouts/application (Duration: 9.8ms | Allocations: 712)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 41.6ms | Allocations: 4877)
+Completed 200 OK in 84ms (Views: 41.9ms | ActiveRecord: 5.2ms | Allocations: 6144)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-12 12:19:30 +0530
+Processing by WelcomeController#home as HTML
+  [1m[36mBgvar Load (2.0ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:10:in `visit_count'
+  [1m[36mBgvar Update (3.3ms)[0m  [1m[33mUPDATE "bgvars" SET "visits" = $1, "updated_at" = $2 WHERE "bgvars"."visits" = $3[0m  [["visits", 4], ["updated_at", "2022-05-12 06:49:30.582930"], ["visits", 3]]
+  ↳ app/controllers/application_controller.rb:10:in `visit_count'
+  [1m[36mTRANSACTION (4.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:10:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mAnnouncement Load (5.3ms)[0m  [1m[34mSELECT "announcements".* FROM "announcements"[0m
+  ↳ app/views/welcome/home.html.erb:27
+  Rendered welcome/home.html.erb within layouts/application (Duration: 11.6ms | Allocations: 699)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 48.6ms | Allocations: 4877)
+Completed 200 OK in 92ms (Views: 47.1ms | ActiveRecord: 16.7ms | Allocations: 8252)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-12 14:06:59 +0530
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#home as HTML
+  [1m[36mBgvar Load (1.7ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:10:in `visit_count'
+  [1m[36mBgvar Update (1.4ms)[0m  [1m[33mUPDATE "bgvars" SET "visits" = $1, "updated_at" = $2 WHERE "bgvars"."visits" = $3[0m  [["visits", 5], ["updated_at", "2022-05-12 08:36:59.865028"], ["visits", 4]]
+  ↳ app/controllers/application_controller.rb:10:in `visit_count'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:10:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mAnnouncement Load (1.9ms)[0m  [1m[34mSELECT "announcements".* FROM "announcements"[0m
+  ↳ app/views/welcome/home.html.erb:27
+  Rendered welcome/home.html.erb within layouts/application (Duration: 14.3ms | Allocations: 1354)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 483.6ms | Allocations: 37497)
+Completed 200 OK in 637ms (Views: 516.6ms | ActiveRecord: 19.7ms | Allocations: 49813)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-12 14:07:30 +0530
+Processing by WelcomeController#home as HTML
+  [1m[36mBgvar Load (2.0ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mAnnouncement Load (2.3ms)[0m  [1m[34mSELECT "announcements".* FROM "announcements"[0m
+  ↳ app/views/welcome/home.html.erb:27
+  Rendered welcome/home.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1042)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.0ms | Allocations: 6304)
+Completed 200 OK in 44ms (Views: 30.4ms | ActiveRecord: 4.3ms | Allocations: 8749)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-12 14:08:08 +0530
+Processing by WelcomeController#home as HTML
+  [1m[36mBgvar Load (2.4ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mAnnouncement Load (1.4ms)[0m  [1m[34mSELECT "announcements".* FROM "announcements"[0m
+  ↳ app/views/welcome/home.html.erb:27
+  Rendered welcome/home.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1049)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.7ms | Allocations: 6318)
+Completed 200 OK in 79ms (Views: 65.1ms | ActiveRecord: 3.7ms | Allocations: 8611)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-12 14:08:56 +0530
+Processing by WelcomeController#home as HTML
+  [1m[36mBgvar Load (0.7ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mAnnouncement Load (2.9ms)[0m  [1m[34mSELECT "announcements".* FROM "announcements"[0m
+  ↳ app/views/welcome/home.html.erb:27
+  Rendered welcome/home.html.erb within layouts/application (Duration: 5.5ms | Allocations: 700)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 89.5ms | Allocations: 24372)
+Completed 200 OK in 95ms (Views: 87.6ms | ActiveRecord: 3.6ms | Allocations: 25781)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-12 14:12:27 +0530
+Processing by WelcomeController#home as HTML
+  [1m[36mBgvar Load (0.9ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mAnnouncement Load (2.5ms)[0m  [1m[34mSELECT "announcements".* FROM "announcements"[0m
+  ↳ app/views/welcome/home.html.erb:27
+  Rendered welcome/home.html.erb within layouts/application (Duration: 8.3ms | Allocations: 1043)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 43.3ms | Allocations: 6314)
+Completed 200 OK in 55ms (Views: 45.2ms | ActiveRecord: 3.3ms | Allocations: 8504)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-12 14:12:39 +0530
+Processing by WelcomeController#home as HTML
+  [1m[36mBgvar Load (1.7ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mAnnouncement Load (1.4ms)[0m  [1m[34mSELECT "announcements".* FROM "announcements"[0m
+  ↳ app/views/welcome/home.html.erb:27
+  Rendered welcome/home.html.erb within layouts/application (Duration: 5.1ms | Allocations: 699)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 25.4ms | Allocations: 4873)
+Completed 200 OK in 34ms (Views: 25.0ms | ActiveRecord: 3.1ms | Allocations: 6259)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-12 14:12:45 +0530
+Processing by WelcomeController#home as HTML
+  [1m[36mBgvar Load (0.8ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mAnnouncement Load (1.7ms)[0m  [1m[34mSELECT "announcements".* FROM "announcements"[0m
+  ↳ app/views/welcome/home.html.erb:27
+  Rendered welcome/home.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1042)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 33.6ms | Allocations: 6306)
+Completed 200 OK in 44ms (Views: 37.0ms | ActiveRecord: 2.5ms | Allocations: 8470)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-12 14:13:21 +0530
+Processing by WelcomeController#home as HTML
+  [1m[36mBgvar Load (1.5ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mAnnouncement Load (2.3ms)[0m  [1m[34mSELECT "announcements".* FROM "announcements"[0m
+  ↳ app/views/welcome/home.html.erb:27
+  Rendered welcome/home.html.erb within layouts/application (Duration: 7.8ms | Allocations: 699)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 101.7ms | Allocations: 23722)
+Completed 200 OK in 112ms (Views: 101.9ms | ActiveRecord: 3.8ms | Allocations: 25109)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-12 14:14:14 +0530
+Processing by WelcomeController#home as HTML
+  [1m[36mBgvar Load (1.6ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mAnnouncement Load (2.3ms)[0m  [1m[34mSELECT "announcements".* FROM "announcements"[0m
+  ↳ app/views/welcome/home.html.erb:27
+  Rendered welcome/home.html.erb within layouts/application (Duration: 9.2ms | Allocations: 1047)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 87.0ms | Allocations: 25160)
+Completed 200 OK in 101ms (Views: 90.0ms | ActiveRecord: 3.8ms | Allocations: 27331)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-12 14:14:37 +0530
+Processing by WelcomeController#home as HTML
+  [1m[36mBgvar Load (1.6ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mAnnouncement Load (2.1ms)[0m  [1m[34mSELECT "announcements".* FROM "announcements"[0m
+  ↳ app/views/welcome/home.html.erb:27
+  Rendered welcome/home.html.erb within layouts/application (Duration: 5.0ms | Allocations: 699)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 108.4ms | Allocations: 23552)
+Completed 200 OK in 117ms (Views: 107.3ms | ActiveRecord: 3.6ms | Allocations: 24938)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-12 14:15:05 +0530
+Processing by WelcomeController#home as HTML
+  [1m[36mBgvar Load (2.0ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mAnnouncement Load (1.0ms)[0m  [1m[34mSELECT "announcements".* FROM "announcements"[0m
+  ↳ app/views/welcome/home.html.erb:27
+  Rendered welcome/home.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1043)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.4ms | Allocations: 6307)
+Completed 200 OK in 300ms (Views: 22.3ms | ActiveRecord: 3.0ms | Allocations: 8476)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-12 14:15:38 +0530
+Processing by WelcomeController#home as HTML
+  [1m[36mBgvar Load (1.8ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mAnnouncement Load (2.2ms)[0m  [1m[34mSELECT "announcements".* FROM "announcements"[0m
+  ↳ app/views/welcome/home.html.erb:27
+  Rendered welcome/home.html.erb within layouts/application (Duration: 5.6ms | Allocations: 699)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.9ms | Allocations: 4874)
+Completed 200 OK in 36ms (Views: 25.8ms | ActiveRecord: 4.0ms | Allocations: 6261)
+
+
+Started GET "/logging/mlogin" for 127.0.0.1 at 2022-05-12 14:16:04 +0530
+Processing by LoggingController#mlogin as HTML
+  [1m[36mBgvar Load (0.9ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 3.0ms | Allocations: 650)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 30.4ms | Allocations: 5803)
+Completed 200 OK in 39ms (Views: 35.1ms | ActiveRecord: 0.9ms | Allocations: 8223)
+
+
+Started POST "/logging/loginp" for 127.0.0.1 at 2022-05-12 14:16:09 +0530
+Processing by LoggingController#loginp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"sanskritclub@iitr.ac.in", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mBgvar Load (2.3ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mMember Load (3.0ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 LIMIT $2[0m  [["email", "sanskritclub@iitr.ac.in"], ["LIMIT", 1]]
+  ↳ app/controllers/logging_controller.rb:96:in `loginp'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 37ms (ActiveRecord: 13.3ms | Allocations: 5936)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-12 14:16:09 +0530
+Processing by WelcomeController#home as HTML
+  [1m[36mBgvar Load (0.6ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mAnnouncement Load (1.1ms)[0m  [1m[34mSELECT "announcements".* FROM "announcements"[0m
+  ↳ app/views/welcome/home.html.erb:27
+  Rendered welcome/home.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1043)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 5519)
+Completed 200 OK in 23ms (Views: 17.8ms | ActiveRecord: 1.7ms | Allocations: 7560)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-12 14:16:46 +0530
+Processing by WelcomeController#home as HTML
+  [1m[36mBgvar Load (1.4ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mAnnouncement Load (1.5ms)[0m  [1m[34mSELECT "announcements".* FROM "announcements"[0m
+  ↳ app/views/welcome/home.html.erb:27
+  Rendered welcome/home.html.erb within layouts/application (Duration: 6.4ms | Allocations: 1041)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 31.7ms | Allocations: 6309)
+Completed 200 OK in 41ms (Views: 32.8ms | ActiveRecord: 2.9ms | Allocations: 8600)
+
+
+Started GET "/welcome/mhomer" for 127.0.0.1 at 2022-05-12 14:17:13 +0530
+Processing by WelcomeController#mhomer as HTML
+  [1m[36mBgvar Load (2.2ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/mhomer.html.erb within layouts/application
+  [1m[36mAnnouncement Load (2.2ms)[0m  [1m[34mSELECT "announcements".* FROM "announcements"[0m
+  ↳ app/views/welcome/mhomer.html.erb:26
+  Rendered welcome/mhomer.html.erb within layouts/application (Duration: 6.4ms | Allocations: 880)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 32.9ms | Allocations: 5046)
+Completed 200 OK in 46ms (Views: 34.0ms | ActiveRecord: 4.4ms | Allocations: 6545)
+
+
+Started GET "/event/meventr" for 127.0.0.1 at 2022-05-12 14:23:54 +0530
+Processing by EventController#meventr as HTML
+  [1m[36mBgvar Load (0.9ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering event/meventr.html.erb within layouts/application
+  [1m[36mEvent Load (2.0ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/event/meventr.html.erb:5
+  Rendered event/meventr.html.erb within layouts/application (Duration: 45.8ms | Allocations: 1285)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 62.4ms | Allocations: 5652)
+Completed 200 OK in 116ms (Views: 64.7ms | ActiveRecord: 17.4ms | Allocations: 13732)
+
+
+Started GET "/shlok/mshlokr" for 127.0.0.1 at 2022-05-12 14:23:56 +0530
+Processing by ShlokController#mshlokr as HTML
+  [1m[36mBgvar Load (1.7ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (2.0ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:5
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 230.0ms | Allocations: 1343)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 248.2ms | Allocations: 5749)
+Completed 200 OK in 263ms (Views: 249.2ms | ActiveRecord: 3.7ms | Allocations: 8874)
+
+
+Started GET "/shlok/mshlokr" for 127.0.0.1 at 2022-05-12 14:23:59 +0530
+Processing by ShlokController#mshlokr as HTML
+  [1m[36mBgvar Load (2.1ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (2.1ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:5
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 5.2ms | Allocations: 737)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 30.8ms | Allocations: 4888)
+Completed 200 OK in 41ms (Views: 30.9ms | ActiveRecord: 4.2ms | Allocations: 6264)
+
+
+Started GET "/game/mgamer" for 127.0.0.1 at 2022-05-12 14:24:01 +0530
+Processing by GameController#mgamer as HTML
+  [1m[36mBgvar Load (1.4ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/mgamer.html.erb within layouts/application
+  [1m[36mGame Load (2.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/game/mgamer.html.erb:5
+  Rendered game/mgamer.html.erb within layouts/application (Duration: 64.7ms | Allocations: 4322)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 82.9ms | Allocations: 8731)
+Completed 200 OK in 95ms (Views: 77.2ms | ActiveRecord: 11.9ms | Allocations: 11227)
+
+
+Started GET "/shlok/mshlokr" for 127.0.0.1 at 2022-05-12 14:24:02 +0530
+Processing by ShlokController#mshlokr as HTML
+  [1m[36mBgvar Load (2.1ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (2.6ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:5
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 7.6ms | Allocations: 738)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 40.5ms | Allocations: 4909)
+Completed 200 OK in 52ms (Views: 40.6ms | ActiveRecord: 4.8ms | Allocations: 6283)
+
+
+Started GET "/event/meventr" for 127.0.0.1 at 2022-05-12 14:24:03 +0530
+Processing by EventController#meventr as HTML
+  [1m[36mBgvar Load (2.4ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering event/meventr.html.erb within layouts/application
+  [1m[36mEvent Load (2.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  ↳ app/views/event/meventr.html.erb:5
+  Rendered event/meventr.html.erb within layouts/application (Duration: 6.6ms | Allocations: 729)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 35.3ms | Allocations: 4875)
+Completed 200 OK in 49ms (Views: 35.6ms | ActiveRecord: 5.2ms | Allocations: 6148)
+
+
+Started GET "/shlok/mshlokr" for 127.0.0.1 at 2022-05-12 14:24:04 +0530
+Processing by ShlokController#mshlokr as HTML
+  [1m[36mBgvar Load (1.9ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (2.9ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:5
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 8.4ms | Allocations: 737)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 37.5ms | Allocations: 4883)
+Completed 200 OK in 49ms (Views: 37.2ms | ActiveRecord: 4.8ms | Allocations: 6153)
+
+
+Started GET "/shlok/mshlokc" for 127.0.0.1 at 2022-05-12 14:24:08 +0530
+Processing by ShlokController#mshlokc as HTML
+  [1m[36mBgvar Load (1.6ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokc.html.erb within layouts/application
+  Rendered shlok/mshlokc.html.erb within layouts/application (Duration: 155.1ms | Allocations: 895)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 171.8ms | Allocations: 5034)
+Completed 200 OK in 181ms (Views: 174.5ms | ActiveRecord: 1.6ms | Allocations: 6419)
+
+
+Started GET "/shlok/mshlokr" for 127.0.0.1 at 2022-05-12 14:24:13 +0530
+Processing by ShlokController#mshlokr as HTML
+  [1m[36mBgvar Load (1.6ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.9ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:5
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 5.0ms | Allocations: 737)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 31.0ms | Allocations: 4886)
+Completed 200 OK in 41ms (Views: 31.3ms | ActiveRecord: 3.4ms | Allocations: 6156)
+
+
+Started GET "/course/mcourser" for 127.0.0.1 at 2022-05-12 14:24:14 +0530
+Processing by CourseController#mcourser as HTML
+  [1m[36mBgvar Load (2.4ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering course/mcourser.html.erb within layouts/application
+  [1m[36mCourse Load (1.7ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/course/mcourser.html.erb:3
+  Rendered course/mcourser.html.erb within layouts/application (Duration: 79.1ms | Allocations: 1285)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 92.6ms | Allocations: 5690)
+Completed 200 OK in 112ms (Views: 94.6ms | ActiveRecord: 4.1ms | Allocations: 8796)
+
+
+Started GET "/resource/uresource" for 127.0.0.1 at 2022-05-12 14:24:15 +0530
+Processing by ResourceController#uresource as HTML
+  [1m[36mBgvar Load (2.0ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering resource/uresource.html.erb within layouts/application
+  Rendered resource/uresource.html.erb within layouts/application (Duration: 1.6ms | Allocations: 149)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 35.5ms | Allocations: 4610)
+Completed 200 OK in 54ms (Views: 39.8ms | ActiveRecord: 2.0ms | Allocations: 6754)
+
+
+Started GET "/logging/logout" for 127.0.0.1 at 2022-05-12 14:25:48 +0530
+Processing by LoggingController#logout as HTML
+  [1m[36mBgvar Load (1.2ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 7ms (ActiveRecord: 1.2ms | Allocations: 1297)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-12 14:25:48 +0530
+Processing by WelcomeController#home as HTML
+  [1m[36mBgvar Load (1.2ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mAnnouncement Load (1.3ms)[0m  [1m[34mSELECT "announcements".* FROM "announcements"[0m
+  ↳ app/views/welcome/home.html.erb:27
+  Rendered welcome/home.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1047)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.9ms | Allocations: 6317)
+Completed 200 OK in 36ms (Views: 26.5ms | ActiveRecord: 2.5ms | Allocations: 8534)
+
+
+Started GET "/game/ugame" for 127.0.0.1 at 2022-05-12 14:25:49 +0530
+Processing by GameController#ugame as HTML
+  [1m[36mBgvar Load (1.3ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/ugame.html.erb within layouts/application
+  [1m[36mGame Load (2.4ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/game/ugame.html.erb:1
+  Rendered game/ugame.html.erb within layouts/application (Duration: 6.7ms | Allocations: 1005)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 37.6ms | Allocations: 5465)
+Completed 200 OK in 50ms (Views: 42.1ms | ActiveRecord: 3.7ms | Allocations: 7485)
+
+
+Started GET "/game/ugame" for 127.0.0.1 at 2022-05-12 14:25:55 +0530
+Processing by GameController#ugame as HTML
+  [1m[36mBgvar Load (0.8ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering game/ugame.html.erb within layouts/application
+  [1m[36mGame Load (1.0ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/views/game/ugame.html.erb:1
+  Rendered game/ugame.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1003)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 35.3ms | Allocations: 6257)
+Completed 200 OK in 43ms (Views: 37.5ms | ActiveRecord: 1.8ms | Allocations: 8501)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-14 11:50:03 +0530
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#home as HTML
+  [1m[36mBgvar Load (3.5ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:10:in `visit_count'
+  [1m[36mBgvar Update (1.5ms)[0m  [1m[33mUPDATE "bgvars" SET "visits" = $1, "updated_at" = $2 WHERE "bgvars"."visits" = $3[0m  [["visits", 6], ["updated_at", "2022-05-14 06:20:03.629921"], ["visits", 5]]
+  ↳ app/controllers/application_controller.rb:10:in `visit_count'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:10:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mAnnouncement Load (2.7ms)[0m  [1m[34mSELECT "announcements".* FROM "announcements"[0m
+  ↳ app/views/welcome/home.html.erb:27
+  Rendered welcome/home.html.erb within layouts/application (Duration: 16.8ms | Allocations: 1330)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 396.0ms | Allocations: 19460)
+Completed 200 OK in 553ms (Views: 436.8ms | ActiveRecord: 20.4ms | Allocations: 31757)
+
+
+Started GET "/shlok/ushlok" for 127.0.0.1 at 2022-05-14 11:50:18 +0530
+Processing by ShlokController#ushlok as HTML
+  [1m[36mBgvar Load (3.0ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/ushlok.html.erb within layouts/application
+  [1m[36mShlok Load (2.0ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/ushlok.html.erb:1
+  Rendered shlok/ushlok.html.erb within layouts/application (Duration: 6.3ms | Allocations: 1088)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 32.5ms | Allocations: 5503)
+Completed 200 OK in 107ms (Views: 60.2ms | ActiveRecord: 5.0ms | Allocations: 8978)
+
+
+Started GET "/logging/mlogin" for 127.0.0.1 at 2022-05-14 11:50:27 +0530
+Processing by LoggingController#mlogin as HTML
+  [1m[36mBgvar Load (2.3ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering logging/login.html.erb within layouts/application
+  Rendered logging/login.html.erb within layouts/application (Duration: 2.8ms | Allocations: 646)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 30.5ms | Allocations: 5028)
+Completed 200 OK in 45ms (Views: 37.4ms | ActiveRecord: 2.3ms | Allocations: 7213)
+
+
+Started POST "/logging/loginp" for 127.0.0.1 at 2022-05-14 11:50:43 +0530
+Processing by LoggingController#loginp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"sanskritclub@iitr.ac.in", "password"=>"[FILTERED]", "commit"=>"Log In"}
+  [1m[36mBgvar Load (1.5ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mMember Load (2.9ms)[0m  [1m[34mSELECT "members".* FROM "members" WHERE "members"."email" = $1 LIMIT $2[0m  [["email", "sanskritclub@iitr.ac.in"], ["LIMIT", 1]]
+  ↳ app/controllers/logging_controller.rb:96:in `loginp'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 29ms (ActiveRecord: 10.2ms | Allocations: 5899)
+
+
+Started GET "/" for 127.0.0.1 at 2022-05-14 11:50:43 +0530
+Processing by WelcomeController#home as HTML
+  [1m[36mBgvar Load (0.8ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mAnnouncement Load (1.2ms)[0m  [1m[34mSELECT "announcements".* FROM "announcements"[0m
+  ↳ app/views/welcome/home.html.erb:27
+  Rendered welcome/home.html.erb within layouts/application (Duration: 3.3ms | Allocations: 706)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 5040)
+Completed 200 OK in 20ms (Views: 14.0ms | ActiveRecord: 2.0ms | Allocations: 6446)
+
+
+Started GET "/shlok/mshlokr" for 127.0.0.1 at 2022-05-14 11:50:45 +0530
+Processing by ShlokController#mshlokr as HTML
+  [1m[36mBgvar Load (1.9ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.8ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:5
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 24.3ms | Allocations: 1116)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 46.3ms | Allocations: 5278)
+Completed 200 OK in 57ms (Views: 47.6ms | ActiveRecord: 3.7ms | Allocations: 6726)
+
+
+Started GET "/shlok/mshlokc" for 127.0.0.1 at 2022-05-14 11:50:46 +0530
+Processing by ShlokController#mshlokc as HTML
+  [1m[36mBgvar Load (2.1ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokc.html.erb within layouts/application
+  Rendered shlok/mshlokc.html.erb within layouts/application (Duration: 10.3ms | Allocations: 899)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 29.1ms | Allocations: 5037)
+Completed 200 OK in 41ms (Views: 32.0ms | ActiveRecord: 2.1ms | Allocations: 6420)
+
+
+Started POST "/shlok/mshlokcp" for 127.0.0.1 at 2022-05-14 11:51:09 +0530
+Processing by ShlokController#mshlokcp as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "title"=>"abnsjkbd", "shlok"=>"hjkhn", "audio"=>#<ActionDispatch::Http::UploadedFile:0x000055b974290c60 @tempfile=#<Tempfile:/tmp/RackMultipart20220514-4519-igbzg>, @original_filename="aws", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"audio\"; filename=\"aws\"\r\nContent-Type: application/octet-stream\r\n">, "translation"=>"sdfds", "commit"=>"अग्रेस्थापनं करोतु"}
+  [1m[36mBgvar Load (1.0ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mShlok Create (1.7ms)[0m  [1m[32mINSERT INTO "shloks" ("title", "shlok", "translation", "updated_by", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "abnsjkbd"], ["shlok", "hjkhn"], ["translation", "sdfds"], ["updated_by", "sanskritclub@iitr.ac.in"], ["created_at", "2022-05-14 06:21:10.093299"], ["updated_at", "2022-05-14 06:21:10.093299"]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mActiveStorage::Blob Load (3.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mActiveStorage::Blob Create (2.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "bkigndolqainighkrr33e37rsobq"], ["filename", "aws"], ["content_type", "application/octet-stream"], ["metadata", "{\"identified\":true}"], ["service_name", "local"], ["byte_size", 104], ["checksum", "F2YCudGnl2OhI/sJe78CLw=="], ["created_at", "2022-05-14 06:21:10.165417"]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mActiveStorage::Attachment Create (1.8ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "audio"], ["record_type", "Shlok"], ["record_id", 1], ["blob_id", 1], ["created_at", "2022-05-14 06:21:10.169874"]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mShlok Update (1.4ms)[0m  [1m[33mUPDATE "shloks" SET "updated_at" = $1 WHERE "shloks"."id" = $2[0m  [["updated_at", "2022-05-14 06:21:10.173804"], ["id", 1]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+[36m  Disk Storage (1.5ms) [0m[32mUploaded file to key: bkigndolqainighkrr33e37rsobq (checksum: F2YCudGnl2OhI/sJe78CLw==)[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mActiveStorage::Blob Update (1.7ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 1]]
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shlok_controller.rb:27:in `mshlokcp'
+Redirected to http://127.0.0.1:3000/shlok/mshlokr
+Completed 302 Found in 200ms (ActiveRecord: 38.7ms | Allocations: 44864)
+
+
+Started GET "/shlok/mshlokr" for 127.0.0.1 at 2022-05-14 11:51:10 +0530
+Processing by ShlokController#mshlokr as HTML
+  [1m[36mBgvar Load (1.1ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.8ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:5
+  [1m[36mActiveStorage::Attachment Load (1.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:16
+  [1m[36mActiveStorage::Blob Load (1.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:16
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 16.2ms | Allocations: 3426)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 34.0ms | Allocations: 7776)
+Completed 200 OK in 40ms (Views: 30.5ms | ActiveRecord: 5.6ms | Allocations: 9150)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--91494c2e678e51e2121d329f83af63d47dd0590a/aws" for 127.0.0.1 at 2022-05-14 11:51:10 +0530
+Processing by ActiveStorage::Blobs::RedirectController#show as HTML
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--91494c2e678e51e2121d329f83af63d47dd0590a", "filename"=>"aws"}
+  [1m[36mActiveStorage::Blob Load (1.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (26.1ms) [0m[34mGenerated URL for file at key: bkigndolqainighkrr33e37rsobq (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6MjY6MTAuNDA5WiIsInB1ciI6ImJsb2Jfa2V5In19--418405b4638578f8b782dabf88f163f041751fad/aws)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6MjY6MTAuNDA5WiIsInB1ciI6ImJsb2Jfa2V5In19--418405b4638578f8b782dabf88f163f041751fad/aws
+Completed 302 Found in 37ms (ActiveRecord: 1.2ms | Allocations: 5332)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6MjY6MTAuNDA5WiIsInB1ciI6ImJsb2Jfa2V5In19--418405b4638578f8b782dabf88f163f041751fad/aws" for 127.0.0.1 at 2022-05-14 11:51:10 +0530
+Processing by ActiveStorage::DiskController#show as HTML
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"aws"}
+Completed 206 Partial Content in 1ms (ActiveRecord: 0.0ms | Allocations: 516)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/application.css-f80a96ad4259304f4f163b73e7db819a2f9c74f55165c9c35d770dee23c902aa.map"):
+  
+Started GET "/shlok/1" for 127.0.0.1 at 2022-05-14 11:54:48 +0530
+Processing by ShlokController#mshloku as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBgvar Load (2.2ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mShlok Load (1.1ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:34:in `mshloku'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshloku.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (1.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshloku.html.erb:11
+  [1m[36mActiveStorage::Blob Load (1.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshloku.html.erb:11
+  Rendered shlok/mshloku.html.erb within layouts/application (Duration: 55.3ms | Allocations: 5448)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 81.0ms | Allocations: 12260)
+Completed 200 OK in 99ms (Views: 81.7ms | ActiveRecord: 5.9ms | Allocations: 14648)
+
+
+Started GET "/shlok/1" for 127.0.0.1 at 2022-05-14 11:54:48 +0530
+Processing by ShlokController#mshloku as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBgvar Load (1.2ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mShlok Load (1.2ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:34:in `mshloku'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshloku.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (1.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshloku.html.erb:11
+  [1m[36mActiveStorage::Blob Load (1.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshloku.html.erb:11
+  Rendered shlok/mshloku.html.erb within layouts/application (Duration: 14.2ms | Allocations: 3524)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 30.7ms | Allocations: 7727)
+Completed 200 OK in 41ms (Views: 28.9ms | ActiveRecord: 4.9ms | Allocations: 9779)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--91494c2e678e51e2121d329f83af63d47dd0590a/aws" for 127.0.0.1 at 2022-05-14 11:54:48 +0530
+Processing by ActiveStorage::Blobs::RedirectController#show as HTML
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--91494c2e678e51e2121d329f83af63d47dd0590a", "filename"=>"aws"}
+  [1m[36mActiveStorage::Blob Load (1.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: bkigndolqainighkrr33e37rsobq (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6Mjk6NDguOTQ2WiIsInB1ciI6ImJsb2Jfa2V5In19--5dd8d9a938dda26ecf3068c607926469ffba1fce/aws)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6Mjk6NDguOTQ2WiIsInB1ciI6ImJsb2Jfa2V5In19--5dd8d9a938dda26ecf3068c607926469ffba1fce/aws
+Completed 302 Found in 8ms (ActiveRecord: 1.2ms | Allocations: 1697)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6Mjk6NDguOTQ2WiIsInB1ciI6ImJsb2Jfa2V5In19--5dd8d9a938dda26ecf3068c607926469ffba1fce/aws" for 127.0.0.1 at 2022-05-14 11:54:48 +0530
+Processing by ActiveStorage::DiskController#show as HTML
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"aws"}
+Completed 206 Partial Content in 2ms (ActiveRecord: 0.0ms | Allocations: 355)
+
+
+Started PATCH "/shlok/1" for 127.0.0.1 at 2022-05-14 11:56:27 +0530
+Processing by ShlokController#mshlokup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "shlok"=>{"title"=>"abnsjkbd", "shlok"=>"hjkhn", "translation"=>"This shloka is actually the result of Maharshi Valmiki's anger!\r\nIt's said that शोकः श्लोकात्मगतः - Curse took the form of verse!\r\nOnce when the great sage was returning from his bath, he witnessed a male क्रौञ्च bird - which was engaged in mating - succumbing to the arrow of a hunter. The sage was infuriated by this, and uttered a curse, which miraculously consisted of lines following a fixed rhythm. And thence was born the first shloka in history, along with the legendary meter of anuṣṭup (अनुष्टुप्), that prompted Lord Brahma to order Maharshi Valmiki to compose the epic of Ramayana, in the same meter!\r\nनिषाद \"O hunter,\"\r\nत्वम् प्रतिष्ठां शाश्वतिः समाः मा अगमः \"you won't get any prestige or permanence (in other words, you won't get a place in history),\"\r\nयत् क्रॉञ्च-मिथुनात् \"because, from the union of the Kraunch birds,\"\r\nएकम् काममोहितम् अवधिः \"you have killed one of those infatuated by desire.\""}, "commit"=>"अग्रेस्थापनं करोतु", "id"=>"1"}
+  [1m[36mBgvar Load (1.3ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mShlok Load (1.4ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:42:in `mshlokup'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shlok_controller.rb:44:in `mshlokup'
+  [1m[36mShlok Update (2.3ms)[0m  [1m[33mUPDATE "shloks" SET "translation" = $1, "updated_at" = $2 WHERE "shloks"."id" = $3[0m  [["translation", "This shloka is actually the result of Maharshi Valmiki's anger!\r\nIt's said that शोकः श्लोकात्मगतः - Curse took the form of verse!\r\nOnce when the great sage was returning from his bath, he witnessed a male क्रौञ्च bird - which was engaged in mating - succumbing to the arrow of a hunter. The sage was infuriated by this, and uttered a curse, which miraculously consisted of lines following a fixed rhythm. And thence was born the first shloka in history, along with the legendary meter of anuṣṭup (अनुष्टुप्), that prompted Lord Brahma to order Maharshi Valmiki to compose the epic of Ramayana, in the same meter!\r\nनिषाद \"O hunter,\"\r\nत्वम् प्रतिष्ठां शाश्वतिः समाः मा अगमः \"you won't get any prestige or permanence (in other words, you won't get a place in history),\"\r\nयत् क्रॉञ्च-मिथुनात् \"because, from the union of the Kraunch birds,\"\r\nएकम् काममोहितम् अवधिः \"you have killed one of those infatuated by desire.\""], ["updated_at", "2022-05-14 06:26:27.074928"], ["id", 1]]
+  ↳ app/controllers/shlok_controller.rb:44:in `mshlokup'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shlok_controller.rb:44:in `mshlokup'
+Redirected to http://127.0.0.1:3000/shlok/mshlokr
+Completed 302 Found in 27ms (ActiveRecord: 8.0ms | Allocations: 4020)
+
+
+Started GET "/shlok/mshlokr" for 127.0.0.1 at 2022-05-14 11:56:27 +0530
+Processing by ShlokController#mshlokr as HTML
+  [1m[36mBgvar Load (1.2ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.1ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:5
+  [1m[36mActiveStorage::Attachment Load (1.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:16
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:16
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 11.0ms | Allocations: 2974)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.6ms | Allocations: 7197)
+Completed 200 OK in 32ms (Views: 22.0ms | ActiveRecord: 4.7ms | Allocations: 8473)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6Mjk6NDguOTQ2WiIsInB1ciI6ImJsb2Jfa2V5In19--5dd8d9a938dda26ecf3068c607926469ffba1fce/aws" for 127.0.0.1 at 2022-05-14 11:56:27 +0530
+Processing by ActiveStorage::DiskController#show as HTML
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"aws"}
+Completed 206 Partial Content in 2ms (ActiveRecord: 0.0ms | Allocations: 343)
+
+
+Started GET "/shlok/1" for 127.0.0.1 at 2022-05-14 11:57:39 +0530
+Processing by ShlokController#mshloku as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBgvar Load (1.5ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mShlok Load (2.2ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:34:in `mshloku'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshloku.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (3.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshloku.html.erb:11
+  [1m[36mActiveStorage::Blob Load (2.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshloku.html.erb:11
+  Rendered shlok/mshloku.html.erb within layouts/application (Duration: 22.1ms | Allocations: 3397)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 128.4ms | Allocations: 26849)
+Completed 200 OK in 145ms (Views: 125.4ms | ActiveRecord: 9.3ms | Allocations: 28684)
+
+
+Started GET "/shlok/1" for 127.0.0.1 at 2022-05-14 11:57:40 +0530
+Processing by ShlokController#mshloku as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBgvar Load (0.9ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mShlok Load (1.1ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:34:in `mshloku'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshloku.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (1.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshloku.html.erb:11
+  [1m[36mActiveStorage::Blob Load (1.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshloku.html.erb:11
+  Rendered shlok/mshloku.html.erb within layouts/application (Duration: 23.0ms | Allocations: 3394)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 41.7ms | Allocations: 7596)
+Completed 200 OK in 52ms (Views: 40.5ms | ActiveRecord: 4.7ms | Allocations: 9424)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--91494c2e678e51e2121d329f83af63d47dd0590a/aws" for 127.0.0.1 at 2022-05-14 11:57:40 +0530
+Processing by ActiveStorage::Blobs::RedirectController#show as HTML
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--91494c2e678e51e2121d329f83af63d47dd0590a", "filename"=>"aws"}
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (1.0ms) [0m[34mGenerated URL for file at key: bkigndolqainighkrr33e37rsobq (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6MzI6NDAuMzI1WiIsInB1ciI6ImJsb2Jfa2V5In19--5ba58409b8360d78c0590ab980c823aa9a84e137/aws)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6MzI6NDAuMzI1WiIsInB1ciI6ImJsb2Jfa2V5In19--5ba58409b8360d78c0590ab980c823aa9a84e137/aws
+Completed 302 Found in 8ms (ActiveRecord: 0.9ms | Allocations: 1655)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6MzI6NDAuMzI1WiIsInB1ciI6ImJsb2Jfa2V5In19--5ba58409b8360d78c0590ab980c823aa9a84e137/aws" for 127.0.0.1 at 2022-05-14 11:57:40 +0530
+Processing by ActiveStorage::DiskController#show as HTML
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"aws"}
+Completed 206 Partial Content in 1ms (ActiveRecord: 0.0ms | Allocations: 343)
+
+
+Started PATCH "/shlok/1" for 127.0.0.1 at 2022-05-14 11:57:56 +0530
+Processing by ShlokController#mshlokup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "shlok"=>{"title"=>"First Shloka in History", "shlok"=>"hjkhn", "translation"=>"This shloka is actually the result of Maharshi Valmiki's anger!\r\nIt's said that शोकः श्लोकात्मगतः - Curse took the form of verse!\r\nOnce when the great sage was returning from his bath, he witnessed a male क्रौञ्च bird - which was engaged in mating - succumbing to the arrow of a hunter. The sage was infuriated by this, and uttered a curse, which miraculously consisted of lines following a fixed rhythm. And thence was born the first shloka in history, along with the legendary meter of anuṣṭup (अनुष्टुप्), that prompted Lord Brahma to order Maharshi Valmiki to compose the epic of Ramayana, in the same meter!\r\nनिषाद \"O hunter,\"\r\nत्वम् प्रतिष्ठां शाश्वतिः समाः मा अगमः \"you won't get any prestige or permanence (in other words, you won't get a place in history),\"\r\nयत् क्रॉञ्च-मिथुनात् \"because, from the union of the Kraunch birds,\"\r\nएकम् काममोहितम् अवधिः \"you have killed one of those infatuated by desire.\""}, "commit"=>"अग्रेस्थापनं करोतु", "id"=>"1"}
+  [1m[36mBgvar Load (2.0ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mShlok Load (1.3ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:42:in `mshlokup'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shlok_controller.rb:44:in `mshlokup'
+  [1m[36mShlok Update (1.3ms)[0m  [1m[33mUPDATE "shloks" SET "title" = $1, "updated_at" = $2 WHERE "shloks"."id" = $3[0m  [["title", "First Shloka in History"], ["updated_at", "2022-05-14 06:27:56.919307"], ["id", 1]]
+  ↳ app/controllers/shlok_controller.rb:44:in `mshlokup'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shlok_controller.rb:44:in `mshlokup'
+Redirected to http://127.0.0.1:3000/shlok/mshlokr
+Completed 302 Found in 27ms (ActiveRecord: 7.0ms | Allocations: 3881)
+
+
+Started GET "/shlok/mshlokr" for 127.0.0.1 at 2022-05-14 11:57:56 +0530
+Processing by ShlokController#mshlokr as HTML
+  [1m[36mBgvar Load (1.9ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.2ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:5
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:16
+  [1m[36mActiveStorage::Blob Load (1.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:16
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 13.0ms | Allocations: 2976)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 30.4ms | Allocations: 7202)
+Completed 200 OK in 41ms (Views: 28.1ms | ActiveRecord: 5.6ms | Allocations: 8478)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6MzI6NDAuMzI1WiIsInB1ciI6ImJsb2Jfa2V5In19--5ba58409b8360d78c0590ab980c823aa9a84e137/aws" for 127.0.0.1 at 2022-05-14 11:57:57 +0530
+Processing by ActiveStorage::DiskController#show as HTML
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"aws"}
+Completed 206 Partial Content in 2ms (ActiveRecord: 0.0ms | Allocations: 343)
+
+
+Started GET "/shlok/mshlokr" for 127.0.0.1 at 2022-05-14 11:58:03 +0530
+Processing by ShlokController#mshlokr as HTML
+  [1m[36mBgvar Load (2.1ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.0ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:5
+  [1m[36mActiveStorage::Attachment Load (2.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:16
+  [1m[36mActiveStorage::Blob Load (2.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:16
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 18.9ms | Allocations: 2973)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 38.9ms | Allocations: 7229)
+Completed 200 OK in 49ms (Views: 34.5ms | ActiveRecord: 7.8ms | Allocations: 8498)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--91494c2e678e51e2121d329f83af63d47dd0590a/aws" for 127.0.0.1 at 2022-05-14 11:58:04 +0530
+Processing by ActiveStorage::Blobs::RedirectController#show as HTML
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--91494c2e678e51e2121d329f83af63d47dd0590a", "filename"=>"aws"}
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (1.2ms) [0m[34mGenerated URL for file at key: bkigndolqainighkrr33e37rsobq (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6MzM6MDQuMTc3WiIsInB1ciI6ImJsb2Jfa2V5In19--3e255e5717ec283e822bba8a8de0cf64b2134f1d/aws)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6MzM6MDQuMTc3WiIsInB1ciI6ImJsb2Jfa2V5In19--3e255e5717ec283e822bba8a8de0cf64b2134f1d/aws
+Completed 302 Found in 8ms (ActiveRecord: 0.8ms | Allocations: 1655)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6MzM6MDQuMTc3WiIsInB1ciI6ImJsb2Jfa2V5In19--3e255e5717ec283e822bba8a8de0cf64b2134f1d/aws" for 127.0.0.1 at 2022-05-14 11:58:04 +0530
+Processing by ActiveStorage::DiskController#show as HTML
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"aws"}
+Completed 206 Partial Content in 2ms (ActiveRecord: 0.0ms | Allocations: 343)
+
+
+Started GET "/shlok/mshlokr" for 127.0.0.1 at 2022-05-14 11:58:12 +0530
+Processing by ShlokController#mshlokr as HTML
+  [1m[36mBgvar Load (2.3ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (2.3ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:5
+  [1m[36mActiveStorage::Attachment Load (2.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:16
+  [1m[36mActiveStorage::Blob Load (1.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:16
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 19.0ms | Allocations: 2973)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 38.5ms | Allocations: 7229)
+Completed 200 OK in 52ms (Views: 35.3ms | ActiveRecord: 8.4ms | Allocations: 8496)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--91494c2e678e51e2121d329f83af63d47dd0590a/aws" for 127.0.0.1 at 2022-05-14 11:58:12 +0530
+Processing by ActiveStorage::Blobs::RedirectController#show as HTML
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--91494c2e678e51e2121d329f83af63d47dd0590a", "filename"=>"aws"}
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.9ms) [0m[34mGenerated URL for file at key: bkigndolqainighkrr33e37rsobq (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6MzM6MTIuODUxWiIsInB1ciI6ImJsb2Jfa2V5In19--d6b15f86113605100e33b68ba293f83cbd9bfc17/aws)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6MzM6MTIuODUxWiIsInB1ciI6ImJsb2Jfa2V5In19--d6b15f86113605100e33b68ba293f83cbd9bfc17/aws
+Completed 302 Found in 8ms (ActiveRecord: 0.8ms | Allocations: 1653)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6MzM6MTIuODUxWiIsInB1ciI6ImJsb2Jfa2V5In19--d6b15f86113605100e33b68ba293f83cbd9bfc17/aws" for 127.0.0.1 at 2022-05-14 11:58:12 +0530
+Processing by ActiveStorage::DiskController#show as HTML
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"aws"}
+Completed 206 Partial Content in 2ms (ActiveRecord: 0.0ms | Allocations: 343)
+
+
+Started GET "/shlok/1" for 127.0.0.1 at 2022-05-14 11:58:53 +0530
+Processing by ShlokController#mshloku as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBgvar Load (1.4ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mShlok Load (1.1ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:34:in `mshloku'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshloku.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (2.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshloku.html.erb:11
+  [1m[36mActiveStorage::Blob Load (2.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshloku.html.erb:11
+  Rendered shlok/mshloku.html.erb within layouts/application (Duration: 21.3ms | Allocations: 3397)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 48.1ms | Allocations: 7603)
+Completed 200 OK in 61ms (Views: 44.0ms | ActiveRecord: 7.8ms | Allocations: 9435)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6MzM6MTIuODUxWiIsInB1ciI6ImJsb2Jfa2V5In19--d6b15f86113605100e33b68ba293f83cbd9bfc17/aws" for 127.0.0.1 at 2022-05-14 11:58:53 +0530
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6MzM6MTIuODUxWiIsInB1ciI6ImJsb2Jfa2V5In19--d6b15f86113605100e33b68ba293f83cbd9bfc17/aws" for 127.0.0.1 at 2022-05-14 11:58:53 +0530
+Processing by ActiveStorage::DiskController#show as HTML
+Processing by ActiveStorage::DiskController#show as HTML
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"aws"}
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"aws"}
+Completed 206 Partial Content in 2ms (ActiveRecord: 0.0ms | Allocations: 637)
+
+
+Completed 206 Partial Content in 1ms (ActiveRecord: 0.0ms | Allocations: 423)
+
+
+Started PATCH "/shlok/1" for 127.0.0.1 at 2022-05-14 11:59:08 +0530
+Processing by ShlokController#mshlokup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "shlok"=>{"title"=>"First Shloka in History", "shlok"=>"मा निषाद प्रतिष्ठां त्वम्\r\nअगमः शाश्वतिः समाः |\r\nयत् क्रॉञ्चमिथुनादेकम्\r\nअवधिः काममोहितम् ||", "translation"=>"This shloka is actually the result of Maharshi Valmiki's anger!\r\nIt's said that शोकः श्लोकात्मगतः - Curse took the form of verse!\r\nOnce when the great sage was returning from his bath, he witnessed a male क्रौञ्च bird - which was engaged in mating - succumbing to the arrow of a hunter. The sage was infuriated by this, and uttered a curse, which miraculously consisted of lines following a fixed rhythm. And thence was born the first shloka in history, along with the legendary meter of anuṣṭup (अनुष्टुप्), that prompted Lord Brahma to order Maharshi Valmiki to compose the epic of Ramayana, in the same meter!\r\nनिषाद \"O hunter,\"\r\nत्वम् प्रतिष्ठां शाश्वतिः समाः मा अगमः \"you won't get any prestige or permanence (in other words, you won't get a place in history),\"\r\nयत् क्रॉञ्च-मिथुनात् \"because, from the union of the Kraunch birds,\"\r\nएकम् काममोहितम् अवधिः \"you have killed one of those infatuated by desire.\""}, "commit"=>"अग्रेस्थापनं करोतु", "id"=>"1"}
+  [1m[36mBgvar Load (2.5ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mShlok Load (2.8ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:42:in `mshlokup'
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shlok_controller.rb:44:in `mshlokup'
+  [1m[36mShlok Update (2.0ms)[0m  [1m[33mUPDATE "shloks" SET "shlok" = $1, "updated_at" = $2 WHERE "shloks"."id" = $3[0m  [["shlok", "मा निषाद प्रतिष्ठां त्वम्\r\nअगमः शाश्वतिः समाः |\r\nयत् क्रॉञ्चमिथुनादेकम्\r\nअवधिः काममोहितम् ||"], ["updated_at", "2022-05-14 06:29:08.565701"], ["id", 1]]
+  ↳ app/controllers/shlok_controller.rb:44:in `mshlokup'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shlok_controller.rb:44:in `mshlokup'
+Redirected to http://127.0.0.1:3000/shlok/mshlokr
+Completed 302 Found in 35ms (ActiveRecord: 11.9ms | Allocations: 3899)
+
+
+Started GET "/shlok/mshlokr" for 127.0.0.1 at 2022-05-14 11:59:08 +0530
+Processing by ShlokController#mshlokr as HTML
+  [1m[36mBgvar Load (0.9ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.2ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:5
+  [1m[36mActiveStorage::Attachment Load (1.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:16
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:16
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 12.6ms | Allocations: 2975)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 26.6ms | Allocations: 7195)
+Completed 200 OK in 33ms (Views: 24.9ms | ActiveRecord: 4.2ms | Allocations: 8471)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6MzM6MTIuODUxWiIsInB1ciI6ImJsb2Jfa2V5In19--d6b15f86113605100e33b68ba293f83cbd9bfc17/aws" for 127.0.0.1 at 2022-05-14 11:59:08 +0530
+Processing by ActiveStorage::DiskController#show as HTML
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"aws"}
+Completed 206 Partial Content in 2ms (ActiveRecord: 0.0ms | Allocations: 343)
+
+
+Started GET "/shlok/1" for 127.0.0.1 at 2022-05-14 11:59:19 +0530
+Processing by ShlokController#mshloku as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBgvar Load (1.4ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mShlok Load (1.7ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:34:in `mshloku'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshloku.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshloku.html.erb:11
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshloku.html.erb:11
+  Rendered shlok/mshloku.html.erb within layouts/application (Duration: 10.2ms | Allocations: 3397)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 35.2ms | Allocations: 7598)
+Completed 200 OK in 49ms (Views: 34.6ms | ActiveRecord: 5.4ms | Allocations: 9430)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6MzM6MTIuODUxWiIsInB1ciI6ImJsb2Jfa2V5In19--d6b15f86113605100e33b68ba293f83cbd9bfc17/aws" for 127.0.0.1 at 2022-05-14 11:59:19 +0530
+Processing by ActiveStorage::DiskController#show as HTML
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"aws"}
+Completed 206 Partial Content in 2ms (ActiveRecord: 0.0ms | Allocations: 343)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6MzM6MTIuODUxWiIsInB1ciI6ImJsb2Jfa2V5In19--d6b15f86113605100e33b68ba293f83cbd9bfc17/aws" for 127.0.0.1 at 2022-05-14 11:59:19 +0530
+Processing by ActiveStorage::DiskController#show as HTML
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"aws"}
+Completed 206 Partial Content in 2ms (ActiveRecord: 0.0ms | Allocations: 343)
+
+
+Started PATCH "/shlok/1" for 127.0.0.1 at 2022-05-14 11:59:35 +0530
+Processing by ShlokController#mshlokup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "shlok"=>{"title"=>"First Shloka in History", "shlok"=>"मा निषाद प्रतिष्ठां त्वम्<br/>\r\nअगमः शाश्वतिः समाः |<br/>\r\nयत् क्रॉञ्चमिथुनादेकम्<br/>\r\nअवधिः काममोहितम् ||", "translation"=>"This shloka is actually the result of Maharshi Valmiki's anger!\r\nIt's said that शोकः श्लोकात्मगतः - Curse took the form of verse!\r\nOnce when the great sage was returning from his bath, he witnessed a male क्रौञ्च bird - which was engaged in mating - succumbing to the arrow of a hunter. The sage was infuriated by this, and uttered a curse, which miraculously consisted of lines following a fixed rhythm. And thence was born the first shloka in history, along with the legendary meter of anuṣṭup (अनुष्टुप्), that prompted Lord Brahma to order Maharshi Valmiki to compose the epic of Ramayana, in the same meter!\r\nनिषाद \"O hunter,\"\r\nत्वम् प्रतिष्ठां शाश्वतिः समाः मा अगमः \"you won't get any prestige or permanence (in other words, you won't get a place in history),\"\r\nयत् क्रॉञ्च-मिथुनात् \"because, from the union of the Kraunch birds,\"\r\nएकम् काममोहितम् अवधिः \"you have killed one of those infatuated by desire.\""}, "commit"=>"अग्रेस्थापनं करोतु", "id"=>"1"}
+  [1m[36mBgvar Load (2.5ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mShlok Load (1.9ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:42:in `mshlokup'
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/shlok_controller.rb:44:in `mshlokup'
+  [1m[36mShlok Update (2.3ms)[0m  [1m[33mUPDATE "shloks" SET "shlok" = $1, "updated_at" = $2 WHERE "shloks"."id" = $3[0m  [["shlok", "मा निषाद प्रतिष्ठां त्वम्<br/>\r\nअगमः शाश्वतिः समाः |<br/>\r\nयत् क्रॉञ्चमिथुनादेकम्<br/>\r\nअवधिः काममोहितम् ||"], ["updated_at", "2022-05-14 06:29:35.144147"], ["id", 1]]
+  ↳ app/controllers/shlok_controller.rb:44:in `mshlokup'
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/shlok_controller.rb:44:in `mshlokup'
+Redirected to http://127.0.0.1:3000/shlok/mshlokr
+Completed 302 Found in 38ms (ActiveRecord: 11.2ms | Allocations: 3896)
+
+
+Started GET "/shlok/mshlokr" for 127.0.0.1 at 2022-05-14 11:59:35 +0530
+Processing by ShlokController#mshlokr as HTML
+  [1m[36mBgvar Load (1.1ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.0ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:5
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:16
+  [1m[36mActiveStorage::Blob Load (1.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:16
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 13.4ms | Allocations: 2975)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 30.2ms | Allocations: 7199)
+Completed 200 OK in 37ms (Views: 27.5ms | ActiveRecord: 4.5ms | Allocations: 8476)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6MzM6MTIuODUxWiIsInB1ciI6ImJsb2Jfa2V5In19--d6b15f86113605100e33b68ba293f83cbd9bfc17/aws" for 127.0.0.1 at 2022-05-14 11:59:35 +0530
+Processing by ActiveStorage::DiskController#show as HTML
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"aws"}
+Completed 206 Partial Content in 3ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+Started GET "/shlok/mshlokr" for 127.0.0.1 at 2022-05-14 11:59:46 +0530
+Processing by ShlokController#mshlokr as HTML
+  [1m[36mBgvar Load (0.9ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (2.2ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:5
+  [1m[36mActiveStorage::Attachment Load (1.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:16
+  [1m[36mActiveStorage::Blob Load (1.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:16
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 16.8ms | Allocations: 2974)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 109.2ms | Allocations: 26364)
+Completed 200 OK in 117ms (Views: 106.1ms | ActiveRecord: 6.1ms | Allocations: 27631)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--91494c2e678e51e2121d329f83af63d47dd0590a/aws" for 127.0.0.1 at 2022-05-14 11:59:46 +0530
+Processing by ActiveStorage::Blobs::RedirectController#show as HTML
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--91494c2e678e51e2121d329f83af63d47dd0590a", "filename"=>"aws"}
+  [1m[36mActiveStorage::Blob Load (1.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (1.0ms) [0m[34mGenerated URL for file at key: bkigndolqainighkrr33e37rsobq (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6MzQ6NDYuOTEyWiIsInB1ciI6ImJsb2Jfa2V5In19--f063677052825fd5a9aae11cf13ab6dc92b9a1cc/aws)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6MzQ6NDYuOTEyWiIsInB1ciI6ImJsb2Jfa2V5In19--f063677052825fd5a9aae11cf13ab6dc92b9a1cc/aws
+Completed 302 Found in 8ms (ActiveRecord: 1.4ms | Allocations: 1652)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6MzQ6NDYuOTEyWiIsInB1ciI6ImJsb2Jfa2V5In19--f063677052825fd5a9aae11cf13ab6dc92b9a1cc/aws" for 127.0.0.1 at 2022-05-14 11:59:46 +0530
+Processing by ActiveStorage::DiskController#show as HTML
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"aws"}
+Completed 206 Partial Content in 2ms (ActiveRecord: 0.0ms | Allocations: 343)
+
+
+Started GET "/shlok/mshlokr" for 127.0.0.1 at 2022-05-14 12:00:35 +0530
+Processing by ShlokController#mshlokr as HTML
+  [1m[36mBgvar Load (2.5ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (2.4ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:5
+  [1m[36mActiveStorage::Attachment Load (3.8ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:16
+  [1m[36mActiveStorage::Blob Load (3.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:16
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 24.2ms | Allocations: 2976)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 112.4ms | Allocations: 26375)
+Completed 200 OK in 125ms (Views: 103.7ms | ActiveRecord: 12.5ms | Allocations: 27642)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--91494c2e678e51e2121d329f83af63d47dd0590a/aws" for 127.0.0.1 at 2022-05-14 12:00:35 +0530
+Processing by ActiveStorage::Blobs::RedirectController#show as HTML
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--91494c2e678e51e2121d329f83af63d47dd0590a", "filename"=>"aws"}
+  [1m[36mActiveStorage::Blob Load (1.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.9ms) [0m[34mGenerated URL for file at key: bkigndolqainighkrr33e37rsobq (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6MzU6MzYuMDAxWiIsInB1ciI6ImJsb2Jfa2V5In19--2d0d7a179fe4cb3d8b5d08617fdbb0491644fed2/aws)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6MzU6MzYuMDAxWiIsInB1ciI6ImJsb2Jfa2V5In19--2d0d7a179fe4cb3d8b5d08617fdbb0491644fed2/aws
+Completed 302 Found in 11ms (ActiveRecord: 1.4ms | Allocations: 1650)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6MzU6MzYuMDAxWiIsInB1ciI6ImJsb2Jfa2V5In19--2d0d7a179fe4cb3d8b5d08617fdbb0491644fed2/aws" for 127.0.0.1 at 2022-05-14 12:00:36 +0530
+Processing by ActiveStorage::DiskController#show as HTML
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"aws"}
+Completed 206 Partial Content in 2ms (ActiveRecord: 0.0ms | Allocations: 343)
+
+
+Started GET "/shlok/1" for 127.0.0.1 at 2022-05-14 12:00:58 +0530
+Processing by ShlokController#mshloku as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBgvar Load (2.4ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mShlok Load (2.6ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:34:in `mshloku'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshloku.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (3.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshloku.html.erb:11
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshloku.html.erb:11
+  Rendered shlok/mshloku.html.erb within layouts/application (Duration: 19.3ms | Allocations: 3397)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 47.7ms | Allocations: 7598)
+Completed 200 OK in 68ms (Views: 45.4ms | ActiveRecord: 9.3ms | Allocations: 9430)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6MzU6MzYuMDAxWiIsInB1ciI6ImJsb2Jfa2V5In19--2d0d7a179fe4cb3d8b5d08617fdbb0491644fed2/aws" for 127.0.0.1 at 2022-05-14 12:00:58 +0530
+Processing by ActiveStorage::DiskController#show as HTML
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"aws"}
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6MzU6MzYuMDAxWiIsInB1ciI6ImJsb2Jfa2V5In19--2d0d7a179fe4cb3d8b5d08617fdbb0491644fed2/aws" for 127.0.0.1 at 2022-05-14 12:00:58 +0530
+Completed 206 Partial Content in 3ms (ActiveRecord: 0.0ms | Allocations: 1161)
+
+
+Processing by ActiveStorage::DiskController#show as HTML
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"aws"}
+Completed 206 Partial Content in 2ms (ActiveRecord: 0.0ms | Allocations: 356)
+
+
+Started GET "/shlok/1" for 127.0.0.1 at 2022-05-14 12:01:48 +0530
+Processing by ShlokController#mshloku as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBgvar Load (2.3ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mShlok Load (2.3ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:34:in `mshloku'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshloku.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (2.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshloku.html.erb:11
+  [1m[36mActiveStorage::Blob Load (2.7ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshloku.html.erb:11
+  Rendered shlok/mshloku.html.erb within layouts/application (Duration: 28.0ms | Allocations: 3399)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 98.1ms | Allocations: 22987)
+Completed 200 OK in 116ms (Views: 94.4ms | ActiveRecord: 9.6ms | Allocations: 24818)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--91494c2e678e51e2121d329f83af63d47dd0590a/aws" for 127.0.0.1 at 2022-05-14 12:01:48 +0530
+Processing by ActiveStorage::Blobs::RedirectController#show as HTML
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--91494c2e678e51e2121d329f83af63d47dd0590a", "filename"=>"aws"}
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.6ms) [0m[34mGenerated URL for file at key: bkigndolqainighkrr33e37rsobq (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6MzY6NDguNjE2WiIsInB1ciI6ImJsb2Jfa2V5In19--e3733e6a2aa36504a2b389bfcde1b151194fb3ab/aws)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6MzY6NDguNjE2WiIsInB1ciI6ImJsb2Jfa2V5In19--e3733e6a2aa36504a2b389bfcde1b151194fb3ab/aws
+Completed 302 Found in 8ms (ActiveRecord: 1.1ms | Allocations: 1650)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6MzY6NDguNjE2WiIsInB1ciI6ImJsb2Jfa2V5In19--e3733e6a2aa36504a2b389bfcde1b151194fb3ab/aws" for 127.0.0.1 at 2022-05-14 12:01:48 +0530
+Processing by ActiveStorage::DiskController#show as HTML
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"aws"}
+Completed 206 Partial Content in 3ms (ActiveRecord: 0.0ms | Allocations: 343)
+
+
+Started GET "/shlok/1" for 127.0.0.1 at 2022-05-14 12:02:13 +0530
+Processing by ShlokController#mshloku as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBgvar Load (1.9ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mShlok Load (2.5ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:34:in `mshloku'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshloku.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (1.6ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshloku.html.erb:11
+  [1m[36mActiveStorage::Blob Load (3.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshloku.html.erb:11
+  Rendered shlok/mshloku.html.erb within layouts/application (Duration: 23.4ms | Allocations: 4136)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 42.7ms | Allocations: 9320)
+Completed 200 OK in 69ms (Views: 51.4ms | ActiveRecord: 9.4ms | Allocations: 12035)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--91494c2e678e51e2121d329f83af63d47dd0590a/aws" for 127.0.0.1 at 2022-05-14 12:02:13 +0530
+Processing by ActiveStorage::Blobs::RedirectController#show as HTML
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--91494c2e678e51e2121d329f83af63d47dd0590a", "filename"=>"aws"}
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.8ms) [0m[34mGenerated URL for file at key: bkigndolqainighkrr33e37rsobq (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6Mzc6MTMuOTAwWiIsInB1ciI6ImJsb2Jfa2V5In19--4573074ecd19cb480822c0316eff1e5f2e22cd6f/aws)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6Mzc6MTMuOTAwWiIsInB1ciI6ImJsb2Jfa2V5In19--4573074ecd19cb480822c0316eff1e5f2e22cd6f/aws
+Completed 302 Found in 8ms (ActiveRecord: 1.0ms | Allocations: 1741)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6Mzc6MTMuOTAwWiIsInB1ciI6ImJsb2Jfa2V5In19--4573074ecd19cb480822c0316eff1e5f2e22cd6f/aws" for 127.0.0.1 at 2022-05-14 12:02:13 +0530
+Processing by ActiveStorage::DiskController#show as HTML
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"aws"}
+Completed 206 Partial Content in 2ms (ActiveRecord: 0.0ms | Allocations: 355)
+
+
+Started GET "/shlok/1" for 127.0.0.1 at 2022-05-14 12:03:07 +0530
+Processing by ShlokController#mshloku as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBgvar Load (2.4ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mShlok Load (1.7ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:34:in `mshloku'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshloku.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (1.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshloku.html.erb:11
+  [1m[36mActiveStorage::Blob Load (1.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshloku.html.erb:11
+  Rendered shlok/mshloku.html.erb within layouts/application (Duration: 20.2ms | Allocations: 4126)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 39.7ms | Allocations: 9305)
+Completed 200 OK in 63ms (Views: 43.1ms | ActiveRecord: 6.9ms | Allocations: 12046)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--91494c2e678e51e2121d329f83af63d47dd0590a/aws" for 127.0.0.1 at 2022-05-14 12:03:08 +0530
+Processing by ActiveStorage::Blobs::RedirectController#show as HTML
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--91494c2e678e51e2121d329f83af63d47dd0590a", "filename"=>"aws"}
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.8ms) [0m[34mGenerated URL for file at key: bkigndolqainighkrr33e37rsobq (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6Mzg6MDguMjA0WiIsInB1ciI6ImJsb2Jfa2V5In19--48bb7758106742b3f0f53ebf1186748081c23d63/aws)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6Mzg6MDguMjA0WiIsInB1ciI6ImJsb2Jfa2V5In19--48bb7758106742b3f0f53ebf1186748081c23d63/aws
+Completed 302 Found in 9ms (ActiveRecord: 1.0ms | Allocations: 1740)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6Mzg6MDguMjA0WiIsInB1ciI6ImJsb2Jfa2V5In19--48bb7758106742b3f0f53ebf1186748081c23d63/aws" for 127.0.0.1 at 2022-05-14 12:03:08 +0530
+Processing by ActiveStorage::DiskController#show as HTML
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"aws"}
+Completed 206 Partial Content in 3ms (ActiveRecord: 0.0ms | Allocations: 355)
+
+
+Started GET "/shlok/1" for 127.0.0.1 at 2022-05-14 12:04:40 +0530
+Processing by ShlokController#mshloku as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBgvar Load (15.6ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mShlok Load (14.3ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:34:in `mshloku'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshloku.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshloku.html.erb:11
+  [1m[36mActiveStorage::Blob Load (1.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshloku.html.erb:11
+  Rendered shlok/mshloku.html.erb within layouts/application (Duration: 56.1ms | Allocations: 3401)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 121.6ms | Allocations: 24092)
+Completed 200 OK in 169ms (Views: 128.2ms | ActiveRecord: 32.2ms | Allocations: 25953)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--91494c2e678e51e2121d329f83af63d47dd0590a/aws" for 127.0.0.1 at 2022-05-14 12:04:41 +0530
+Processing by ActiveStorage::Blobs::RedirectController#show as HTML
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--91494c2e678e51e2121d329f83af63d47dd0590a", "filename"=>"aws"}
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: bkigndolqainighkrr33e37rsobq (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6Mzk6NDEuMDgwWiIsInB1ciI6ImJsb2Jfa2V5In19--6c4836bd98cec324a38d0e4d6b569aeaf0eb921c/aws)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6Mzk6NDEuMDgwWiIsInB1ciI6ImJsb2Jfa2V5In19--6c4836bd98cec324a38d0e4d6b569aeaf0eb921c/aws
+Completed 302 Found in 7ms (ActiveRecord: 1.1ms | Allocations: 1650)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6Mzk6NDEuMDgwWiIsInB1ciI6ImJsb2Jfa2V5In19--6c4836bd98cec324a38d0e4d6b569aeaf0eb921c/aws" for 127.0.0.1 at 2022-05-14 12:04:41 +0530
+Processing by ActiveStorage::DiskController#show as HTML
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"aws"}
+Completed 206 Partial Content in 2ms (ActiveRecord: 0.0ms | Allocations: 343)
+
+
+Started PATCH "/shlok/1" for 127.0.0.1 at 2022-05-14 12:04:53 +0530
+Processing by ShlokController#mshlokup as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "shlok"=>{"title"=>"First Shloka in History", "shlok"=>"मा निषाद प्रतिष्ठां त्वम्<br/>\r\nअगमः शाश्वतिः समाः |<br/>\r\nयत् क्रॉञ्चमिथुनादेकम्<br/>\r\nअवधिः काममोहितम् ||", "translation"=>"This shloka is actually the result of Maharshi Valmiki's anger!\r\nIt's said that शोकः श्लोकात्मगतः - Curse took the form of verse!\r\nOnce when the great sage was returning from his bath, he witnessed a male क्रौञ्च bird - which was engaged in mating - succumbing to the arrow of a hunter. The sage was infuriated by this, and uttered a curse, which miraculously consisted of lines following a fixed rhythm. And thence was born the first shloka in history, along with the legendary meter of anuṣṭup (अनुष्टुप्), that prompted Lord Brahma to order Maharshi Valmiki to compose the epic of Ramayana, in the same meter!\r\nनिषाद \"O hunter,\"\r\nत्वम् प्रतिष्ठां शाश्वतिः समाः मा अगमः \"you won't get any prestige or permanence (in other words, you won't get a place in history),\"\r\nयत् क्रॉञ्च-मिथुनात् \"because, from the union of the Kraunch birds,\"\r\nएकम् काममोहितम् अवधिः \"you have killed one of those infatuated by desire.\""}, "commit"=>"अग्रेस्थापनं करोतु", "id"=>"1"}
+  [1m[36mBgvar Load (2.1ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mShlok Load (2.0ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks" WHERE "shloks"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/shlok_controller.rb:42:in `mshlokup'
+Redirected to http://127.0.0.1:3000/shlok/mshlokr
+Completed 302 Found in 18ms (ActiveRecord: 4.1ms | Allocations: 1935)
+
+
+Started GET "/shlok/mshlokr" for 127.0.0.1 at 2022-05-14 12:04:53 +0530
+Processing by ShlokController#mshlokr as HTML
+  [1m[36mBgvar Load (1.0ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering shlok/mshlokr.html.erb within layouts/application
+  [1m[36mShlok Load (1.1ms)[0m  [1m[34mSELECT "shloks".* FROM "shloks"[0m
+  ↳ app/views/shlok/mshlokr.html.erb:5
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Shlok"], ["name", "audio"], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:16
+  [1m[36mActiveStorage::Blob Load (1.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shlok/mshlokr.html.erb:16
+  Rendered shlok/mshlokr.html.erb within layouts/application (Duration: 12.2ms | Allocations: 3334)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 28.6ms | Allocations: 7553)
+Completed 200 OK in 37ms (Views: 27.7ms | ActiveRecord: 4.3ms | Allocations: 8959)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6Mzk6NDEuMDgwWiIsInB1ciI6ImJsb2Jfa2V5In19--6c4836bd98cec324a38d0e4d6b569aeaf0eb921c/aws" for 127.0.0.1 at 2022-05-14 12:04:53 +0530
+Processing by ActiveStorage::DiskController#show as HTML
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"aws"}
+Completed 206 Partial Content in 1ms (ActiveRecord: 0.0ms | Allocations: 343)
+
+
+Started GET "/welcome/memarea" for 127.0.0.1 at 2022-05-14 12:04:58 +0530
+Processing by WelcomeController#memarea as HTML
+  [1m[36mBgvar Load (1.7ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/memarea.html.erb within layouts/application
+  Rendered welcome/memarea.html.erb within layouts/application (Duration: 3.1ms | Allocations: 402)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 39.1ms | Allocations: 4806)
+Completed 200 OK in 58ms (Views: 49.7ms | ActiveRecord: 1.7ms | Allocations: 6724)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhZbXRwWjI1a2IyeHhZV2x1YVdkb2EzSnlNek5sTXpkeWMyOWljUVk2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpTldGMGRHRmphRzFsYm5RN0lHWnBiR1Z1WVcxbFBTSmhkM01pT3lCbWFXeGxibUZ0WlNvOVZWUkdMVGduSjJGM2N3WTdCbFE2RVdOdmJuUmxiblJmZEhsd1pVa2lIV0Z3Y0d4cFkyRjBhVzl1TDI5amRHVjBMWE4wY21WaGJRWTdCbFE2RVhObGNuWnBZMlZmYm1GdFpUb0tiRzlqWVd3PSIsImV4cCI6IjIwMjItMDUtMTRUMDY6Mzk6NDEuMDgwWiIsInB1ciI6ImJsb2Jfa2V5In19--6c4836bd98cec324a38d0e4d6b569aeaf0eb921c/aws" for 127.0.0.1 at 2022-05-14 12:04:59 +0530
+Processing by ActiveStorage::DiskController#show as HTML
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"aws"}
+Completed 206 Partial Content in 2ms (ActiveRecord: 0.0ms | Allocations: 463)
+
+
+Started GET "/user/muserr" for 127.0.0.1 at 2022-05-14 12:05:00 +0530
+Processing by UserController#muserr as HTML
+  [1m[36mBgvar Load (1.7ms)[0m  [1m[34mSELECT "bgvars".* FROM "bgvars" ORDER BY "bgvars"."visits" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `visit_count'
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "sanskritclub@iitr.ac.in"], ["LIMIT", 1]]
+  ↳ app/controllers/user_controller.rb:6:in `set_user_variable'
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  ↳ app/controllers/user_controller.rb:66:in `muserr'
+  Rendering layout layouts/application.html.erb
+  Rendering user/users.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/user/users.html.erb:31
+  Rendered user/users.html.erb within layouts/application (Duration: 38.5ms | Allocations: 8900)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 58.0ms | Allocations: 13241)
+Completed 200 OK in 110ms (Views: 58.4ms | ActiveRecord: 14.2ms | Allocations: 18767)
+
+
