@@ -22,12 +22,15 @@
     पुनरपि सर्वेषां पुरतः आनेतुम् इच्छामः। अयम् अस्माकं परमध्येयः।
 </div>
 <hr/><br/>
+
 <h3>Announcements</h3>
-<% for i in @news do %>
-    <div class="news">
-        <%= i.news %><br/>
-    </div>
-<% end %>
+<div class="news">
+    <% for i in @news do %>
+        <div class="news1">
+            <%= i.news %><br/>
+        </div>
+    <% end %>
+</div>
 
 <p>
     You have visited this page <%= @visit %> times.<br/>
