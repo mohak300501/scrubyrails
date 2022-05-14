@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     patch "user/uformp", as:"form_post"
     
     get "welcome/mhomer", as:"home"
-    get "welcome/mhomec", as:"new_home"
+    get "welcome/mhomec", as:"new_announcement"
     post "welcome/mannouncementcp", as:"announcement_post"
     get "news/:id", to:"game#mhomeu"
     post "news/:id", to:"game#mannouncementup"
