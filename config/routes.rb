@@ -11,6 +11,10 @@ Rails.application.routes.draw do
     
     get "welcome/mhomer", as:"home"
     get "welcome/mhomec", as:"new_home"
+    post "welcome/mhomecp", as:"announcement_post"
+    get "news/:id", to:"game#mhomeu"
+    post "news/:id", to:"game#mhomeup"
+    get "news/:id/del", to:"game#mhomedp"
     get "welcome/memarea", as:"member_area"
 
     get "game/ugame", as:"games"

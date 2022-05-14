@@ -1,3 +1,16 @@
 <div>
 <p>welcome to mhomec</p>
+<%= link_to "प्रतिगच्छतु", all_announcements_path %>
 </div>
+<%= form_tag announcement_post_path do %>
+    <div>
+        <%= label_tag "title" %><br/>
+        <%= text_field_tag :news, nil, :required => true, class: "mtextfield" %><br/><br/>
+        
+        
+    </div>
+    <div>
+        <%= submit_tag "अग्रेस्थापनं करोतु", :class => "button" %><br/>
+        <%= link_to "प्रतिगच्छतु", all_announcements_path %>
+    </div>
+<% end %>
