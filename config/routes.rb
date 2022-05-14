@@ -12,9 +12,9 @@ Rails.application.routes.draw do
     get "welcome/mhomer", as:"home"
     get "welcome/mhomec", as:"new_announcement"
     post "welcome/mannouncementcp", as:"announcement_post"
-    get "news/:id", to:"game#mhomeu"
-    post "news/:id", to:"game#mannouncementup"
-    get "news/:id/del", to:"game#mannouncementdp"
+    get "news/:id", to:"welcome#mhomeu"
+    post "news/:id", to:"welcome#mannouncementup"
+    get "news/:id/del", to:"welcome#mannouncementdp"
     get "welcome/memarea", as:"member_area"
 
     get "game/ugame", as:"games"
