@@ -40,20 +40,20 @@ class WelcomeController < ApplicationController
     end
 
     def mannouncementcp
-        announcement = Announcement.new(:name => params[:name])
+        news = Announcement.new(:name => params[:name])
         announcement.save
         flash[:notice] = "नूतनः announcementH योजितः जातः!"
         redirect_to all_announcements_path
     end
     
     def mannouncementdp
-        announcement = Announcement.find(params[:id])
+        news = Announcement.find(params[:id])
         announcement.destroy
         redirect_to all_announcements_path
     end
 
     def mannouncementup
-        announcement = Announcement.find(params[:id])
+        news = Announcement.find(params[:id])
         announcement.update(:name => params[:name])
         flash[:notice] = "announcementH परिवर्तितः जातः!"
         redirect_to all_announcements_path
