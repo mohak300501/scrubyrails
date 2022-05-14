@@ -7,6 +7,7 @@ class WelcomeController < ApplicationController
     def mhomer
         if session[:member]
             @news = Announcement.all
+            @visit = session[:visit]
             render "mhomer"
         else
             redirect_to root_url
