@@ -23,8 +23,7 @@ class WelcomeController < ApplicationController
 
     def mhomeu
         if session[:member]
-            @sr = params[:id]
-            @news = Announcement.find_by(id: @sr)
+            @news = Announcement.find(params[:id])
             render "mhomeu"
         else
             redirect_to root_url
@@ -54,7 +53,7 @@ class WelcomeController < ApplicationController
 
     def mannouncementup
         news = Announcement.find(params[:id])
-        news.update(:news => params[:news])
+        news.update(:news => params[:announcement][:news])
         flash[:notice] = "announcementH परिवर्तितः जातः!"
         redirect_to home_path
     end

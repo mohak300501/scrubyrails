@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     get "welcome/mhomec", as:"new_announcement"
     post "welcome/mannouncementcp", as:"announcement_post"
     get "news/:id", to:"welcome#mhomeu"
-    post "news/:id", to:"welcome#mannouncementup"
+    patch "news/:id", to:"welcome#mannouncementup", as:"announcement_update"
     get "news/:id/del", to:"welcome#mannouncementdp"
     get "welcome/memarea", as:"member_area"
 

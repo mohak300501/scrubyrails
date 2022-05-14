@@ -29,7 +29,7 @@
     <% for i in @news do %>
         <div class="news1">
             <%= i.news %><br/>
-            <% path = "../announcement/" + i.id.to_s %>
+            <% path = "../news/" + i.id.to_s %>
             <div class="updel">
                 <%= link_to path, class: "anone" do %>
                     <div class="button">परिवर्तयतु</div>
