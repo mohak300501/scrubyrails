@@ -23,13 +23,12 @@
 </p>
 <hr><br>
 <h3>Announcements</h3>
-<div class="news">
-    <% for i in @news do %>
-        <div class="news1">
-            <%= i.news %><br/>
-        </div>
-    <% end %>
-</div>
+<% for i in @news do %>
+    <div class="news">
+        <%= i.news %><br/>
+    </div>
+<% end %>
+
 <p>
     The time now is: <%= Time.now %> <br/>
     You have visited this page <%= @visit %> times.<br/>

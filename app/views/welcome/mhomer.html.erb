@@ -23,10 +23,10 @@
 </p>
 <hr><br>
 <h3>Announcements</h3>
-<div class="news">
+
 <%= link_to "नूतनः announcement योजयतु", new_announcement_path %>
 <% for i in @news do %>
-    <div class="news1">
+    <div class="news">
         <div class="title">
             <%= i.news %><br/>
         </div>
@@ -42,7 +42,7 @@
         </div>
     </div>
 <% end %>
-</div>
+
 
 
 <p>
