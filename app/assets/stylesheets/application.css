@@ -100,14 +100,14 @@
     justify-items: center;
 }
 .mtextfield {
-    width: 60%;
+    width: 80%;
     text-align: center;
     padding: 1rem;
     font-size: 1.2rem;
 }
 .mtextarea-1 {
     height: 6rem;
-    width: 60%;
+    width: 80%;
     text-align: center;
     padding: 1rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -115,7 +115,7 @@
 }
 .mtextarea-2 {
     height: 10rem;
-    width: 60%;
+    width: 80%;
     text-align: left;
     padding: 1rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -129,6 +129,9 @@
     box-shadow: 0 2.5px 1px rgba(255,166,0,0.6);
 }
 @media screen and (min-width:540px) {
+    .mtextfield, .mtextarea-1, .mtextarea-2 {
+        width: 60%;
+    }
     .utextfield, select {
         width: 25%;
     }

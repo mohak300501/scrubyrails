@@ -23,6 +23,8 @@ class WelcomeController < ApplicationController
 
     def mhomeu
         if session[:member]
+            @sr = params[:id]
+            @news = Announcement.find_by(id: @sr)
             render "mhomeu"
         else
             redirect_to root_url
@@ -35,5 +37,25 @@ class WelcomeController < ApplicationController
         else
             redirect_to root_url
         end
+    end
+
+    def mannouncementcp
+        news = Announcement.new(:news => params[:news])
+        news.save
+        flash[:notice] = "नूतनः announcementH योजितः जातः!"
+        redirect_to home_path
+    end
+    
+    def mannouncementdp
+        news = Announcement.find(params[:id])
+        news.destroy
+        redirect_to home_path
+    end
+
+    def mannouncementup
+        news = Announcement.find(params[:id])
+        news.update(:news => params[:news])
+        flash[:notice] = "announcementH परिवर्तितः जातः!"
+        redirect_to home_path
     end
 end
