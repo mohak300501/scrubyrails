@@ -13,7 +13,7 @@
         </div>
 
         <div class="button">
-            <%= link_to "Read more", "../course/" + i.cname + "/uview", class: "anone" %>
+            <%= link_to "Read more", course_uview_path(i.cname), class: "anone" %>
         </div>
     </div>
 <% end %>

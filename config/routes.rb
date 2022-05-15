@@ -41,9 +41,8 @@ Rails.application.routes.draw do
     get "course/:id/up",        to:"course#mcourseu",   as:"course"
     patch "course/:id",         to:"course#mcourseup",  as:"course_update"
     delete "course/:id/del",    to:"course#mcoursedp",  as:"course_delete"
-    get "course/:cname/uview",  to:"course#ucourse1"
-    get "course/:cname/mview",  to:"course#mcourse1"
-    get "course/:cname/reg",    to:"course#ureg"
+    get "course/:cname/uview",  to:"course#ucourse1",   as:"course_uview"
+    get "course/:cname/reg",    to:"course#ureg",       as:"course_reg"
     # post "course/:name/reg",  to:"course#uformp"
 
     get "feedback/ufeedback",                           as:"feedback"

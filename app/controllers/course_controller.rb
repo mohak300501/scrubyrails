@@ -96,7 +96,7 @@ class CourseController < ApplicationController
                 # if user.courses.include? table # another way of saying the same thing
                 user_regd = ActiveRecord::Base.connection.execute("select count(*) from " + table + " where email='" + email + "';")[0]["count"]
                 if user_regd > 0
-                    redirect_to "/../../course/" + table + "/uview"
+                    redirect_to course_uview_path(table)
                 else
                     user_regid = ""
                     if user.regid.nil?
@@ -118,7 +118,8 @@ class CourseController < ApplicationController
                     user.update(:courses => user.courses)
                     course = Course.find_by(cname: table).name
                     CourseMailer.with(course: course, user_email: email).ureg_mail.deliver_later
-                    redirect_to "/../../course/" + table + "/uview"
+                    flash[:notice] = "You have successfully registered for the course!"
+                    redirect_to course_uview_path(table)
                 end
             else
                 flash[:notice] = "Please update your profile to register for a course."
