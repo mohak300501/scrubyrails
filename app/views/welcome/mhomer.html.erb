@@ -24,17 +24,17 @@
 <hr/><br/>
 
 <h3>Announcements</h3>
-<%= link_to "नूतनः announcement योजयतु", new_announcement_path %>
+<%= link_to "नूतनः announcement योजयतु", new_news_path %>
 <div class="news">
     <% for i in @news do %>
         <div class="news1">
-            <%= i.news %><br/>
-            <% path = "../news/" + i.id.to_s %>
+            <%= i.news.html_safe %><br/>
             <div class="updel">
-                <%= link_to path, class: "anone" do %>
+                <%= link_to news_path(i.id), class: "anone" do %>
                     <div class="button">परिवर्तयतु</div>
                 <% end %>
-                <%= link_to path + "/del", :confirm => "Are you sure you want to delete this announcement?", class: "anone" do %>
+                <%= link_to news_delete_path(i.id), method: "delete",
+                    data: {confirm: "Are you sure you want to delete this announcement?"}, class: "anone" do %>
                     <div class="button">विनश्यतु</div>
                 <% end %>
             </div>

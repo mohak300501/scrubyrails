@@ -99,7 +99,7 @@ class LoggingController < ApplicationController
                 session[ifmoru ? :member : :user ] = moru.name
                 session[:email] = moru.email
                 flash[:notice] = "Logged in!"
-                redirect_to root_url
+                redirect_to ifmoru ? home_path : root_url
             else
                 if params[:email] == Rails.application.credentials.member[:MEMBER_EMAIL] and ifmoru
                     flash[:notice] = Rails.application.credentials.member[:MEMBER_MESSAGE].split("/").join(" ")

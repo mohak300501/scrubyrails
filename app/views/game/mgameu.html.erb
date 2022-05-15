@@ -1,17 +1,8 @@
-<div>
-<p>welcome to mgameu</p>
-</div>
-
-<%= form_tag '../game/' + @game.id.to_s do %>
-    <div>
-        <%= label_tag "शीर्षकं" %><br/>
-        <%= text_field_tag :name, @game.name, :required => true, class: "mtextfield" %><br/>
-        <%= label_tag "gameH" %><br/>
-        <%= text_area_tag :info, @game.info, :required => true, class: "mtextarea-1" %><br/>
-        
-    </div>
-    <div>
-        <%= submit_tag "अग्रेस्थापनं करोतु", :class => "button" %><br/>
-        <%= link_to "प्रतिगच्छतु", all_games_path %>
-    </div>
+<%= form_for @game, url:game_update_path do |f| %>
+    <%= f.label "शीर्षकं" %><br/>
+    <%= f.text_field :name, :required => true, class: "mtextfield" %><br/>
+    <%= f.label "gameH" %><br/>
+    <%= f.text_area :info, :required => true, class: "mtextarea-1" %><br/>
+    <%= f.submit "अग्रेस्थापनं करोतु", :class => "button" %><br/>
+    <%= link_to "प्रतिगच्छतु", all_games_path %>
 <% end %>

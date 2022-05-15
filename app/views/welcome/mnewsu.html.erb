@@ -1,7 +1,4 @@
-<div>
-<p>welcome to mhomeu</p>
-</div>
-<%= form_for @news, url:announcement_update_path do |f| %>
+<%= form_for @news, url:news_update_path do |f| %>
     <%= f.label "announcement" %><br/>
     <%= f.text_field :news, :required => true, class: "mtextfield" %><br/>
     <%= f.submit "अग्रेस्थापनं करोतु", :class => "button" %><br/>

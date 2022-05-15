@@ -27,7 +27,7 @@
 <div class="news">
     <% for i in @news do %>
         <div class="news1">
-            <%= i.news %><br/>
+            <%= i.news.html_safe %><br/>
         </div>
     <% end %>
 </div>

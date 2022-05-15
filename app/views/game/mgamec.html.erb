@@ -1,17 +1,8 @@
-<div>
-<p>welcome to mgamec</p>
-<%= link_to "प्रतिगच्छतु", all_games_path %>
-</div>
 <%= form_tag game_post_path do %>
-    <div>
-        <%= label_tag "gametitle" %><br/>
-        <%= text_field_tag :name, nil, :required => true, class: "mtextfield" %><br/><br/>
-        <%= label_tag "gameinfo" %><br/>
-        <%= text_area_tag :info, nil, :required => true, class: "mtextarea-1" %><br/><br/>
-        
-    </div>
-    <div>
-        <%= submit_tag "अग्रेस्थापनं करोतु", :class => "button" %><br/>
-        <%= link_to "प्रतिगच्छतु", all_games_path %>
-    </div>
+    <%= label_tag "gametitle" %><br/>
+    <%= text_field_tag :name, nil, :required => true, class: "mtextfield" %><br/><br/>
+    <%= label_tag "gameinfo" %><br/>
+    <%= text_area_tag :info, nil, :required => true, class: "mtextarea-1" %><br/><br/>
+    <%= submit_tag "अग्रेस्थापनं करोतु", :class => "button" %><br/>
+    <%= link_to "प्रतिगच्छतु", all_games_path %>
 <% end %>
