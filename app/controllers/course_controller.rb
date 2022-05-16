@@ -22,7 +22,7 @@ class CourseController < ApplicationController
     end
 
     def mcoursecp
-        course = Course.new(:name => params[:name], :cname => params[:cname], :more => params[:more],
+        course = Course.new(:name => params[:name], :cname => params[:cname], :regon =>pp[:regon], :more => params[:more],
                             :description => params[:description], :image => params[:image])
         course.save
 
@@ -49,7 +49,7 @@ class CourseController < ApplicationController
         if !(course.cname == pp[:cname])
             ActiveRecord::Base.connection.execute("alter table " + course.cname + " rename to " + pp[:cname] + ";")
         end
-        course.update(:name => pp[:name], :cname => pp[:cname], :description => pp[:description], :more => pp[:more])
+        course.update(:name => pp[:name], :cname => pp[:cname], :regon =>pp[:regon], :description => pp[:description], :more => pp[:more])
         if pp[:image].present?
             course.image.purge
             course.image.attach(pp[:image])
