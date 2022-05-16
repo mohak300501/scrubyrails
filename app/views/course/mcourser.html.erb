@@ -10,6 +10,10 @@
             <img src="<%= rails_blob_url(i.image) %>", class="img-100" />
         </div>
 
+        <div>
+            <b>Course code:</b> <%= i.regon %><br/>
+        </div>
+
         <div class="info">
             <%= i.description.html_safe %><br/><br/>
             <b>Course code:</b> <%= i.cname %><br/><br/>

@@ -5,6 +5,13 @@
     <%= text_field_tag :name, nil, :required => true, class: "mtextfield" %><br/><br/>
     <%= label_tag "course code" %><br/>
     <%= text_field_tag :cname, nil, :required => true, class: "mtextfield" %><br/><br/>
+    Registration:
+    <div class="radio">
+        <%= f.radio_button :regon, "on" %>
+        <%= f.label :regon_on, "On" %>
+        <%= f.radio_button :regon, "off", :checked => true %>
+        <%= f.label :regon_off, "off" %><br/>
+    </div>
     <%= label_tag "image" %><br/>
     <%= file_field_tag :image, :required => true %><br/><br/>
     <%= label_tag "description" %><br/>

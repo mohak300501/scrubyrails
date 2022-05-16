@@ -5,6 +5,13 @@
     <%= f.text_field :name, :required => true, class: "mtextfield" %><br/><br/>
     <%= f.label "course code" %><br/>
     <%= f.text_area :cname, :required => true, class: "mtextfield" %><br/><br/>
+    Registration:
+    <div class="radio">
+        <%= f.radio_button :regon, "on" %>
+        <%= f.label :regon_on, "On" %>
+        <%= f.radio_button :regon, "off" %>
+        <%= f.label :regon_off, "off" %><br/>
+    </div>
     <%= f.label "description" %><br/>
     <%= f.text_area :description, :required => true, class: "mtextarea-1" %><br/><br/>
     <%= f.label "more info" %><br/>
