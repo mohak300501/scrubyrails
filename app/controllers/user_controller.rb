@@ -64,6 +64,7 @@ class UserController < ApplicationController
                 @users = @users.filter_by_(i, params[i]) if params[i].present?
             end
             @count = @users.count
+            @users = @users.order(:regid)
             render "users"
         else
             redirect_to root_url
