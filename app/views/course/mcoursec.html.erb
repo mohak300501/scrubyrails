@@ -7,10 +7,10 @@
     <%= text_field_tag :cname, nil, :required => true, class: "mtextfield" %><br/><br/>
     Registration:
     <div class="radio">
-        <%= f.radio_button :regon, "on" %>
-        <%= f.label :regon_on, "On" %>
-        <%= f.radio_button :regon, "off", :checked => true %>
-        <%= f.label :regon_off, "off" %><br/>
+        <%= radio_button_tag :regon, "on" %>
+        <%= label_tag :regon_on, "On" %>
+        <%= radio_button_tag :regon, "off", :checked => true %>
+        <%= label_tag :regon_off, "off" %><br/>
     </div>
     <%= label_tag "image" %><br/>
     <%= file_field_tag :image, :required => true %><br/><br/>
