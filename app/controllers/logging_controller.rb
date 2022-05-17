@@ -152,7 +152,7 @@ class LoggingController < ApplicationController
                 ifmoru = session[:moru] == "member" ? true : false
                 session.delete(:fotp)
                 session.delete(:femail)
-                moru = ifmoru ? Member.find_by(email: params[:email]) : User.find_by(email: params[:email])
+                moru = ifmoru ? Member.find_by(email: email) : User.find_by(email: email)
                 moru.update(:password => params[:password])
                 flash[:notice] = "Password reset successfully. Please login to continue."
                 redirect_to ifmoru ? member_login_path : user_login_path
