@@ -39,7 +39,7 @@ class LoggingController < ApplicationController
                 otp = SecureRandom.random_number(999999)
                 session[:otp] = otp
                 OtpMailer.with(otp: otp, email: params[:email]).otp_mail.deliver_later
-                flash[:alert] = "The OTP has been sent to " + params[:email] + ". Please enter it in the OTP field."
+                flash[:alert] = "An OTP has been sent to " + params[:email] + ". Please enter it in the OTP field."
                 redirect_to ifmoru ? new_member_path : new_user_path
             else
                 flash[:notice] = "Passwords do not match."
@@ -137,7 +137,7 @@ class LoggingController < ApplicationController
             fotp = SecureRandom.random_number(999999)
             session[:fotp] = fotp
             FotpMailer.with(fotp: fotp, email: params[:email]).fotp_mail.deliver_later
-            flash[:alert] = "The OTP has been sent to " + params[:email] + ". Please enter it in the OTP field."
+            flash[:alert] = "An OTP has been sent to " + params[:email] + ". Please enter it in the OTP field."
             redirect_to forgot_path
         else
             flash[:notice] = "Email not found."
@@ -150,7 +150,7 @@ class LoggingController < ApplicationController
             if params[:password] == params[:repass]
                 email = session[:femail]
                 ifmoru = session[:moru] == "member" ? true : false
-                session.delete(:otp)
+                session.delete(:fotp)
                 session.delete(:femail)
                 moru = ifmoru ? Member.find_by(email: params[:email]) : User.find_by(email: params[:email])
                 moru.update(:password => params[:password])
