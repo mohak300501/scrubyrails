@@ -11,7 +11,7 @@ class LoggingController < ApplicationController
     def mnew
         main_mem = Rails.application.credentials.mail[:MAIL_USERNAME]
         if session[:member] and session[:email] != main_mem
-            redirect_to root_url
+            redirect_to home_path
         elsif session[:email] == main_mem
             session[:moru] = "member"
             render "new"
@@ -39,7 +39,7 @@ class LoggingController < ApplicationController
                 otp = SecureRandom.random_number(999999)
                 session[:otp] = otp
                 OtpMailer.with(otp: otp, email: params[:email]).otp_mail.deliver_later
-                flash[:alert] = "The OTP has been sent to the above email address. Please enter it in the OTP field."
+                flash[:alert] = "The OTP has been sent to " + params[:email] + ". Please enter it in the OTP field."
                 redirect_to ifmoru ? new_member_path : new_user_path
             else
                 flash[:notice] = "Passwords do not match."
@@ -75,7 +75,7 @@ class LoggingController < ApplicationController
 
     def mlogin
         if session[:member]
-            redirect_to root_url
+            redirect_to home_path
         else
             session[:moru] = "member"
             render "login"
@@ -103,8 +103,9 @@ class LoggingController < ApplicationController
             else
                 if params[:email] == Rails.application.credentials.member[:MEMBER_EMAIL] and ifmoru
                     flash[:notice] = Rails.application.credentials.member[:MEMBER_MESSAGE].split("/").join(" ")
+                else
+                    flash[:notice] = "Incorrect password!"
                 end
-                flash[:notice] = "Incorrect password!"
                 redirect_to ifmoru ? member_login_path : user_login_path
             end
         else
@@ -118,5 +119,50 @@ class LoggingController < ApplicationController
         session.delete(ifmoru ? :member : :user)
         session.delete(:email)
         redirect_to root_url
+    end
+
+    def forgot
+        if session[:moru]
+            render "reset"
+        else
+            redirect_to root_url
+        end
+    end
+
+    def forgotp
+        ifmoru = session[:moru] == "member" ? true : false
+        moru = ifmoru ? Member.find_by(email: params[:email]) : User.find_by(email: params[:email])
+        if moru
+            session[:femail] = params[:email]
+            fotp = SecureRandom.random_number(999999)
+            session[:fotp] = fotp
+            FotpMailer.with(fotp: fotp, email: params[:email]).fotp_mail.deliver_later
+            flash[:alert] = "The OTP has been sent to " + params[:email] + ". Please enter it in the OTP field."
+            redirect_to forgot_path
+        else
+            flash[:notice] = "Email not found."
+            redirect_to forgot_path
+        end
+    end
+    
+    def resetp
+        if params[:fotp].to_i == session[:fotp]
+            if params[:password] == params[:repass]
+                email = session[:femail]
+                ifmoru = session[:moru] == "member" ? true : false
+                session.delete(:otp)
+                session.delete(:femail)
+                moru = ifmoru ? Member.find_by(email: params[:email]) : User.find_by(email: params[:email])
+                moru.update(:password => params[:password])
+                flash[:notice] = "Password reset successfully. Please login to continue."
+                redirect_to ifmoru ? member_login_path : user_login_path
+            else
+                flash[:notice] = "Passwords do not match."
+                redirect_to forgot_path
+            end
+        else
+            flash[:alert] = "OTP does not match. Please re-enter carefully."
+            redirect_to forgot_path
+        end
     end
 end

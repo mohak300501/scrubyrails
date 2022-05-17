@@ -1,0 +1,16 @@
+<h1>Reset <%= session[:moru] %> password</h1>
+<% if !session[:fotp] %>
+    <div>Please enter your registered email, so that we can verify it&lsquo;s you.<br/><br/><br/></div>
+    <%= form_tag forgotp_path do %>
+        <%= email_field_tag :email, nil, :required => true, class: "utextfield", placeholder: "Your email" %><br/><br/>
+        <%= submit_tag "Submit", :class => "button" %>
+    <% end %>
+
+<% else %>
+    <%= form_tag resetp_path do %>
+        <%= text_field_tag :otp, nil, :required => true, class: "utextfield", placeholder: "Enter OTP" %><br/><br/>
+        <%= password_field_tag :password, nil, :required => true, class: "utextfield", placeholder: "Set new password" %><br/><br/>
+        <%= password_field_tag :repass, nil, :required => true, class: "utextfield", placeholder: "Re-enter password" %><br/><br/>
+        <%= submit_tag "Submit", :class => "button" %>
+    <% end %>
+<% end %>

@@ -1,4 +1,4 @@
-<h1>Log In</h1>
+<h1>Log in as <%= session[:moru] %></h1>
 <%= form_tag login_post_path do %>
     <br/>
     <%= email_field_tag :email, nil, :required => true, class: "utextfield", placeholder: "Your email" %><br/><br/>
@@ -6,7 +6,9 @@
     <%= submit_tag "Log In", :class => "button" %>
 <% end %>
 <br/>
-
-<% if session[:moru] == "user" %>
-    <div><br/>New user? <%= link_to "Sign up", new_user_path %> instead.<br/><br/></div>
-<% end %>
+<div>
+    Forgot password? <%= link_to "Reset", forgot_path %> it.<br/>
+    <% if session[:moru] == "user" %>
+            <br/>New user? <%= link_to "Sign up", new_user_path %> instead.<br/><br/>
+    <% end %>
+</div>

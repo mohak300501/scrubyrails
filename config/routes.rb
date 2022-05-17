@@ -33,6 +33,9 @@ Rails.application.routes.draw do
     get "logging/ulogin",                               as:"user_login"
     post "logging/loginp",                              as:"login_post"
     get "logging/logout",                               as:"logout"
+    get "logging/forgot",                               as:"forgot"
+    post "logging/forgotp",                             as:"forgotp"
+    post "logging/resetp",                              as:"resetp"
 
     get "course/ucourse",                               as:"courses"
     get "course/mcourser",                              as:"all_courses"
