@@ -23,8 +23,18 @@
 
     <% if @user_regd > 0 %>
         <div><b>You are registered for this course.</b></div>
+        
+        <div class="info">
+            <b>Lecture links:</b> coming soon
+        </div>
+
+        <div class="info">
+            <b>Exams:</b> coming soon<br/>
+        </div>
+
     <% elsif i.regon == "off" %>
         <div><b>Registration has been closed for this course.</b></div>
+    
     <% else %>
         <%= link_to course_reg_path(i.cname), class: "anone",
             data: {:confirm => "Are you sure you want to register for this course?"} do %>

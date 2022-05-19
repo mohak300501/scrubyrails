@@ -14,53 +14,13 @@ class UserController < ApplicationController
         end
     end
 
-    # def new
-    #     if session[:user]
-    #         redirect_to root_url
-    #     else
-    #         render "new"
-    #     end
-    # end
-
-    # def newp
-    #     if User.find_by(email: params[:email])
-    #         flash[:notice] = "Email already registered."
-    #         redirect_to new_path
-    #     else
-    #         if params[:password] == params[:repass]
-    #             session[:new_user] = {"name" => params[:name], "email" => params[:email], "password" => params[:password]}
-    #             otp = SecureRandom.random_number(999999)
-    #             session[:otp] = otp
-    #             OtpMailer.with(otp: otp, email: params[:email]).otp_mail.deliver_later
-    #             flash[:alert] = "The OTP has been sent to the above email address. Please enter it in the OTP field."
-    #             redirect_to new_path
-    #         else
-    #             flash[:notice] = "Passwords do not match."
-    #             redirect_to new_path
-    #         end
-    #     end
-    # end
-
-    # def otpp
-    #     if params[:otp].to_i == session[:otp]
-    #         nu = session[:new_user]
-    #         user = User.new(:name => nu["name"], :email => nu["email"], :password => nu["password"])
-    #         user.save
-    #         session.delete(:otp)
-    #         session.delete(:new_user)
-    #         flash[:notice] = "Registered successfully! Login to continue."
-    #         redirect_to user_login_path
-    #     else
-    #         flash[:alert] = "OTP does not match. Please re-enter carefully."
-    #         redirect_to new_path
-    #     end
-    # end
-
     def muserr
         if session[:member]
             @users = User.where(nil)
-            keys = ["regid", "country", "state", "pin", "gender", "age", "sanslevel", "acadqual"]
-            for i in keys
+            @keys = ["name", "email", "country", "state", "pin", "gender", "age", "mobile", "sanslevel", "acadqual", "regid", "courses"]
+            @cols = ["Name", "Email", "Country", "State", "PIN", "Gender", "Age", "Mobile no.", "Sanskrit Proficiency Level",
+                        "Academic Qualification", "Regid", "Courses registered in"]
+            for i in @keys
                 @users = @users.filter_by_(i, params[i]) if params[i].present?
             end
             @count = @users.count

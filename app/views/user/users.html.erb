@@ -1,24 +1,16 @@
-<% parts = ["Name", "Email", "Country", "State", "PIN", "Gender", "Age", "Mobile no.", "Sanskrit Proficiency Level",
-            "Academic Qualification", "Regid", "Courses registered in"] %>
-<% dets = ["name", "email", "country", "state", "pin", "gender", "age", "mobile", "sanslevel", "acadqual", "regid", "courses"] %>
-
-<br/><br/>
 <%= form_tag user_sort_path do %>
-    <%= text_field_tag :regid, nil, class: "utextfield", placeholder: "Search by regid" %><br/><br/>
-    <%= text_field_tag :country, nil, class: "utextfield", placeholder: "Search by country" %><br/><br/>
-    <%= text_field_tag :state, nil, class: "utextfield", placeholder: "Search by state" %><br/><br/>
-    <%= number_field_tag :pin, nil, class: "utextfield", placeholder: "Search by PIN" %><br/><br/>
-    <%= text_field_tag :gender, nil, class: "utextfield", placeholder: "Search by gender" %><br/><br/>
-    <%= number_field_tag :age, nil, class: "utextfield", placeholder: "Search by age" %><br/><br/>
-    <%= text_field_tag :sanslevel, nil, class: "utextfield", placeholder: "Search by Sanskrit Proficiency Level" %><br/><br/>
-    <%= text_field_tag :acadqual, nil, class: "utextfield", placeholder: "Search by Academic Qualification" %><br/><br/>
+    <br/>
+    <% for j in 0..11 %>
+        <%= text_field_tag @keys[j], nil, class: "utextfield", placeholder: "Search by " + @cols[j] %><br/><br/>
+    <% end %>
     <%= submit_tag "अग्रेस्थापनं करोतु", :class => "button" %><br/>
 <% end %>
 
+<%= @count %> users.
 <div class="overu">
     <table class="users">
         <tr>
-            <% for j in parts %>
+            <% for j in @cols %>
                 <th><%= j %></th>
             <% end %>
             <th>Delete</th>
@@ -30,8 +22,8 @@
         <% else %>
             <% for i in @users do %>
                 <tr>
-                    <% for j in 0..11 %>
-                        <td><%= i[dets[j]] if !i[dets[j]].nil? %></td>
+                    <% for j in @keys %>
+                        <td><%= i[j] if !i[j].nil? %></td>
                     <% end %>
                     <td><%= link_to "Delete", user_delete_path(i.id), method: "delete",
                             data: {:confirm => "Are you sure you want to delete this user?"} %></td>
@@ -40,4 +32,3 @@
         <% end %>
     </table>
 </div>
-<%= @count %> users.

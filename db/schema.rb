@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_16_045102) do
+ActiveRecord::Schema.define(version: 2022_05_19_171141) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,11 +58,10 @@ ActiveRecord::Schema.define(version: 2022_05_16_045102) do
   create_table "courses", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.string "cname"
     t.string "more"
     t.string "regon"
+    t.string "yt"
   end
 
   create_table "events", force: :cascade do |t|
@@ -89,8 +88,6 @@ ActiveRecord::Schema.define(version: 2022_05_16_045102) do
     t.string "name"
     t.string "email"
     t.string "password"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "shloks", force: :cascade do |t|
@@ -109,9 +106,9 @@ ActiveRecord::Schema.define(version: 2022_05_16_045102) do
     t.boolean "profile"
     t.string "country"
     t.string "state"
-    t.integer "pin"
+    t.string "pin"
     t.string "gender"
-    t.integer "age"
+    t.string "age"
     t.string "mobile"
     t.string "sanslevel"
     t.string "acadqual"

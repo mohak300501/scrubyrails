@@ -16,11 +16,13 @@
     <%= f.text_area :description, :required => true, class: "mtextarea-1" %><br/><br/>
     <%= f.label "more info" %><br/>
     <%= f.text_area :more, :required => true, class: "mtextarea-2" %><br/><br/>
+    <%= f.label "lecture links" %><br/>
+    <%= f.text_area :yt, :required => true, class: "mtextarea-2" %><br/><br/>
     <%= f.label "current image" %><br/>
     <img src="<%= rails_blob_url(@course.image) %>" class="img-50" /><br/><br/>
     <%= f.label "change image" %><br/>
     <%= f.file_field :image %><br/><br/>
 
     <%= f.submit "अग्रेस्थापनं करोतु", :class => "button" %><br/>
+    <%= link_to "प्रतिगच्छतु", all_courses_path %><br/><br/>
 <% end %>
-<%= link_to "प्रतिगच्छतु", all_courses_path %>
