@@ -68,4 +68,8 @@ Rails.application.routes.draw do
     delete "event/:id/del",     to:"event#meventdp",    as:"event_delete"
     
     get "resource/uresource",                           as:"resources"
+
+    get "exam/:id/uview",          to:"exam#mexam1",      as:"exam_uview"
+    get "exam/:id/cr",          to:"exam#mexamcr",      as:"exam_cr"
+
 end
