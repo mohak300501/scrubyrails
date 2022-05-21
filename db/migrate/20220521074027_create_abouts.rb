@@ -4,8 +4,6 @@ class CreateAbouts < ActiveRecord::Migration[6.1]
       t.string :about
       t.string :htuse
       t.string :terms
-
-      t.timestamps
     end
   end
 end
