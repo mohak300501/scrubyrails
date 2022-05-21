@@ -1,0 +1,12 @@
+<div><%= @about ? "about" : @htuse ? "htuse" : "terms" %> परिवर्तयतु</div>
+
+<% path = @about ? about_update_path : @htuse ? htuse_update_path : terms_update_path %>
+<% about = @about ? @about : @htuse ? @htuse : @terms %>
+<% field = @about ? :about : @htuse ? :htuse : :terms %>
+<% back = @about ? about_path : @htuse ? htuse_path : terms_path %>
+
+<%= form_for about, url: path do |f|%>
+    <%= f.text_area field, :required => true, class: "mtextarea-2" %><br/><br/>
+    <%= f.submit "अग्रेस्थापनं करोतु", :class => "button" %><br/>
+    <%= link_to "प्रतिगच्छतु", back %>
+<% end %>

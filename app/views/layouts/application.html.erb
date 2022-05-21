@@ -41,25 +41,23 @@
             </div>
         <% end %>
 
-        <% if session[:member] %>
-            <div class="navbar">
+        <div class="navbar">
+            <% if session[:member] %>
                 <%= link_to "Home", home_path %>
                 <%= link_to "Events", all_events_path %>
                 <%= link_to "Shlok", all_shloks_path %>
                 <%= link_to "Games", all_games_path %>
                 <%= link_to "Resources", resources_path %>
                 <%= link_to "Courses", all_courses_path %>
-            </div>
-        <% else %>
-            <div class="navbar">
+            <% else %>
                 <%= link_to "Home", root_url %>
                 <%= link_to "Events", events_path %>
                 <%= link_to "Shlok", shloks_path %>
                 <%= link_to "Games", games_path %>
                 <!--<%= link_to "Resources", resources_path %>-->
                 <%= link_to "Courses", courses_path %>
-            </div>
-        <% end %>
+            <% end %>
+        </div>
 
         <% flash.each do |type, msg| %>
             <div class="flash">
@@ -70,11 +68,12 @@
         <%= yield %>
 
         <div class="footer">
-            Visitors since 14 May &lsquo;22: <%= session[:vc] %><br/>
-            <!--<%= link_to "About", root_url %>
-            <%= link_to "How to Use", events_path %>
-            <%= link_to "Terms", shloks_path %>
-            <%= link_to "Feedback", feedback_path %><br/>-->
+            <%= link_to "About", about_path %>&nbsp;&nbsp;
+            <%= link_to "How to Use", htuse_path %>&nbsp;&nbsp;
+            <%= link_to "Terms", terms_path %><br/>
+            Visitors since 14 May &lsquo;22: <%= session[:vc] %><br/><br/>
+            <!--<%= link_to "Feedback", feedback_path %>&nbsp;&nbsp;
+            <%= link_to "Team", shloks_path %>-->
             &copy; <%= Time.new.year %>. All rights reserved.
             DESIGN: <a href="https://github.com/mohak300501/scrubyrails" target="_blank">Sanskrit Club IITR</a>.
         </div>

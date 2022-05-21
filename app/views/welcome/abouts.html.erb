@@ -1,0 +1,11 @@
+<div>
+    <%= @about.html_safe if @about %>
+    <%= @htuse.html_safe if @htuse %>
+    <%= @terms.html_safe if @terms %>
+</div>
+<% if session[:member] %>
+    <% path = @about ? about_change_path : @htuse ? htuse_change_path : terms_change_path %>
+    <%= link_to path, class: "anone" do %>
+        <div class="button">परिवर्तयतु</div>
+    <% end %>
+<% end %>

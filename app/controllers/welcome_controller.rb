@@ -58,4 +58,79 @@ class WelcomeController < ApplicationController
             redirect_to root_url
         end
     end
+
+    def about
+        @about = About.first.about
+        render "abouts"
+    end
+
+    def htuse
+        @htuse = About.first.htuse
+        render "abouts"
+    end
+
+    def terms
+        @terms = About.first.terms
+        render "abouts"
+    end
+
+    def maboutu
+        if session[:member]
+            @about = About.first
+            render "maboutsu"
+        else
+            redirect_to root_url
+        end
+    end
+
+    def mhtuseu
+        if session[:member]
+            @htuse = About.first
+            render "maboutsu"
+        else
+            redirect_to root_url
+        end
+    end
+
+    def mtermsu
+        if session[:member]
+            @terms = About.first
+            render "maboutsu"
+        else
+            redirect_to root_url
+        end
+    end
+
+    def maboutup
+        if session[:member]
+            pp = params[:about]
+            about = About.first
+            about.update(:about => pp[:about])
+            redirect_to about_path
+        else
+            redirect_to root_url
+        end
+    end
+
+    def mhtuseup
+        if session[:member]
+            pp = params[:about]
+            htuse = About.first
+            htuse.update(:htuse => pp[:htuse])
+            redirect_to htuse_path
+        else
+            redirect_to root_url
+        end
+    end
+
+    def mtermsup
+        if session[:member]
+            pp = params[:about]
+            terms = About.first
+            terms.update(:terms => pp[:terms])
+            redirect_to terms_path
+        else
+            redirect_to root_url
+        end
+    end
 end

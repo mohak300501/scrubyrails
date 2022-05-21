@@ -17,6 +17,16 @@ Rails.application.routes.draw do
     delete "news/:id/del",      to:"welcome#mnewsdp",   as:"news_delete"
     get "welcome/memarea",                              as:"member_area"
 
+    get "welcome/about",                                as:"about"
+    get "welcome/htuse",                                as:"htuse"
+    get "welcome/terms",                                as:"terms"
+    get "welcome/maboutu",                              as:"about_change"
+    get "welcome/mhtuseu",                              as:"htuse_change"
+    get "welcome/mtermsu",                              as:"terms_change"
+    patch "welcome/maboutup",                           as:"about_update"
+    patch "welcome/mhtuseup",                           as:"htuse_update"
+    patch "welcome/mtermsup",                           as:"terms_update"
+
     get "game/ugame",                                   as:"games"
     get "game/mgamer",                                  as:"all_games"
     get "game/mgamec",                                  as:"new_game"
@@ -69,7 +79,7 @@ Rails.application.routes.draw do
     
     get "resource/uresource",                           as:"resources"
 
-    get "exam/:id/uview",          to:"exam#mexam1",      as:"exam_uview"
+    get "exam/:id/uview",       to:"exam#mexam1",       as:"exam_uview"
     get "exam/:id/cr",          to:"exam#mexamcr",      as:"exam_cr"
-
+    patch "exam/:id/up",        to:"exam#mexamu",       as:"exam"
 end
