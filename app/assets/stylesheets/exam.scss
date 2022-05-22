@@ -1,0 +1,43 @@
+// Place all the styles related to the exam controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.questable {
+    width: 90%;
+    text-align: left;
+    box-shadow: -3px 3px 10px rgb(100, 100, 100);
+    margin: 1rem auto;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+.col15 {
+    width: 15%;
+}
+.col10 {
+    width: 10%;
+}
+.quesform {
+    width: 80%;
+    box-shadow: -3px 3px 10px rgb(100, 100, 100);
+    margin: 1rem auto;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+.examtf {
+    font-size: 1.1rem;
+    width: 95%;
+    border: 0;
+    border-bottom: 1px solid black;
+    box-shadow: 0 2.5px 1px rgba(255,166,0,0.6);
+}
+@media screen and (min-width:540px) {
+    .questable {
+        width: 60%;
+    }
+    .quesform {
+        width: 40%;
+    }
+    .examtf {
+        width: 80%;
+    }
+}

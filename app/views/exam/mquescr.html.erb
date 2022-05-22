@@ -1,0 +1,54 @@
+<div class="button">
+    <%= link_to "प्रतिगच्छतु", all_courses_path, class: "anone" %>
+</div>
+
+<div>
+    <b><%= @exam.name %></b><br/>
+    <%= @exam.info %>
+    <div class="updel">
+        <%= link_to exam_change_path(params[:cname], params[:ename]), class: "anone" do %>
+            <div class="button">परिवर्तयतु</div>
+        <% end %>
+        <%= link_to exam_delete_path(params[:cname], params[:ename]), method: "delete",
+            data: {:confirm => "Are you sure you want to delete this exam?"}, class: "anone" do %>
+            <div class="button">विनश्यतु</div>
+        <% end %>
+    </div>
+</div>
+
+<% keys = ["Question", "Option 1", "Option 2", "Option 3", "Option 4", "Correct option"] %>
+<% values = ["question", "opt1", "opt2", "opt3", "opt4", "correct"] %>
+
+<% for i in @questions do %>
+    <table class="questable">
+        <col span="1" class="col15">
+        <% for j in 0..5 %>
+            <tr>
+                <td><b><%= keys[j]%></b></td><td>: <%= i[values[j]] %><br/></td>
+            </tr>
+        <% end %>
+        <tr>
+            <td colspan=2>
+                <div class="updel">
+                    <%= link_to ques_change_path(params[:cname], params[:ename], i["id"]), class: "anone" do %>
+                        <div class="button">परिवर्तयतु</div>
+                    <% end %>
+                    <%= link_to ques_delete_path(params[:cname], params[:ename], i["id"]), method: "delete",
+                        data: {:confirm => "Are you sure you want to delete this question?"}, class: "anone" do %>
+                        <div class="button">विनश्यतु</div>
+                    <% end %>
+                </div>
+            </td>
+        <tr/>
+    </table>
+<% end %>
+
+<%= form_tag ques_create_path do %>
+    <div class="quesform">
+        New Question<br/><br/>
+        <% for j in 0..5 %>
+            <%= text_field_tag values[j].to_sym, nil, :required => true, class: "examtf", placeholder: keys[j] %><br/></br>
+        <% end %>
+        <%= submit_tag "अग्रेस्थापनं करोतु", :class => "button" %><br/>
+    </div>
+<% end %>

@@ -7,6 +7,7 @@ class CourseController < ApplicationController
     def mcourser
         if session[:member]
             @courses = Course.all
+            @exams = Exam.all
             render "mcourser"
         else
             redirect_to root_url
@@ -79,6 +80,7 @@ class CourseController < ApplicationController
         email = session[:email]
         table = params[:cname]
         @course = Course.find_by(cname: table)
+        @exams = Exam.all
         @user_regd = 0
         if session[:user]
             # @user = User.find_by(email: email)

@@ -1,0 +1,18 @@
+<h1>Question-परिवर्तनं करोतु</h1>
+
+<%= form_tag ques_update_path, method: "patch" do %>
+    <%= label_tag "Question" %><br/>
+    <%= text_field_tag :question, @question["question"], :required => true, class: "mtextfield" %><br/><br/>
+    <%= label_tag "Option 1" %><br/>
+    <%= text_area_tag :opt1, @question["opt1"], :required => true, class: "mtextfield" %><br/>
+    <%= label_tag "Option 2" %><br/>
+    <%= text_area_tag :opt2, @question["opt2"], :required => true, class: "mtextfield" %><br/>
+    <%= label_tag "Option 3" %><br/>
+    <%= text_area_tag :opt3, @question["opt3"], :required => true, class: "mtextfield" %><br/>
+    <%= label_tag "Option 4" %><br/>
+    <%= text_area_tag :opt4, @question["opt4"], :required => true, class: "mtextfield" %><br/>
+    <%= label_tag "Correct option" %><br/>
+    <%= text_area_tag :correct, @question["correct"], :required => true, class: "mtextfield" %><br/>
+    <%= submit_tag "अग्रेस्थापनं करोतु", :class => "button" %><br/>
+    <%= link_to "प्रतिगच्छतु", ques_read_path(params[:cname], params[:ename]) %>
+<% end %>

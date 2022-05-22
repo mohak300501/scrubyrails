@@ -1,0 +1,9 @@
+<%= form_tag exam_create_path do %>
+    <br/>
+    <%= label_tag "exam no." %><br/>
+    <%= number_field_tag :eno, nil, :required => true, class: "mnumberfield" %><br/><br/>
+    <%= label_tag "exam info" %><br/>
+    <%= text_area_tag :info, nil, :required => true, class: "mtextarea-1" %><br/><br/>
+    <%= submit_tag "अग्रेस्थापनं करोतु", :class => "button" %><br/>
+    <%= link_to "प्रतिगच्छतु", all_courses_path %>
+<% end %>

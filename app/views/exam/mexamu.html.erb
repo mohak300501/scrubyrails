@@ -1,0 +1,10 @@
+<h1>Exam-परिवर्तनं करोतु</h1>
+
+<%= form_tag exam_update_path, method: "patch" do %>
+    <%= label_tag "Exam no." %><br/>
+    <%= number_field_tag :eno, @exam.name.split("_")[1], :required => true, class: "mnumberfield" %><br/><br/>
+    <%= label_tag "Description" %><br/>
+    <%= text_area_tag :info, @exam.info, :required => true, class: "mtextarea-1" %><br/>
+    <%= submit_tag "अग्रेस्थापनं करोतु", :class => "button" %><br/>
+    <%= link_to "प्रतिगच्छतु", ques_read_path(params[:cname], params[:ename]) %>
+<% end %>

@@ -16,7 +16,19 @@
             <b>Registration:</b> <%= i.regon %><br/><br/>
             <%= i.more.html_safe %><br/><br/>
             <b>Lecture links:</b> coming soon<br/><br/>
-            <b>Exams:</b> coming soon
+            <b>Exams:</b><br/>
+            <% for j in @exams %>
+                <% if j.name.include? i.cname %>
+                    <% exam = j.name.split("_") %>
+                    &bull; 
+                    <%= link_to ques_read_path(i.cname, exam[0] + "_" + exam[1]) do %>
+                        <%= exam[0] + " - " + exam[1] + " | " + exam[2] %>
+                    <% end %><br/>
+                <% end %>
+            <% end %>
+            <%= link_to exam_new_path(i.cname), class: "anone" do %>
+                <div class="button">नूतनः examH योजयतु</div>
+            <% end %>
         </div>
 
         <div class="updel">

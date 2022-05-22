@@ -29,7 +29,16 @@
         </div>
 
         <div class="info">
-            <b>Exams:</b> coming soon<br/>
+            <b>Exams:</b><br/>
+            <% for j in @exams %>
+                <% if j.name.include? i.cname %>
+                    <% exam = j.name.split("_") %>
+                    &bull;
+                    <%= link_to exam_uview_path(i.cname, exam[0] + "_" + exam[1]) do %>
+                        <%= exam[0] + " - " + exam[1] + " | " + exam[2] %>
+                    <% end %><br/>
+                <% end %>
+            <% end %>
         </div>
 
     <% elsif i.regon == "off" %>
