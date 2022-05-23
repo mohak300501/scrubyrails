@@ -1,8 +1,23 @@
 class ExamController < ApplicationController
+    #      Exam_{no}_{course}_p      #                   Exam_{no}_{course}_Q                    #
+    #  +--------------------------+  #  +-----------------------------------------------------+  #
+    #  | id | pid | Q1 | Q2 | ... |  #  | id | question | opt1 | opt2 | opt3 | opt4 | correct |  #
+    #  +--------------------------+  #  +-----------------------------------------------------+  #
+    #                                #                                                           #
+
     def uexam1
         if session[:user]
-            table = params[:ename] + "_" + params[:cname] + "_q"
-            @questions = ActiveRecord::Base.connection.exec_query("select * from " + table + ";")
+            email = session[:email]
+            exam_name = params[:ename] + "_" + params[:cname]
+            qtable = exam_name + "_q"
+            @questions = ActiveRecord::Base.connection.exec_query("select * from " + qtable + ";")
+            no_of_q = @questions.length
+
+            # Fetch marks from parent course table
+            marks = ActiveRecord::Base.connection.exec_query("select " + exam_name + " from " + params[:cname] + " where email='" + email + "';")[0].first()[1]
+            @marks = "#{marks}/#{no_of_q}"
+
+            render "uexam1"
         else
             redirect_to root_url
         end

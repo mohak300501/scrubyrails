@@ -2,19 +2,26 @@
     <%= link_to "प्रतिगच्छतु", course_uview_path(params[:cname]), class: "anone" %>
 </div>
 
-<% values = ["question", "opt1", "opt2", "opt3", "opt4"] %>
-
-<%= form_tag exam_upost_path(params[:cname], params[:ename]) do %>
-    <% for i in @questions do %>
-        <div class="questable">
-            <b>Q.</b> <%= i[values[0]] %><br/>
-            <div class="radio">
-                <% for j in 1..4 %>
-                    <%= radio_button_tag :"ans_#{i["id"]}", values[j] %>
-                    <%= label_tag :"ans_#{i["id"]}_#{values[j]}", i[values[j]] %><br/>
-                <% end %>
+<% if @marks.nil? %>
+    <% values = ["question", "opt1", "opt2", "opt3", "opt4"] %>
+    <%= form_tag exam_upost_path(params[:cname], params[:ename]) do %>
+        <% for i in @questions do %>
+            <div class="questable">
+                <b>Q.</b> <%= i[values[0]] %><br/>
+                <div class="radio">
+                    <% for j in 1..4 %>
+                        <%= radio_button_tag :"ans_#{i["id"]}", values[j] %>
+                        <%= label_tag :"ans_#{i["id"]}_#{values[j]}", i[values[j]] %><br/>
+                    <% end %>
+                </div>
             </div>
-        </div>
+        <% end %>
+        <%= submit_tag "अग्रेस्थापनं करोतु", :class => "button" %><br/>
     <% end %>
-    <%= submit_tag "अग्रेस्थापनं करोतु", :class => "button" %><br/>
+<% else %>
+    <div>
+        <br/>
+        <b>You have completed this exam.</b><br/><br/>
+        Your score is <%= @marks %>.
+    </div>
 <% end %>
