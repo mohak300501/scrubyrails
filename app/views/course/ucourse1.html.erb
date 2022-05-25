@@ -25,7 +25,16 @@
         <div><b>You are registered for this course.</b></div>
         
         <div class="info">
-            <b>Lecture links:</b> coming soon
+            <b>Lecture links:</b>
+            <% if !i.yt.nil? %><br/>
+                <% for j in i.yt.split("\n") %>
+                    <% lecture = j.split(": ") %>
+                    <%= lecture[0] %>: <a href="<%= lecture[1] %>" target="_blank"><%= lecture[1] %></a><br/>
+                <% end %>
+            <% else %>
+                Coming soon.
+            <% end %>
+            <br/><br/>
         </div>
 
         <div class="info">
