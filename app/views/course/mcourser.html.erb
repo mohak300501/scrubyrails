@@ -16,11 +16,16 @@
             <b>Registration:</b> <%= i.regon %><br/><br/>
             <%= i.more.html_safe %><br/><br/>
 
-            <b>Lecture links:</b><br/>
-            <% for j in i.yt.split("\n") %>
-                <% lecture = j.split(": ") %>
-                <%= lecture[0] %>: <a href="<%= lecture[1] %>" target="_blank"><%= lecture[1] %></a><br/>
-            <% end %><br/><br/>
+            <b>Lecture links:</b>
+            <% if !i.yt.nil? %><br/>
+                <% for j in i.yt.split("\n") %>
+                    <% lecture = j.split(": ") %>
+                    <%= lecture[0] %>: <a href="<%= lecture[1] %>" target="_blank"><%= lecture[1] %></a><br/>
+                <% end %>
+            <% else %>
+                Coming soon.<%= i.yt %>
+            <% end %>
+            <br/><br/>
 
             <b>Exams:</b><br/>
             <% for j in @exams %>
@@ -32,7 +37,7 @@
                     <% end %><br/>
                 <% end %>
             <% end %>
-            
+
             <%= link_to exam_new_path(i.cname), class: "anone" do %>
                 <div class="button">नूतनः examH योजयतु</div>
             <% end %>
