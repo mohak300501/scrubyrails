@@ -1,13 +1,17 @@
-<%= form_tag feedback_post_path do |f| %>
-  <div>
-    <%= label_tag :Email %><br/>
-    <%= text_field_tag :email %><br/>
-    <%= label_tag :Type_of_Feedback %><br/>
-    <%= text_field_tag :type_of_feedback %><br/>
-    <%= label_tag :Feedback %><br/>
-    <%= text_area_tag :feedback %><br/>
-  </div>
-  <div>
-        <%= submit_tag "Submit", :class => "button" %><br/>
-  </div>
+<h2>We would love to hear from you!</h2>
+
+<%= form_tag feedback_post_path do %>
+  <br/>
+    <%= text_field_tag :email, @email, required: true, class: "utextfield", placeholder: "Your email" %><br/><br/><br/>
+    <div class="radio">
+        <%= radio_button_tag :typef, "feedback", :checked => true %>
+        <%= label_tag :typef_feedback, "Feedback" %>
+        <%= radio_button_tag :typef, "query" %>
+        <%= label_tag :typef_query, "Query" %>
+        <%= radio_button_tag :typef, "complaint" %>
+        <%= label_tag :typef_complaint, "Complaint" %>
+    </div><br/>
+    <%= text_area_tag :feedback, nil, required: true, class: "utextarea", placeholder: "Enter your thoughts" %><br/>
+    <%= submit_tag "Submit", :class => "button" %><br/>
+    <%= link_to "Cancel", root_url %>
 <% end %>

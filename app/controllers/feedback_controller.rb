@@ -1,12 +1,18 @@
 class FeedbackController < ApplicationController
-    def ufeedbackp
-        @feedback = Feedback.new(:email => params[:email], :type_of_feedback => params[:type_of_feedback], 
-        :feedback => params[:feedback])
-        @feedback.save
-        redirect_to feedback_path
-    end
     def ufeedback
-        @feedbacks = Feedback.all
+        @email = session[:email]
         render "ufeedback"
+    end
+
+    def ufeedbackp
+        # if session[:user]
+            feedback = Feedback.new(:email => session[:email], :typef => params[:typef], :feedback => params[:feedback])
+            feedback.save
+            flash[:notice] = params[:typef].capitalize + " submitted!"
+            redirect_to root_url
+        # else
+        #     flash[:notice] = "Please log in as a user first!"
+        #     redirect_to feedback_path
+        # end
     end
 end
