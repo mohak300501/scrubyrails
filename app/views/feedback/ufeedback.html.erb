@@ -1,9 +1,9 @@
-<form action="ufeedbackp" method="post">
-  <label for="email">Email:</label><br>
-  <input type="text" id="email" name="email" value=><br>
-  <label for="type of feedback">Type of Feedback:</label><br>
-  <input type="text" id="type_of_feedback" name="type_of_feedback"><br>
-  <label for="feedback">Feedback:</label><br>
-  <input type="text" id="feedback" name="feedback"><br><br>
-  <input type="submit" value="Submit">
-</form>
+
+<%= form_for(@ufeedbackp) do |f| %>
+  <%= f.label :Email %>
+  <%= f.text_field :email %>
+  <%= f.label :Type of Feedback %>
+  <%= f.text_field :type_of_feedback %>
+  <%= f.label :Feedback %>
+  <%= f.text_field :feedback %>
+<% end %>
