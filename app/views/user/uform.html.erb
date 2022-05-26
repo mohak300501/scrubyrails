@@ -2,9 +2,9 @@
 
 <%= form_for @user, url: form_post_path, multipart: true do |f| %>
     <%= f.text_field :name, class: "utextfield", placeholder: "Your name" %><br/><br/>
-    <%= f.email_field :email, class: "utextfield", placeholder: "Your email" %><br/><br/>
+    <%= f.email_field :email, class: "utextfield", placeholder: "Your email", disabled: true %><br/><br/>
 
-    <% country = [["-- Choose county --", ""],"Argentina", "Australia", "Austria", "Bahrain", "Bangladesh", "Belgium", "Botswana", "Brazil", "Bulgaria",
+    <% country = ["Argentina", "Australia", "Austria", "Bahrain", "Bangladesh", "Belgium", "Botswana", "Brazil", "Bulgaria",
             "Cambodia", "Canada", "Chile", "China", "Colombia", "Costa Rica", "Denmark", "Egypt", "Fiji", "Finland", "France",
             "Germany", "Guyana", "Hong Kong", "Hungary", "India", "Indonesia", "Iraq", "Ireland", "Israel", "Italy", "Japan",
             "Jordan", "Kazakhstan", "Kenya", "Kuwait", "Lithuania", "Luzemborg", "Madagaskar", "Malaysia", "Mali", "Mauritius",
@@ -13,13 +13,13 @@
             "Seychelles", "Singapore", "Solomon Islands", "South Africa", "South Korea", "Spain", "Sri Lanka", "Sweden",
             "Switzerland", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Tunisia", "Turkey", "Uganda", "Ukraine",
             "United Arab Emirates", "United Kingdom", "United States", "Uzbekistan", "Venezuela", "Vietnam", "Virgin Islands"] %>
-    <%= f.select :country, country, :disabled => "", :required => true %><br/><br/>
+    <%= f.select :country, country, {:include_blank => "-- Choose county --"}, {:required => true} %><br/><br/>
 
     <%= f.text_field :state, :required => true, class: "utextfield", placeholder: "Your state" %><br/><br/>
     <%= f.number_field :pin, :required => true, class: "utextfield", placeholder: "Your PIN code" %><br/><br/>
     
-    <% gender = [["-- Choose gender --", ""], "Male", "Female", "Other"] %>
-    <%= f.select :gender, gender, :disabled => "", :required => true %><br/><br/>
+    <% gender = ["Male", "Female", "Other"] %>
+    <%= f.select :gender, gender, {:include_blank => "-- Choose gender --"}, {:required => true} %><br/><br/>
     <!--<div class="radio">
         <% for i in gender %>
             <% checked = (i == gender[-1])? true :false %>
@@ -31,11 +31,11 @@
     <%= f.number_field :age, :required => true, class: "utextfield", placeholder: "Your age" %><br/><br/>
     <%= f.text_field :mobile, :required => true, class: "utextfield", placeholder: "Your mobile number" %><br/><br/>
 
-    <% sanslevel = [["-- Sanskrit proficiency level --", ""], "Spoken Sanskrit Class", "Subhashitam Sanskritam Course IITR", "Kovida or equivalent", "Other course", "No prior experience"] %>
-    <%= f.select :sanslevel, sanslevel, :disabled => "", :required => true %><br/><br/>
+    <% sanslevel = ["Spoken Sanskrit Class", "Subhashitam Sanskritam Course IITR", "Kovida or equivalent", "Other course", "No prior experience"] %>
+    <%= f.select :sanslevel, sanslevel, {:include_blank => "-- Sanskrit proficiency level --"}, {:required => true} %><br/><br/>
 
-    <% acadqual = [["-- Academic qualification --", ""], "10th pass", "12th pass", "Bachelor's", "Master's", "PhD", "Other"] %>
-    <%= f.select :acadqual, acadqual, :disabled => "", :required => true %><br/><br/>
+    <% acadqual = ["10th pass", "12th pass", "Bachelor's", "Master's", "PhD", "Other"] %>
+    <%= f.select :acadqual, acadqual, {:include_blank => "-- Academic qualification --"}, {:required => true} %><br/><br/>
     
     <%= f.submit "Submit", :class => "button" %><br/>
     <div class="button">
