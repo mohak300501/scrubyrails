@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_21_145509) do
+ActiveRecord::Schema.define(version: 2022_05_25_080238) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,14 +56,14 @@ ActiveRecord::Schema.define(version: 2022_05_21_145509) do
   end
 
   create_table "bgvars", primary_key: "visits", id: :bigint, default: -> { "nextval('bgvars_id_seq'::regclass)" }, force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.string "regid"
   end
 
   create_table "courses", force: :cascade do |t|
     t.string "name"
     t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.string "cname"
     t.string "more"
     t.string "regon"
@@ -82,6 +82,14 @@ ActiveRecord::Schema.define(version: 2022_05_21_145509) do
     t.string "info"
   end
 
+  create_table "feedbacks", force: :cascade do |t|
+    t.string "email"
+    t.string "type_of_feedback"
+    t.string "feedback"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "games", force: :cascade do |t|
     t.string "name"
     t.text "info"
@@ -89,16 +97,12 @@ ActiveRecord::Schema.define(version: 2022_05_21_145509) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "gsdg", id: :serial, force: :cascade do |t|
-    t.integer "pid"
-    t.string "regid", limit: 10
-    t.string "email", limit: 50
-  end
-
   create_table "members", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "password"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "shloks", force: :cascade do |t|
@@ -114,6 +118,8 @@ ActiveRecord::Schema.define(version: 2022_05_21_145509) do
     t.string "name"
     t.string "email"
     t.string "password"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.boolean "profile"
     t.string "country"
     t.string "state"
@@ -129,5 +135,4 @@ ActiveRecord::Schema.define(version: 2022_05_21_145509) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "gsdg", "users", column: "pid", name: "fk_user_id"
 end
