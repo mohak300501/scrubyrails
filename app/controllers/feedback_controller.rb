@@ -6,7 +6,7 @@ class FeedbackController < ApplicationController
 
     def ufeedbackp
         # if session[:user]
-            feedback = Feedback.new(:email => session[:email], :typef => params[:typef], :feedback => params[:feedback])
+            feedback = Feedback.new(:email => params[:email], :typef => params[:typef], :feedback => params[:feedback])
             feedback.save
             flash[:notice] = params[:typef].capitalize + " submitted!"
             redirect_to root_url
