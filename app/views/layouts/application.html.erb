@@ -71,7 +71,11 @@
             <%= link_to "About", about_path %>&nbsp;&nbsp;
             <%= link_to "How to Use", htuse_path %>&nbsp;&nbsp;
             <%= link_to "Terms", terms_path %>&nbsp;&nbsp;
-            <%= link_to "Feedback", feedback_path %><br/>
+            <% if session[:member] %>
+                <%= link_to "Feedback", all_feedbacks_path %><br/>
+            <% else %>
+                <%= link_to "Feedback", feedback_path %><br/>
+            <% end %>
             Visitors since 14 May &lsquo;22: <%= session[:vc] %><br/><br/>
             <!--<%= link_to "Team", shloks_path %>-->
             &copy; <%= Time.new.year %>. All rights reserved.
