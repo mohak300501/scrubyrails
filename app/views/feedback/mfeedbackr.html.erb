@@ -1,0 +1,15 @@
+<% for i in @feedbacks do %>
+    <%= content_tag :div, class: "feedbacks" do %>
+        <div class="email">
+            <%= i.email.html_safe %><br/>
+        </div>
+
+        <div class="typef">
+            <p><%= i.typef.html_safe %></p>
+        </div>
+
+        <div class="feedback">
+            <%= i.feedback.html_safe %><br/>
+        </div>
+    <% end %>
+<% end %>

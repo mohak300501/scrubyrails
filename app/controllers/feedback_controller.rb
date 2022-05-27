@@ -15,4 +15,13 @@ class FeedbackController < ApplicationController
         #     redirect_to feedback_path
         # end
     end
+
+    def mfeedbackr
+        if session[:member]
+            @feedbacks = Feedback.all
+            render "mfeedbackr"
+        else
+            redirect_to root_url
+        end
+    end
 end
