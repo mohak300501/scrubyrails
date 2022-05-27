@@ -56,14 +56,14 @@ ActiveRecord::Schema.define(version: 2022_05_25_080238) do
   end
 
   create_table "bgvars", primary_key: "visits", id: :bigint, default: -> { "nextval('bgvars_id_seq'::regclass)" }, force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.string "regid"
   end
 
   create_table "courses", force: :cascade do |t|
     t.string "name"
     t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.string "cname"
     t.string "more"
     t.string "regon"
@@ -75,25 +75,6 @@ ActiveRecord::Schema.define(version: 2022_05_25_080238) do
     t.string "info"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "exam_1_gsdg_p", id: false, force: :cascade do |t|
-    t.serial "id", null: false
-    t.integer "pid"
-    t.string "q1", limit: 100
-    t.string "q2", limit: 100
-    t.string "q3", limit: 100
-    t.string "q4", limit: 100
-  end
-
-  create_table "exam_1_gsdg_q", id: false, force: :cascade do |t|
-    t.serial "id", null: false
-    t.string "question", limit: 250
-    t.string "opt1", limit: 100
-    t.string "opt2", limit: 100
-    t.string "opt3", limit: 100
-    t.string "opt4", limit: 100
-    t.string "correct", limit: 100
   end
 
   create_table "exams", force: :cascade do |t|
@@ -114,17 +95,12 @@ ActiveRecord::Schema.define(version: 2022_05_25_080238) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "gsdg", id: :serial, force: :cascade do |t|
-    t.integer "pid"
-    t.string "regid", limit: 10
-    t.string "email", limit: 50
-    t.integer "exam_1_gsdg"
-  end
-
   create_table "members", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "password"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "shloks", force: :cascade do |t|
@@ -140,6 +116,8 @@ ActiveRecord::Schema.define(version: 2022_05_25_080238) do
     t.string "name"
     t.string "email"
     t.string "password"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.boolean "profile"
     t.string "country"
     t.string "state"
@@ -155,5 +133,4 @@ ActiveRecord::Schema.define(version: 2022_05_25_080238) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "gsdg", "users", column: "pid", name: "fk_user_id"
 end
