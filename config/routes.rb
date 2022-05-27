@@ -60,6 +60,7 @@ Rails.application.routes.draw do
 
     get "feedback/ufeedback",                                               as:"feedback"
     post "feedback/ufeedbackp",                                             as:"feedback_post"
+    get "feedback/mfeedbackr",                                              as:"all_feedbacks"
 
     get "shlok/ushlok",                                                     as:"shloks"
     get "shlok/mshlokr",                                                    as:"all_shloks"
