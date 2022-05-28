@@ -10,13 +10,13 @@
                 <td>
                     <%= i.email %><br/>
                 </td>
-
                 <td>
                     <p><%= i.typef %></p>
                 </td>
-
                 <td>
-                    <%= i.feedback.html_safe %><br/>
+                    <% for j in i.feedback.split("\n") do %>
+                        <%= j %><br/>
+                    <% end %>
                 </td>
             <tr/>
         <% end %>
