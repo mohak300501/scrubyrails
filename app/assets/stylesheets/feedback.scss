@@ -1,3 +1,20 @@
 // Place all the styles related to the feedback controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.overf {
+    box-shadow: -3px 3px 10px rgb(100, 100, 100);
+    margin: 1rem auto;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    width: 90%;
+    overflow-x: auto;
+}
+.feedback {
+    white-space: nowrap;
+    width: 100%;
+}
+.feedback, .feedback th, .feedback td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 0 0.4rem;
+}

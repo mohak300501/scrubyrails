@@ -1,15 +1,24 @@
-<% for i in @feedbacks do %>
-    <%= content_tag :div, class: "feedbacks" do %>
-        <div class="email">
-            <%= i.email.html_safe %><br/>
-        </div>
+<div class="overf">
+    <table class="feedback">
+        <tr>
+            <th>Email</th>
+            <th>Type</th>
+            <th>Feedback</th>
+        </tr>
+        <% for i in @feedbacks do %>
+            <tr>
+                <td>
+                    <%= i.email %><br/>
+                </td>
 
-        <div class="typef">
-            <p><%= i.typef.html_safe %></p>
-        </div>
+                <td>
+                    <p><%= i.typef %></p>
+                </td>
 
-        <div class="feedback">
-            <%= i.feedback.html_safe %><br/>
-        </div>
-    <% end %>
-<% end %>
+                <td>
+                    <%= i.feedback.html_safe %><br/>
+                </td>
+            <tr/>
+        <% end %>
+    </table>
+</div>
