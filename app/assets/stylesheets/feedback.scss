@@ -10,11 +10,24 @@
     overflow-x: auto;
 }
 .feedback {
-    white-space: nowrap;
-    width: 100%;
+    display: grid;
+    grid-template-columns: 10rem auto auto 50rem;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
 }
-.feedback, .feedback th, .feedback td {
-    border: 1px solid black;
-    border-collapse: collapse;
+.th {
+    font-weight: bold;
+}
+.td, .th, .fbtdl {
     padding: 0 0.4rem;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
+.fbtdl {
+    text-align: left;
+}
+@media screen and (min-width:540px) {
+    .feedback {
+        grid-template-columns: auto auto auto auto;
+    }
 }

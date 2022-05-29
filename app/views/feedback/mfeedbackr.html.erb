@@ -1,24 +1,24 @@
 <div class="overf">
-    <table class="feedback">
-        <tr>
-            <th>Email</th>
-            <th>Type</th>
-            <th>Feedback</th>
-        </tr>
+    <div class="feedback">
+            <div class="th">Time</div>
+            <div class="th">Email</div>
+            <div class="th">Type</div>
+            <div class="th fbtdl">Feedback</div>
         <% for i in @feedbacks do %>
-            <tr>
-                <td>
-                    <%= i.email %><br/>
-                </td>
-                <td>
-                    <p><%= i.typef %></p>
-                </td>
-                <td>
+                <div class="td">
+                    <%= i.time %>
+                </div>
+                <div class="td">
+                    <%= i.email %>
+                </div>
+                <div class="td">
+                    <%= i.typef %>
+                </div>
+                <div class="fbtdl">
                     <% for j in i.feedback.split("\n") do %>
                         <%= j %><br/>
                     <% end %>
-                </td>
-            <tr/>
+                </div>
         <% end %>
-    </table>
+    </div>
 </div>
