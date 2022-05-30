@@ -11,11 +11,9 @@ class ExamController < ApplicationController
             exam_name = params[:ename] + "_" + params[:cname]
             qtable = exam_name + "_q"
             @questions = ActiveRecord::Base.connection.exec_query("select * from " + qtable + ";")
-            no_of_q = @questions.length
 
             # Fetch marks from parent course table
-            marks = ActiveRecord::Base.connection.exec_query("select " + exam_name + " from " + params[:cname] + " where email='" + email + "';")[0].first()[1]
-            @marks = "#{marks}/#{no_of_q}"
+            @marks = ActiveRecord::Base.connection.exec_query("select " + exam_name + " from " + params[:cname] + " where email='" + email + "';")[0].first()[1]
 
             render "uexam1"
         else
@@ -189,6 +187,7 @@ class ExamController < ApplicationController
             # Add total marks to parent course table
             ActiveRecord::Base.connection.execute("update " + params[:cname] + " set " + exam_name + "=" + marks.to_s + " where pid=" + user.id.to_s + ";")
             
+            flash[:notice] = "Quiz completed successfully!"
             redirect_to course_uview_path(params[:cname])
         else
             redirect_to root_url

@@ -10,7 +10,7 @@
                 <b>Q.</b> <%= i[values[0]] %><br/>
                 <div class="radio">
                     <% for j in 1..4 %>
-                        <%= radio_button_tag :"ans_#{i["id"]}", values[j] %>
+                        <%= radio_button_tag :"ans_#{i["id"]}", values[j], false, required: "required" %>
                         <%= label_tag :"ans_#{i["id"]}_#{values[j]}", i[values[j]] %><br/>
                     <% end %>
                 </div>
@@ -22,6 +22,6 @@
     <div>
         <br/>
         <b>You have completed this exam.</b><br/><br/>
-        Your score is <%= @marks %>.
+        Your score is <%= "#{@marks}/#{@questions.length}" %>.
     </div>
 <% end %>

@@ -44,7 +44,7 @@
                     <% exam = j.name.split("_") %>
                     &bull;
                     <%= link_to exam_uview_path(i.cname, exam[0] + "_" + exam[1]) do %>
-                        <%= exam[0] + " - " + exam[1] + " | " + exam[2] %>
+                        <%= "Self Evaluation Quiz" + " - " + exam[1] + " | " + exam[2] %>
                     <% end %><br/>
                 <% end %>
             <% end %>
