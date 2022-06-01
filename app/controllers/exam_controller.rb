@@ -193,4 +193,38 @@ class ExamController < ApplicationController
             redirect_to root_url
         end
     end
+
+    def re_marks
+        if session[:member]
+            exam_name = params[:ename] + "_" + params[:cname]
+            exam = Exam.find_by(name: exam_name)
+            ptable = exam_name + "_p"
+            qtable = exam_name + "_q"
+            questions = ActiveRecord::Base.connection.exec_query("select * from " + qtable + ";")
+            participants = ActiveRecord::Base.connection.exec_query("select * from " + ptable + ";")
+
+            for i in participants do
+                marks = 0
+                for j in questions do
+                    if i["q" + j["id"].to_s] == j["correct"]
+                        marks += 1
+                    end
+                end
+                ActiveRecord::Base.connection.execute("update " + params[:cname] + " set " + exam_name + "=" + marks.to_s + " where pid=" + i["pid"].to_s + ";")
+            end
+
+            redirect_to ques_read_path(params[:cname], params[:ename]) and return
+        else
+            redirect_to root_url
+        end
+    end
+
+    def mp_marks
+        if session[:member]
+            @cname = params[:cname]
+            @participants = ActiveRecord::Base.connection.exec_query("select * from " + @cname + ";")
+        else
+            redirect_to root_url
+        end
+    end
 end

@@ -9,6 +9,9 @@
         <%= link_to exam_change_path(params[:cname], params[:ename]), class: "anone" do %>
             <div class="button">परिवर्तयतु</div>
         <% end %>
+        <%= link_to re_marks_path(params[:cname], params[:ename]), class: "anone" do %>
+            <div class="button">Renormalize marks</div>
+        <% end %>
         <%= link_to exam_delete_path(params[:cname], params[:ename]), method: "delete",
             data: {:confirm => "Are you sure you want to delete this exam?"}, class: "anone" do %>
             <div class="button">विनश्यतु</div>

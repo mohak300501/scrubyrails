@@ -43,6 +43,10 @@
             <% end %>
         </div>
 
+        <%= link_to mp_marks_path(i.cname), class: "anone" do %>
+            <div class="button">Participant marks</div>
+        <% end %>
+
         <div class="updel">
             <%= link_to course_path(i.id), class: "anone" do %>
                 <div class="button">परिवर्तयतु</div>
