@@ -1,18 +1,28 @@
-<div class="overf">
-    <div class="marks">
-            <div class="th">Regid</div>
-            <div class="th">Email</div>
-            <div class="th">Marks</div>
+<div class="button">
+    <%= link_to "प्रतिगच्छतु", all_courses_path, class: "anone" %>
+</div>
+
+<div class="overm">
+    <table class="marks">
+        <tr>
+            <th>Regid</th>
+            <th>Email</th>
+            <% for k in @exams do %>
+                <th><%= k["name"] %></th>
+            <% end %>
+        </tr>
         <% for i in @participants do %>
-                <div class="td">
+            <tr>
+                <td>
                     <%= i["regid"] %>
-                </div>
-                <div class="td">
+                </td>
+                <td>
                     <%= i["email"] %>
-                </div>
-                <div class="td">
-                    <%= i["exam_1_" + @cname] %>
-                </div>
+                </td>
+                <% for j in @exams do %>
+                    <td><%= i[j["name"].downcase] %></td>
+                <% end %>
+            </tr>
         <% end %>
-    </div>
+    </table>
 </div>

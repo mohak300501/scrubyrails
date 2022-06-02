@@ -221,8 +221,10 @@ class ExamController < ApplicationController
 
     def mp_marks
         if session[:member]
-            @cname = params[:cname]
-            @participants = ActiveRecord::Base.connection.exec_query("select * from " + @cname + ";")
+            cname = params[:cname]
+            @exams = Exam.select("name").where("name like '%#{cname}%'")
+            @participants = ActiveRecord::Base.connection.exec_query("select * from " + cname + ";")
+            render "mp_marks"
         else
             redirect_to root_url
         end

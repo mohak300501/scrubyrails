@@ -27,25 +27,19 @@
         text-align: left;
     }
 }
-.marks {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    border-top: 1px solid black;
-    border-left: 1px solid black;
+.overm {
+    box-shadow: -3px 3px 10px rgb(100, 100, 100);
+    margin: 1rem auto;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    width: 90%;
+    overflow-x: auto;
 }
-.th {
-    font-weight: bold;
-}
-.td, .th, .fbtdl {
+.marks, .marks th, .marks td {
+    border: 1px solid black;
+    border-collapse: collapse;
     padding: 0 0.4rem;
-    border-bottom: 1px solid black;
-    border-right: 1px solid black;
 }
-.fbtdl {
-    text-align: left;
-}
-@media screen and (min-width:540px) {
-    .feedback {
-        grid-template-columns: auto auto auto;
-    }
+.marks {
+    width: 100%;
 }

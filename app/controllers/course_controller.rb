@@ -23,7 +23,7 @@ class CourseController < ApplicationController
     end
 
     def mcoursecp
-        course = Course.new(:name => params[:name], :cname => params[:cname], :regon =>pp[:regon], :more => params[:more], :yt => pp[:yt],
+        course = Course.new(:name => params[:name], :cname => params[:cname], :regon =>params[:regon], :more => params[:more], :yt => params[:yt],
                             :description => params[:description], :image => params[:image])
         course.save
 
