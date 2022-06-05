@@ -10,12 +10,18 @@ class ExamController < ApplicationController
             email = session[:email]
             exam_name = params[:ename] + "_" + params[:cname]
             qtable = exam_name + "_q"
+            ptable = exam_name + "_p"
+            user = User.find_by(email: email)
             @questions = ActiveRecord::Base.connection.exec_query("select * from " + qtable + ";")
+            @participant = ActiveRecord::Base.connection.exec_query("select * from " + ptable + " where pid=" + user.id.to_s + ";")[0]
 
             # Fetch marks from parent course table
             @marks = ActiveRecord::Base.connection.exec_query("select " + exam_name + " from " + params[:cname] + " where email='" + email + "';")[0].first()[1]
-
-            render "uexam1"
+            if @marks.nil?
+                render "uexam1"
+            else
+                render "uexam1done"
+            end
         else
             redirect_to root_url
         end
@@ -195,6 +201,7 @@ class ExamController < ApplicationController
     end
 
     def re_marks
+        # Renormalize participant marks after modifying correct answers of questions, or adding/deleting questions
         if session[:member]
             exam_name = params[:ename] + "_" + params[:cname]
             exam = Exam.find_by(name: exam_name)
