@@ -92,4 +92,6 @@ Rails.application.routes.draw do
     get "exam/:cname/:ename/:qno/ch",               to:"exam#mquesu",       as:"ques_change"
     patch "exam/:cname/:ename/:qno/up",             to:"exam#mquesup",      as:"ques_update"
     delete "exam/:cname/:ename/:qno/del",           to:"exam#mquesdp",      as:"ques_delete"
+    get "exam/:cname/:ename/re_marks",              to:"exam#re_marks",     as:"re_marks"
+    get "exam/:cname/mp_marks",                     to:"exam#mp_marks",     as:"mp_marks"
 end
