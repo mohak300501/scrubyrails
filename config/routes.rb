@@ -94,4 +94,8 @@ Rails.application.routes.draw do
     delete "exam/:cname/:ename/:qno/del",           to:"exam#mquesdp",      as:"ques_delete"
     get "exam/:cname/:ename/re_marks",              to:"exam#re_marks",     as:"re_marks"
     get "exam/:cname/mp_marks",                     to:"exam#mp_marks",     as:"mp_marks"
+
+    get "library/ulibrary",                                                       as:"books"
+    get "library/mlibraryr",                                                      as:"all_books"
+    get "library/mlibraryc",                                                      as:"new_book"
 end
