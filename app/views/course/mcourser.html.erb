@@ -15,7 +15,18 @@
             <b>Course code:</b> <%= i.cname %><br/><br/>
             <b>Registration:</b> <%= i.regon %><br/><br/>
             <%= i.more.html_safe %><br/><br/>
-            <b>Lecture links:</b> coming soon<br/><br/>
+
+            <b>Lecture links:</b>
+            <% if !i.yt.nil? %><br/>
+                <% for j in i.yt.split("\n") %>
+                    <% lecture = j.split(": ") %>
+                    <%= lecture[0] %>: <a href="<%= lecture[1] %>" target="_blank"><%= lecture[1] %></a><br/>
+                <% end %>
+            <% else %>
+                Coming soon.<%= i.yt %>
+            <% end %>
+            <br/><br/>
+
             <b>Exams:</b><br/>
             <% for j in @exams %>
                 <% if j.name.include? i.cname %>
@@ -26,10 +37,15 @@
                     <% end %><br/>
                 <% end %>
             <% end %>
+
             <%= link_to exam_new_path(i.cname), class: "anone" do %>
                 <div class="button">नूतनः examH योजयतु</div>
             <% end %>
         </div>
+
+        <%= link_to mp_marks_path(i.cname), class: "anone" do %>
+            <div class="button">Participant marks</div>
+        <% end %>
 
         <div class="updel">
             <%= link_to course_path(i.id), class: "anone" do %>

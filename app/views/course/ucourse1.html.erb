@@ -25,7 +25,16 @@
         <div><b>You are registered for this course.</b></div>
         
         <div class="info">
-            <b>Lecture links:</b> coming soon
+            <b>Lecture links:</b>
+            <% if !i.yt.nil? %><br/>
+                <% for j in i.yt.split("\n") %>
+                    <% lecture = j.split(": ") %>
+                    <%= lecture[0] %>: <a href="<%= lecture[1] %>" target="_blank"><%= lecture[1] %></a><br/>
+                <% end %>
+            <% else %>
+                Coming soon.
+            <% end %>
+            <br/><br/>
         </div>
 
         <div class="info">
@@ -35,7 +44,7 @@
                     <% exam = j.name.split("_") %>
                     &bull;
                     <%= link_to exam_uview_path(i.cname, exam[0] + "_" + exam[1]) do %>
-                        <%= exam[0] + " - " + exam[1] + " | " + exam[2] %>
+                        <%= "Self Evaluation Quiz" + " - " + exam[1] + " | " + exam[2] %>
                     <% end %><br/>
                 <% end %>
             <% end %>

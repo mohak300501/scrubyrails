@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_21_145509) do
+ActiveRecord::Schema.define(version: 2022_05_29_155314) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,9 +77,35 @@ ActiveRecord::Schema.define(version: 2022_05_21_145509) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "exam_1_gsdg_p", id: false, force: :cascade do |t|
+    t.serial "id", null: false
+    t.integer "pid"
+    t.string "q1", limit: 100
+    t.string "q2", limit: 100
+    t.string "q3", limit: 100
+    t.string "q4", limit: 100
+  end
+
+  create_table "exam_1_gsdg_q", id: false, force: :cascade do |t|
+    t.serial "id", null: false
+    t.string "question", limit: 250
+    t.string "opt1", limit: 100
+    t.string "opt2", limit: 100
+    t.string "opt3", limit: 100
+    t.string "opt4", limit: 100
+    t.string "correct", limit: 100
+  end
+
   create_table "exams", force: :cascade do |t|
     t.string "name"
     t.string "info"
+  end
+
+  create_table "feedbacks", force: :cascade do |t|
+    t.string "email"
+    t.string "typef"
+    t.string "feedback"
+    t.string "time"
   end
 
   create_table "games", force: :cascade do |t|
@@ -93,6 +119,7 @@ ActiveRecord::Schema.define(version: 2022_05_21_145509) do
     t.integer "pid"
     t.string "regid", limit: 10
     t.string "email", limit: 50
+    t.integer "exam_1_gsdg"
   end
 
   create_table "members", force: :cascade do |t|

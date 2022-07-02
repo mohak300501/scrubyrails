@@ -10,14 +10,18 @@ class ExamController < ApplicationController
             email = session[:email]
             exam_name = params[:ename] + "_" + params[:cname]
             qtable = exam_name + "_q"
+            ptable = exam_name + "_p"
+            user = User.find_by(email: email)
             @questions = ActiveRecord::Base.connection.exec_query("select * from " + qtable + ";")
-            no_of_q = @questions.length
+            @participant = ActiveRecord::Base.connection.exec_query("select * from " + ptable + " where pid=" + user.id.to_s + ";")[0]
 
             # Fetch marks from parent course table
-            marks = ActiveRecord::Base.connection.exec_query("select " + exam_name + " from " + params[:cname] + " where email='" + email + "';")[0].first()[1]
-            @marks = "#{marks}/#{no_of_q}"
-
-            render "uexam1"
+            @marks = ActiveRecord::Base.connection.exec_query("select " + exam_name + " from " + params[:cname] + " where email='" + email + "';")[0].first()[1]
+            if @marks.nil?
+                render "uexam1"
+            else
+                render "uexam1done"
+            end
         else
             redirect_to root_url
         end
@@ -189,7 +193,45 @@ class ExamController < ApplicationController
             # Add total marks to parent course table
             ActiveRecord::Base.connection.execute("update " + params[:cname] + " set " + exam_name + "=" + marks.to_s + " where pid=" + user.id.to_s + ";")
             
+            flash[:notice] = "Quiz completed successfully!"
             redirect_to course_uview_path(params[:cname])
+        else
+            redirect_to root_url
+        end
+    end
+
+    def re_marks
+        # Renormalize participant marks after modifying correct answers of questions, or adding/deleting questions
+        if session[:member]
+            exam_name = params[:ename] + "_" + params[:cname]
+            exam = Exam.find_by(name: exam_name)
+            ptable = exam_name + "_p"
+            qtable = exam_name + "_q"
+            questions = ActiveRecord::Base.connection.exec_query("select * from " + qtable + ";")
+            participants = ActiveRecord::Base.connection.exec_query("select * from " + ptable + ";")
+
+            for i in participants do
+                marks = 0
+                for j in questions do
+                    if i["q" + j["id"].to_s] == j["correct"]
+                        marks += 1
+                    end
+                end
+                ActiveRecord::Base.connection.execute("update " + params[:cname] + " set " + exam_name + "=" + marks.to_s + " where pid=" + i["pid"].to_s + ";")
+            end
+
+            redirect_to ques_read_path(params[:cname], params[:ename]) and return
+        else
+            redirect_to root_url
+        end
+    end
+
+    def mp_marks
+        if session[:member]
+            cname = params[:cname]
+            @exams = Exam.select("name").where("name like '%#{cname}%'")
+            @participants = ActiveRecord::Base.connection.exec_query("select * from " + cname + ";")
+            render "mp_marks"
         else
             redirect_to root_url
         end

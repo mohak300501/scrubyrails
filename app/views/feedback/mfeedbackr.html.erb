@@ -1,0 +1,24 @@
+<div class="overf">
+    <div class="feedback">
+            <div class="th">Time</div>
+            <div class="th">Email</div>
+            <div class="th">Type</div>
+            <div class="th fbtdl">Feedback</div>
+        <% for i in @feedbacks do %>
+                <div class="td">
+                    <%= i.time %>
+                </div>
+                <div class="td">
+                    <%= i.email %>
+                </div>
+                <div class="td">
+                    <%= i.typef %>
+                </div>
+                <div class="fbtdl">
+                    <% for j in i.feedback.split("\n") do %>
+                        <%= j %><br/>
+                    <% end %>
+                </div>
+        <% end %>
+    </div>
+</div>

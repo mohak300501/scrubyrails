@@ -1,3 +1,33 @@
 // Place all the styles related to the feedback controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.overf {
+    box-shadow: -3px 3px 10px rgb(100, 100, 100);
+    margin: 1rem auto;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    width: 90%;
+    overflow-x: auto;
+}
+.feedback {
+    display: grid;
+    grid-template-columns: 10rem auto auto 50rem;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+}
+.th {
+    font-weight: bold;
+}
+.td, .th, .fbtdl {
+    padding: 0 0.4rem;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
+.fbtdl {
+    text-align: left;
+}
+@media screen and (min-width:540px) {
+    .feedback {
+        grid-template-columns: auto auto auto auto;
+    }
+}

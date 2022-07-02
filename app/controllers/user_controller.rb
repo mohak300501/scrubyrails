@@ -1,5 +1,4 @@
 class UserController < ApplicationController
-    require 'securerandom'
     before_action :set_user_variable
 
     def set_user_variable
@@ -57,12 +56,11 @@ class UserController < ApplicationController
     end
 
     def uformp
-        user = User.find_by(email: session[:email])
         pp = params[:user]
-        user.update(:name => pp[:name], :email => pp[:email], :profile => true, :country => pp[:country],
+        @user.update(:name => pp[:name], :profile => true, :country => pp[:country],
                     :state => pp[:state], :pin => pp[:pin], :gender => pp[:gender], :age => pp[:age],
                     :mobile => pp[:mobile], :sanslevel => pp[:sanslevel], :acadqual => pp[:acadqual])
-        session[:email] = pp[:email] if session[:email] != pp[:email]
+        # session[:email] = pp[:email] if session[:email] != pp[:email]
         flash[:alert] = "Profile updated!"
         redirect_to profile_path
     end

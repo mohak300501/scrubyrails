@@ -1,0 +1,23 @@
+<div class="button">
+    <%= link_to "प्रतिगच्छतु", course_uview_path(params[:cname]), class: "anone" %>
+</div>
+
+<div>
+    <br/>
+    <b>You have completed this exam.</b><br/><br/>
+    Your score is <%= "#{@marks}/#{@questions.length}" %>.
+</div>
+
+<% values = ["question", "opt1", "opt2", "opt3", "opt4", "correct"] %>
+<% for i in @questions do %>
+    <div class="questable">
+        <b>Q.</b> <%= i[values[0]] %><br/>
+        <div class="radio">
+            <% for j in 1..4 %>
+                <%= radio_button_tag :"ans_#{i["id"]}", values[j], i[values[j]] == @participant["q" + i["id"].to_s], disabled: true %>
+                <%= label_tag :"ans_#{i["id"]}_#{values[j]}", i[values[j]] %><br/>
+            <% end %>
+        </div>
+        <b>Correct option:</b> <%= i[values[5]] %>
+    </div>
+<% end %>

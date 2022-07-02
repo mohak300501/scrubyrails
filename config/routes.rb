@@ -60,6 +60,7 @@ Rails.application.routes.draw do
 
     get "feedback/ufeedback",                                               as:"feedback"
     post "feedback/ufeedbackp",                                             as:"feedback_post"
+    get "feedback/mfeedbackr",                                              as:"all_feedbacks"
 
     get "shlok/ushlok",                                                     as:"shloks"
     get "shlok/mshlokr",                                                    as:"all_shloks"
@@ -100,4 +101,10 @@ Rails.application.routes.draw do
     patch "team/:id",                              to:"team#mteamup",    as:"team_update"
     delete "team/:id/del",                         to:"team#mteamdp",    as:"team_delete"
 
+    get "exam/:cname/:ename/re_marks",              to:"exam#re_marks",     as:"re_marks"
+    get "exam/:cname/mp_marks",                     to:"exam#mp_marks",     as:"mp_marks"
+
+    get "library/ulibrary",                                                       as:"books"
+    get "library/mlibraryr",                                                      as:"all_books"
+    get "library/mlibraryc",                                                      as:"new_book"
 end

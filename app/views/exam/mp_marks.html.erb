@@ -1,0 +1,28 @@
+<div class="button">
+    <%= link_to "प्रतिगच्छतु", all_courses_path, class: "anone" %>
+</div>
+
+<div class="overm">
+    <table class="marks">
+        <tr>
+            <th>Regid</th>
+            <th>Email</th>
+            <% for k in @exams do %>
+                <th><%= k["name"] %></th>
+            <% end %>
+        </tr>
+        <% for i in @participants do %>
+            <tr>
+                <td>
+                    <%= i["regid"] %>
+                </td>
+                <td>
+                    <%= i["email"] %>
+                </td>
+                <% for j in @exams do %>
+                    <td><%= i[j["name"].downcase] %></td>
+                <% end %>
+            </tr>
+        <% end %>
+    </table>
+</div>

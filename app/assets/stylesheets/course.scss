@@ -27,3 +27,19 @@
         text-align: left;
     }
 }
+.overm {
+    box-shadow: -3px 3px 10px rgb(100, 100, 100);
+    margin: 1rem auto;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    width: 90%;
+    overflow-x: auto;
+}
+.marks, .marks th, .marks td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 0 0.4rem;
+}
+.marks {
+    width: 100%;
+}

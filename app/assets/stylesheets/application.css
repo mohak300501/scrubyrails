@@ -135,6 +135,17 @@
     padding: 1rem;
     font-size: 1.2rem;
 }
+.utextarea {
+    height: 8rem;
+    width: 70%;
+    text-align: left;
+    padding: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.2rem;
+}
+.utextarea:focus {
+    outline: 2.5px solid rgba(255,166,0,0.6);
+}
 @media screen and (min-width:540px) {
     .mtextfield, .mtextarea-1, .mtextarea-2 {
         width: 60%;
@@ -142,7 +153,7 @@
     .mnumberfield {
         width: 10%;
     }
-    .utextfield, select {
+    .utextfield, select, .utextarea {
         width: 25%;
     }
     .img-50 {
