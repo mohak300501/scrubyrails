@@ -1,36 +1,36 @@
 class TeamController < ApplicationController
-    def umember
-        @members = Member.all
-        render "umember"
+    def uteam
+        @teams = Member.all
+        render "uteam"
     end
 
-    def mmemberr
+    def mteamr
         if session[:member]
-            @members = Member.all
-            render "mmemberr"
+            @teams = Member.all
+            render "mteamr"
         else
             redirect_to root_url
         end
     end
 
-    def mmemberc
-        if session[:member]
-            render "mmemberc"
-        else
-            redirect_to root_url
-        end
-    end
+    # def mteamc
+    #     if session[:team]
+    #         render "mteamc"
+    #     else
+    #         redirect_to root_url
+    #     end
+    # end
 
-    def mmembercp
-        team = Team.new(:title => params[:title], :team => params[:team],
-                            :updated_by => session[:email], :audio => params[:audio])
-        team.save
-        flash[:notice] = "नूतनः श्लोकः योजितः जातः!"
-        redirect_to all_teams_path
-    end
+    # def mteamcp
+    #     team = Team.new(:title => params[:title], :team => params[:team],
+    #                         :updated_by => session[:email], :audio => params[:audio])
+    #     team.save
+    #     flash[:notice] = "नूतनः श्लोकः योजितः जातः!"
+    #     redirect_to all_teams_path
+    # end
 
     def mteamu
-        if session[:member]
+        if session[:team]
             @team = Team.find(params[:id])
             render "mteamu"
         else
@@ -52,7 +52,7 @@ class TeamController < ApplicationController
     end
 
     def mteamdp
-        if session[:member]
+        if session[:team]
             team = Team.find(params[:id])
             team.destroy
             redirect_to all_teams_path
