@@ -5,9 +5,9 @@ class UserController < ApplicationController
         @user ||= User.find_by(email: session[:email]) if session[:email].present?
     end
 
-    def profile
+    def uprofile
         if session[:user]
-            render "profile"
+            render "uprofile"
         else
             redirect_to root_url
         end

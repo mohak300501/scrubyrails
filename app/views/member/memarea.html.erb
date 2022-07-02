@@ -1,17 +1,15 @@
 <div>
+    <br/><br/>
     <div class="button">
         <%= link_to "All users", all_users_path, class: "anone" %>
     </div>
     <div class="button">
-        <%= link_to "New member", new_member_path, class: "anone" %>
-    </div>
-    <div class="button">
         <%= link_to "Profile", mprofile_path, class: "anone" %>
     </div>
-    <% if session[:member] %>
-    <div class="button">
-        <%= link_to "All Members", all_teams_path, class: "anone" %>
-    </div>
+    <% if @main_mem %>
+        <div class="button">
+            <%= link_to "All Members", all_members_path, class: "anone" %>
+        </div>
     <% end %>
     <div class="button">
         <%= link_to "Execute SQL", form_path, class: "anone" %>

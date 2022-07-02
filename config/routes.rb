@@ -2,7 +2,7 @@ Rails.application.routes.draw do
     # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
     root 'welcome#home'
 
-    get "user/profile",                                                     as:"profile"
+    get "user/uprofile",                                                    as:"uprofile"
     get "user/muserr",                                                      as:"all_users"
     post "user/muserr",                                                     as:"user_sort"
     delete "user/:id/del",                          to:"user#muserdp",      as:"user_delete"
@@ -15,7 +15,6 @@ Rails.application.routes.draw do
     get "news/:id/up",                              to:"welcome#mnewsu",    as:"news"
     patch "news/:id",                               to:"welcome#mnewsup",   as:"news_update"
     delete "news/:id/del",                          to:"welcome#mnewsdp",   as:"news_delete"
-    get "welcome/memarea",                                                  as:"member_area"
 
     get "welcome/about",                                                    as:"about"
     get "welcome/htuse",                                                    as:"htuse"
@@ -93,19 +92,18 @@ Rails.application.routes.draw do
     patch "exam/:cname/:ename/:qno/up",             to:"exam#mquesup",      as:"ques_update"
     delete "exam/:cname/:ename/:qno/del",           to:"exam#mquesdp",      as:"ques_delete"
 
-    get "team/uteam",                                                     as:"teams"
-    get "team/mteamr",                                                    as:"all_teams"
-    get "team/mteamc",                                                    as:"new_team"
-    post "team/mteamcp",                                                  as:"team_post"
-    get "team/:id/up",                             to:"team#mteamu",     as:"team"
-    patch "team/:id",                              to:"team#mteamup",    as:"team_update"
-    delete "team/:id/del",                         to:"team#mteamdp",    as:"team_delete"
-    get "team/profile",                                                  as:"mprofile"
+    get "member/uteam",                                                     as:"members"
+    get "member/mmemberr",                                                  as:"all_members"
+    get "member/:id/up",                            to:"member#mmemberu",   as:"member"
+    patch "member/:id",                             to:"member#mmemberup",  as:"member_update"
+    delete "member/:id/del",                        to:"member#mmemberdp",  as:"member_delete"
+    get "member/memarea",                                                   as:"member_area"
+    get "member/mprofile",                                                  as:"mprofile"
 
     get "exam/:cname/:ename/re_marks",              to:"exam#re_marks",     as:"re_marks"
     get "exam/:cname/mp_marks",                     to:"exam#mp_marks",     as:"mp_marks"
 
-    get "library/ulibrary",                                                       as:"books"
-    get "library/mlibraryr",                                                      as:"all_books"
-    get "library/mlibraryc",                                                      as:"new_book"
+    get "library/ulibrary",                                                 as:"books"
+    get "library/mlibraryr",                                                as:"all_books"
+    get "library/mlibraryc",                                                as:"new_book"
 end

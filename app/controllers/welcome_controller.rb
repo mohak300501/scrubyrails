@@ -51,14 +51,6 @@ class WelcomeController < ApplicationController
         redirect_to home_path
     end
 
-    def memarea
-        if session[:member]
-            render "memarea"
-        else
-            redirect_to root_url
-        end
-    end
-
     def about
         @about = About.first.about
         render "abouts"

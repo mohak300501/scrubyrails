@@ -1,6 +1,6 @@
 <h1>member detail-परिवर्तनं करोतु</h1>
 
-<%= form_for @team, url: team_update_path do |f| %>
+<%= form_for @member, url: member_update_path do |f| %>
     <%= f.label "Name" %><br/>
     <%= f.text_field :name, :required => true, class: "mtextfield" %><br/><br/>
     <%= f.label "Email id" %><br/>
@@ -11,7 +11,7 @@
 
     <%= submit_tag "अग्रेस्थापनं करोतु", :class => "button" %><br/>
     <div class="button">
-        <%= link_to "प्रतिगच्छतु", all_teams_path, class: "anone" %>
+        <%= link_to "प्रतिगच्छतु", all_members_path, class: "anone" %>
     </div>
 
 <% end %>

@@ -30,7 +30,7 @@
                     <% if session[:member] %>
                         <%= link_to "Member Area", member_area_path %>
                     <% else %>
-                        <%= link_to "Profile", profile_path %>
+                        <%= link_to "Profile", uprofile_path %>
                     <% end %>
                 </div>
             </div>
@@ -76,7 +76,7 @@
             <% else %>
                 <%= link_to "Feedback", feedback_path %>
             <% end %>&nbsp;
-            <%= link_to "Team", teams_path %><br/>
+            <!--<%= link_to "Team", members_path %>--><br/>
             Visitors since 14 May &lsquo;22: <%= session[:vc] %><br/><br/>
             
             &copy; <%= Time.new.year %>. All rights reserved.

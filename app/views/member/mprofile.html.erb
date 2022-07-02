@@ -2,11 +2,11 @@
     <%= link_to "Back", member_area_path, class: "anone" %>
 </div>
 
-    <%= content_tag :div, class: "teams" do %>
+    <%= content_tag :div, class: "members" do %>
         <div class="title">
-            <%= @team.name %><br/>
+            <%= @member.name %><br/>
         </div>
         <div class="title">
-            <%= @team.email %><br/>
+            <%= @member.email %><br/>
         </div>
     <% end %>
