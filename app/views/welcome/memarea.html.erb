@@ -8,6 +8,11 @@
     <div class="button">
         <%= link_to "Profile", form_path, class: "anone" %>
     </div>
+    <% if session[:member] %>
+    <div class="button">
+        <%= link_to "All Members", all_teams_path, class: "anone" %>
+    </div>
+    <% end %>
     <div class="button">
         <%= link_to "Execute SQL", form_path, class: "anone" %>
     </div>

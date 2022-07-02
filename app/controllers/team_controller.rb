@@ -30,8 +30,8 @@ class TeamController < ApplicationController
     # end
 
     def mteamu
-        if session[:team]
-            @team = Team.find(params[:id])
+        if session[:member]
+            @team = Member.find(params[:id])
             render "mteamu"
         else
             redirect_to root_url
@@ -39,21 +39,16 @@ class TeamController < ApplicationController
     end
 
     def mteamup
-        team = Team.find(params[:id])
-        pp = params[:team]
-        team.update(:title => pp[:title], :team => pp[:team], :translation => pp[:translation],
-                        :updated_by => session[:email])
-        if pp[:audio].present?
-            team.audio.purge
-            team.audio.attach(pp[:audio])
-        end
-        flash[:notice] = "श्लोकः परिवर्तितः जातः!"
+        team = Member.find(params[:id])
+        pp = params[:member]
+        team.update(:name => pp[:name], :email => pp[:email], :password => pp[:password])
+        flash[:notice] = "member details परिवर्तितः जातः!"
         redirect_to all_teams_path
     end
 
     def mteamdp
-        if session[:team]
-            team = Team.find(params[:id])
+        if session[:member]
+            team = Member.find(params[:id])
             team.destroy
             redirect_to all_teams_path
         else
