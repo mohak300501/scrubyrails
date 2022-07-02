@@ -100,6 +100,7 @@ Rails.application.routes.draw do
     get "team/:id/up",                             to:"team#mteamu",     as:"team"
     patch "team/:id",                              to:"team#mteamup",    as:"team_update"
     delete "team/:id/del",                         to:"team#mteamdp",    as:"team_delete"
+    get "team/profile",                                                  as:"mprofile"
 
     get "exam/:cname/:ename/re_marks",              to:"exam#re_marks",     as:"re_marks"
     get "exam/:cname/mp_marks",                     to:"exam#mp_marks",     as:"mp_marks"

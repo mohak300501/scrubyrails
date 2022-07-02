@@ -1,0 +1,12 @@
+<div class="button">
+    <%= link_to "Back", member_area_path, class: "anone" %>
+</div>
+
+    <%= content_tag :div, class: "teams" do %>
+        <div class="title">
+            <%= @team.name %><br/>
+        </div>
+        <div class="title">
+            <%= @team.email %><br/>
+        </div>
+    <% end %>

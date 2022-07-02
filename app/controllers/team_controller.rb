@@ -55,4 +55,14 @@ class TeamController < ApplicationController
             redirect_to root_url
         end
     end
+
+    def profile
+        if session[:member]
+            @team = Member.find_by(email: session[:email])
+            render "profile"
+        else
+            redirect_to root_url
+        end
+    end
+
 end
