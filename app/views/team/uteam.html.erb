@@ -1,0 +1,11 @@
+<% for i in @teams do %>
+    <div class="teams">
+        <div class="title">
+            <%= i.title %><br/>
+        </div>
+
+        <div class="team">
+            <p><%= i.shlok.html_safe %></p>
+        </div>
+    </div>
+<% end %>

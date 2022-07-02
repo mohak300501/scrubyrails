@@ -91,4 +91,13 @@ Rails.application.routes.draw do
     get "exam/:cname/:ename/:qno/ch",               to:"exam#mquesu",       as:"ques_change"
     patch "exam/:cname/:ename/:qno/up",             to:"exam#mquesup",      as:"ques_update"
     delete "exam/:cname/:ename/:qno/del",           to:"exam#mquesdp",      as:"ques_delete"
+
+    get "team/uteam",                                                     as:"teams"
+    get "team/mteamr",                                                    as:"all_teams"
+    get "team/mteamc",                                                    as:"new_team"
+    post "team/mteamcp",                                                  as:"team_post"
+    get "team/:id/up",                             to:"team#mteamu",     as:"team"
+    patch "team/:id",                              to:"team#mteamup",    as:"team_update"
+    delete "team/:id/del",                         to:"team#mteamdp",    as:"team_delete"
+
 end
