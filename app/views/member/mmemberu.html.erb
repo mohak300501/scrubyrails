@@ -2,11 +2,11 @@
 
 <%= form_for @member, url: member_update_path do |f| %>
     <%= f.label "Name" %><br/>
-    <%= f.text_field :name, :required => true, class: "mtextfield" %><br/><br/>
-    <%= f.label "Email id" %><br/>
-    <%= f.text_area :email, :required => true, class: "mtextarea-1" %><br/><br/>
+    <%= f.text_field :name, :required => true, class: "utextfield" %><br/><br/>
+    <%= f.label "Email ID" %><br/>
+    <%= f.text_field :email, :required => true, class: "utextfield" %><br/><br/>
     <%= f.label "Password" %><br/>
-    <%= f.text_area :password, :required => true, class: "mtextarea-2" %><br/><br/>
+    <%= f.text_field :password, :required => true, class: "utextfield" %><br/><br/>
     
 
     <%= submit_tag "अग्रेस्थापनं करोतु", :class => "button" %><br/>

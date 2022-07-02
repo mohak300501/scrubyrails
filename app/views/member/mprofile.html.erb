@@ -2,11 +2,15 @@
     <%= link_to "Back", member_area_path, class: "anone" %>
 </div>
 
-    <%= content_tag :div, class: "members" do %>
-        <div class="title">
-            <%= @member.name %><br/>
-        </div>
-        <div class="title">
-            <%= @member.email %><br/>
-        </div>
+<%= content_tag :div, class: "members" do %>
+    <div class="title">
+        <%= @member.name %><br/>
+    </div>
+    <div class="title">
+        <%= @member.email %><br/>
+    </div>
+
+    <%= link_to member_path(@member.id), class: "anone" do %>
+        <div class="button">परिवर्तयतु</div>
     <% end %>
+<% end %>

@@ -9,10 +9,10 @@ class LoggingController < ApplicationController
     end
 
     def mnew
-        main_mem = Rails.application.credentials.mail[:MAIL_USERNAME]
-        if session[:member] and session[:email] != main_mem
+        admin = Rails.application.credentials.mail[:MAIL_USERNAME]
+        if session[:member] and session[:email] != admin
             redirect_to home_path
-        elsif session[:email] == main_mem
+        elsif session[:email] == admin
             session[:moru] = "member"
             render "new"
         else

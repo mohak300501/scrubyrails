@@ -5,8 +5,8 @@ class MemberController < ApplicationController
     end
 
     def mmemberr
-        main_mem = Rails.application.credentials.mail[:MAIL_USERNAME]
-        if session[:email] == main_mem
+        admin = Rails.application.credentials.mail[:MAIL_USERNAME]
+        if session[:email] == admin
             @members = Member.all
             render "mmemberr"
         else
@@ -43,13 +43,15 @@ class MemberController < ApplicationController
         member = Member.find(params[:id])
         pp = params[:member]
         member.update(:name => pp[:name], :email => pp[:email], :password => pp[:password])
+        session[:member] = pp[:name]
+        session[:email] = pp[:email]
         flash[:notice] = "member details परिवर्तितः जातः!"
-        redirect_to all_members_path
+        redirect_to mprofile_path
     end
 
     def mmemberdp
-        main_mem = Rails.application.credentials.mail[:MAIL_USERNAME]
-        if session[:email] == main_mem
+        admin = Rails.application.credentials.mail[:MAIL_USERNAME]
+        if session[:email] == admin
             member = Member.find(params[:id])
             member.destroy
             redirect_to all_members_path
@@ -60,9 +62,9 @@ class MemberController < ApplicationController
 
     def memarea
         if session[:member]
-            main_mem = Rails.application.credentials.mail[:MAIL_USERNAME]
-            if session[:email] == main_mem
-                @main_mem = true
+            admin = Rails.application.credentials.mail[:MAIL_USERNAME]
+            if session[:email] == admin
+                @admin = true
             end
             render "memarea"
         else

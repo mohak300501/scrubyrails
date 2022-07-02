@@ -9,9 +9,6 @@
         </div>
 
         <div class="updel">
-            <%= link_to member_path(i.id), class: "anone" do %>
-                <div class="button">परिवर्तयतु</div>
-            <% end %>
             <%= link_to member_delete_path(i.id), method: "delete", data: {:confirm => "Are you sure you want to delete this member?"}, class: "anone" do %>
                 <div class="button">विनश्यतु</div>
             <% end %>
