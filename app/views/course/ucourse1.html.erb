@@ -42,9 +42,10 @@
             <% for j in @exams %>
                 <% if j.name.include? i.cname %>
                     <% exam = j.name.split("_") %>
+                    <% type = j.type ? "Self Evaluation Quiz" : "Main Exam" %>
                     &bull;
                     <%= link_to exam_uview_path(i.cname, exam[0] + "_" + exam[1]) do %>
-                        <%= "Self Evaluation Quiz" + " - " + exam[1] + " | " + exam[2] %>
+                        <%= type + " - " + exam[1] + " | " + exam[2] %>
                     <% end %><br/>
                 <% end %>
             <% end %>

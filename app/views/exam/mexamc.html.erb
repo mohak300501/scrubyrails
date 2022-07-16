@@ -1,7 +1,13 @@
+<h1>नूतना परीक्षा योजयतु</h1>
+
 <%= form_tag exam_create_path do %>
     <br/>
     <%= label_tag "exam no." %><br/>
     <%= number_field_tag :eno, nil, :required => true, class: "mnumberfield" %><br/><br/>
+    <%= radio_button_tag :etype, true, :checked %>
+    <%= label_tag "Self Evaluation Quiz" %>&nbsp;&nbsp;&nbsp;&nbsp;
+    <%= radio_button_tag :etype, false %>
+    <%= label_tag "Main Exam" %><br/><br/>
     <%= label_tag "exam info" %><br/>
     <%= text_area_tag :info, nil, :required => true, class: "mtextarea-1" %><br/><br/>
     <%= submit_tag "अग्रेस्थापनं करोतु", :class => "button" %><br/>

@@ -44,7 +44,8 @@ class ExamController < ApplicationController
                 ActiveRecord::Base.connection.execute("alter table " + params[:cname] + " add column " + exam_name + " int;")
 
                 # Add new exam to Exam table
-                exam = Exam.new(:name => exam_name, :info => params[:info])
+                type = params[:etype] == "true" ? true : false
+                exam = Exam.new(:name => exam_name, :etype => type, :info => params[:info])
                 exam.save
             rescue
                 flash[:alert] = exam_name + " already exists."

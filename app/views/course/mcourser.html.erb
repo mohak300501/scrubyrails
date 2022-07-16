@@ -31,9 +31,10 @@
             <% for j in @exams %>
                 <% if j.name.include? i.cname %>
                     <% exam = j.name.split("_") %>
+                    <% type = j.etype ? "Self Evaluation Quiz" : "Main Exam" %>
                     &bull; 
                     <%= link_to ques_read_path(i.cname, exam[0] + "_" + exam[1]) do %>
-                        <%= exam[0] + " - " + exam[1] + " | " + exam[2] %>
+                        <%= type + " - " + exam[1] + " | " + exam[2] %>
                     <% end %><br/>
                 <% end %>
             <% end %>
