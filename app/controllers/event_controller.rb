@@ -1,12 +1,12 @@
 class EventController < ApplicationController
     def uevent
-        @events = Event.all
+        @events = Event.all.order(id: :desc)
         render "uevent"
     end
 
     def meventr
         if session[:member]
-            @events = Event.all
+            @events = Event.all.order(id: :desc)
             render "meventr"
         else
             redirect_to root_url

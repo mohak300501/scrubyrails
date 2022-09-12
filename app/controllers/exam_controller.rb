@@ -18,7 +18,6 @@ class ExamController < ApplicationController
             # Fetch marks from parent course table
             @marks = ActiveRecord::Base.connection.exec_query("select " + exam_name + " from " + params[:cname] + " where email='" + email + "';")[0].first()[1]
             if @marks.nil?
-                p exam_name
                 if exam_name == "Exam_8_geeta"
                     render "uexamclosed"
                 else

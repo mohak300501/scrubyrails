@@ -1,12 +1,12 @@
 class CourseController < ApplicationController
     def ucourse
-        @courses = Course.all
+        @courses = Course.all.order(id: :desc)
         render "ucourse"
     end
 
     def mcourser
         if session[:member]
-            @courses = Course.all
+            @courses = Course.all.order(id: :desc)
             @exams = Exam.all
             render "mcourser"
         else
