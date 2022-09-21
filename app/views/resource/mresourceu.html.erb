@@ -1,0 +1,18 @@
+<h1>साधनसम्पत्ति:-परिवर्तनं करोतु</h1>
+
+<%= form_for @resource, url: resource_update_path do |f| %>
+    <%= f.label "शीर्षकं" %><br/>
+    <%= f.text_field :title, :required => true, class: "mtextfield" %><br/><br/>
+    <%= f.label "link" %><br/>
+    <%= f.text_area :resource, :required => true, class: "mtextarea-1" %><br/><br/>
+    
+    # <audio src="<%= rails_blob_url(@resource.audio) %>" controls/></audio><br/><br/>
+    # <%= f.label "change audio" %><br/>
+    # <%= f.file_field :audio %><br/><br/>
+
+    <%= submit_tag "अग्रेस्थापनं करोतु", :class => "button" %><br/>
+    <div class="button">
+        <%= link_to "प्रतिगच्छतु", all_resources_path, class: "anone" %>
+    </div>
+
+<% end %>

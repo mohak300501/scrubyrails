@@ -1,0 +1,20 @@
+<div class="button">
+    <%= link_to "नूतनः साधनसम्पत्ति: योजयतु", new_resource_path, class: "anone" %>
+</div>
+
+<% for i in @resources do %>
+    <%= content_tag :div, class: "resources" do %>
+        <div class="name">
+            <%= link_to i.name, i.link %><br/>
+        </div>
+
+        <div class="updel">
+            <%= link_to resource_path(i.id), class: "anone" do %>
+                <div class="button">परिवर्तयतु</div>
+            <% end %>
+            <%= link_to resource_delete_path(i.id), method: "delete", data: {:confirm => "Are you sure you want to delete this resource?"}, class: "anone" do %>
+                <div class="button">विनश्यतु</div>
+            <% end %>
+        </div>
+    <% end %>
+<% end %>

@@ -1,0 +1,14 @@
+<h1>नूतनः साधनसम्पत्ति: योजयतु</h1>
+
+<%= form_tag resource_post_path do %>
+    <div>
+        <%= label_tag "शीर्षकं" %><br/>
+        <%= text_field_tag :name, nil, :required => true, class: "mtextfield" %><br/><br/>
+        <%= label_tag "link" %><br/>
+        <%= text_field_tag :link, nil, :required => true, class: "mtextfield" %><br/><br/>
+    </div>
+    <div>
+        <%= submit_tag "अग्रेस्थापनं करोतु", :class => "button" %><br/>
+        <%= link_to "प्रतिगच्छतु", all_resources_path %>
+    </div>
+<% end %>

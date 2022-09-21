@@ -77,7 +77,13 @@ Rails.application.routes.draw do
     patch "event/:id",                              to:"event#meventup",    as:"event_update"
     delete "event/:id/del",                         to:"event#meventdp",    as:"event_delete"
     
-    get "resource/uresource",                                               as:"resources"
+    get "resource/uresource",                                                     as:"resources"
+    get "resource/mresourcer",                                                    as:"all_resources"
+    get "resource/mresourcec",                                                    as:"new_resource"
+    post "resource/mresourcecp",                                                  as:"resource_post"
+    get "resource/:id/up",                             to:"resource#mresourceu",     as:"resource"
+    patch "resource/:id",                              to:"resource#mresourceup",    as:"resource_update"
+    delete "resource/:id/del",                         to:"resource#mresourcedp",    as:"resource_delete"
 
     get "exam/:cname/:ename/uview",                 to:"exam#uexam1",       as:"exam_uview"
     post "exam/:cname/:ename/upost",                to:"exam#uexamp",       as:"exam_upost"
