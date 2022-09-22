@@ -105,6 +105,7 @@ Rails.application.routes.draw do
     delete "member/:id/del",                        to:"member#mmemberdp",  as:"member_delete"
     get "member/memarea",                                                   as:"member_area"
     get "member/mprofile",                                                  as:"mprofile"
+    get "member/mchanger",                                                  as:"all_changes"
 
     get "exam/:cname/:ename/re_marks",              to:"exam#re_marks",     as:"re_marks"
     get "exam/:cname/mp_marks",                     to:"exam#mp_marks",     as:"mp_marks"

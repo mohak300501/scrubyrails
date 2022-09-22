@@ -1,0 +1,20 @@
+<div class="overm">
+    <table class="marks">
+        <tr>
+            <th>ID</th>
+            <th>Time</th>
+            <th>Email</th>
+            <th>Table</th>
+            <th>C/U/D</th>
+        </tr>
+        <% for i in @changes do %>
+            <tr>
+                <td><%= i["id"] %></td>
+                <td><%= i["time"] %></td>
+                <td><%= i["email"] %></td>
+                <td><%= i["table"] %></td>
+                <td><%= i["cord"] %></td>
+            </tr>
+        <% end %>
+    </table>
+</div>

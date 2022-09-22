@@ -65,8 +65,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_21_070008) do
     t.string "email"
     t.string "table"
     t.string "cord"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "courses", force: :cascade do |t|

@@ -83,4 +83,14 @@ class MemberController < ApplicationController
         end
     end
 
+    def mchanger
+        admin = Rails.application.credentials.mail[:MAIL_USERNAME]
+        if session[:email] == admin
+            @changes = Change.all
+            render "mchanger"
+        else
+            redirect_to root_url
+        end
+    end
+
 end

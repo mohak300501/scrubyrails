@@ -5,8 +5,6 @@ class CreateChanges < ActiveRecord::Migration[7.0]
       t.string :email
       t.string :table
       t.string :cord
-
-      t.timestamps
     end
   end
 end
