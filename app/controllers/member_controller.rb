@@ -43,6 +43,8 @@ class MemberController < ApplicationController
         member = Member.find(params[:id])
         pp = params[:member]
         member.update(:name => pp[:name], :email => pp[:email], :password => pp[:password])
+        change = Change.new(:time => Time.now, :email => pp[:email], :table => "members", :cord => "update")
+        change.save
         session[:member] = pp[:name]
         session[:email] = pp[:email]
         flash[:notice] = "member details परिवर्तितः जातः!"

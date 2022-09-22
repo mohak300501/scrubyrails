@@ -24,6 +24,8 @@ class EventController < ApplicationController
     def meventcp
         event = Event.new(:name => params[:name], :info => params[:info], :image => params[:image])
         event.save
+        change = Change.new(:time => Time.now, :email => session[:email], :table => "events", :cord => "create")
+        change.save
         flash[:notice] = "नूतना घटना योजितः जातः!"
         redirect_to all_events_path
     end
@@ -46,6 +48,8 @@ class EventController < ApplicationController
             event.image.purge
             event.image.attach(pp[:image])
         end
+        change = Change.new(:time => Time.now, :email => session[:email], :table => "events", :cord => "update")
+        change.save
         flash[:notice] = "घटना परिवर्तितः जातः!"
         redirect_to all_events_path
     end
@@ -54,6 +58,8 @@ class EventController < ApplicationController
         if session[:member]
             event = Event.find(params[:id])
             event.destroy
+            change = Change.new(:time => Time.now, :email => session[:email], :table => "events", :cord => "delete")
+            change.save
             redirect_to all_events_path
         else
             redirect_to root_url

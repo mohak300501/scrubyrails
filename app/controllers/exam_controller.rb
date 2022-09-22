@@ -51,6 +51,8 @@ class ExamController < ApplicationController
                 type = params[:etype] == "true" ? true : false
                 exam = Exam.new(:name => exam_name, :etype => type, :info => params[:info])
                 exam.save
+                change = Change.new(:time => Time.now, :email => session[:email], :table => "exams", :cord => "create")
+                change.save
             rescue
                 flash[:alert] = exam_name + " already exists."
                 redirect_to exam_new_path(params[:cname]) and return
@@ -86,6 +88,8 @@ class ExamController < ApplicationController
                 ActiveRecord::Base.connection.execute("alter table " + params[:cname] + " rename column " + exam.name + " to " + exam_name + ";")
             end
             exam.update(:name => exam_name, :info => params[:info])
+            change = Change.new(:time => Time.now, :email => session[:email], :table => "exams", :cord => "update")
+            change.save
             redirect_to ques_read_path(params[:cname], "Exam_" + params[:eno]) and return
         else
             redirect_to root_url
@@ -97,6 +101,8 @@ class ExamController < ApplicationController
             exam_name = params[:ename] + "_" + params[:cname]
             exam = Exam.find_by(name: exam_name)
             exam.destroy
+            change = Change.new(:time => Time.now, :email => session[:email], :table => "exams", :cord => "delete")
+            change.save
 
             ActiveRecord::Base.connection.execute("drop table " + exam_name + "_p;")
             ActiveRecord::Base.connection.execute("drop table " + exam_name + "_q;")
@@ -224,6 +230,9 @@ class ExamController < ApplicationController
                 end
                 ActiveRecord::Base.connection.execute("update " + params[:cname] + " set " + exam_name + "=" + marks.to_s + " where pid=" + i["pid"].to_s + ";")
             end
+
+            change = Change.new(:time => Time.now, :email => session[:email], :table => "re_marks", :cord => "update")
+            change.save
 
             redirect_to ques_read_path(params[:cname], params[:ename]) and return
         else
