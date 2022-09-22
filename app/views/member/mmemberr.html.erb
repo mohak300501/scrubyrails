@@ -8,6 +8,12 @@
             <%= i.name %><br/>
         </div>
 
+        <% if i.image.present? %>
+            <div class="poster">
+                <img src="<%= rails_blob_url(i.image) %>" />
+            </div>
+        <% end %>
+
         <div class="updel">
             <%= link_to member_delete_path(i.id), method: "delete", data: {:confirm => "Are you sure you want to delete this member?"}, class: "anone" do %>
                 <div class="button">विनश्यतु</div>

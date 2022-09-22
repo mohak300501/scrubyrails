@@ -7,6 +7,14 @@
     <%= f.text_field :email, :required => true, class: "utextfield" %><br/><br/>
     <%= f.label "Password" %><br/>
     <%= f.text_field :password, :required => true, class: "utextfield" %><br/><br/>
+    <%= f.label "current image" %><br/>
+    <% if @member.image.present? %>
+        <img src="<%= rails_blob_url(@event.image) %>" class="img-50" /><br/><br/>
+    <% else %>
+        No image<br/><br/>
+    <% end %>
+    <%= f.label "change image" %><br/>
+    <%= f.file_field :image %><br/><br/>
     
 
     <%= submit_tag "अग्रेस्थापनं करोतु", :class => "button" %><br/>

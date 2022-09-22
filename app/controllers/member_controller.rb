@@ -43,6 +43,12 @@ class MemberController < ApplicationController
         member = Member.find(params[:id])
         pp = params[:member]
         member.update(:name => pp[:name], :email => pp[:email], :password => pp[:password])
+        if pp[:image].present?
+            if member.image.present?
+                member.image.purge
+            end
+            member.image.attach(pp[:image])
+        end
         change = Change.new(:time => Time.now, :email => pp[:email], :table => "members", :cord => "update")
         change.save
         session[:member] = pp[:name]
