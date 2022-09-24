@@ -10,6 +10,12 @@
         <%= @member.email %><br/>
     </div>
 
+    <% if @member.image.present? %>
+        <div class="poster">
+            <img src="<%= rails_blob_url(@member.image) %>" />
+        </div>
+    <% end %>
+
     <%= link_to member_path(@member.id), class: "anone" do %>
         <div class="button">परिवर्तयतु</div>
     <% end %>

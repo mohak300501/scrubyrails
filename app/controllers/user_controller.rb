@@ -40,6 +40,8 @@ class UserController < ApplicationController
                 end
             end
             user.destroy
+            change = Change.new(:time => Time.now, :email => session[:email], :table => "users_" + user.email, :cord => "delete")
+            change.save
             redirect_to all_users_path
         else
             redirect_to root_url

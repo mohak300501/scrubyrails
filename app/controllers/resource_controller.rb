@@ -24,6 +24,8 @@ class ResourceController < ApplicationController
     def mresourcecp
         resource = Resource.new(:name => params[:name], :link => params[:link])
         resource.save
+        change = Change.new(:time => Time.now, :email => session[:email], :table => "resources", :cord => "create")
+        change.save
         flash[:notice] = "नूतनः साधनसम्पत्ति: योजितः जातः!"
         redirect_to all_resources_path
     end
@@ -46,6 +48,8 @@ class ResourceController < ApplicationController
             resource.audio.purge
             resource.audio.attach(pp[:audio])
         end
+        change = Change.new(:time => Time.now, :email => session[:email], :table => "resources", :cord => "update")
+        change.save
         flash[:notice] = "साधनसम्पत्ति: परिवर्तितः जातः!"
         redirect_to all_resources_path
     end
@@ -54,6 +58,8 @@ class ResourceController < ApplicationController
         if session[:member]
             resource = Resource.find(params[:id])
             resource.destroy
+            change = Change.new(:time => Time.now, :email => session[:email], :table => "resources", :cord => "delete")
+            change.save
             redirect_to all_resources_path
         else
             redirect_to root_url

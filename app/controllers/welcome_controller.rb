@@ -25,6 +25,8 @@ class WelcomeController < ApplicationController
     def mnewscp
         news = Announcement.new(:news => params[:news])
         news.save
+        change = Change.new(:time => Time.now, :email => session[:email], :table => "announcements", :cord => "create")
+        change.save
         flash[:notice] = "नूतनः announcementH योजितः जातः!"
         redirect_to home_path
     end
@@ -41,6 +43,8 @@ class WelcomeController < ApplicationController
     def mnewsup
         news = Announcement.find(params[:id])
         news.update(:news => params[:announcement][:news])
+        change = Change.new(:time => Time.now, :email => session[:email], :table => "announcements", :cord => "update")
+        change.save
         flash[:notice] = "announcementH परिवर्तितः जातः!"
         redirect_to home_path
     end
@@ -48,6 +52,8 @@ class WelcomeController < ApplicationController
     def mnewsdp
         news = Announcement.find(params[:id])
         news.destroy
+        change = Change.new(:time => Time.now, :email => session[:email], :table => "announcements", :cord => "delete")
+        change.save
         redirect_to home_path
     end
 
@@ -98,6 +104,8 @@ class WelcomeController < ApplicationController
             pp = params[:about]
             about = About.first
             about.update(:about => pp[:about])
+            change = Change.new(:time => Time.now, :email => session[:email], :table => "abouts_a", :cord => "update")
+            change.save
             redirect_to about_path
         else
             redirect_to root_url
@@ -109,6 +117,8 @@ class WelcomeController < ApplicationController
             pp = params[:about]
             htuse = About.first
             htuse.update(:htuse => pp[:htuse])
+            change = Change.new(:time => Time.now, :email => session[:email], :table => "abouts_h", :cord => "update")
+            change.save
             redirect_to htuse_path
         else
             redirect_to root_url
@@ -120,6 +130,8 @@ class WelcomeController < ApplicationController
             pp = params[:about]
             terms = About.first
             terms.update(:terms => pp[:terms])
+            change = Change.new(:time => Time.now, :email => session[:email], :table => "abouts_t", :cord => "update")
+            change.save
             redirect_to terms_path
         else
             redirect_to root_url

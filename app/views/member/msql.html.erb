@@ -1,0 +1,24 @@
+<div class="button">
+    <%= link_to "Back", member_area_path, class: "anone" %>
+</div>
+
+<h2>Enter SQL query</h2>
+<div><b>Syntax:</b> show table_name;<br/><br/></div>
+<%= form_tag exec_sql_path do %>
+    <%= text_area_tag :query, @query, :required => true, class: "mtextarea-1" %><br/><br/>
+    <%= submit_tag "अग्रेस्थापनं करोतु", :class => "button" %>
+<% end %>
+
+<% if @results %>
+    <table>
+        <% for i in @results %>
+            <tr>
+                <% for j in i %>
+                    <td><%= j[1] %></td>
+                <% end %>
+            </tr>
+        <% end %>
+    </table>
+<% else %>
+    <%= @error %>
+<% end %>

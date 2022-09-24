@@ -26,6 +26,8 @@ class CourseController < ApplicationController
         course = Course.new(:name => params[:name], :cname => params[:cname], :regon =>params[:regon], :more => params[:more], :yt => params[:yt],
                             :description => params[:description], :image => params[:image])
         course.save
+        change = Change.new(:time => Time.now, :email => session[:email], :table => "courses", :cord => "create")
+        change.save
 
         ActiveRecord::Base.connection.execute("create table " + params[:cname] +
             "(id serial primary key, pid int, regid varchar(10), email varchar(50),
@@ -55,6 +57,8 @@ class CourseController < ApplicationController
             course.image.purge
             course.image.attach(pp[:image])
         end
+        change = Change.new(:time => Time.now, :email => session[:email], :table => "courses", :cord => "update")
+        change.save
         flash[:notice] = "CourseH परिवर्तितः जातः!"
         redirect_to all_courses_path
     end
@@ -70,6 +74,8 @@ class CourseController < ApplicationController
             end
             ActiveRecord::Base.connection.execute("drop table if exists " + course.cname + ";")
             course.destroy
+            change = Change.new(:time => Time.now, :email => session[:email], :table => "courses", :cord => "delete")
+            change.save
             redirect_to all_courses_path
         else
             redirect_to root_url

@@ -34,6 +34,8 @@ class GameController < ApplicationController
     def mgamecp
         game = Game.new(:name => params[:name], :info => params[:info])
         game.save
+        change = Change.new(:time => Time.now, :email => session[:email], :table => "games", :cord => "create")
+        change.save
         flash[:notice] = "नूतनः gameH योजितः जातः!"
         redirect_to all_games_path
     end
@@ -41,12 +43,16 @@ class GameController < ApplicationController
     def mgamedp
         game = Game.find(params[:id])
         game.destroy
+        change = Change.new(:time => Time.now, :email => session[:email], :table => "games", :cord => "delete")
+        change.save
         redirect_to all_games_path
     end
 
     def mgameup
         game = Game.find(params[:id])
         game.update(:name => params[:name], :info => params[:info])
+        change = Change.new(:time => Time.now, :email => session[:email], :table => "games", :cord => "update")
+        change.save
         flash[:notice] = "gameH परिवर्तितः जातः!"
         redirect_to all_games_path
     end
