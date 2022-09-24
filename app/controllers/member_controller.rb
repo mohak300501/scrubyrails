@@ -99,4 +99,34 @@ class MemberController < ApplicationController
         end
     end
 
+    # def msql
+    #     admin = Rails.application.credentials.mail[:MAIL_USERNAME]
+    #     if session[:email] == admin
+    #         render "msql"
+    #     else
+    #         redirect_to root_url
+    #     end
+    # end
+
+    def msql
+        admin = Rails.application.credentials.mail[:MAIL_USERNAME]
+        if session[:email] == admin
+            if params[:query].present?
+                @query = params[:query]
+                sqlq = @query.split()
+                if sqlq[0] == "show"
+                    begin
+                        @results = ActiveRecord::Base.connection.exec_query("select * from " + sqlq[1])
+                    rescue => e
+                        @error = e
+                    end
+                else
+                    @error = "Please start queries with 'show'."
+                end
+            end
+            render "msql"
+        else
+            redirect_to root_url
+        end
+    end
 end
