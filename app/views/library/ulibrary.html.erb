@@ -1,3 +1,15 @@
-<div>
-ulibrary
-</div>
+<% for i in @librarys do %>
+    <div class="librarys">
+        <div class="title">
+            <%= i.title %><br/>
+        </div>
+
+        <div class="library">
+            <p><%= i.library.html_safe %></p>
+        </div>
+
+        <div class="translation">
+            <%= i.translation.html_safe %>
+        </div>
+    </div>
+<% end %>

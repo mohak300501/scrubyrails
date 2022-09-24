@@ -1,3 +1,32 @@
-<div>
-mlibraryu
-</div>
+<h1>पुस्तकम्-परिवर्तनं करोतु</h1>
+
+<%= form_for @library, url: library_update_path do |f| %>
+    <%= f.label "Book ID" %><br/>
+    <%= f.text_field :bookid, :required => true, class: "mtextfield" %><br/><br/>
+    <%= f.label "शीर्षकं" %><br/>
+    <%= f.text_area :name, :required => true, class: "mtextarea-1" %><br/><br/>
+    <%= f.label "link" %><br/>
+    <%= f.text_area :link, :required => true, class: "mtextarea-1" %><br/><br/>
+    <%= f.label "विवरणम्" %><br/>
+    <%= f.text_area :description, :required => true, class: "mtextarea-1" %><br/><br/>
+    <%= f.label "रचयितृ" %><br/>
+    <%= f.text_area :author, :required => true, class: "mtextarea-1" %><br/><br/>
+    <%= f.label "प्रकाशकः" %><br/>
+    <%= f.text_area :publisher, :required => true, class: "mtextarea-1" %><br/><br/>
+    <%= f.label "सङ्ख्या" %><br/>
+    <%= f.text_area :units, :required => true, class: "mtextarea-1" %><br/><br/>
+    <%= f.label "Added by" %><br/>
+    <%= f.text_area :added_by, :required => true, class: "mtextarea-1" %><br/><br/>
+    <%= f.label "Issued to" %><br/>
+    <%= f.text_area :issued_to, :required => true, class: "mtextarea-1" %><br/><br/>
+    <%= f.label "Date of Issue" %><br/>
+    <%= f.text_area :doi, :required => true, class: "mtextarea-1" %><br/><br/>
+    <%= f.label "Date of return" %><br/>
+    <%= f.text_area :dor, :required => true, class: "mtextarea-1" %><br/><br/>
+
+    <%= submit_tag "अग्रेस्थापनं करोतु", :class => "button" %><br/>
+    <div class="button">
+        <%= link_to "प्रतिगच्छतु", all_librarys_path, class: "anone" %>
+    </div>
+
+<% end %>
