@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_18_165017) do
+ActiveRecord::Schema.define(version: 2022_09_21_064449) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -103,6 +103,22 @@ ActiveRecord::Schema.define(version: 2022_08_18_165017) do
     t.integer "pid"
     t.string "regid", limit: 10
     t.string "email", limit: 50
+  end
+
+  create_table "libraries", force: :cascade do |t|
+    t.string "bookid"
+    t.string "name"
+    t.string "link"
+    t.string "description"
+    t.string "author"
+    t.string "publisher"
+    t.integer "units"
+    t.string "addedby"
+    t.string "issuedto"
+    t.string "doi"
+    t.string "dor"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "members", force: :cascade do |t|
