@@ -112,7 +112,11 @@ Rails.application.routes.draw do
     get "exam/:cname/:ename/re_marks",              to:"exam#re_marks",     as:"re_marks"
     get "exam/:cname/mp_marks",                     to:"exam#mp_marks",     as:"mp_marks"
 
-    get "library/ulibrary",                                                 as:"books"
-    get "library/mlibraryr",                                                as:"all_books"
-    get "library/mlibraryc",                                                as:"new_book"
+    get "library/ulibrary",                                                     as:"librarys"
+    get "library/mlibraryr",                                                    as:"all_librarys"
+    get "library/mlibraryc",                                                    as:"new_library"
+    post "library/mlibrarycp",                                                  as:"library_post"
+    get "library/:id/up",                             to:"library#mlibraryu",     as:"library"
+    patch "library/:id",                              to:"library#mlibraryup",    as:"library_update"
+    delete "library/:id/del",                         to:"library#mlibrarydp",    as:"library_delete"
 end

@@ -1,3 +1,33 @@
-<div>
-mlibraryc
-</div>
+<h1>नूतनः पुस्तकम् योजयतु</h1>
+
+<%= form_tag shlok_post_path, multipart: true do %>
+    <div>
+        <%= label_tag "Book ID" %><br/>
+        <%= text_field_tag :bookid, nil, :required => true, class: "mtextfield" %><br/><br/>
+        <%= label_tag "शीर्षकं" %><br/>
+        <%= text_area_tag :name, nil, :required => true, class: "mtextarea-1" %><br/><br/>
+        <%= label_tag "Link" %><br/>
+        <%= file_field_tag :link, :required => true %><br/><br/>
+        <%= label_tag "विवरणम्" %><br/>
+        <%= text_area_tag :description, nil, :required => true, class: "mtextarea-2" %><br/>
+        <%= label_tag "रचयितृ" %><br/>
+        <%= text_field_tag :author, nil, :required => true, class: "mtextfield" %><br/><br/>
+        <%= label_tag "प्रकाशकः" %><br/>
+        <%= text_field_tag :publisher, nil, :required => true, class: "mtextfield" %><br/><br/>
+        <%= label_tag "सङ्ख्या" %><br/>
+        <%= text_field_tag :units, nil, :required => true, class: "mtextfield" %><br/><br/>
+        <%= label_tag "Added by" %><br/>
+        <%= text_field_tag :added_by, nil, :required => true, class: "mtextfield" %><br/><br/>
+        <%= label_tag "Issued to" %><br/>
+        <%= text_field_tag :issued_to, nil, :required => true, class: "mtextfield" %><br/><br/>
+        <%= label_tag "Date of Issue" %><br/>
+        <%= text_field_tag :doi, nil, :required => true, class: "mtextfield" %><br/><br/>
+        <%= label_tag "Date of return" %><br/>
+        <%= text_field_tag :dor, nil, :required => true, class: "mtextfield" %><br/><br/>
+
+    </div>
+    <div>
+        <%= submit_tag "अग्रेस्थापनं करोतु", :class => "button" %><br/>
+        <%= link_to "प्रतिगच्छतु", all_shloks_path %>
+    </div>
+<% end %>

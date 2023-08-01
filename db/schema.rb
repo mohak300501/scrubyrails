@@ -209,6 +209,22 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_21_070008) do
     t.integer "exam_8_gsdg"
   end
 
+  create_table "libraries", force: :cascade do |t|
+    t.string "bookid"
+    t.string "name"
+    t.string "link"
+    t.string "description"
+    t.string "author"
+    t.string "publisher"
+    t.integer "units"
+    t.string "addedby"
+    t.string "issuedto"
+    t.string "doi"
+    t.string "dor"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "members", force: :cascade do |t|
     t.string "name"
     t.string "email"
