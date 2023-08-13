@@ -47,3 +47,5 @@ yarn-debug.log*
 
 # Ignore Gemfile.lock
 Gemfile.lock
+
+/config/credentials/production.key

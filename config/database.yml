@@ -81,6 +81,6 @@ test:
 #
 production:
   <<: *default
-  database: ""
-  username: ""
-  password: ""
+  database: <%= Rails.application.credentials.config[:database][:DATABASE] %>
+  username: <%= Rails.application.credentials.config[:database][:DATABASE_USERNAME] %>
+  password: <%= Rails.application.credentials.config[:database][:DATABASE_PASSWORD] %>
