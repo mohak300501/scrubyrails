@@ -26,26 +26,27 @@
 /storage/*
 !/storage/.keep
 
-/public/assets
+public/assets
 .byebug_history
 
 # Ignore master key for decrypting credentials and more.
-/config/master.key
+config/master.key
+config/credentials/production.key
 
-/public/packs
-/public/packs-test
-/node_modules
-/yarn-error.log
+# Webpacker / Babel
+public/packs
+public/packs-test
+tmp/cache/
+.cache/
+
+# Ignore .env file
+.env
+
+# Ignore node / yarn files
+node_modules/
+package-lock.json
+.yarn/
+yarn-error.log
 yarn-debug.log*
 .yarn-integrity
 
-# Ignore .env file
-/.env
-
-# Ignore yarn files
-.yarn/install-state.gz
-
-# Ignore Gemfile.lock
-Gemfile.lock
-
-/config/credentials/production.key
