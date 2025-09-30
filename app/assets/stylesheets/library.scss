@@ -1,3 +1,96 @@
 // Place all the styles related to the Library controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+body {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 97.784vh;
+    display: flex;
+    flex-direction: column;
+}
+.header {
+    font-size: 2rem;
+    background-color: rgba(255, 166, 0, 0.6);
+    padding: 0.5rem;
+    display: flex;
+}
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+    height: 7rem;
+}
+.logo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bhadra {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+.section{
+    background-image: url(https://img.redro.pl/fototapety/biblioteka-pelna-ksiazek-i-ksiag-na-polkach-700-200739055.jpg);
+    background-position: top center, top center;
+    background-repeat: no-repeat, repeat-x;
+    background-size: cover;
+    position: relative;
+    height: 23rem;
+    width: 100%;
+    display: flex;
+    padding-bottom: 5vw;
+    font-size: 4rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem;
+    gap: 1rem;
+    justify-content: space-evenly;
+}
+.box{
+    /* border: 2px solid black; */
+    width:16rem;
+    height:20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bolder;
+}
+.book{
+    height: 18rem;
+    width: 15.5rem;
+    padding-bottom: 0;
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+.footer {
+    font-size: 1.2rem;
+    background-color: rgba(255, 166, 0, 0.6);
+    padding: 1.5rem;
+    margin-top: auto;
+}
+.footer a {
+    color: #646464;
+}
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.links{
+    display: flex;
+    justify-content: space-evenly;
+}
