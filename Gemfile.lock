@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/MiniProfiler/rack-mini-profiler.git
+  revision: 92610caa0051510530da5def0602e5e97683f824
+  specs:
+    rack-mini-profiler (4.0.1)
+      rack (>= 1.2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -152,9 +159,7 @@ GEM
     puma (6.6.1)
       nio4r (~> 2.0)
     racc (1.8.1)
-    rack (3.2.0)
-    rack-mini-profiler (2.3.4)
-      rack (>= 1.2.0)
+    rack (3.2.1)
     rack-proxy (0.7.7)
       rack
     rack-session (2.1.1)
@@ -274,7 +279,7 @@ DEPENDENCIES
   listen (~> 3.3)
   pg
   puma (>= 6.0)
-  rack-mini-profiler (~> 2.0)
+  rack-mini-profiler!
   rails
   sass-rails (>= 6)
   selenium-webdriver
