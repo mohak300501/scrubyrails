@@ -13,7 +13,7 @@
   "version": "0.1.0",
   "devDependencies": {
     "esbuild": "^0.25.10",
-    "webpack-dev-server": "^4"
+    "webpack-dev-server": "^5"
   },
   "packageManager": "yarn@4.10.3",
   "scripts": {
