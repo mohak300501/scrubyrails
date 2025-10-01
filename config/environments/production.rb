@@ -108,6 +108,16 @@ Rails.application.configure do
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
 
+  unless ENV["RAILS_LOG_TO_STDOUT"].present?
+    logger = ActiveSupport::Logger.new(
+      "log/production.log",
+      10,           # keep 10 rotated files
+      50.megabytes  # max 50 MB per file
+    )
+    logger.formatter = config.log_formatter
+    config.logger = ActiveSupport::TaggedLogging.new(logger)
+  end
+
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
