@@ -10,56 +10,65 @@
 
         <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
         <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     </head>
 
     <body>
-        <div class="header">
-            <div class="logo"><img src="https://dl.dropbox.com/s/hjiewyl0jlldddj/Club_logo_PNG.png?dl=0" alt=""></div>
-            <div class="bhadra">
-                आ नो भद्राः क्रतवो यन्तु विश्वतः।<br/>
-                <span class="noble">(Let noble thoughts come from all sides of the universe) - Rigveda 1.89.1</span>
-            </div>
-            <div class="logo"><img src="https://dl.dropbox.com/s/y7xqn5llceim555/iitr_logo_PNG.png?dl=0" alt=""></div>
-        </div>
+      
 
-        <% if session[:member] || session[:user] %>
-            <div class="logger">
-                <div><%= link_to "Logout", logout_path %></div>
-                <div>Logged in as <%= session[:member] ? session[:member] : session[:user] %>.</div>
-                <div>
-                    <% if session[:member] %>
-                        <%= link_to "Member Area", member_area_path %>
-                    <% else %>
-                        <%= link_to "Profile", uprofile_path %>
-                    <% end %>
-                </div>
-            </div>
-        <% else %>
-            <div>
-                <%= link_to "Login as member", member_login_path %>
-                <%= link_to "Login as user", user_login_path %>
-            </div>
-        <% end %>
 
-        <div class="navbar">
-            <% if session[:member] %>
-                <%= link_to "Home", home_path %>
-                <%= link_to "Events", all_events_path %>
-                <%= link_to "Shlok", all_shloks_path %>
-                <%= link_to "Games", all_games_path %>
-                <%= link_to "Resources", all_resources_path %>
-                <%= link_to "Courses", all_courses_path %>
-                <%= link_to "Library", librarys_path %>
-            <% else %>
-                <%= link_to "Home", root_url %>
-                <%= link_to "Events", events_path %>
-                <%= link_to "Shlok", shloks_path %>
-                <%= link_to "Games", games_path %>
-                <!--<%= link_to "Resources", resources_path %>-->
-                <%= link_to "Courses", courses_path %>
-                <%= link_to "Library", librarys_path %>
+    <div class="navbar" style="background-color: <%= current_page?(root_path) ? '#312229' : 'rgba(49, 34, 41, 1)' %>">
+        <div class="leftSide">
+            <%= link_to root_path, class: "Logos" do %>
+                <%= image_tag("iitr_logo_PNG.png", alt: "IITR Logo", class: "img_1") %>
+                <div class="v"></div>
+                <%= image_tag("Club_logo_PNG.png", alt: "Sanskrit Club Logo", class: "img_2") %>
             <% end %>
         </div>
+        <div class="rightSide">
+            <ul class="navlinks" id="close">
+            <% if session[:member] %>
+                <li><%= link_to "Home", home_path , class: ("active" if current_page?(home_path))%></li>
+                <li><%= link_to "Events", all_events_path, class: ("active" if current_page?(all_events_path)) %></li>
+                <li><%= link_to "Shlok", all_shloks_path , class: ("active" if current_page?(all_shloks_path))%></li>
+                <li><%= link_to "Games", all_games_path , class: ("active" if current_page?(all_games_path))%></li>
+                <li><%= link_to "Resources", all_resources_path, class: ("active" if current_page?(all_resources_path)) %></li>
+                <li><%= link_to "Courses", all_courses_path, class: ("active" if current_page?(all_courses_path)) %></li>
+                <li><%= link_to "Library", librarys_path , class: ("active" if current_page?(librarys_path))%></li>
+            <% else %>
+                <li><%= link_to "Home", root_path, class: ("active" if current_page?(root_path)) %></li>
+                <li><%= link_to "Events", events_path, class: ("active" if current_page?(events_path)) %></li>
+                <li><%= link_to "Shlok", shloks_path , class: ("active" if current_page?(shloks_path))%></li>
+                <li><%= link_to "Games", games_path , class: ("active" if current_page?(games_path))%></li>
+                <!-- <li><%= link_to "Resources", resources_path, class: ("active" if current_page?(resources_path)) %></li> -->
+                <li><%= link_to "Courses", courses_path , class: ("active" if current_page?(courses_path))%></li>
+                <li><%= link_to "Library", librarys_path , class: ("active" if current_page?(librarys_path))%></li>
+            <% end %>
+            </ul>
+
+  <!-- 👤 User Icon Dropdown -->
+  <div class="user-dropdown">
+    <i class="fa-solid fa-user"></i>
+    <div class="dropdown-content">
+      <% if session[:member] || session[:user] %>
+        <%= link_to "Logout", logout_path %>
+        <% if session[:member] %>
+          <%= link_to "Member Area", member_area_path %>
+        <% else %>
+          <%= link_to "Profile", uprofile_path %>
+        <% end %>
+      <% else %>
+        <%= link_to "Login as Member", member_login_path %>
+        <%= link_to "Login as User", user_login_path %>
+      <% end %>
+    </div>
+  </div>
+</div>
+        </div>
+    </div>
+    
+
 
         <% flash.each do |type, msg| %>
             <div class="flash">
@@ -69,20 +78,41 @@
         
         <%= yield %>
 
+       
+       <!-- Social Media Section -->
+        <div class="social-section touch">
+        <h2>Get in Touch</h2>
+        <div class="icons">
+            <a href="mailto:sanskritclub@gmail.com" target="_blank"><i class="fa-solid fa-envelope icon"></i></a>
+            <a href="https://www.facebook.com/sanskritiitr/" target="_blank"><i class="fa-brands fa-facebook icon"></i></a>
+            <a href="https://www.instagram.com/sanskrit_club/?hl=en" target="_blank"><i class="fa-brands fa-instagram icon"></i></a>
+            <a href="https://www.linkedin.com/company/sanskrit-club-iit-roorkee/posts/?feedView=all" target="_blank"><i class="fa-brands fa-linkedin icon"></i></a>
+            <a href="https://twitter.com/sanskritclub" target="_blank"><i class="fa-brands fa-x-twitter icon"></i></a>
+            <a href="https://www.youtube.com/@sanskritclub" target="_blank"><i class="fa-brands fa-youtube icon"></i></a>
+        </div>
+
+        <!-- Footer section -->
         <div class="footer">
-            <%= link_to "About", about_path %>&nbsp;&nbsp;
-            <%= link_to "How to Use", htuse_path %>&nbsp;&nbsp;
-            <%= link_to "Terms", terms_path %>&nbsp;&nbsp;
+            <div class="footer-links">
+            <%= link_to "About", about_path %>
+            <%= link_to "How to Use", htuse_path %>
+            <%= link_to "Terms", terms_path %>
             <% if session[:member] %>
                 <%= link_to "Feedback", all_feedbacks_path %>
             <% else %>
                 <%= link_to "Feedback", feedback_path %>
-            <% end %>&nbsp;
-            <!--<%= link_to "Team", members_path %>--><br/>
-            Visitors since 14 May &lsquo;22: <%= session[:vc] %><br/><br/>
-            
-            &copy; <%= Time.new.year %>. All rights reserved.
-            DESIGN: <a href="https://github.com/mohak300501/scrubyrails" target="_blank">Sanskrit Club IITR</a>.
+            <% end %>
+            </div>
+
+            <div class="footer-info">
+            <span>Visitors since 14 May ‘22: <%= session[:vc] %></span>
+            <span>&copy; <%= Time.new.year %>. All rights reserved.</span>
+            </div>
         </div>
+        </div>
+
+
+         
+
     </body>
 </html>

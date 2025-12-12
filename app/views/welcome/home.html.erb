@@ -1,37 +1,69 @@
-<div class="sanskrit-club">
-    <img src="https://dl.dropbox.com/s/9jgjcwlzfvqtqza/pic01.jpg?dl=0" alt="Sanskrit Club" class="img-100" />
-</div>
-<br>
-<h3>
-    Namo Namah! 🙏<br/>
-    नमो नमः! 🙏
-</h3>
-<br/><hr/>
-<div class="motto">
-    The Sanskrit Club is an initiative to revive and promote the bedrock for the growth of a large part of the
-    glorious Indian Civilisation, the Sanskrit language. Knowledge of unknown proportions resides in texts
-    composed in this ancient language, be it the Vedas, the Puranas, the Tantras, or the treatises by other Indian saints and writers.
-    We, as students of a premier technological institution of this country, have taken it upon ourselves to approach Sanskrit
-    with a scientific temperament and bring back to the world all the literary, technological, philosophical and scientific genius,
-    that dwells within the texts of this language.<br/><br/>
-    संस्कृत-मण्डलः संस्कृतभाषायाः पुनरुत्थानस्य संवर्धनस्य च कृते कश्चन उपक्रमः वर्तते। 
-    एतया प्राचीन-भाषया लिखितेषु ग्रन्थेषु आधिक्येन विद्या भवति, तद्यथा वेदाः, पुराणानि, 
-    तन्त्राणि अथवा अन्यमहर्षिभिः लेखकैः लिखितानि शास्त्राणि । वयम्, अस्य देशस्य 
-    प्रधानभूतानां प्रौद्योगिकीसंस्थानानां छात्ररूपेण विज्ञानेन सह संस्कृतस्य सम्बन्धं दृढीकर्तुं 
-    पुनश्च एतया भाषया रचितग्रन्थेषु विद्यमानां साहित्यिक-प्रौद्योगिक-दार्शनिक-वैज्ञानिक-प्रतिभां 
-    पुनरपि सर्वेषां पुरतः आनेतुम् इच्छामः। अयम् अस्माकं परमध्येयः।
-</div>
-<hr/><br/>
+<section class="grid-container">
+  <div class="left-section">
+    <div class="heading-section">
+      <h1>ABOUT US</h1>
+      <span class="strip"></span>
+    </div>
 
-<h3>Announcements</h3>
-<div class="news">
-    <% for i in @news do %>
-        <div class="news1">
-            <%= i.news.html_safe %><br/>
-        </div>
-    <% end %>
-</div>
+    <div class="para">
+      <p class="sanskrit-text">
+        संस्कृत-मण्डलः संस्कृतभाषायाः पुनरुत्थानस्य संवर्धनस्य च कृते कश्चन उपक्रमः वर्तते।
+      </p>
+      <p>
+        The Sanskrit Club is an initiative to revive and promote the bedrock for the growth of a large part of the glorious Indian Civilisation, the Sanskrit language.
+      </p>
+    </div>
 
-<p>
-    You have visited this page <%= @visit %> times.<br/>
-</p>
+    <div class="para">
+      <p class="text-center">
+        जाड्यं धियो हरति सिंचति वाचि सत्यं,<br />
+        मानोन्नतिं दिशति पापमपाकरोति |<br />
+        चेतः प्रसादयति दिक्षु तनोति कीर्तिं,<br />
+        सत्संगतिः कथय किं न करोति पुंसाम् ||
+      </p>
+      </div>
+
+      <div class="para">
+        (अच्छे मित्रों का साथ बुद्धि की जड़ता को हर लेता है, वाणी में सत्य का संचार करता है, मान और उन्नति को बढ़ाता है और पाप से मुक्त करता है। चित्त को प्रसन्न करता है और हमारी कीर्ति को सभी दिशाओं में फैलाता है। आप ही कहें कि सत्संगति मनुष्यों के भले के लिये क्या नहीं करती!)
+      </div>
+    
+  </div>
+
+  <div class="right-section">
+    <div class="grid-wrapper">
+      <h1 class="box">नमो नमः! <br/> NAMO NAMAH!</h1>
+      <span class="box bluish"></span>
+    </div>
+
+    <div class="grid-wrapper">
+      <h1 class="box">संस्कृत-मण्डले सुस्वागतम् <br/> Welcome to Sanskrit Club</h1>
+      <span class="box brownish"></span>
+    </div>
+  </div>
+</section>
+
+<section class="grid-container">
+  <!-- Announcements -->
+  <div class="announcement-section">
+    <div class="heading-section">
+      <h1>ANNOUNCEMENTS</h1>
+      <span class="strip"></span>
+    </div>
+
+    <div class="announcement">
+      <% if @news.present? %>
+        <% @news.each do |i| %>
+          <div class="box">
+            <%= i.news.html_safe %>
+          </div>
+        <% end %>
+      <% else %>
+        <p>No announcements at the moment.</p>
+      <% end %>
+    </div>
+
+    <p class="text-center">
+      You have visited this page <b><%= @visit %></b> times.
+    </p>
+  </div>
+</section>

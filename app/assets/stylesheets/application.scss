@@ -1,0 +1,467 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+body {
+  margin: 0;
+  background-color: #fff;
+  background-image: asset-url('mandala_left.png'), asset-url('mandala_right.png');
+  background-repeat: no-repeat, no-repeat;
+  background-position: -100px top, right bottom;
+  background-attachment: fixed;  /* stays fixed when scrolling */
+  background-size: 500px, 600px; /* adjust size */
+}
+.grid-container {
+    min-height: 90vh;
+    gap: 8rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8rem; /* Add gap between navbar and content */
+}
+
+@font-face {
+    font-family: 'samarkan';
+    src: font-url('samarkan.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ===== User Icon Dropdown ===== */
+.user-dropdown {
+  position: relative;
+  display: inline-block;
+  margin-right: 2rem;
+  cursor: pointer;
+  font-size: 1.8rem;
+  color: #D5C5AE;
+
+  i {
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #312229;
+    transition: background 0.3s ease;
+  }
+
+  i:hover {
+    background-color: #D5C5AE;
+    color: #312229;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 120%;
+    background-color: #312229;
+    min-width: 180px;
+    border-radius: 8px;
+    box-shadow: 0px 8px 15px rgba(0,0,0,0.3);
+    z-index: 10;
+    flex-direction: column;
+
+    a {
+      color: #D5C5AE;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-family: samarkan;
+      font-size: 1.9rem;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    a:hover {
+      background-color: #D5C5AE;
+      color: #312229;
+    }
+  }
+
+  &:hover .dropdown-content {
+    display: flex;
+  }
+}
+
+/* ===== Navbar Container ===== */
+.navbar {
+z-index: 5;
+top: 0;
+width: 100vw;
+height: 165px;
+display: flex;
+background-color: rgba(49, 34, 41, 1);
+color: #312229;
+justify-content: space-between;
+align-items: center;
+}
+
+/* ===== Left Side (Logos) ===== */
+.navbar .leftSide {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: inherit;
+    margin-left: 1rem;
+    padding: 0;              
+    flex: 1 0 auto;          
+}
+
+
+.navbar .leftSide .Logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.9rem;
+    height: 100%;
+    background-color: inherit;
+}
+
+.img_1 {
+    width: 110px;   
+    height: 110px;
+    object-fit: contain;
+}
+
+.img_2 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar .leftSide .Logos .v {
+    flex: 0 0 auto;          /* don’t let flex shrink it */
+    width: 2px;              /* make it slightly thicker so it's visible */
+    height: 80px;            /* match logo height better */
+    background-color: #ffffff;
+    margin: 0 8px;
+}
+
+/* ===== Right Side (Links) ===== */
+.navbar .rightSide {
+color: #312229;
+width: auto;
+flex-grow: 1;
+height: 165px;
+display: flex;
+justify-content: flex-end;
+align-items: center;
+}
+
+.navbar .rightSide .navlinks {
+color: #312229;
+height: 165px;
+width: auto;
+justify-content: flex-end;
+flex-wrap: wrap;
+font-family: 'samarkan';
+display: flex;
+align-items: center;
+font-size: 1.2rem;
+font-weight: bold;
+}
+
+a {
+background-color: inherit;
+text-decoration: none;
+width: 160px;
+height: 165px;
+}
+/* Inactive links (default) */
+.navbar .rightSide .navlinks a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 auto;
+    margin: 0 10px;
+    text-decoration: none;
+    background-color: #312229; /* dark brown */
+    color: #D5C5AE;            /* light beige */
+  }
+  
+  /* Active link overrides */
+  .navbar .rightSide .navlinks a.active {
+    background-color: #D5C5AE; /* light beige */
+    color: #312229;           /* dark brown */
+  }
+
+.topics a {
+display: block;
+}
+
+.navbar .rightSide #open {
+background-color: inherit;
+display: flex;
+}
+
+.navbar .rightSide #close {
+background-color: inherit;
+display: flex;
+}
+
+li {
+background-color: transparent;
+list-style: none;
+}
+
+.navbar .rightSide .navlinks a {
+display: flex;
+justify-content: center;
+align-items: center;
+flex: 0 0 auto;
+margin: 0 10px;
+text-decoration: none;
+background-color: #312229; /* dark brown */
+color: #D5C5AE; 
+}
+
+ul li a {
+text-align: center;
+justify-content: center;
+align-items: center;
+color: #D5C5AE;
+display: block;
+text-decoration: none;
+font-family: samarkan;
+font-size: 30px;
+
+}
+
+.active {
+background-color: #D5C5AE;
+color: #312229;
+}
+
+
+
+/* ===== Mobile Styles ===== */
+.navbar .rightSide .LogAndMenu .icon {
+background-color: inherit;
+display: none;
+}
+
+#closed {
+background-color: inherit;
+display: none;
+}
+
+#opened {
+background-color: inherit;
+}
+
+@media (max-width: 930px) {
+.navbar {
+    height: 7rem;
+}
+.navbar .rightSide {
+    font-size: 0.8rem;
+}
+.navbar .rightSide #open {
+    gap: 0.3rem;
+}
+ul li a {
+    font-size: 0.7rem;
+    padding: 0.2rem;
+}
+.navbar .rightSide .login {
+    padding: 0.3rem;
+}
+}
+
+@media (max-width: 600px) {
+.navbar {
+    padding-right: 0;
+    height: 7rem;
+    width: 100%;
+    border-radius: 0;
+    justify-content: center;
+    align-items: start;
+}
+
+.navbar .leftSide {
+    margin: 0;
+    width: 50%;
+    height: 100%;
+    padding: 0.5rem;
+}
+
+.navbar .rightSide {
+    margin: 0;
+    padding: 0.5rem 0;
+    height: 100%;
+    width: 50%;
+}
+
+.navbar .rightSide .LogAndMenu .login {
+    font-size: 0.9rem;
+    height: 2.6rem;
+    width: 5rem;
+    padding: 0.7rem;
+    text-transform: uppercase;
+}
+
+.navbar .rightSide .LogAndMenu {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-left: 2rem;
+}
+
+.navbar .rightSide .vertical {
+    display: none;
+}
+
+.navbar .rightSide .LogAndMenu .icon {
+    height: 2.5rem;
+    width: 3rem;
+    box-shadow: 0px 4px 3px #403b30;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border: 1px solid black;
+}
+
+.navbar .rightSide #close {
+    position: fixed;
+    right: -500px;
+    width: 50%;
+}
+
+.navbar .rightSide #open {
+    width: 50%;
+    background-color: #ffacac;
+    position: fixed;
+    top: 7rem;
+    right: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    align-items: start;
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+    border: 1px solid black;
+    border-top: none;
+}
+
+ul li a {
+    font-size: 0.9rem;
+    padding: 0.7rem;
+}
+}
+@media screen and (min-width:540px) {
+    .header img{
+        width: 7rem;
+    }
+}
+/* Social + Footer unified */
+.social-section.touch {
+    padding: 2rem;
+    background-color: #47596F;
+    color: #B18653;
+    text-align: center;
+  
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: center;
+  
+    border-radius: 0;
+    margin-top: 0;
+  
+    h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 0;
+      color: #B18653;
+      text-transform: uppercase;
+    }
+  
+    // Icons Row
+    .icons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      height: 30px;
+  
+      a {
+        text-decoration: none;
+        color: #B18653;
+        font-size: 2rem;
+        transition: transform 0.3s ease, color 0.3s ease;
+  
+        &:hover {
+          transform: scale(1.2);
+          color: #D5C5AE;
+        }
+      }
+    }
+  
+    // Footer section
+    .footer {
+      display: flex;
+      flex-direction: column; /* stack links row and info row */
+      align-items: center;
+      font-size: 1rem;
+      color: #B18653;
+      background-color: #47596F;
+  
+      .footer-links {
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        height: 50px;
+  
+        a {
+          color: #B18653;
+          text-decoration: none;
+          transition: color 0.3s ease;
+  
+          &:hover {
+            color: #D5C5AE;
+          }
+        }
+      }
+  
+      .footer-info {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+  
+        a {
+          color: #B18653;
+          text-decoration: none;
+  
+          &:hover {
+            color: #D5C5AE;
+          }
+        }
+      }
+    }
+  }
+  
