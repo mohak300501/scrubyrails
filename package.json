@@ -12,7 +12,11 @@
   },
   "version": "0.1.0",
   "devDependencies": {
-    "webpack-dev-server": "^4"
+    "esbuild": "^0.25.10",
+    "webpack-dev-server": "^5"
   },
-  "packageManager": "yarn@4.9.1"
+  "packageManager": "yarn@4.10.3",
+  "scripts": {
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets"
+  }
 }
