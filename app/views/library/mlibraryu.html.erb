@@ -1,32 +1,190 @@
-<h1>पुस्तकम्-परिवर्तनं करोतु</h1>
-
-<%= form_for @library, url: library_update_path do |f| %>
-    <%= f.label "Book ID" %><br/>
-    <%= f.text_field :bookid, :required => true, class: "mtextfield" %><br/><br/>
-    <%= f.label "शीर्षकं" %><br/>
-    <%= f.text_area :name, :required => true, class: "mtextarea-1" %><br/><br/>
-    <%= f.label "link" %><br/>
-    <%= f.text_area :link, :required => true, class: "mtextarea-1" %><br/><br/>
-    <%= f.label "विवरणम्" %><br/>
-    <%= f.text_area :description, :required => true, class: "mtextarea-1" %><br/><br/>
-    <%= f.label "रचयितृ" %><br/>
-    <%= f.text_area :author, :required => true, class: "mtextarea-1" %><br/><br/>
-    <%= f.label "प्रकाशकः" %><br/>
-    <%= f.text_area :publisher, :required => true, class: "mtextarea-1" %><br/><br/>
-    <%= f.label "सङ्ख्या" %><br/>
-    <%= f.text_area :units, :required => true, class: "mtextarea-1" %><br/><br/>
-    <%= f.label "Added by" %><br/>
-    <%= f.text_area :added_by, :required => true, class: "mtextarea-1" %><br/><br/>
-    <%= f.label "Issued to" %><br/>
-    <%= f.text_area :issued_to, :required => true, class: "mtextarea-1" %><br/><br/>
-    <%= f.label "Date of Issue" %><br/>
-    <%= f.text_area :doi, :required => true, class: "mtextarea-1" %><br/><br/>
-    <%= f.label "Date of return" %><br/>
-    <%= f.text_area :dor, :required => true, class: "mtextarea-1" %><br/><br/>
-
-    <%= submit_tag "अग्रेस्थापनं करोतु", :class => "button" %><br/>
-    <div class="button">
-        <%= link_to "प्रतिगच्छतु", all_librarys_path, class: "anone" %>
+<div class="form-page">
+  <div class="form-container">
+    <div class="form-header">
+      <div class="greeting">नमस्ते 🙏</div>
+      <h1>पुस्तकं परिवर्तयतु</h1>
+      <p class="form-subtitle">पुस्तकस्य विवरणं नवीकरोतु</p>
     </div>
 
-<% end %>
+    <%= form_for @library, url: library_update_path, html: { multipart: true, class: "modern-form" } do |f| %>
+      <div class="form-row">
+        <div class="form-group">
+          <%= f.label :bookid, "Unique ID", class: "form-label" %>
+          <%= f.text_field :bookid, required: true, class: "form-input" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :serialno, "शीर्षकं (Serial No)", class: "form-label" %>
+          <%= f.text_field :serialno, required: true, class: "form-input" %>
+        </div>
+      </div>
+
+      <div class="form-row">
+      <div class="form-group">
+          <%= f.label :name, "शीर्षकं (Title)", class: "form-label" %>
+          <%= f.text_field :name, required: true, class: "form-input" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :author, "रचयितृ (Author)", class: "form-label" %>
+          <%= f.text_field :author, required: true, class: "form-input" %>
+        </div>
+
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <%= f.label :primary_genre, "प्राथमिक वर्गः (Primary Genre)", class: "form-label" %>
+          <%= f.text_field :primary_genre, required: true, class: "form-input" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :secondary_genre, "द्वितीयक वर्गः (Secondary Genre)", class: "form-label" %>
+          <%= f.text_field :secondary_genre, class: "form-input"%>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <%= f.label :content_language, "सामग्री भाषा (Content Language)", class: "form-label" %>
+          <%= f.select :content_language, 
+              options_for_select([
+                ['संस्कृतम् (Sanskrit)', 'संस्कृतम्'],
+                ['हिन्दी (Hindi)', 'हिन्दी'],
+                ['English', 'English'],
+                ['संस्कृत-हिन्दी (Sanskrit-Hindi)', 'संस्कृत-हिन्दी'],
+                ['संस्कृत-English', 'संस्कृत-English'],
+                ['अन्यत् (Other)', 'अन्यत्']
+              ], @library.content_language),
+              { prompt: 'भाषां चिनोतु...' },
+              { required: true, class: "form-input" } 
+          %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :copies, "कुल प्रतयः (Total Copies)", class: "form-label" %>
+          <%= f.number_field :copies, required: true, class: "form-input", min: 0 %>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <%= f.label :present, "वर्तमान प्रतयः (Present Copies)", class: "form-label" %>
+          <%= f.number_field :present, required: true, class: "form-input", min: 0 %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :almirah, "अलमारी (Almirah)", class: "form-label" %>
+          <%= f.text_field :almirah, required: true, class: "form-input" %>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <%= f.label :rack, "रैक (Rack)", class: "form-label" %>
+          <%= f.text_field :rack, required: true, class: "form-input" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :location_in_rack, "रैक-स्थानम् (Location in Rack)", class: "form-label" %>
+          <%= f.text_field :location_in_rack, class: "form-input" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :link, "पुस्तक चित्रम् (Book Image)", class: "form-label" %>
+        
+        <% if @library.link.attached? %>
+          <div class="current-image">
+            <%= image_tag @library.link, alt: @library.name, style: "max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" %>
+            <p style="color: #5a6c7d; font-size: 0.9rem; margin-top: 0.5rem;">वर्तमानं चित्रम्</p>
+          </div>
+        <% end %>
+
+        <div class="file-input-wrapper">
+          <%= f.file_field :link, class: "file-input", id: "library-image-input", accept: "image/*" %>
+          <label for="library-image-input" class="file-input-label">
+            <i class="upload-icon">📁</i>
+            <span id="image-file-name">नवीनं चित्रं चिनोतु (वैकल्पिकम्)</span>
+          </label>
+        </div>
+        <div id="library-edit-image-preview" class="file-preview"></div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <%= f.label :added_by, "योजितः (Added By)", class: "form-label" %>
+          <%= f.text_field :added_by, required: true, class: "form-input", readonly: true %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :issued_to, "ऋणं दत्तः (Issued To)", class: "form-label" %>
+          <%= f.text_field :issued_to, class: "form-input" %>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <%= f.label :doi, "ऋणस्य दिनाङ्कः (Date of Issue)", class: "form-label" %>
+          <%= f.date_field :doi, class: "form-input" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :dor, "प्रत्यर्पणस्य दिनाङ्कः (Date of Return)", class: "form-label" %>
+          <%= f.date_field :dor, class: "form-input" %>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <%= f.submit "नवीकरोतु", class: "btn btn-primary" %>
+        <%= link_to "प्रतिगच्छतु", all_librarys_path, class: "btn btn-secondary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const fileInput = document.getElementById('library-edit-image-input');
+  const fileNameDisplay = document.getElementById('library-edit-image-file-name');
+  const previewContainer = document.getElementById('library-edit-image-preview');
+  const currentImage = document.getElementById('current-library-image');
+
+  if (fileInput) {
+    fileInput.addEventListener('change', function(e) {
+      const file = e.target.files[0];
+      
+      if (file) {
+        // Update file name
+        fileNameDisplay.textContent = file.name;
+        
+        // Hide current image
+        if (currentImage) {
+          currentImage.style.display = 'none';
+        }
+        
+        // Create preview
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          previewContainer.innerHTML = `
+            <div style="position: relative; display: inline-block;">
+              <img src="${e.target.result}" alt="Preview" style="max-width: 300px; max-height: 300px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+              <button type="button" id="remove-library-edit-image" style="position: absolute; top: -10px; right: -10px; background: #ff6b6b; color: white; border: none; border-radius: 50%; width: 30px; height: 30px; cursor: pointer; font-size: 18px; line-height: 1; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">×</button>
+            </div>
+          `;
+          
+          // Add remove functionality
+          document.getElementById('remove-library-edit-image').addEventListener('click', function() {
+            fileInput.value = '';
+            fileNameDisplay.textContent = 'नवीनं चित्रं चिनोतु (वैकल्पिकम्)';
+            previewContainer.innerHTML = '';
+            if (currentImage) {
+              currentImage.style.display = 'block';
+            }
+          });
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+  }
+});
+</script>

@@ -1,32 +1,186 @@
-<div class="button">
-    <%= link_to "नूतनः श्लोकः योजयतु", new_shlok_path, class: "anone" %>
+<div class="library-page">
+  <div class="library-header">
+    <div class="header-content">
+      <div class="header-text">
+        <h1>📚 पुस्तकालय प्रबन्धनम्</h1>
+        <p class="subtitle">सर्वाणि पुस्तकानि पश्यतु तथा च प्रबन्धयतु</p>
+      </div>
+      <%= link_to new_library_path, class: "btn-add-new" do %>
+        <span class="icon">➕</span>
+        <span>नूतनं पुस्तकं योजयतु</span>
+      <% end %>
+    </div>
+  </div>
+
+  <% if @libraries.empty? %>
+    <div class="empty-state-container">
+      <div class="empty-state">
+        <div class="empty-icon">📚</div>
+        <h2>अधुना पुस्तकानि न सन्ति</h2>
+        <p>प्रथमं पुस्तकं योजयतु!</p>
+        <%= link_to new_library_path, class: "btn-primary-large" do %>
+          <span>➕</span> नूतनं पुस्तकं योजयतु
+        <% end %>
+      </div>
+    </div>
+  <% else %>
+    <div class="library-stats">
+      <div class="stat-card">
+        <div class="stat-icon">📖</div>
+        <div class="stat-info">
+          <h3><%= @libraries.count %></h3>
+          <p>कुल पुस्तकानि</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">✅</div>
+        <div class="stat-info">
+          <h3><%= @libraries.sum(:present) %></h3>
+          <p>उपलब्धानि</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">📤</div>
+        <div class="stat-info">
+          <h3><%= @libraries.where.not(issued_to: [nil, ""]).count %></h3>
+          <p>ऋणं दत्तानि</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🏷️</div>
+        <div class="stat-info">
+          <h3><%= @libraries.pluck(:primary_genre).uniq.count %></h3>
+          <p>वर्गाः</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="search-filter-bar">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="पुस्तकं अन्वेषयतु..." class="search-input">
+      </div>
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">सर्वे</button>
+        <button class="filter-btn" data-filter="available">उपलब्धाः</button>
+        <button class="filter-btn" data-filter="issued">ऋणं दत्ताः</button>
+      </div>
+    </div>
+
+    <div class="books-grid">
+      <% @libraries.each_with_index do |library, index| %>
+        <div class="book-card" data-status="<%= library.present.to_i > 0 ? 'available' : 'unavailable' %>" data-issued="<%= library.issued_to.present? ? 'yes' : 'no' %>">
+          <div class="book-image">
+            <% if library.link.attached? %>
+              <%= image_tag library.link, alt: library.name, class: "book-cover" %>
+            <% else %>
+              <div class="book-cover-placeholder">
+                <span class="placeholder-icon">📖</span>
+              </div>
+            <% end %>
+            <div class="book-badge">
+              <% if library.present.to_i > 0 %>
+                <span class="badge badge-success">उपलब्धम्</span>
+              <% else %>
+                <span class="badge badge-danger">अनुपलब्धम्</span>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="book-content">
+            <div class="book-header">
+              <h3 class="book-title"><%= library.name %></h3>
+              <p class="book-author">रचयितृ: <%= library.author %></p>
+            </div>
+
+            <div class="book-meta">
+              <div class="meta-item">
+                <span class="meta-label">ID:</span>
+                <span class="meta-value"><%= library.bookid %></span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">वर्गः:</span>
+                <span class="genre-tag"><%= library.primary_genre %></span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">भाषा:</span>
+                <span class="meta-value"><%= library.content_language %></span>
+              </div>
+            </div>
+
+            <div class="book-details">
+              <div class="detail-row">
+                <span class="detail-icon">📚</span>
+                <span class="detail-text">कुल: <strong><%= library.copies %></strong> | वर्तमान: <strong><%= library.present %></strong></span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-icon">📍</span>
+                <span class="detail-text"><%= library.almirah %> - <%= library.rack %></span>
+              </div>
+              <% if library.issued_to.present? %>
+                <div class="detail-row issued">
+                  <span class="detail-icon">👤</span>
+                  <span class="detail-text">ऋणं दत्तः: <strong><%= library.issued_to %></strong></span>
+                </div>
+              <% end %>
+            </div>
+
+            <div class="book-actions">
+              <%= link_to library_path(library), class: "btn-action btn-edit" do %>
+                <span>✏️</span> सम्पादयतु
+              <% end %>
+              <%= button_to library_delete_path(library), method: :delete, 
+                  data: { confirm: "किं निश्चितं पुस्तकं नाशयितुम् इच्छति?" }, 
+                  class: "btn-action btn-delete" do %>
+                <span>🗑️</span> नाशयतु
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>
 
-<% for i in @shloks do %>
-    <%= content_tag :div, class: "shloks" do %>
-        <div class="title">
-            <%= i.title %><br/>
-        </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('searchInput');
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const bookCards = document.querySelectorAll('.book-card');
 
-        <div class="shlok">
-            <p><%= i.shlok.html_safe %></p>
-        </div>
+  if (searchInput) {
+    searchInput.addEventListener('input', function() {
+      const searchTerm = this.value.toLowerCase();
+      filterBooks(searchTerm);
+    });
+  }
 
-        <div>
-            <audio src="<%= rails_blob_url(i.audio) %>" controls/></audio>
-        </div>
+  filterButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      this.classList.add('active');
+      
+      const filter = this.dataset.filter;
+      bookCards.forEach(card => {
+        const status = card.dataset.status;
+        const issued = card.dataset.issued;
+        
+        if (filter === 'all') {
+          card.style.display = 'flex';
+        } else if (filter === 'available') {
+          card.style.display = status === 'available' ? 'flex' : 'none';
+        } else if (filter === 'issued') {
+          card.style.display = issued === 'yes' ? 'flex' : 'none';
+        }
+      });
+    });
+  });
 
-        <div class="translation">
-            <%= i.translation.html_safe %><br/>
-        </div>
-
-        <div class="updel">
-            <%= link_to shlok_path(i.id), class: "anone" do %>
-                <div class="button">परिवर्तयतु</div>
-            <% end %>
-            <%= link_to shlok_delete_path(i.id), method: "delete", data: {:confirm => "Are you sure you want to delete this shlok?"}, class: "anone" do %>
-                <div class="button">विनश्यतु</div>
-            <% end %>
-        </div>
-    <% end %>
-<% end %>
+  function filterBooks(searchTerm) {
+    bookCards.forEach(card => {
+      const text = card.textContent.toLowerCase();
+      card.style.display = text.includes(searchTerm) ? 'flex' : 'none';
+    });
+  }
+});
+</script>

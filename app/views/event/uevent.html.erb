@@ -1,13 +1,29 @@
-<div class="events-container">
-  <% for i in @events do %>
-    <div class="events">
-      <div class="title"><%= i.name %></div>
-      <div class="poster">
-        <img src="<%= rails_blob_url(i.image) %>" />
+<div class="events-page">
+<div class="page-header">
+    <h1>कार्यक्रमाः</h1>
+    <p class="subtitle">सर्वाः कार्यक्रमाः अन्वेषयतु</p>
+</div>
+
+  <div class="events-container">
+    <% @events.each do |event| %>
+      <div class="event-card">
+        <div class="event-image">
+          <%= image_tag rails_blob_url(event.image), alt: event.name %>
+          <div class="event-overlay">
+            <span class="event-badge">नूतनः</span>
+          </div>
+        </div>
+        
+        <div class="event-content">
+          <h2 class="event-title"><%= event.name %></h2>
+          <div class="event-info">
+            <%= truncate(event.info.html_safe, length: 150) %>
+          </div>
+          <div class="button">
+            <%= link_to "अधिकं पठतु", event_uview_path(event.id), class: "anone" %>
+          </div>
+        </div>
       </div>
-      <div class="info">
-        <p><%= i.info.html_safe %></p>
-      </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>

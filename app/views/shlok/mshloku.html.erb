@@ -1,20 +1,62 @@
-<h1>श्लोक-परिवर्तनं करोतु</h1>
-
-<%= form_for @shlok, url: shlok_update_path do |f| %>
-    <%= f.label "शीर्षकं" %><br/>
-    <%= f.text_field :title, :required => true, class: "mtextfield" %><br/><br/>
-    <%= f.label "श्लोकः" %><br/>
-    <%= f.text_area :shlok, :required => true, class: "mtextarea-1" %><br/><br/>
-    <%= f.label "अनुवादः" %><br/>
-    <%= f.text_area :translation, :required => true, class: "mtextarea-2" %><br/><br/>
-    <%= f.label "current audio" %><br/>
-    <audio src="<%= rails_blob_url(@shlok.audio) %>" controls/></audio><br/><br/>
-    <%= f.label "change audio" %><br/>
-    <%= f.file_field :audio %><br/><br/>
-
-    <%= submit_tag "अग्रेस्थापनं करोतु", :class => "button" %><br/>
-    <div class="button">
-        <%= link_to "प्रतिगच्छतु", all_shloks_path, class: "anone" %>
+<div class="form-page">
+  <div class="form-container">
+    <div class="form-header">
+      <div class="greeting">नमस्ते 🙏</div>
+      <h1>श्लोक-परिवर्तनं करोतु</h1>
+      <p class="form-subtitle">श्लोकस्य विवरणं परिवर्तयतु</p>
     </div>
 
-<% end %>
+    <%= form_for @shlok, url: shlok_update_path, html: { multipart: true, class: "modern-form" } do |f| %>
+      <div class="form-group">
+        <%= f.label :title, "शीर्षकं", class: "form-label" %>
+        <%= f.text_field :title, required: true, class: "form-input", placeholder: "श्लोकस्य शीर्षकं..." %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :shlok, "श्लोकः", class: "form-label" %>
+        <%= f.text_area :shlok, required: true, class: "form-textarea", placeholder: "श्लोकं लिखतु...", rows: 6 %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :translation, "अनुवादः", class: "form-label" %>
+        <%= f.text_area :translation, required: true, class: "form-textarea", placeholder: "अनुवादं लिखतु...", rows: 6 %>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">वर्तमानं श्रव्यसञ्चिका</label>
+        <div class="current-audio">
+          <audio src="<%= rails_blob_url(@shlok.audio) %>" controls class="audio-preview"></audio>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">नूतनं श्रव्यसञ्चिका (वैकल्पिकम्)</label>
+        <%= f.file_field :audio, class: "file-input", id: "shlok_audio_input", accept: "audio/*", style: "display: none;" %>
+        <label for="shlok_audio_input" class="file-input-label" style="display: flex;">
+          <i class="upload-icon">🎵</i>
+          <span id="file-name">नूतनां श्रव्यसञ्चिकां चिनोतु</span>
+        </label>
+      </div>
+
+      <div class="form-actions">
+        <%= f.submit "अग्रेस्थापनं करोतु", class: "btn btn-primary" %>
+        <%= link_to "प्रतिगच्छतु", all_shloks_path, class: "btn btn-secondary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const fileInput = document.getElementById('shlok_audio_input');
+  const fileName = document.getElementById('file-name');
+  
+  if (fileInput && fileName) {
+    fileInput.addEventListener('change', function() {
+      if (this.files && this.files.length > 0) {
+        fileName.textContent = this.files[0].name;
+      }
+    });
+  }
+});
+</script>

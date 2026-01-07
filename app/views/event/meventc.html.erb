@@ -1,18 +1,62 @@
-<div><b>नमस्ते</b></div>
-
-<h1>नूतना घटना योजयतु</h1>
-
-<%= form_tag event_post_path, multipart: true do %>
-    <div>
-        <%= label_tag "शीर्षकं" %><br/>
-        <%= text_field_tag :name, nil, :required => true, class: "mtextfield" %><br/><br/>
-        <%= label_tag "घटना" %><br/>
-        <%= text_area_tag :info, nil, :required => true, class: "mtextarea-1" %><br/><br/>
-        <%= label_tag "विज्ञापनम्" %><br/>
-        <%= file_field_tag :image, :required => true %><br/><br/>
+<div class="form-page">
+  <div class="form-container">
+    <div class="form-header">
+      <div class="greeting">नमस्ते 🙏</div>
+      <h1>नूतना घटना योजयतु</h1>
+      <p class="form-subtitle">नवीन घटनाम् सृजयतु</p>
     </div>
-    <div>
-        <%= submit_tag "अग्रेस्थापनं करोतु", :class => "button" %><br/>
-        <%= link_to "प्रतिगच्छतु", all_events_path %>
-    </div>
-<% end %>
+
+    <%= form_tag event_post_path, multipart: true, class: "modern-form" do %>
+      <div class="form-group">
+        <%= label_tag "शीर्षकं", nil, class: "form-label" %>
+        <%= text_field_tag :name, nil, required: true, class: "form-input", placeholder: "घटनस्य नाम..." %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "घटना", nil, class: "form-label" %>
+        <%= text_area_tag :info, nil, required: true, class: "form-textarea", placeholder: "घटनस्य विवरणं लिखतु...", rows: 6 %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "विज्ञापनम्", nil, class: "form-label" %>
+        <div class="file-input-wrapper">
+          <%= file_field_tag :image, required: true, class: "file-input", id: "event-image-input", accept: "image/*" %>
+          <label for="event-image-input" class="file-input-label">
+            <i class="upload-icon">📁</i>
+            <span id="image-file-name">चित्रं चिनोतु</span>
+          </label>
+        </div>
+        <div id="image-preview" class="file-preview" style="display: none;">
+          <span class="preview-icon">✓</span>
+          <span class="preview-text"></span>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <%= submit_tag "अग्रेस्थापनं करोतु", class: "btn btn-primary" %>
+        <%= link_to "प्रतिगच्छतु", all_events_path, class: "btn btn-secondary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const fileInput = document.getElementById('event-image-input');
+  const fileName = document.getElementById('image-file-name');
+  const preview = document.getElementById('image-preview');
+  const previewText = preview.querySelector('.preview-text');
+  
+  fileInput.addEventListener('change', function() {
+    if (this.files && this.files.length > 0) {
+      const file = this.files[0];
+      fileName.textContent = file.name;
+      previewText.textContent = `चयनितं: ${file.name} (${(file.size / 1024 / 1024).toFixed(2)} MB)`;
+      preview.style.display = 'flex';
+    } else {
+      fileName.textContent = 'चित्रं चिनोतु';
+      preview.style.display = 'none';
+    }
+  });
+});
+</script>

@@ -1,3 +1,4 @@
+<!-- First Section: About Us + Welcome Boxes -->
 <section class="grid-container">
   <div class="left-section">
     <div class="heading-section">
@@ -5,65 +6,134 @@
       <span class="strip"></span>
     </div>
 
-    <div class="para">
+    <div class="content-block">
       <p class="sanskrit-text">
         संस्कृत-मण्डलः संस्कृतभाषायाः पुनरुत्थानस्य संवर्धनस्य च कृते कश्चन उपक्रमः वर्तते।
       </p>
-      <p>
+      <p class="english-text">
         The Sanskrit Club is an initiative to revive and promote the bedrock for the growth of a large part of the glorious Indian Civilisation, the Sanskrit language.
       </p>
     </div>
-
-    <div class="para">
-      <p class="text-center">
-        जाड्यं धियो हरति सिंचति वाचि सत्यं,<br />
-        मानोन्नतिं दिशति पापमपाकरोति |<br />
-        चेतः प्रसादयति दिक्षु तनोति कीर्तिं,<br />
-        सत्संगतिः कथय किं न करोति पुंसाम् ||
-      </p>
-      </div>
-
-      <div class="para">
-        (अच्छे मित्रों का साथ बुद्धि की जड़ता को हर लेता है, वाणी में सत्य का संचार करता है, मान और उन्नति को बढ़ाता है और पाप से मुक्त करता है। चित्त को प्रसन्न करता है और हमारी कीर्ति को सभी दिशाओं में फैलाता है। आप ही कहें कि सत्संगति मनुष्यों के भले के लिये क्या नहीं करती!)
-      </div>
-    
   </div>
 
   <div class="right-section">
     <div class="grid-wrapper">
-      <h1 class="box">नमो नमः! <br/> NAMO NAMAH!</h1>
+      <h1 class="box-text">नमो नमः!<br/>NAMO NAMAH!</h1>
       <span class="box bluish"></span>
     </div>
 
     <div class="grid-wrapper">
-      <h1 class="box">संस्कृत-मण्डले सुस्वागतम् <br/> Welcome to Sanskrit Club</h1>
+      <h1 class="box-text">संस्कृत-मण्डले सुस्वागतम्<br/>Welcome to Sanskrit Club</h1>
       <span class="box brownish"></span>
     </div>
   </div>
 </section>
 
-<section class="grid-container">
-  <!-- Announcements -->
-  <div class="announcement-section">
-    <div class="heading-section">
-      <h1>ANNOUNCEMENTS</h1>
-      <span class="strip"></span>
+<!-- Second Section: Announcements with Verse on Left -->
+<section class="announcements-container">
+  <div class="announcements-grid-layout">
+    <!-- Left Side: Sanskrit Verse -->
+    <div class="verse-section">
+      <p class="verse-sanskrit">
+        जाड्यं धियो हरति सिंचति वाचि सत्यं,<br/>
+        मानोन्नतिं दिशति पापमपाकरोति |<br/>
+        चेतः प्रसादयति दिक्षु तनोति कीर्तिं,<br/>
+        सत्संगतिः कथय किं न करोति पुंसाम् ||
+      </p>
+      <p class="verse-hindi">
+        (अच्छे मित्रों का साथ बुद्धि की जड़ता को हर लेता है, वाणी में सत्य का संचार करता है, मान और उन्नति को बढ़ाता है और पाप से मुक्त करता है। चित्त को प्रसन्न करता है और हमारी कीर्ति को सभी दिशाओं में फैलाता है। आप ही कहें कि सत्संगति मनुष्यों के भले के लिये क्या नहीं करती!)
+      </p>
     </div>
 
-    <div class="announcement">
-      <% if @news.present? %>
-        <% @news.each do |i| %>
-          <div class="box">
-            <%= i.news.html_safe %>
-          </div>
+    <!-- Right Side: Announcements -->
+    <div class="announcement-section">
+      <div class="heading-section">
+        <h1>ANNOUNCEMENTS</h1>
+        <span class="strip"></span>
+      </div>
+
+      <div class="announcement-list">
+        <% if @news.present? %>
+          <% @news.each do |i| %>
+            <div class="announcement-box">
+              <%= i.news.html_safe %>
+            </div>
+          <% end %>
+        <% else %>
+          <p class="no-announcements">No announcements at the moment.</p>
         <% end %>
-      <% else %>
-        <p>No announcements at the moment.</p>
-      <% end %>
-    </div>
+      </div>
 
-    <p class="text-center">
-      You have visited this page <b><%= @visit %></b> times.
-    </p>
+      <p class="visit-counter">
+        You have visited this page <b><%= @visit %></b> times.
+      </p>
+    </div>
   </div>
 </section>
+
+<script>
+// Parallax Scroll Effect for Sanskrit Club
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Intersection Observer for fade-in animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, observerOptions);
+
+  // Observe verse section
+  const verseSection = document.querySelector('.verse-section');
+  if (verseSection) {
+    observer.observe(verseSection);
+  }
+
+  // Observe announcement section
+  const announcementSection = document.querySelector('.announcement-section');
+  if (announcementSection) {
+    observer.observe(announcementSection);
+  }
+
+  // Observe each announcement box with staggered delay
+  const announcementBoxes = document.querySelectorAll('.announcement-box');
+  announcementBoxes.forEach((box, index) => {
+    box.style.transitionDelay = `${index * 0.15}s`;
+    observer.observe(box);
+  });
+
+  // Smooth scroll to announcements when scroll indicator is clicked
+  const gridContainer = document.querySelector('.grid-container');
+  if (gridContainer) {
+    gridContainer.addEventListener('click', function(e) {
+      if (e.target === this || e.target.textContent === '↓') {
+        const announcementsContainer = document.querySelector('.announcements-container');
+        if (announcementsContainer) {
+          announcementsContainer.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }
+    });
+  }
+
+  // Optional: Parallax effect on scroll
+  window.addEventListener('scroll', function() {
+    const scrolled = window.pageYOffset;
+    const gridContainer = document.querySelector('.grid-container');
+    
+    if (gridContainer && scrolled < window.innerHeight) {
+      // Subtle parallax movement for the first section
+      gridContainer.style.transform = `translateY(${scrolled * 0.3}px)`;
+      gridContainer.style.opacity = 1 - (scrolled / window.innerHeight);
+    }
+  });
+});
+</script>

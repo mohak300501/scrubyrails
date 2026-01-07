@@ -1,8 +1,73 @@
-<%= form_for @game, url:game_update_path do |f| %>
-    <%= f.label "शीर्षकं" %><br/>
-    <%= f.text_field :name, :required => true, class: "mtextfield" %><br/>
-    <%= f.label "gameH" %><br/>
-    <%= f.text_area :info, :required => true, class: "mtextarea-1" %><br/>
-    <%= f.submit "अग्रेस्थापनं करोतु", :class => "button" %><br/>
-    <%= link_to "प्रतिगच्छतु", all_games_path %>
-<% end %>
+<div class="form-page">
+  <div class="form-container">
+    <div class="form-header">
+      <div class="greeting">नमस्ते 🙏</div>
+      <h1>क्रीडां परिवर्तयतु</h1>
+      <p class="form-subtitle">क्रीडायाः विवरणं नवीकरोतु</p>
+    </div>
+
+    <%= form_for @game, url: game_update_path, html: { multipart: true, class: "modern-form" } do |f| %>
+      <div class="form-group">
+        <%= f.label :name, "शीर्षकं", class: "form-label" %>
+        <%= f.text_field :name, required: true, class: "form-input", placeholder: "क्रीडायाः नाम..." %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :info, "क्रीडा", class: "form-label" %>
+        <%= f.text_area :info, required: true, class: "form-textarea", placeholder: "क्रीडायाः विवरणं लिखतु...", rows: 6 %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :image, "चित्रम्", class: "form-label" %>
+        
+        <% if @game.image.attached? %>
+          <div class="current-image">
+            <%= image_tag @game.image, alt: @game.name, style: "max-width: 100%; height: auto; border-radius: 8px; margin-bottom: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" %>
+            <p style="color: #5a6c7d; font-size: 0.9rem; margin-top: 0.5rem;">वर्तमानं चित्रम्</p>
+          </div>
+        <% end %>
+
+        <div class="file-input-wrapper">
+          <%= f.file_field :image, class: "file-input", id: "game-image-input", accept: "image/*" %>
+          <label for="game-image-input" class="file-input-label">
+            <i class="upload-icon">📁</i>
+            <span id="image-file-name">नवीनं चित्रं चिनोतु (वैकल्पिकम्)</span>
+          </label>
+        </div>
+        <div id="image-preview" class="file-preview"></div>
+      </div>
+
+      <div class="form-actions">
+        <%= f.submit "नवीकरोतु", class: "btn btn-primary" %>
+        <%= link_to "प्रतिगच्छतु", all_games_path, class: "btn btn-secondary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const fileInput = document.getElementById('game-image-input');
+  const fileNameDisplay = document.getElementById('image-file-name');
+  const imagePreview = document.getElementById('image-preview');
+  
+  fileInput.addEventListener('change', function() {
+    if (this.files && this.files.length > 0) {
+      const fileName = this.files[0].name;
+      fileNameDisplay.textContent = fileName;
+      
+      // Show image preview
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        imagePreview.innerHTML = `
+          <img src="${e.target.result}" alt="Preview" style="max-width: 100%; height: auto; border-radius: 8px; margin-top: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        `;
+      };
+      reader.readAsDataURL(fileInput.files[0]);
+    } else {
+      fileNameDisplay.textContent = 'नवीनं चित्रं चिनोतु (वैकल्पिकम्)';
+      imagePreview.innerHTML = '';
+    }
+  });
+});
+</script>

@@ -1,19 +1,32 @@
-<% for i in @courses do %>
-    <div class="courses">
-        <div class="title">
-            <%= i.name %><br/>
+<div class="courses-page">
+  <div class="page-header">
+  <h1>पाठ्यक्रमाः</h1>
+  <p class="subtitle">सर्वाः पाठ्यक्रमाः अन्वेषयतु तथा च पञ्जीकरणं करोतु</p>
+
+  <div class="courses-container">
+    <% @courses.each do |course| %>
+      <div class="course-card">
+        <div class="course-image">
+          <%= image_tag rails_blob_url(course.image), alt: course.name %>
+          <div class="course-overlay">
+            <span class="course-badge"><%= course.cname %></span>
+          </div>
         </div>
 
-        <div class="image">
-            <img src="<%= rails_blob_url(i.image) %>", class="img-100" />
-        </div>
+        <div class="course-content">
+          <h2 class="course-title"><%= course.name %></h2>
 
-        <div class="info">
-            <p><%= i.description.html_safe %></p>
-        </div>
+          <div class="course-info">
+            <p><%= truncate(strip_tags(course.description), length: 150) %></p>
+          </div>
 
-        <div class="button">
-            <%= link_to "Read more", course_uview_path(i.cname), class: "anone" %>
+          <div class="button">
+            <%= link_to course_uview_path(course.cname), class: "anone" do %>
+              अधिकं पठतु
+            <% end %>
+          </div>
         </div>
-    </div>
-<% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

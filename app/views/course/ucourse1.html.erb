@@ -1,63 +1,83 @@
-<% i = @course %>
-<div class="courses">
-    <div class="button">
-        <%= link_to "Back", courses_path, class: "anone" %>
+<% course = @course %>
+
+<div class="course-detail-page">
+  <div class="course-detail-container">
+    <div class="course-detail-header">
+      <h1 class="course-detail-title"><%= course.name %></h1>
     </div>
 
-    <div class="title">
-        <%= i.name %><br/>
+    <div class="course-detail-image">
+      <%= image_tag rails_blob_url(course.image), alt: course.name %>
     </div>
 
-    <div class="image">
-        <img src="<%= rails_blob_url(i.image) %>", class="img-100" />
-    </div>
+    <div class="course-detail-content">
+      <%= course.description.html_safe %>
 
-    <div class="info">
-        <%= i.description.html_safe %>
-    </div>
+      <p style="margin-top: 2rem;">
+        <strong>Course code:</strong> <%= course.cname %>
+      </p>
 
-    <div class="info">
-        <b>Course code:</b> <%= i.cname %><br/><br/>
-        <%= i.more.html_safe %>
-    </div>
+      <%= course.more.html_safe %>
 
-    <% if @user_regd > 0 %>
-        <div><b>You are registered for this course.</b></div>
-        
-        <div class="info">
-            <b>Lecture links:</b>
-            <% if !i.yt.nil? %><br/>
-                <% for j in i.yt.split("\n") %>
-                    <% lecture = j.split(": ") %>
-                    <%= lecture[0] %>: <a href="<%= lecture[1] %>" target="_blank"><%= lecture[1] %></a><br/>
-                <% end %>
-            <% else %>
-                Coming soon.
-            <% end %>
-            <br/><br/>
+      <% if @user_regd > 0 %>
+        <div class="registration-status">
+          ✓ You are registered for this course
         </div>
 
-        <div class="info">
-            <b>Exams:</b><br/>
-            <% for j in @exams %>
-                <% if j.name.include? i.cname %>
-                    <% exam = j.name.split("_") %>
-                    <% type = j.etype ? "Self Evaluation Quiz" : "Main Exam" %>
-                    &bull;
-                    <%= link_to exam_uview_path(i.cname, exam[0] + "_" + exam[1]) do %>
-                        <%= type + " - " + exam[1] + " | " + exam[2] %>
-                    <% end %><br/>
-                <% end %>
-            <% end %>
+        <div class="lecture-links">
+          <h3>📚 Lecture Links</h3>
+          <% if course.yt.present? %>
+            <ul>
+              <% course.yt.split("\n").each do |link| %>
+                <% lecture = link.split(": ") %>
+                <li>
+                  <%= lecture[0] %>: 
+                  <%= link_to lecture[1], lecture[1], target: "_blank" %>
+                </li>
+              <% end %>
+            </ul>
+          <% else %>
+            <p>Coming soon.</p>
+          <% end %>
         </div>
 
-    <% elsif i.regon == "off" %>
-        <div><b>Registration has been closed for this course.</b></div>
-    
-    <% else %>
-        <%= link_to course_reg_path(i.cname), class: "anone",
-            data: {:confirm => "Are you sure you want to register for this course?"} do %>
-            <div class="button">Register</div>
-        <% end %>
-    <% end %>
+        <div class="exam-list">
+          <h3>📝 Exams</h3>
+          <ul>
+            <% @exams.select { |e| e.name.include?(course.cname) }.each do |exam| %>
+              <% exam_parts = exam.name.split("_") %>
+              <% type = exam.etype ? "Self Evaluation Quiz" : "Main Exam" %>
+              <li>
+                <%= link_to exam_uview_path(course.cname, exam_parts[0] + "_" + exam_parts[1]) do %>
+                  <%= "#{type} - #{exam_parts[1]} | #{exam_parts[2]}" %>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+
+      <% elsif course.regon == "off" %>
+        <div class="registration-closed">
+          ⚠ Registration has been closed for this course
+        </div>
+
+      <% else %>
+        <div style="text-align: center; margin-top: 2rem;">
+          <%= link_to course_reg_path(course.cname), 
+                      class: "btn-edit",
+                      style: "display: inline-flex; width: 200px; margin: 0 auto;",
+                      data: { confirm: "Are you sure you want to register for this course?" } do %>
+            <span class="btn-icon">✓</span>
+            Register Now
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="back-button">
+      <%= link_to courses_path, class: "btn-secondary" do %>
+        Back
+      <% end %>
+    </div>
+  </div>
 </div>

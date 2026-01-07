@@ -1,12 +1,46 @@
-<% for i in @games do %>
-    <div class="games">
-        <div class="title">
-            <%= i.name %><br/>
-        </div>
+<div class="games-page">
+  <div class="page-header">
+    <h1>क्रीडाः</h1>
+    <p class="subtitle">सर्वाः क्रीडाः अन्वेषयतु</p>
+  </div>
 
-        <div class="info">
-            <p><%= i.info.html_safe %></p>
+  <div class="games-container">
+    <% @games.each do |game| %>
+      <div class="game-card">
+        <% if game.image.attached? %>
+          <div class="game-image">
+            <%= image_tag game.image, alt: game.name %>
+          </div>
+        <% else %>
+          <div class="game-header">
+            <div class="game-badge">🎮 क्रीडा</div>
+          </div>
+        <% end %>
+        
+        <div class="game-content">
+          <h2 class="game-title"><%= game.name %></h2>
+          <div class="game-info">
+            <%= truncate(strip_tags(game.info), length: 200, separator: ' ') %>
+          </div>
+          
+          <div class="game-actions">
+            <%= link_to game_uview_path(game.id), class: "anone" do %>
+              <span>अधिकं पठतु</span>
+            <% end %>
+          </div>
         </div>
+      </div>
+    <% end %>
+  </div>
+
+  <% if @games.empty? %>
+    <div style="text-align: center; padding: 3rem; color: #5a6c7d;">
+      <p style="font-size: 1.2rem;">अधुना क्रीडाः न सन्ति</p>
+      <p>शीघ्रमेव नूतनाः क्रीडाः आगमिष्यन्ति!</p>
     </div>
-<% end %>
-More games coming soon!<br/>
+  <% else %>
+    <div style="text-align: center; padding: 2rem; color: #5a6c7d; font-size: 1.1rem;">
+      अधिकाः क्रीडाः शीघ्रमेव आगमिष्यन्ति!
+    </div>
+  <% end %>
+</div>

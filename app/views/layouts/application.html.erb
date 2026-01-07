@@ -9,7 +9,6 @@
         <%= csp_meta_tag %>
 
         <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-        <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     </head>
@@ -35,7 +34,7 @@
                 <li><%= link_to "Games", all_games_path , class: ("active" if current_page?(all_games_path))%></li>
                 <li><%= link_to "Resources", all_resources_path, class: ("active" if current_page?(all_resources_path)) %></li>
                 <li><%= link_to "Courses", all_courses_path, class: ("active" if current_page?(all_courses_path)) %></li>
-                <li><%= link_to "Library", librarys_path , class: ("active" if current_page?(librarys_path))%></li>
+                <li><%= link_to "Library", all_librarys_path , class: ("active" if current_page?(librarys_path))%></li>
             <% else %>
                 <li><%= link_to "Home", root_path, class: ("active" if current_page?(root_path)) %></li>
                 <li><%= link_to "Events", events_path, class: ("active" if current_page?(events_path)) %></li>
@@ -76,7 +75,9 @@
             </div>
         <% end %>
         
+        <main class="main-content">
         <%= yield %>
+        </main>
 
        
        <!-- Social Media Section -->
@@ -103,16 +104,11 @@
                 <%= link_to "Feedback", feedback_path %>
             <% end %>
             </div>
-
             <div class="footer-info">
             <span>Visitors since 14 May ‘22: <%= session[:vc] %></span>
             <span>&copy; <%= Time.new.year %>. All rights reserved.</span>
             </div>
         </div>
         </div>
-
-
-         
-
     </body>
 </html>

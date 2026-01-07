@@ -1,19 +1,79 @@
-<h1>Sign up as new <%= session[:moru] %></h1>
-<% if !session[:otp] %>
-    <%= form_tag newp_path do %>
-        <%= text_field_tag :name, nil, :required => true, class: "utextfield", placeholder: "Your name" %><br/><br/>
-        <%= email_field_tag :email, nil, :required => true, class: "utextfield", placeholder: "Your email" %><br/><br/>
-        <%= password_field_tag :password, nil, :required => true, class: "utextfield", placeholder: "Set password" %><br/><br/>
-        <%= password_field_tag :repass, nil, :required => true, class: "utextfield", placeholder: "Re-enter password" %><br/><br/>
-        <%= submit_tag "Submit", :class => "button" %>
-    <% end %>
-<% else %>
-    <%= form_tag otpp_path do %>
-        <%= text_field_tag :otp, nil, :required => true, class: "utextfield", placeholder: "Enter OTP" %><br/>
-        <%= submit_tag "Submit", :class => "button" %>
-    <% end %>
-<% end %>
-<br/>
-<div>
-    Already signed up? Proceed to <%= link_to "Login", user_login_path %>.<br/><br/>
+<div class="auth-page">
+  <div class="auth-container">
+    <div class="auth-card">
+      <div class="auth-header">
+        <div class="auth-icon"><%= session[:moru] == "member" ? "👨‍💼" : "✨" %></div>
+        <h1 class="auth-title">पञ्जीकरणम्</h1>
+        <p class="auth-subtitle">
+          <%= session[:moru] == "member" ? "प्रबन्धकः" : "नवीनः उपयोक्ता" %> खातां सृजयतु
+        </p>
+      </div>
+
+      <% if !session[:otp] %>
+        <%= form_tag newp_path, class: "auth-form" do %>
+          <div class="form-group">
+            <%= label_tag :name, "नाम", class: "form-label" %>
+            <div class="input-with-icon">
+              <span class="input-icon">👤</span>
+              <%= text_field_tag :name, nil, required: true, class: "form-input", placeholder: "आपणं नाम...", autofocus: true %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= label_tag :email, "विद्युत्पत्रम्", class: "form-label" %>
+            <div class="input-with-icon">
+              <span class="input-icon">📧</span>
+              <%= email_field_tag :email, nil, required: true, class: "form-input", placeholder: "your@email.com" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= label_tag :password, "कूटशब्दः", class: "form-label" %>
+            <div class="input-with-icon">
+              <span class="input-icon">🔑</span>
+              <%= password_field_tag :password, nil, required: true, class: "form-input", placeholder: "••••••••", minlength: 6 %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= label_tag :repass, "कूटशब्दः पुनः", class: "form-label" %>
+            <div class="input-with-icon">
+              <span class="input-icon">🔒</span>
+              <%= password_field_tag :repass, nil, required: true, class: "form-input", placeholder: "••••••••", minlength: 6 %>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <%= submit_tag "पञ्जीकरणं करोतु", class: "btn btn-primary btn-full" %>
+          </div>
+        <% end %>
+      <% else %>
+        <%= form_tag otpp_path, class: "auth-form" do %>
+          <div class="otp-notice">
+            <p>📨 OTP आपणस्य विद्युत्पत्रे प्रेषितः अस्ति</p>
+          </div>
+
+          <div class="form-group">
+            <%= label_tag :otp, "OTP", class: "form-label" %>
+            <div class="input-with-icon">
+              <span class="input-icon">🔢</span>
+              <%= text_field_tag :otp, nil, required: true, class: "form-input", placeholder: "Enter 6-digit OTP", maxlength: 6, autofocus: true %>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <%= submit_tag "सत्यापयतु", class: "btn btn-primary btn-full" %>
+          </div>
+        <% end %>
+      <% end %>
+
+      <div class="auth-footer">
+        <div class="auth-links">
+          <%= link_to user_login_path, class: "auth-link" do %>
+            <span>🔐</span> पूर्वमेव खाता अस्ति? प्रवेशः करोतु
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

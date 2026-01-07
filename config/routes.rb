@@ -27,11 +27,12 @@ Rails.application.routes.draw do
     patch "welcome/mtermsup",                                               as:"terms_update"
 
     get "game/ugame",                                                       as:"games"
+    get "game/uview/:id",                           to:"game#ugamen",       as:"game_uview"
     get "game/mgamer",                                                      as:"all_games"
     get "game/mgamec",                                                      as:"new_game"
     post "game/mgamecp",                                                    as:"game_post"
     get "game/:id/up",                              to:"game#mgameu",       as:"game"
-    post "game/:id",                                to:"game#mgameup",      as:"game_update"
+    patch "game/:id",                                to:"game#mgameup",      as:"game_update"
     delete "game/:id/del",                          to:"game#mgamedp",      as:"game_delete"
 
     get "logging/mnew",                                                     as:"new_member"
@@ -76,7 +77,9 @@ Rails.application.routes.draw do
     get "event/:id/up",                             to:"event#meventu",     as:"event"
     patch "event/:id",                              to:"event#meventup",    as:"event_update"
     delete "event/:id/del",                         to:"event#meventdp",    as:"event_delete"
-    
+    get 'event/uview/:id', to: 'event#ueventn', as: 'event_uview'
+
+
     get "resource/uresource",                                                     as:"resources"
     get "resource/mresourcer",                                                    as:"all_resources"
     get "resource/mresourcec",                                                    as:"new_resource"
