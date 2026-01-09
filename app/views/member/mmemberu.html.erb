@@ -1,25 +1,56 @@
-<h1>member detail-परिवर्तनं करोतु</h1>
+<div class="member-update-container">
+  <div class="member-update-header">
+    <h1>UPDATE MEMBER</h1>
+    <p>Edit member information and credentials</p>
+  </div>
 
-<%= form_for @member, url: member_update_path do |f| %>
-    <%= f.label "Name" %><br/>
-    <%= f.text_field :name, :required => true, class: "utextfield" %><br/><br/>
-    <%= f.label "Email ID" %><br/>
-    <%= f.text_field :email, :required => true, class: "utextfield" %><br/><br/>
-    <%= f.label "Password" %><br/>
-    <%= f.text_field :password, :required => true, class: "utextfield" %><br/><br/>
-    <%= f.label "current image" %><br/>
-    <% if @member.image.present? %>
-        <img src="<%= rails_blob_url(@event.image) %>" class="img-50" /><br/><br/>
-    <% else %>
-        No image<br/><br/>
+  <div class="member-update-form-wrapper">
+    <%= form_for @member, url: member_update_path, html: { class: "member-update-form" } do |f| %>
+      <div class="form-group">
+        <%= f.label :name, "Full Name", class: "form-label" %>
+        <%= f.text_field :name, required: true, class: "form-input", placeholder: "Enter member name" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :email, "Email Address", class: "form-label" %>
+        <%= f.email_field :email, required: true, class: "form-input", placeholder: "member@example.com" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :password, "Password", class: "form-label" %>
+        <%= f.password_field :password, required: true, class: "form-input", placeholder: "Enter new password" %>
+      </div>
+
+      <div class="form-group image-group">
+        <%= f.label :image, "Profile Image", class: "form-label" %>
+        
+        <% if @member.image.present? %>
+          <div class="current-image">
+            <p class="image-label">Current Image:</p>
+            <%= image_tag rails_blob_url(@member.image), alt: @member.name, class: "preview-image" %>
+          </div>
+        <% else %>
+          <div class="no-image">
+            <i class="fa-solid fa-image"></i>
+            <p>No image uploaded</p>
+          </div>
+        <% end %>
+        
+        <div class="file-input-wrapper">
+          <%= f.file_field :image, class: "file-input", accept: "image/*" %>
+          <label for="member_image" class="file-label">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+            Choose New Image
+          </label>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <%= f.submit "Update Member", class: "submit-button" %>
+        <%= link_to all_members_path, class: "back-button" do %>
+          <i class="fa-solid fa-arrow-left"></i> Back to Members
+        <% end %>
+      </div>
     <% end %>
-    <%= f.label "change image" %><br/>
-    <%= f.file_field :image %><br/><br/>
-    
-
-    <%= submit_tag "अग्रेस्थापनं करोतु", :class => "button" %><br/>
-    <div class="button">
-        <%= link_to "प्रतिगच्छतु", all_members_path, class: "anone" %>
-    </div>
-
-<% end %>
+  </div>
+</div>

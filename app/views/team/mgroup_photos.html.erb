@@ -1,0 +1,63 @@
+<div class="admin-page">
+  <div class="admin-header">
+    <h1>समूह चित्राणि प्रबन्धनम्</h1>
+    <p class="subtitle">Manage Group Photos</p>
+  </div>
+
+  <!-- Upload Form -->
+  <div class="form-container" style="margin-bottom: 40px;">
+    <div class="form-header">
+      <span class="greeting">📸</span>
+      <h2>नूतनं समूह चित्रं योजयतु</h2>
+    </div>
+
+    <%= form_with url: mgroup_photo_create_path, method: :post, local: true, multipart: true do |f| %>
+      <div class="form-group">
+        <label class="form-label">समूह चित्रं चिनोतु</label>
+        <div class="file-input-wrapper">
+          <%= f.file_field :image, accept: "image/*", required: true, class: "file-input", id: "group-photo-input" %>
+          <label for="group-photo-input" class="file-input-label">
+            <span class="upload-icon">📷</span>
+            <span>चित्रं चिनोतु</span>
+          </label>
+        </div>
+        <p class="form-hint">JPG, PNG वा JPEG स्वरूपे</p>
+      </div>
+
+      <div class="form-actions">
+        <%= f.submit "चित्रं योजयतु", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+
+  <!-- Display existing photos -->
+  <% if @group_photos.empty? %>
+    <div class="empty-state">
+      <i class="fa-solid fa-images" style="font-size: 64px; color: #ccc;"></i>
+      <h2>कोऽपि समूह चित्रं नास्ति</h2>
+      <p>कृपया प्रथमं चित्रं योजयतु</p>
+    </div>
+  <% else %>
+    <div class="cards-grid">
+      <% @group_photos.each do |photo| %>
+        <div class="team-card">
+          <div class="card-image">
+            <% if photo.image.attached? %>
+              <%= image_tag photo.image, class: "member-image" %>
+            <% end %>
+          </div>
+
+          <div class="card-actions">
+            <%= button_to delete_group_photo_path(photo), 
+                method: :delete, 
+                data: { confirm: "किं भवान् निश्चितः अस्ति?" },
+                class: "btn btn-delete" do %>
+              <i class="fa-solid fa-trash"></i>
+              विलोपयतु
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

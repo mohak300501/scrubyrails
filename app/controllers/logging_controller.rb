@@ -8,6 +8,18 @@ class LoggingController < ApplicationController
         end
     end
 
+
+    def reset_otp
+        session[:otp] = nil
+        session[:new_moru] = nil
+        if session[:moru] == "member"
+          redirect_to new_member_path
+        else
+          redirect_to new_user_path
+        end
+    end
+
+
     def mnew
         admin = Rails.application.credentials.mail[:MAIL_USERNAME]
         if session[:member] and session[:email] != admin

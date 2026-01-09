@@ -1,17 +1,49 @@
-<h2>We would love to hear from you!</h2>
+<div class="feedback-page">
+  <div class="feedback-hero">
+    <h2>आपणां प्रतिक्रिया</h2>
+    <p>We would love to hear from you!</p>
+  </div>
 
-<%= form_tag feedback_post_path do %>
-  <br/>
-    <%= text_field_tag :email, @email, required: true, class: "utextfield", placeholder: "Your email" %><br/><br/><br/>
-    <div class="radio">
-        <%= radio_button_tag :typef, "feedback", :checked => true %>
-        <%= label_tag :typef_feedback, "Feedback" %>
-        <%= radio_button_tag :typef, "query" %>
-        <%= label_tag :typef_query, "Query" %>
-        <%= radio_button_tag :typef, "complaint" %>
-        <%= label_tag :typef_complaint, "Complaint" %>
-    </div><br/>
-    <%= text_area_tag :feedback, nil, required: true, class: "utextarea", placeholder: "Enter your thoughts" %><br/>
-    <%= submit_tag "Submit", :class => "button" %><br/>
-    <%= link_to "Cancel", root_url %>
-<% end %>
+  <div class="feedback-container">
+    <%= form_tag feedback_post_path, class: "feedback-form" do %>
+      <div class="form-group">
+        <label class="form-label" for="email">
+          <i class="fa-solid fa-envelope"></i> Your Email
+        </label>
+        <%= text_field_tag :email, @email, required: true, class: "utextfield", placeholder: "your.email@example.com" %>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">
+          <i class="fa-solid fa-list"></i> Type
+        </label>
+        <div class="radio-group">
+          <div class="radio-option">
+            <%= radio_button_tag :typef, "feedback", checked: true, id: "type_feedback" %>
+            <%= label_tag :type_feedback, "Feedback" %>
+          </div>
+          <div class="radio-option">
+            <%= radio_button_tag :typef, "query", id: "type_query" %>
+            <%= label_tag :type_query, "Query" %>
+          </div>
+          <div class="radio-option">
+            <%= radio_button_tag :typef, "complaint", id: "type_complaint" %>
+            <%= label_tag :type_complaint, "Complaint" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="feedback">
+          <i class="fa-solid fa-message"></i> Your Thoughts
+        </label>
+        <%= text_area_tag :feedback, nil, required: true, class: "utextarea", placeholder: "Enter your thoughts here..." %>
+      </div>
+
+      <div class="form-actions">
+        <%= submit_tag "Submit", class: "fbutton" %>
+        <%= link_to "Cancel", root_url, class: "cancel-link" %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -73,12 +73,25 @@
     color: #7f8c8d;
   }
 }
+.library-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
 
 .btn-add-new {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
-  background: linear-gradient(135deg, #764ba2 0%, #312229 100%);
+  background-color: #54101d;
   color: white;
   padding: 1rem 2rem;
   border-radius: 12px;
@@ -91,7 +104,7 @@
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(49, 34, 41, 0.6);
-    background: linear-gradient(135deg, #6a3fa0 0%, #24171d 100%);
+    background-color: #641025;
  }
 }
 
@@ -125,7 +138,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #312229 0%, #764ba2 100%);
+  background-color: white;
   border-radius: 12px;
 }
 
@@ -211,7 +224,7 @@
   }
 
   &.active {
-    background: linear-gradient(135deg, #764ba2 0%, #312229 100%);
+    background-color: #54101d;
     color: white;
     border-color: transparent;
   }
@@ -339,7 +352,7 @@
 }
 
 .genre-tag {
-    background: linear-gradient(135deg, #312229 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #54101d 0%, #54101d 100%);
     color: white;
   padding: 0.25rem 0.75rem;
   border-radius: 12px;
@@ -409,7 +422,7 @@
 }
 
 .btn-edit {
-  background: linear-gradient(135deg, #764ba2 0%, #312229 100%);
+  background-color: #54101d;
   color: white;
 
   &:hover {
@@ -467,7 +480,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: linear-gradient(135deg, #764ba2 0%, #312229 100%);
+  background-color: #54101d;
   color: white;
   padding: 1rem 2rem;
   border-radius: 12px;

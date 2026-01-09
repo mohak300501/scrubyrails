@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_01_07_171704) do
+ActiveRecord::Schema[8.0].define(version: 2026_01_08_114607) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -111,6 +111,11 @@ ActiveRecord::Schema[8.0].define(version: 2026_01_07_171704) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "group_photos", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "libraries", force: :cascade do |t|
     t.string "bookid"
     t.string "name"
@@ -158,6 +163,15 @@ ActiveRecord::Schema[8.0].define(version: 2026_01_07_171704) do
     t.string "shlok"
     t.string "translation"
     t.string "updated_by"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string "name"
+    t.string "year"
+    t.string "branch"
+    t.string "mail"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

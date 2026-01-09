@@ -20,7 +20,7 @@
           </div>
 
           <div class="form-group">
-            <%= label_tag :email, "विद्युत्पत्रम्", class: "form-label" %>
+            <%= label_tag :email, "विद्युत्पत्रम् (Email)", class: "form-label" %>
             <div class="input-with-icon">
               <span class="input-icon">📧</span>
               <%= email_field_tag :email, nil, required: true, class: "form-input", placeholder: "your@email.com" %>
@@ -28,7 +28,7 @@
           </div>
 
           <div class="form-group">
-            <%= label_tag :password, "कूटशब्दः", class: "form-label" %>
+            <%= label_tag :password, "कूटशब्दः (Password)", class: "form-label" %>
             <div class="input-with-icon">
               <span class="input-icon">🔑</span>
               <%= password_field_tag :password, nil, required: true, class: "form-input", placeholder: "••••••••", minlength: 6 %>
@@ -36,7 +36,7 @@
           </div>
 
           <div class="form-group">
-            <%= label_tag :repass, "कूटशब्दः पुनः", class: "form-label" %>
+            <%= label_tag :repass, "कूटशब्दः पुनः (Confirm Password)", class: "form-label" %>
             <div class="input-with-icon">
               <span class="input-icon">🔒</span>
               <%= password_field_tag :repass, nil, required: true, class: "form-input", placeholder: "••••••••", minlength: 6 %>
@@ -44,13 +44,13 @@
           </div>
 
           <div class="form-actions">
-            <%= submit_tag "पञ्जीकरणं करोतु", class: "btn btn-primary btn-full" %>
+            <%= submit_tag "पञ्जीकरणं करोतु (Register)", class: "btn btn-primary btn-full" %>
           </div>
         <% end %>
       <% else %>
         <%= form_tag otpp_path, class: "auth-form" do %>
           <div class="otp-notice">
-            <p>📨 OTP आपणस्य विद्युत्पत्रे प्रेषितः अस्ति</p>
+            <p>📨 OTP आपणस्य विद्युत्पत्रे प्रेषितः अस्ति (OTP has been sent to your email)</p>
           </div>
 
           <div class="form-group">
@@ -62,7 +62,8 @@
           </div>
 
           <div class="form-actions">
-            <%= submit_tag "सत्यापयतु", class: "btn btn-primary btn-full" %>
+            <%= submit_tag "सत्यापयतु (Verify)", class: "btn btn-primary btn-full" %>
+            <%= link_to "पुनः गच्छतु (Go Back)", reset_otp_path, method: :post, class: "btn btn-secondary btn-full", data: { turbo_method: :post } %>
           </div>
         <% end %>
       <% end %>
@@ -70,7 +71,7 @@
       <div class="auth-footer">
         <div class="auth-links">
           <%= link_to user_login_path, class: "auth-link" do %>
-            <span>🔐</span> पूर्वमेव खाता अस्ति? प्रवेशः करोतु
+            <span>🔐</span> पूर्वमेव खाता अस्ति? प्रवेशः करोतु (Already have an account? Login)
           <% end %>
         </div>
       </div>

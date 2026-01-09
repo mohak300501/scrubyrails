@@ -25,8 +25,15 @@
                 <%= image_tag("Club_logo_PNG.png", alt: "Sanskrit Club Logo", class: "img_2") %>
             <% end %>
         </div>
+
         <div class="rightSide">
-            <ul class="navlinks" id="close">
+                <!-- Hamburger Menu Button -->
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>>
+            <ul class="navlinks" id="navlinks">
             <% if session[:member] %>
                 <li><%= link_to "Home", home_path , class: ("active" if current_page?(home_path))%></li>
                 <li><%= link_to "Events", all_events_path, class: ("active" if current_page?(all_events_path)) %></li>
@@ -82,9 +89,10 @@
        
        <!-- Social Media Section -->
         <div class="social-section touch">
-        <h2>Get in Touch</h2>
+        <h2>GET IN TOUCH</h2>
         <div class="icons">
             <a href="mailto:sanskritclub@gmail.com" target="_blank"><i class="fa-solid fa-envelope icon"></i></a>
+            <a href="https://chat.whatsapp.com/IfvsuDkCoP0D51KknzO4B1" target="_blank"><i class="fa-brands fa-whatsapp icon"></i></a>
             <a href="https://www.facebook.com/sanskritiitr/" target="_blank"><i class="fa-brands fa-facebook icon"></i></a>
             <a href="https://www.instagram.com/sanskrit_club/?hl=en" target="_blank"><i class="fa-brands fa-instagram icon"></i></a>
             <a href="https://www.linkedin.com/company/sanskrit-club-iit-roorkee/posts/?feedView=all" target="_blank"><i class="fa-brands fa-linkedin icon"></i></a>
@@ -103,6 +111,11 @@
             <% else %>
                 <%= link_to "Feedback", feedback_path %>
             <% end %>
+            <% if session[:member] %>
+                <%= link_to "Meet Our Team", all_teams_path %>
+            <% else %>
+                <%= link_to "Meet Our Team", teams_path %>
+            <% end %>
             </div>
             <div class="footer-info">
             <span>Visitors since 14 May ‘22: <%= session[:vc] %></span>
@@ -110,5 +123,39 @@
             </div>
         </div>
         </div>
+        <script>
+            // Hamburger menu functionality
+            const hamburger = document.getElementById('hamburger');
+            const navlinks = document.getElementById('navlinks');
+            const body = document.body;
+
+            hamburger.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navlinks.classList.toggle('active');
+                body.classList.toggle('menu-open');
+            });
+
+            // Close menu when clicking on a link
+            const navItems = navlinks.querySelectorAll('a');
+            navItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    hamburger.classList.remove('active');
+                    navlinks.classList.remove('active');
+                    body.classList.remove('menu-open');
+                });
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                const isClickInsideNav = navlinks.contains(event.target);
+                const isClickOnHamburger = hamburger.contains(event.target);
+                
+                if (!isClickInsideNav && !isClickOnHamburger && navlinks.classList.contains('active')) {
+                    hamburger.classList.remove('active');
+                    navlinks.classList.remove('active');
+                    body.classList.remove('menu-open');
+                }
+            });
+        </script>
     </body>
 </html>

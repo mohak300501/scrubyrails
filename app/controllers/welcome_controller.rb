@@ -1,12 +1,12 @@
 class WelcomeController < ApplicationController
     def home
-        @news = Announcement.all
+        @news = Announcement.order(created_at: :desc)
         @visit = session[:visit]
     end
 
     def mhomer
         if session[:member]
-            @news = Announcement.all
+            @news = Announcement.order(created_at: :desc)
             @visit = session[:visit]
             render "mhomer"
         else
@@ -58,23 +58,23 @@ class WelcomeController < ApplicationController
     end
 
     def about
-        @about = About.first.about
+        @about = About.first&.about || "About content not available"
         render "abouts"
     end
 
     def htuse
-        @htuse = About.first.htuse
+        @htuse = About.first&.htuse || "How to use content not available"
         render "abouts"
     end
 
     def terms
-        @terms = About.first.terms
+        @terms = About.first&.terms || "Terms content not available"
         render "abouts"
     end
 
     def maboutu
         if session[:member]
-            @about = About.first
+            @about = About.first_or_create(about: "", htuse: "", terms: "")
             render "maboutsu"
         else
             redirect_to root_url
@@ -83,7 +83,7 @@ class WelcomeController < ApplicationController
 
     def mhtuseu
         if session[:member]
-            @htuse = About.first
+            @htuse = About.first_or_create(about: "", htuse: "", terms: "")
             render "maboutsu"
         else
             redirect_to root_url
@@ -92,7 +92,7 @@ class WelcomeController < ApplicationController
 
     def mtermsu
         if session[:member]
-            @terms = About.first
+            @terms = About.first_or_create(about: "", htuse: "", terms: "")
             render "maboutsu"
         else
             redirect_to root_url

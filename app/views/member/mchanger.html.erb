@@ -1,20 +1,41 @@
-<div class="overm">
-    <table class="marks">
+<div class="changes-container">
+  <div class="changes-header">
+    <h1>CHANGE HISTORY</h1>
+    <p>Track all database modifications and updates</p>
+  </div>
+  
+  <div class="changes-table-wrapper">
+    <table class="changes-table">
+      <thead>
         <tr>
-            <th>ID</th>
-            <th>Time</th>
-            <th>Email</th>
-            <th>Table</th>
-            <th>C/U/D</th>
+          <th>ID</th>
+          <th>Timestamp</th>
+          <th>User Email</th>
+          <th>Table</th>
+          <th>Action</th>
         </tr>
-        <% for i in @changes do %>
+      </thead>
+      <tbody>
+        <% if @changes.empty? %>
+          <tr>
+            <td colspan="5" class="no-data">No changes recorded yet</td>
+          </tr>
+        <% else %>
+          <% @changes.each do |change| %>
             <tr>
-                <td><%= i["id"] %></td>
-                <td><%= i["time"] %></td>
-                <td><%= i["email"] %></td>
-                <td><%= i["table"] %></td>
-                <td><%= i["cord"] %></td>
+              <td><span class="id-badge">#<%= change["id"] %></span></td>
+              <td><%= change["time"] %></td>
+              <td class="email-cell"><%= change["email"] %></td>
+              <td><span class="table-badge"><%= change["table"] %></span></td>
+              <td>
+                <span class="action-badge <%= change["cord"].downcase %>">
+                  <%= change["cord"] %>
+                </span>
+              </td>
             </tr>
+          <% end %>
         <% end %>
+      </tbody>
     </table>
+  </div>
 </div>

@@ -1,7 +1,29 @@
 // Place all the styles related to the Event controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+@font-face {
+  font-family: 'Saira';
+  src: font-url('SairaStencil.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
+@font-face {
+  font-family: 'Tiro';
+  src: font-url('TiroDevanagariHindi.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Hind';
+  src: font-url('Hind-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 .events-page {
     max-width: 1400px;
     margin: 0 auto;
@@ -16,11 +38,13 @@
   
     h1 {
       font-size: 3rem;
-      background: linear-gradient(135deg, #312229 0%, #764ba2 100%);
+      font-family: "Hind";
+      background: none;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       margin-bottom: 0.5rem;
+      color: #54101d;
       font-weight: 700;
     }
   
@@ -85,7 +109,7 @@
   .event-badge {
     display: inline-block;
     background: rgba(255, 255, 255, 0.95);
-    color: #764ba2;
+    color: #54101d;
     padding: 0.5rem 1rem;
     border-radius: 25px;
     font-size: 0.9rem;
@@ -101,7 +125,7 @@
     align-items: center;
     flex: 1;
 
-    .button {
+    .e-button {
       margin-top: auto;
       padding-top: 1rem;
       width: 100%;
@@ -114,12 +138,12 @@
         justify-content: center;
         gap: 0.3rem;
         padding: 0.5rem 1rem;
-        background: linear-gradient(135deg, #312229 0%, #47596F 100%);
+        background: linear-gradient(135deg, #54101d 0%, #6d1425 100%);
         color: #F0E6D2;
         text-decoration: none;
         border-radius: 6px;
         font-weight: 600;
-        font-size: 2 rem;
+        font-size: 2.5 rem;
         box-shadow: 0 2px 8px rgba(71, 89, 111, 0.15);
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         position: relative;
@@ -142,7 +166,7 @@
           left: -100%;
           width: 100%;
           height: 100%;
-          background: linear-gradient(135deg, #47596F 0%, #5a7a94 100%);
+          background: linear-gradient(135deg, #6d1425 0%, #54101d 100%);
           transition: left 0.4s ease;
           z-index: -1;
         }
@@ -276,7 +300,7 @@
       border-radius: 12px;
     }
 
-    .event-content .button .anone {
+    .event-content .e-button .anone {
       padding: 0.4rem 0.8rem;
       font-size: 0.7rem;
       
@@ -704,7 +728,7 @@
 // Event Detail Page Styles
 .event-detail-page {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
+  background: linear-gradient(135deg, #f5f0e8 0%, #faf7f2 100%);
   padding: 3rem 2rem;
 }
 
@@ -719,7 +743,7 @@
 }
 
 .event-detail-header {
-  background: linear-gradient(135deg, #5a7a94 0%, #47596F 100%);
+  background: linear-gradient(135deg, #54101d 0%, #6d1425 100%);
   padding: 2rem 2rem;
   text-align: center;
   position: relative;
@@ -849,8 +873,8 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.7rem 1.5rem;
-    font-size: 0.9rem;
+    padding: 1rem 1.5rem;
+    font-size: 1 rem;
     background: linear-gradient(135deg, #E5D5BF 0%, #D5C5AE 100%);
     color: #312229;
     text-decoration: none;
