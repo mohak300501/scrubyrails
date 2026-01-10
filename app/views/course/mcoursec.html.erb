@@ -1,26 +1,99 @@
-<h1>नूतनः courseH योजयतु</h1>
+<div class="form-page">
+  <div class="form-container">
+    <div class="form-header">
+      <div class="greeting">नमस्ते 🙏</div>
+      <h1>नूतनः पाठ्यक्रमः योजयतु</h1>
+      <p class="form-subtitle">नवीन पाठ्यक्रमं सृजयतु</p>
+    </div>
 
-<%= form_tag course_post_path, multipart: true do %>
-    <%= label_tag "शीर्षकं" %><br/>
-    <%= text_field_tag :name, nil, :required => true, class: "mtextfield" %><br/><br/>
-    <%= label_tag "course code" %><br/>
-    <%= text_field_tag :cname, nil, :required => true, class: "mtextfield" %><br/><br/>
-    Registration:
-    <div class="radio">
-        <%= radio_button_tag :regon, "on" %>
-        <%= label_tag :regon_on, "On" %>
-        <%= radio_button_tag :regon, "off", :checked => true %>
-        <%= label_tag :regon_off, "Off" %>
-    </div><br/><br/>
-    <%= label_tag "image" %><br/>
-    <%= file_field_tag :image, :required => true %><br/><br/>
-    <%= label_tag "description" %><br/>
-    <%= text_area_tag :description, nil, :required => true, class: "mtextarea-1" %><br/><br/>
-    <%= label_tag "more info" %><br/>
-    <%= text_area_tag :more, nil, :required => true, class: "mtextarea-2" %><br/><br/>
-    <%= label_tag "lecture links" %><br/>
-    <%= text_area_tag :yt, nil, :required => true, class: "mtextarea-2" %><br/><br/>
+    <%= form_tag course_post_path, multipart: true, class: "modern-form" do %>
+      <div class="form-group">
+        <%= label_tag "शीर्षकं (Course Name)", nil, class: "form-label" %>
+        <%= text_field_tag :name, nil, required: true, class: "form-input", placeholder: "Enter course name..." %>
+      </div>
 
-    <%= submit_tag "अग्रेस्थापनं करोतु", :class => "button" %><br/>
-    <%= link_to "प्रतिगच्छतु", all_courses_path %><br/><br/>
-<% end %>
+      <div class="form-group">
+        <%= label_tag "Course Code", nil, class: "form-label" %>
+        <%= text_field_tag :cname, nil, required: true, class: "form-input", placeholder: "e.g., CS101" %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "Registration Status", nil, class: "form-label" %>
+        <div class="radio-group">
+          <label class="radio-label">
+            <%= radio_button_tag :regon, "on", false, class: "radio-input" %>
+            <span class="radio-custom"></span>
+            <span class="radio-text">Open</span>
+          </label>
+          
+          <label class="radio-label">
+            <%= radio_button_tag :regon, "off", true, class: "radio-input" %>
+            <span class="radio-custom"></span>
+            <span class="radio-text">Closed</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "Course Image", nil, class: "form-label" %>
+        <div class="file-input-wrapper">
+          <%= file_field_tag :image, required: true, class: "file-input", accept: "image/*", id: "course-image-input" %>
+          <label for="course-image-input" class="file-input-label">
+            <i class="upload-icon">📁</i>
+            <span id="image-file-name">चित्रं चिनोतु</span>
+          </label>
+        </div>
+        <div id="image-preview" class="file-preview" style="display: none;">
+          <span class="preview-icon">✓</span>
+          <span class="preview-text"></span>
+        </div>
+        <small style="display: block; margin-top: 0.5rem; color: #5a6c7d;">Recommended: 1200x800px or 3:2 ratio</small>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "Description", nil, class: "form-label" %>
+        <%= text_area_tag :description, nil, required: true, class: "form-textarea", 
+                          placeholder: "Write a brief description of the course...", rows: 5 %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "Additional Information", nil, class: "form-label" %>
+        <%= text_area_tag :more, nil, required: true, class: "form-textarea", 
+                          placeholder: "Add more details about the course (syllabus, objectives, etc.)...", rows: 6 %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "Lecture Links (Optional)", nil, class: "form-label" %>
+        <%= text_area_tag :yt, nil, class: "form-textarea", 
+                          placeholder: "Format:\nLecture 1: https://youtube.com/...\nLecture 2: https://youtube.com/...", rows: 4 %>
+        <small style="display: block; margin-top: 0.5rem; color: #5a6c7d;">Add YouTube or video links for lectures, one per line</small>
+      </div>
+
+      <div class="form-actions">
+        <%= submit_tag "अग्रेस्थापनं करोतु", class: "btn btn-primary" %>
+        <%= link_to "प्रतिगच्छतु", all_courses_path, class: "btn btn-secondary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const fileInput = document.getElementById('course-image-input');
+  const fileName = document.getElementById('image-file-name');
+  const preview = document.getElementById('image-preview');
+  const previewText = preview.querySelector('.preview-text');
+  
+  fileInput.addEventListener('change', function() {
+    if (this.files && this.files.length > 0) {
+      const file = this.files[0];
+      fileName.textContent = file.name;
+      previewText.textContent = `चयनितं: ${file.name} (${(file.size / 1024 / 1024).toFixed(2)} MB)`;
+      preview.style.display = 'flex';
+    } else {
+      fileName.textContent = 'चित्रं चिनोतु';
+      preview.style.display = 'none';
+    }
+  });
+});
+</script>

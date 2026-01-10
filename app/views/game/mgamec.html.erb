@@ -1,8 +1,65 @@
-<%= form_tag game_post_path do %>
-    <%= label_tag "gametitle" %><br/>
-    <%= text_field_tag :name, nil, :required => true, class: "mtextfield" %><br/><br/>
-    <%= label_tag "gameinfo" %><br/>
-    <%= text_area_tag :info, nil, :required => true, class: "mtextarea-1" %><br/><br/>
-    <%= submit_tag "अग्रेस्थापनं करोतु", :class => "button" %><br/>
-    <%= link_to "प्रतिगच्छतु", all_games_path %>
-<% end %>
+<div class="form-page">
+  <div class="form-container">
+    <div class="form-header">
+      <div class="greeting">नमस्ते 🙏</div>
+      <h1>नूतनं क्रीडां योजयतु</h1>
+      <p class="form-subtitle">नवीनं क्रीडां सृजयतु</p>
+    </div>
+
+    <%= form_with url: game_post_path, multipart: true, local: true, class: "modern-form" do |f| %>
+      <div class="form-group">
+        <%= label_tag "शीर्षकं", nil, class: "form-label" %>
+        <%= text_field_tag :name, nil, required: true, class: "form-input", placeholder: "क्रीडायाः नाम..." %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "क्रीडा", nil, class: "form-label" %>
+        <%= text_area_tag :info, nil, required: true, class: "form-textarea", placeholder: "क्रीडायाः विवरणं लिखतु...", rows: 6 %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "चित्रम्", nil, class: "form-label" %>
+        <div class="file-input-wrapper">
+          <%= file_field_tag :image, class: "file-input", id: "game-image-input", accept: "image/*" %>
+          <label for="game-image-input" class="file-input-label">
+            <i class="upload-icon">📁</i>
+            <span id="image-file-name">चित्रं चिनोतु (वैकल्पिकम्)</span>
+          </label>
+        </div>
+        <div id="image-preview" class="file-preview"></div>
+      </div>
+
+      <div class="form-actions">
+        <%= submit_tag "अग्रेस्थापनं करोतु", class: "btn btn-primary" %>
+        <%= link_to "प्रतिगच्छतु", all_games_path, class: "btn btn-secondary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const fileInput = document.getElementById('game-image-input');
+  const fileNameDisplay = document.getElementById('image-file-name');
+  const imagePreview = document.getElementById('image-preview');
+  
+  fileInput.addEventListener('change', function() {
+    if (this.files && this.files.length > 0) {
+      const fileName = this.files[0].name;
+      fileNameDisplay.textContent = fileName;
+      
+      // Show image preview
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        imagePreview.innerHTML = `
+          <img src="${e.target.result}" alt="Preview" style="max-width: 100%; height: auto; border-radius: 8px; margin-top: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        `;
+      };
+      reader.readAsDataURL(fileInput.files[0]);
+    } else {
+      fileNameDisplay.textContent = 'चित्रं चिनोतु (वैकल्पिकम्)';
+      imagePreview.innerHTML = '';
+    }
+  });
+});
+</script>

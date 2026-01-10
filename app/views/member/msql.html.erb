@@ -1,24 +1,52 @@
-<div class="button">
-    <%= link_to "Back", member_area_path, class: "anone" %>
-</div>
+<div class="sql-container">
+  <div class="sql-header">
+    <h1>SQL QUERY EXECUTOR</h1>
+    <p>Execute database queries and view results</p>
+    <%= link_to member_area_path, class: "back-button" do %>
+      <i class="fa-solid fa-arrow-left"></i> Back to Member Area
+    <% end %>
+  </div>
 
-<h2>Enter SQL query</h2>
-<div><b>Syntax:</b> show table_name;<br/><br/></div>
-<%= form_tag exec_sql_path do %>
-    <%= text_area_tag :query, @query, :required => true, class: "mtextarea-1" %><br/><br/>
-    <%= submit_tag "अग्रेस्थापनं करोतु", :class => "button" %>
-<% end %>
+  <div class="sql-form-wrapper">
+    <div class="syntax-info">
+      <i class="fa-solid fa-info-circle"></i>
+      <span><strong>Syntax:</strong> show table_name;</span>
+    </div>
 
-<% if @results %>
-    <table>
-        <% for i in @results %>
+    <%= form_tag exec_sql_path, class: "sql-form" do %>
+      <div class="form-group">
+        <%= label_tag :query, "SQL Query", class: "form-label" %>
+        <%= text_area_tag :query, @query, required: true, class: "sql-textarea", placeholder: "Enter your SQL query here..." %>
+      </div>
+
+      <%= submit_tag "Execute Query", class: "execute-button" %>
+    <% end %>
+  </div>
+
+  <% if @results %>
+    <div class="results-container">
+      <div class="results-header">
+        <i class="fa-solid fa-check-circle"></i>
+        <h3>Query Results</h3>
+      </div>
+      
+      <div class="results-table-wrapper">
+        <table class="results-table">
+          <% @results.each do |row| %>
             <tr>
-                <% for j in i %>
-                    <td><%= j[1] %></td>
-                <% end %>
+              <% row.each do |column| %>
+                <td><%= column[1] %></td>
+              <% end %>
             </tr>
-        <% end %>
-    </table>
-<% else %>
-    <%= @error %>
-<% end %>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  <% elsif @error %>
+    <div class="error-container">
+      <i class="fa-solid fa-exclamation-triangle"></i>
+      <h3>Error</h3>
+      <p><%= @error %></p>
+    </div>
+  <% end %>
+</div>

@@ -27,11 +27,12 @@ Rails.application.routes.draw do
     patch "welcome/mtermsup",                                               as:"terms_update"
 
     get "game/ugame",                                                       as:"games"
+    get "game/uview/:id",                           to:"game#ugamen",       as:"game_uview"
     get "game/mgamer",                                                      as:"all_games"
     get "game/mgamec",                                                      as:"new_game"
     post "game/mgamecp",                                                    as:"game_post"
     get "game/:id/up",                              to:"game#mgameu",       as:"game"
-    post "game/:id",                                to:"game#mgameup",      as:"game_update"
+    patch "game/:id",                                to:"game#mgameup",      as:"game_update"
     delete "game/:id/del",                          to:"game#mgamedp",      as:"game_delete"
 
     get "logging/mnew",                                                     as:"new_member"
@@ -45,6 +46,7 @@ Rails.application.routes.draw do
     get "logging/forgot",                                                   as:"forgot"
     post "logging/forgotp",                                                 as:"forgotp"
     post "logging/resetp",                                                  as:"resetp"
+    get "reset_otp",                             to: "logging#reset_otp",  as: "reset_otp"
 
     get "course/ucourse",                                                   as:"courses"
     get "course/mcourser",                                                  as:"all_courses"
@@ -76,7 +78,9 @@ Rails.application.routes.draw do
     get "event/:id/up",                             to:"event#meventu",     as:"event"
     patch "event/:id",                              to:"event#meventup",    as:"event_update"
     delete "event/:id/del",                         to:"event#meventdp",    as:"event_delete"
-    
+    get 'event/uview/:id', to: 'event#ueventn', as: 'event_uview'
+
+
     get "resource/uresource",                                                     as:"resources"
     get "resource/mresourcer",                                                    as:"all_resources"
     get "resource/mresourcec",                                                    as:"new_resource"
@@ -119,4 +123,16 @@ Rails.application.routes.draw do
     get "library/:id/up",                             to:"library#mlibraryu",     as:"library"
     patch "library/:id",                              to:"library#mlibraryup",    as:"library_update"
     delete "library/:id/del",                         to:"library#mlibrarydp",    as:"library_delete"
+    get "team/uteam",                                                       as:"teams"
+    get "team/mteamr",                                                      as:"all_teams"
+    get "team/mteamc",                                                      as:"new_team"
+    post "team/mteamcp",                                                    as:"team_post"
+    get "team/:id/up",                              to:"team#mteamu",       as:"team"
+    patch "team/:id",                               to:"team#mteamup",      as:"team_update"
+    delete "team/:id/del",                          to:"team#mteamdp",      as:"team_delete"
+    
+    # Group Photos routes
+    get "team/mgroupr",                             to:"team#mgroup_photos",        as:"group_photos"
+    post "team/mgroupcp",                           to:"team#mgroup_photo_create",  as:"mgroup_photo_create"
+    delete "team/group/:id/del",                    to:"team#mgroup_photo_delete",  as:"delete_group_photo"
 end

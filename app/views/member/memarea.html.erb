@@ -1,23 +1,58 @@
-<div>
-    <br/><br/>
-    <div class="button">
-        <%= link_to "All users", all_users_path, class: "anone" %>
-    </div>
-    <div class="button">
-        <%= link_to "Profile", mprofile_path, class: "anone" %>
-    </div>
-    <% if @admin %>
-        <div class="button">
-            <%= link_to "New member", new_member_path, class: "anone" %>
-        </div>
-        <div class="button">
-            <%= link_to "All Members", all_members_path, class: "anone" %>
-        </div>
-        <div class="button">
-            <%= link_to "Changes", all_changes_path, class: "anone" %>
-        </div>
+<div class="member-area-container">
+  <div class="member-area-header">
+    <h1>MEMBER AREA</h1>
+    <p>Access administrative tools and member features</p>
+  </div>
+  
+  <div class="member-buttons-grid">
+    <%= link_to all_users_path, class: "member-card" do %>
+      <div class="card-icon">
+        <i class="fa-solid fa-users"></i>
+      </div>
+      <h3>All Users</h3>
+      <p>View and manage user accounts</p>
     <% end %>
-    <div class="button">
-        <%= link_to "Execute SQL", msql_path, class: "anone" %>
-    </div>
+    
+    <%= link_to mprofile_path, class: "member-card" do %>
+      <div class="card-icon">
+        <i class="fa-solid fa-user-circle"></i>
+      </div>
+      <h3>Profile</h3>
+      <p>View and edit your profile</p>
+    <% end %>
+    
+    <% if @admin %>
+      <%= link_to new_member_path, class: "member-card admin-card" do %>
+        <div class="card-icon">
+          <i class="fa-solid fa-user-plus"></i>
+        </div>
+        <h3>New Member</h3>
+        <p>Add a new team member</p>
+      <% end %>
+      
+      <%= link_to all_members_path, class: "member-card admin-card" do %>
+        <div class="card-icon">
+          <i class="fa-solid fa-user-shield"></i>
+        </div>
+        <h3>All Members</h3>
+        <p>Manage team members</p>
+      <% end %>
+      
+      <%= link_to all_changes_path, class: "member-card admin-card" do %>
+        <div class="card-icon">
+          <i class="fa-solid fa-history"></i>
+        </div>
+        <h3>Changes</h3>
+        <p>View change history</p>
+      <% end %>
+    <% end %>
+    
+    <%= link_to msql_path, class: "member-card" do %>
+      <div class="card-icon">
+        <i class="fa-solid fa-database"></i>
+      </div>
+      <h3>Execute SQL</h3>
+      <p>Run database queries</p>
+    <% end %>
+  </div>
 </div>

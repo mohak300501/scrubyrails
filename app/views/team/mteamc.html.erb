@@ -1,0 +1,72 @@
+<div class="form-page">
+  <div class="form-container">
+    <div class="form-header">
+      <div class="greeting">नमस्ते 🙏</div>
+      <h1>नूतनं सदस्यं योजयतु</h1>
+      <p class="form-subtitle">नवीनं सदस्यं सृजयतु</p>
+    </div>
+
+    <%= form_tag team_post_path, multipart: true, class: "modern-form" do %>
+      <div class="form-group">
+        <%= label_tag "नाम", nil, class: "form-label" %>
+        <%= text_field_tag :name, nil, required: true, class: "form-input", placeholder: "सदस्यस्य नाम..." %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "वर्षं", nil, class: "form-label" %>
+        <%= text_field_tag :year, nil, required: true, class: "form-input", placeholder: "वर्षं (उदा. २०२४)..." %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "शाखा", nil, class: "form-label" %>
+        <%= text_field_tag :branch, nil, required: true, class: "form-input", placeholder: "शाखा (उदा. CSE, ECE)..." %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "विद्युत्पत्रम्", nil, class: "form-label" %>
+        <%= email_field_tag :mail, nil, required: true, class: "form-input", placeholder: "विद्युत्पत्रं..." %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "चित्रम्", nil, class: "form-label" %>
+        <div class="file-input-wrapper">
+          <%= file_field_tag :image, required: true, class: "file-input", id: "team-image-input", accept: "image/*" %>
+          <label for="team-image-input" class="file-input-label">
+            <i class="upload-icon">📁</i>
+            <span id="image-file-name">चित्रं चिनोतु</span>
+          </label>
+        </div>
+        <div id="image-preview" class="file-preview" style="display: none;">
+          <span class="preview-icon">✓</span>
+          <span class="preview-text"></span>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <%= submit_tag "अग्रेस्थापनं करोतु", class: "btn btn-primary" %>
+        <%= link_to "प्रतिगच्छतु", all_teams_path, class: "btn btn-secondary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const fileInput = document.getElementById('team-image-input');
+  const fileName = document.getElementById('image-file-name');
+  const preview = document.getElementById('image-preview');
+  const previewText = preview.querySelector('.preview-text');
+  
+  fileInput.addEventListener('change', function() {
+    if (this.files && this.files.length > 0) {
+      const file = this.files[0];
+      fileName.textContent = file.name;
+      previewText.textContent = `चयनितं: ${file.name} (${(file.size / 1024 / 1024).toFixed(2)} MB)`;
+      preview.style.display = 'flex';
+    } else {
+      fileName.textContent = 'चित्रं चिनोतु';
+      preview.style.display = 'none';
+    }
+  });
+});
+</script>

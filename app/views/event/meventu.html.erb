@@ -1,15 +1,43 @@
-<h1>Event-परिवर्तनं करोतु</h1>
+<div class="form-page">
+  <div class="form-container">
+    <div class="form-header">
+      <h1>घटना-परिवर्तनं करोतु</h1>
+      <p class="form-subtitle">घटनस्य विवरणं परिवर्तयतु</p>
+    </div>
 
-<%= form_for @event, url: event_update_path, multipart: true do |f| %>
-    <%= f.label "शीर्षकं" %><br/>
-    <%= f.text_field :name, :required => true, class: "mtextfield" %><br/><br/>
-    <%= f.label "घटना" %><br/>
-    <%= f.text_area :info, :required => true, class: "mtextarea-1" %><br/><br/>
-    <%= f.label "current image" %><br/>
-    <img src="<%= rails_blob_url(@event.image) %>" class="img-50" /><br/><br/>
-    <%= f.label "change image" %><br/>
-    <%= f.file_field :image %><br/><br/>
-    
-    <%= f.submit "अग्रेस्थापनं करोतु", :class => "button" %><br/>
-    <%= link_to "प्रतिगच्छतु", all_events_path %>
-<% end %>
+    <%= form_for @event, url: event_update_path, multipart: true, html: { class: "modern-form" } do |f| %>
+      <div class="form-group">
+        <%= f.label :name, "शीर्षकं", class: "form-label" %>
+        <%= f.text_field :name, required: true, class: "form-input", placeholder: "घटनस्य नाम..." %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :info, "घटना", class: "form-label" %>
+        <%= f.text_area :info, required: true, class: "form-textarea", rows: 6, placeholder: "घटनस्य विवरणं..." %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :image, "वर्तमानं चित्रम्", class: "form-label" %>
+        <div class="current-image">
+          <%= image_tag rails_blob_url(@event.image), alt: @event.name, class: "preview-image" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :image, "चित्रं परिवर्तयतु", class: "form-label" %>
+        <div class="file-input-wrapper">
+          <%= f.file_field :image, class: "file-input", accept: "image/*" %>
+          <div class="file-input-label">
+            <i class="upload-icon">🔄</i>
+            <span>नवीनं चित्रं चिनोतु</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <%= f.submit "अग्रेस्थापनं करोतु", class: "btn btn-primary" %>
+        <%= link_to "प्रतिगच्छतु", all_events_path, class: "btn btn-secondary" %>
+      </div>
+    <% end %>
+  </div>
+</div>

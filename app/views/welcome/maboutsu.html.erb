@@ -1,12 +1,39 @@
-<div><%= @about ? "about" : @htuse ? "htuse" : "terms" %> परिवर्तयतु</div>
+<section class="m-form-container">
+  <div class="m-form-wrapper">
+    <div class="m-form-section m-visible">
+      <div class="m-heading-section">
+        <h1><%= @about ? "UPDATE ABOUT" : @htuse ? "UPDATE HOW TO USE" : "UPDATE TERMS" %></h1>
+        <span class="m-strip"></span>
+      </div>
 
-<% path = @about ? about_update_path : @htuse ? htuse_update_path : terms_update_path %>
-<% about = @about ? @about : @htuse ? @htuse : @terms %>
-<% field = @about ? :about : @htuse ? :htuse : :terms %>
-<% back = @about ? about_path : @htuse ? htuse_path : terms_path %>
+      <% path = @about ? about_update_path : @htuse ? htuse_update_path : terms_update_path %>
+      <% about = @about ? @about : @htuse ? @htuse : @terms %>
+      <% field = @about ? :about : @htuse ? :htuse : :terms %>
+      <% back = @about ? about_path : @htuse ? htuse_path : terms_path %>
 
-<%= form_for about, url: path do |f|%>
-    <%= f.text_area field, :required => true, class: "mtextarea-2" %><br/><br/>
-    <%= f.submit "अग्रेस्थापनं करोतु", :class => "button" %><br/>
-    <%= link_to "प्रतिगच्छतु", back %>
-<% end %>
+      <%= form_for about, url: path do |f| %>
+        <div class="m-form-field">
+          <%= f.label field.to_s.titleize, nil, class: "m-form-label" %>
+          <%= f.text_area field, 
+              required: true, 
+              rows: 10,
+              class: "m-form-textarea" %>
+        </div>
+
+        <div class="m-form-buttons">
+          <%= f.submit "अग्रेस्थापनं करोतु", class: "m-button m-button-primary" %>
+          <%= link_to "प्रतिगच्छतु", back, class: "m-button m-button-secondary" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const formSection = document.querySelector('.m-form-section');
+  if (formSection) {
+    formSection.classList.add('m-visible');
+  }
+});
+</script>

@@ -1,26 +1,41 @@
-<%= link_to "नूतना घटना योजयतु", new_event_path %>
+<div class="admin-events-page">
+  <div class="admin-header">
+    <h1>घटना-प्रबन्धनम्</h1>
+    <p class="admin-subtitle">सर्वे घटनाः सम्पादयतु</p>
+    <%= link_to new_event_path, class: "btn btn-create" do %>
+      <span class="btn-icon">➕</span>
+      नूतना घटना योजयतु
+    <% end %>
+  </div>
 
-<% for i in @events do %>
-    <div class="events">
-        <div class="title">
-            <%= i.name %><br/>
+  <div class="admin-events-container">
+    <% @events.each do |event| %>
+      <div class="admin-event-card">
+        <div class="admin-event-image">
+          <%= image_tag rails_blob_url(event.image), alt: event.name %>
         </div>
-
-        <div class="poster">
-            <img src="<%= rails_blob_url(i.image) %>" />
-        </div>
-
-        <div class="info">
-            <p><%= i.info.html_safe %></p>
-        </div>
-
-        <div class="updel">
-            <%= link_to event_path(i.id), class: "anone" do %>
-                <div class="button">परिवर्तयतु</div>
+        
+        <div class="admin-event-content">
+          <h2 class="admin-event-title"><%= event.name %></h2>
+          <div class="admin-event-info">
+            <%= truncate(event.info.html_safe, length: 150) %>
+          </div>
+          
+          <div class="admin-event-actions">
+            <%= link_to event_path(event.id), class: "btn btn-edit" do %>
+              <span class="btn-icon">✏️</span>
+              परिवर्तयतु
             <% end %>
-            <%= link_to event_delete_path(i.id), method: "delete", :confirm => "Are you sure you want to delete this event?", class: "anone" do %>
-                <div class="button">विनश्यतु</div>
-            <% end %>
+            <%= button_to event_delete_path(event.id),
+            method: :delete,
+            data: { confirm: "किं भवान् निश्चितः अस्ति यत् एतं घटनां विनाशयितुम् इच्छति?" },
+            class: "btn btn-delete" do %>
+          <span class="btn-icon">🗑️</span>
+          विनश्यतु
+        <% end %>
+          </div>
         </div>
-    </div>
-<% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

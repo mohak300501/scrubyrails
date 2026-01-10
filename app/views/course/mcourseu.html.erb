@@ -1,28 +1,92 @@
-<h1>Course-परिवर्तनं करोतु</h1>
+<div class="form-page">
+  <div class="form-container">
+    <div class="form-header">
+      <div class="greeting">नमस्ते 🙏</div>
+      <h1>Course-परिवर्तनं करोतु</h1>
+      <p class="form-subtitle">पाठ्यक्रमस्य सूचनां परिवर्तयतु</p>
+    </div>
 
-<%= form_for @course, url: course_update_path, multipart: true do |f| %>
-    <%= f.label "शीर्षकं" %><br/>
-    <%= f.text_field :name, :required => true, class: "mtextfield" %><br/><br/>
-    <%= f.label "course code" %><br/>
-    <%= f.text_area :cname, :required => true, class: "mtextfield" %><br/><br/>
-    Registration:
-    <div class="radio">
-        <%= f.radio_button :regon, "on" %>
-        <%= f.label :regon_on, "On" %>
-        <%= f.radio_button :regon, "off" %>
-        <%= f.label :regon_off, "off" %>
-    </div><br/><br/>
-    <%= f.label "description" %><br/>
-    <%= f.text_area :description, :required => true, class: "mtextarea-1" %><br/><br/>
-    <%= f.label "more info" %><br/>
-    <%= f.text_area :more, :required => true, class: "mtextarea-2" %><br/><br/>
-    <%= f.label "lecture links" %><br/>
-    <%= f.text_area :yt, :required => true, class: "mtextarea-2" %><br/><br/>
-    <%= f.label "current image" %><br/>
-    <img src="<%= rails_blob_url(@course.image) %>" class="img-50" /><br/><br/>
-    <%= f.label "change image" %><br/>
-    <%= f.file_field :image %><br/><br/>
+    <%= form_for @course, url: course_update_path, multipart: true, class: "modern-form" do |f| %>
+      <div class="form-group">
+        <%= f.label "शीर्षकं (Course Name)", class: "form-label" %>
+        <%= f.text_field :name, required: true, class: "form-input", placeholder: "Enter course name..." %>
+      </div>
 
-    <%= f.submit "अग्रेस्थापनं करोतु", :class => "button" %><br/>
-    <%= link_to "प्रतिगच्छतु", all_courses_path %><br/><br/>
-<% end %>
+      <div class="form-group">
+        <%= f.label "Course Code", class: "form-label" %>
+        <%= f.text_field :cname, required: true, class: "form-input", placeholder: "e.g., CS101" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label "Registration Status", class: "form-label" %>
+        <div class="radio-group">
+          <label class="radio-label">
+            <%= f.radio_button :regon, "on", class: "radio-input" %>
+            <span class="radio-custom"></span>
+            <span class="radio-text">Open</span>
+          </label>
+          
+          <label class="radio-label">
+            <%= f.radio_button :regon, "off", class: "radio-input" %>
+            <span class="radio-custom"></span>
+            <span class="radio-text">Closed</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label "Description", class: "form-label" %>
+        <%= f.text_area :description, required: true, class: "form-textarea", 
+                        placeholder: "Write a brief description of the course...", rows: 5 %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label "Additional Information", class: "form-label" %>
+        <%= f.text_area :more, required: true, class: "form-textarea", 
+                        placeholder: "Add more details about the course (syllabus, objectives, etc.)...", rows: 6 %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label "Lecture Links (Optional)", class: "form-label" %>
+        <%= f.text_area :yt, class: "form-textarea", 
+                        placeholder: "Format:\nLecture 1: https://youtube.com/...\nLecture 2: https://youtube.com/...", rows: 4 %>
+        <small style="display: block; margin-top: 0.5rem; color: #5a6c7d;">Add YouTube or video links for lectures, one per line</small>
+      </div>
+
+      <div class="form-group">
+        <%= f.label "Current Image", class: "form-label" %>
+        <div class="current-image">
+          <%= image_tag rails_blob_url(@course.image), class: "preview-image", alt: @course.name %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label "Change Image (optional)", class: "form-label" %>
+        <div class="file-input-wrapper">
+          <%= f.file_field :image, accept: "image/*", class: "file-input", id: "course-update-image-input" %>
+          <label for="course-update-image-input" class="file-input-label">
+            <i class="upload-icon">📁</i>
+            <span>नवीनं चित्रं चिनोतु</span>
+          </label>
+        </div>
+        <small style="display: block; margin-top: 0.5rem; color: #5a6c7d;">Leave empty to keep current image</small>
+      </div>
+
+      <div class="form-actions">
+        <%= f.submit "अग्रेस्थापनं करोतु", class: "btn btn-primary" %>
+        <%= link_to "प्रतिगच्छतु", all_courses_path, class: "btn btn-secondary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<script>
+  // Preview file name when selected
+  document.getElementById('course-update-image-input').addEventListener('change', function(e) {
+    const fileName = e.target.files[0]?.name;
+    if (fileName) {
+      const label = document.querySelector('.file-input-label span');
+      label.textContent = fileName;
+    }
+  });
+</script>

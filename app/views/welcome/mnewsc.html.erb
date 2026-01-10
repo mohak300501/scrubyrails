@@ -1,6 +1,35 @@
-<%= form_tag news_post_path do %>
-    <%= label_tag "Announcement" %><br/>
-    <%= text_field_tag :news, nil, :required => true, class: "mtextfield" %><br/><br/>
-    <%= submit_tag "अग्रेस्थापनं करोतु", :class => "button" %><br/>
-    <%= link_to "प्रतिगच्छतु", home_path %>
-<% end %>
+<section class="m-announcements-container">
+  <div class="m-announcements-grid-layout">
+    <div class="m-announcement-section m-visible">
+      <div class="m-heading-section">
+        <h1>NEW ANNOUNCEMENT</h1>
+        <span class="m-strip"></span>
+      </div>
+
+      <%= form_tag news_post_path do %>
+        <div style="margin: 2rem 0;">
+          <%= label_tag "Announcement", nil, style: "font-family: 'Saira'; font-size: 24px; color: #312229; display: block; margin-bottom: 1rem;" %>
+          <%= text_area_tag :news, nil, 
+              required: true, 
+              rows: 6,
+              style: "width: 100%; padding: 1rem; font-family: 'Hind'; font-size: 18px; border: 2px solid #b18653; border-radius: 6px; resize: vertical; box-sizing: border-box;" %>
+        </div>
+
+        <div style="display: flex; gap: 1rem; margin-top: 2rem; align-items: center; justify-content: flex-start;">
+          <%= submit_tag "अग्रेस्थापनं करोतु", class: "m-button", style: "background-color: #54101d; color: white; padding: 0.75rem 2rem; font-size: 1rem; border: none; border-radius: 6px; cursor: pointer; font-family: inherit; line-height: normal;" %>
+          <%= link_to "प्रतिगच्छतु", home_path, class: "m-button", style: "background-color: #b18653; color: white; padding: 0.75rem 2rem; font-size: 1rem; border: none; border-radius: 6px; cursor: pointer; text-align: center; text-decoration: none; display: inline-block; font-family: inherit; line-height: normal; box-sizing: border-box;" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Make section visible immediately
+  const announcementSection = document.querySelector('.m-announcement-section');
+  if (announcementSection) {
+    announcementSection.classList.add('m-visible');
+  }
+});
+</script>

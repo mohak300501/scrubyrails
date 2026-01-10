@@ -1,18 +1,67 @@
-<h1>नूतनः श्लोकः योजयतु</h1>
+<div class="form-page">
+  <div class="form-container">
+    <div class="form-header">
+      <div class="greeting">नमस्ते 🙏</div>
+      <h1>नूतनः श्लोकः योजयतु</h1>
+      <p class="form-subtitle">नवीनं श्लोकं सृजयतु</p>
+    </div>
 
-<%= form_tag shlok_post_path, multipart: true do %>
-    <div>
-        <%= label_tag "शीर्षकं" %><br/>
-        <%= text_field_tag :title, nil, :required => true, class: "mtextfield" %><br/><br/>
-        <%= label_tag "श्लोकः" %><br/>
-        <%= text_area_tag :shlok, nil, :required => true, class: "mtextarea-1" %><br/><br/>
-        <%= label_tag "श्रव्यसञ्चिका" %><br/>
-        <%= file_field_tag :audio, :required => true %><br/><br/>
-        <%= label_tag "अनुवादः" %><br/>
-        <%= text_area_tag :translation, nil, :required => true, class: "mtextarea-2" %><br/>
-    </div>
-    <div>
-        <%= submit_tag "अग्रेस्थापनं करोतु", :class => "button" %><br/>
-        <%= link_to "प्रतिगच्छतु", all_shloks_path %>
-    </div>
-<% end %>
+    <%= form_tag shlok_post_path, multipart: true, class: "modern-form" do %>
+      <div class="form-group">
+        <%= label_tag "शीर्षकं", nil, class: "form-label" %>
+        <%= text_field_tag :title, nil, required: true, class: "form-input", placeholder: "श्लोकस्य शीर्षकं..." %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "श्लोकः", nil, class: "form-label" %>
+        <%= text_area_tag :shlok, nil, required: true, class: "form-textarea", placeholder: "श्लोकं लिखतु...", rows: 6 %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "श्रव्यसञ्चिका", nil, class: "form-label" %>
+        <div class="file-input-wrapper">
+          <%= file_field_tag :audio, required: true, class: "file-input", id: "shlok-audio-input", accept: "audio/*" %>
+          <label for="shlok-audio-input" class="file-input-label">
+            <i class="upload-icon">🎵</i>
+            <span id="audio-file-name">श्रव्यसञ्चिकां चिनोतु</span>
+          </label>
+        </div>
+        <div id="audio-preview" class="file-preview" style="display: none;">
+          <span class="preview-icon">✓</span>
+          <span class="preview-text"></span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "अनुवादः", nil, class: "form-label" %>
+        <%= text_area_tag :translation, nil, required: true, class: "form-textarea", placeholder: "अनुवादं लिखतु...", rows: 6 %>
+      </div>
+
+      <div class="form-actions">
+        <%= submit_tag "अग्रेस्थापनं करोतु", class: "btn btn-primary" %>
+        <%= link_to "प्रतिगच्छतु", all_shloks_path, class: "btn btn-secondary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const fileInput = document.getElementById('shlok-audio-input');
+  const fileName = document.getElementById('audio-file-name');
+  const preview = document.getElementById('audio-preview');
+  const previewText = preview.querySelector('.preview-text');
+  
+  fileInput.addEventListener('change', function() {
+    if (this.files && this.files.length > 0) {
+      const file = this.files[0];
+      fileName.textContent = file.name;
+      previewText.textContent = `चयनितं: ${file.name} (${(file.size / 1024 / 1024).toFixed(2)} MB)`;
+      preview.style.display = 'flex';
+    } else {
+      fileName.textContent = 'श्रव्यसञ्चिकां चिनोतु';
+      preview.style.display = 'none';
+    }
+  });
+});
+</script>

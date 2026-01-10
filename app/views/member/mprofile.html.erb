@@ -1,22 +1,43 @@
-<div class="button">
-    <%= link_to "Back", member_area_path, class: "anone" %>
-</div>
+<div class="profile-container">
+  <div class="profile-header">
+    <h1>MY PROFILE</h1>
+    <p>View and manage your profile information</p>
+    <%= link_to member_area_path, class: "back-button" do %>
+      <i class="fa-solid fa-arrow-left"></i> Back to Member Area
+    <% end %>
+  </div>
 
-<%= content_tag :div, class: "members" do %>
-    <div class="title">
-        <%= @member.name %><br/>
-    </div>
-    <div class="title">
-        <%= @member.email %><br/>
-    </div>
-
+  <div class="profile-card">
     <% if @member.image.present? %>
-        <div class="poster">
-            <img src="<%= rails_blob_url(@member.image) %>" />
-        </div>
+      <div class="profile-image">
+        <%= image_tag rails_blob_url(@member.image), alt: @member.name %>
+      </div>
+    <% else %>
+      <div class="profile-image placeholder">
+        <i class="fa-solid fa-user"></i>
+      </div>
     <% end %>
 
-    <%= link_to member_path(@member.id), class: "anone" do %>
-        <div class="button">परिवर्तयतु</div>
-    <% end %>
-<% end %>
+    <div class="profile-info">
+      <div class="info-group">
+        <label class="info-label">
+          <i class="fa-solid fa-user"></i> Name
+        </label>
+        <p class="info-value"><%= @member.name %></p>
+      </div>
+
+      <div class="info-group">
+        <label class="info-label">
+          <i class="fa-solid fa-envelope"></i> Email
+        </label>
+        <p class="info-value"><%= @member.email %></p>
+      </div>
+    </div>
+
+    <div class="profile-actions">
+      <%= link_to member_path(@member.id), class: "edit-button" do %>
+        <i class="fa-solid fa-pen-to-square"></i> Edit Profile
+      <% end %>
+    </div>
+  </div>
+</div>

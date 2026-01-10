@@ -1,34 +1,72 @@
-<%= form_tag user_sort_path do %>
-    <br/>
-    <% for j in 0..11 %>
-        <%= text_field_tag @keys[j], nil, class: "utextfield", placeholder: "Search by " + @cols[j] %><br/><br/>
+<div class="users-container">
+  <div class="users-header">
+    <h1>ALL USERS</h1>
+    <p>Manage registered users and their information</p>
+    <div class="users-count">
+      <i class="fa-solid fa-users"></i>
+      <span>Total Users: <strong><%= @count %></strong></span>
+    </div>
+    <%= link_to member_area_path, class: "back-button" do %>
+      <i class="fa-solid fa-arrow-left"></i> Back to Member Area
     <% end %>
-    <%= submit_tag "अग्रेस्थापनं करोतु", :class => "button" %><br/>
-<% end %>
+  </div>
 
-<%= @count %> users.
-<div class="overu">
-    <table class="users">
-        <tr>
-            <% for j in @cols %>
-                <th><%= j %></th>
-            <% end %>
-            <th>Delete</th>
-        </tr>
-        <% if @count == 0 %>
-            <tr>
-                <td colspan="13">No user found.</td>
-            </tr>
-        <% else %>
-            <% for i in @users do %>
-                <tr>
-                    <% for j in @keys %>
-                        <td><%= i[j] if !i[j].nil? %></td>
-                    <% end %>
-                    <td><%= link_to "Delete", user_delete_path(i.id), method: "delete",
-                            data: {:confirm => "Are you sure you want to delete this user?"} %></td>
-                </tr>
-            <% end %>
+  <!-- Filters Section -->
+  <div class="filters-wrapper">
+    <h3><i class="fa-solid fa-filter"></i> Filter Users</h3>
+    <%= form_tag user_sort_path, class: "filters-form" do %>
+      <div class="filters-grid">
+        <% for j in 0..11 %>
+          <div class="filter-group">
+            <%= label_tag @keys[j], @cols[j], class: "filter-label" %>
+            <%= text_field_tag @keys[j], params[@keys[j]], class: "filter-input", placeholder: "Search by #{@cols[j]}" %>
+          </div>
         <% end %>
-    </table>
+      </div>
+      
+      <div class="filter-actions">
+        <%= submit_tag "Apply Filters", class: "apply-button" %>
+        <%= link_to "Clear Filters", all_users_path, class: "clear-button" %>
+      </div>
+    <% end %>
+  </div>
+
+  <!-- Users Table -->
+  <div class="users-table-wrapper">
+    <% if @count == 0 %>
+      <div class="no-users">
+        <i class="fa-solid fa-user-slash"></i>
+        <p>No users found matching your criteria</p>
+      </div>
+    <% else %>
+      <div class="table-scroll">
+        <table class="users-table">
+          <thead>
+            <tr>
+              <% for j in @cols %>
+                <th><%= j %></th>
+              <% end %>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for i in @users do %>
+              <tr>
+                <% for j in @keys %>
+                  <td><%= i[j] if !i[j].nil? %></td>
+                <% end %>
+                <td class="actions-cell">
+                  <%= link_to user_delete_path(i.id), method: :delete, 
+                      data: { confirm: "Are you sure you want to delete this user? This will also remove them from all enrolled courses." }, 
+                      class: "delete-icon-btn" do %>
+                    <i class="fa-solid fa-trash"></i>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    <% end %>
+  </div>
 </div>

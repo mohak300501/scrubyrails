@@ -4,6 +4,16 @@ class GameController < ApplicationController
         render "ugame"
     end
 
+    def ugamen
+        @game = Game.find_by(id: params[:id])
+        if @game
+            render "ugamen"
+        else
+            flash[:alert] = "क्रीडा न प्राप्ता!"
+            redirect_to games_path
+        end
+    end
+
     def mgamer
         if session[:member]
             @games = Game.all
@@ -23,8 +33,7 @@ class GameController < ApplicationController
 
     def mgameu
         if session[:member]
-            @sr = params[:id]
-            @game = Game.find_by(id: @sr)
+            @game = Game.find_by(id: params[:id])
             render "mgameu"
         else
             redirect_to root_url
@@ -33,10 +42,13 @@ class GameController < ApplicationController
 
     def mgamecp
         game = Game.new(:name => params[:name], :info => params[:info])
+        if params[:image].present?
+            game.image.attach(params[:image])
+        end
         game.save
         change = Change.new(:time => Time.now, :email => session[:email], :table => "games", :cord => "create")
         change.save
-        flash[:notice] = "नूतनः gameH योजितः जातः!"
+        flash[:notice] = "नूतनः क्रीडा योजितः जातः!"
         redirect_to all_games_path
     end
     
@@ -45,15 +57,26 @@ class GameController < ApplicationController
         game.destroy
         change = Change.new(:time => Time.now, :email => session[:email], :table => "games", :cord => "delete")
         change.save
+        flash[:notice] = "क्रीडा विनष्टः जातः!"
         redirect_to all_games_path
     end
 
     def mgameup
         game = Game.find(params[:id])
-        game.update(:name => params[:name], :info => params[:info])
+        
+        # Update basic attributes
+        game.update(name: params[:game][:name], info: params[:game][:info])
+        
+        # Attach new image if provided
+        if params[:game][:image].present?
+            game.image.attach(params[:game][:image])
+        end
+        
+        # Log the change
         change = Change.new(:time => Time.now, :email => session[:email], :table => "games", :cord => "update")
         change.save
-        flash[:notice] = "gameH परिवर्तितः जातः!"
+        
+        flash[:notice] = "क्रीडा परिवर्तितः जातः!"
         redirect_to all_games_path
     end
 end

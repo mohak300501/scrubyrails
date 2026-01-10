@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2022_09_21_070008) do
+ActiveRecord::Schema[8.0].define(version: 2026_01_08_114607) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -60,6 +60,12 @@ ActiveRecord::Schema[8.0].define(version: 2022_09_21_070008) do
     t.string "regid"
   end
 
+  create_table "cd", id: :serial, force: :cascade do |t|
+    t.integer "pid"
+    t.string "regid", limit: 10
+    t.string "email", limit: 50
+  end
+
   create_table "changes", force: :cascade do |t|
     t.string "time"
     t.string "email"
@@ -105,6 +111,11 @@ ActiveRecord::Schema[8.0].define(version: 2022_09_21_070008) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "group_photos", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "libraries", force: :cascade do |t|
     t.string "bookid"
     t.string "name"
@@ -119,6 +130,17 @@ ActiveRecord::Schema[8.0].define(version: 2022_09_21_070008) do
     t.string "dor"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "added_by"
+    t.string "issued_to"
+    t.string "primary_genre"
+    t.string "secondary_genre"
+    t.integer "copies"
+    t.integer "present"
+    t.string "content_language"
+    t.string "almirah"
+    t.string "rack"
+    t.string "location_in_rack"
+    t.string "serialno"
   end
 
   create_table "members", force: :cascade do |t|
@@ -145,6 +167,15 @@ ActiveRecord::Schema[8.0].define(version: 2022_09_21_070008) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "teams", force: :cascade do |t|
+    t.string "name"
+    t.string "year"
+    t.string "branch"
+    t.string "mail"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -166,4 +197,5 @@ ActiveRecord::Schema[8.0].define(version: 2022_09_21_070008) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "cd", "users", column: "pid", name: "fk_user_id"
 end

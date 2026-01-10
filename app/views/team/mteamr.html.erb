@@ -1,0 +1,72 @@
+<div class="admin-page">
+  <div class="admin-header">
+    <h1>सदस्याः प्रबन्धनम्</h1>
+    <p class="subtitle">सर्वे सदस्याः अत्र दृश्यन्ते</p>
+    <div class="admin-actions">
+      <%= link_to new_team_path, class: "btn btn-primary" do %>
+        <i class="fa-solid fa-user-plus"></i>
+        <span>नूतनं सदस्यं योजयतु</span>
+      <% end %>
+      <%= link_to group_photos_path, class: "btn btn-secondary", style: "color:#54101d" do %>
+        <i class="fa-solid fa-images"></i>
+        <span>समूह चित्राणि</span>
+      <% end %>
+    </div>
+  </div>
+
+  <% if @teams.empty? %>
+    <div class="empty-state">
+      <i class="fa-solid fa-users" style="font-size: 64px; color: #ccc;"></i>
+      <h2>कोऽपि सदस्यः नास्ति</h2>
+      <p>प्रथमं सदस्यं योजयतु</p>
+      <%= link_to "सदस्यं योजयतु", new_team_path, class: "btn btn-primary" %>
+    </div>
+  <% else %>
+    <div class="cards-grid">
+      <% @teams.each do |team| %>
+        <div class="team-card">
+          <div class="card-image">
+            <% if team.image.attached? %>
+              <%= image_tag team.image, alt: team.name, class: "member-image" %>
+            <% else %>
+              <div class="no-image">
+                <i class="fa-solid fa-user"></i>
+              </div>
+            <% end %>
+          </div>
+          
+          <div class="card-content">
+            <h3 class="member-name"><%= team.name %></h3>
+            
+            <div class="member-info">
+              <div class="info-item">
+                <i class="fa-solid fa-calendar"></i>
+                <span><%= team.year %></span>
+              </div>
+              
+              <div class="info-item">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span><%= team.branch %></span>
+              </div>
+              
+              <div class="info-item">
+                <i class="fa-solid fa-envelope"></i>
+                <span><%= team.mail %></span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="card-actions">
+            <%= link_to team_path(team.id), class: "btn btn-edit" do %>
+              <i class="fa-solid fa-pen"></i>
+               परिवर्तयतु
+            <% end %>
+            <%= button_to team_delete_path(team.id), method: :delete, data: { confirm: "किं भवान् निश्चितः अस्ति?" }, class: "btn btn-delete" do %>
+              <i class="fa-solid fa-trash"></i> विनश्यतु
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

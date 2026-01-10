@@ -1,0 +1,81 @@
+<div class="form-page">
+  <div class="form-container">
+    <div class="form-header">
+      <div class="greeting">नमस्ते 🙏</div>
+      <h1>सदस्यं सम्पादयतु</h1>
+      <p class="form-subtitle">सदस्यस्य विवरणं परिवर्तयतु</p>
+    </div>
+
+    <%= form_with url: team_update_path(@team.id), method: :patch, local: true, multipart: true, class: "modern-form" do |f| %>
+      <div class="form-group">
+        <%= label_tag "नाम", nil, class: "form-label" %>
+        <%= text_field_tag "team[name]", @team.name, required: true, class: "form-input", placeholder: "सदस्यस्य नाम..." %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "वर्षं", nil, class: "form-label" %>
+        <%= text_field_tag "team[year]", @team.year, required: true, class: "form-input", placeholder: "वर्षं (उदा. २०२४)..." %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "शाखा", nil, class: "form-label" %>
+        <%= text_field_tag "team[branch]", @team.branch, required: true, class: "form-input", placeholder: "शाखा (उदा. CSE, ECE)..." %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "विद्युत्पत्रम्", nil, class: "form-label" %>
+        <%= email_field_tag "team[mail]", @team.mail, required: true, class: "form-input", placeholder: "विद्युत्पत्रं..." %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "चित्रम्", nil, class: "form-label" %>
+        
+        <% if @team.image.attached? %>
+          <div class="current-image">
+            <%= image_tag @team.image, alt: @team.name, class: "preview-img" %>
+            <p class="current-label">वर्तमानं चित्रम्</p>
+          </div>
+        <% end %>
+        
+        <div class="file-input-wrapper">
+          <%= file_field_tag "team[image]", class: "file-input", id: "team-image-input", accept: "image/*" %>
+          <label for="team-image-input" class="file-input-label">
+            <i class="upload-icon">📁</i>
+            <span id="image-file-name">नूतनं चित्रं चिनोतु</span>
+          </label>
+        </div>
+        <div id="image-preview" class="file-preview" style="display: none;">
+          <span class="preview-icon">✓</span>
+          <span class="preview-text"></span>
+        </div>
+        <p class="form-hint">नूतनं चित्रं न चिनोति चेत् वर्तमानं चित्रं स्थास्यति</p>
+      </div>
+
+      <div class="form-actions">
+        <%= submit_tag "परिवर्तनानि रक्षतु", class: "btn btn-primary" %>
+        <%= link_to "प्रतिगच्छतु", all_teams_path, class: "btn btn-secondary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const fileInput = document.getElementById('team-image-input');
+  const fileName = document.getElementById('image-file-name');
+  const preview = document.getElementById('image-preview');
+  const previewText = preview.querySelector('.preview-text');
+  
+  fileInput.addEventListener('change', function() {
+    if (this.files && this.files.length > 0) {
+      const file = this.files[0];
+      fileName.textContent = file.name;
+      previewText.textContent = `चयनितं: ${file.name} (${(file.size / 1024 / 1024).toFixed(2)} MB)`;
+      preview.style.display = 'flex';
+    } else {
+      fileName.textContent = 'नूतनं चित्रं चिनोतु';
+      preview.style.display = 'none';
+    }
+  });
+});
+</script>

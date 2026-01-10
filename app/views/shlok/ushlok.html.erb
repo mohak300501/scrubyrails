@@ -1,19 +1,32 @@
-<% for i in @shloks do %>
-    <div class="shloks">
-        <div class="title">
-            <%= i.title %><br/>
+<div class="shloks-page">
+  <div class="page-header">
+    <h1>श्लोकाः</h1>
+    <p class="page-subtitle">संस्कृत-श्लोकानां संग्रहः</p>
+  </div>
+
+  <div class="shloks-container">
+    <% @shloks.each do |shlok| %>
+      <div class="shlok-card">
+        <div class="shlok-card-header">
+          <h2 class="shlok-card-title"><%= shlok.title %></h2>
         </div>
 
-        <div class="shlok">
-            <p><%= i.shlok.html_safe %></p>
-        </div>
+        <div class="shlok-card-content">
+          <div class="shlok-verse">
+            <%= shlok.shlok.html_safe %>
+          </div>
 
-        <div>
-            <audio src="<%= rails_blob_url(i.audio) %>" controls/>
-        </div>
+          <div class="shlok-card-audio">
+            <div class="audio-icon">🎵</div>
+            <audio src="<%= rails_blob_url(shlok.audio) %>" controls class="audio-player"></audio>
+          </div>
 
-        <div class="translation">
-            <%= i.translation.html_safe %>
+          <div class="shlok-card-translation">
+            <div class="translation-label">अनुवादः</div>
+            <%= shlok.translation.html_safe %>
+          </div>
         </div>
-    </div>
-<% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

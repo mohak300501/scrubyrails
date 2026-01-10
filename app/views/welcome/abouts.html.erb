@@ -1,11 +1,34 @@
-<div>
-    <%= @about.html_safe if @about %>
-    <%= @htuse.html_safe if @htuse %>
-    <%= @terms.html_safe if @terms %>
-</div>
-<% if session[:member] %>
-    <% path = @about ? about_change_path : @htuse ? htuse_change_path : terms_change_path %>
-    <%= link_to path, class: "anone" do %>
-        <div class="button">परिवर्तयतु</div>
-    <% end %>
-<% end %>
+<section class="m-content-container">
+  <div class="m-content-wrapper">
+    <div class="m-content-section m-visible">
+      <div class="m-heading-section">
+        <h1><%= @about ? "ABOUT SANSKRIT CLUB IITR" : @htuse ? "HOW TO USE" : "TERMS & CONDITIONS" %></h1>
+        <span class="m-strip"></span>
+      </div>
+
+      <div class="m-content-text">
+        <%= @about.html_safe if @about %>
+        <%= @htuse.html_safe if @htuse %>
+        <%= @terms.html_safe if @terms %>
+      </div>
+
+      <% if session[:member] %>
+        <% path = @about ? about_change_path : @htuse ? htuse_change_path : terms_change_path %>
+        <div class="m-content-button-wrapper">
+          <%= link_to path, class: "m-anone" do %>
+            <div class="m-button m-button-primary">परिवर्तयतु</div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const contentSection = document.querySelector('.m-content-section');
+  if (contentSection) {
+    contentSection.classList.add('m-visible');
+  }
+});
+</script>

@@ -1,21 +1,41 @@
-<%= link_to "नूतनः gameH योजयतु", new_game_path %>
-<% for i in @games do %>
-    <div class="games">
-        <div class="title">
-            <%= i.name %><br/>
-        </div>
+<div class="admin-games-page">
+  <div class="admin-header">
+    <h1>क्रीडा-प्रबन्धनम्</h1>
+    <p class="admin-subtitle">सर्वाः क्रीडाः सम्पादयतु</p>
+    <%= link_to new_game_path, class: "btn btn-create" do %>
+      <span class="btn-icon">➕</span>
+      नूतनं क्रीडां योजयतु
+    <% end %>
+  </div>
 
-        <div class="info">
-            <p><%= i.info.html_safe %></p>
+  <div class="admin-games-container">
+    <% @games.each do |game| %>
+      <div class="admin-game-card">
+        <div class="admin-game-header">
+          <div class="game-badge">🎮 क्रीडा</div>
         </div>
-
-        <div class="updel">
-            <%= link_to game_path(i.id), class: "anone" do %>
-                <div class="button">परिवर्तयतु</div>
+        
+        <div class="admin-game-content">
+          <h2 class="admin-game-title"><%= game.name %></h2>
+          <div class="admin-game-info">
+            <%= truncate(game.info.html_safe, length: 150) %>
+          </div>
+          
+          <div class="admin-game-actions">
+            <%= link_to game_path(game.id), class: "btn btn-edit" do %>
+              <span class="btn-icon">✏️</span>
+              परिवर्तयतु
             <% end %>
-            <%= link_to game_delete_path(i.id), method: "delete", data: {:confirm => "Are you sure you want to delete this game?"}, class: "anone" do %>
-                <div class="button">विनश्यतु</div>
+            <%= button_to game_delete_path(game.id),
+                method: :delete,
+                data: { confirm: "किं भवान् निश्चितः अस्ति यत् एतं क्रीडां विनाशयितुम् इच्छति?" },
+                class: "btn btn-delete" do %>
+              <span class="btn-icon">🗑️</span>
+              विनश्यतु
             <% end %>
+          </div>
         </div>
-    </div>
-<% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

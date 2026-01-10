@@ -1,16 +1,76 @@
-<h1>Reset <%= session[:moru] %> password</h1>
-<% if !session[:fotp] %>
-    <div>Please enter your registered email, so that we can verify it&lsquo;s you.<br/><br/><br/></div>
-    <%= form_tag forgotp_path do %>
-        <%= email_field_tag :email, nil, :required => true, class: "utextfield", placeholder: "Your email" %><br/><br/>
-        <%= submit_tag "Submit", :class => "button" %>
-    <% end %>
+<div class="auth-page">
+  <div class="auth-container">
+    <div class="auth-card">
+      <div class="auth-header">
+        <div class="auth-icon">🔄</div>
+        <h1 class="auth-title">कूटशब्दं पुनः स्थापयतु</h1>
+        <p class="auth-subtitle">
+          <%= session[:moru] == "member" ? "प्रबन्धकः" : "उपयोक्ता" %> कूटशब्दं परिवर्तयतु
+        </p>
+      </div>
 
-<% else %>
-    <%= form_tag resetp_path do %>
-        <%= text_field_tag :fotp, nil, :required => true, class: "utextfield", placeholder: "Enter OTP" %><br/><br/>
-        <%= password_field_tag :password, nil, :required => true, class: "utextfield", placeholder: "Set new password" %><br/><br/>
-        <%= password_field_tag :repass, nil, :required => true, class: "utextfield", placeholder: "Re-enter password" %><br/><br/>
-        <%= submit_tag "Submit", :class => "button" %>
-    <% end %>
-<% end %>
+      <% if !session[:fotp] %>
+        <div class="reset-notice">
+          <p>📧 आपणं विद्युत्पत्रं प्रविशतु। वयं सत्यापनार्थं OTP प्रेषयिष्यामः।</p>
+        </div>
+
+        <%= form_tag forgotp_path, class: "auth-form" do %>
+          <div class="form-group">
+            <%= label_tag :email, "विद्युत्पत्रम्", class: "form-label" %>
+            <div class="input-with-icon">
+              <span class="input-icon">📧</span>
+              <%= email_field_tag :email, nil, required: true, class: "form-input", placeholder: "your@email.com", autofocus: true %>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <%= submit_tag "OTP प्रेषयतु", class: "btn btn-primary btn-full" %>
+          </div>
+        <% end %>
+
+      <% else %>
+        <div class="otp-notice">
+          <p>📨 OTP आपणस्य विद्युत्पत्रे प्रेषितः अस्ति</p>
+        </div>
+
+        <%= form_tag resetp_path, class: "auth-form" do %>
+          <div class="form-group">
+            <%= label_tag :fotp, "OTP", class: "form-label" %>
+            <div class="input-with-icon">
+              <span class="input-icon">🔢</span>
+              <%= text_field_tag :fotp, nil, required: true, class: "form-input", placeholder: "Enter 6-digit OTP", maxlength: 6, autofocus: true %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= label_tag :password, "नवीनः कूटशब्दः", class: "form-label" %>
+            <div class="input-with-icon">
+              <span class="input-icon">🔑</span>
+              <%= password_field_tag :password, nil, required: true, class: "form-input", placeholder: "••••••••", minlength: 6 %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= label_tag :repass, "कूटशब्दः पुनः", class: "form-label" %>
+            <div class="input-with-icon">
+              <span class="input-icon">🔒</span>
+              <%= password_field_tag :repass, nil, required: true, class: "form-input", placeholder: "••••••••", minlength: 6 %>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <%= submit_tag "कूटशब्दं परिवर्तयतु", class: "btn btn-primary btn-full" %>
+          </div>
+        <% end %>
+      <% end %>
+
+      <div class="auth-footer">
+        <div class="auth-links">
+          <%= link_to user_login_path, class: "auth-link" do %>
+            <span>🔐</span> प्रवेशः पृष्ठं प्रति गच्छतु
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

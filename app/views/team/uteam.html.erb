@@ -1,0 +1,74 @@
+<div class="team-page">
+  <div class="team-hero">
+    <h1>संस्कृतसत्यार्थसेवकाः</h1>
+    <p class="hero-subtitle">Sanskrit Club Volunteers</p>
+  </div>
+
+  <!-- Group Photos Gallery Section -->
+  <div class="group-gallery">
+    <div class="gallery-slider">
+      <div class="gallery-track">
+        <% if @group_photos.present? && @group_photos.any? %>
+          <!-- Duplicate images 3 times for seamless loop -->
+          <% 3.times do %>
+            <% @group_photos.each do |photo| %>
+              <div class="gallery-item">
+                <%= image_tag photo, class: "gallery-image", alt: "Group photo" %>
+              </div>
+            <% end %>
+          <% end %>
+        <% else %>
+          <!-- Placeholder images if no photos uploaded -->
+          <% 3.times do %>
+            <% 6.times do |i| %>
+              <div class="gallery-item">
+                <div class="gallery-placeholder">
+                  <i class="fa-solid fa-users"></i>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <% if @teams.empty? %>
+    <div class="empty-state">
+      <i class="fa-solid fa-users" style="font-size: 64px; color: #ccc;"></i>
+      <h2>टीम सदस्याः शीघ्रमेव आगमिष्यन्ति</h2>
+      <p>कृपया पुनः आगच्छतु</p>
+    </div>
+  <% else %>
+    <div class="team-grid">
+  <% @teams.each do |team| %>
+    <div class="member-card">
+      <div class="member-image-wrapper">
+        <% if team.image.attached? %>
+          <%= image_tag team.image, alt: team.name, class: "member-photo" %>
+        <% else %>
+          <div class="member-placeholder">
+            <i class="fa-solid fa-user"></i>
+          </div>
+        <% end %>
+        <div class="member-overlay">
+           <a href="mailto:<%= team.mail %>" class="overlay-contact" title="सम्पर्कं करोतु">
+              <i class="fa-solid fa-envelope"></i>
+           </a>
+        </div>
+      </div>
+      
+      <div class="member-details">
+        <h3 class="member-name"><%= team.name %></h3>
+        <div class="member-info-row">
+          <span class="member-tag"><i class="fa-solid fa-graduation-cap"></i> <%= team.branch %></span>
+          <span class="member-tag"><i class="fa-solid fa-calendar-days"></i> <%= team.year %></span>
+        </div>
+      </div>
+      
+      <div class="card-footer-accent"></div>
+    </div>
+  <% end %>
+</div>
+  <% end %>
+</div>

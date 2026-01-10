@@ -1,0 +1,23 @@
+<div class="game-detail-page">
+  <div class="game-detail-container">
+    <div class="game-detail-header">
+      <h1 class="game-detail-title"><%= @game.name %></h1>
+    </div>
+    
+    <% if @game.image.attached? %>
+      <div class="game-detail-image">
+        <%= image_tag @game.image, alt: @game.name %>
+      </div>
+    <% end %>
+    
+    <div class="game-detail-content">
+      <%= @game.info.html_safe %>
+    </div>
+    
+    <div class="back-button">
+      <%= link_to games_path, class: "btn btn-secondary" do %>
+        ← प्रतिगच्छतु
+      <% end %>
+    </div>
+  </div>
+</div>

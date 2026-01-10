@@ -1,24 +1,44 @@
-<div class="overf">
-    <div class="feedback">
-            <div class="th">Time</div>
-            <div class="th">Email</div>
-            <div class="th">Type</div>
-            <div class="th fbtdl">Feedback</div>
-        <% for i in @feedbacks do %>
-                <div class="td">
-                    <%= i.time %>
-                </div>
-                <div class="td">
-                    <%= i.email %>
-                </div>
-                <div class="td">
-                    <%= i.typef %>
-                </div>
-                <div class="fbtdl">
-                    <% for j in i.feedback.split("\n") do %>
-                        <%= j %><br/>
-                    <% end %>
-                </div>
-        <% end %>
-    </div>
+<div class="admin-feedback-page">
+  <div class="admin-feedback-header">
+    <h2>प्रतिक्रिया प्रबन्धनम्</h2>
+    <p>सर्वे प्रतिक्रियाः अत्र दृश्यन्ते</p>
+  </div>
+
+  <div class="overf">
+    <% if @feedbacks.empty? %>
+      <div class="empty-feedback">
+        <i class="fa-solid fa-inbox"></i>
+        <p>No feedback received yet</p>
+      </div>
+    <% else %>
+      <table class="feedback-table">
+        <thead>
+          <tr>
+            <th><i class="fa-solid fa-clock"></i> Time</th>
+            <th><i class="fa-solid fa-envelope"></i> Email</th>
+            <th><i class="fa-solid fa-tag"></i> Type</th>
+            <th><i class="fa-solid fa-message"></i> Feedback</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @feedbacks.each do |feedback| %>
+            <tr>
+              <td class="time-cell"><%= feedback.time %></td>
+              <td class="email-cell"><%= feedback.email %></td>
+              <td>
+                <span class="type-badge type-<%= feedback.typef %>">
+                  <%= feedback.typef %>
+                </span>
+              </td>
+              <td class="feedback-text">
+                <% feedback.feedback.split("\n").each do |line| %>
+                  <%= line %><br/>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+  </div>
 </div>

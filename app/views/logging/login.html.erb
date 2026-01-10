@@ -1,14 +1,54 @@
-<h1>Log in as <%= session[:moru] %></h1>
-<%= form_tag login_post_path do %>
-    <br/>
-    <%= email_field_tag :email, nil, :required => true, class: "utextfield", placeholder: "Your email" %><br/><br/>
-    <%= password_field_tag :password, nil, :required => true, class: "utextfield", placeholder: "Your password" %><br/><br/><br/>
-    <%= submit_tag "Log In", :class => "button" %>
-<% end %>
-<br/>
-<div>
-    Forgot password? <%= link_to "Reset", forgot_path %> it.<br/>
-    <% if session[:moru] == "user" %>
-            <br/>New user? <%= link_to "Sign up", new_user_path %> instead.<br/><br/>
-    <% end %>
+<div class="auth-page">
+  <div class="auth-container">
+    <div class="auth-card">
+      <div class="auth-header">
+        <div class="auth-icon">🔐</div>
+        <h1 class="auth-title">स्वागतम्</h1>
+        <p class="auth-subtitle">
+          <%= session[:moru] == "member" ? "प्रबन्धकः" : "उपयोक्ता" %> रूपेण प्रवेशः करोतु
+        </p>
+      </div>
+
+      <%= form_tag login_post_path, class: "auth-form" do %>
+        <div class="form-group">
+          <%= label_tag :email, "विद्युत्पत्रम्", class: "form-label" %>
+          <div class="input-with-icon">
+            <span class="input-icon">📧</span>
+            <%= email_field_tag :email, nil, required: true, class: "form-input", placeholder: "your@email.com", autofocus: true %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= label_tag :password, "कूटशब्दः", class: "form-label" %>
+          <div class="input-with-icon">
+            <span class="input-icon">🔑</span>
+            <%= password_field_tag :password, nil, required: true, class: "form-input", placeholder: "••••••••" %>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <%= submit_tag "प्रवेशः करोतु", class: "btn btn-primary btn-full" %>
+        </div>
+      <% end %>
+
+      <div class="auth-footer">
+        <div class="auth-links">
+          <%= link_to forgot_path, class: "auth-link" do %>
+            <span>🔄</span> कूटशब्दं विस्मृतवान्?
+          <% end %>
+        </div>
+
+        <% if session[:moru] == "user" %>
+          <div class="auth-divider">
+            <span>अथवा</span>
+          </div>
+          <div class="auth-links">
+            <%= link_to new_user_path, class: "auth-link-secondary" do %>
+              <span>✨</span> नवीनः उपयोक्ता? पञ्जीकरणं करोतु
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
