@@ -69,4 +69,78 @@
       <% end %>
     </div>
   <% end %>
+
+  <!-- Alumni Section Divider -->
+  <div class="section-divider">
+    <h2>पूर्वछात्राः प्रबन्धनम्</h2>
+    <p class="section-subtitle">Alumni Management</p>
+  </div>
+
+  <!-- Alumni Header with Add Button -->
+  <div class="admin-header alumni-section-header">
+    <div class="admin-actions">
+      <%= link_to new_team_path, class: "btn btn-primary alumni-btn" do %>
+        <i class="fa-solid fa-user-graduate"></i>
+        <span>नूतनं पूर्वछात्रं योजयतु</span>
+      <% end %>
+    </div>
+  </div>
+
+  <!-- Alumni Section -->
+  <% if @alumnis.empty? %>
+    <div class="empty-state">
+      <i class="fa-solid fa-user-graduate" style="font-size: 64px; color: #ccc;"></i>
+      <h2>कोऽपि पूर्वछात्रः नास्ति</h2>
+      <p>पूर्वछात्राः mteamc पृष्ठे योजिताः भविष्यन्ति</p>
+    </div>
+  <% else %>
+    <div class="cards-grid">
+      <% @alumnis.each do |alumni| %>
+        <div class="team-card alumni-card">
+          <div class="card-image">
+            <% if alumni.image.present? %>
+              <%= image_tag alumni.image, alt: alumni.name, class: "member-image" %>
+            <% else %>
+              <div class="no-image alumni-no-image">
+                <i class="fa-solid fa-user-graduate"></i>
+              </div>
+            <% end %>
+          </div>
+          
+          <div class="card-content">
+            <h3 class="member-name"><%= alumni.name %></h3>
+            
+            <div class="member-info">
+              <div class="info-item">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span><%= alumni.branch %></span>
+              </div>
+              
+              <div class="info-item">
+                <i class="fa-solid fa-envelope"></i>
+                <span><%= alumni.mail %></span>
+              </div>
+              
+              <% if alumni.linkedin.present? %>
+                <div class="info-item">
+                  <i class="fa-brands fa-linkedin"></i>
+                  <a href="<%= alumni.linkedin %>" target="_blank" style="color: #47596f; text-decoration: none;">Profile</a>
+                </div>
+              <% end %>
+            </div>
+          </div>
+          
+          <div class="card-actions">
+            <%= link_to alumni_path(alumni.id), class: "btn btn-edit" do %>
+              <i class="fa-solid fa-pen"></i>
+               परिवर्तयतु
+            <% end %>
+            <%= button_to alumni_delete_path(alumni.id), method: :delete, data: { confirm: "किं भवान् निश्चितः अस्ति?" }, class: "btn btn-delete" do %>
+              <i class="fa-solid fa-trash"></i> विनश्यतु
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>

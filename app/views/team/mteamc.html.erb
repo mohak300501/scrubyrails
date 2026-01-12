@@ -1,5 +1,6 @@
 <div class="form-page">
   <div class="form-container">
+    <!-- Team Member Form -->
     <div class="form-header">
       <div class="greeting">नमस्ते 🙏</div>
       <h1>नूतनं सदस्यं योजयतु</h1>
@@ -33,10 +34,10 @@
           <%= file_field_tag :image, required: true, class: "file-input", id: "team-image-input", accept: "image/*" %>
           <label for="team-image-input" class="file-input-label">
             <i class="upload-icon">📁</i>
-            <span id="image-file-name">चित्रं चिनोतु</span>
+            <span id="team-file-name">चित्रं चिनोतु</span>
           </label>
         </div>
-        <div id="image-preview" class="file-preview" style="display: none;">
+        <div id="team-preview" class="file-preview" style="display: none;">
           <span class="preview-icon">✓</span>
           <span class="preview-text"></span>
         </div>
@@ -48,24 +49,100 @@
       </div>
     <% end %>
   </div>
+
+  <!-- Divider -->
+  <div class="form-divider">
+    <span class="divider-text">अथवा</span>
+  </div>
+
+  <!-- Alumni Form -->
+  <div class="form-container alumni-form">
+    <div class="form-header">
+      <div class="greeting">🎓</div>
+      <h1>पूर्वछात्रं योजयतु</h1>
+      <p class="form-subtitle">नवीनं पूर्वछात्रं सृजयतु</p>
+    </div>
+
+    <%= form_tag alumni_post_path, multipart: true, class: "modern-form" do %>
+      <div class="form-group">
+        <%= label_tag "नाम", nil, class: "form-label" %>
+        <%= text_field_tag :name, nil, required: true, class: "form-input", placeholder: "पूर्वछात्रस्य नाम..." %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "शाखा", nil, class: "form-label" %>
+        <%= text_field_tag :branch, nil, required: true, class: "form-input", placeholder: "शाखा (उदा. CSE, ECE)..." %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "विद्युत्पत्रम्", nil, class: "form-label" %>
+        <%= email_field_tag :mail, nil, required: true, class: "form-input", placeholder: "विद्युत्पत्रं..." %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "LinkedIn", nil, class: "form-label" %>
+        <%= url_field_tag :linkedin, nil, required: true, class: "form-input", placeholder: "LinkedIn संयोजनम्..." %>
+      </div>
+
+      <div class="form-group">
+        <%= label_tag "चित्रम्", nil, class: "form-label" %>
+        <div class="file-input-wrapper">
+          <%= file_field_tag :image, required: true, class: "file-input", id: "alumni-image-input", accept: "image/*" %>
+          <label for="alumni-image-input" class="file-input-label">
+            <i class="upload-icon">📁</i>
+            <span id="alumni-file-name">चित्रं चिनोतु</span>
+          </label>
+        </div>
+        <div id="alumni-preview" class="file-preview" style="display: none;">
+          <span class="preview-icon">✓</span>
+          <span class="preview-text"></span>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <%= submit_tag "अग्रेस्थापनं करोतु", class: "btn btn-primary alumni-btn" %>
+        <%= link_to "प्रतिगच्छतु", all_teams_path, class: "btn btn-secondary" %>
+      </div>
+    <% end %>
+  </div>
 </div>
+
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  const fileInput = document.getElementById('team-image-input');
-  const fileName = document.getElementById('image-file-name');
-  const preview = document.getElementById('image-preview');
-  const previewText = preview.querySelector('.preview-text');
+  // Team image upload
+  const teamFileInput = document.getElementById('team-image-input');
+  const teamFileName = document.getElementById('team-file-name');
+  const teamPreview = document.getElementById('team-preview');
+  const teamPreviewText = teamPreview.querySelector('.preview-text');
   
-  fileInput.addEventListener('change', function() {
+  teamFileInput.addEventListener('change', function() {
     if (this.files && this.files.length > 0) {
       const file = this.files[0];
-      fileName.textContent = file.name;
-      previewText.textContent = `चयनितं: ${file.name} (${(file.size / 1024 / 1024).toFixed(2)} MB)`;
-      preview.style.display = 'flex';
+      teamFileName.textContent = file.name;
+      teamPreviewText.textContent = `चयनितं: ${file.name} (${(file.size / 1024 / 1024).toFixed(2)} MB)`;
+      teamPreview.style.display = 'flex';
     } else {
-      fileName.textContent = 'चित्रं चिनोतु';
-      preview.style.display = 'none';
+      teamFileName.textContent = 'चित्रं चिनोतु';
+      teamPreview.style.display = 'none';
+    }
+  });
+
+  // Alumni image upload
+  const alumniFileInput = document.getElementById('alumni-image-input');
+  const alumniFileName = document.getElementById('alumni-file-name');
+  const alumniPreview = document.getElementById('alumni-preview');
+  const alumniPreviewText = alumniPreview.querySelector('.preview-text');
+  
+  alumniFileInput.addEventListener('change', function() {
+    if (this.files && this.files.length > 0) {
+      const file = this.files[0];
+      alumniFileName.textContent = file.name;
+      alumniPreviewText.textContent = `चयनितं: ${file.name} (${(file.size / 1024 / 1024).toFixed(2)} MB)`;
+      alumniPreview.style.display = 'flex';
+    } else {
+      alumniFileName.textContent = 'चित्रं चिनोतु';
+      alumniPreview.style.display = 'none';
     }
   });
 });

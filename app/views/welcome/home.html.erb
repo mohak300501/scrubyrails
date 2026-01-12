@@ -34,12 +34,12 @@
   <div class="announcements-grid-layout">
     <!-- Left Side: Sanskrit Verse -->
     <div class="verse-section">
-      <p class="verse-sanskrit">
-        जाड्यं धियो हरति सिंचति वाचि सत्यं,<br/>
-        मानोन्नतिं दिशति पापमपाकरोति |<br/>
-        चेतः प्रसादयति दिक्षु तनोति कीर्तिं,<br/>
-        सत्संगतिः कथय किं न करोति पुंसाम् ||
-      </p>
+      <div class="verse-sanskrit">
+      <p>जाड्यं धियो हरति सिंचति वाचि सत्यं,</p>
+      <p>मानोन्नतिं दिशति पापमपाकरोति |</p>
+      <p>चेतः प्रसादयति दिक्षु तनोति कीर्तिं,</p>
+      <p>सत्संगतिः कथय किं न करोति पुंसाम् ||</p>
+      </div>
       <p class="verse-hindi">
         (अच्छे मित्रों का साथ बुद्धि की जड़ता को हर लेता है, वाणी में सत्य का संचार करता है, मान और उन्नति को बढ़ाता है और पाप से मुक्त करता है। चित्त को प्रसन्न करता है और हमारी कीर्ति को सभी दिशाओं में फैलाता है। आप ही कहें कि सत्संगति मनुष्यों के भले के लिये क्या नहीं करती!)
       </p>
@@ -48,7 +48,7 @@
     <!-- Right Side: Announcements -->
     <div class="announcement-section">
       <div class="heading-section">
-        <h1>ANNOUNCEMENTS</h1>
+        <h1>NOTICEBOARD</h1>
         <span class="strip"></span>
       </div>
 
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Observe each announcement box with staggered delay
   const announcementBoxes = document.querySelectorAll('.announcement-box');
   announcementBoxes.forEach((box, index) => {
-    box.style.transitionDelay = `${index * 0.15}s`;
+    box.style.transitionDelay = `${index * 0.3}s`;
     observer.observe(box);
   });
 

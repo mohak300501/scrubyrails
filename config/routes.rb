@@ -123,6 +123,7 @@ Rails.application.routes.draw do
     get "library/:id/up",                             to:"library#mlibraryu",     as:"library"
     patch "library/:id",                              to:"library#mlibraryup",    as:"library_update"
     delete "library/:id/del",                         to:"library#mlibrarydp",    as:"library_delete"
+    
     get "team/uteam",                                                       as:"teams"
     get "team/mteamr",                                                      as:"all_teams"
     get "team/mteamc",                                                      as:"new_team"
@@ -135,4 +136,11 @@ Rails.application.routes.draw do
     get "team/mgroupr",                             to:"team#mgroup_photos",        as:"group_photos"
     post "team/mgroupcp",                           to:"team#mgroup_photo_create",  as:"mgroup_photo_create"
     delete "team/group/:id/del",                    to:"team#mgroup_photo_delete",  as:"delete_group_photo"
+
+     # Alumni routes - using TeamController
+     post "alumni/malumnicp",                        to:"team#malumnicp",    as:"alumni_post"
+     get "alumni/:id/up",                            to:"team#malumniu",     as:"alumni"
+     patch "alumni/:id",                             to:"team#malumniup",    as:"alumni_update"
+     delete "alumni/:id/del",                        to:"team#malumnidp",    as:"alumni_delete"  
+
 end

@@ -1,7 +1,29 @@
 // Place all the styles related to the Shlok controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+@font-face {
+  font-family: 'Saira';
+  src: font-url('SairaStencil.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
+@font-face {
+  font-family: 'Tiro';
+  src: font-url('TiroDevanagariHindi.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Hind';
+  src: font-url('Hind-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 .shloks {
     box-shadow: -3px 3px 10px rgb(100, 100, 100);
     margin: 1rem auto;
@@ -14,6 +36,7 @@
         width: 90%;
         text-align: left;
         font-weight: bold;
+        font-family: 'Hind';
         font-size: 1.3rem;
     }
     .shlok:before {
@@ -31,6 +54,7 @@
         margin: 1rem auto;
         padding: 1rem;
         font-size: 1.5rem;
+        font-family: 'Hind';
         background-color: #000;
         background-image: url(https://dl.dropbox.com/s/gz96744xfcfy54o/bg.jpeg?dl=0);
         background-position: bottom;
@@ -47,6 +71,7 @@
     .translation {
         margin: 1rem auto;
         font-size: 1.3rem;
+        font-family: 'Hind';
         width: 90%;
         text-align: left;
     }
@@ -155,6 +180,7 @@
   border-radius: 10px;
   margin-bottom: 1.5rem;
   font-size: 1.2rem;
+  font-family: 'Hind';
   line-height: 1.8;
   color: #2c3e50;
   font-style: italic;
@@ -785,4 +811,52 @@
     flex-direction: column;
     align-items: stretch;
   }
+}
+
+.form-divider {
+  position: relative;
+  text-align: center;
+  margin: 60px auto;
+  max-width: 600px;
+}
+
+.form-divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ddd, transparent);
+}
+
+.divider-text {
+  position: relative;
+  background: #f8f9fa;
+  padding: 0 30px;
+  color: #666;
+  font-family: 'Hind';
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.alumni-form {
+  margin-top: 40px;
+}
+
+.alumni-form .form-header {
+  background: linear-gradient(135deg, #47596f 0%, #364557 100%);
+}
+
+.alumni-form .form-header h1,
+.alumni-form .form-header .form-subtitle {
+  color: white;
+}
+
+.alumni-btn {
+  background: linear-gradient(135deg, #47596f 0%, #364557 100%);
+}
+
+.alumni-btn:hover {
+  background: linear-gradient(135deg, #364557 0%, #2c3a47 100%);
 }

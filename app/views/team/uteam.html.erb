@@ -33,6 +33,12 @@
     </div>
   </div>
 
+  <!-- Current Team Members Section -->
+  <div class="section-header">
+    <h2>वर्तमानाः सदस्याः</h2>
+    <p class="section-subtitle">Current Team Members</p>
+  </div>
+
   <% if @teams.empty? %>
     <div class="empty-state">
       <i class="fa-solid fa-users" style="font-size: 64px; color: #ccc;"></i>
@@ -41,34 +47,83 @@
     </div>
   <% else %>
     <div class="team-grid">
-  <% @teams.each do |team| %>
-    <div class="member-card">
-      <div class="member-image-wrapper">
-        <% if team.image.attached? %>
-          <%= image_tag team.image, alt: team.name, class: "member-photo" %>
-        <% else %>
-          <div class="member-placeholder">
-            <i class="fa-solid fa-user"></i>
+      <% @teams.each do |team| %>
+        <div class="member-card">
+          <div class="member-image-wrapper">
+            <% if team.image.attached? %>
+              <%= image_tag team.image, alt: team.name, class: "member-photo" %>
+            <% else %>
+              <div class="member-placeholder">
+                <i class="fa-solid fa-user"></i>
+              </div>
+            <% end %>
+            <div class="member-overlay">
+              <a href="mailto:<%= team.mail %>" class="overlay-contact" title="सम्पर्कं करोतु">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </div>
           </div>
-        <% end %>
-        <div class="member-overlay">
-           <a href="mailto:<%= team.mail %>" class="overlay-contact" title="सम्पर्कं करोतु">
-              <i class="fa-solid fa-envelope"></i>
-           </a>
+          
+          <div class="member-details">
+            <h3 class="member-name"><%= team.name %></h3>
+            <div class="member-info-row">
+              <span class="member-tag"><i class="fa-solid fa-graduation-cap"></i> <%= team.branch %></span>
+              <span class="member-tag"><i class="fa-solid fa-layer-group"></i> <%= team.year %></span>
+            </div>
+          </div>
+          
+          <div class="card-footer-accent"></div>
         </div>
-      </div>
-      
-      <div class="member-details">
-        <h3 class="member-name"><%= team.name %></h3>
-        <div class="member-info-row">
-          <span class="member-tag"><i class="fa-solid fa-graduation-cap"></i> <%= team.branch %></span>
-          <span class="member-tag"><i class="fa-solid fa-calendar-days"></i> <%= team.year %></span>
-        </div>
-      </div>
-      
-      <div class="card-footer-accent"></div>
+      <% end %>
     </div>
   <% end %>
-</div>
+
+  <!-- Alumni Section -->
+  <div class="section-header alumni-section">
+    <h2>पूर्वछात्राः</h2>
+    <p class="section-subtitle">Our Esteemed Alumni</p>
+  </div>
+
+  <% if @alumnis.present? && @alumnis.any? %>
+    <div class="team-grid alumni-grid">
+      <% @alumnis.each do |alumni| %>
+        <div class="member-card alumni-card">
+          <div class="member-image-wrapper">
+            <% if alumni.image.present? %>
+              <%= image_tag alumni.image, alt: alumni.name, class: "member-photo" %>
+            <% else %>
+              <div class="member-placeholder">
+                <i class="fa-solid fa-user-graduate"></i>
+              </div>
+            <% end %>
+            <div class="member-overlay">
+              <a href="mailto:<%= alumni.mail %>" class="overlay-contact" title="सम्पर्कं करोतु">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+              <% if alumni.linkedin.present? %>
+                <a href="<%= alumni.linkedin %>" target="_blank" class="overlay-contact" title="LinkedIn">
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+              <% end %>
+            </div>
+          </div>
+          
+          <div class="member-details">
+            <h3 class="member-name"><%= alumni.name %></h3>
+            <div class="member-info-row">
+              <span class="member-tag alumni-tag"><i class="fa-solid fa-graduation-cap"></i> <%= alumni.branch %></span>
+            </div>
+          </div>
+          
+          <div class="card-footer-accent alumni-accent"></div>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="empty-state">
+      <i class="fa-solid fa-user-graduate" style="font-size: 64px; color: #ccc;"></i>
+      <h2>पूर्वछात्राः शीघ्रमेव प्रदर्शिष्यन्ते</h2>
+      <p>कृपया पुनः आगच्छतु</p>
+    </div>
   <% end %>
 </div>

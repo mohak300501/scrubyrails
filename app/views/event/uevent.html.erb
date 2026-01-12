@@ -9,15 +9,12 @@
       <div class="event-card">
         <div class="event-image">
           <%= image_tag rails_blob_url(event.image), alt: event.name %>
-          <div class="event-overlay">
-            <span class="event-badge">नूतनः</span>
-          </div>
         </div>
         
         <div class="event-content">
           <h2 class="event-title"><%= event.name %></h2>
           <div class="event-info">
-            <%= truncate(event.info.html_safe, length: 150) %>
+          <%= truncate(strip_tags(event.info), length: 150) %>
           </div>
           <div class="e-button">
             <%= link_to "अधिकं पठतु", event_uview_path(event.id), class: "anone" %>
@@ -27,3 +24,4 @@
     <% end %>
   </div>
 </div>
+

@@ -194,7 +194,7 @@
 }
 
 .member-name {
-  font-family: 'Saira';
+  font-family: 'Hind';
   font-size: 1.6rem;
   color: #54101D;
   margin-bottom: 20px;
@@ -669,7 +669,7 @@
   }
   
   .member-name {
-    font-family: 'Tiro', serif; // Sanskrit/Hindi specific font
+    font-family: 'Hind', serif; // Sanskrit/Hindi specific font
     font-size: 1.4rem;
     color: #312229;
     margin-bottom: 12px;
@@ -705,7 +705,7 @@
     padding: 4px 12px;
     background: #f5f0e8;
     color: #54101D;
-    border-radius: 50px;
+    border-radius: 20px;
     display: flex;
     align-items: center;
     gap: 6px;
@@ -713,7 +713,7 @@
   
     i {
       font-size: 0.8rem;
-      color: #b18653;
+      color: #54101d;
     }
   }
   
@@ -982,5 +982,517 @@
   
   .form-header h1 {
     font-size: 1.5rem;
+  }
+}
+
+
+
+/* ========================================
+   TEAM PAGE STYLES
+======================================== */
+.team-container {
+  min-height: calc(100vh - 165px - 300px);
+  padding: 4rem 2rem;
+  
+  .team-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    
+    h1 {
+      font-family: 'Saira', sans-serif;
+      font-size: 3.5rem;
+      color: #312229;
+      letter-spacing: 3px;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    p {
+      font-family: 'Hind', sans-serif;
+      color: #47596F;
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+  }
+  
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    
+    .no-team-members {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 4rem 2rem;
+      
+      i {
+        font-size: 4rem;
+        color: #47596F;
+        opacity: 0.3;
+        margin-bottom: 1rem;
+      }
+      
+      p {
+        font-family: 'Hind', sans-serif;
+        font-size: 1.2rem;
+        color: #47596F;
+        opacity: 0.7;
+      }
+    }
+    
+    .team-member-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(71, 89, 111, 0.15);
+      transition: all 0.4s ease;
+      border: 2px solid transparent;
+      position: relative;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, #47596F, #B18653);
+        transform: scaleX(0);
+        transition: transform 0.4s ease;
+        z-index: 2;
+      }
+      
+      &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 35px rgba(71, 89, 111, 0.25);
+        border-color: #47596F;
+        
+        &::before {
+          transform: scaleX(1);
+        }
+        
+        .team-member-image {
+          img {
+            transform: scale(1.08);
+          }
+          
+          &::after {
+            opacity: 0.6;
+          }
+        }
+        
+        .team-member-info h3 {
+          color: #47596F;
+        }
+      }
+      
+      .team-member-image {
+        width: 100%;
+        height: 320px;
+        overflow: hidden;
+        background: linear-gradient(135deg, #47596F 0%, #312229 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 120px;
+          background: linear-gradient(to top, rgba(49, 34, 41, 0.8), transparent);
+          opacity: 0.4;
+          transition: opacity 0.3s ease;
+        }
+        
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.4s ease;
+        }
+        
+        &.placeholder {
+          i {
+            font-size: 5rem;
+            color: #D5C5AE;
+            opacity: 0.4;
+            z-index: 1;
+          }
+        }
+      }
+      
+      .team-member-info {
+        padding: 2rem 1.5rem;
+        text-align: center;
+        background: white;
+        position: relative;
+        
+        h3 {
+          font-family: 'Hind', sans-serif;
+          font-size: 1.5rem;
+          color: #312229;
+          margin: 0;
+          font-weight: 600;
+          letter-spacing: 0.5px;
+          transition: color 0.3s ease;
+        }
+      }
+    }
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .team-container {
+    padding: 3rem 1.5rem;
+    
+    .team-header h1 {
+      font-size: 2.8rem;
+    }
+    
+    .team-grid {
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 2rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .team-container {
+    padding: 2rem 1rem;
+    
+    .team-header {
+      margin-bottom: 2.5rem;
+      
+      h1 {
+        font-size: 2.2rem;
+        letter-spacing: 2px;
+      }
+      
+      p {
+        font-size: 1rem;
+      }
+    }
+    
+    .team-grid {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.5rem;
+      
+      .team-member-card {
+        .team-member-image {
+          height: 260px;
+        }
+        
+        .team-member-info {
+          padding: 1.5rem 1rem;
+          
+          h3 {
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .team-container {
+    padding: 1.5rem 0.75rem;
+    
+    .team-header {
+      margin-bottom: 2rem;
+      
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+    
+    .team-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      
+      .team-member-card {
+        .team-member-image {
+          height: 300px;
+        }
+        
+        .team-member-info h3 {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+/* ========================================
+   SECTION HEADERS
+   ======================================== */
+
+.section-header {
+  text-align: center;
+  margin: 80px 0 50px;
+  padding: 30px 20px;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #54101D, #b18653, #54101D);
+    border-radius: 2px;
+  }
+  
+  h2 {
+    font-family: 'Hind';
+    font-size: 2.8rem;
+    color: #54101D;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    font-weight: 700;
+  }
+  
+  .section-subtitle {
+    font-family: 'Hind';
+    font-size: 1.2rem;
+    color: #666;
+    font-style: italic;
+  }
+}
+
+.alumni-section {
+  margin-top: 100px;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 600px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #b18653, transparent);
+  }
+}
+
+/* ========================================
+   ALUMNI CARD VARIATIONS
+   ======================================== */
+
+.alumni-card {
+  .member-overlay {
+    gap: 15px;
+    
+    .overlay-contact {
+      background: #47596f;
+      
+      &:hover {
+        background: white;
+        color: #47596f;
+      }
+    }
+  }
+  
+  .alumni-tag {
+    background: linear-gradient(135deg, #47596f 0%, #364557 100%);
+    color: white;
+    border: none;
+    
+    i {
+      color: white;
+    }
+  }
+  
+  .alumni-accent {
+    background: linear-gradient(90deg, #47596f, #b18653, #47596f);
+  }
+  
+  .member-placeholder i {
+    color: #47596f;
+  }
+}
+
+/* Responsive adjustments for sections */
+@media (max-width: 768px) {
+  .section-header {
+    margin: 60px 0 40px;
+    padding: 20px 15px;
+    
+    h2 {
+      font-size: 2rem;
+    }
+    
+    .section-subtitle {
+      font-size: 1rem;
+    }
+    
+    &::after {
+      width: 80px;
+      height: 3px;
+    }
+  }
+  
+  .alumni-section {
+    margin-top: 80px;
+    
+    &::before {
+      top: -40px;
+      width: 90%;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .section-header {
+    margin: 50px 0 30px;
+    
+    h2 {
+      font-size: 1.6rem;
+    }
+    
+    .section-subtitle {
+      font-size: 0.9rem;
+    }
+  }
+  
+  .alumni-section {
+    margin-top: 60px;
+  }
+}
+
+/* ========================================
+   ALUMNI SECTION STYLES
+   ======================================== */
+
+.section-divider {
+  text-align: center;
+  margin: 80px auto 40px;
+  padding: 40px 20px;
+  position: relative;
+  max-width: 800px;
+}
+
+.section-divider::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 600px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #b18653, transparent);
+}
+
+.section-divider h2 {
+  font-family: 'Hind';
+  font-size: 2.5rem;
+  color: #47596f;
+  margin-bottom: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.section-divider .section-subtitle {
+  font-family: 'Hind';
+  font-size: 1.1rem;
+  color: #666;
+  font-style: italic;
+}
+
+.alumni-header {
+  margin-top: 0;
+  padding-top: 0;
+  border: none;
+  background: transparent;
+}
+
+.alumni-btn {
+  background: linear-gradient(135deg, #47596f 0%, #364557 100%) !important;
+  border-color: #47596f !important;
+}
+
+.alumni-btn:hover {
+  background: linear-gradient(135deg, #364557 0%, #2c3a47 100%) !important;
+  border-color: #364557 !important;
+}
+
+.alumni-card {
+  border: 1px solid rgba(71, 89, 111, 0.1);
+}
+
+.alumni-card:hover {
+  border-color: #47596f;
+  box-shadow: 0 12px 40px rgba(71, 89, 111, 0.2);
+}
+
+.alumni-no-image {
+  background: linear-gradient(135deg, #47596f 0%, #364557 100%) !important;
+}
+
+.alumni-no-image i {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.alumni-card .card-image::after {
+  background: linear-gradient(90deg, #47596f 0%, #b18653 100%) !important;
+}
+
+.btn-alumni-edit {
+  background: #47596f !important;
+}
+
+.btn-alumni-edit:hover {
+  background: #364557 !important;
+  box-shadow: 0 4px 12px rgba(71, 89, 111, 0.3) !important;
+}
+
+.btn-alumni-delete {
+  background: #9a7045 !important;
+}
+
+.btn-alumni-delete:hover {
+  background: #7d5a36 !important;
+  box-shadow: 0 4px 12px rgba(154, 112, 69, 0.3) !important;
+}
+
+/* Responsive design for alumni section */
+@media (max-width: 768px) {
+  .section-divider {
+    margin: 60px auto 30px;
+    padding: 30px 15px;
+    
+    h2 {
+      font-size: 2rem;
+    }
+    
+    .section-subtitle {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .section-divider {
+    margin: 50px auto 25px;
+    padding: 20px 10px;
+    
+    h2 {
+      font-size: 1.6rem;
+    }
+    
+    .section-subtitle {
+      font-size: 0.9rem;
+    }
   }
 }

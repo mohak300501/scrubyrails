@@ -1,3 +1,17 @@
+/* ===== Base Reset for Cross-Platform Compatibility ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
 @font-face {
   font-family: 'Saira';
   src: font-url('SairaStencil.ttf') format('truetype');
@@ -27,8 +41,10 @@ body {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-  padding-top: 0; /* Ensure no top padding on body */
-
+  padding-top: 0;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 /* ---------- General Headings ---------- */
@@ -42,17 +58,17 @@ body {
   h1 {
     color: #54101D;
     font-family: "Saira";
-    font-size: 60px;
+    font-size: clamp(36px, 3.75vw, 60px);
     font-weight: normal;
     margin: 0;
     white-space: nowrap;
-    letter-spacing: 2px;
+    letter-spacing: clamp(1px, 0.125vw, 2px);
   }
 
   .strip {
     background-color: #54101D;
     flex-grow: 1;
-    height: 60px;
+    height: clamp(40px, 3.75vw, 60px);
   }
 }
 
@@ -61,14 +77,13 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  gap: 4rem;
-  padding: 0 6rem;
+  gap: clamp(2rem, 3vw, 4rem);
+  padding: 0 clamp(3rem, 4.5vw, 6rem);
   position: relative;
   margin-top: 2rem; 
   padding-top: 0;
-  padding-left: 100px ;
+  padding-left: clamp(50px, 6.25vw, 100px);
   padding-right: 0;
-
 }
 
 /* ---------- Left Section (About Us) ---------- */
@@ -86,17 +101,18 @@ body {
 
 .sanskrit-text {
   font-family: "Tiro";
-  font-size: 40px;
-  line-height: 1.8;
+  font-size: clamp(28px, 2.5vw, 40px);
+  line-height: 1.6;
   color: #312229;
   margin: 0;
   font-weight: 400;
+
 }
 
 .english-text {
   font-family: "Saira";
-  font-size: 40px;
-  line-height: 1.8;
+  font-size: clamp(28px, 2.5vw, 40px);
+  line-height: 1.6;
   color: #312229;
   margin: 0;
 }
@@ -107,8 +123,8 @@ body {
   flex-direction: column;
   gap: 3rem;
   align-items: flex-end;
-  width: 100%; /* Ensure it takes full width */
-  padding-right: 0; /* Remove any right padding */
+  width: 100%;
+  padding-right: 0;
   margin-right: 0;
 }
 
@@ -119,9 +135,8 @@ body {
   opacity: 0;
   transform: translateX(50px);
   animation: slideInRight 0.8s ease-out forwards;
-  margin-right: 0; /* Remove any margin */
-  padding-right: 0; /* Remove any padding */
-
+  margin-right: 0;
+  padding-right: 0;
 }
 
 .grid-wrapper:first-child {
@@ -141,7 +156,7 @@ body {
 
 .box-text {
   font-family: "Samarkan", "Saira", sans-serif;
-  font-size: 48px;
+  font-size: clamp(32px, 3vw, 48px);
   font-weight: 200;
   line-height: 1.3;
   text-align: right;
@@ -150,8 +165,8 @@ body {
 }
 
 .box {
-  width: 240px;
-  height: 200px;
+  width: clamp(180px, 15vw, 240px);
+  height: clamp(150px, 12.5vw, 200px);
   flex-shrink: 0;
   transition: transform 0.3s ease;
   margin-right: 0;
@@ -197,18 +212,18 @@ body {
 /* ---------- Second Section: Announcements with Verse ---------- */
 .announcements-container {
   background: linear-gradient(135deg, #f5f0e8 0%, #faf7f2 100%);
-  padding: 4rem 6rem;
+  padding: clamp(2rem, 4vw, 4rem) clamp(3rem, 4.5vw, 6rem);
   min-height: 100vh;
   position: relative;
   box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
-  padding-top: 10rem;
-  padding-left: 150px;
+  padding-top: clamp(6rem, 8vw, 10rem);
+  padding-left: clamp(50px, 9.4vw, 150px);
 }
 
 .announcements-grid-layout {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 10rem;
+  gap: clamp(5rem, 8vw, 10rem);
   max-width: 1600px;
   margin: 0 auto;
 }
@@ -220,7 +235,7 @@ body {
   gap: 3rem;
   opacity: 0;
   transform: translateY(50px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 }
 
 .verse-section.visible {
@@ -230,17 +245,24 @@ body {
 
 .verse-sanskrit {
   font-family: "Hind";
-  font-size: 33px;
-  line-height: 1.8;
+  font-size: clamp(24px, 2.06vw, 33px);
+  line-height: 1.6;
   color: #312229;
   text-align: center;
   margin: 0;
 }
-
+.verse-sanskrit p {
+  margin: 0.5em 0;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .verse-hindi {
   font-family: "Hind";
-  font-size: 25px;
-  line-height: 1.8;
+  font-size: clamp(18px, 1.56vw, 25px);
+  line-height: 1.6;
   color: #444;
   text-align: justify;
   margin: 0;
@@ -250,7 +272,7 @@ body {
 .announcement-section {
   opacity: 0;
   transform: translateY(50px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
 }
 
 .announcement-section.visible {
@@ -267,16 +289,16 @@ body {
 
 .announcement-box {
   background-color: white;
-  padding: 5px 20px 5px 20px;
+  padding: 0.3rem 1.25rem;
   border-left: 6px solid #b18653;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   font-family: "Hind";
-  font-size: 30px;
-  line-height: 1.8;
+  font-size: clamp(20px, 1.875vw, 30px);
+  line-height: 1.6;
   color: #312229;
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.3s ease;
+  transition: opacity 1.2s ease-out, transform 1.2s ease-out, box-shadow 0.3s ease;
 }
 
 .announcement-box.visible {
@@ -292,7 +314,7 @@ body {
 .no-announcements {
   text-align: center;
   font-family: "Saira";
-  font-size: 24px;
+  font-size: clamp(20px, 1.5vw, 24px);
   color: #666;
   padding: 2rem;
 }
@@ -300,7 +322,7 @@ body {
 .visit-counter {
   text-align: center;
   font-family: "Saira";
-  font-size: 18px;
+  font-size: clamp(16px, 1.125vw, 18px);
   color: #666;
   margin-top: 2rem;
 
@@ -318,19 +340,19 @@ body {
   }
 
   .heading-section h1 {
-    font-size: 48px;
+    font-size: clamp(32px, 4vw, 48px);
   }
 
   .box-text {
-    font-size: 36px;
+    font-size: clamp(28px, 3vw, 36px);
   }
 
   .sanskrit-text {
-    font-size: 28px;
+    font-size: clamp(24px, 2.3vw, 28px);
   }
 
   .english-text {
-    font-size: 18px;
+    font-size: clamp(16px, 1.5vw, 18px);
   }
 }
 
@@ -341,7 +363,7 @@ body {
   }
 
   .heading-section h1 {
-    font-size: 36px;
+    font-size: clamp(28px, 4.7vw, 36px);
   }
 
   .right-section {
@@ -354,13 +376,13 @@ body {
   }
 
   .box-text {
-    font-size: 28px;
+    font-size: clamp(24px, 3.6vw, 28px);
     text-align: center;
   }
 
   .box {
-    width: 200px;
-    height: 100px;
+    width: clamp(150px, 26vw, 200px);
+    height: clamp(80px, 13vw, 100px);
   }
 }
 
@@ -379,13 +401,12 @@ body {
 
   .announcements-grid-layout {
     grid-template-columns: 1fr 2fr;
-    gap: 15rem;
+    gap: clamp(10rem, 12vw, 15rem);
   }
 }
 
 /* ========================================
    MHOMER.HTML.ERB STYLES
-   Append this to your existing home.scss
    All classes prefixed with 'm-' to avoid conflicts
    ======================================== */
 
@@ -400,17 +421,17 @@ body {
   h1 {
     color: #54101D;
     font-family: "Saira";
-    font-size: 60px;
+    font-size: clamp(36px, 3.75vw, 60px);
     font-weight: normal;
     margin: 0;
     white-space: nowrap;
-    letter-spacing: 2px;
+    letter-spacing: clamp(1px, 0.125vw, 2px);
   }
 
   .m-strip {
     background-color: #54101D;
     flex-grow: 1;
-    height: 60px;
+    height: clamp(40px, 3.75vw, 60px);
   }
 }
 
@@ -419,12 +440,12 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  gap: 4rem;
-  padding: 0 6rem;
+  gap: clamp(2rem, 3vw, 4rem);
+  padding: 0 clamp(3rem, 4.5vw, 6rem);
   position: relative;
   margin-top: 2rem; 
-  padding-top: 100px;
-  padding-left: 100px;
+  padding-top: clamp(50px, 6.25vw, 100px);
+  padding-left: clamp(50px, 6.25vw, 100px);
   padding-right: 0;
 }
 
@@ -449,8 +470,8 @@ body {
 
 .m-sanskrit-text {
   font-family: "Tiro";
-  font-size: 40px;
-  line-height: 1.8;
+  font-size: clamp(28px, 2.5vw, 40px);
+  line-height: 1.6;
   color: #312229;
   margin: 0;
   font-weight: 400;
@@ -458,8 +479,8 @@ body {
 
 .m-english-text {
   font-family: "Saira";
-  font-size: 40px;
-  line-height: 1.8;
+  font-size: clamp(28px, 2.5vw, 40px);
+  line-height: 1.6;
   color: #312229;
   margin: 0;
 }
@@ -503,7 +524,7 @@ body {
 
 .m-box-text {
   font-family: "Samarkan", "Saira", sans-serif;
-  font-size: 48px;
+  font-size: clamp(32px, 3vw, 48px);
   font-weight: 200;
   line-height: 1.3;
   text-align: right;
@@ -512,8 +533,8 @@ body {
 }
 
 .m-box {
-  width: 240px;
-  height: 200px;
+  width: clamp(180px, 15vw, 240px);
+  height: clamp(150px, 12.5vw, 200px);
   flex-shrink: 0;
   transition: transform 0.3s ease;
   margin-right: 0;
@@ -559,18 +580,18 @@ body {
 /* ---------- Second Section: Announcements with Verse ---------- */
 .m-announcements-container {
   background: linear-gradient(135deg, #f5f0e8 0%, #faf7f2 100%);
-  padding: 4rem 6rem;
+  padding: clamp(2rem, 4vw, 4rem) clamp(3rem, 4.5vw, 6rem);
   min-height: 100vh;
   position: relative;
   box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
-  padding-top: 10rem;
-  padding-left: 150px;
+  padding-top: clamp(6rem, 8vw, 10rem);
+  padding-left: clamp(50px, 9.4vw, 150px);
 }
 
 .m-announcements-grid-layout {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 10rem;
+  gap: clamp(5rem, 8vw, 10rem);
   max-width: 1600px;
   margin: 0 auto;
 }
@@ -592,8 +613,8 @@ body {
 
 .m-verse-sanskrit {
   font-family: "Hind";
-  font-size: 33px;
-  line-height: 1.8;
+  font-size: clamp(24px, 2.06vw, 33px);
+  line-height: 1.6;
   color: #312229;
   text-align: center;
   margin: 0;
@@ -601,8 +622,8 @@ body {
 
 .m-verse-hindi {
   font-family: "Hind";
-  font-size: 25px;
-  line-height: 1.8;
+  font-size: clamp(18px, 1.56vw, 25px);
+  line-height: 1.6;
   color: #444;
   text-align: justify;
   margin: 0;
@@ -626,7 +647,7 @@ body {
   background-color: #b18653;
   color: white;
   font-family: "Hind";
-  font-size: 20px;
+  font-size: clamp(18px, 1.25vw, 20px);
   padding: 0.75rem 2rem;
   text-decoration: none;
   border-radius: 6px;
@@ -636,7 +657,6 @@ body {
   cursor: pointer;
   border: none !important; 
   outline: none !important;
-
 }
 
 .m-delete-button:hover {
@@ -652,7 +672,7 @@ body {
   background-color: #54101D;
   color: white;
   font-family: "Hind";
-  font-size: 20px;
+  font-size: clamp(18px, 1.25vw, 20px);
   padding: 0.75rem 2rem;
   text-decoration: none;
   border-radius: 6px;
@@ -662,7 +682,6 @@ body {
   cursor: pointer;
   border: none !important; 
   outline: none !important;
-
 }
 
 .m-edit-button:hover {
@@ -673,7 +692,6 @@ body {
   outline: none;
 }
 
-
 .m-ann-button {
   display: inline-flex;
   flex-direction: column;
@@ -682,7 +700,7 @@ body {
   background-color: #54101D;
   color: white;
   font-family: "Hind";
-  font-size: 35px;
+  font-size: clamp(28px, 2.2vw, 35px);
   padding: 0.75rem 2rem;
   text-decoration: none;
   border-radius: 6px;
@@ -695,7 +713,7 @@ body {
 }
 
 .m-plus-icon {
-  font-size: 28px;
+  font-size: clamp(22px, 1.75vw, 28px);
   font-weight: bold;
   line-height: 1;
 }
@@ -707,8 +725,6 @@ body {
   border: none;
   outline: none;
 }
-
-
 
 .m-anone {
   text-decoration: none;
@@ -724,12 +740,12 @@ body {
 
 .m-announcement-box {
   background-color: white;
-  padding: 5px 20px 5px 20px;
+  padding: 0.3rem 1.25rem;
   border-left: 6px solid #b18653;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   font-family: "Hind";
-  font-size: 30px;
-  line-height: 1.8;
+  font-size: clamp(20px, 1.875vw, 30px);
+  line-height: 1.6;
   color: #312229;
   opacity: 0;
   transform: translateY(30px);
@@ -739,7 +755,6 @@ body {
 .m-announcement-box.m-visible {
   opacity: 1;
   transform: translateY(0);
-  
 }
 
 .m-announcement-box:hover {
@@ -773,7 +788,7 @@ body {
 .m-no-announcements {
   text-align: center;
   font-family: "Saira";
-  font-size: 24px;
+  font-size: clamp(20px, 1.5vw, 24px);
   color: #666;
   padding: 2rem;
 }
@@ -781,10 +796,10 @@ body {
 .m-visit-counter {
   text-align: center;
   font-family: "Saira";
-  font-size: 18px;
+  font-size: clamp(16px, 1.125vw, 18px);
   color: #666;
   margin-top: 2rem;
-  line-height: 1.8;
+  line-height: 1.6;
 
   b {
     color: #54101D;
@@ -795,11 +810,11 @@ body {
 /* ---------- Form Container for Update Pages ---------- */
 .m-form-container {
   background: linear-gradient(135deg, #f5f0e8 0%, #faf7f2 100%);
-  padding: 4rem 6rem;
+  padding: clamp(2rem, 4vw, 4rem) clamp(3rem, 4.5vw, 6rem);
   min-height: 100vh;
   position: relative;
   box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
-  padding-top: 10rem;
+  padding-top: clamp(6rem, 8vw, 10rem);
 }
 
 .m-form-wrapper {
@@ -824,7 +839,7 @@ body {
 
 .m-form-label {
   font-family: 'Saira';
-  font-size: 24px;
+  font-size: clamp(20px, 1.5vw, 24px);
   color: #312229;
   display: block;
   margin-bottom: 1rem;
@@ -834,7 +849,7 @@ body {
   width: 100%;
   padding: 1rem;
   font-family: 'Saira';
-  font-size: 18px;
+  font-size: clamp(16px, 1.125vw, 18px);
   border: 2px solid #b18653;
   border-radius: 6px;
   resize: vertical;
@@ -856,7 +871,7 @@ body {
 
 .m-button {
   font-family: 'Hind';
-  font-size: 20px;
+  font-size: clamp(18px, 1.25vw, 20px);
   padding: 0.75rem 2rem;
   text-decoration: none;
   border-radius: 6px;
@@ -897,11 +912,11 @@ body {
   }
 
   .m-form-label {
-    font-size: 20px;
+    font-size: clamp(18px, 2.6vw, 20px);
   }
 
   .m-form-textarea {
-    font-size: 16px;
+    font-size: clamp(14px, 2vw, 16px);
   }
 
   .m-form-buttons {
@@ -912,11 +927,11 @@ body {
 /* ---------- Content Container for About/Terms/How to Use Pages ---------- */
 .m-content-container {
   background: linear-gradient(135deg, #f5f0e8 0%, #faf7f2 100%);
-  padding: 4rem 6rem;
+  padding: clamp(2rem, 4vw, 4rem) clamp(3rem, 4.5vw, 6rem);
   min-height: 100vh;
   position: relative;
   box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
-  padding-top: 10rem;
+  padding-top: clamp(6rem, 8vw, 10rem);
 }
 
 .m-content-wrapper {
@@ -938,9 +953,9 @@ body {
 .m-content-text {
   margin: 2rem 0;
   font-family: 'Hind';
-  font-size: 20px;
+  font-size: clamp(18px, 1.25vw, 20px);
   color: #312229;
-  line-height: 1.8;
+  line-height: 1.6;
   text-align: justify;
 }
 
@@ -949,117 +964,97 @@ body {
 }
 
 .m-content-button-wrapper {
-  margin-top: 3rem;
-  text-align: center;
+margin-top: 3rem;
+text-align: center;
 }
-
-/* Responsive adjustments for content pages */
+  /* Responsive adjustments for content pages */
 @media (max-width: 768px) {
   .m-content-container {
-    padding: 2rem 1.5rem;
-    padding-top: 8rem;
+  padding: 2rem 1.5rem;
+  padding-top: 8rem;
   }
-
   .m-content-text {
-    font-size: 18px;
+  font-size: clamp(16px, 2.3vw, 18px);
   }
-}
-
-@media (max-width: 480px) {
+  }
+  @media (max-width: 480px) {
   .m-content-text {
-    font-size: 16px;
+  font-size: clamp(14px, 3.3vw, 16px);
   }
-}
-
-/* ---------- Responsive Design ---------- */
-@media (max-width: 1200px) {
+  }
+  /* ---------- Responsive Design ---------- */
+  @media (max-width: 1200px) {
   .m-grid-container,
   .m-announcements-container {
-    padding: 3rem 3rem;
+  padding: 3rem 3rem;
   }
-
   .m-heading-section h1 {
-    font-size: 48px;
+  font-size: clamp(32px, 4vw, 48px);
   }
-
   .m-box-text {
-    font-size: 36px;
+  font-size: clamp(28px, 3vw, 36px);
   }
-
   .m-sanskrit-text {
-    font-size: 28px;
+  font-size: clamp(24px, 2.3vw, 28px);
   }
-
   .m-english-text {
-    font-size: 28px;
+  font-size: clamp(24px, 2.3vw, 28px);
   }
   .box,
   .m-box {
-    display: none;
+  display: none;
   }
-
   /* Center the text */
   .right-section,
   .m-right-section {
-    align-items: center;
+  align-items: center;
   }
-
   .box-text,
   .m-box-text {
-    text-align: center;
-    font-size: 32px;
+  text-align: center;
+  font-size: clamp(26px, 2.7vw, 32px);
   }
-}
-
-@media (max-width: 768px) {
+  }
+  @media (max-width: 768px) {
   .m-grid-container,
   .m-announcements-container {
-    padding: 2rem 1.5rem;
+  padding: 2rem 1.5rem;
   }
-
   .m-heading-section h1 {
-    font-size: 36px;
+  font-size: clamp(28px, 4.7vw, 36px);
   }
-
   .m-right-section {
-    align-items: center;
+  align-items: center;
   }
-
   .m-grid-wrapper {
-    flex-direction: column;
-    text-align: center;
+  flex-direction: column;
+  text-align: center;
   }
-
   .m-box-text {
-    font-size: 28px;
-    text-align: center;
+  font-size: clamp(24px, 3.6vw, 28px);
+  text-align: center;
   }
-
   .m-box {
-    width: 200px;
-    height: 100px;
+  width: clamp(150px, 26vw, 200px);
+  height: clamp(80px, 13vw, 100px);
   }
-
   .m-announcement-box {
-    font-size: 24px;
+  font-size: clamp(18px, 3.1vw, 24px);
   }
-}
-
-@media (min-width: 1200px) {
+  }
+  @media (min-width: 1200px) {
   .m-grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: start;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
   }
-
   .m-right-section {
-    justify-content: flex-start;
-    padding-left: 0;
+  justify-content: flex-start;
+  padding-left: 0;
   }
-
   .m-announcements-grid-layout {
-    grid-template-columns: 1fr 2fr;
-    gap: 15rem;
+  grid-template-columns: 1fr 2fr;
+  gap: clamp(10rem, 12vw, 15rem);
   }
-}
+  }
