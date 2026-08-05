@@ -1,0 +1,46 @@
+<%# ===== SW PAST EVENTS INDEX ===== %>
+<div class="sw-admin">
+  <div class="sw-admin-header">
+    <h1>Past Pragyotsav Editions</h1>
+    <%= link_to "＋ Add Past Edition", sw_new_past_event_path, class: "sw-admin-btn" %>
+    <%= link_to "← Back to Sanskritweek", sanskritweek_path, class: "sw-admin-link" %>
+  </div>
+
+  <% if notice.present? %>
+    <div class="sw-notice"><%= notice %></div>
+  <% end %>
+
+  <% if @past_events.empty? %>
+    <div class="sw-empty">No past editions added yet.</div>
+  <% else %>
+    <div class="sw-past-grid">
+      <% @past_events.each do |pe| %>
+        <div class="sw-past-card">
+          <% if pe.cover_image_url.present? %>
+            <img src="<%= pe.cover_image_url %>" alt="<%= pe.title %>" class="sw-past-img">
+          <% else %>
+            <div class="sw-past-img-placeholder">No Image</div>
+          <% end %>
+          <div class="sw-past-info">
+            <div class="sw-past-year"><%= pe.year %></div>
+            <div class="sw-past-title"><%= pe.title %></div>
+            <div class="sw-past-highlight"><%= pe.highlight_text %></div>
+          </div>
+          <div class="sw-past-actions">
+  <%= link_to "📸 Photos (#{pe.sanskritweek_photos.count})",
+      sw_past_photos_path(pe), class: "sw-edit-btn" %>
+  <%= link_to "Edit", sw_edit_past_event_path(pe), class: "sw-edit-btn" %>
+  <form action="<%= sw_delete_past_event_path(pe) %>"
+        method="post"
+        onsubmit="return confirm('Delete <%= pe.title %>?')">
+    <input type="hidden" name="_method" value="delete">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <button type="submit" class="sw-del-btn">Delete</button>
+  </form>
+</div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+<%# ===== END SW PAST EVENTS INDEX ===== %>

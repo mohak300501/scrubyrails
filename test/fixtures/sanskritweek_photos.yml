@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  past_event_id: 1
+  blob_id: 1
+  heading: MyString
+  description: MyText
+
+two:
+  past_event_id: 1
+  blob_id: 1
+  heading: MyString
+  description: MyText

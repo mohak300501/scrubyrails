@@ -1,0 +1,100 @@
+<%# ===== SANSKRITWEEK MEMBER DASHBOARD ===== %>
+<div class="sw-admin">
+
+  <div class="sw-admin-header">
+    <div>
+      <h1>🪔 Pragyotsav Dashboard</h1>
+      <p style="margin:4px 0 0; font-size:0.85rem; color:#8b6040; font-family:Arial,sans-serif;">
+        Logged in as <strong><%= session[:member] %></strong>
+      </p>
+    </div>
+    <%= link_to "View Public Page ↗", sanskritweek_path,
+        class: "sw-admin-btn", target: "_blank" %>
+  </div>
+
+  <%# Quick stats %>
+  <div class="sw-dash-stats">
+    <div class="sw-dash-stat">
+      <div class="sw-dash-num"><%= SanskritweekEvent.count %></div>
+      <div class="sw-dash-lbl">Total Events</div>
+    </div>
+    <div class="sw-dash-stat">
+      <div class="sw-dash-num">
+        <%= ActiveStorage::Attachment.where(record_type: 'SanskritweekEvent', name: 'poster_image').count %>
+      </div>
+      <div class="sw-dash-lbl">With Posters</div>
+    </div>
+    <div class="sw-dash-stat">
+      <div class="sw-dash-num"><%= SanskritweekPastEvent.count %></div>
+      <div class="sw-dash-lbl">Past Editions</div>
+    </div>
+    <div class="sw-dash-stat">
+      <% reg_set = SanskritweekSetting.get('google_form_url').present? %>
+      <div class="sw-dash-num" style="color:<%= reg_set ? '#2e7d32' : '#8b1a1a' %>">
+        <%= reg_set ? '✓' : '✗' %>
+      </div>
+      <div class="sw-dash-lbl">Reg. Link</div>
+    </div>
+  </div>
+
+  <%# Navigation cards %>
+  <div class="sw-memarea-links" style="margin-top:2rem;">
+
+    <a href="<%= sw_events_path %>" class="sw-memarea-card">
+      <span class="sw-memarea-card-icon">📋</span>
+      <div>
+        <strong>Manage Events</strong>
+        <span><%= SanskritweekEvent.count %> event(s) added so far</span>
+      </div>
+      <span class="sw-memarea-arrow">→</span>
+    </a>
+
+    <a href="<%= sw_new_event_path %>" class="sw-memarea-card">
+      <span class="sw-memarea-card-icon">➕</span>
+      <div>
+        <strong>Add New Event</strong>
+        <span>Create event with poster and details</span>
+      </div>
+      <span class="sw-memarea-arrow">→</span>
+    </a>
+
+    <a href="<%= sw_past_events_path %>" class="sw-memarea-card">
+      <span class="sw-memarea-card-icon">🗂️</span>
+      <div>
+        <strong>Past Editions</strong>
+        <span><%= SanskritweekPastEvent.count %> edition(s) added</span>
+      </div>
+      <span class="sw-memarea-arrow">→</span>
+    </a>
+
+    <a href="<%= sw_new_past_event_path %>" class="sw-memarea-card">
+      <span class="sw-memarea-card-icon">📸</span>
+      <div>
+        <strong>Add Past Edition</strong>
+        <span>Upload photos from previous Pragyotsav</span>
+      </div>
+      <span class="sw-memarea-arrow">→</span>
+    </a>
+
+    <a href="<%= sw_settings_path %>" class="sw-memarea-card">
+      <span class="sw-memarea-card-icon">🔗</span>
+      <div>
+        <strong>Registration Link</strong>
+        <span><%= SanskritweekSetting.get('google_form_url').present? ? 'Link set ✓ — click to update' : 'Not set yet — click to add' %></span>
+      </div>
+      <span class="sw-memarea-arrow">→</span>
+    </a>
+
+    <a href="<%= member_area_path %>" class="sw-memarea-card">
+      <span class="sw-memarea-card-icon">🏠</span>
+      <div>
+        <strong>Member Area</strong>
+        <span>Back to main member dashboard</span>
+      </div>
+      <span class="sw-memarea-arrow">→</span>
+    </a>
+
+  </div>
+
+</div>
+<%# ===== END SANSKRITWEEK MEMBER DASHBOARD ===== %>

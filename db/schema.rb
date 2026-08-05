@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_01_11_135842) do
+ActiveRecord::Schema[8.0].define(version: 2026_06_29_025809) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -64,16 +64,10 @@ ActiveRecord::Schema[8.0].define(version: 2026_01_11_135842) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "bgvars", primary_key: "visits", id: :bigint, default: -> { "nextval('bgvars_id_seq'::regclass)" }, force: :cascade do |t|
+  create_table "bgvars", primary_key: "visits", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "regid"
-  end
-
-  create_table "cd", id: :serial, force: :cascade do |t|
-    t.integer "pid"
-    t.string "regid", limit: 10
-    t.string "email", limit: 50
   end
 
   create_table "changes", force: :cascade do |t|
@@ -168,6 +162,53 @@ ActiveRecord::Schema[8.0].define(version: 2026_01_11_135842) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "sanskritweek_events", force: :cascade do |t|
+    t.string "title"
+    t.string "title_sanskrit"
+    t.string "category"
+    t.integer "day"
+    t.text "description"
+    t.string "venue"
+    t.string "team_size"
+    t.string "poster_url"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "date"
+    t.string "time"
+    t.string "eligibility"
+    t.string "prize"
+    t.string "registration_link"
+  end
+
+  create_table "sanskritweek_past_events", force: :cascade do |t|
+    t.integer "year"
+    t.string "title"
+    t.text "description"
+    t.string "highlight_text"
+    t.string "cover_image_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "photo_heading"
+    t.text "photo_description"
+  end
+
+  create_table "sanskritweek_photos", force: :cascade do |t|
+    t.integer "past_event_id"
+    t.integer "blob_id"
+    t.string "heading"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sanskritweek_settings", force: :cascade do |t|
+    t.string "key"
+    t.text "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "shloks", force: :cascade do |t|
     t.string "title"
     t.string "shlok"
@@ -208,5 +249,4 @@ ActiveRecord::Schema[8.0].define(version: 2026_01_11_135842) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "cd", "users", column: "pid", name: "fk_user_id"
 end

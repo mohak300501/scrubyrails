@@ -1,0 +1,67 @@
+<%# ===== SW PAST EVENT FORM PARTIAL ===== %>
+
+<%# ── MAIN FORM — no photo management here, photos managed at sw_past_photos_path ── %>
+<%= form_with model: past_event,
+    url: past_event.new_record? ? sw_create_past_event_path : sw_update_past_event_path(past_event),
+    method: past_event.new_record? ? :post : :patch,
+    local: true,
+    class: "sw-form" do |f| %>
+
+  <% if past_event.errors.any? %>
+    <div class="sw-errors">
+      <ul>
+        <% past_event.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="sw-form-section-title">Basic Info</div>
+
+  <div class="sw-form-row">
+    <div class="sw-form-group">
+      <%= f.label :year, "Year" %>
+      <%= f.number_field :year, placeholder: "e.g. 2025", class: "sw-input" %>
+    </div>
+    <div class="sw-form-group">
+      <%= f.label :title, "Edition Title" %>
+      <%= f.text_field :title, placeholder: "e.g. Pragyotsav 2025", class: "sw-input" %>
+    </div>
+  </div>
+
+  <div class="sw-form-group">
+    <%= f.label :highlight_text, "Highlight (one line stat)" %>
+    <%= f.text_field :highlight_text,
+        placeholder: "e.g. 500+ participants · 20 events · 5 days",
+        class: "sw-input" %>
+  </div>
+
+  <div class="sw-form-group">
+    <%= f.label :description, "Description (optional)" %>
+    <%= f.text_area :description, rows: 3,
+        placeholder: "Brief summary of this edition...",
+        class: "sw-textarea" %>
+  </div>
+
+  <div class="sw-form-actions">
+    <%= f.submit past_event.new_record? ? "Add Edition" : "Update Edition",
+        class: "sw-submit-btn" %>
+    <%= link_to "Cancel", sw_past_events_path, class: "sw-cancel-btn" %>
+  </div>
+
+<% end %>
+
+<%# Link to manage photos separately — only show for existing records %>
+<% if past_event.persisted? %>
+  <div style="margin-top:1.5rem; padding-top:1.5rem; border-top:1px solid #e8d5b0;">
+    <%= link_to "📸 Manage Photos (#{past_event.sanskritweek_photos.count})",
+        sw_past_photos_path(past_event),
+        class: "sw-admin-btn" %>
+    <p class="sw-hint" style="margin-top:0.5rem;">
+      Add, edit, or delete photos with headings and descriptions for this edition.
+    </p>
+  </div>
+<% end %>
+
+<%# ===== END SW PAST EVENT FORM PARTIAL ===== %>

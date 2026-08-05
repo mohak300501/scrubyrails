@@ -1,0 +1,7 @@
+<div class="sw-admin">
+  <div class="sw-admin-header">
+    <h1>Edit — <%= @past_event.title %></h1>
+    <%= link_to "← Back", sw_past_events_path, class: "sw-admin-link" %>
+  </div>
+  <%= render 'form', past_event: @past_event %>
+</div>

@@ -1,0 +1,727 @@
+<%# ===== PRAGGYOTSAV HOME PAGE =====
+    To remove: delete this file and its routes %>
+
+<%# ══════ HERO ══════ %>
+<section class="pragya-hero">
+  <div class="pragya-particles" id="pragya-canvas-wrap">
+    <canvas id="pragya-canvas"></canvas>
+  </div>
+  <div class="pragya-mandala"></div>
+
+  <div class="pragya-hero-content">
+
+    <div class="pragya-deva">प्रज्ञोत्सव २०२६</div>
+
+    <h1 class="pragya-title">PRAGY<span>OTSAV</span></h1>
+
+    <div class="pragya-year">2 0 2 6</div>
+
+   
+
+    <div class="pragya-ornament">
+      <div class="pragya-line"></div>
+      <div class="pragya-diamond"></div>
+      <div class="pragya-diamond small"></div>
+      <div class="pragya-diamond"></div>
+      <div class="pragya-line"></div>
+    </div>
+
+    <%# --- COUNTDOWN: hides/shows based on fest dates --- %>
+    <div class="pragya-countdown" id="pragya-countdown">
+      <div class="pragya-count-box">
+        <div class="pragya-num" id="pragya-days">00</div>
+        <div class="pragya-lbl">Days</div>
+      </div>
+      <div class="pragya-sep">:</div>
+      <div class="pragya-count-box">
+        <div class="pragya-num" id="pragya-hours">00</div>
+        <div class="pragya-lbl">Hours</div>
+      </div>
+      <div class="pragya-sep">:</div>
+      <div class="pragya-count-box">
+        <div class="pragya-num" id="pragya-mins">00</div>
+        <div class="pragya-lbl">Mins</div>
+      </div>
+      <div class="pragya-sep">:</div>
+      <div class="pragya-count-box">
+        <div class="pragya-num" id="pragya-secs">00</div>
+        <div class="pragya-lbl">Secs</div>
+      </div>
+    </div>
+
+    <%# Shown Aug 21–23 when fest is live %>
+    <div class="pragya-live-banner" id="pragya-live" style="display:none;">
+      🎉 Pragyotsav 2026 is LIVE — 21 to 23 August! Welcome to the Festival of Wisdom!
+    </div>
+
+    <%# Shown after Aug 23 when fest ends %>
+    <div class="pragya-ended-banner" id="pragya-ended" style="display:none;">
+      🙏 Pragyotsav 2026 has concluded. Thank you for celebrating with us! See you next year.
+    </div>
+
+    <div class="pragya-hero-btns">
+      <%= link_to "Register Now ↗",
+          session[:user] ? sanskritweek_user_n_path : user_login_path,
+          class: "pragya-btn pragya-btn-primary" %>
+      <a href="#pragya-about" class="pragya-btn pragya-btn-outline">Know More</a>
+    </div>
+
+    <%# Date strip %>
+    <div class="pragya-dates-strip">
+      <span>📅 21 – 23 August 2026</span>
+      <span class="pragya-dot">·</span>
+      <span>🏛️ IIT Roorkee</span>
+      
+      
+    </div>
+
+  </div><%# /pragya-hero-content %>
+
+  <div class="pragya-scroll-hint">
+    <span class="pragya-scroll-arrow"></span>
+    Scroll
+  </div>
+</section>
+
+<div class="pragya-divider"></div>
+
+
+<%# ══════ ABOUT ══════ %>
+<section id="pragya-about" class="pragya-about">
+  <div class="pragya-section">
+
+    <%# 10 Years Banner %>
+    <div class="pragya-decade-banner">
+      <span class="pragya-decade-num">10</span>
+      <div class="pragya-decade-text">
+        <strong>A Decade of Sanskrit</strong>
+        <p>Celebrating 10 glorious years of the Sanskrit Club at IIT Roorkee — a journey of language, culture, and wisdom.</p>
+      </div>
+      <span class="pragya-decade-icon">🪔</span>
+    </div>
+
+    <div class="pragya-about-grid">
+
+      <%# Left — about text %>
+      <div class="pragya-about-text">
+        <div class="pragya-tag">About Pragyotsav</div>
+        <h2 class="pragya-section-h2">
+          नमो नमः IITR-Junta! <span class="pragya-gold">Welcome.</span>
+        </h2>
+
+        <p>
+          Sanskrit Club is back with this year's <strong>Pragyotsav</strong> — our annual Sanskrit fest
+          where we celebrate the rich heritage that <em>saṃskṛta</em> offers to us.
+        </p>
+
+       
+
+        <p>
+          This year, Pragyotsav will be celebrated over <strong>3 days — 21 to 23 August 2026</strong>.
+          And it is extra special — we complete <strong>10 years</strong> of the Sanskrit Club
+          at IIT Roorkee. A decade of shlokas, workshops, debates, and cultural celebration.
+          Come be part of history.
+        </p>
+
+        <div class="pragya-btn-row">
+          <a href="#pragya-events" class="pragya-btn pragya-btn-primary">View Events</a>
+          <%= link_to "Register", session[:user] ? sanskritweek_user_n_path : user_login_path, class: "pragya-btn pragya-btn-outline" %>
+        </div>
+      </div>
+
+      <%# Right — 10 years highlight box %>
+      <div class="pragya-highlight-box">
+        <div class="highlight-number">10</div>
+        <h3>Years of Sanskrit Club</h3>
+        <p>
+          From workshops and debates to cultural performances,
+          lectures, and celebrations, Sanskrit Club IIT Roorkee
+          has spent a decade promoting the timeless wisdom,
+          language, and heritage of संस्कृतम् among students.
+        </p>
+        <p>
+          As we celebrate our 10th anniversary, Pragyotsav 2026
+          marks a milestone in our journey of preserving,
+          promoting, and reimagining Sanskrit for a new generation.
+        </p>
+        <div class="highlight-footer">2016 – 2026</div>
+      </div>
+
+    </div><%# /about-grid %>
+
+    <%# Shloka box — full width %>
+    
+
+    <%# Pillar cards %>
+   
+
+    <%# Stats bar %>
+   
+
+  </div>
+</section>
+
+<div class="pragya-divider"></div>
+
+
+<%# ══════ EVENTS ══════ %>
+
+<section id="pragya-events" class="pragya-events-section">
+  <div class="pragya-section">
+
+    <div class="pragya-events-header">
+      <div>
+        <div class="pragya-tag">Events</div>
+        <h2 class="pragya-section-h2">Pragyotsav <span class="pragya-gold">2026 Events</span></h2>
+        <p>From classical Sanskrit debate to Vedic math — something for every curious mind.</p>
+      </div>
+      <%= link_to "Register for All Events →",
+          session[:user] ? sanskritweek_user_n_path : user_login_path,
+          class: "pragya-events-link" %>
+    </div>
+
+    <% if @events_by_day.any? %>
+
+      <%# Filter tabs %>
+      <div class="pragya-filter-tabs">
+        <button class="pragya-ftab active" onclick="pragyaFilter(this,'all')">All</button>
+        <button class="pragya-ftab" onclick="pragyaFilter(this,'competition')">Competition</button>
+        <button class="pragya-ftab" onclick="pragyaFilter(this,'workshop')">Workshop</button>
+        <button class="pragya-ftab" onclick="pragyaFilter(this,'cultural')">Cultural</button>
+        <button class="pragya-ftab" onclick="pragyaFilter(this,'lecture')">Lecture</button>
+      </div>
+
+      <%# Day wise schedule — loops over whatever days exist in DB %>
+      <% @events_by_day.keys.sort.each do |day| %>
+        <% day_events = @events_by_day[day] %>
+        <% next if day_events.blank? %>
+
+        <div class="pragya-day-block">
+          <div class="pragya-day-label">
+            <span class="pragya-day-num">Day <%= day %></span>
+          </div>
+
+          <div class="pragya-events-grid">
+            <% day_events.each do |event| %>
+
+              <div class="pragya-event-card" data-cat="<%= event.category.to_s.downcase %>">
+
+  <%# Poster — full image no crop %>
+  <div class="pragya-event-thumb-wrap">
+    <% if event.poster_image.attached? %>
+      <img src="<%= url_for(event.poster_image) %>"
+           alt="<%= event.title %>"
+           class="pragya-poster-img">
+    <% else %>
+      <div class="pragya-event-thumb pec-<%= event.category.to_s.downcase %>">
+        <%= category_emoji(event.category) %>
+      </div>
+    <% end %>
+    <% if event.status.present? %>
+      <span class="pragya-ebadge peb-<%= event.status %>">
+        <%= event.status.gsub('_', ' ').titleize %>
+      </span>
+    <% end %>
+  </div>
+
+  <%# Body %>
+  <div class="pragya-event-body">
+    <% if event.category.present? %>
+      <div class="pragya-event-cat"><%= event.category.capitalize %></div>
+    <% end %>
+    <h3>
+      <%= event.title %>
+      <% if event.title_sanskrit.present? %>
+        <span class="pragya-event-sanskrit">· <%= event.title_sanskrit %></span>
+      <% end %>
+    </h3>
+    <div class="pragya-event-desc">
+      <%= simple_format(truncate(event.description, length: 150)) %>
+    </div>
+  </div>
+
+  <%# Footer %>
+  <div class="pragya-event-footer">
+    <a href="#" class="pragya-read-more-btn"
+       onclick="pragyaOpenModal(<%= event.id %>); return false;">
+      Read More ↗
+    </a>
+    <% reg_link = event.registration_link.present? ? event.registration_link : (session[:user] ? sanskritweek_user_n_path : user_login_path) %>
+    <%= link_to "Register →", reg_link,
+        class: "pragya-event-cta",
+        target: event.registration_link.present? ? "_blank" : nil %>
+  </div>
+
+</div>
+
+<%# Modal for this event — hidden by default %>
+<div class="pragya-modal" id="pragya-modal-<%= event.id %>" style="display:none;">
+  <div class="pragya-modal-overlay" onclick="pragyaCloseModal(<%= event.id %>)"></div>
+  <div class="pragya-modal-box">
+
+    <button class="pragya-modal-close" onclick="pragyaCloseModal(<%= event.id %>)">✕</button>
+
+    <% if event.poster_image.attached? %>
+      <img src="<%= url_for(event.poster_image) %>"
+           alt="<%= event.title %>"
+           class="pragya-modal-poster">
+    <% end %>
+
+    <div class="pragya-modal-body">
+      <% if event.category.present? %>
+        <div class="pragya-event-cat"><%= event.category.capitalize %></div>
+      <% end %>
+      <h2 class="pragya-modal-title">
+        <%= event.title %>
+        <% if event.title_sanskrit.present? %>
+          <span class="pragya-event-sanskrit">· <%= event.title_sanskrit %></span>
+        <% end %>
+      </h2>
+
+      <div class="pragya-modal-meta">
+        <% if event.date.present? %>
+          <div class="pragya-modal-meta-item"><span>📅</span><span><%= event.date %></span></div>
+        <% elsif event.day.present? %>
+          <div class="pragya-modal-meta-item"><span>📅</span><span>Day <%= event.day %></span></div>
+        <% end %>
+        <% if event.time.present? %>
+          <div class="pragya-modal-meta-item"><span>🕐</span><span><%= event.time %></span></div>
+        <% end %>
+        <% if event.venue.present? %>
+          <div class="pragya-modal-meta-item"><span>📍</span><span><%= event.venue %></span></div>
+        <% end %>
+        <% if event.team_size.present? %>
+          <div class="pragya-modal-meta-item"><span>👥</span><span><%= event.team_size %></span></div>
+        <% end %>
+        <% if event.eligibility.present? %>
+          <div class="pragya-modal-meta-item"><span>✅</span><span><%= event.eligibility %></span></div>
+        <% end %>
+        <% if event.prize.present? %>
+          <div class="pragya-modal-meta-item"><span>🏆</span><span><%= event.prize %></span></div>
+        <% end %>
+      </div>
+
+      <div class="pragya-modal-desc">
+        <%= simple_format(event.description) %>
+      </div>
+
+      <div class="pragya-modal-footer">
+        <% reg_link = event.registration_link.present? ? event.registration_link : (session[:user] ? sanskritweek_user_n_path : user_login_path) %>
+        <%= link_to "Register Now →", reg_link,
+            class: "pragya-btn pragya-btn-primary",
+            target: event.registration_link.present? ? "_blank" : nil %>
+            <button class="pragya-btn pragya-modal-close-btn" onclick="pragyaCloseModal(<%= event.id %>); return false;">
+              Close
+            </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+            <% end %><%# /day_events.each %>
+          </div><%# /pragya-events-grid %>
+        </div><%# /pragya-day-block %>
+
+      <% end %><%# /@events_by_day.each %>
+
+    <% else %>
+      <div class="pragya-no-events">
+        <div class="pragya-no-events-icon">🪔</div>
+        <h3>Events Coming Soon</h3>
+        <p>Stay tuned! Event details for Pragyotsav 2026 will be announced shortly.</p>
+      </div>
+    <% end %>
+
+  </div>
+</section>
+
+<div class="pragya-divider"></div>
+
+
+
+
+
+<%# ══════ REGISTER ══════ %>
+<div class="pragya-divider"></div>
+
+
+<%# ══════ PAST EVENTS GALLERY ══════ %>
+<% if @past_events.any? %>
+<section id="pragya-past" class="pragya-past-section">
+  <div class="pragya-section">
+
+    <div class="pragya-tag">Our Journey</div>
+    <h2 class="pragya-section-h2">
+      Previous <span class="pragya-gold">Editions</span>
+    </h2>
+
+    <%# Year tab buttons %>
+    <div class="pragya-past-tabs">
+      <% @past_events.each_with_index do |pe, i| %>
+        <button class="pragya-past-tab <%= i == 0 ? 'active' : '' %>"
+                onclick="pragyaSwitchYear(<%= pe.id %>, this)">
+          <%= pe.year %>
+        </button>
+      <% end %>
+    </div>
+
+    <%# Each edition panel %>
+    <% @past_events.each_with_index do |pe, i| %>
+      <div class="pragya-past-panel" id="pragya-past-<%= pe.id %>"
+           style="<%= i == 0 ? '' : 'display:none;' %>">
+
+        <%# Edition info bar %>
+        <div class="pragya-past-info-bar">
+          <div>
+            <h3 class="pragya-past-title"><%= pe.title %></h3>
+            <% if pe.highlight_text.present? %>
+              <p class="pragya-past-highlight">✨ <%= pe.highlight_text %></p>
+            <% end %>
+            <% if pe.description.present? %>
+              <p class="pragya-past-desc"><%= pe.description %></p>
+            <% end %>
+          </div>
+          <div class="pragya-past-year-big"><%= pe.year %></div>
+        </div>
+
+        <%# Photo carousel — uses SanskritweekPhoto model %>
+        <% photos = pe.sanskritweek_photos %>
+        <% if photos.any? %>
+          <div class="pragya-carousel" id="carousel-<%= pe.id %>">
+
+            <button class="pragya-carousel-btn pragya-carousel-prev"
+                    onclick="pragyaCarouselMove(<%= pe.id %>, -1)">&#8249;</button>
+
+            <div class="pragya-carousel-track-wrap">
+              <div class="pragya-carousel-track" id="track-<%= pe.id %>">
+                <% photos.each do |photo| %>
+                  <div class="pragya-carousel-slide">
+                    <% if photo.image.attached? %>
+                      <img src="<%= url_for(photo.image) %>"
+                           alt="<%= photo.heading.presence || pe.title %>"
+                           class="pragya-carousel-img"
+                           onclick="pragyaLightbox(this, '<%= j(photo.heading.to_s) %>', '<%= j(photo.description.to_s) %>')">
+                      <% if photo.heading.present? || photo.description.present? %>
+                        <div class="pragya-photo-caption">
+                          <% if photo.heading.present? %>
+                            <strong><%= photo.heading %></strong>
+                          <% end %>
+                          <% if photo.description.present? %>
+                            <p><%= photo.description %></p>
+                          <% end %>
+                        </div>
+                      <% end %>
+                    <% end %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+
+            <button class="pragya-carousel-btn pragya-carousel-next"
+                    onclick="pragyaCarouselMove(<%= pe.id %>, 1)">&#8250;</button>
+
+            <%# Dot indicators %>
+            <div class="pragya-carousel-dots" id="dots-<%= pe.id %>">
+              <% photos.count.times do |di| %>
+                <span class="pragya-carousel-dot <%= di == 0 ? 'active' : '' %>"
+                      onclick="pragyaCarouselGoTo(<%= pe.id %>, <%= di %>)"></span>
+              <% end %>
+            </div>
+
+          </div>
+        <% else %>
+          <div class="pragya-past-no-photos">
+            🪔 Photos coming soon
+          </div>
+        <% end %>
+
+      </div>
+    <% end %>
+
+  </div>
+</section>
+
+<%# Lightbox — updated with caption support %>
+<div class="pragya-lightbox" id="pragya-lightbox"
+     onclick="pragyaCloseLightbox()" style="display:none;">
+  <div class="pragya-lightbox-overlay"></div>
+  <button class="pragya-lightbox-close" onclick="pragyaCloseLightbox()">✕</button>
+  <div class="pragya-lightbox-content" onclick="event.stopPropagation()">
+    <img src="" alt="" class="pragya-lightbox-img" id="pragya-lightbox-img">
+    <div class="pragya-lightbox-caption" id="pragya-lightbox-caption" style="display:none;"></div>
+  </div>
+</div>
+
+<div class="pragya-divider"></div>
+<% end %>
+
+
+
+
+
+<%# ══════ REGISTER ══════ %>
+<section id="pragya-register" class="pragya-register">
+  <div class="pragya-section">
+    <div class="pragya-reg-box">
+      <div class="pragya-reg-om">🕉</div>
+      <div class="pragya-reg-deva">संस्कृत-मण्डले सुस्वागतम्</div>
+      <h2>Register for Pragyotsav 2026</h2>
+      <p>Spots are limited for workshop sessions. Register early to secure your place in the festival of wisdom.</p>
+
+      <div class="pragya-reg-btns">
+        <% if @google_form_url.present? %>
+          <%= link_to "Register Now ↗", @google_form_url,
+              class: "pragya-btn pragya-btn-primary",
+              target: "_blank" %>
+        <% else %>
+          <div class="pragya-reg-soon">
+            🕐 Registration Opening Soon — Stay Tuned!
+          </div>
+        <% end %>
+        <a href="mailto:sanskritclub@iitr.ac.in"
+           class="pragya-btn pragya-btn-outline">
+          Contact Organisers
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<%# ══════ SCRIPTS ══════ %>
+<script>
+/* ── EMBER PARTICLES ── */
+(function(){
+  var canvas = document.getElementById('pragya-canvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var W, H, particles = [];
+  function resize(){
+    W = canvas.width  = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
+  window.addEventListener('resize', resize); resize();
+  function rand(a,b){ return a+Math.random()*(b-a); }
+  function P(){ this.reset(); }
+  P.prototype.reset = function(){
+    this.x=rand(0,W); this.y=rand(H*0.3,H);
+    this.vy=-rand(0.25,1.1); this.vx=rand(-0.18,0.18);
+    this.size=rand(1.2,3.2); this.life=rand(0.3,1);
+    this.decay=rand(0.0015,0.0045);
+    this.isGold=Math.random()>0.35;
+  };
+  P.prototype.update=function(){
+    this.x+=this.vx+Math.sin(this.y*0.012)*0.12;
+    this.y+=this.vy; this.life-=this.decay;
+    if(this.life<=0||this.y<-10) this.reset();
+  };
+  P.prototype.draw=function(){
+    var a=Math.max(0,this.life);
+    ctx.globalAlpha=a*0.75;
+    ctx.fillStyle=this.isGold?'#d4a96a':'#c94040';
+    ctx.beginPath(); ctx.arc(this.x,this.y,this.size*a,0,Math.PI*2); ctx.fill();
+    ctx.globalAlpha=a*0.15;
+    ctx.beginPath(); ctx.arc(this.x,this.y,this.size*a*2.5,0,Math.PI*2); ctx.fill();
+  };
+  for(var i=0;i<110;i++){ var p=new P(); p.y=rand(0,H); particles.push(p); }
+  function animate(){
+    ctx.clearRect(0,0,W,H);
+    particles.forEach(function(p){ p.update(); p.draw(); });
+    ctx.globalAlpha=1;
+    requestAnimationFrame(animate);
+  }
+  animate();
+})();
+
+/* ── COUNTDOWN ──
+   3 states:
+   Before Aug 21  → shows countdown timer
+   Aug 21–23      → hides timer, shows LIVE banner
+   After Aug 23   → hides timer, shows ENDED banner
+   ★ Change dates here if needed ★ */
+(function(){
+  var FEST_START = new Date('2026-08-21T09:00:00');
+  var FEST_END   = new Date('2026-08-23T23:59:59');
+
+  function pad(n){ return String(n).padStart(2,'0'); }
+
+  function tick(){
+    var now  = new Date();
+    var diff = FEST_START - now;
+
+    if (now > FEST_END) {
+      document.getElementById('pragya-countdown').style.display = 'none';
+      document.getElementById('pragya-live').style.display      = 'none';
+      document.getElementById('pragya-ended').style.display     = 'block';
+      return;
+    }
+
+    if (diff <= 0) {
+      document.getElementById('pragya-countdown').style.display = 'none';
+      document.getElementById('pragya-live').style.display      = 'block';
+      document.getElementById('pragya-ended').style.display     = 'none';
+      return;
+    }
+
+    document.getElementById('pragya-days').textContent  = pad(Math.floor(diff/86400000));
+    document.getElementById('pragya-hours').textContent = pad(Math.floor((diff%86400000)/3600000));
+    document.getElementById('pragya-mins').textContent  = pad(Math.floor((diff%3600000)/60000));
+    document.getElementById('pragya-secs').textContent  = pad(Math.floor((diff%60000)/1000));
+  }
+
+  tick();
+  setInterval(tick, 1000);
+})();
+
+/* ── EVENT FILTER ── */
+function pragyaFilter(btn, cat){
+  document.querySelectorAll('.pragya-ftab').forEach(function(t){ t.classList.remove('active'); });
+  btn.classList.add('active');
+  document.querySelectorAll('.pragya-event-card').forEach(function(card){
+    card.style.display=(cat==='all'||card.dataset.cat===cat)?'':'none';
+  });
+}
+
+/* ── SMOOTH SCROLL ── */
+document.querySelectorAll('a[href^="#pragya"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var t=document.querySelector(this.getAttribute('href'));
+    if(t){ e.preventDefault(); window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-80,behavior:'smooth'}); }
+  });
+});
+
+/* ── READ MORE TOGGLE ── */
+/* ── MODAL ── */
+/* ── MODAL ── */
+function pragyaOpenModal(id) {
+  var modal = document.getElementById('pragya-modal-' + id);
+  if (!modal) return;
+  /* Save current scroll position */
+  var scrollY = window.scrollY;
+  modal.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  document.body.style.position = 'fixed';
+  document.body.style.top = '-' + scrollY + 'px';
+  document.body.style.width = '100%';
+  document.body.dataset.scrollY = scrollY;
+}
+
+function pragyaCloseModal(id) {
+  var modal = document.getElementById('pragya-modal-' + id);
+  if (!modal) return;
+  modal.style.display = 'none';
+  /* Restore scroll position exactly where user was */
+  var scrollY = parseInt(document.body.dataset.scrollY || '0');
+  document.body.style.overflow = '';
+  document.body.style.position = '';
+  document.body.style.top = '';
+  document.body.style.width = '';
+  window.scrollTo(0, scrollY);
+}
+
+/* Close on Escape key */
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    var scrollY = parseInt(document.body.dataset.scrollY || '0');
+    document.querySelectorAll('.pragya-modal').forEach(function(m) {
+      m.style.display = 'none';
+    });
+    document.body.style.overflow = '';
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    window.scrollTo(0, scrollY);
+  }
+});
+
+
+/* ── PAST EVENTS YEAR TABS ── */
+function pragyaSwitchYear(id, btn) {
+  /* Hide all panels */
+  document.querySelectorAll('.pragya-past-panel').forEach(function(p) {
+    p.style.display = 'none';
+  });
+  /* Deactivate all tabs */
+  document.querySelectorAll('.pragya-past-tab').forEach(function(t) {
+    t.classList.remove('active');
+  });
+  /* Show selected */
+  document.getElementById('pragya-past-' + id).style.display = 'block';
+  btn.classList.add('active');
+}
+
+/* ── CAROUSEL ── */
+var pragyaCarouselIndex = {};
+
+function pragyaCarouselMove(id, dir) {
+  var track  = document.getElementById('track-' + id);
+  var slides = track.querySelectorAll('.pragya-carousel-slide');
+  var total  = slides.length;
+  if (!pragyaCarouselIndex[id]) pragyaCarouselIndex[id] = 0;
+  pragyaCarouselIndex[id] = (pragyaCarouselIndex[id] + dir + total) % total;
+  pragyaCarouselUpdate(id);
+}
+
+function pragyaCarouselGoTo(id, index) {
+  pragyaCarouselIndex[id] = index;
+  pragyaCarouselUpdate(id);
+}
+
+function pragyaCarouselUpdate(id) {
+  var index  = pragyaCarouselIndex[id] || 0;
+  var track  = document.getElementById('track-' + id);
+  var slides = track.querySelectorAll('.pragya-carousel-slide');
+  var slideW = slides[0] ? slides[0].offsetWidth + 16 : 0;
+  track.style.transform = 'translateX(-' + (index * slideW) + 'px)';
+  /* Update dots */
+  var dots = document.querySelectorAll('#dots-' + id + ' .pragya-carousel-dot');
+  dots.forEach(function(d, i) {
+    d.classList.toggle('active', i === index);
+  });
+}
+
+/* Recalc on resize */
+window.addEventListener('resize', function() {
+  Object.keys(pragyaCarouselIndex).forEach(function(id) {
+    pragyaCarouselUpdate(id);
+  });
+});
+
+/* ── LIGHTBOX ── */
+function pragyaLightbox(img, heading, desc) {
+  var lb  = document.getElementById('pragya-lightbox');
+  var lbi = document.getElementById('pragya-lightbox-img');
+  var lbc = document.getElementById('pragya-lightbox-caption');
+  lbi.src = img.src;
+  if (lbc) {
+    lbc.innerHTML =
+      (heading ? '<strong>' + heading + '</strong>' : '') +
+      (desc    ? '<p>' + desc + '</p>' : '');
+    lbc.style.display = (heading || desc) ? 'block' : 'none';
+  }
+  lb.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function pragyaCloseLightbox() {
+  document.getElementById('pragya-lightbox').style.display = 'none';
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    pragyaCloseLightbox();
+    /* Also close event modal if open */
+    var scrollY = parseInt(document.body.dataset.scrollY || '0');
+    document.querySelectorAll('.pragya-modal').forEach(function(m) {
+      m.style.display = 'none';
+    });
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    window.scrollTo(0, scrollY);
+  }
+});
+</script>
+
+<%# ===== END PRAGGYOTSAV HOME PAGE ===== %>

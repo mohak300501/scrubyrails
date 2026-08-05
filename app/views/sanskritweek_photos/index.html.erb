@@ -1,0 +1,49 @@
+<%# ===== SW PAST PHOTOS INDEX ===== %>
+<div class="sw-admin">
+  <div class="sw-admin-header">
+    <div>
+      <h1>📸 <%= @past_event.title %> — Photos</h1>
+      <p style="margin:4px 0 0; font-size:0.85rem; color:#8b6040; font-family:Arial,sans-serif;">
+        <%= @past_event.sanskritweek_photos.count %> photo(s) added
+      </p>
+    </div>
+    <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+      <%= link_to "+ Add Photos", sw_new_past_photo_path(@past_event), class: "sw-admin-btn" %>
+      <%= link_to "← Back to Past Editions", sw_past_events_path, class: "sw-admin-link" %>
+    </div>
+  </div>
+
+  <% if notice.present? %>
+    <div class="sw-notice"><%= notice %></div>
+  <% end %>
+
+  <% if @photos.empty? %>
+    <div class="sw-empty">No photos yet. Click "+ Add Photos" to upload.</div>
+  <% else %>
+    <div class="sw-photos-admin-grid">
+      <% @photos.each do |photo| %>
+        <div class="sw-photo-admin-card">
+          <% if photo.image.attached? %>
+            <img src="<%= url_for(photo.image) %>"
+                 class="sw-photo-admin-img" alt="<%= photo.heading %>">
+          <% end %>
+          <div class="sw-photo-admin-body">
+            <strong><%= photo.heading.present? ? photo.heading : "No heading" %></strong>
+            <p><%= photo.description.present? ? truncate(photo.description, length: 80) : "No description" %></p>
+          </div>
+          <div class="sw-photo-admin-actions">
+            <%= link_to "Edit", sw_edit_past_photo_path(@past_event, photo_id: photo.id), class: "sw-edit-btn" %>
+            <form action="<%= sw_destroy_past_photo_path(@past_event, photo_id: photo.id) %>"
+                  method="post"
+                  onsubmit="return confirm('Delete this photo?')">
+              <input type="hidden" name="_method" value="delete">
+              <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+              <button type="submit" class="sw-del-btn">Delete</button>
+            </form>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+<%# ===== END SW PAST PHOTOS INDEX ===== %>

@@ -1,0 +1,82 @@
+<%# ===== SW EVENTS INDEX — member view ===== %>
+<div class="sw-admin">
+  <div class="sw-admin-header">
+    <h1>Pragyotsav — Events</h1>
+    <%= link_to "+ Add New Event", sw_new_event_path, class: "sw-admin-btn" %>
+    <%= link_to "← Back to Sanskritweek", sanskritweek_path, class: "sw-admin-link" %>
+  </div>
+
+  <% if notice.present? %>
+    <div class="sw-notice"><%= notice %></div>
+  <% end %>
+
+  <% if @events.empty? %>
+    <div class="sw-empty">No events added yet. Click "+ Add New Event" to start.</div>
+  <% else %>
+    <% @events_by_day.keys.sort.each do |day| %>
+      <% day_events = @events_by_day[day] %>
+      <% next if day_events.blank? %>
+
+      <div class="sw-day-group">
+        <h2 class="sw-day-title">Day <%= day %></h2>
+
+        <table class="sw-table">
+          <thead>
+            <tr>
+              <th>Poster</th>
+              <th>Title</th>
+              <th>Category</th>
+              <th>Date / Time</th>
+              <th>Venue</th>
+              <th>Team Size</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% day_events.each do |event| %>
+              <tr>
+                <td>
+                  <% if event.poster_image.attached? %>
+                    <img src="<%= url_for(event.poster_image) %>"
+                         style="width:60px; height:40px; object-fit:cover; border-radius:4px;">
+                  <% else %>
+                    <span style="color:#b09070; font-size:0.75rem;">No poster</span>
+                  <% end %>
+                </td>
+                <td>
+                  <strong><%= event.title %></strong>
+                  <% if event.title_sanskrit.present? %>
+                    <br><span style="font-size:0.8rem; color:#8b1a1a;"><%= event.title_sanskrit %></span>
+                  <% end %>
+                </td>
+                <td>
+                  <% if event.category.present? %>
+                    <span class="sw-cat"><%= event.category %></span>
+                  <% end %>
+                </td>
+                <td>
+                  <% if event.date.present? %><%= event.date %><% end %>
+                  <% if event.time.present? %><br><%= event.time %><% end %>
+                </td>
+                <td><%= event.venue %></td>
+                <td><%= event.team_size %></td>
+                <td class="sw-actions">
+                  <%= link_to "Edit", sw_edit_event_path(event), class: "sw-edit-btn" %>
+                  <form action="<%= sw_delete_event_path(event) %>"
+                        method="post"
+                        style="display:inline;"
+                        onsubmit="return confirm('Delete \'<%= event.title %>\'? This cannot be undone.')">
+                    <input type="hidden" name="_method" value="delete">
+                    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                    <button type="submit" class="sw-del-btn">Delete</button>
+                  </form>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+<%# ===== END SW EVENTS INDEX ===== %>

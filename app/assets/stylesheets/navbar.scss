@@ -665,3 +665,233 @@ ul li a {
         }
     }
 }
+
+/* ===== PRAGGYOTSAV NAV BUTTON =====
+   To remove: delete this entire block. */
+
+@keyframes praggyotsav-underline {
+    0%   { background-size: 0% 2.5px; }
+    50%  { background-size: 100% 2.5px; }
+    100% { background-size: 0% 2.5px; }
+}
+
+@keyframes praggyotsav-color {
+    0%,100% { color: #c9a96e; }
+    50%      { color: #fff8dc; }
+}
+
+/* Base (desktop, >1400px) — matches ul li a base font */
+.praggyotsav-btn {
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 4px 2px !important;
+    background-color: transparent !important;
+    font-weight: 900 !important;
+    font-size: clamp(18px, 2.1vw, 27px) !important;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    background-image: linear-gradient(#fff8dc, #fff8dc) !important;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: 0% 2.5px;
+    animation:
+        praggyotsav-underline 2.5s ease-in-out infinite,
+        praggyotsav-color     2.5s ease-in-out infinite;
+    transition: color 0.2s ease;
+    width: auto !important;
+    height: clamp(100px, 10.3vw, 165px) !important;
+}
+
+.praggyotsav-btn:hover {
+    color: #fff8dc !important;
+    background-size: 100% 2.5px !important;
+    animation: none;
+    letter-spacing: 2px;
+}
+
+/* Hamburger menu (≤1400px) — matches li a inside mobile navlinks */
+@media (max-width: 1400px) {
+    .praggyotsav-btn {
+        font-size: clamp(1.3rem, 1.6vw, 1.6rem) !important;
+        letter-spacing: 1.5px;
+        width: 100% !important;
+        height: auto !important;
+        padding: 1.5rem 2rem !important;
+        justify-content: flex-start;
+        border-bottom: 1px solid rgba(213, 197, 174, 0.1) !important;
+        background-position: left bottom !important;
+    }
+    .praggyotsav-btn:hover {
+        background-color: rgba(213, 197, 174, 0.1) !important;
+        padding-left: 2.5rem !important;
+    }
+}
+
+/* ≤1200px — matches ul li a at this breakpoint */
+@media (max-width: 1200px) {
+    .praggyotsav-btn {
+        font-size: clamp(1.2rem, 1.5vw, 1.5rem) !important;
+    }
+}
+
+/* ≤930px */
+@media (max-width: 930px) {
+    .praggyotsav-btn {
+        font-size: clamp(1.1rem, 1.4vw, 1.3rem) !important;
+        padding: 1.5rem 2rem !important;
+    }
+}
+
+/* ≤768px */
+@media (max-width: 768px) {
+    .praggyotsav-btn {
+        font-size: clamp(1.1rem, 1.3vw, 1.3rem) !important;
+        padding: 1.2rem 2rem !important;
+    }
+}
+
+/* ≤600px */
+@media (max-width: 600px) {
+    .praggyotsav-btn {
+        font-size: clamp(1rem, 1.2vw, 1.2rem) !important;
+        padding: 1.2rem 2rem !important;
+        letter-spacing: 1px;
+    }
+}
+
+/* ≤480px */
+@media (max-width: 480px) {
+    .praggyotsav-btn {
+        font-size: clamp(1rem, 1.2vw, 1.2rem) !important;
+        padding: 1rem 1.5rem !important;
+        letter-spacing: 0.8px;
+    }
+}
+/* ===== END PRAGGYOTSAV NAV BUTTON ===== */
+/* ===== PRAGGYOTSAV ACTIVE — CSS ONLY, NO HTML CHANGE NEEDED =====
+   To remove: delete this block */
+a.praggyotsav-btn.active {
+  background-size: 100% 2.5px !important;
+  animation: none !important;
+  color: #fff8dc !important;
+  background-color: transparent !important;
+}
+/* ===== END PRAGGYOTSAV ACTIVE ===== */
+
+
+/* ===== PRAGGYOTSAV ANNOUNCEMENT BANNER =====
+   To remove: delete this entire block */
+
+@keyframes marquee-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-33.33%); }
+}
+
+.praggyotsav-marquee {
+  width: 100vw !important;
+  height: auto !important;
+  min-height: 36px !important;
+  background-color: #f5e6c8 !important;
+  border-top: 2px solid #8b1a1a !important;
+  border-bottom: 2px solid #8b1a1a !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  padding: 10px 0 !important;
+  display: block !important;
+  position: relative !important;
+  margin-top: 12px !important;
+  z-index: 999 !important;
+  box-sizing: border-box !important;
+}
+
+.marquee-track {
+  display: inline-block !important;
+  white-space: nowrap !important;
+  width: auto !important;
+  height: auto !important;
+  animation: marquee-scroll 22s linear infinite !important;
+  background-color: transparent !important;
+}
+
+.marquee-text {
+  display: inline !important;
+  font-size: 1rem !important;
+  font-weight: 800 !important;
+  color: #3d0a0a !important;
+ font-family: Georgia, 'Times New Roman', serif !important;
+  letter-spacing: 1px !important;
+  text-decoration: none !important;
+  background-color: transparent !important;
+  width: auto !important;
+  height: auto !important;
+  min-width: unset !important;
+  min-height: unset !important;
+  max-width: unset !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 1.5 !important;
+  border: none !important;
+}
+
+.praggyotsav-marquee:hover .marquee-track {
+  animation-play-state: paused !important;
+}
+
+/* ≤1200px */
+@media (max-width: 1200px) {
+  .praggyotsav-marquee {
+    padding: 8px 0 !important;
+    margin-top: 10px !important;
+  }
+  .marquee-text { font-size: 0.95rem !important; }
+  .marquee-track { animation-duration: 20s !important; }
+}
+
+/* ≤930px */
+@media (max-width: 930px) {
+  .praggyotsav-marquee {
+    padding: 7px 0 !important;
+    margin-top: 10px !important;
+  }
+  .marquee-text { font-size: 0.9rem !important; }
+  .marquee-track { animation-duration: 18s !important; }
+}
+
+/* ≤768px */
+@media (max-width: 768px) {
+  .praggyotsav-marquee {
+    padding: 6px 0 !important;
+    margin-top: 8px !important;
+    border-top-width: 1.5px !important;
+    border-bottom-width: 1.5px !important;
+  }
+  .marquee-text { font-size: 0.85rem !important; }
+  .marquee-track { animation-duration: 16s !important; }
+}
+
+/* ≤600px */
+@media (max-width: 600px) {
+  .praggyotsav-marquee {
+    padding: 6px 0 !important;
+    margin-top: 6px !important;
+  }
+  .marquee-text { font-size: 0.8rem !important; }
+  .marquee-track { animation-duration: 14s !important; }
+}
+
+/* ≤480px */
+@media (max-width: 480px) {
+  .praggyotsav-marquee {
+    padding: 5px 0 !important;
+    margin-top: 5px !important;
+    border-top-width: 1px !important;
+    border-bottom-width: 1px !important;
+  }
+  .marquee-text {
+    font-size: 0.75rem !important;
+    letter-spacing: 0.5px !important;
+  }
+  .marquee-track { animation-duration: 12s !important; }
+}
+
+/* ===== END PRAGGYOTSAV ANNOUNCEMENT BANNER ===== */

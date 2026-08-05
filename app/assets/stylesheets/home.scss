@@ -1058,3 +1058,16 @@ text-align: center;
   gap: clamp(10rem, 12vw, 15rem);
   }
   }
+  .pragyotsav-marquee {
+  background-color: #340202;
+  color: white;
+  padding: 10px 0;
+  font-size: 18px;
+  font-weight: bold;
+  border-top: 2px solid #d4af37;
+  border-bottom: 2px solid #d4af37;
+}
+
+.pragyotsav-marquee marquee {
+  width: 100%;
+}

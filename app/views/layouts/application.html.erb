@@ -37,6 +37,18 @@
             <% if session[:member] %>
                 <li><%= link_to "Home", home_path , class: ("active" if current_page?(home_path))%></li>
                 <li><%= link_to "Events", all_events_path, class: ("active" if current_page?(all_events_path)) %></li>
+                 <!-- ===== PRAGGYOTSAV LINK (MEMBER) =====
+                 Annual fest page link. Placed between Events and Shlok for visibility.
+                 To remove: delete the block below from here... -->
+           <!-- ===== PRAGGYOTSAV LINK (MEMBER) ===== -->
+<li>
+  <%= link_to "Pragyotsav", sanskritweek_path,
+      class: "praggyotsav-btn" + (current_page?(sanskritweek_path) ? " praggyotsav-active" : ""),
+      style: (current_page?(sanskritweek_path) ? "background-color: transparent !important; border-bottom: 3px solid #fff8dc !important;" : "") %>
+</li>
+<!-- ===== END PRAGGYOTSAV LINK (MEMBER) ===== -->
+            <!-- ...to here. Also remove the CSS for .praggyotsav-btn if no longer needed. -->
+            <!-- ===== END PRAGGYOTSAV LINK (MEMBER) ===== -->
                 <li><%= link_to "Shlok", all_shloks_path , class: ("active" if current_page?(all_shloks_path))%></li>
                 <li><%= link_to "Games", all_games_path , class: ("active" if current_page?(all_games_path))%></li>
                 <li><%= link_to "Resources", all_resources_path, class: ("active" if current_page?(all_resources_path)) %></li>
@@ -45,6 +57,17 @@
             <% else %>
                 <li><%= link_to "Home", root_path, class: ("active" if current_page?(root_path)) %></li>
                 <li><%= link_to "Events", events_path, class: ("active" if current_page?(events_path)) %></li>
+
+                <!-- ===== PRAGGYOTSAV LINK (PUBLIC USER) ===== -->
+<li>
+  <%= link_to "Pragyotsav", sanskritweek_path,
+      class: "praggyotsav-btn" + (current_page?(sanskritweek_path) ? " praggyotsav-active" : ""),
+      style: (current_page?(sanskritweek_path) ? "background-color: transparent !important; border-bottom: 3px solid #fff8dc !important;" : "") %>
+</li>
+<!-- ===== END PRAGGYOTSAV LINK (PUBLIC USER) ===== -->
+            <!-- ...to here. Also remove the CSS for .praggyotsav-btn if no longer needed. -->
+            <!-- ===== END PRAGGYOTSAV LINK (PUBLIC USER) ===== -->
+
                 <li><%= link_to "Shlok", shloks_path , class: ("active" if current_page?(shloks_path))%></li>
                 <li><%= link_to "Games", games_path , class: ("active" if current_page?(games_path))%></li>
                 <!-- <li><%= link_to "Resources", resources_path, class: ("active" if current_page?(resources_path)) %></li> -->
@@ -81,6 +104,19 @@
                 <%= msg %>
             </div>
         <% end %>
+
+       <%# ===== PRAGGYOTSAV ANNOUNCEMENT BANNER =====
+    To remove: delete this div block %>
+<div class="praggyotsav-marquee">
+  <div class="marquee-track">
+    <span class="marquee-text">
+      🎉 Praggyotsav 2026 is coming soon! Stay tuned for exciting events, quizzes, workshops, and cultural activities. Registration will open shortly. &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                   🎉 Praggyotsav 2026 is coming soon! Stay tuned for exciting events, quizzes, workshops, and cultural activities. Registration will open shortly. &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+      🎉 Praggyotsav 2026 is coming soon! Stay tuned for exciting events, quizzes, workshops, and cultural activities. Registration will open shortly. &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    </span>
+  </div>
+</div>
+<%# ===== END PRAGGYOTSAV ANNOUNCEMENT BANNER ===== %>
         
         <main class="main-content">
         <%= yield %>

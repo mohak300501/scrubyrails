@@ -1,0 +1,9 @@
+<%# ===== SW NEW EVENT FORM ===== %>
+<div class="sw-admin">
+  <div class="sw-admin-header">
+    <h1>Add New Event</h1>
+    <%= link_to "← Back to Events", sw_events_path, class: "sw-admin-link" %>
+  </div>
+  <%= render 'form', event: @event %>
+</div>
+<%# ===== END SW NEW EVENT FORM ===== %>

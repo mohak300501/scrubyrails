@@ -1,0 +1,163 @@
+<%# ===== SW EVENT FORM PARTIAL ===== %>
+
+<%# ── POSTER DELETE — must be OUTSIDE the main form ── %>
+<% if event.persisted? && event.poster_image.attached? %>
+  <div class="sw-current-poster">
+    <img src="<%= url_for(event.poster_image) %>"
+         alt="Current poster"
+         class="sw-poster-preview">
+    <div style="display:flex; gap:0.75rem; align-items:center; margin-top:8px;">
+      <p class="sw-hint" style="margin:0;">Current poster — upload below to replace.</p>
+      <form action="<%= sw_delete_poster_path(event) %>"
+            method="post"
+            onsubmit="return confirm('Delete this poster? This cannot be undone.')">
+        <input type="hidden" name="_method" value="delete">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <button type="submit" class="sw-del-btn">🗑 Delete Poster</button>
+      </form>
+    </div>
+  </div>
+<% end %>
+
+<%# ── MAIN FORM ── %>
+<%= form_with model: event,
+    url: event.new_record? ? sw_create_event_path : sw_update_event_path(event),
+    method: event.new_record? ? :post : :patch,
+    local: true,
+    multipart: true,
+    class: "sw-form" do |f| %>
+
+  <% if event.errors.any? %>
+    <div class="sw-errors">
+      <strong><%= event.errors.count %> error(s):</strong>
+      <ul>
+        <% event.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%# ── BASIC INFO ── %>
+  <div class="sw-form-section-title">Basic Information</div>
+
+  <div class="sw-form-group">
+    <%= f.label :title, "Event Title (English) *" %>
+    <%= f.text_field :title, placeholder: "e.g. Sanskrit Debate", class: "sw-input" %>
+  </div>
+
+  <div class="sw-form-group">
+    <%= f.label :title_sanskrit, "Title in Sanskrit (optional)" %>
+    <%= f.text_field :title_sanskrit, placeholder: "e.g. वाद-विवाद", class: "sw-input" %>
+  </div>
+
+  <div class="sw-form-group">
+    <%= f.label :category, "Category (optional)" %>
+    <%= f.text_field :category,
+        placeholder: "e.g. Competition / Workshop / Cultural / Lecture",
+        class: "sw-input" %>
+    <small class="sw-hint">Write whatever fits — Competition, Workshop, Cultural, Lecture, or anything else.</small>
+  </div>
+
+  <div class="sw-form-group">
+    <%= f.label :description, "Description *" %>
+    <%= f.text_area :description, rows: 5,
+        placeholder: "Describe the event — what it is, what participants will do, what makes it special...",
+        class: "sw-textarea" %>
+  </div>
+
+  <%# ── SCHEDULE ── %>
+  <div class="sw-form-section-title">Schedule & Location (all optional)</div>
+
+  <div class="sw-form-row">
+    <div class="sw-form-group">
+      <%= f.label :day, "Day Number" %>
+      <%= f.number_field :day, placeholder: "e.g. 1, 2, 3", min: 1, class: "sw-input" %>
+      <small class="sw-hint">Just the number — e.g. 1 for Day 1.</small>
+    </div>
+    <div class="sw-form-group">
+      <%= f.label :date, "Date" %>
+      <%= f.text_field :date, placeholder: "e.g. 21 August 2026", class: "sw-input" %>
+    </div>
+    <div class="sw-form-group">
+      <%= f.label :time, "Time" %>
+      <%= f.text_field :time, placeholder: "e.g. 10:00 AM – 12:00 PM", class: "sw-input" %>
+    </div>
+  </div>
+
+  <div class="sw-form-row">
+    <div class="sw-form-group">
+      <%= f.label :venue, "Venue" %>
+      <%= f.text_field :venue, placeholder: "e.g. Lecture Hall 1, IIT Roorkee", class: "sw-input" %>
+    </div>
+    <div class="sw-form-group">
+      <%= f.label :team_size, "Team Size / Participation" %>
+      <%= f.text_field :team_size, placeholder: "e.g. Teams of 2 / Individual / Open to All", class: "sw-input" %>
+    </div>
+  </div>
+
+  <%# ── ELIGIBILITY & PRIZE ── %>
+  <div class="sw-form-section-title">Eligibility & Prize (all optional)</div>
+
+  <div class="sw-form-row">
+    <div class="sw-form-group">
+      <%= f.label :eligibility, "Eligibility" %>
+      <%= f.text_field :eligibility,
+          placeholder: "e.g. Open to All / UG Students Only",
+          class: "sw-input" %>
+    </div>
+    <div class="sw-form-group">
+      <%= f.label :prize, "Prize / Incentive" %>
+      <%= f.text_field :prize,
+          placeholder: "e.g. Cash prize + Certificate",
+          class: "sw-input" %>
+    </div>
+  </div>
+
+  <%# ── REGISTRATION ── %>
+  <div class="sw-form-section-title">Registration Link (optional)</div>
+
+  <div class="sw-form-group">
+    <%= f.label :registration_link, "Event-specific Google Form Link" %>
+    <%= f.text_field :registration_link,
+        placeholder: "https://docs.google.com/forms/... (leave blank to use main registration form)",
+        class: "sw-input" %>
+    <small class="sw-hint">Leave blank to use the main Pragyotsav registration form.</small>
+  </div>
+
+  <%# ── POSTER IMAGE ── %>
+  <div class="sw-form-section-title">
+    <%= event.poster_image.attached? ? "Replace Poster" : "Upload Poster Image" %>
+  </div>
+
+  <div class="sw-form-group">
+    <div class="sw-file-upload">
+      <%= f.file_field :poster_image,
+          accept: "image/*",
+          class: "sw-file-input",
+          id: "poster_upload" %>
+      <label for="poster_upload" class="sw-file-label">
+        📁 <%= event.poster_image.attached? ? "Choose New Poster" : "Choose Poster Image" %>
+      </label>
+      <span class="sw-file-name" id="sw-file-name">
+        <%= event.poster_image.attached? ? event.poster_image.filename : "No file chosen" %>
+      </span>
+    </div>
+    <small class="sw-hint">Accepted: JPG, PNG, WEBP.</small>
+  </div>
+
+  <%# ── SUBMIT ── %>
+  <div class="sw-form-actions">
+    <%= f.submit event.new_record? ? "Add Event" : "Update Event", class: "sw-submit-btn" %>
+    <%= link_to "Cancel", sw_events_path, class: "sw-cancel-btn" %>
+  </div>
+
+<% end %>
+
+<script>
+  document.getElementById('poster_upload').addEventListener('change', function(){
+    var name = this.files[0] ? this.files[0].name : 'No file chosen';
+    document.getElementById('sw-file-name').textContent = name;
+  });
+</script>
+<%# ===== END SW EVENT FORM PARTIAL ===== %>

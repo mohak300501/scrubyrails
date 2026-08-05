@@ -1,0 +1,16 @@
+<%# ===== SANSKRITWEEK USER VIEW ===== %>
+<div class="pragya-user-welcome">
+  <span>👋 Welcome, <%= session[:user] %>!</span>
+  <span class="pragya-dot">·</span>
+  <span>You are logged in</span>
+  <% if @google_form_url.present? %>
+    <span class="pragya-dot">·</span>
+    <%= link_to "Register for Events ↗", @google_form_url,
+        class: "pragya-user-reg-link",
+        target: "_blank" %>
+  <% end %>
+</div>
+
+<%# Render the same public home page content %>
+<%= render template: 'sanskritweek/home' %>
+<%# ===== END SANSKRITWEEK USER VIEW ===== %>

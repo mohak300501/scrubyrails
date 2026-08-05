@@ -1,0 +1,81 @@
+<%# ===== SW PHOTO FORM ===== %>
+<%= form_with url: photo.new_record? ? sw_create_past_photo_path(@past_event) : sw_update_past_photo_path(@past_event, photo_id: photo.id),
+    method: photo.new_record? ? :post : :patch,
+    local: true,
+    multipart: true,
+    class: "sw-form" do |f| %>
+
+  <div class="sw-form-section-title">Photo Details</div>
+
+  <div class="sw-form-group">
+    <label class="sw-label">Heading (optional)</label>
+    <input type="text" name="sanskritweek_photo[heading]"
+           value="<%= photo.heading %>"
+           placeholder="e.g. Inauguration Ceremony"
+           class="sw-input">
+  </div>
+
+  <div class="sw-form-group">
+    <label class="sw-label">Description (optional)</label>
+    <textarea name="sanskritweek_photo[description]"
+              rows="3"
+              placeholder="Brief description of what's happening in this photo..."
+              class="sw-textarea"><%= photo.description %></textarea>
+  </div>
+
+  <div class="sw-form-section-title">
+    <%= photo.new_record? ? "Upload Photos" : "Replace Photo" %>
+  </div>
+
+  <% if photo.persisted? && photo.image.attached? %>
+    <div class="sw-current-poster" style="margin-bottom:1rem;">
+      <img src="<%= url_for(photo.image) %>"
+           class="sw-poster-preview" alt="current">
+      <p class="sw-hint">Current photo — upload below to replace.</p>
+    </div>
+  <% end %>
+
+  <div class="sw-form-group">
+    <div class="sw-file-upload">
+      <% if photo.new_record? %>
+        <input type="file" name="sanskritweek_photo[image][]"
+               accept="image/*"
+               multiple
+               class="sw-file-input"
+               id="photo_upload"
+               onchange="swPhotoCount(this)">
+        <label for="photo_upload" class="sw-file-label">📁 Choose Photos</label>
+        <span class="sw-file-name" id="sw-photo-name">No files chosen</span>
+      <% else %>
+        <input type="file" name="sanskritweek_photo[image]"
+               accept="image/*"
+               class="sw-file-input"
+               id="photo_upload"
+               onchange="swPhotoCount(this)">
+        <label for="photo_upload" class="sw-file-label">📁 Choose New Photo</label>
+        <span class="sw-file-name" id="sw-photo-name">No file chosen</span>
+      <% end %>
+    </div>
+    <% if photo.new_record? %>
+      <small class="sw-hint">You can select multiple photos at once — each will get the same heading and description. Edit individually afterward to change per-photo captions.</small>
+    <% end %>
+  </div>
+
+  <div class="sw-form-actions">
+    <button type="submit" class="sw-submit-btn">
+      <%= photo.new_record? ? "Upload Photos" : "Update Photo" %>
+    </button>
+    <%= link_to "Cancel", sw_past_photos_path(@past_event), class: "sw-cancel-btn" %>
+  </div>
+
+<% end %>
+
+<script>
+function swPhotoCount(input) {
+  var count = input.files.length;
+  document.getElementById('sw-photo-name').textContent =
+    count > 1 ? count + ' photos selected' :
+    count === 1 ? input.files[0].name : 'No files chosen';
+}
+</script>
+<%# ===== END SW PHOTO FORM ===== %>

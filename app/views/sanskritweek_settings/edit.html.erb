@@ -1,0 +1,29 @@
+<%# ===== SW SETTINGS — Google Form URL ===== %>
+<div class="sw-admin">
+  <div class="sw-admin-header">
+    <h1>Registration Settings</h1>
+    <%= link_to "← Back to Sanskritweek", sanskritweek_path, class: "sw-admin-link" %>
+  </div>
+
+  <% if notice.present? %>
+    <div class="sw-notice"><%= notice %></div>
+  <% end %>
+
+  <%= form_with url: sw_update_settings_path, method: :patch, local: true, class: "sw-form" do %>
+    <div class="sw-form-group">
+      <label>Google Form URL for Registration</label>
+      <input type="url" name="value"
+             value="<%= @setting.value %>"
+             placeholder="https://docs.google.com/forms/..."
+             class="sw-input">
+      <small class="sw-hint">
+        Paste the Google Form link here. It will appear as the Register button on the public page.
+        Leave blank to show "Registration Opening Soon".
+      </small>
+    </div>
+    <div class="sw-form-actions">
+      <input type="submit" value="Save Link" class="sw-submit-btn">
+    </div>
+  <% end %>
+</div>
+<%# ===== END SW SETTINGS ===== %>
